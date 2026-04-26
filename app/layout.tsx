@@ -1,9 +1,67 @@
 import type { Metadata } from 'next'
 import './globals.css'
 
+const BASE = 'https://growthhunt.ai'
+const TITLE = 'GrowthHunt — Your all-in-one go-to-market agent'
+const DESCRIPTION = 'Find the creators your buyers already trust, write the pitch, send it, track the reply, and learn which pattern actually converts. One agent. Every channel.'
+
 export const metadata: Metadata = {
-  title: 'GrowthHunt — Your all-in-one go-to-market agent',
-  description: 'Find the creators your buyers already trust, write the pitch, send it, track the reply, and learn which pattern actually converts. One agent. Every channel.',
+  metadataBase: new URL(BASE),
+  title: {
+    default: TITLE,
+    template: '%s — GrowthHunt',
+  },
+  description: DESCRIPTION,
+  keywords: [
+    'go to market', 'GTM agent', 'creator discovery', 'influencer outreach',
+    'Reddit marketing', 'YouTube creator', 'cold email automation',
+    'indie hacker', 'SaaS growth', 'startup marketing', 'growth tool',
+  ],
+  authors: [{ name: 'GrowthHunt Labs' }],
+  creator: 'GrowthHunt Labs',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: BASE,
+    siteName: 'GrowthHunt',
+    title: TITLE,
+    description: DESCRIPTION,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: TITLE,
+    description: DESCRIPTION,
+    creator: '@growthhuntai',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
+  },
+  alternates: {
+    canonical: BASE,
+  },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'GrowthHunt',
+  url: BASE,
+  description: DESCRIPTION,
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/PreOrder',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'GrowthHunt Labs',
+    url: BASE,
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -15,6 +73,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link
           href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
           rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body>{children}</body>

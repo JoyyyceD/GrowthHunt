@@ -17,9 +17,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { feature: id } = await params
   const feature = getFeatureById(id)
   if (!feature) return {}
+  const url = `https://growthhunt.ai/${id}`
   return {
-    title: `${feature.name} — GrowthHunt`,
+    title: feature.name,
     description: feature.summary,
+    alternates: { canonical: url },
+    openGraph: {
+      type: 'website',
+      url,
+      title: `${feature.name} — GrowthHunt`,
+      description: feature.summary,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${feature.name} — GrowthHunt`,
+      description: feature.summary,
+    },
   }
 }
 
