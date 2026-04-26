@@ -42,16 +42,43 @@ const I18N = {
 const LangContext = createContext({ lang: 'en', t: I18N.en, setLang: () => {} });
 const useT = () => useContext(LangContext);
 
-// ── Storage helpers (mock backend) ──
-const STORE = {
-  customs: () => { try { return JSON.parse(localStorage.getItem('opc-customs') || '[]'); } catch { return []; } },
-  setCustoms: (v) => localStorage.setItem('opc-customs', JSON.stringify(v)),
-  votes: () => { try { return JSON.parse(localStorage.getItem('opc-votes') || '{}'); } catch { return {}; } },
-  setVotes: (v) => localStorage.setItem('opc-votes', JSON.stringify(v)),
-  comments: () => { try { return JSON.parse(localStorage.getItem('opc-comments') || '{}'); } catch { return {}; } },
-  setComments: (v) => localStorage.setItem('opc-comments', JSON.stringify(v)),
-  user: () => { try { return JSON.parse(localStorage.getItem('opc-user') || 'null'); } catch { return null; } },
-  setUser: (v) => v ? localStorage.setItem('opc-user', JSON.stringify(v)) : localStorage.removeItem('opc-user'),
+// ── API helper ── (real backend; mock STORE retired)
+async function api(path, opts) {
+  const res = await fetch(path, {
+    credentials: 'include',
+    headers: opts && opts.body && !(opts.body instanceof FormData) ? { 'Content-Type': 'application/json' } : undefined,
+    ...opts,
+  });
+  if (!res.ok) {
+    let msg = res.statusText;
+    try { const j = await res.json(); msg = j.error || msg; } catch (_) {}
+    const err = new Error(msg);
+    err.status = res.status;
+    throw err;
+  }
+  if (res.status === 204) return null;
+  return res.json();
+}
+const API = {
+  // reads
+  champions: (sort) => api(`/api/champions?sort=${sort || 'hot'}&limit=100`),
+  championDetail: (slug) => api(`/api/champions/${encodeURIComponent(slug)}`),
+  me: () => api('/api/me').catch((e) => { if (e.status === 401) return null; throw e; }),
+  myVoted: () => api('/api/me/voted').catch((e) => { if (e.status === 401) return { champions: [] }; throw e; }),
+  myCommented: () => api('/api/me/commented').catch((e) => { if (e.status === 401) return { champions: [] }; throw e; }),
+  // writes
+  upvote: (slug) => api(`/api/champions/${encodeURIComponent(slug)}/upvote`, { method: 'POST' }),
+  postComment: (slug, body) => api(`/api/champions/${encodeURIComponent(slug)}/comments`, { method: 'POST', body: JSON.stringify({ body }) }),
+  deleteComment: (id) => api(`/api/comments/${encodeURIComponent(id)}`, { method: 'DELETE' }),
+  createChampion: (data) => api('/api/champions', { method: 'POST', body: JSON.stringify(data) }),
+  updateChampion: (slug, data) => api(`/api/champions/${encodeURIComponent(slug)}`, { method: 'PATCH', body: JSON.stringify(data) }),
+  deleteChampion: (slug) => api(`/api/champions/${encodeURIComponent(slug)}`, { method: 'DELETE' }),
+  uploadMedia: (slug, slot, file) => {
+    const fd = new FormData(); fd.append('file', file);
+    return api(`/api/champions/${encodeURIComponent(slug)}/media?slot=${slot}`, { method: 'POST', body: fd });
+  },
+  signOut: () => api('/api/auth/signout', { method: 'POST' }),
+  updateMe: (data) => api('/api/me', { method: 'PATCH', body: JSON.stringify(data) }),
 };
 
 // ── HN-style hot score (display only — server recomputes) ──
@@ -576,7 +603,7 @@ function DetailModal({ champion, onClose, voted, onVote, comments, user, onPost,
 }
 
 // ── Account / Me page ──
-function AccountPage({ user, tab, setTab, customs, voted, comments, onEdit, onDelete, onOpen, onLogin, onSubmit }) {
+function AccountPage({ user, tab, setTab, champions, voted, comments, onEdit, onDelete, onOpen, onLogin, onSubmit }) {
   const { t } = useT();
   if (!user) {
     return (
@@ -592,13 +619,13 @@ function AccountPage({ user, tab, setTab, customs, voted, comments, onEdit, onDe
       </section>
     );
   }
-  const mine = customs.filter(c => c.ownerId === user.id);
+  const mine = (champions || []).filter(c => c.ownerId === user.id);
   const myVotes = Object.keys(voted);
-  const myVotedChamps = [...CHAMPIONS, ...customs].filter(c => myVotes.includes(c.id));
+  const myVotedChamps = (champions || []).filter(c => myVotes.includes(c.id));
   const myComments = [];
-  Object.entries(comments).forEach(([cid, list]) => list.forEach(cm => { if (cm.author.id === user.id) myComments.push({ ...cm, championId: cid }); }));
+  Object.entries(comments).forEach(([cid, list]) => list.forEach(cm => { if (cm.author && cm.author.id === user.id) myComments.push({ ...cm, championId: cid }); }));
   const champById = {};
-  [...CHAMPIONS, ...customs].forEach(c => champById[c.id] = c);
+  (champions || []).forEach(c => champById[c.id] = c);
 
   return (
     <section className="opc-section account-page">
@@ -708,10 +735,10 @@ function Toast({ msg }) { return msg ? <div className="toast">{msg}</div> : null
 
 // ── Main App ──
 function App() {
-  const [user, setUser] = useState(() => STORE.user());
-  const [voted, setVoted] = useState(() => STORE.votes());
-  const [customs, setCustoms] = useState(() => STORE.customs());
-  const [comments, setComments] = useState(() => STORE.comments());
+  const [user, setUser] = useState(null);
+  const [voted, setVoted] = useState({});            // { [slug]: true }
+  const [champions, setChampions] = useState([]);    // loaded from /api/champions
+  const [comments, setComments] = useState({});      // { [slug]: Comment[] } loaded on demand
   const [route, setRoute] = useState('home'); // home | archive | account
   const [meTab, setMeTab] = useState('champions');
   const [filter, setFilter] = useState('hot');
@@ -726,54 +753,146 @@ function App() {
   useEffect(() => { try { localStorage.setItem('opc-lang', lang); } catch (_) {} document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en'; }, [lang]);
   const t = I18N[lang];
 
-  useEffect(() => { STORE.setUser(user); }, [user]);
-  useEffect(() => { STORE.setVotes(voted); }, [voted]);
-  useEffect(() => { STORE.setCustoms(customs); }, [customs]);
-  useEffect(() => { STORE.setComments(comments); }, [comments]);
+  // On mount: load me + champions in parallel.  Voted set loaded only if signed in.
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const [meRes, champRes] = await Promise.all([API.me(), API.champions(filter)]);
+        if (cancelled) return;
+        if (meRes && meRes.me) setUser(meRes.me);
+        if (champRes && champRes.champions) setChampions(champRes.champions);
+        if (meRes && meRes.me) {
+          const votedRes = await API.myVoted();
+          if (cancelled) return;
+          const map = {};
+          (votedRes.champions || []).forEach((c) => { map[c.id] = true; });
+          setVoted(map);
+        }
+      } catch (e) { console.error('[load]', e); }
+    })();
+    return () => { cancelled = true; };
+  }, []);
+
+  // Refetch list when filter changes
+  useEffect(() => {
+    let cancelled = false;
+    API.champions(filter).then(r => { if (!cancelled && r.champions) setChampions(r.champions); }).catch(()=>{});
+    return () => { cancelled = true; };
+  }, [filter]);
+
+  // When user opens a detail modal, fetch comments for that champion
+  useEffect(() => {
+    if (!active) return;
+    let cancelled = false;
+    API.championDetail(active.id).then((r) => {
+      if (cancelled) return;
+      if (r && r.comments) setComments((c) => ({ ...c, [active.id]: r.comments }));
+      if (r && r.champion) setChampions((cs) => cs.map(x => x.id === active.id ? r.champion : x));
+    }).catch(()=>{});
+    return () => { cancelled = true; };
+  }, [active && active.id]);
+
   useEffect(() => {
     if (!toast) return;
-    const t = setTimeout(() => setToast(''), 2400); return () => clearTimeout(t);
+    const tm = setTimeout(() => setToast(''), 2400); return () => clearTimeout(tm);
   }, [toast]);
 
-  const onVote = (id) => {
+  const onVote = async (id) => {
     if (voted[id]) { setToast(t.toast.dup); return; }
-    setVoted(v => ({ ...v, [id]: { ts: Date.now(), userId: user?.id || null } }));
+    setVoted(v => ({ ...v, [id]: true }));
+    setChampions(cs => cs.map(c => c.id === id ? { ...c, upvotes: (c.upvotes || 0) + 1 } : c));
     setToast(user ? t.toast.up : t.toast.upAnon);
+    try {
+      const r = await API.upvote(id);
+      if (r && typeof r.upvotes === 'number') {
+        setChampions(cs => cs.map(c => c.id === id ? { ...c, upvotes: r.upvotes } : c));
+      }
+    } catch (e) {
+      // rollback on failure
+      setVoted(v => { const n = { ...v }; delete n[id]; return n; });
+      setChampions(cs => cs.map(c => c.id === id ? { ...c, upvotes: Math.max(0, (c.upvotes || 1) - 1) } : c));
+      if (e.status === 429) setToast('请稍后再试');
+      else setToast('点赞失败');
+    }
   };
-  const onSubmitChampion = (form) => {
-    if (editing) {
-      setCustoms(cs => cs.map(c => c.id === editing.id ? { ...c, ...form } : c));
-      setToast(t.toast.updated);
-    } else {
-      const id = 'usr-' + Date.now().toString(36);
-      setCustoms(cs => [...cs, { ...form, id, upvotes: 1, comments: 0, status: 'Live', featured: false, submittedAt: Date.now(), ownerId: user.id, by: user.name }]);
-      setToast(t.toast.published);
+  const onSubmitChampion = async (form) => {
+    try {
+      let champ;
+      if (editing) {
+        const r = await API.updateChampion(editing.id, form);
+        champ = r.champion;
+        setChampions(cs => cs.map(c => c.id === champ.id ? champ : c));
+        setToast(t.toast.updated);
+      } else {
+        const r = await API.createChampion(form);
+        champ = r.champion;
+        setChampions(cs => [champ, ...cs]);
+        setToast(t.toast.published);
+      }
+      // optional media uploads — passed in form._files: { logo, screenshot1, screenshot2 }
+      if (form._files) {
+        for (const slot of ['logo', 'screenshot1', 'screenshot2']) {
+          const f = form._files[slot];
+          if (f) {
+            try {
+              const u = await API.uploadMedia(champ.id, slot, f);
+              if (u && u.champion) setChampions(cs => cs.map(c => c.id === u.champion.id ? u.champion : c));
+            } catch (e) { console.error('[upload]', slot, e); }
+          }
+        }
+      }
+    } catch (e) {
+      console.error('[submit]', e);
+      if (e.status === 401) { window.location.href = '/login?next=/OPChampion'; return; }
+      setToast(e.message || '提交失败');
+      return;
     }
     setSubmitOpen(false); setEditing(null);
   };
-  const onDeleteChampion = (id) => { setCustoms(cs => cs.filter(c => c.id !== id)); setToast(t.toast.deleted); };
-  const onPostComment = (championId, body) => {
-    if (!user) return;
-    setComments(c => ({ ...c, [championId]: [...(c[championId] || []), { id: 'cm-' + Date.now().toString(36), body, author: user, createdAt: Date.now() }] }));
+  const onDeleteChampion = async (id) => {
+    try {
+      await API.deleteChampion(id);
+      setChampions(cs => cs.filter(c => c.id !== id));
+      setToast(t.toast.deleted);
+    } catch (e) { setToast('删除失败'); }
   };
-  const onDeleteComment = (championId, commentId) => {
-    setComments(c => ({ ...c, [championId]: (c[championId] || []).filter(cm => cm.id !== commentId) }));
+  const onPostComment = async (championId, body) => {
+    if (!user) { window.location.href = '/login?next=/OPChampion'; return; }
+    try {
+      const r = await API.postComment(championId, body);
+      if (r && r.comment) {
+        setComments(c => ({ ...c, [championId]: [r.comment, ...(c[championId] || [])] }));
+        setChampions(cs => cs.map(c => c.id === championId ? { ...c, comments: (c.comments || 0) + 1 } : c));
+      }
+    } catch (e) {
+      if (e.status === 401) { window.location.href = '/login?next=/OPChampion'; return; }
+      setToast('评论失败');
+    }
+  };
+  const onDeleteComment = async (championId, commentId) => {
+    try {
+      await API.deleteComment(commentId);
+      setComments(c => ({ ...c, [championId]: (c[championId] || []).filter(cm => cm.id !== commentId) }));
+      setChampions(cs => cs.map(c => c.id === championId ? { ...c, comments: Math.max(0, (c.comments || 1) - 1) } : c));
+    } catch (e) { setToast('删除失败'); }
   };
 
-  // sort
+  // sort — server already sorts but we re-sort client-side too for tab switches
+  // without refetching (cheap, always-correct local view)
   const allChampions = useMemo(() => {
-    const list = [...CHAMPIONS, ...customs];
+    const list = [...champions];
     if (filter === 'hot') {
-      return [...list].sort((a, b) => {
+      return list.sort((a, b) => {
         const ageA = (Date.now() - (a.submittedAt || 0)) / HOUR;
         const ageB = (Date.now() - (b.submittedAt || 0)) / HOUR;
         return parseFloat(hotScore(b.upvotes, ageB)) - parseFloat(hotScore(a.upvotes, ageA));
       });
     }
-    if (filter === 'new') return [...list].sort((a, b) => (b.submittedAt || 0) - (a.submittedAt || 0));
-    if (filter === 'top') return [...list].sort((a, b) => b.upvotes - a.upvotes);
+    if (filter === 'new') return list.sort((a, b) => (b.submittedAt || 0) - (a.submittedAt || 0));
+    if (filter === 'top') return list.sort((a, b) => b.upvotes - a.upvotes);
     return list;
-  }, [filter, customs]);
+  }, [filter, champions]);
 
   const featured = allChampions.filter(c => c.featured);
   const standard = allChampions.filter(c => !c.featured);
@@ -788,10 +907,19 @@ function App() {
     <div data-screen-label="OPChampion" lang={lang === 'zh' ? 'zh-CN' : 'en'}>
       <TopNav
         user={user} route={route} setRoute={setRoute}
-        onLogin={() => setLoginOpen(true)}
-        onSignOut={() => { setUser(null); setRoute('home'); setToast(t.toast.signedOut); }}
-        onMe={(tab) => { setMeTab(tab); setRoute('account'); }}
-        onSubmit={() => { setEditing(null); setSubmitOpen(true); }}
+        onLogin={() => { window.location.href = '/login?next=/OPChampion'; }}
+        onSignOut={async () => {
+          try { await API.signOut(); } catch (_) {}
+          setUser(null); setVoted({}); setRoute('home'); setToast(t.toast.signedOut);
+        }}
+        onMe={(tab) => {
+          if (!user) { window.location.href = '/login?next=/OPChampion'; return; }
+          setMeTab(tab); setRoute('account');
+        }}
+        onSubmit={() => {
+          if (!user) { window.location.href = '/login?next=/OPChampion'; return; }
+          setEditing(null); setSubmitOpen(true);
+        }}
       />
 
       {showHome && <>
@@ -861,7 +989,7 @@ function App() {
               <div className="eyebrow"><span className="dot"></span>{t.cta.eyebrow}</div>
               <h2 className="serif">{t.cta.titleA} <em>{t.cta.titleEm}</em><br/>{t.cta.titleB}</h2>
               <p>{t.cta.body}</p>
-              <button onClick={() => { if (user) { setEditing(null); setSubmitOpen(true); } else { setLoginOpen(true); } }} className="big-cta-btn">{user ? t.cta.submitBtn : t.cta.signInSubmit}</button>
+              <button onClick={() => { if (user) { setEditing(null); setSubmitOpen(true); } else { (window.location.href = '/login?next=/OPChampion'); } }} className="big-cta-btn">{user ? t.cta.submitBtn : t.cta.signInSubmit}</button>
               {user && <button onClick={() => { setMeTab('champions'); setRoute('account'); }} className="big-cta-btn ghost">{t.cta.mySubs}</button>}
             </div>
           </div>
@@ -880,7 +1008,7 @@ function App() {
                   <div className="archive-num mono">No. {String(n).padStart(2, '0')}</div>
                   <div className="archive-week mono small dim">{t.archive.weekOf(20 - (14-n)*7)}</div>
                   <div className="archive-list">
-                    {CHAMPIONS.slice((n%4)*3, (n%4)*3 + 3).map(c => (
+                    {champions.slice((n%4)*3, (n%4)*3 + 3).map(c => (
                       <div key={c.id} className="archive-mini">
                         <ChampionLogo champion={c} size={28}/>
                         <span>{c.name}</span>
@@ -898,11 +1026,11 @@ function App() {
       {showAccount && (
         <AccountPage
           user={user} tab={meTab} setTab={setMeTab}
-          customs={customs} voted={voted} comments={comments}
+          champions={champions} voted={voted} comments={comments}
           onEdit={(c) => { setEditing(c); setSubmitOpen(true); }}
           onDelete={onDeleteChampion}
           onOpen={setActive}
-          onLogin={() => setLoginOpen(true)}
+          onLogin={() => (window.location.href = '/login?next=/OPChampion')}
           onSubmit={() => { setEditing(null); setSubmitOpen(true); }}
         />
       )}
@@ -918,7 +1046,7 @@ function App() {
             <ul>
               <li><a onClick={() => setRoute('home')} style={{ cursor:'pointer' }}>{t.foot.thisWeek}</a></li>
               <li><a onClick={() => setRoute('archive')} style={{ cursor:'pointer' }}>{t.foot.archive}</a></li>
-              <li><a onClick={() => { if (user) { setEditing(null); setSubmitOpen(true); } else { setLoginOpen(true); } }} style={{ cursor:'pointer' }}>{t.foot.submit}</a></li>
+              <li><a onClick={() => { if (user) { setEditing(null); setSubmitOpen(true); } else { (window.location.href = '/login?next=/OPChampion'); } }} style={{ cursor:'pointer' }}>{t.foot.submit}</a></li>
             </ul>
           </div>
           <div>
@@ -950,7 +1078,7 @@ function App() {
           champion={active} voted={!!voted[active.id]} onVote={onVote}
           comments={comments} user={user}
           onPost={onPostComment} onDelete={onDeleteComment}
-          onLogin={() => setLoginOpen(true)}
+          onLogin={() => (window.location.href = '/login?next=/OPChampion')}
           onClose={() => setActive(null)}
         />
       )}
@@ -959,7 +1087,7 @@ function App() {
           editing={editing} user={user}
           onClose={() => { setSubmitOpen(false); setEditing(null); }}
           onSubmit={onSubmitChampion}
-          onLogin={() => { setSubmitOpen(false); setLoginOpen(true); }}
+          onLogin={() => { setSubmitOpen(false); (window.location.href = '/login?next=/OPChampion'); }}
         />
       )}
       {loginOpen && (
