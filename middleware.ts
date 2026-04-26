@@ -10,6 +10,11 @@ export async function middleware(request: NextRequest) {
 
   let response = NextResponse.next({ request: { headers: request.headers } })
 
+  // Skip Supabase entirely if env vars are not configured (e.g. Vercel before vars are set)
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+    return response
+  }
+
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
