@@ -50,5 +50,5 @@ export async function POST(req: NextRequest, { params }: Params) {
     console.error('[POST comments]', error)
     return NextResponse.json({ error: 'insert_failed' }, { status: 500 })
   }
-  return NextResponse.json({ comment: commentToDTO(data as CommentRow & { author: ProfileRow | null }) }, { status: 201 })
+  return NextResponse.json({ comment: commentToDTO(data as unknown as CommentRow & { author: ProfileRow | null }) }, { status: 201 })
 }

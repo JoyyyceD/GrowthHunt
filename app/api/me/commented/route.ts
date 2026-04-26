@@ -27,8 +27,8 @@ export async function GET() {
 
   const seen = new Set<string>()
   const champions: ReturnType<typeof championToDTO>[] = []
-  for (const row of data ?? []) {
-    const c = row.champion as ChampionRow | null
+  for (const row of (data ?? []) as unknown as Array<{ champion: ChampionRow | null }>) {
+    const c = row.champion
     if (!c || c.deleted_at != null) continue
     if (seen.has(c.id)) continue
     seen.add(c.id)

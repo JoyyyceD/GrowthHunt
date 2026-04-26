@@ -25,8 +25,9 @@ export async function GET() {
     return NextResponse.json({ error: error.message }, { status: 500 })
   }
 
-  const champions = (data ?? [])
-    .map((row) => row.champion)
+  const rows = (data ?? []) as unknown as Array<{ champion: ChampionRow | null }>
+  const champions = rows
+    .map((r) => r.champion)
     .filter((c): c is ChampionRow => !!c && c.deleted_at == null)
     .map(championToDTO)
 

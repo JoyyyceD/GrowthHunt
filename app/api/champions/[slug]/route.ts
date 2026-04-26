@@ -33,9 +33,8 @@ export async function GET(_req: NextRequest, { params }: Params) {
     .order('created_at', { ascending: false })
     .limit(50)
 
-  const comments = (commentsData ?? []).map((c: CommentRow & { author: ProfileRow | null }) =>
-    commentToDTO(c)
-  )
+  const commentRows = (commentsData ?? []) as unknown as Array<CommentRow & { author: ProfileRow | null }>
+  const comments = commentRows.map((c) => commentToDTO(c))
 
   return NextResponse.json({
     champion: championToDTO(champion),
