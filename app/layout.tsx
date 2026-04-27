@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import './globals.css'
 
 const BASE = 'https://growthhunt.ai'
@@ -79,7 +80,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-MG4MDHT7RZ" strategy="afterInteractive" />
+        <Script id="ga4" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-MG4MDHT7RZ');
+        `}</Script>
+      </body>
     </html>
   )
 }
