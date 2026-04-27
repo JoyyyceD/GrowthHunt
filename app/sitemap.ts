@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { FEATURES } from '@/lib/features'
+import { getAllPosts } from '@/lib/blog'
 
 const BASE = 'https://growthhunt.ai'
 
@@ -11,6 +12,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: f.tag === 'Live' ? 0.8 : 0.6,
   }))
 
+  const blogPosts: MetadataRoute.Sitemap = getAllPosts().map(post => ({
+    url: `${BASE}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }))
+
   return [
     {
       url: BASE,
@@ -18,6 +26,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 1,
     },
+    {
+      url: `${BASE}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
     ...featurePages,
+    ...blogPosts,
   ]
 }
