@@ -253,7 +253,8 @@
       "type": "funding",
       "gtmTag": "Bundled milestone",
       "description": "Fidelity leads, with new investors ICONIQ, Whale Rock, and Atreides. Valuation more than doubles since December 2024. Tom Hale tells CNBC the company is on track for ~$2B in 2026 revenue.",
-      "externalUrl": "https://techcrunch.com/2025/10/14/smart-ring-maker-oura-raises-900m-from-fidelity/"
+      "externalUrl": "https://techcrunch.com/2025/10/14/smart-ring-maker-oura-raises-900m-from-fidelity/",
+      "articleSlug": "2025-10-series-e"
     }
   ],
   "arr": [
@@ -395,7 +396,7 @@
       "bestStage": "All stages — narrative spillover",
       "effort": "Press-release amplification + founder voice",
       "role": "Tech-press coverage spreader",
-      "description": "Less load-bearing than Cursor or Lovable would treat it. Oura's audience isn't dev-Twitter. But still the venue where TechCrunch, Bloomberg, CNBC, Sacra, and Fortune coverage gets cross-pollinated to the wellness-curious tech-adjacent crowd. Tom Hale is moderately active.",
+      "description": "Less load-bearing for a wellness brand than for a dev-tools startup. Oura's audience isn't on dev-Twitter. But still the venue where TechCrunch, Bloomberg, CNBC, Sacra, and Fortune coverage gets cross-pollinated to the wellness-curious tech-adjacent crowd. Tom Hale is moderately active.",
       "catalyst": "Each funding round and product generation ripples through tech-press X. The Dexcom partnership (Nov 2024) was the cleanest example — coverage stacked across capital, health-tech, and consumer accounts in 48 hours.",
       "accountUrl": "https://x.com/ouraring",
       "accountLabel": "@ouraring on X",
