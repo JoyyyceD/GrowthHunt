@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { MODULES, FEATURES, getLiveFeatures } from '@/lib/features'
+import { MODULES, FEATURES, getFeatureById } from '@/lib/features'
+import { getAllCompanies, getStory } from '@/lib/growth-story'
 import { TopNav } from '@/lib/site/TopNav'
 
 // ── Hero ─────────────────────────────────────────────────────────────────────
@@ -33,7 +34,7 @@ function Hero() {
             </div>
             <div className="meta" style={{ marginTop: 24 }}>
               <span style={{ color: 'var(--ink-faint)' }}>
-                5 tools shipping traffic today · more in the works
+                Live tools shipping traffic today · more in the works
               </span>
             </div>
           </div>
@@ -45,7 +46,11 @@ function Hero() {
 
 // ── Live cases ────────────────────────────────────────────────────────────────
 function LiveCases() {
-  const items = getLiveFeatures()
+  const backlinks = getFeatureById('listingbott')
+  const companies = getAllCompanies()
+  const firstStory = companies[0] ? getStory(companies[0]) : null
+  const storyHref = companies[0] ? `/growth-story/${companies[0]}` : '/growth-story'
+
   return (
     <section id="live" className="eco">
       <div className="shell">
@@ -54,14 +59,27 @@ function LiveCases() {
           <h2>Live cases — <em>tools shipping traffic today</em>.</h2>
         </div>
         <div className="eco-grid">
-          {items.map(p => (
-            <div className="eco-card" key={p.id}>
+          {/* Growth Story card */}
+          <div className="eco-card">
+            <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
+            <div className="eco-title">Growth Story</div>
+            <p>
+              {firstStory
+                ? `Deep-dive timelines of how breakout startups actually grew — funding rounds, viral moments, GTM bets, the works. ${companies.length} ${companies.length === 1 ? 'story' : 'stories'} so far, starting with ${firstStory.timeline.company.name}.`
+                : 'Deep-dive timelines of how breakout startups actually grew — funding rounds, viral moments, GTM bets, the works.'}
+            </p>
+            <Link href={storyHref} className="visit">Read the story →</Link>
+          </div>
+
+          {/* Get Backlinks (renamed ListingBott) card */}
+          {backlinks && (
+            <div className="eco-card">
               <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
-              <div className="eco-title">{p.name}</div>
-              <p>{p.summary}</p>
-              <Link href={`/${p.id}`} className="visit">View product →</Link>
+              <div className="eco-title">{backlinks.name}</div>
+              <p>{backlinks.summary}</p>
+              <Link href={`/${backlinks.id}`} className="visit">View product →</Link>
             </div>
-          ))}
+          )}
         </div>
       </div>
     </section>
@@ -157,10 +175,8 @@ function Footer() {
         <div>
           <h4>Live products</h4>
           <ul>
-            <li><Link href="/listingbott">ListingBott</Link></li>
-            <li><Link href="/microlaunch">MicroLaunch</Link></li>
-            <li><Link href="/viral-sense">Viral Sense</Link></li>
-            <li><Link href="/x-templates">X Templates</Link></li>
+            <li><Link href="/growth-story">Growth Story</Link></li>
+            <li><Link href="/listingbott">Get Backlinks</Link></li>
           </ul>
         </div>
         <div>

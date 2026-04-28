@@ -130,7 +130,10 @@ export default function ComingSoonClient() {
     setWaitlistOpen(true)
   }
 
-  const upcomingModules = MODULES.filter(m => m.id !== 'distribution')
+  // Show every module that has at least one Soon feature
+  const upcomingModules = MODULES.filter(m =>
+    FEATURES.some(f => f.module === m.id && f.tag === 'Soon')
+  )
 
   return (
     <>

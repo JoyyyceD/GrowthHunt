@@ -31,16 +31,16 @@ export const MODULES: ModuleDef[] = [
 export const FEATURES: Feature[] = [
   // ── Live products ──
   {
-    id: 'listingbott', name: 'ListingBott', tag: 'Live', module: 'distribution',
+    id: 'listingbott', name: 'Get Backlinks', tag: 'Live', module: 'distribution',
     pitch: 'Auto-submit your launch to 100+ directories overnight.',
     hook: 'Sleep through directory submission. Wake up indexed.',
     summary: 'A no-touch agent that fans your launch out across the web — directory listings, niche communities, SEO-feeding link farms — while you sleep.',
     problem: 'Manually submitting to directories takes 30–40 hours per launch. Most founders skip it, lose backlinks, and watch competitors out-rank them.',
-    solution: 'Drop your URL. ListingBott handles forms, captchas, and follow-ups across 100+ directories — and reports what got accepted.',
+    solution: 'Drop your URL. The agent handles forms, captchas, and follow-ups across 100+ directories — and reports what got accepted.',
     example: { input: 'https://yourapp.com', output: '93 / 104 directories submitted · 47 confirmed · 24 backlinks live' },
   },
   {
-    id: 'microlaunch', name: 'MicroLaunch', tag: 'Live', module: 'distribution',
+    id: 'microlaunch', name: 'MicroLaunch', tag: 'Soon', module: 'distribution',
     pitch: 'A launch platform that actually ships traffic.',
     hook: 'Product Hunt for builders who hate vote brigading.',
     summary: 'A community-curated launch board where every post is real, every upvote is human, and every winner gets a permanent spotlight.',
@@ -49,7 +49,7 @@ export const FEATURES: Feature[] = [
     example: { input: 'Submit launch', output: 'Featured · 1,247 visitors · 38 signups · 12 founder DMs in 24h' },
   },
   {
-    id: 'viral-sense', name: 'Viral Sense (Ins)', tag: 'Live', module: 'distribution',
+    id: 'viral-sense', name: 'Viral Sense (Ins)', tag: 'Soon', module: 'distribution',
     pitch: 'A taste-engine for what\'s about to pop on IG.',
     hook: 'Know which formats are hitting before they hit.',
     summary: 'Trend detection + format library for Instagram Reels. Surfaces formats with rising velocity in your niche.',
@@ -58,7 +58,7 @@ export const FEATURES: Feature[] = [
     example: { input: 'Niche: fitness', output: '3 rising formats · avg velocity +340% w/w' },
   },
   {
-    id: 'x-templates', name: 'X Viral Templates', tag: 'Live', module: 'distribution',
+    id: 'x-templates', name: 'X Viral Templates', tag: 'Soon', module: 'distribution',
     pitch: '47 post templates that have actually gone viral.',
     hook: 'Steal the structure. Add your story.',
     summary: 'A library of X post structures with verified viral history. Fill-in-the-blank. Schedule. Post.',
@@ -67,7 +67,7 @@ export const FEATURES: Feature[] = [
     example: { input: 'Template: build-in-public Friday', output: 'Avg engagement 4.2× your baseline' },
   },
   {
-    id: 'startup-lib', name: 'AI Startup Playbook Library', tag: 'Live', module: 'distribution',
+    id: 'startup-lib', name: 'AI Startup Playbook Library', tag: 'Soon', module: 'distribution',
     pitch: 'Every winning AI startup\'s GTM, archived.',
     hook: 'How they did it. In their words.',
     summary: 'Curated library of public-record GTM decisions from breakout AI startups — first 100 users, first $10k MRR, first viral moment.',
