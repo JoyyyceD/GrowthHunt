@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { fetchDirectories } from '@/lib/directories'
 import { TopNav } from '@/lib/site/TopNav'
 import InteractiveSection from './InteractiveSection'
+import DirectoriesScore from './DirectoriesScore'
 
 export const dynamic = 'force-dynamic'
 
@@ -43,6 +44,8 @@ export default async function GetBacklinksPage() {
           </div>
         </div>
       </section>
+
+      <DirectoriesScore directories={directories} />
 
       <InteractiveSection directories={directories} />
 
