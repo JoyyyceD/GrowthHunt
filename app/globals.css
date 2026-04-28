@@ -691,3 +691,11 @@ footer.bottom .copyright {
 .catalyst-cta:hover { opacity: 0.7; }
 .platform-account-link { transition: background 0.15s !important; }
 .platform-account-link:hover { background: var(--accent) !important; color: var(--accent-ink) !important; }
+
+/* Growth-story prose: container is full chart-shell width, but text
+   elements stay readable. Tables / Catalyst / Conclusion span full width. */
+.growth-prose p,
+.growth-prose ul,
+.growth-prose ol,
+.growth-prose h3 { max-width: 920px; }
+.growth-prose h2 { max-width: 1100px; }

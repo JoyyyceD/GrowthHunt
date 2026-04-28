@@ -84,7 +84,9 @@ export default function CaseStudyTimeline({ timeline, company }: Props) {
   const [hover, setHover] = useState<HoverState | null>(null)
 
   const xDomain = useMemo<[number, number]>(() => {
-    return [toTime('2022-12-01'), toTime('2026-06-01')]
+    // Start in late 2021 so the early founding events (2022-01 / 04 / 07)
+    // render with their labels fully inside the chart canvas.
+    return [toTime('2021-12-01'), toTime('2026-06-01')]
   }, [])
 
   const arrMax = 2_200_000_000
@@ -123,7 +125,7 @@ export default function CaseStudyTimeline({ timeline, company }: Props) {
 
   const xTicks = useMemo(() => {
     const ticks: { t: number; label: string; major: boolean }[] = []
-    for (let y = 2023; y <= 2026; y++) {
+    for (let y = 2022; y <= 2026; y++) {
       ticks.push({ t: toTime(`${y}-01-01`), label: `${y}`, major: true })
       ticks.push({ t: toTime(`${y}-07-01`), label: ``, major: false })
     }
@@ -254,12 +256,13 @@ export default function CaseStudyTimeline({ timeline, company }: Props) {
           <text
             key={`phase-label-${i}`}
             x={(p.x1 + p.x2) / 2}
-            y={CHART_TOP - 12}
+            y={CHART_TOP - 14}
             textAnchor="middle"
-            fontSize={10.5}
+            fontSize={13}
             fontFamily="var(--mono)"
-            fill="rgba(20,17,13,0.5)"
-            style={{ textTransform: 'uppercase', letterSpacing: '0.14em' }}
+            fontWeight={600}
+            fill="rgba(20,17,13,0.55)"
+            style={{ textTransform: 'uppercase', letterSpacing: '0.16em' }}
           >
             {p.name}
           </text>
@@ -318,20 +321,20 @@ export default function CaseStudyTimeline({ timeline, company }: Props) {
           <text
             key={`arr-tick-${v}`}
             x={CHART_LEFT - 14}
-            y={yArr(v) + 4}
+            y={yArr(v) + 5}
             textAnchor="end"
-            fontSize={11}
+            fontSize={13}
             fontFamily="var(--mono)"
-            fill="rgba(20,17,13,0.45)"
+            fill="rgba(20,17,13,0.5)"
           >
             {v === 0 ? '0' : formatMoney(v)}
           </text>
         ))}
         <text
           x={CHART_LEFT - 14}
-          y={CHART_TOP - 24}
+          y={CHART_TOP - 28}
           textAnchor="end"
-          fontSize={10}
+          fontSize={13}
           fontFamily="var(--mono)"
           fontWeight={700}
           fill={ARR_COLOR}
@@ -345,20 +348,20 @@ export default function CaseStudyTimeline({ timeline, company }: Props) {
           <text
             key={`val-tick-${v}`}
             x={CHART_RIGHT + 14}
-            y={yVal(v) + 4}
+            y={yVal(v) + 5}
             textAnchor="start"
-            fontSize={11}
+            fontSize={13}
             fontFamily="var(--mono)"
-            fill="rgba(232,78,27,0.65)"
+            fill="rgba(232,78,27,0.7)"
           >
             {v === 0 ? '' : formatMoney(v)}
           </text>
         ))}
         <text
           x={CHART_RIGHT + 14}
-          y={CHART_TOP - 24}
+          y={CHART_TOP - 28}
           textAnchor="start"
-          fontSize={10}
+          fontSize={13}
           fontFamily="var(--mono)"
           fontWeight={700}
           fill={VAL_COLOR}
@@ -394,12 +397,12 @@ export default function CaseStudyTimeline({ timeline, company }: Props) {
               {t.major && t.label && (
                 <text
                   x={x}
-                  y={CHART_BOTTOM + 28}
+                  y={CHART_BOTTOM + 30}
                   textAnchor="middle"
-                  fontSize={13}
+                  fontSize={16}
                   fontFamily="var(--serif)"
                   fontStyle="italic"
-                  fill="rgba(20,17,13,0.55)"
+                  fill="rgba(20,17,13,0.6)"
                 >
                   {t.label}
                 </text>
@@ -472,10 +475,10 @@ export default function CaseStudyTimeline({ timeline, company }: Props) {
                 onPointerMove={e => handlePointer('arr', e, { point: p })}
               />
               <text
-                x={x + 8}
-                y={y - 8}
+                x={x + 9}
+                y={y - 10}
                 textAnchor="start"
-                fontSize={11}
+                fontSize={13}
                 fontFamily="var(--mono)"
                 fontWeight={700}
                 fill={ARR_COLOR}
@@ -506,10 +509,10 @@ export default function CaseStudyTimeline({ timeline, company }: Props) {
                 onPointerMove={e => handlePointer('val', e, { point: p })}
               />
               <text
-                x={x - 8}
-                y={y - 8}
+                x={x - 9}
+                y={y - 10}
                 textAnchor="end"
-                fontSize={11}
+                fontSize={13}
                 fontFamily="var(--mono)"
                 fontWeight={700}
                 fill={VAL_COLOR}
@@ -579,10 +582,10 @@ export default function CaseStudyTimeline({ timeline, company }: Props) {
                 opacity={0.45}
               />
               <text
-                x={x + 5}
+                x={x + 7}
                 y={yLabel}
                 textAnchor="start"
-                fontSize={isImportant ? 11.5 : 10.5}
+                fontSize={isImportant ? 13.5 : 12.5}
                 fontFamily="var(--sans)"
                 fontWeight={isImportant ? 600 : 500}
                 fill={color}
@@ -592,8 +595,8 @@ export default function CaseStudyTimeline({ timeline, company }: Props) {
                 <tspan
                   style={{
                     paintOrder: 'stroke',
-                    stroke: 'rgba(250,250,247,0.9)',
-                    strokeWidth: 3,
+                    stroke: 'rgba(250,250,247,0.92)',
+                    strokeWidth: 3.5,
                   }}
                 >
                   {titleText}
@@ -654,22 +657,24 @@ export default function CaseStudyTimeline({ timeline, company }: Props) {
           return (
             <g key={`lane-label-${b.type}`}>
               <rect
-                x={2}
-                y={y - 12}
-                width={CHART_LEFT - 6}
-                height={24}
+                x={0}
+                y={y - 18}
+                width={CHART_LEFT - 8}
+                height={36}
                 fill="var(--bg)"
-                opacity={0.92}
+                opacity={0.96}
                 rx={2}
               />
               <text
-                x={6}
-                y={y + 5}
+                x={8}
+                y={y + 8}
                 textAnchor="start"
-                fontSize={13}
+                fontSize={22}
                 fontFamily="var(--serif)"
                 fontStyle="italic"
+                fontWeight={400}
                 fill={TYPE_COLOR[b.type]}
+                style={{ letterSpacing: '-0.012em' }}
               >
                 {TYPE_LABEL[b.type]}
               </text>

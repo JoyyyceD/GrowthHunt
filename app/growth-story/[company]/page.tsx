@@ -301,7 +301,7 @@ export default async function GrowthStoryPage({ params }: Props) {
 
       {/* 03 — Synthesis */}
       <section style={{ padding: '88px 0 64px', borderBottom: '1px solid var(--rule)' }}>
-        <div className="shell" style={{ maxWidth: 760 }}>
+        <div className="shell">
           <SectionHead
             num="03"
             eyebrow="Synthesis"
@@ -309,7 +309,7 @@ export default async function GrowthStoryPage({ params }: Props) {
             titleAccent="thesis."
             lede="The big-picture read on what actually drove the curve — before zooming in on each key moment."
           />
-          <div style={{ marginTop: 8 }}>
+          <div style={{ marginTop: 8 }} className="growth-prose">
             <MDXRemote
               source={story.content}
               components={mdxComponents}
@@ -402,7 +402,7 @@ export default async function GrowthStoryPage({ params }: Props) {
                 scrollMarginTop: 88,
               }}
             >
-              <div className="shell" style={{ maxWidth: 760 }}>
+              <div className="shell">
                 {/* Per-event header */}
                 <div style={{ marginBottom: 36 }}>
                   <div
@@ -506,11 +506,13 @@ export default async function GrowthStoryPage({ params }: Props) {
                 </div>
 
                 {/* MDX body */}
-                <MDXRemote
-                  source={a.content}
-                  components={mdxComponents}
-                  options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
-                />
+                <div className="growth-prose">
+                  <MDXRemote
+                    source={a.content}
+                    components={mdxComponents}
+                    options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+                  />
+                </div>
 
                 {/* Inline navigation: prev / next */}
                 <div
