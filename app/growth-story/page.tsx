@@ -70,8 +70,53 @@ export default function GrowthStoryIndex() {
 
       <hr className="rule" />
 
+      {/* All stories */}
+      <section id="all-stories" style={{ padding: '80px 0' }}>
+        <div className="shell">
+          <div className="eyebrow" style={{ marginBottom: 16 }}><span className="dot" />The library</div>
+          <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(36px, 5vw, 56px)', lineHeight: 1.0, letterSpacing: '-0.03em', fontWeight: 400, margin: '0 0 48px' }}>
+            All stories.
+          </h2>
+
+          {stories.length === 0 ? (
+            <p style={{ color: 'var(--ink-faint)' }}>No stories yet — check back soon.</p>
+          ) : (
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: 1, background: 'var(--rule)', border: '1px solid var(--rule)' }}>
+              {stories.map(({ slug, story }) => (
+                <Link
+                  key={slug}
+                  href={`/growth-story/${slug}`}
+                  className="blog-card"
+                  style={{ textDecoration: 'none', display: 'block' }}
+                >
+                  <article style={{ padding: '36px', minHeight: 280, display: 'flex', flexDirection: 'column', gap: 16 }}>
+                    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                      <span className="tag live">{story.timeline.company.name}</span>
+                      <span className="tag">{story.readTime} read</span>
+                      <span className="tag">{story.timeline.events.length} events</span>
+                    </div>
+                    <h3 style={{ fontFamily: 'var(--serif)', fontSize: 28, lineHeight: 1.15, letterSpacing: '-0.02em', fontWeight: 400, margin: 0, flex: 1 }}>
+                      {story.title}
+                    </h3>
+                    <p style={{ fontSize: 14, color: 'var(--ink-dim)', margin: 0, lineHeight: 1.55 }}>
+                      {story.description}
+                    </p>
+                    <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ink-faint)', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'flex', justifyContent: 'space-between' }}>
+                      <span>Founded {story.timeline.company.founded}</span>
+                      <span style={{ color: 'var(--accent)' }}>Read story →</span>
+                    </div>
+                  </article>
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      <hr className="rule" />
+
       {/* What's inside each story */}
-      <section style={{ padding: '80px 0' }}>
+      <section style={{ padding: '80px 0 120px' }}>
         <div className="shell">
           <div className="eyebrow" style={{ marginBottom: 24 }}><span className="dot" />Inside every story</div>
           <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(36px, 5vw, 56px)', lineHeight: 1.0, letterSpacing: '-0.03em', fontWeight: 400, margin: '0 0 48px', maxWidth: 780 }}>
@@ -113,51 +158,6 @@ export default function GrowthStoryIndex() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <hr className="rule" />
-
-      {/* All stories */}
-      <section id="all-stories" style={{ padding: '80px 0 120px' }}>
-        <div className="shell">
-          <div className="eyebrow" style={{ marginBottom: 16 }}><span className="dot" />The library</div>
-          <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(36px, 5vw, 56px)', lineHeight: 1.0, letterSpacing: '-0.03em', fontWeight: 400, margin: '0 0 48px' }}>
-            All stories.
-          </h2>
-
-          {stories.length === 0 ? (
-            <p style={{ color: 'var(--ink-faint)' }}>No stories yet — check back soon.</p>
-          ) : (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: 1, background: 'var(--rule)', border: '1px solid var(--rule)' }}>
-              {stories.map(({ slug, story }) => (
-                <Link
-                  key={slug}
-                  href={`/growth-story/${slug}`}
-                  className="blog-card"
-                  style={{ textDecoration: 'none', display: 'block' }}
-                >
-                  <article style={{ padding: '36px', minHeight: 280, display: 'flex', flexDirection: 'column', gap: 16 }}>
-                    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                      <span className="tag live">{story.timeline.company.name}</span>
-                      <span className="tag">{story.readTime} read</span>
-                      <span className="tag">{story.timeline.events.length} events</span>
-                    </div>
-                    <h3 style={{ fontFamily: 'var(--serif)', fontSize: 28, lineHeight: 1.15, letterSpacing: '-0.02em', fontWeight: 400, margin: 0, flex: 1 }}>
-                      {story.title}
-                    </h3>
-                    <p style={{ fontSize: 14, color: 'var(--ink-dim)', margin: 0, lineHeight: 1.55 }}>
-                      {story.description}
-                    </p>
-                    <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ink-faint)', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'flex', justifyContent: 'space-between' }}>
-                      <span>Founded {story.timeline.company.founded}</span>
-                      <span style={{ color: 'var(--accent)' }}>Read story →</span>
-                    </div>
-                  </article>
-                </Link>
-              ))}
-            </div>
-          )}
         </div>
       </section>
 
