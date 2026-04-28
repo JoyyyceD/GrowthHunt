@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import remarkGfm from 'remark-gfm'
 import {
   getStory,
   getAllCompanies,
@@ -309,7 +310,11 @@ export default async function GrowthStoryPage({ params }: Props) {
             lede="The big-picture read on what actually drove the curve — before zooming in on each key moment."
           />
           <div style={{ marginTop: 8 }}>
-            <MDXRemote source={story.content} components={mdxComponents} />
+            <MDXRemote
+              source={story.content}
+              components={mdxComponents}
+              options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+            />
           </div>
         </div>
       </section>
@@ -501,7 +506,11 @@ export default async function GrowthStoryPage({ params }: Props) {
                 </div>
 
                 {/* MDX body */}
-                <MDXRemote source={a.content} components={mdxComponents} />
+                <MDXRemote
+                  source={a.content}
+                  components={mdxComponents}
+                  options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+                />
 
                 {/* Inline navigation: prev / next */}
                 <div
