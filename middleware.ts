@@ -2,7 +2,10 @@ import { createServerClient } from '@supabase/ssr'
 import { NextRequest, NextResponse } from 'next/server'
 
 // Add protected routes here when dashboard is ready
-const PROTECTED_PAGE_ROUTES: string[] = ['/dashboard', '/growth-story']
+const PROTECTED_PAGE_ROUTES: string[] = ['/dashboard']
+// Deep-link prefixes — only sub-paths are gated, the landing stays public
+// (e.g. /growth-story is open for SEO, but /growth-story/cursor requires auth)
+const PROTECTED_DEEP_PREFIXES: string[] = ['/growth-story/']
 const PROTECTED_API_ROUTES: string[] = ['/api/dashboard']
 const SOFT_AUTH_COOKIE = 'gh-soft-user'
 
@@ -39,9 +42,14 @@ export async function middleware(request: NextRequest) {
   const isProtectedPage = PROTECTED_PAGE_ROUTES.some(
     r => pathname === r || pathname.startsWith(`${r}/`)
   )
+  // Deep prefix: must have content AFTER the prefix to count as protected.
+  // /growth-story/cursor is protected; /growth-story (or /growth-story/) is not.
+  const isProtectedDeep = PROTECTED_DEEP_PREFIXES.some(
+    p => pathname.startsWith(p) && pathname.length > p.length
+  )
   const isProtectedApi = PROTECTED_API_ROUTES.some(r => pathname.startsWith(r))
 
-  if (!isProtectedPage && !isProtectedApi) return response
+  if (!isProtectedPage && !isProtectedDeep && !isProtectedApi) return response
 
   const { data: { user } } = await supabase.auth.getUser()
   const hasSoftUser = !!request.cookies.get(SOFT_AUTH_COOKIE)?.value
