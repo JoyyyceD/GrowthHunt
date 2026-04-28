@@ -17,6 +17,24 @@ export function TopNav({ variant = 'page' }: Props) {
   const router = useRouter()
 
   useEffect(() => {
+    // After successful OAuth round-trip we may have a pending invite code
+    // stashed in localStorage. As soon as we know the user's email, ship it.
+    function flushPendingInvite(userEmail: string | null) {
+      if (!userEmail || typeof window === 'undefined') return
+      const code = localStorage.getItem('gh-pending-invite-code')
+      if (!code) return
+      fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: userEmail.toLowerCase(),
+          source: 'google-invite',
+          inviteCode: code,
+        }),
+      }).catch(() => { /* non-blocking */ })
+      localStorage.removeItem('gh-pending-invite-code')
+    }
+
     let supabase
     try {
       supabase = createBrowserClient()
@@ -26,11 +44,15 @@ export function TopNav({ variant = 'page' }: Props) {
       return
     }
     supabase.auth.getUser().then(({ data }) => {
-      setEmail(data.user?.email ?? readSoftUserEmail())
+      const e = data.user?.email ?? readSoftUserEmail()
+      setEmail(e)
       setLoaded(true)
+      flushPendingInvite(data.user?.email ?? null)
     })
     const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
-      setEmail(session?.user?.email ?? readSoftUserEmail())
+      const e = session?.user?.email ?? readSoftUserEmail()
+      setEmail(e)
+      flushPendingInvite(session?.user?.email ?? null)
     })
     return () => sub.subscription.unsubscribe()
   }, [])
