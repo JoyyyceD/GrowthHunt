@@ -416,6 +416,7 @@ nav.top .cta:hover { background: var(--accent); color: var(--accent-ink); }
   transition: background 0.2s;
 }
 .eco-card:hover { background: var(--bg-elev); }
+.eco-card-link { text-decoration: none; color: inherit; cursor: pointer; }
 .eco-card .eco-title {
   font-family: var(--serif);
   font-size: 32px;

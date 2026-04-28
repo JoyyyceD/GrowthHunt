@@ -49,7 +49,6 @@ function LiveCases() {
   const backlinks = getFeatureById('get-backlinks')
   const companies = getAllCompanies()
   const firstStory = companies[0] ? getStory(companies[0]) : null
-  const storyHref = companies[0] ? `/growth-story/${companies[0]}` : '/growth-story'
 
   return (
     <section id="live" className="eco">
@@ -59,26 +58,26 @@ function LiveCases() {
           <h2>Live cases — <em>tools shipping traffic today</em>.</h2>
         </div>
         <div className="eco-grid">
-          {/* Growth Story card */}
-          <div className="eco-card">
+          {/* Growth Story card — links to landing page */}
+          <Link href="/growth-story" className="eco-card eco-card-link">
             <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
             <div className="eco-title">Growth Story</div>
             <p>
               {firstStory
-                ? `Deep-dive timelines of how breakout startups actually grew — funding rounds, viral moments, GTM bets, the works. ${companies.length} ${companies.length === 1 ? 'story' : 'stories'} so far, starting with ${firstStory.timeline.company.name}.`
+                ? `Deep-dive timelines of how breakout startups actually grew — funding rounds, viral moments, GTM bets, the works. ${companies.length} ${companies.length === 1 ? 'story' : 'stories'} so far.`
                 : 'Deep-dive timelines of how breakout startups actually grew — funding rounds, viral moments, GTM bets, the works.'}
             </p>
-            <Link href={storyHref} className="visit">Read the story →</Link>
-          </div>
+            <span className="visit">Read the stories →</span>
+          </Link>
 
           {/* Get Backlinks card */}
           {backlinks && (
-            <div className="eco-card">
+            <Link href={`/${backlinks.id}`} className="eco-card eco-card-link">
               <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
               <div className="eco-title">{backlinks.name}</div>
               <p>{backlinks.summary}</p>
-              <Link href={`/${backlinks.id}`} className="visit">View product →</Link>
-            </div>
+              <span className="visit">View product →</span>
+            </Link>
           )}
         </div>
       </div>
