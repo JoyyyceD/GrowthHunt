@@ -4,7 +4,7 @@
     "name": "Genspark",
     "legalName": "MainFunc, Inc.",
     "tagline": "Two product launches, one ruthless pivot, and $200M+ ARR in 11 months",
-    "summary": "Genspark is the inverse of Cursor. There is no 22-month latent period — Day 0 was a $60M pre-revenue seed and a TechCrunch headline, engineered around founder Eric Jing's reputation as 'the father of Xiaoice' and former Baidu VP. The company spent nine months as an AI search engine, then in April 2025 abandoned 5M Sparkpages users and launched Super Agent three weeks behind Manus's viral wave. Nine days later it had $10M ARR — the fastest in AI history.",
+    "summary": "Genspark inverts the standard SaaS launch pattern. There is no latent period — Day 0 was a $60M pre-revenue seed and a TechCrunch headline, engineered around founder Eric Jing's reputation as 'the father of Xiaoice' and former Baidu VP. The company spent nine months as an AI search engine, then in April 2025 abandoned 5M Sparkpages users and launched Super Agent three weeks behind Manus's viral wave. Nine days later it had $10M ARR — the fastest in AI product history.",
     "founded": "2023-12",
     "founders": ["Eric Jing", "Kay Zhu", "Wen Sang"]
   },
@@ -70,7 +70,7 @@
       "title": "$10M ARR in 9 days",
       "type": "media",
       "gtmTag": "Active wave-riding",
-      "description": "Nine days after launch, Super Agent crosses $10M ARR — the fastest AI product to that line on record. Lovable took two months. Cursor took six. The number itself becomes the next narrative beat.",
+      "description": "Nine days after launch, Super Agent crosses $10M ARR — the fastest AI product to that line on record. The number itself becomes the next narrative beat.",
       "externalUrl": "https://aisecret.us/record-breaking-launch-genspark-super-agent-reaches-10-million-arr-faster-than-any-ai-product/",
       "articleSlug": "2025-04-manus-wave"
     },
@@ -248,7 +248,7 @@
       "bestStage": "All stages — but lower-yield",
       "effort": "Punctuated by launches",
       "role": "Skeptical-validator (not the catalyst)",
-      "description": "HN is structurally cooler on Genspark than on Cursor. Threads on Sparkpages, Super Agent, and AI Workspace surface but with lower comment volume and the recurring 'thin wrapper' skepticism. Genspark's growth did not come through HN — it came around HN.",
+      "description": "HN is structurally cooler on Genspark than on most dev-tool launches. Threads on Sparkpages, Super Agent, and AI Workspace surface but with lower comment volume and the recurring 'thin wrapper' skepticism. Genspark's growth did not come through HN — it came around HN.",
       "catalyst": "No single catalyst. The most-cited HN thread is the late 'What is Genspark?' discussion in February 2026 — a sign that Genspark broke out without HN being the first to know.",
       "catalystUrl": "https://news.ycombinator.com/item?id=46941269",
       "accountUrl": "https://hn.algolia.com/?q=genspark",
@@ -277,7 +277,7 @@
       "bestStage": "Hypergrowth + enterprise",
       "effort": "Founder + funding announcements",
       "role": "Enterprise-credibility amplifier",
-      "description": "Higher-leverage for Genspark than for Cursor — because the AI Workspace pitch is enterprise. Wen Sang's LinkedIn carries the long-form 'how we hit $200M ARR' content that doesn't fit on X. Eric Jing's funding announcements get re-shared by Microsoft, LG, and SBI executives, which is the actual enterprise channel.",
+      "description": "Higher-leverage for Genspark than for most AI startups — because the AI Workspace pitch is enterprise from day one. Wen Sang's LinkedIn carries the long-form 'how we hit $200M ARR' content that doesn't fit on X. Eric Jing's funding announcements get re-shared by Microsoft, LG, and SBI executives, which is the actual enterprise channel.",
       "catalyst": "Series B announcement (November 20, 2025) — Microsoft's enterprise leadership amplifies the Agent 365 partnership. That single re-share is more valuable for enterprise pipeline than any campaign.",
       "accountUrl": "https://www.linkedin.com/company/gensparkai",
       "accountLabel": "Genspark on LinkedIn",
@@ -291,13 +291,13 @@
       "bestStage": "Hypergrowth, Japan-led",
       "effort": "Regional, audience-specific",
       "role": "The Japan / consumer flank",
-      "description": "Unlike Cursor — which correctly skipped Instagram — Genspark runs a dedicated @genspark_japan account (~2.6K followers) and a TikTok presence around 'Claw Party' offline events. The reason: Japan is Genspark's largest paid subscription market, and Japanese consumer-AI discovery is more visual-first than the US dev-Twitter equivalent.",
+      "description": "Unlike most US-first dev-tool startups that correctly skip Instagram, Genspark runs a dedicated @genspark_japan account (~2.6K followers) and a TikTok presence around 'Claw Party' offline events. The reason: Japan is Genspark's largest paid subscription market, and Japanese consumer-AI discovery is more visual-first than the US dev-Twitter equivalent.",
       "catalyst": "Spring 2025 — Japanese users sharing 'AI Call For Me' clips of resignation calls. The narrative moves from text-based screenshots on X to vertical video on TikTok and Instagram Reels.",
       "catalystUrl": "https://www.instagram.com/genspark_japan/",
       "accountUrl": "https://www.instagram.com/genspark_ai/",
       "accountLabel": "@genspark_ai on Instagram",
       "whenItWorks": "For a product with a visible, emotional consumer use case in a visual-first market. Genspark's Japanese resignation-call use case is exactly that",
-      "whenItDoesnt": "For US-first developer tools. The Genspark playbook here is regional — Cursor's choice to skip is the right call for a US dev-tool product"
+      "whenItDoesnt": "For US-first developer tools. The Genspark playbook here is regional — skipping Instagram is the right call for a US dev-tool product"
     }
   ]
 }

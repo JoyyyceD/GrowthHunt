@@ -4,7 +4,7 @@
     "name": "Lovable",
     "legalName": "Lovable AB",
     "tagline": "From two failed launches to $400M ARR in 15 months",
-    "summary": "Lovable is the inverse of Cursor's curve. Where Cursor took 22 quiet months before its inflection, Lovable hit $1M ARR in 8 days, $100M in 8 months, $400M in 15 months. The trick wasn't a viral launch — it was a 50K-star open-source project (gpt-engineer) that pre-built the audience, two failed commercial launches that taught the team the brand was anchoring the wrong TAM, and a third launch under a name that finally fit.",
+    "summary": "Lovable's curve is the inverse of the standard SaaS pattern. Most successful software companies spend 18–24 quiet months before their inflection; Lovable hit $1M ARR in 8 days, $100M in 8 months, $400M in 15 months. The trick wasn't a viral launch — it was a 50K-star open-source project (gpt-engineer) that pre-built the audience, two failed commercial launches that taught the team the brand was anchoring the wrong TAM, and a third launch under a name that finally fit.",
     "founded": "2023-11",
     "founders": [
       "Anton Osika",
@@ -27,13 +27,13 @@
     {
       "start": "2025-02",
       "end": "2025-09",
-      "name": "Bundled Milestone Loop",
+      "name": "Bundled Loop",
       "color": "#fce7f3"
     },
     {
       "start": "2025-09",
       "end": "2026-04",
-      "name": "Platform & Hypergrowth",
+      "name": "Hypergrowth",
       "color": "#dcfce7"
     }
   ],
@@ -127,7 +127,7 @@
       "date": "2025-02-06",
       "title": "Karpathy 'vibe coding' tweet",
       "type": "media",
-      "description": "4.5M+ views. Names Cursor specifically, not Lovable — but the category Karpathy creates is Lovable's home turf and Lovable rides the wave.",
+      "description": "4.5M+ views. Doesn't name Lovable directly — but the category Karpathy creates is Lovable's home turf and Lovable rides the wave.",
       "externalUrl": "https://x.com/karpathy/status/1886192184808149383"
     },
     {
@@ -178,7 +178,7 @@
       "date": "2025-07-02",
       "title": "TC leaks $150M @ $2B round",
       "type": "media",
-      "description": "Pre-announcement leak builds anticipation. Same playbook as the Cursor cycle.",
+      "description": "Pre-announcement leak builds anticipation. Standard modern AI fundraise playbook — leak first, bundle on the day, run the milestone as a follow-up.",
       "externalUrl": "https://techcrunch.com/2025/07/02/lovable-on-track-to-raise-150m-at-2b-valuation/"
     },
     {
@@ -194,7 +194,7 @@
       "date": "2025-07-23",
       "title": "$100M ARR in 8 months",
       "type": "media",
-      "description": "'Faster than OpenAI / Cursor / Wiz' — Anton's headline framing. Standalone story 6 days after Series A bundle.",
+      "description": "'Fastest path to $100M ARR ever recorded' — Anton's headline framing. Standalone story 6 days after Series A bundle.",
       "externalUrl": "https://techcrunch.com/2025/07/23/eight-months-in-swedish-unicorn-lovable-crosses-the-100m-arr-milestone/"
     },
     {
@@ -446,7 +446,7 @@
       "bestStage": "Hypergrowth + ongoing",
       "effort": "Cross-community, low company touch",
       "role": "Cross-community discussion layer",
-      "description": "Lovable doesn't have a dominant single subreddit the way Cursor has r/cursor. Discussion is distributed across r/vibecoding (89K members), r/nocode, r/indiehackers, r/SideProject, and r/SaaS — fitting Lovable's 'anyone with an idea' positioning. The trade-off: less concentrated advocacy, broader surface area.",
+      "description": "Lovable doesn't have a dominant single subreddit. Discussion is distributed across r/vibecoding (89K members), r/nocode, r/indiehackers, r/SideProject, and r/SaaS — fitting Lovable's 'anyone with an idea' positioning. The trade-off: less concentrated advocacy, broader surface area.",
       "catalyst": "r/vibecoding's emergence as a 89K-member community in 2025 — Lovable rides as one of the named tools alongside Bolt and others.",
       "catalystUrl": "https://www.reddit.com/r/vibecoding/",
       "accountUrl": "https://www.reddit.com/r/vibecoding/",
@@ -477,7 +477,7 @@
       "effort": "Reels-first, sustained",
       "role": "Consumer-builder reach",
       "description": "Lovable's @lovable.dev account has 231K followers — an order of magnitude bigger than what most B2B SaaS companies bother with. The reason: Lovable's actual TAM includes solopreneurs, indie hackers, and 'anyone with an idea,' which overlaps materially with Instagram's creator audience. Reels showing apps built in minutes do well in a way they never would for a dev-only tool.",
-      "catalyst": "Cumulative reels showing live app-building demos — no single moment, but the 231K follower base is the highest of any vibe-coding tool. Cursor cannot match this and shouldn't try.",
+      "catalyst": "Cumulative reels showing live app-building demos — no single moment, but the 231K follower base is the highest of any vibe-coding tool. Pure dev-tool peers can't match this and shouldn't try; the visual-output product is what makes Instagram work.",
       "accountUrl": "https://www.instagram.com/lovable.dev/",
       "accountLabel": "@lovable.dev on Instagram",
       "whenItWorks": "When the product output is visual and the demo runs in under 60 seconds. Lovable's 'describe app, see app' loop is purpose-built for short-form video",
