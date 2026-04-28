@@ -1,0 +1,102 @@
+---
+title: "Wide Research — The 100-Agent Architecture That Answered the Wrapper Critique (Jul 31, 2025)"
+description: "Manus introduces clusters of 100+ parallel agents on a single task. The deliberate technical answer to four months of 'is this just a Claude wrapper?' criticism — and the credibility shift that preceded the $90M ARR disclosure."
+date: "2025-07-31"
+type: "product"
+gtmTag: "Tech narrative upgrade"
+eventTitle: "Wide Research launch"
+externalUrl: "https://manus.im/blog/introducing-wide-research"
+---
+
+<Catalyst>
+Wide Research was not a feature — it was a positioning move. Four months after launch, the dominant skeptical frame on Manus was "Claude wrapper plus Browser-Use." A 100-parallel-agent architecture is the answer to that frame. You cannot dismiss as a wrapper a system that orchestrates a hundred subagents on a single task.
+</Catalyst>
+
+July 31, 2025. Manus introduces Wide Research — clusters of 100+ parallel Manus instances working a single task, each operating independently, communicating through an agent-to-agent protocol.
+
+The launch is announced on the Manus blog, covered same-day by Bloomberg and VentureBeat, and threaded across X by Yichao Ji's account. **Front-page on Hacker News with hundreds of substantive technical comments by mid-day.**
+
+## The wrapper critique it was answering
+
+The skeptical read of Manus had been on the table since week two of the March launch.
+
+| Skeptical claim | Where it surfaced |
+|---|---|
+| "It's Claude with a UI" | Threads post on March 13 |
+| "It's Browser-Use plus Claude in a sandbox" | Multiple X dissections in March |
+| "The leaked system prompt shows it's just orchestration" | GitHub gist circulated in April |
+| "There's no proprietary model anywhere" | Recurring through May–June |
+
+The critique was substantively right at the level of components. **Manus did use Claude Sonnet for reasoning. Manus did use the open-source Browser-Use project for navigation. Manus did not have a proprietary foundation model.**
+
+What the critique missed: **a system that orchestrates a hundred subagents reliably on a single multi-step task is not the same engineering object as a system that runs one Claude call.** The reliability layer, the agent-to-agent protocol, the failure-recovery mechanics, and the cost-management infrastructure are where the actual differentiation lives.
+
+Wide Research was Manus's attempt to make that differentiation legible.
+
+## Why "wide" is positioned against "deep"
+
+OpenAI's Deep Research and Google's Deep Think were the existing frame for autonomous-agent research products in mid-2025. Both worked sequentially: one agent, multiple steps, deeper reasoning at each step.
+
+Wide Research inverted the frame. **One hundred agents in parallel, each fully capable, each on a different sub-task, all converging on a single output.**
+
+The framing was deliberate. Naming the feature "Wide" against the existing "Deep" positioning created a single-word distinction that Bloomberg's headline writer could use unchanged. **Most product-launch positioning fails because it has to compete with the existing vocabulary. Wide Research extended the vocabulary.**
+
+The technical claim underneath: parallelism scales differently than depth. A Deep Research session might run for thirty minutes and produce one report. A Wide Research session can run a hundred parallel investigations and produce a structured comparison in less time. **Different shapes of question want different architectures.**
+
+## What Wide Research is, and is not
+
+What it is:
+
+- 100+ instances of the same Manus agent running in parallel on a single task
+- Each subagent fully featured (not specialized to a role like "manager" or "coder")
+- An agent-to-agent collaboration protocol layered on top
+- Available initially to $199/month Pro users; rolled to lower tiers later
+
+What it is not:
+
+- A new foundation model
+- A proprietary reasoning engine
+- A replacement for sequential deep research — it is a complement
+
+The honest read: **Wide Research is an orchestration-layer innovation, not a foundation-model innovation.** Manus's claim is that the orchestration layer is where the real product surface lives in 2025-era agentic AI. **Whether you accept that claim is the central debate of the entire category.**
+
+## The credibility shift it bought
+
+The launch produced two consecutive months of more substantive coverage than Manus had received since the March demo.
+
+- Bloomberg's same-day "OpenAI-Challenger Manus Preps Big Upgrade" — first time the framing positioned Manus against OpenAI specifically
+- HN front page with technical commentary that engaged with the architecture, not just the demo
+- VentureBeat's "100+ agents to scour the web" — the headline that traveled furthest
+- Sacra deep-dive published in mid-August, citing Wide Research as the architectural moat
+
+Three weeks after the launch, Bloomberg reported Manus at $90M annualized revenue. **The Wide Research credibility shift preceded the revenue disclosure by 21 days, not the other way around.** The architecture story made the revenue story sound like a more durable business.
+
+## The bundled-milestone pattern at work
+
+Wide Research did not ship alone. It landed in the middle of a cluster:
+
+| Date | Event |
+|---|---|
+| Jul 10 | Singapore HQ relocation announced |
+| Jul 31 | Wide Research launch |
+| Aug 20 | $90M ARR disclosure |
+| Sep 8 | MIT Tech Review names Yichao Ji to Innovators Under 35 |
+
+Each of the four events landed within the still-warm coverage window of the previous one. **The four-event sequence reads in retrospect as a single Q3 narrative pulse** — geographic legitimacy, then architectural credibility, then financial scale, then individual founder validation.
+
+The discipline of bundling milestones is Manus's most consistent move. **The company never lets a feature, a number, or a partnership announcement fire alone.**
+
+<Conclusion title="What to copy">
+
+- **A "wrapper" critique can only be answered with architecture, not with a thread.** When critics say your product is shallow, ship a feature that is illegible to that critique. Wide Research forced skeptics to engage with new ground.
+- **Position your launch against the existing vocabulary, not within it.** "Wide" against "Deep" gave headline writers a single word to carry. Most product names compete with the vocabulary instead of extending it.
+- **An architecture launch should precede a revenue disclosure by two to three weeks.** The architecture story makes the revenue story sound durable. The reverse order makes the revenue story sound like a peak.
+
+</Conclusion>
+
+## Sources
+
+- [Manus blog: Introducing Wide Research](https://manus.im/blog/introducing-wide-research)
+- [Bloomberg: OpenAI-Challenger Manus Preps Big Upgrade](https://www.bloomberg.com/news/articles/2025-07-31/openai-challenger-manus-preps-big-upgrade-to-main-agent-platform)
+- [VentureBeat: Wide Research with 100+ agents](https://venturebeat.com/ai/youve-heard-of-ai-deep-research-tools-now-manus-is-launching-wide-research-that-spins-up-100-agents-to-scour-the-web-for-you)
+- [Sacra: Manus at $90M/year](https://sacra.com/research/manus-at-90m-year/)
