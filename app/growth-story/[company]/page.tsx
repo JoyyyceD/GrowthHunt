@@ -13,6 +13,7 @@ import { mdxComponents } from '@/lib/growth-story-mdx'
 import CaseStudyTimeline from '@/components/CaseStudyTimeline'
 import PlatformMix from '@/components/PlatformMix'
 import { TopNav } from '@/lib/site/TopNav'
+import { GatedContent } from '@/lib/site/GatedContent'
 
 interface Props {
   params: Promise<{ company: string }>
@@ -162,8 +163,29 @@ export default async function GrowthStoryPage({ params }: Props) {
     </div>
   )
 
+  // Paywall structured data — tells Google the synthesis + deep dives are
+  // gated content (still indexed, but flagged in SERP). The cssSelector
+  // matches the wrapper class used by <GatedContent>.
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: story.title,
+    description: story.description,
+    datePublished: story.date,
+    author: { '@type': 'Organization', name: 'GrowthHunt Labs' },
+    publisher: { '@type': 'Organization', name: 'GrowthHunt', url: 'https://growthhunt.ai' },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://growthhunt.ai/growth-story/${company}` },
+    isAccessibleForFree: false,
+    hasPart: [{
+      '@type': 'WebPageElement',
+      isAccessibleForFree: false,
+      cssSelector: '.gh-paywall',
+    }],
+  }
+
   return (
     <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <TopNav variant="page" />
 
       {/* Hero */}
@@ -268,6 +290,9 @@ export default async function GrowthStoryPage({ params }: Props) {
         </section>
       )}
 
+      {/* Gate begins — sections 03 and 04 are rendered into the DOM (so bots
+          can index them) but masked + capped for unauthenticated visitors. */}
+      <GatedContent>
       {/* 03 — Synthesis */}
       <section style={{ padding: '88px 0 64px', borderBottom: '1px solid var(--rule)' }}>
         <div className="shell">
@@ -596,6 +621,8 @@ export default async function GrowthStoryPage({ params }: Props) {
           ))}
         </section>
       )}
+      </GatedContent>
+      {/* Gate ends */}
 
       {/* Footer */}
       <footer

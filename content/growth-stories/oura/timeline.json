@@ -17,7 +17,7 @@
     {
       "start": "2013-01",
       "end": "2018-06",
-      "name": "Indiegogo Era (Gen 1)",
+      "name": "Kickstarter Era (Gen 1)",
       "color": "#fef3c7"
     },
     {
@@ -74,10 +74,10 @@
       "description": "Second-generation Oura Ring launches at Slush in Helsinki — slimmer profile, Heritage and Horizon shapes, a properly working Readiness Score. Sales of Gen 2 quickly reach ~10,000 units."
     },
     {
-      "date": "2018-04-01",
+      "date": "2016-11-29",
       "title": "Series A €5M",
       "type": "funding",
-      "description": "Closes a Series A round of about €5M ($5.3M). Over 75% of the capital comes from US angels including Joi Ito and Jaan Tallinn — the first signal of US investor pull."
+      "description": "Closes a Series A round of about €5M ($5.3M), announced by TechCrunch Nov 29, 2016. Over 75% of the capital comes from US angels including Joi Ito and Jaan Tallinn — the first signal of US investor pull. (Some Crunchbase entries date this 2018 — the original primary reporting and Oura's own announcement is 2016.)"
     },
     {
       "date": "2018-06-01",
@@ -205,10 +205,17 @@
       "articleSlug": "2024-10-ring-4-launch"
     },
     {
-      "date": "2024-10-08",
+      "date": "2024-09-30",
       "title": "$96M Department of Defense contract",
       "type": "media",
-      "description": "Defense Health Agency awards Oura a firm-fixed-price contract worth $96.1M for biometric sensor devices. Builds on the 2019 DoD partnership and tens of thousands of rings already deployed."
+      "description": "Defense Health Agency awards Oura a firm-fixed-price contract worth $96.1M for biometric sensor devices (DefenseScoop reports Oct 2). Builds on the 2019 DoD partnership and tens of thousands of rings already deployed."
+    },
+    {
+      "date": "2025-03-15",
+      "title": "DoD cancels the $96M contract",
+      "type": "media",
+      "description": "Defense Health Agency unexpectedly cancels the $96.1M wearable biometric contract — a structural pause on the federal-procurement narrative. Oura's enterprise + consumer commercial momentum continues independently, but the federal-channel proof point is materially smaller.",
+      "externalUrl": "https://www.biometricupdate.com/202503/dod-unexpectedly-cancels-controversial-wearable-biometric-contract"
     },
     {
       "date": "2024-10-31",

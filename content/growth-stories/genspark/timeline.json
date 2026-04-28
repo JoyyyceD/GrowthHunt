@@ -4,7 +4,7 @@
     "name": "Genspark",
     "legalName": "MainFunc, Inc.",
     "tagline": "Two product launches, one ruthless pivot, and $200M+ ARR in 11 months",
-    "summary": "Genspark inverts the standard SaaS launch pattern. There is no latent period — Day 0 was a $60M pre-revenue seed and a TechCrunch headline, engineered around founder Eric Jing's reputation as 'the father of Xiaoice' and former Baidu VP. The company spent nine months as an AI search engine, then in April 2025 abandoned 5M Sparkpages users and launched Super Agent three weeks behind Manus's viral wave. Nine days later it had $10M ARR — the fastest in AI product history.",
+    "summary": "Genspark inverts the standard SaaS launch pattern. There is no latent period — Day 0 was a $60M pre-revenue seed and a TechCrunch headline, engineered around founder Eric Jing's reputation as a former Baidu VP and Xiaodu CEO with deep China-AI roots (early Microsoft Xiaoice technical work, founding Bing Asia search engineer). The company spent nine months as an AI search engine, then in April 2025 abandoned 5M Sparkpages users and launched Super Agent three weeks behind Manus's viral wave. Nine days later it had $10M ARR — the fastest in AI product history.",
     "founded": "2023-12",
     "founders": [
       "Eric Jing",
@@ -44,7 +44,7 @@
       "date": "2023-12-01",
       "title": "MainFunc Inc founded",
       "type": "product",
-      "description": "Eric Jing (former Baidu VP, Xiaodu CEO, founding member of Microsoft Bing and 'father of Xiaoice') and Kay Zhu (former Xiaodu CTO, ex-Google ranking) incorporate MainFunc, Inc. in Palo Alto. Wen Sang (MIT PhD, Smarking founder, YC alum) joins as COO."
+      "description": "Eric Jing (former Baidu VP, Xiaodu CEO, early Microsoft Xiaoice technical lead and Bing Asia engineer since 2006) and Kay Zhu (former Xiaodu CTO, ex-Google ranking) incorporate MainFunc, Inc. in Palo Alto. Wen Sang (MIT PhD, Smarking founder, YC alum) joins as COO."
     },
     {
       "date": "2024-06-18",
@@ -56,7 +56,7 @@
       "articleSlug": "2024-06-launch"
     },
     {
-      "date": "2024-10-01",
+      "date": "2024-09-15",
       "title": "Autopilot Agent ships",
       "type": "product",
       "description": "Asynchronous multi-step research agent — Genspark's first agentic product, packaged as 'a smarter Sparkpage.' Important in retrospect: the team was already prototyping the agent direction six months before the Super Agent pivot."
@@ -154,10 +154,10 @@
       "articleSlug": "2025-11-triple-launch"
     },
     {
-      "date": "2025-11-20",
+      "date": "2025-11-18",
       "title": "Microsoft Agent 365 launch partner",
       "type": "media",
-      "description": "Genspark integrates into Microsoft 365 (Outlook, Teams) on the day Microsoft's Agent 365 platform debuts. Enterprise channel access without an enterprise sales team.",
+      "description": "Genspark integrates into Microsoft 365 (Outlook, Teams) at Microsoft Ignite, on the day Microsoft's Agent 365 platform debuts. Genspark's own Series B announcement two days later (Nov 20) re-amplifies the partnership.",
       "externalUrl": "https://news.microsoft.com/source/asia/features/with-microsoft-agent-365-one-startup-furthers-goal-of-making-ai-agents-more-intuitive/"
     },
     {
@@ -182,25 +182,26 @@
       "description": "Same-day product release alongside the funding extension. 1,000+ enterprise customers cited in the press release — the AI Workspace narrative compounds with the funding event."
     },
     {
-      "date": "2026-04-04",
-      "title": "Series B extension to $385M / $1.6B",
+      "date": "2026-03-12",
+      "title": "Series B ext $385M / $1.6B + AI Workspace 3.0 + Claw debut",
       "type": "funding",
       "gtmTag": "Geographic capital arbitrage",
-      "description": "Series B tops up again: $385M total at $1.6B. Mirae Asset, HartBeat, Markham Valley, and Honda Keisuke (yes, the footballer) join. Total disclosed funding crosses $545M. $200M+ run rate cited the same day.",
-      "externalUrl": "https://hoodline.com/2026/04/palo-alto-ai-upstart-genspark-rockets-to-1-6-billion-in-11-months/",
+      "description": "Bundled announcement: Series B tops up to $385M total at $1.6B (Mirae Asset, HartBeat, Markham Valley, Keisuke Honda join). AI Workspace 3.0 launches alongside Genspark Claw — the company's first 'AI Employee'. $200M+ run rate cited the same day. Total disclosed funding crosses $545M.",
+      "externalUrl": "https://www.businesswire.com/news/home/20260312641003/",
       "articleSlug": "2026-04-three-region"
     },
     {
-      "date": "2026-04-04",
+      "date": "2026-03-12",
       "title": "$200M+ run rate",
       "type": "media",
       "description": "Eleven months from Super Agent launch. Disclosed alongside the $385M close — funding and revenue milestones bundled, again."
     },
     {
       "date": "2026-04-08",
-      "title": "AI Workspace 4.0 + Genspark Claw",
+      "title": "AI Workspace 4.0 + Claw Desktop / Office",
       "type": "product",
-      "description": "Desktop client and native Microsoft Office integration. The product moves from web-only to local files — an enterprise-readiness signal four days after the funding bundle."
+      "description": "Workspace 4.0 with Genspark Claw for Desktop and native Microsoft Office integration. Enterprise-readiness signal — extends Claw from web to local files four weeks after the Workspace 3.0 + Claw debut.",
+      "externalUrl": "https://www.businesswire.com/news/home/20260408517611/"
     },
     {
       "date": "2025-04-02",
@@ -257,9 +258,9 @@
       "confidence": "official"
     },
     {
-      "date": "2026-04-04",
+      "date": "2026-03-12",
       "value": 200000000,
-      "source": "Hoodline / company",
+      "source": "BusinessWire / company",
       "confidence": "official"
     }
   ],
@@ -293,10 +294,10 @@
       "confidence": "estimate"
     },
     {
-      "date": "2026-04-04",
+      "date": "2026-03-12",
       "value": 1600000000,
       "round": "Series B++",
-      "source": "TheSaaSNews",
+      "source": "BusinessWire",
       "confidence": "official"
     }
   ],

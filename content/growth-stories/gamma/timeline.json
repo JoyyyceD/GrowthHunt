@@ -65,7 +65,7 @@
       "title": "Public launch — pre-AI",
       "type": "product",
       "gtmTag": "Structural differentiation",
-      "description": "Gamma exits beta as a non-AI 'card-based modern document' editor. Reaches roughly 60K users by early 2023 — moderate traction, not a hit. Paul Graham reportedly calls the product 'the dumbest idea I've heard.'",
+      "description": "Gamma exits beta as a non-AI 'card-based modern document' editor. Reaches roughly 60K users by early 2023 — moderate traction, not a hit. By Lee's later Lenny's Podcast retelling, an early investor called the product 'the dumbest idea I've heard.'",
       "articleSlug": "2022-04-pre-ai-gamma"
     },
     {
@@ -160,7 +160,7 @@
       "title": "Series B $68M / $2.1B",
       "type": "funding",
       "gtmTag": "Bundled milestone",
-      "description": "Led by a16z, with Accel and Uncork. Includes secondary for early employees. Disclosed simultaneously: $100M ARR. Founder Grant Lee posts a long-form 'how we built a $100M business differently' essay the same day.",
+      "description": "Led by a16z, with Accel and Uncork. Includes secondary for early employees. Disclosed simultaneously: $100M ARR, 70M users. Founder Grant Lee posts a long-form 'how we built a $100M business differently' essay the same day.",
       "externalUrl": "https://techcrunch.com/2025/11/10/ai-powerpoint-killer-gamma-hits-2-1b-valuation-100m-arr-founder-says/",
       "articleSlug": "2025-11-series-b"
     },
@@ -249,7 +249,7 @@
       "bestStage": "All stages — load-bearing",
       "effort": "Always-on",
       "role": "Founder voice + product retrospectives",
-      "description": "Grant Lee writes long-form retrospective threads on X — the 'dumbest idea I've heard' story, the 95% drop-off teardown, the small-team revenue-per-employee comparisons. These threads become the source material every secondary creator quotes from.",
+      "description": "Grant Lee writes long-form retrospective threads on X — the early-investor 'dumbest idea' story, the 95% drop-off teardown, the small-team revenue-per-employee comparisons. These threads become the source material every secondary creator quotes from.",
       "catalyst": "March 2023 Product Hunt + Twitter relaunch as 'a new medium for presenting ideas, powered by GPT-4.' Signups went from 2,000/day to 60,000/day. Servers crashed for three days.",
       "catalystUrl": "https://x.com/grantslee",
       "accountUrl": "https://x.com/grantslee",

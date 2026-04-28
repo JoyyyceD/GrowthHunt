@@ -3,9 +3,11 @@ import { NextRequest, NextResponse } from 'next/server'
 
 // Add protected routes here when dashboard is ready
 const PROTECTED_PAGE_ROUTES: string[] = ['/dashboard']
-// Deep-link prefixes — only sub-paths are gated, the landing stays public
-// (e.g. /growth-story is open for SEO, but /growth-story/cursor requires auth)
-const PROTECTED_DEEP_PREFIXES: string[] = ['/growth-story/']
+// Deep-link prefixes — middleware-level gate (server-side redirect).
+// /growth-story/* is intentionally NOT here: those pages render publicly
+// (so bots can index the synthesis + deep-dives) and use a client-side
+// content gate (lib/site/GatedContent.tsx) for unauthenticated visitors.
+const PROTECTED_DEEP_PREFIXES: string[] = []
 const PROTECTED_API_ROUTES: string[] = ['/api/dashboard']
 const SOFT_AUTH_COOKIE = 'gh-soft-user'
 

@@ -91,11 +91,11 @@
       "articleSlug": "2024-08-series-a"
     },
     {
-      "date": "2024-08-20",
+      "date": "2024-08-19",
       "title": "8-year-old codes w/ Cursor",
       "type": "media",
       "gtmTag": "Audience boundary push",
-      "description": "Cloudflare VP Ricky Robinett tweets a video of his 8-year-old daughter building a chatbot in 45 minutes. 2.7M views. Boosted by Tobi Lutke, Karpathy, Lenny Rachitsky.",
+      "description": "Cloudflare VP Ricky Robinett tweets a video of his 8-year-old daughter building a chatbot in 45 minutes. ~2.7M views (cumulative). Boosted by Tobi Lutke, Karpathy, Lenny Rachitsky.",
       "externalUrl": "https://x.com/rickyrobinett/status/1825581674870055189",
       "articleSlug": "2024-08-eight-year-old"
     },
@@ -109,10 +109,10 @@
       "articleSlug": "2024-10-lex-fridman"
     },
     {
-      "date": "2024-11-01",
-      "title": "Composer v1 ships",
+      "date": "2024-08-29",
+      "title": "Composer default-on (Cursor 0.40)",
       "type": "product",
-      "description": "Multi-file editing. Moves Cursor from 'better autocomplete' to 'AI that edits across your whole codebase'."
+      "description": "Multi-file editing — Composer feature ships default-on with Cursor 0.40. Moves Cursor from 'better autocomplete' to 'AI that edits across your whole codebase'. (Note: the 'Composer model' name is later reused for Cursor's in-house code model in October 2025.)"
     },
     {
       "date": "2024-11-12",
@@ -133,10 +133,10 @@
       "date": "2025-01-15",
       "title": "$100M ARR",
       "type": "media",
-      "description": "21 months from public launch. The fastest SaaS company in history to reach this milestone."
+      "description": "22 months from public launch. The fastest SaaS company to reach this milestone on record."
     },
     {
-      "date": "2025-02-06",
+      "date": "2025-02-02",
       "title": "Karpathy 'vibe coding' tweet",
       "type": "media",
       "gtmTag": "Ride the KOL wave",
@@ -181,10 +181,10 @@
       "externalUrl": "https://www.cnbc.com/2025/11/13/cursor-ai-startup-funding-round-valuation.html"
     },
     {
-      "date": "2025-11-20",
+      "date": "2025-11-13",
       "title": "$1B ARR",
       "type": "media",
-      "description": "The fastest SaaS to ever reach $1B ARR — 24 months from $1M."
+      "description": "The fastest SaaS to ever reach $1B ARR — 24 months from $1M. Disclosed concurrently with the Series D announcement, the canonical bundled-milestone move."
     },
     {
       "date": "2026-02-15",
@@ -194,9 +194,10 @@
     },
     {
       "date": "2026-04-21",
-      "title": "xAI $60B option deal",
+      "title": "SpaceX $60B option deal",
       "type": "media",
-      "description": "xAI announces an option to acquire Cursor for $60B by year-end, or pay $10B for ongoing collaboration."
+      "description": "SpaceX announces an option to acquire Cursor for $60B by year-end, or pay $10B for ongoing collaboration. (Musk merged SpaceX with xAI in February 2026; the announcing party and contracting entity is SpaceX.)",
+      "externalUrl": "https://techcrunch.com/2026/04/21/spacex-is-working-with-cursor-and-has-an-option-to-buy-the-startup-for-60-billion/"
     }
   ],
   "arr": [
@@ -281,7 +282,7 @@
     {
       "date": "2026-04-21",
       "value": 55000000000,
-      "round": "xAI option",
+      "round": "SpaceX option",
       "source": "Fortune",
       "confidence": "media"
     }

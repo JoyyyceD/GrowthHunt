@@ -41,10 +41,10 @@
   ],
   "events": [
     {
-      "date": "2022-06-15",
+      "date": "2022-04-15",
       "title": "Butterfly Effect founded",
       "type": "product",
-      "description": "Xiao Hong founds Butterfly Effect in Beijing after exiting Wuhan Nightingale Technology. Initial product is Monica.im, an AI browser-extension copilot targeting overseas markets first."
+      "description": "Xiao Hong incorporates Butterfly Effect Technology Co. in Beijing (April 2022) after exiting Wuhan Nightingale Technology. ZhenFund-supported launch follows in mid-2022. Initial product is Monica.im, an AI browser-extension copilot targeting overseas markets first."
     },
     {
       "date": "2023-02-15",
@@ -68,7 +68,7 @@
       "date": "2024-11-20",
       "title": "Series A — $85M valuation",
       "type": "funding",
-      "description": "HSG (formerly Sequoia China), Tencent, ZhenFund, and Meituan founder Wang Huiwen invest. Post-money around $85M. The round funds the pivot from extension to autonomous agent."
+      "description": "HSG (formerly Sequoia China), Tencent, ZhenFund, and Meituan co-founder Wang Huiwen invest. Post-money around $85M. The round funds the pivot from extension to autonomous agent."
     },
     {
       "date": "2025-02-25",
@@ -174,11 +174,11 @@
       "externalUrl": "https://manus.im/blog/manus-1.5-release"
     },
     {
-      "date": "2025-12-15",
+      "date": "2025-12-17",
       "title": "Manus 1.6 + $100M ARR",
       "type": "product",
       "gtmTag": "Bundled milestone",
-      "description": "Manus 1.6 ships with Max performance mode, mobile dev, and Design View. Same week, the company discloses $100M ARR / $125M revenue run-rate. Both numbers fire into the lead-up to the Meta announcement.",
+      "description": "Manus 1.6 ships with Max performance mode, mobile dev, and Design View. Bloomberg reports the $100M ARR / $125M revenue run-rate disclosure on Dec 17, 2025 — Manus's blog post is dated within the same window. Both numbers fire into the lead-up to the Meta announcement.",
       "externalUrl": "https://manus.im/blog/manus-100m-arr"
     },
     {
@@ -197,10 +197,10 @@
       "description": "China's Ministry of Commerce announces it will examine the Meta deal under technology-export and data-security rules. A six-month limbo begins."
     },
     {
-      "date": "2026-03-12",
+      "date": "2026-03-25",
       "title": "Exit bans on co-founders",
       "type": "media",
-      "description": "Xiao Hong and Yichao Ji are reportedly barred from leaving China while the review proceeds. The acquisition is now in active jeopardy."
+      "description": "Xiao Hong and Yichao Ji are reportedly barred from leaving China while the review proceeds (FT/Reuters reporting Mar 25–26). The acquisition is now in active jeopardy."
     },
     {
       "date": "2026-04-27",
@@ -226,13 +226,13 @@
       "confidence": "media"
     },
     {
-      "date": "2025-12-15",
+      "date": "2025-12-17",
       "value": 100000000,
       "source": "Manus blog",
       "confidence": "official"
     },
     {
-      "date": "2025-12-15",
+      "date": "2025-12-17",
       "value": 125000000,
       "source": "Manus blog (revenue run-rate)",
       "confidence": "official"

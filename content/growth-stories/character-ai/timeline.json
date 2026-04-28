@@ -80,7 +80,7 @@
       "externalUrl": "https://techcrunch.com/2023/05/31/character-ai-the-a16z-backed-chatbot-startup-tops-1-7m-installs-in-first-week/"
     },
     {
-      "date": "2023-05-31",
+      "date": "2023-05-11",
       "title": "c.ai+ subscription launches at $9.99/mo",
       "type": "product",
       "gtmTag": "PLG → Enterprise pivot",
@@ -92,7 +92,7 @@
       "date": "2024-02-28",
       "title": "Sewell Setzer III dies by suicide",
       "type": "media",
-      "description": "A 14-year-old in Florida dies after months of conversations with a Game of Thrones-themed character on the platform. The case becomes public eight months later in the Garcia v. Character Technologies lawsuit."
+      "description": "A 14-year-old in Florida dies by suicide. The case becomes public eight months later, when his mother's lawsuit (Garcia v. Character Technologies) alleges the death followed months of conversations with a Game of Thrones-themed character on the platform."
     },
     {
       "date": "2024-03-19",
@@ -131,11 +131,11 @@
       "externalUrl": "https://techcrunch.com/2024/10/02/character-ai-hires-ex-youtube-exec-as-cpo-says-will-raise-money-next-year-with-new-partners/"
     },
     {
-      "date": "2024-10-23",
+      "date": "2024-10-22",
       "title": "Garcia v. Character Technologies filed",
       "type": "media",
       "gtmTag": "Audience boundary push",
-      "description": "Megan Garcia files a wrongful-death suit in Florida federal court. Strict product liability, negligence, deceptive trade practices. The case names Character.AI, Shazeer, De Freitas, and Google. Wall-to-wall coverage in NYT, CNN, NBC, Washington Post.",
+      "description": "Megan Garcia files a wrongful-death suit in Florida federal court (case docketed Oct 23). Strict product liability, negligence, deceptive trade practices. The case names Character.AI, Shazeer, De Freitas, and Google. Wall-to-wall coverage in NYT, CNN, NBC, Washington Post.",
       "externalUrl": "https://www.cnn.com/2024/10/30/tech/teen-suicide-character-ai-lawsuit",
       "articleSlug": "2024-10-garcia-lawsuit"
     },

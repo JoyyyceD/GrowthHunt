@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { FEATURES } from '@/lib/features'
 import { getAllPosts } from '@/lib/blog'
-import { getAllCompanies, getAllEventSlugs } from '@/lib/growth-story'
+import { getAllCompanies } from '@/lib/growth-story'
 
 const BASE = 'https://growthhunt.ai'
 
@@ -26,15 +26,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'monthly',
     priority: 0.9,
   }))
-
-  const growthStoryEvents: MetadataRoute.Sitemap = getAllCompanies().flatMap(company =>
-    getAllEventSlugs(company).map(eventSlug => ({
-      url: `${BASE}/growth-story/${company}/${eventSlug}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    }))
-  )
 
   return [
     {
@@ -62,7 +53,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     ...growthStoryCompanies,
-    ...growthStoryEvents,
     ...featurePages,
     ...blogPosts,
   ]

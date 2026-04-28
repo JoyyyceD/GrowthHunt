@@ -61,17 +61,11 @@
       "description": "Anton Osika (CEO) + Fabian Hedin (CTO) incorporate in Stockholm. Initially named GPT Engineer AB."
     },
     {
-      "date": "2023-12-15",
-      "title": "GPT Engineer App commercial launch",
-      "type": "product",
-      "description": "First commercial version with web UI — targeting non-technical users under the GPT Engineer brand."
-    },
-    {
       "date": "2024-04-01",
-      "title": "First failed launch",
+      "title": "First failed launch (GPT Engineer App)",
       "type": "product",
       "gtmTag": "Failure-to-success rebrand",
-      "description": "Spring 2024 GPT Engineer App launch fails. Brand implies dev tool but the TAM is non-technical builders.",
+      "description": "First commercial GPT Engineer App release — web UI targeting non-technical builders. Brand implies dev tool but the TAM is non-technical, and the launch fails to convert.",
       "articleSlug": "2024-failed-launches"
     },
     {
@@ -125,7 +119,7 @@
       "description": "Headline number that becomes Lovable's calling card across operator and PM circles."
     },
     {
-      "date": "2025-02-06",
+      "date": "2025-02-02",
       "title": "Karpathy 'vibe coding' tweet",
       "type": "media",
       "description": "4.5M+ views. Doesn't name Lovable directly — but the category Karpathy creates is Lovable's home turf and Lovable rides the wave.",
@@ -208,7 +202,7 @@
       "articleSlug": "2025-09-lovable-cloud"
     },
     {
-      "date": "2025-11-01",
+      "date": "2025-11-25",
       "title": "Acquires Molnett",
       "type": "acquisition",
       "description": "Swedish cloud infrastructure startup. Talent + tech for the new Lovable Cloud platform. Doubles down on vertical integration.",
@@ -222,11 +216,11 @@
       "externalUrl": "https://techcrunch.com/2025/11/10/lovable-says-its-nearing-8-million-users-as-the-year-old-ai-coding-startup-eyes-more-corporate-employees/"
     },
     {
-      "date": "2025-11-21",
-      "title": "$200M ARR (one-year mark)",
+      "date": "2025-11-18",
+      "title": "$200M ARR (Slush stage announcement)",
       "type": "media",
-      "description": "Doubled from $100M in 4 months. Fortune profile lands on Lovable's first anniversary.",
-      "externalUrl": "https://fortune.com/2025/11/21/lovables-ceo-ai-vibe-coding-enterprise-ambitions-annual-revenue/"
+      "description": "Anton Osika announces $200M ARR from the Slush stage in Helsinki — doubled from $100M in four months. Bloomberg reports same-day; TechCrunch and Fortune profiles follow over the next 72 hours.",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2025-11-18/lovable-hits-200-million-arr-and-raising-funds-above-6-billion-valuation"
     },
     {
       "date": "2025-12-16",
@@ -240,7 +234,7 @@
       "title": "Series B $330M @ $6.6B",
       "type": "funding",
       "gtmTag": "Bundled milestone",
-      "description": "Co-led by CapitalG + Menlo (Anthology). Strategic checks from NVIDIA, Salesforce, Databricks, Atlassian, HubSpot.",
+      "description": "Co-led by CapitalG + Menlo (Anthology), with Khosla Ventures, DST Global, EQT Growth, T.Capital (Deutsche Telekom), and Kinship Ventures. Strategic checks from NVIDIA, Salesforce, Databricks, Atlassian, HubSpot.",
       "externalUrl": "https://techcrunch.com/2025/12/18/vibe-coding-startup-lovable-raises-330m-at-a-6-6b-valuation/"
     },
     {
@@ -263,17 +257,11 @@
       "externalUrl": "https://www.theregister.com/2026/02/27/lovable_app_vulnerabilities/"
     },
     {
-      "date": "2026-02-28",
-      "title": "$400M ARR ($100M in Feb)",
-      "type": "media",
-      "description": "+$100M in a single month with 146 employees ($2.77M ARR/employee). Bloomberg + TechCrunch report.",
-      "externalUrl": "https://www.bloomberg.com/news/articles/2026-03-12/vibe-coding-startup-lovable-hits-400-million-recurring-revenue"
-    },
-    {
       "date": "2026-03-11",
-      "title": "$400M ARR coverage cycle",
+      "title": "$400M ARR / +$100M in February",
       "type": "media",
-      "description": "TechCrunch + Bloomberg run the 'last piece of software' framing. Trillion-dollar firm narrative formalized.",
+      "gtmTag": "Bundled milestone",
+      "description": "Public disclosure: $400M ARR with 146 employees ($2.77M ARR/employee), $100M added in February alone. TechCrunch breaks Mar 11; Bloomberg follows Mar 12 with the 'last piece of software' framing.",
       "externalUrl": "https://techcrunch.com/2026/03/11/lovable-says-it-added-100m-in-revenue-last-month-alone-with-just-146-employees/"
     },
     {
@@ -285,9 +273,9 @@
     },
     {
       "date": "2026-04-20",
-      "title": "Mass data exposure controversy",
+      "title": "BOLA vulnerability disclosure",
       "type": "media",
-      "description": "Lovable calls exposed data 'intentional behaviour' — PR misstep amplifies the story. First real brand dent in the arc.",
+      "description": "Broader Broken Object Level Authorization (BOLA) vulnerability surfaces — researchers report chat histories and source code on public projects were accessible between Feb 3 and Apr 20, 2026. Lovable initially calls the exposed data 'intentional behaviour' before clarifying. Distinct from the Feb 27 single-EdTech-app story. The first real brand dent in the arc.",
       "externalUrl": "https://www.theregister.com/2026/04/20/lovable_denies_data_leak/"
     }
   ],
@@ -433,7 +421,7 @@
       "effort": "Punctuated by launches and incidents",
       "role": "Developer credibility validator",
       "description": "HN's developer audience can't be marketed to. gpt-engineer's front-page run in mid-2023 (when the GitHub repo crossed 40K stars) was the first serious external signal that the team had something. The Lovable v1 launch, the GitHub takedown incident, and the open-source release all hit the front page later — each one a chance to convert dev skepticism on substance.",
-      "catalyst": "gpt-engineer's mid-2023 HN front page run. The repo's 40K stars in 2 months gave Anton TAM proof and a ~27K-person waitlist before Lovable AB existed.",
+      "catalyst": "gpt-engineer's mid-2023 HN front page run. The repo's 40K stars in ~3 months (June 10 → September 2, 2023) gave Anton TAM proof and a ~27K-person waitlist before Lovable AB existed.",
       "catalystUrl": "https://news.ycombinator.com/item?id=42206666",
       "accountUrl": "https://hn.algolia.com/?q=lovable.dev",
       "accountLabel": "Search HN for Lovable",
