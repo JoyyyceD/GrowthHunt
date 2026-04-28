@@ -41,12 +41,26 @@ export interface CompanyMeta {
   founders: string[]
 }
 
+export interface Platform {
+  slug: string
+  name: string
+  score: number
+  bestStage: string
+  effort: string
+  role: string
+  description: string
+  catalyst: string
+  whenItWorks: string
+  whenItDoesnt: string
+}
+
 export interface Timeline {
   company: CompanyMeta
   phases: Phase[]
   events: TimelineEvent[]
   arr: DataPoint[]
   valuation: DataPoint[]
+  platforms?: Platform[]
 }
 
 export interface GrowthStoryMain {

@@ -8,6 +8,7 @@ import {
   getAllEventSlugs,
   getStory,
 } from '@/lib/growth-story'
+import { mdxComponents } from '@/lib/growth-story-mdx'
 
 interface Props {
   params: Promise<{ company: string; event: string }>
@@ -57,59 +58,12 @@ const TYPE_LABEL: Record<string, string> = {
   acquisition: 'M&A',
 }
 
-const mdxComponents = {
-  h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h2 style={{ fontFamily: 'var(--serif)', fontSize: 32, fontWeight: 400, letterSpacing: '-0.02em', lineHeight: 1.15, margin: '56px 0 16px' }} {...props} />
-  ),
-  h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h3 style={{ fontFamily: 'var(--serif)', fontSize: 22, fontWeight: 400, letterSpacing: '-0.01em', lineHeight: 1.2, margin: '32px 0 12px' }} {...props} />
-  ),
-  p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--ink-dim)', margin: '0 0 22px' }} {...props} />
-  ),
-  ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
-    <ul style={{ margin: '0 0 24px', paddingLeft: 24, display: 'flex', flexDirection: 'column', gap: 10 }} {...props} />
-  ),
-  ol: (props: React.HTMLAttributes<HTMLOListElement>) => (
-    <ol style={{ margin: '0 0 24px', paddingLeft: 24, display: 'flex', flexDirection: 'column', gap: 10 }} {...props} />
-  ),
-  li: (props: React.HTMLAttributes<HTMLLIElement>) => (
-    <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--ink-dim)' }} {...props} />
-  ),
-  strong: (props: React.HTMLAttributes<HTMLElement>) => (
-    <strong style={{ color: 'var(--ink)', fontWeight: 600 }} {...props} />
-  ),
-  blockquote: (props: React.HTMLAttributes<HTMLElement>) => (
-    <blockquote style={{ borderLeft: '3px solid var(--accent)', paddingLeft: 24, margin: '36px 0', fontFamily: 'var(--serif)', fontSize: 22, fontStyle: 'italic', color: 'var(--ink-dim)', lineHeight: 1.5 }} {...props} />
-  ),
-  table: (props: React.HTMLAttributes<HTMLTableElement>) => (
-    <div style={{ overflowX: 'auto', margin: '0 0 24px' }}>
-      <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14, fontFamily: 'var(--mono)' }} {...props} />
-    </div>
-  ),
-  th: (props: React.HTMLAttributes<HTMLTableCellElement>) => (
-    <th style={{ textAlign: 'left', padding: '10px 14px', borderBottom: '1px solid var(--rule-strong)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--ink)', background: 'var(--bg-card)' }} {...props} />
-  ),
-  td: (props: React.HTMLAttributes<HTMLTableCellElement>) => (
-    <td style={{ padding: '10px 14px', borderBottom: '1px solid var(--rule)', color: 'var(--ink-dim)' }} {...props} />
-  ),
-  code: (props: React.HTMLAttributes<HTMLElement>) => (
-    <code style={{ fontFamily: 'var(--mono)', fontSize: 13, background: 'var(--bg-card)', border: '1px solid var(--rule)', borderRadius: 4, padding: '2px 6px', color: 'var(--ink)' }} {...props} />
-  ),
-  hr: () => <hr style={{ border: 0, borderTop: '1px solid var(--rule)', margin: '48px 0' }} />,
-  a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-    <a style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: 3 }} {...props} />
-  ),
-}
-
 export default async function EventPage({ params }: Props) {
   const { company, event } = await params
   const article = getEventArticle(company, event)
   if (!article) notFound()
 
   const story = getStory(company)
-
-  // Find sibling deep-dive articles for "more deep dives" footer
   const siblings = story?.timeline.events.filter(e => e.articleSlug && e.articleSlug !== event) ?? []
 
   return (
@@ -131,12 +85,16 @@ export default async function EventPage({ params }: Props) {
       </nav>
 
       {/* Hero */}
-      <section style={{ padding: '64px 0 48px', borderBottom: '1px solid var(--rule)' }}>
-        <div className="shell" style={{ maxWidth: 800 }}>
-          <Link href={`/growth-story/${company}`} className="detail-back">
+      <section style={{ padding: '80px 0 56px', borderBottom: '1px solid var(--rule)' }}>
+        <div className="shell" style={{ maxWidth: 880 }}>
+          <Link
+            href={`/growth-story/${company}`}
+            className="detail-back"
+            style={{ marginBottom: 24, display: 'inline-flex' }}
+          >
             ← {story?.timeline.company.name ?? company} growth story
           </Link>
-          <div style={{ display: 'flex', gap: 8, marginBottom: 24, flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: 8, marginBottom: 28, flexWrap: 'wrap' }}>
             <span
               className="tag"
               style={{
@@ -153,16 +111,27 @@ export default async function EventPage({ params }: Props) {
           <h1
             style={{
               fontFamily: 'var(--serif)',
-              fontSize: 'clamp(36px, 5vw, 64px)',
-              lineHeight: 1.02,
-              letterSpacing: '-0.028em',
+              fontSize: 'clamp(40px, 5.5vw, 78px)',
+              lineHeight: 0.98,
+              letterSpacing: '-0.032em',
               fontWeight: 400,
-              margin: '0 0 24px',
+              margin: '0 0 28px',
             }}
           >
             {article.title}
           </h1>
-          <p style={{ fontSize: 19, color: 'var(--ink-dim)', lineHeight: 1.55, margin: 0, maxWidth: 660 }}>
+          <p
+            style={{
+              fontSize: 21,
+              color: 'var(--ink-dim)',
+              lineHeight: 1.5,
+              margin: 0,
+              maxWidth: 720,
+              fontFamily: 'var(--serif)',
+              fontStyle: 'italic',
+              letterSpacing: '-0.005em',
+            }}
+          >
             {article.description}
           </p>
           {article.externalUrl && (
@@ -173,28 +142,29 @@ export default async function EventPage({ params }: Props) {
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: 8,
-                marginTop: 28,
+                gap: 10,
+                marginTop: 32,
                 fontFamily: 'var(--mono)',
                 fontSize: 12,
                 color: 'var(--accent)',
                 textTransform: 'uppercase',
-                letterSpacing: '0.08em',
+                letterSpacing: '0.1em',
                 textDecoration: 'none',
-                padding: '8px 14px',
+                padding: '10px 18px',
                 border: '1px solid var(--accent-border)',
                 borderRadius: 999,
                 background: 'var(--accent-soft)',
+                fontWeight: 600,
               }}
             >
-              View original source ↗
+              Original source ↗
             </a>
           )}
         </div>
       </section>
 
       {/* Body */}
-      <section style={{ padding: '64px 0 80px' }}>
+      <section style={{ padding: '72px 0 88px' }}>
         <div className="shell" style={{ maxWidth: 720 }}>
           <MDXRemote source={article.content} components={mdxComponents} />
         </div>
@@ -202,19 +172,25 @@ export default async function EventPage({ params }: Props) {
 
       {/* Sibling deep dives */}
       {siblings.length > 0 && (
-        <section style={{ padding: '64px 0', borderTop: '1px solid var(--rule)', background: 'var(--bg-card)' }}>
+        <section
+          style={{
+            padding: '72px 0',
+            borderTop: '1px solid var(--rule)',
+            background: 'var(--bg-card)',
+          }}
+        >
           <div className="shell">
-            <div className="eyebrow" style={{ marginBottom: 12 }}>
+            <div className="eyebrow" style={{ marginBottom: 16 }}>
               <span className="dot" />
               More deep dives
             </div>
             <h2
               style={{
                 fontFamily: 'var(--serif)',
-                fontSize: 32,
+                fontSize: 36,
                 fontWeight: 400,
-                letterSpacing: '-0.022em',
-                margin: '0 0 28px',
+                letterSpacing: '-0.025em',
+                margin: '0 0 32px',
               }}
             >
               Other key moments
@@ -222,7 +198,7 @@ export default async function EventPage({ params }: Props) {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
                 gap: 1,
                 background: 'var(--rule)',
                 border: '1px solid var(--rule)',
@@ -235,7 +211,15 @@ export default async function EventPage({ params }: Props) {
                   className="blog-card"
                   style={{ textDecoration: 'none', display: 'block', background: 'var(--bg)' }}
                 >
-                  <article style={{ padding: '24px', minHeight: 160, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                  <article
+                    style={{
+                      padding: '28px',
+                      minHeight: 180,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: 12,
+                    }}
+                  >
                     <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
                       <span
                         className="tag"
@@ -252,9 +236,9 @@ export default async function EventPage({ params }: Props) {
                     <h3
                       style={{
                         fontFamily: 'var(--serif)',
-                        fontSize: 20,
+                        fontSize: 22,
                         lineHeight: 1.2,
-                        letterSpacing: '-0.018em',
+                        letterSpacing: '-0.02em',
                         fontWeight: 400,
                         margin: 0,
                         flex: 1,
@@ -268,9 +252,10 @@ export default async function EventPage({ params }: Props) {
                         fontSize: 11,
                         color: 'var(--ink-faint)',
                         textTransform: 'uppercase',
-                        letterSpacing: '0.08em',
+                        letterSpacing: '0.1em',
                         display: 'flex',
                         justifyContent: 'space-between',
+                        marginTop: 'auto',
                       }}
                     >
                       <span>{e.date}</span>
@@ -285,9 +270,22 @@ export default async function EventPage({ params }: Props) {
       )}
 
       {/* Footer */}
-      <footer style={{ borderTop: '1px solid var(--rule)', padding: '24px 0', background: 'var(--bg-card)' }}>
-        <div className="shell" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Link href={`/growth-story/${company}`} className="detail-back" style={{ marginBottom: 0 }}>
+      <footer
+        style={{
+          borderTop: '1px solid var(--rule)',
+          padding: '32px 0',
+          background: 'var(--bg-card)',
+        }}
+      >
+        <div
+          className="shell"
+          style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+        >
+          <Link
+            href={`/growth-story/${company}`}
+            className="detail-back"
+            style={{ marginBottom: 0 }}
+          >
             ← {story?.timeline.company.name ?? company} growth story
           </Link>
           <span className="eyebrow">© 2026 GrowthHunt Labs</span>

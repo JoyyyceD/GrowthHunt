@@ -7,49 +7,68 @@ gtmTag: "Fork, not plugin"
 eventTitle: "Cursor v0 launch"
 ---
 
-## What happened
+<Catalyst>
+The four founders shipped a new desktop app — not a VS Code extension — when the obvious move was to ride GitHub Copilot's plugin model. Every later "killer feature" required exactly that full-stack control.
+</Catalyst>
 
-In March 2023, Anysphere shipped the first public version of Cursor. It wasn't a VS Code extension. It was a **complete fork** — a separate desktop application you had to download and install.
+In March 2023, Anysphere shipped the first public version of Cursor. Not a plugin. A complete fork of VS Code, distributed as a separate desktop app.
 
-That was a counterintuitive call. GitHub Copilot had become *the* AI-coding brand by mid-2022, and the plugin model has the lowest distribution friction by far. Forking an IDE meant: users have to install a new app, lose VS Code's auto-update flow, re-authenticate the entire team toolchain, and so on.
+That was a counterintuitive call. Copilot had already become *the* AI-coding brand by mid-2022, and the plugin model has the lowest distribution friction by far. Forking an IDE meant: users install a new app, lose VS Code's auto-update flow, re-authenticate the toolchain.
 
 Cursor took the heavy path anyway.
 
-## Why fork beats plugin (structurally)
+## What plugin architecture caps
 
-Plugin architectures have a low ceiling. Copilot's early experience exposed three structural limits:
+Plugins inherit three structural ceilings. They were visible in Copilot's early experience.
 
-1. **Constrained context window.** As a plugin, Copilot only sees what the host IDE's APIs surface — no full-codebase semantic understanding.
-2. **UI gated by the host.** Want a chat panel? Copilot couldn't really build one in early VS Code, because the extension API didn't allow it.
-3. **Capability dependent on IDE upgrades.** If Microsoft doesn't open a particular API, you can't build the corresponding feature.
+**Constrained context.** As a plugin, Copilot saw only what the host IDE's APIs surfaced. No full-codebase semantic understanding.
 
-Once you've forked, none of those constraints apply. The whole editor is yours. You can rewrite the command system, redesign the keymap, embed AI at the cursor (not in a side panel), control the indexing engine, and eventually ship your own model.
+**UI gated by the host.** Want a chat panel? Copilot couldn't really build one in early VS Code, because the extension API didn't allow it.
 
-Every later "killer feature" — **Tab autocomplete (Copilot++), Composer multi-file editing, Agent mode, the in-house Composer model** — required this full-stack control. Plugin-based competitors like Tabnine and Codeium ended up structurally capped: they could only innovate inside whatever boundary the host IDE allowed.
+**Capability dependent on IDE upgrades.** If Microsoft doesn't open an API, the plugin can't build the corresponding feature. The roadmap is rented, not owned.
 
-## Counterintuitive: harder distribution can be the advantage
+Once you fork, none of those constraints apply. The whole editor is yours — command system, keymap, AI surface, indexing engine, and eventually your own model.
 
-The naive analysis is "forks have higher friction = higher CAC." But dev-tool distribution dynamics flip the script:
+## What full-stack control bought, in retrospect
 
-- **Installing a new IDE is a "commitment" act** — 10× heavier than installing a plugin. Once made, retention is much higher. Devs don't switch IDEs weekly. They might install and uninstall five plugins in a week.
-- **Deeper mental real estate.** "I use Cursor" is identity; "I have a Cursor plugin in VS Code" is just a tool in a list.
-- **Massively higher brand visibility.** Every demo, screenshot, and screen-share from a Cursor user shows the *Cursor* window. A plugin user shows VS Code with a small icon.
+Every later "killer feature" required this control.
 
-These are **compounding GTM variables**. Each Cursor user produces an order of magnitude more "seen by colleagues" surface than a plugin user does.
+- **Cursor Tab autocomplete (Copilot++)** — embedded at the cursor position, used host-IDE-impossible UI tricks
+- **Composer multi-file editing** — needed control of the workspace state model
+- **Agent mode** — needed terminal/browser/file-system orchestration
+- **In-house Composer model** — needed the full inference path, not vendor hooks
+
+Plugin-based competitors — Tabnine, Codeium, GitHub Copilot itself — got structurally capped. They could only innovate inside whatever boundary the host IDE allowed. By 2025, the gap was unrecoverable.
+
+## The counter-intuitive distribution dynamics
+
+The naive read is "forks have higher friction = higher CAC." Dev-tool dynamics flip the script.
+
+**Installing a new IDE is a commitment act.** Ten times heavier than installing a plugin. Once made, retention is much higher. Devs don't switch IDEs weekly — they might install and uninstall five plugins in a week.
+
+**Deeper mental real estate.** "I use Cursor" is identity. "I have a Cursor plugin in VS Code" is a tool in a list.
+
+**Higher brand visibility.** Every demo, screenshot, and screen-share from a Cursor user shows the *Cursor* window — not VS Code with a small icon.
+
+These compound. Each Cursor user produces an order of magnitude more "seen by colleagues" surface than a plugin user does.
 
 ## What the launch did right
 
-A few details on the launch itself:
+Three details that made the heavy choice survivable.
 
-- **Preserved VS Code keybindings, themes, and ~90% extension compatibility.** Switching cost from VS Code → Cursor was effectively zero.
-- **AI-first, not AI-plus.** Not "VS Code with AI features" — instead, the UI was reorganized around AI as a first-class citizen.
-- **Codebase-level indexing on day one.** Solved a problem plugins can never solve cleanly — actually understanding the whole codebase.
+**Preserved VS Code keybindings, themes, and ~90% extension compatibility.** Switching cost from VS Code → Cursor was effectively zero. The fork was heavy for Cursor to build, but light for users to adopt.
 
-## Reusable lessons
+**AI-first, not AI-plus.** Not "VS Code with AI features." The UI was reorganized around AI as a first-class citizen.
 
-- **When the de facto standard in a category is "an attachment to some platform," picking "independent product" can be a structural win** — but only if your category's core value requires full-stack control.
-- **Distribution friction is also a filter.** Higher initial friction screens out tire-kickers. The users who do install have real pain to solve.
-- **Compatibility-as-decompression.** Cursor chose VS Code fork rather than "build an editor from scratch" — standing on a giant's shoulders made the cold start possible.
+**Codebase-level indexing on day one.** Solved a problem plugins can never solve cleanly — actually understanding the whole codebase.
+
+<Conclusion title="What to copy">
+
+- **When the de facto standard in a category is "an attachment to some platform," picking "independent product" can be the structural win** — but only if your category's core value requires full-stack control. Don't fork for ego. Fork because the roadmap demands it.
+- **Distribution friction is a filter, not a tax.** Higher initial friction screens out tire-kickers. The users who do install have real pain. Treat conversion-optimization as secondary to user-quality.
+- **Compatibility is decompression.** Cursor chose VS Code fork rather than building an editor from scratch. Standing on a giant's shoulders made the cold start possible. If you're going to take the harder path, take it where there's a viable on-ramp.
+
+</Conclusion>
 
 ## Sources
 

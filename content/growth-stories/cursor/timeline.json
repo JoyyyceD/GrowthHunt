@@ -189,5 +189,79 @@
     {"date": "2025-06-05", "value": 9900000000, "round": "Series C", "source": "TechCrunch", "confidence": "official"},
     {"date": "2025-11-13", "value": 29300000000, "round": "Series D", "source": "CNBC", "confidence": "official"},
     {"date": "2026-04-21", "value": 55000000000, "round": "xAI option", "source": "Fortune", "confidence": "media"}
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 5,
+      "bestStage": "All stages — load-bearing",
+      "effort": "Always-on",
+      "role": "The bloodstream of dev-twitter",
+      "description": "Where the dev community's attention actually lives. Cursor's founders kept their accounts active and in-character from 2022 through 2026 — a non-negotiable for the entire arc.",
+      "catalyst": "Karpathy's 'vibe coding' tweet (Feb 6, 2025) — 4.5M views. Karpathy named Cursor Composer + Sonnet specifically. Cursor became the de facto referent for the new paradigm.",
+      "whenItWorks": "When founders can post in real voice — product updates, mini-demos, technical takes — for 18+ months before anyone is watching",
+      "whenItDoesnt": "If the team treats X as a corporate megaphone. Nothing kills dev-twitter credibility faster than press-release tone"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 5,
+      "bestStage": "Pre-inflection",
+      "effort": "Episodic, very high per ep",
+      "role": "The crossover catalyst",
+      "description": "Where dev-twitter doesn't reach. Long-form video forces depth, which converts dev credibility into investor and exec credibility — the exact audiences who set Series B+ valuations.",
+      "catalyst": "Lex Fridman #447 (Oct 6, 2024) — 2 hours 38 minutes with all four founders. Series B valuation 6.5×'d in the four months that followed.",
+      "whenItWorks": "When founders have technical depth that survives 2.5 hours of expert questioning, AND the product has architectural decisions worth talking about",
+      "whenItDoesnt": "Don't go on long-form podcasts to talk about a thin product. The format will exposes the gaps"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 4,
+      "bestStage": "Latent + Product Polish",
+      "effort": "Punctuated by product launches",
+      "role": "Technical credibility validator",
+      "description": "HN's audience can't be fooled by marketing. Front-page placement on Cursor v0, Cursor Tab, Composer, and 2.0 functioned as 'serious devs are paying attention' proof — visible to investors and competing engineers alike.",
+      "catalyst": "Cursor 2.0 launch (Oct 29, 2025) — front page, hundreds of comments. Two weeks later: $29.3B Series D. The HN signal was upstream of the valuation conversation.",
+      "whenItWorks": "When your launch has genuine technical novelty — multi-file editing, in-house model, agentic flows. The HN crowd rewards substance",
+      "whenItDoesnt": "Don't post incremental updates. HN punishes 'we shipped a small feature' framing"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 3,
+      "bestStage": "Hypergrowth + ongoing",
+      "effort": "Community-led, low company touch",
+      "role": "The user retention layer",
+      "description": "Less an acquisition channel, more the place where existing users stick. r/cursor and r/programming threads compound the 'this is what serious devs are using' social proof for newcomers Googling reviews.",
+      "catalyst": "No single moment. Slow-burn community emergence through 2024–2025. By the time Cursor hit 1M DAU, r/cursor existed as the de facto support and advocacy hub.",
+      "whenItWorks": "When you have a critical-mass user base willing to evangelize. Don't seed; let it emerge",
+      "whenItDoesnt": "If you try to astroturf, the community detects it within days. Reddit is 100% community-trust dependent"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 2,
+      "bestStage": "Hypergrowth (enterprise expansion only)",
+      "effort": "Funding announcements + hiring posts",
+      "role": "Enterprise signal-checking",
+      "description": "Mostly inert until the enterprise sales motion exists. Used by enterprise buyers to verify 'is this company real?' before scheduling a procurement call. Funding announcement amplifier — never the source.",
+      "catalyst": "Series C / D announcements re-shared by execs and VCs. Each cycle shifted the perceived legitimacy ceiling for enterprise buyers.",
+      "whenItWorks": "When you're already known and need to confirm legitimacy at the buying-committee level",
+      "whenItDoesnt": "As an acquisition channel for product-led growth in dev tools — near zero ROI. Don't waste effort"
+    },
+    {
+      "slug": "instagram",
+      "name": "Instagram",
+      "score": 1,
+      "bestStage": "Not applicable",
+      "effort": "Zero — and it's the right number",
+      "role": "Negative example",
+      "description": "Cursor never built an Instagram presence. The audience-product fit is wrong: IG users aren't shopping for AI dev tools, and dev tool content doesn't perform on IG's visual-first format.",
+      "catalyst": "Useful as the counter-example — proof that 'be on every platform' is wrong. Cursor's selectivity here is part of the discipline that produced the rest of the playbook.",
+      "whenItWorks": "For consumer-facing or creator-tool products with strong visual demos. Lovable, Cluely could justify it. Cursor cannot",
+      "whenItDoesnt": "B2B dev tools. Skip it without guilt"
+    }
   ]
 }
