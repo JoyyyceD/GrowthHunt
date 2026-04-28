@@ -59,10 +59,8 @@ export default function BlogIndex() {
           ) : (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: 1, background: 'var(--rule)', border: '1px solid var(--rule)' }}>
               {posts.map(post => (
-                <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none', display: 'block' }}>
-                  <article style={{ background: 'var(--bg)', padding: '36px', minHeight: 240, display: 'flex', flexDirection: 'column', gap: 16, transition: 'background 0.15s' }}
-                    onMouseEnter={e => (e.currentTarget.style.background = 'var(--bg-elev)')}
-                    onMouseLeave={e => (e.currentTarget.style.background = 'var(--bg)')}>
+                <Link key={post.slug} href={`/blog/${post.slug}`} className="blog-card" style={{ textDecoration: 'none', display: 'block' }}>
+                  <article style={{ padding: '36px', minHeight: 240, display: 'flex', flexDirection: 'column', gap: 16 }}>
                     <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                       {post.module && (
                         <span className="tag" style={{ color: MODULE_COLORS[post.module] ?? 'var(--ink-dim)', borderColor: 'transparent', background: 'var(--bg-card)' }}>

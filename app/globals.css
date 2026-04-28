@@ -682,3 +682,6 @@ footer.bottom .copyright {
   nav.top ul { display: none; }
   .eco-grid { grid-template-columns: 1fr; }
 }
+
+.blog-card { background: var(--bg); transition: background 0.15s; }
+.blog-card:hover { background: var(--bg-elev); }
