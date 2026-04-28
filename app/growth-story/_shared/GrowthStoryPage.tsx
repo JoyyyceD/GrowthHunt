@@ -267,7 +267,7 @@ export default async function GrowthStoryPage({ company, locale }: Props) {
       )}
 
       {/* Gate: sections 03 and 04 */}
-      <GatedContent>
+      <GatedContent locale={locale}>
         {/* 03 — Synthesis */}
         <section style={{ padding: '88px 0 64px', borderBottom: '1px solid var(--rule)' }}>
           <div className="shell">

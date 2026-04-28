@@ -22,10 +22,42 @@ import { readSoftUserEmail } from '@/lib/soft-auth'
  *
  * https://developers.google.com/search/docs/specialty/ecommerce/paywalled-content
  */
-export function GatedContent({ children }: { children: React.ReactNode }) {
+type Locale = 'en' | 'zh'
+
+const COPY: Record<Locale, {
+  eyebrow: string
+  titleA: string
+  titleAccent: string
+  titleB: string
+  body: string
+  cta: string
+  footnote: string
+}> = {
+  en: {
+    eyebrow: 'Free to read',
+    titleA: 'Keep reading the ',
+    titleAccent: 'full breakdown',
+    titleB: '.',
+    body: 'The synthesis and every deep dive below are free — just leave your email to keep reading. No password, no payment.',
+    cta: 'Continue reading (free) →',
+    footnote: 'No spam · One-click sign-in · 100% free',
+  },
+  zh: {
+    eyebrow: '免费阅读',
+    titleA: '继续阅读这份',
+    titleAccent: '完整拆解',
+    titleB: '。',
+    body: '下方的综合分析和每一篇深度拆解都对登录读者免费开放——无需密码、无需付费，留下邮箱即可继续阅读。',
+    cta: '继续阅读（免费）→',
+    footnote: '无垃圾邮件 · 一键登录 · 100% 免费',
+  },
+}
+
+export function GatedContent({ children, locale = 'en' }: { children: React.ReactNode; locale?: Locale }) {
   const pathname = usePathname()
   // null = still loading; true = authed; false = needs gate
   const [authed, setAuthed] = useState<boolean | null>(null)
+  const t = COPY[locale]
 
   useEffect(() => {
     // Soft auth (cookie-backed) is the cheapest check
@@ -94,7 +126,7 @@ export function GatedContent({ children }: { children: React.ReactNode }) {
           style={{ marginBottom: 16, justifyContent: 'center', display: 'inline-flex' }}
         >
           <span className="dot" />
-          Founder reading
+          {t.eyebrow}
         </div>
         <h3
           style={{
@@ -106,7 +138,9 @@ export function GatedContent({ children }: { children: React.ReactNode }) {
             margin: '0 0 14px',
           }}
         >
-          Keep reading the <em style={{ fontStyle: 'italic', color: 'var(--accent)' }}>full breakdown</em>.
+          {t.titleA}
+          <em style={{ fontStyle: 'italic', color: 'var(--accent)' }}>{t.titleAccent}</em>
+          {t.titleB}
         </h3>
         <p
           style={{
@@ -114,12 +148,12 @@ export function GatedContent({ children }: { children: React.ReactNode }) {
             color: 'var(--ink-dim)',
             lineHeight: 1.6,
             margin: '0 0 24px',
-            maxWidth: 420,
+            maxWidth: 460,
             marginLeft: 'auto',
             marginRight: 'auto',
           }}
         >
-          The synthesis and every deep dive below are for signed-in readers. No password needed — just leave your email.
+          {t.body}
         </p>
         <Link
           href={`/login?next=${encodeURIComponent(pathname || '/')}`}
@@ -137,7 +171,7 @@ export function GatedContent({ children }: { children: React.ReactNode }) {
             textDecoration: 'none',
           }}
         >
-          Continue reading →
+          {t.cta}
         </Link>
         <p
           style={{
@@ -149,7 +183,7 @@ export function GatedContent({ children }: { children: React.ReactNode }) {
             letterSpacing: '0.08em',
           }}
         >
-          No spam · One-click sign-in · Free
+          {t.footnote}
         </p>
       </div>
     </div>
