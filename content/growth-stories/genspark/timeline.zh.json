@@ -1,0 +1,394 @@
+{
+  "company": {
+    "slug": "genspark",
+    "name": "Genspark",
+    "legalName": "MainFunc, Inc.",
+    "tagline": "两次产品发布、一次果断转型，11 个月 ARR 破 $2 亿",
+    "summary": "Genspark 颠覆了 SaaS 的标准发布曲线，没有潜伏期——第 0 天就是 $60M 的预营收种子轮和 TechCrunch 头条，整个发布机器围绕着创始人 Eric Jing 的声誉精心设计，他是前百度副总裁和小度 CEO，有深厚的中国 AI 根基（微软小冰早期技术工作、Bing 亚洲搜索创始工程师）。公司以 AI 搜索引擎身份运营了九个月，然后在 2025 年 4 月公开放弃 500 万 Sparkpages 用户，在 Manus 病毒式浪潮的三周之后发布了 Super Agent。九天后 ARR 突破 $1000 万——AI 产品史上最快的纪录。",
+    "founded": "2023-12",
+    "founders": [
+      "Eric Jing",
+      "Kay Zhu",
+      "Wen Sang"
+    ],
+    "seriesNumber": 3
+  },
+  "phases": [
+    {
+      "start": "2023-12",
+      "end": "2024-06",
+      "name": "第 0 天 PR 发布",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2024-06",
+      "end": "2025-04",
+      "name": "Sparkpages 时代",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2025-04",
+      "end": "2025-11",
+      "name": "Super Agent 转型",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2025-11",
+      "end": "2026-06",
+      "name": "超高速增长",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2023-12-01",
+      "title": "MainFunc Inc 成立",
+      "type": "product",
+      "description": "Eric Jing（前百度副总裁、小度 CEO、微软小冰早期技术负责人，2006 年起担任 Bing 亚洲工程师）与 Kay Zhu（前小度 CTO，前谷歌搜索排名工程师）在帕洛阿尔托注册成立 MainFunc, Inc.。桑文锋（MIT 博士、Smarking 创始人、YC 校友）以 COO 身份加入。"
+    },
+    {
+      "date": "2024-06-18",
+      "title": "第 1 天：种子轮 $60M + Sparkpages 发布",
+      "type": "funding",
+      "gtmTag": "第 0 天叙事飞轮",
+      "description": "预营收 $60M 种子轮，投后估值 $2.6 亿，Lanchi Ventures 领投。Genspark 和 Sparkpages 产品同日发布。TechCrunch 和 SiliconANGLE 同步报道——融资、产品和创始人背书作为单一叙事事件一起引爆。",
+      "externalUrl": "https://techcrunch.com/2024/06/18/genspark-is-the-latest-attempt-at-an-ai-powered-search-engine/",
+      "articleSlug": "2024-06-launch"
+    },
+    {
+      "date": "2024-09-15",
+      "title": "Autopilot Agent 上线",
+      "type": "product",
+      "description": "异步多步骤研究 Agent——Genspark 的第一款 Agent 产品，定位为「更智能的 Sparkpage」。回头来看这次发布是重要的先行指标：在公开转型的六个月前，团队就已经在内部打磨 Agent 方向了。"
+    },
+    {
+      "date": "2024-12-01",
+      "title": "累计用户超过 500 万",
+      "type": "media",
+      "description": "Sparkpages 的注册用户在 AI 搜索叙事下突破 500 万。免费产品，公开记录中几乎没有商业化信号。这个分母，后来被主动放弃了。"
+    },
+    {
+      "date": "2025-02-21",
+      "title": "A 轮 $1 亿 / 估值 $5.3 亿",
+      "type": "funding",
+      "description": "SiliconANGLE 率先披露 A 轮——$1 亿，投后估值 $5.3 亿。八个月内估值跳升 5.3 倍，营收基础依然很薄。AI 搜索叙事在转型发生的几周前正处于信用高点。",
+      "externalUrl": "https://siliconangle.com/2025/02/21/ai-search-engine-startup-genspark-reportedly-raises-100m-530m-valuation/"
+    },
+    {
+      "date": "2025-04-02",
+      "title": "Super Agent 发布",
+      "type": "product",
+      "gtmTag": "比较式转型",
+      "description": "Mixture-of-Agents 架构：8–9 个 LLM、80+ 工具、10+ 专有数据集。GAIA 基准测试报告 87.8%（Manus 为 86%）。杀手级演示：AI Call For Me——Agent 拨打真实电话。在 Manus 病毒式浪潮的三周之后，Genspark 带着那个缺失功能发布了同类产品。",
+      "externalUrl": "https://venturebeat.com/ai/gensparks-super-agent-ups-the-ante-in-the-general-ai-agent-race",
+      "articleSlug": "2025-04-super-agent"
+    },
+    {
+      "date": "2025-04-04",
+      "title": "VentureBeat：「加码」定性",
+      "type": "media",
+      "description": "VentureBeat 发出深度报道，将 Super Agent 定位为 Manus 的「西方对手」。这个框架才是真正的胜利：此后所有报道都把 Genspark 和 Manus 当作同一个故事的两章来写。",
+      "externalUrl": "https://venturebeat.com/ai/gensparks-super-agent-ups-the-ante-in-the-general-ai-agent-race"
+    },
+    {
+      "date": "2025-04-11",
+      "title": "9 天达到 $1000 万 ARR",
+      "type": "media",
+      "gtmTag": "主动截浪",
+      "description": "发布九天后，Super Agent ARR 突破 $1000 万——有记录以来最快的 AI 产品。这个数字本身成为下一个叙事节拍。",
+      "externalUrl": "https://aisecret.us/record-breaking-launch-genspark-super-agent-reaches-10-million-arr-faster-than-any-ai-product/",
+      "articleSlug": "2025-04-manus-wave"
+    },
+    {
+      "date": "2025-04-15",
+      "title": "日本「用 AI 辞职」病毒式传播",
+      "type": "media",
+      "gtmTag": "受众边界突破",
+      "description": "日本用户用「AI Call For Me」打电话递交辞呈。截图和音频在 X 和 YouTube 的日本科技圈传播。数月内日本成为 Genspark 的第一大付费市场。"
+    },
+    {
+      "date": "2025-04-22",
+      "title": "AI Slides 上线",
+      "type": "product",
+      "description": "文档/PDF 一键转演示文稿，内置研究功能。快速迭代「工作空间原语」发布节奏的第一棒——将新的 Agent 动作持续叠加到 Super Agent 基础上。"
+    },
+    {
+      "date": "2025-05-08",
+      "title": "AI Sheets 上线",
+      "type": "product",
+      "description": "一句话生成电子表格。一个月内的第二个工作空间原语。"
+    },
+    {
+      "date": "2025-05-17",
+      "title": "$3600 万 ARR / 200 万用户 / 20 人团队",
+      "type": "media",
+      "gtmTag": "叙事飞轮",
+      "description": "Super Agent 发布后 45 天：$3600 万 ARR、200 万以上用户、20 人团队。「20 人，45 天，$3600 万 ARR」这个数字三连，成为桑文锋在 DealMakers、ProductLed、Founders Coho 和 Evolving Edge 各档播客中的标准开场白。"
+    },
+    {
+      "date": "2025-09-01",
+      "title": "$5000 万 ARR / 企业定价",
+      "type": "media",
+      "description": "五个月后：$5000 万 ARR。企业版按 $30/席位/月 推出，为 AI Workspace 的推进播下种子。"
+    },
+    {
+      "date": "2025-09-12",
+      "title": "Genspark AI Browser",
+      "type": "product",
+      "description": "配备 169 个设备端开源模型的原生浏览器——完全本地隐私。在 Product Hunt 登顶第 9 位。充当重新定位的演示道具：Genspark 不再只是一个对话界面。"
+    },
+    {
+      "date": "2025-11-11",
+      "title": "Bloomberg：独角兽 + LG/SBI",
+      "type": "media",
+      "description": "Bloomberg 提前九天率先披露独角兽消息。LG Technology Ventures 和 SBI Investment 加入 B 轮——韩国和日本战略资本押注一家美国总部、华人创始人的公司。",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2025-11-11/genspark-becomes-newest-ai-unicorn-after-winning-lg-sbi-funding"
+    },
+    {
+      "date": "2025-11-20",
+      "title": "B 轮 $2.75 亿 + AI Workspace + 微软",
+      "type": "funding",
+      "gtmTag": "里程碑捆绑",
+      "description": "三个公告，同一天。B 轮 $2.75 亿，估值 $12.5 亿（Emergence Capital 领投）。AI Workspace 发布。微软 Agent 365 将 Genspark 命名为发布合作伙伴。整个弧线中媒体密度最高的一天。",
+      "externalUrl": "https://www.businesswire.com/news/home/20251120036880/en/Genspark-Raises-$275M-Series-B-Launches-AI-Workspace-to-Put-Busywork-on-Autopilot",
+      "articleSlug": "2025-11-triple-launch"
+    },
+    {
+      "date": "2025-11-18",
+      "title": "微软 Agent 365 发布合作伙伴",
+      "type": "media",
+      "description": "Genspark 在微软 Ignite 大会上集成进微软 365（Outlook、Teams），恰好是微软 Agent 365 平台发布当天。Genspark 自身的 B 轮公告在两天后（11 月 20 日）再度放大了这次合作。",
+      "externalUrl": "https://news.microsoft.com/source/asia/features/with-microsoft-agent-365-one-startup-furthers-goal-of-making-ai-agents-more-intuitive/"
+    },
+    {
+      "date": "2025-11-25",
+      "title": "Sparkpages 正式退场",
+      "type": "product",
+      "gtmTag": "公开转型",
+      "description": "Genspark 公开将旧 Sparkpages 界面重定向至 Workspace 体验。原始产品上的 500 万注册用户被公开注销——大多数公司会悄悄隐藏转型；Genspark 把它做成了故事。",
+      "articleSlug": "2025-11-public-pivot"
+    },
+    {
+      "date": "2026-01-28",
+      "title": "B 轮增资至 $3 亿 / $1 亿 ARR",
+      "type": "funding",
+      "description": "现有投资人将 B 轮追加 $2500 万至 $3 亿。AI Workspace 2.0 同日发布。BusinessWire 标题：「9 个月突破 $1 亿 ARR」，服务企业客户 1,000 家以上。",
+      "externalUrl": "https://www.businesswire.com/news/home/20260128322682/en/Genspark-Launches-AI-Workspace-2.0-as-It-Crosses-$100M-ARR-and-Tops-off-$300M-Series-B"
+    },
+    {
+      "date": "2026-01-28",
+      "title": "AI Workspace 2.0",
+      "type": "product",
+      "description": "与增资同日发布的产品更新。新闻稿引用了 1,000 家以上企业客户——AI Workspace 叙事与融资事件形成复合效应。"
+    },
+    {
+      "date": "2026-03-12",
+      "title": "B 轮增资 $3.85 亿 / 估值 $16 亿 + AI Workspace 3.0 + Claw 亮相",
+      "type": "funding",
+      "gtmTag": "地理套利式资本结构",
+      "description": "捆绑公告：B 轮总额增至 $3.85 亿，估值 $16 亿（Mirae Asset、HartBeat、Markham Valley、本田圭佑加入）。AI Workspace 3.0 与 Genspark Claw——公司第一个「AI 员工」——同日发布。同日披露年化营收超过 $2 亿。累计披露融资额突破 $5.45 亿。",
+      "externalUrl": "https://www.businesswire.com/news/home/20260312641003/",
+      "articleSlug": "2026-04-three-region"
+    },
+    {
+      "date": "2026-03-12",
+      "title": "年化营收超过 $2 亿",
+      "type": "media",
+      "description": "Super Agent 发布后十一个月。与 $3.85 亿收关同日披露——融资与营收里程碑再度捆绑。"
+    },
+    {
+      "date": "2026-04-08",
+      "title": "AI Workspace 4.0 + Claw 桌面版 / Office 集成",
+      "type": "product",
+      "description": "Workspace 4.0，Genspark Claw 桌面版，以及微软 Office 原生集成。企业就绪信号——在 Workspace 3.0 + Claw 亮相四周后，将 Claw 从网页端延伸至本地文件。",
+      "externalUrl": "https://www.businesswire.com/news/home/20260408517611/"
+    },
+    {
+      "date": "2025-04-02",
+      "title": "Eric Jing 重返 X",
+      "type": "media",
+      "gtmTag": "借来的创始人权威",
+      "description": "Eric Jing 的 @ericjing_ai 账号自 2023 年 11 月起处于休眠状态，在 Super Agent 发布前后重新激活。「Seeing AGI」系列文章开始更新。创始人 IP 在第二个产品需要一张面孔时，被精准激活。",
+      "externalUrl": "https://x.com/ericjing_ai",
+      "articleSlug": "2024-06-eric-jing"
+    },
+    {
+      "date": "2025-05-20",
+      "title": "OpenAI 发布案例研究",
+      "type": "media",
+      "description": "OpenAI 发布 Genspark 使用 GPT-4.1 和 Realtime API 的官方案例研究。「供应商即背书者」：当你的模型提供商替你写营销材料的时候。",
+      "externalUrl": "https://openai.com/index/genspark/"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2025-04-11",
+      "value": 10000000,
+      "source": "AISecret",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-05-02",
+      "value": 22000000,
+      "source": "VentureBeat",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-05-17",
+      "value": 36000000,
+      "source": "AIBase / 桑文锋",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-09-01",
+      "value": 50000000,
+      "source": "Microsoft Source Asia",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-12-15",
+      "value": 85000000,
+      "source": "Sacra 估算",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2026-01-28",
+      "value": 100000000,
+      "source": "BusinessWire",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-03-12",
+      "value": 200000000,
+      "source": "BusinessWire / 公司",
+      "confidence": "official"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2024-06-18",
+      "value": 260000000,
+      "round": "种子轮",
+      "source": "TechCrunch",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-02-21",
+      "value": 530000000,
+      "round": "A 轮",
+      "source": "SiliconANGLE",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-11-20",
+      "value": 1250000000,
+      "round": "B 轮",
+      "source": "BusinessWire",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-01-28",
+      "value": 1400000000,
+      "round": "B 轮+",
+      "source": "BusinessWire",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2026-03-12",
+      "value": 1600000000,
+      "round": "B 轮++",
+      "source": "BusinessWire",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X（Twitter）",
+      "score": 4,
+      "bestStage": "转型 + 超高速增长期",
+      "effort": "持续运营，创始人驱动",
+      "role": "转型放大器",
+      "description": "X 是 Super Agent 与 Manus 对比叙事的主战场。@genspark_ai 的发布推文在三周内获得 317K+ 浏览；@ericjing_ai 账号自 2023 年底起休眠，在 Agent 叙事需要一张创始人面孔时精准复活。桑文锋（@sang_wen）承担了长篇话语输出的重担。",
+      "catalyst": "2025 年 4 月 2 日——@genspark_ai 的 Super Agent 主题帖与 VentureBeat 报道交叉传播，引发了整个四月份延续的「Genspark vs Manus」创作者演示浪潮。",
+      "catalystUrl": "https://x.com/genspark_ai/status/1907460298916921372",
+      "accountUrl": "https://x.com/genspark_ai",
+      "accountLabel": "@genspark_ai on X",
+      "whenItWorks": "当你有一个竞品领头者缺失的、可演示的功能时——那种能让创作者在 60 秒内录出「等等，这也能做？」反应的功能",
+      "whenItDoesnt": "当创始人不以自己的声音发帖时。Genspark 的关键动作是在转型时重新激活 Eric Jing 的 X 账号——没有这一点，公司账号只是在自言自语"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 4,
+      "bestStage": "转型阶段",
+      "effort": "创作者驱动，以第三方为主",
+      "role": "对比演示主战场",
+      "description": "Genspark 在 YouTube 上的增长几乎完全是自然流量——Julian Goldie、AI 评测频道和日本科技 YouTuber 在发布后数周内剪出了一批「Genspark vs Manus」对比演示。官方 Genspark 频道存在，但是配角；创作者演示视频才是核心资产。",
+      "catalyst": "2025 年 4 月中旬——第三方「免费 Manus 替代品」演示视频开始达到每个 10 万以上的播放量。「AI Call For Me」打电话的场景，成为那个时代最具标志性的截图。",
+      "catalystUrl": "https://www.youtube.com/watch?v=GbP9AEKyLwY",
+      "accountUrl": "https://www.youtube.com/@GensparkProduct",
+      "accountLabel": "Genspark on YouTube",
+      "whenItWorks": "当单个用户任务的「前后对比」足够戏剧化，创作者能在两分钟内展示出来时——打电话、生成幻灯片、浏览器自动化",
+      "whenItDoesnt": "对于抽象的企业产品。YouTube 奖励可见的演示；如果魔法是不可见的（工作流、留存），这种格式就会失效"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 2,
+      "bestStage": "各阶段均有——但转化率偏低",
+      "effort": "随发布节点爆发",
+      "role": "怀疑式验证者（而非催化剂）",
+      "description": "HN 在结构上对 Genspark 比对大多数开发工具发布更冷淡。关于 Sparkpages、Super Agent 和 AI Workspace 的帖子都有出现，但评论量偏低，「薄层封装」的质疑反复出现。Genspark 的增长不是通过 HN 实现的——而是绕过了 HN。",
+      "catalyst": "没有单一催化剂。被引用最多的 HN 帖子是 2026 年 2 月晚些时候的「Genspark 是什么」讨论——这恰恰说明 Genspark 在 HN 还没意识到之前就已经突围了。",
+      "catalystUrl": "https://news.ycombinator.com/item?id=46941269",
+      "accountUrl": "https://hn.algolia.com/?q=genspark",
+      "accountLabel": "在 HN 搜索 Genspark",
+      "whenItWorks": "当技术主张在发布当天可被验证时——开源的设备端浏览器模型、有可复现设置的真实基准测试数字",
+      "whenItDoesnt": "当产品是封闭的演示循环时。HN 惩罚「相信我」的叙事风格；Genspark 的 GAIA 87.8% 主张，是 HN 会打压的典型例子"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 2,
+      "bestStage": "超高速增长期",
+      "effort": "社区驱动，公司介入度低",
+      "role": "支持与摩擦层",
+      "description": "r/genspark_ai 存在，但更像是支持论坛，而不是布道中心。信用计费投诉和退款纠纷的帖子占大头——这是用户增长速度超过支持体系速度的代价。Reddit 不是 Genspark 叙事的塑造地，而是购后摩擦的浮现地。",
+      "catalyst": "没有单一时刻。Super Agent 发布后社区缓慢浮现。信号价值是负向的：当 Reddit 投诉量激增时，Genspark 真实的产品问题会在客户成功团队来得及响应之前就在那里曝光。",
+      "accountUrl": "https://www.reddit.com/r/genspark_ai/",
+      "accountLabel": "访问 r/genspark_ai",
+      "whenItWorks": "作为产品摩擦的早期预警系统。Reddit 帖子能预测你的支持工单即将在哪些问题上激增",
+      "whenItDoesnt": "作为 2025–26 年 AI Agent 产品的获客渠道。Reddit 用户群体比推特更怀疑；预期会遇到更强的阻力"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 3,
+      "bestStage": "超高速增长期 + 企业销售期",
+      "effort": "创始人 + 融资公告驱动",
+      "role": "企业信用放大器",
+      "description": "对 Genspark 来说，LinkedIn 的杠杆效率高于大多数 AI 初创公司——因为 AI Workspace 的卖点从第一天起就是企业向的。桑文锋的 LinkedIn 承担了「我们如何达到 $2 亿 ARR」这类长篇内容，这些内容在 X 上放不下。Eric Jing 的融资公告被微软、LG 和 SBI 高管转发，而这种转发才是真正的企业渠道。",
+      "catalyst": "B 轮公告（2025 年 11 月 20 日）——微软的企业领导层放大了 Agent 365 合作伙伴关系。那一次单独的转发，为企业管道带来的价值超过任何一次付费营销活动。",
+      "accountUrl": "https://www.linkedin.com/company/gensparkai",
+      "accountLabel": "Genspark on LinkedIn",
+      "whenItWorks": "当你有一个战略企业合作伙伴，其高管会主动转发你的新闻时。LG、SBI 和微软替 Genspark 完成了这项工作",
+      "whenItDoesnt": "没有这种战略放大效应的情况下。一条只来自 Genspark 自身的 LinkedIn 帖子，几小时内就会衰减。杠杆在于合作伙伴的受众，而不是你自己的"
+    },
+    {
+      "slug": "instagram",
+      "name": "Instagram + TikTok",
+      "score": 3,
+      "bestStage": "超高速增长期，以日本为主导",
+      "effort": "区域性，面向特定受众",
+      "role": "日本 / 消费者侧翼",
+      "description": "和大多数正确跳过 Instagram 的美国优先开发工具初创公司不同，Genspark 专门运营一个 @genspark_japan 账号（约 2600 粉丝），并在「Claw Party」线下活动中经营 TikTok 存在感。原因：日本是 Genspark 最大的付费订阅市场，而日本消费级 AI 的发现路径比美国开发者推特圈子更偏向视觉优先。",
+      "catalyst": "2025 年春季——日本用户分享「AI Call For Me」打辞职电话的视频片段。叙事从 X 上的文字截图，转移到 TikTok 和 Instagram Reels 上的竖屏视频。",
+      "catalystUrl": "https://www.instagram.com/genspark_japan/",
+      "accountUrl": "https://www.instagram.com/genspark_ai/",
+      "accountLabel": "@genspark_ai on Instagram",
+      "whenItWorks": "对于在视觉优先市场中拥有可见、有情感共鸣的消费者使用场景的产品。Genspark 的日本辞职电话使用场景完全符合这个条件",
+      "whenItDoesnt": "对于美国优先的开发工具。Genspark 在这里的打法是区域性的——对于美国开发工具产品，跳过 Instagram 才是正确的选择"
+    }
+  ]
+}

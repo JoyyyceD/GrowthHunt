@@ -3,15 +3,15 @@ import { getStory } from '@/lib/growth-story'
 import GrowthStoryPage from '../../_shared/GrowthStoryPage'
 
 export async function generateMetadata(): Promise<Metadata> {
-  const story = getStory('cursor', 'en')
+  const story = getStory('cursor', 'zh')
   if (!story) return {}
-  const url = 'https://growthhunt.ai/growth-story/cursor/en'
+  const url = 'https://growthhunt.ai/growth-story/cursor/zh'
   return {
     title: story.title,
     description: story.description,
     alternates: {
       canonical: url,
-      languages: { 'en-US': url, 'zh-CN': '/growth-story/cursor' },
+      languages: { 'zh-CN': url, 'en-US': '/growth-story/cursor' },
     },
     openGraph: {
       type: 'article',
@@ -24,6 +24,6 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default function CursorEnPage() {
-  return <GrowthStoryPage company="cursor" locale="en" />
+export default function CursorZhPage() {
+  return <GrowthStoryPage company="cursor" locale="zh" />
 }

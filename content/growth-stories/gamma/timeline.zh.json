@@ -1,0 +1,332 @@
+{
+  "company": {
+    "slug": "gamma",
+    "name": "Gamma",
+    "legalName": "Gamma Tech, Inc.",
+    "tagline": "从无人问津的「现代文档」工具，到 50 人团队做到 ARR 1 亿美元的盈利公司",
+    "summary": "Gamma 是 AI 浪潮里罕见的例子——它不是 2023 年的 ChatGPT 套壳产品。团队花了两年半时间默默构建一款「现代文档」编辑器，没有引爆。然后在 2023 年 3 月把 GPT 接入进去，三个月内用户从 6 万增长到 300 万。此后公司始终保持精简，保持盈利，在仅融资约 2300 万美元、团队约 50 人的情况下，做到了 ARR 1 亿美元。",
+    "founded": "2020-11",
+    "founders": [
+      "Grant Lee",
+      "James Fox",
+      "Jon Noronha"
+    ],
+    "seriesNumber": 9
+  },
+  "phases": [
+    {
+      "start": "2020-11",
+      "end": "2023-03",
+      "name": "前 AI 时代",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2023-03",
+      "end": "2024-05",
+      "name": "AI 拐点",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2024-05",
+      "end": "2025-09",
+      "name": "默认存活规模化",
+      "color": "#dcfce7"
+    },
+    {
+      "start": "2025-09",
+      "end": "2026-05",
+      "name": "平台扩张期",
+      "color": "#fce7f3"
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-11-01",
+      "title": "Gamma 成立",
+      "type": "product",
+      "description": "三位前 Optimizely 同事——Grant Lee（CEO，前 Optimizely CFO）、James Fox（CTO）、Jon Noronha（CPO）——注册成立 Gamma。核心论题：PowerPoint 已经过时，知识工作需要一种融合幻灯片、文档和网页的「现代文档」。"
+    },
+    {
+      "date": "2021-08-01",
+      "title": "私测版开放",
+      "type": "product",
+      "description": "经过十个月的业余时间打磨，Gamma 开放了无 AI 版本「现代文档」编辑器的内测——一款以设计感和嵌入内容为核心的卡片式工具。"
+    },
+    {
+      "date": "2021-10-28",
+      "title": "种子轮 700 万美元（Accel）",
+      "type": "funding",
+      "description": "由 Accel 领投。天使投资人包括 Zoom CEO Eric Yuan、前 LinkedIn CEO Jeff Weiner，以及 Airtable、Patreon、Segment、Honey 和 Optimizely 的创始人。South Park Commons、LocalGlobe、Afore、Hustle Fund 参与跟投。",
+      "externalUrl": "https://techcrunch.com/2021/10/28/gamma-brings-in-7m-to-bring-the-slide-deck-into-the-21st-century/",
+      "articleSlug": "2021-10-seed-accel"
+    },
+    {
+      "date": "2022-04-01",
+      "title": "公开发布——前 AI 时代",
+      "type": "product",
+      "gtmTag": "结构性差异化",
+      "description": "Gamma 结束内测，以无 AI「卡片式现代文档」编辑器的形态公开发布。到 2023 年初用户约 6 万——有一定牵引力，但算不上爆发。据 Lee 后来在 Lenny's Podcast 的叙述，某位早期投资人曾称该产品是「我听过最蠢的主意」。",
+      "articleSlug": "2022-04-pre-ai-gamma"
+    },
+    {
+      "date": "2023-03-09",
+      "title": "AI 版本发布",
+      "type": "product",
+      "gtmTag": "技术叙事升级",
+      "description": "历经三个月内部冲刺，Gamma 以「由 GPT-4 驱动的全新创意呈现媒介」重新发布。输入提示词，直接生成完整幻灯片。服务器在流量冲击下连续宕机三天。",
+      "externalUrl": "https://www.producthunt.com/products/gamma-3",
+      "articleSlug": "2023-03-ai-inflection"
+    },
+    {
+      "date": "2023-03-27",
+      "title": "Product Hunt 重新发布",
+      "type": "media",
+      "description": "Gamma AI 版本在 Product Hunt 重新发布。结合 Twitter 上的有机传播，每日注册量从 2,000 跃升至 60,000。到六月，Gamma 用户数约达 300 万。"
+    },
+    {
+      "date": "2023-05-01",
+      "title": "首批付费用户",
+      "type": "product",
+      "description": "开通付费功能后不到两个月，Gamma ARR 突破 100 万美元。宕机期间用户主动打钱，以为付费才能访问，意外校准了团队对付费意愿的判断。"
+    },
+    {
+      "date": "2023-05-15",
+      "title": "种子轮追投（天使）",
+      "type": "funding",
+      "description": "AI 版本牵引力已无可争辩，来自天使投资人的小额、低调的种子追投完成。至此总融资额约 1100 万美元。团队明确选择不追求大额融资。"
+    },
+    {
+      "date": "2023-12-01",
+      "title": "用户突破 1000 万",
+      "type": "media",
+      "description": "AI 版本发布九个月后，Gamma 用户数突破 1000 万。员工人数：不足 20 人。人均收入已远超典型 SaaS 基准。"
+    },
+    {
+      "date": "2024-01-15",
+      "title": "实现盈利",
+      "type": "media",
+      "gtmTag": "资本效率即定位",
+      "description": "Gamma 实现盈利。此后公司将会披露：持续盈利超过 15 个月——银行账户里的现金超过了历史累计融资总额。",
+      "articleSlug": "2024-01-default-alive"
+    },
+    {
+      "date": "2024-05-22",
+      "title": "A 轮 1200 万美元（Accel）",
+      "type": "funding",
+      "description": "Accel 再度押注。以 2024 年 AI 标准衡量规模极小——团队定位为可选项而非必需。至此总融资额约 2300 万美元。",
+      "externalUrl": "https://www.thesaasnews.com/news/gamma-raises-12-million-in-series-a",
+      "articleSlug": "2024-05-series-a"
+    },
+    {
+      "date": "2024-09-01",
+      "title": "Tome 裁员登上媒体",
+      "type": "media",
+      "description": "直接竞争对手 Tome——融资超过 8000 万美元——于四月重组并裁员约 20%，年内再次裁员约 31%。「资金充沛的竞争对手崩塌」这组对比，成为 Gamma 投资人叙事的重要组成部分。",
+      "externalUrl": "https://www.semafor.com/article/04/16/2024/ai-startup-tome-lays-off-staff-to-focus-on-revenue",
+      "articleSlug": "2024-09-tome-collapse"
+    },
+    {
+      "date": "2024-12-15",
+      "title": "ARR 3000 万美元 · 5000 万用户",
+      "type": "media",
+      "description": "年末数据节点。Sacra 估算 ARR 约 3050 万美元。用户规模约 5000 万。员工约 30 人。「小团队、大产品」的叙事成为反复被引用的媒体钩子。"
+    },
+    {
+      "date": "2025-04-16",
+      "title": "Gamma 2.0",
+      "type": "product",
+      "gtmTag": "技术叙事升级",
+      "description": "Gamma 2.0 发布：从单一提示词生成演示文稿、网站和社交内容。产品定位从「AI 演示工具」明确扩展为「AI 设计伙伴」。",
+      "externalUrl": "https://www.producthunt.com/posts/gamma-2-0"
+    },
+    {
+      "date": "2025-08-15",
+      "title": "ARR 5000 万美元（35 人团队）",
+      "type": "media",
+      "gtmTag": "资本效率即定位",
+      "description": "Grant Lee 披露 ARR 5000 万美元，团队约 35 人。人均收入突破 140 万美元——「小团队」故事成为最大标题。",
+      "externalUrl": "https://www.upstartsmedia.com/p/gamma-ai-startup-profits"
+    },
+    {
+      "date": "2025-09-16",
+      "title": "Gamma 3.0 + AI Agent",
+      "type": "product",
+      "gtmTag": "技术叙事升级",
+      "description": "Gamma 3.0 全球发布，内置 AI 设计智能体——自然语言编辑、网络搜索、跨文档整体重新设计。产品从「生成器」转型为「设计伙伴」。",
+      "articleSlug": "2025-09-gamma-3-agent"
+    },
+    {
+      "date": "2025-11-10",
+      "title": "B 轮 6800 万美元 / 21 亿美元估值",
+      "type": "funding",
+      "gtmTag": "捆绑式里程碑",
+      "description": "由 a16z 领投，Accel 和 Uncork 跟投。包含早期员工老股流动性安排。同步披露：ARR 1 亿美元，7000 万用户。创始人 Grant Lee 当天在 Gamma 博客发表长文「我们如何用不同方式建造一家 1 亿美元的公司」。",
+      "externalUrl": "https://techcrunch.com/2025/11/10/ai-powerpoint-killer-gamma-hits-2-1b-valuation-100m-arr-founder-says/",
+      "articleSlug": "2025-11-series-b"
+    },
+    {
+      "date": "2025-11-13",
+      "title": "Lenny's Podcast",
+      "type": "media",
+      "gtmTag": "创始人即 IP",
+      "description": "Grant Lee 登上 Lenny Rachitsky 播客：「从『最蠢的主意』到 ARR 1 亿美元」。本集内容涵盖 PG 的早期评价、新手引导重构、1000+ 创作者计划，以及有意为之的小团队战略。",
+      "externalUrl": "https://www.lennysnewsletter.com/p/how-50-people-built-a-profitable-ai-unicorn"
+    },
+    {
+      "date": "2026-03-17",
+      "title": "Gamma Imagine",
+      "type": "product",
+      "description": "Gamma Imagine 发布——一个用于 Logo、信息图、图表和社交内容的独立 AI 设计界面。平台从文档拓展至通用视觉设计资产的又一个台阶。",
+      "externalUrl": "https://www.businesswire.com/news/home/20260317085752/en/Gamma-Launches-Gamma-Imagine-to-Bring-AI-Native-Design-to-the-Masses"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2023-05-01",
+      "value": 1000000,
+      "source": "Lenny's Podcast",
+      "confidence": "official"
+    },
+    {
+      "date": "2024-01-15",
+      "value": 10000000,
+      "source": "Sacra（估算）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2024-12-15",
+      "value": 30500000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-08-15",
+      "value": 50000000,
+      "source": "Upstarts Media / Grant Lee",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-10-15",
+      "value": 102000000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-11-10",
+      "value": 100000000,
+      "source": "Gamma / TechCrunch",
+      "confidence": "official"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2021-10-28",
+      "value": 35000000,
+      "round": "Seed",
+      "source": "Crunchbase（估算）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2024-05-22",
+      "value": 84000000,
+      "round": "Series A",
+      "source": "Crunchbase（估算）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-11-10",
+      "value": 2100000000,
+      "round": "Series B",
+      "source": "TechCrunch",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X（Twitter）",
+      "score": 5,
+      "bestStage": "全阶段——承重渠道",
+      "effort": "持续投入",
+      "role": "创始人声音 + 产品回顾",
+      "description": "Grant Lee 在 X 上发布长篇回顾推文串——早期投资人的「最蠢的主意」故事、95% 流失率的拆解、小团队人均收入的对比。这些推文成为每一个二次创作者引用的原始素材。",
+      "catalyst": "2023 年 3 月在 Product Hunt 和 Twitter 上以「由 GPT-4 驱动的全新创意呈现媒介」重新发布。每日注册量从 2,000 跃升至 60,000。服务器宕机三天。",
+      "catalystUrl": "https://x.com/grantslee",
+      "accountUrl": "https://x.com/grantslee",
+      "accountLabel": "X 上的 @grantslee",
+      "whenItWorks": "当创始人本人有意愿发布那种包含真实数字的回顾文章时——流失率、员工人数、收入。具体性决定了转发率",
+      "whenItDoesnt": "如果创始人只发产品新闻，就不奏效。包含具体数字和坦诚态度（「PG 说这很蠢」）的回顾文章，每次都会跑赢精心设计的发布推文"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 5,
+      "bestStage": "默认存活规模化 + 平台扩张期",
+      "effort": "分集制，单集投入高",
+      "role": "信任建立的催化剂",
+      "description": "YouTube 是 Gamma 分发真正复利的地方。两个界面：长篇播客出镜（Lenny、Sequoia 的 Training Data、a16z），以及一个产出每日产品演示的 150+ 创作者计划，覆盖生产力工具这个内容垂类。两者组合起来牢牢占据了「AI 演示工具测评」这个搜索词。",
+      "catalyst": "Grant Lee 登上 Lenny's Podcast（2025 年 11 月 13 日）：「从『最蠢的主意』到 ARR 1 亿美元。」与三天前的 B 轮公告打包——融资媒体报道 + 创始人长篇视频集中在同一周内。",
+      "catalystUrl": "https://www.youtube.com/watch?v=3H0ngGU5pbM",
+      "accountUrl": "https://www.youtube.com/@gamma_app",
+      "accountLabel": "Gamma 的 YouTube 频道",
+      "whenItWorks": "当产品高度可视化，且结果可以在 60 秒内录屏展示时。创作者经济之所以奏效，是因为演示本身就是内容——不需要单独制作",
+      "whenItDoesnt": "如果产品的「惊喜感」无法在一段录屏里呈现，就不要押注 YouTube 创作者。如果价值需要前置配置才能显现，这个格式就撑不住"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 3,
+      "bestStage": "默认存活规模化",
+      "effort": "创始人发帖 + 转发",
+      "role": "知识工作者覆盖",
+      "description": "LinkedIn 是 Gamma 真实买家的自然栖息地——顾问、创始人、销售人员、教育工作者，这些人的工作就是在幻灯片里展开。Grant Lee 的里程碑公告（35 人 ARR 5000 万美元、1 亿美元 ARR 长文）在 LinkedIn 上的绝对覆盖人数，稳定超过 X。",
+      "catalyst": "Grant Lee 在 LinkedIn 发布宣布 1200 万美元 A 轮的帖子（2024 年 5 月）：明确说明本轮规模小是刻意为之，并附上员工人数和 ARR 数字。帖子被数百次转发，创始人们纷纷引用，将其视为 AI 大额融资潮的反例。",
+      "catalystUrl": "https://www.linkedin.com/posts/grantslee_gamma-just-raised-a-12m-series-a-led-by-activity-7196507754197303297-03H1",
+      "accountUrl": "https://www.linkedin.com/company/meet-gamma/",
+      "accountLabel": "Gamma 的 LinkedIn 主页",
+      "whenItWorks": "当受众是非开发者知识工作者，内容将公司定位为一种反叙事（「我们用更少的资本、更小的团队做到了这些」）时。LinkedIn 会奖励这种框架",
+      "whenItDoesnt": "纯产品更新帖。LinkedIn 会惩罚任何读起来像新闻稿的内容"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 3,
+      "bestStage": "AI 拐点 + 持续阶段",
+      "effort": "社区自发生长",
+      "role": "对比搜索流量捕获",
+      "description": "Reddit 是「Gamma vs Tome」、「Gamma vs Beautiful.AI」、「Gamma 付费值不值」这些真实问题被回答的地方。r/ChatGPT、r/productivity、r/Notion 和 r/EntrepreneurRideAlong 里的讨论帖，对 Gamma 底部漏斗转化的贡献，超过了任何付费获客渠道。",
+      "catalyst": "没有单一爆发时刻。2023 到 2025 年间，Reddit 帖子里逐渐把 Gamma 认定为「AI 演示」的默认答案，这种口碑是买不来的。",
+      "accountUrl": "https://www.reddit.com/search/?q=gamma.app",
+      "accountLabel": "Reddit 上的 Gamma 讨论帖",
+      "whenItWorks": "当产品有清晰的免费层价值、用户可以在一次会话里验证时。Reddit 的口碑推荐，只会发生在人们真正在用的产品上",
+      "whenItDoesnt": "不要在 Reddit 上做话题植入。社区能在几个小时内识别出水军，且这种反感是永久性的"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 3,
+      "bestStage": "AI 拐点",
+      "effort": "集中在发布节点",
+      "role": "技术可信度验证",
+      "description": "对 Gamma 来说，比起面向开发者的工具公司，HN 的承重作用稍弱，但 2023 年 3 月 AI 版本重新发布和 Gamma 3.0 登上首页，起到了「受到严肃技术关注」的证明效果——在投资人、工程师和竞争对手面前同时可见。",
+      "catalyst": "2023 年 3 月 AI 版本发布的 HN 首页帖。与 Product Hunt #1 的位置结合，共同建立了支撑 ARR 爬坡的技术可信度背书。",
+      "catalystUrl": "https://hn.algolia.com/?q=gamma.app",
+      "accountUrl": "https://hn.algolia.com/?q=gamma.app",
+      "accountLabel": "在 HN 搜索 Gamma",
+      "whenItWorks": "当发布具有清晰的技术创新点时——多模型编排、智能体层、非平凡的推理流程。HN 奖励实质内容",
+      "whenItDoesnt": "面向消费者的 UX 迭代，HN 是错误的房间。不要期望 HN 能承载增量式的设计更新"
+    },
+    {
+      "slug": "instagram",
+      "name": "Instagram",
+      "score": 2,
+      "bestStage": "平台扩张期",
+      "effort": "创作者主导，公司几乎不介入",
+      "role": "视觉演示分发",
+      "description": "比典型 B2B 开发工具得分更高，因为 Gamma 的输出本身就是高度视觉化的，且受众与 Instagram 上设计意识较强的知识工作者重叠。但仍然是次级渠道——创作者把 YouTube 内容搬运到这里，公司本身并不主动在 IG 上发力。",
+      "catalyst": "30 秒内展示「从提示词到完整幻灯片」全流程的 Reels 短视频。空白画布到精美输出之间的视觉落差，恰好是 Instagram 算法奖励的内容形式。",
+      "whenItWorks": "当产品输出可以录屏、视觉冲击力强、且「前后对比」落差足够大时。Gamma 完全符合；大多数 B2B SaaS 不符合",
+      "whenItDoesnt": "不要把 IG 当主要渠道来搭建。作为 YouTube 内容的二次分发界面还可以，但作为主要获客来源，ROI 接近于零"
+    }
+  ]
+}

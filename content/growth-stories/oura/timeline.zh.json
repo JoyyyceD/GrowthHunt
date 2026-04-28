@@ -1,0 +1,428 @@
+{
+  "company": {
+    "slug": "oura",
+    "name": "Oura",
+    "legalName": "Oura Health Oy",
+    "tagline": "13 年，从奥卢一个 Kickstarter 智能戒指到 110 亿美元健康平台",
+    "summary": "Oura 是消费科技叙事里最常被跳过的硬件故事。十一年耐心打磨传感器，一场延迟两年才发货的众筹，以及一个拐点时刻——2020 年 NBA 泡泡联赛——将这家默默无闻的芬兰健康公司，变成了智能戒指品类的默认代名词。整条曲线真正垂直向上，是在 2021 年底第三代订阅制转型重塑了单位经济模型之后。",
+    "founded": "2013",
+    "founders": [
+      "Petteri Lahtela",
+      "Markku Koskela",
+      "Kari Kivelä"
+    ],
+    "seriesNumber": 7
+  },
+  "phases": [
+    {
+      "start": "2013-01",
+      "end": "2018-06",
+      "name": "Kickstarter 时代（第一代）",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2018-06",
+      "end": "2020-06",
+      "name": "第二代到 NBA 泡泡",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2020-06",
+      "end": "2023-04",
+      "name": "订阅制 + 病毒式增长",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2023-04",
+      "end": "2026-06",
+      "name": "平台化 + 血糖数据",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2013-06-01",
+      "title": "Oura Health 在奥卢成立",
+      "type": "product",
+      "description": "Petteri Lahtela、Markku Koskela 和 Kari Kivelä 在芬兰奥卢注册成立 Oura Health Oy。三位创始人拥有来自 Polar、Nokia 以及芬兰北部传感器产业集群的深厚研发积累。"
+    },
+    {
+      "date": "2015-03-15",
+      "title": "第一代产品在旧金山 Launch Festival 亮相",
+      "type": "product",
+      "description": "Oura Ring 第一代在旧金山 Launch Festival 公开亮相。这款手指穿戴的「健康计算机」以睡眠追踪为核心，进入了一个由腕部 Fitbit 和 Apple Watch 主导的市场。"
+    },
+    {
+      "date": "2015-08-18",
+      "title": "Kickstarter 众筹开启",
+      "type": "media",
+      "gtmTag": "捆绑里程碑",
+      "description": "15 小时内达到 10 万美元目标。2015 年 9 月 24 日结束，2,383 位支持者，651,803 美元——达到目标的六倍。第一个证明智能戒指有真实受众的验证信号。",
+      "externalUrl": "https://www.kickstarter.com/projects/oura/oura-ring-improve-sleep-perform-better",
+      "articleSlug": "2015-08-kickstarter-launch"
+    },
+    {
+      "date": "2015-11-11",
+      "title": "种子轮 230 万美元，Lifeline Ventures 领投",
+      "type": "funding",
+      "description": "最早的机构资本。Lifeline Ventures——Supercell 和 Wolt 背后的赫尔辛基风险投资机构——成为长期核心投资人。"
+    },
+    {
+      "date": "2017-11-30",
+      "title": "第二代在 Slush 大会发布",
+      "type": "product",
+      "description": "第二代 Oura Ring 在赫尔辛基 Slush 大会发布——更纤薄的外形，Heritage 和 Horizon 两款造型，准备状态评分功能正式成熟。第二代销量迅速突破约 1 万枚。"
+    },
+    {
+      "date": "2016-11-29",
+      "title": "A 轮 约 500 万欧元",
+      "type": "funding",
+      "description": "完成约 500 万欧元（约 530 万美元）A 轮融资，2016 年 11 月 29 日由 TechCrunch 报道。超过 75% 的资本来自美国天使投资人，包括 Joi Ito 和 Jaan Tallinn——美国投资人兴趣的第一个信号。"
+    },
+    {
+      "date": "2018-06-01",
+      "title": "Harpreet Rai 出任 CEO",
+      "type": "media",
+      "description": "创始人 Petteri Lahtela 卸任。前 Eminence Capital 投资组合经理 Harpreet Singh Rai 接任 CEO。Lahtela 转任首席创新官，专注于产品路线图。"
+    },
+    {
+      "date": "2018-12-03",
+      "title": "Michael Dell、Will Smith、Shaq 参与 2,000 万美元融资",
+      "type": "funding",
+      "gtmTag": "创始人即 IP",
+      "description": "由 MSD Capital 领投，参与方包括 YouTube 联合创始人 Steve Chen、Twitch 联合创始人 Kevin Lin、Will Smith（通过梦想者基金）、Shaquille O'Neal 和 Lance Armstrong。首次在融资方名单中工程化植入名人光环效应。",
+      "externalUrl": "https://techcrunch.com/2018/12/03/sleep-tracking-ring-oura-raises-20-million-from-michael-dell-lance-armstrong-and-others/"
+    },
+    {
+      "date": "2020-03-13",
+      "title": "B 轮 2,800 万美元",
+      "type": "funding",
+      "description": "由 Forerunner Ventures、Square（Jack Dorsey）和 Google 的 Gradient Ventures 领投。首次获得顶级消费科技 VC 背书，融资完成于全球 COVID 封锁的那一周。",
+      "externalUrl": "https://www.mobihealthnews.com/news/oura-announces-28m-series-b-funding-150000-plus-lifetime-smart-ring-sales"
+    },
+    {
+      "date": "2020-03-25",
+      "title": "UCSF TemPredict 研究启动",
+      "type": "media",
+      "description": "UCSF 启动 TemPredict 研究，利用 Oura Ring 通过皮肤温度、心率和 HRV 早期检测 COVID-19。共有 63,153 名参与者参与研究。算法后来验证能在症状出现前 2.75 天以 82% 灵敏度预警 COVID。"
+    },
+    {
+      "date": "2020-06-23",
+      "title": "NBA 泡泡联赛部署 Oura",
+      "type": "media",
+      "gtmTag": "踩上 KOL 的浪头",
+      "description": "NBA 与 Oura 合作，向迪士尼世界「泡泡联赛」的所有球员和核心人员提供戒指。这是将 Oura 从安静的健康品牌推向主流认知产品的单一转折时刻，被《纽约时报》、ESPN、CBS、CNBC 广泛报道。",
+      "externalUrl": "https://ouraring.com/blog/partners-with-the-nba/",
+      "articleSlug": "2020-06-nba-bubble"
+    },
+    {
+      "date": "2020-09-15",
+      "title": "UFC 合作宣布",
+      "type": "media",
+      "description": "UFC 宣布 Oura 为其历史上首个「官方健康可穿戴设备」合作伙伴，签署多年协议。向全部 600 名选手提供戒指。NASCAR、WNBA 和西雅图水手队在数月内相继跟进。"
+    },
+    {
+      "date": "2021-05-04",
+      "title": "C 轮 1 亿美元",
+      "type": "funding",
+      "description": "由 The Chernin Group 和 Elysian Park（道奇队投资机构）领投。Forerunner、Square、MSD、Marc Benioff 和 Lifeline 跟投。累计融资总额达到 1.483 亿美元。",
+      "externalUrl": "https://techcrunch.com/2021/05/04/fitness-ring-maker-oura-raises-100m/"
+    },
+    {
+      "date": "2021-10-26",
+      "title": "第三代发布 + 订阅制转型",
+      "type": "product",
+      "gtmTag": "PLG → 企业级转型",
+      "description": "第三代戒指发布，新增 24 小时心率监测、血氧和经期预测功能。新的每月 5.99 美元会员资格将大多数功能锁在付费墙后。反弹声浪响彻网络——但年经常性收入的经济模型，从一次性硬件收入翻转为循环软件收入。",
+      "externalUrl": "https://ouraring.com/blog/discover-oura-ring-generation-3/",
+      "articleSlug": "2021-10-gen3-subscription"
+    },
+    {
+      "date": "2022-03-24",
+      "title": "累计售出 100 万枚戒指",
+      "type": "media",
+      "description": "跨过终身销售 100 万枚的里程碑，第三代在五个月内的销量超过了所有前代产品的总和。这一累计里程碑约在七年后达成。",
+      "externalUrl": "https://techcrunch.com/2022/03/24/oura-sells-its-millionth-ring/"
+    },
+    {
+      "date": "2022-04-05",
+      "title": "估值达到 25.5 亿美元",
+      "type": "funding",
+      "description": "25.5 亿美元融资公告在百万枚里程碑后一个月发布。捆绑披露将融资和销量叙事压缩进了同一个新闻周期。",
+      "externalUrl": "https://www.businesswire.com/news/home/20220405006108/en/On-the-Heels-of-1-Million-Rings-Sold-Oura-Now-Valued-at-%242.55-Billion"
+    },
+    {
+      "date": "2022-04-25",
+      "title": "Tom Hale 出任 CEO",
+      "type": "media",
+      "gtmTag": "PLG → 企业级转型",
+      "description": "前 SurveyMonkey/Momentive 总裁 Tom Hale 出任 CEO，主导上市前增长。他将消费软件的运营经验——定价策略、订阅机制、企业销售——带入了一支以硬件为核心的创始团队。",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2022-04-25/oura-ring-startup-brings-on-new-ceo-to-lead-pre-ipo-growth-push",
+      "articleSlug": "2022-04-tom-hale-ceo"
+    },
+    {
+      "date": "2022-05-26",
+      "title": "Gucci x Oura 联名戒指发布",
+      "type": "product",
+      "gtmTag": "受众边界突破",
+      "description": "Gucci x Oura 限量款以 950 美元发售——黑色 PVD 钛金属配 18K 黄金细节。数周内售罄。这是将 Oura 从「健身极客健康追踪器」推向奢侈穿戴设备的单一关键动作。",
+      "externalUrl": "https://techcrunch.com/2022/05/26/gucci-x-oura-launch-an-1100-smart-ring-to-help-you-discover-yourself/",
+      "articleSlug": "2022-05-gucci-collaboration"
+    },
+    {
+      "date": "2023-04-24",
+      "title": "百思买全国铺货",
+      "type": "media",
+      "description": "Oura 进入全美 850 家百思买门店实体零售，包括 50 个配备量尺工具和体验展台的店中店概念区。DTC 向实体零售迈出的第一步重要桥梁。"
+    },
+    {
+      "date": "2023-05-09",
+      "title": "收购 Proxy（1.65 亿美元全股票）",
+      "type": "acquisition",
+      "gtmTag": "科技叙事升级",
+      "description": "以全股票方式收购数字身份创业公司 Proxy，估值约 1.65 亿美元。这一举动释放出超越健康赛道的野心——支付、门禁、身份——尽管战略回报仍在持续演进中。",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2023-05-09/oura-ring-maker-to-buy-digital-identification-startup-proxy"
+    },
+    {
+      "date": "2024-04-22",
+      "title": "Target 分销渠道开通",
+      "type": "media",
+      "description": "Oura 开始在全美精选 Target 门店销售。Target 被定位为契合当前增长最快的女性用户群的分销渠道，时间节点恰好与 Samsung Galaxy Ring 上市前的预热期重合。"
+    },
+    {
+      "date": "2024-09-11",
+      "title": "收购 Veri（代谢健康）",
+      "type": "acquisition",
+      "description": "收购赫尔辛基的连续血糖监测软件平台 Veri，为两个月后的 Dexcom 合作奠定代谢健康路线图基础。",
+      "externalUrl": "https://techcrunch.com/2024/09/11/oura-has-acquired-metabolic-heath-startup-veri/"
+    },
+    {
+      "date": "2024-10-03",
+      "title": "Oura Ring 4 发布，售价 349 美元",
+      "type": "product",
+      "description": "第四代戒指发布，配备全钛金属内壁、智能感知算法、8 天续航和超过 40 种运动类型识别。2024 年 10 月 15 日开始发货。订阅费维持 5.99 美元/月或 69.99 美元/年不变。",
+      "externalUrl": "https://www.cnbc.com/2024/10/03/oura-ring-4-price-release-date.html",
+      "articleSlug": "2024-10-ring-4-launch"
+    },
+    {
+      "date": "2024-09-30",
+      "title": "9,600 万美元美国国防部合同",
+      "type": "media",
+      "description": "国防健康局向 Oura 授予价值 9,610 万美元的固定价格生物传感器设备合同（DefenseScoop 于 10 月 2 日报道）。在 2019 年国防部合作基础上持续推进，已部署数万枚戒指。"
+    },
+    {
+      "date": "2025-03-15",
+      "title": "国防部取消 9,600 万美元合同",
+      "type": "media",
+      "description": "国防健康局意外取消了这份价值 9,610 万美元的可穿戴生物传感器合同——对联邦采购叙事构成了实质性暂停。Oura 的企业与消费商业势头独立延续，但联邦渠道的验证价值大幅缩水。",
+      "externalUrl": "https://www.biometricupdate.com/202503/dod-unexpectedly-cancels-controversial-wearable-biometric-contract"
+    },
+    {
+      "date": "2024-10-31",
+      "title": "收购 Sparta Science",
+      "type": "acquisition",
+      "description": "收购湾区运动健康平台 Sparta Science，将 Trinsic 数据层引入 Oura Teams（B2B 产品）。18 个月内完成的第三笔收购。",
+      "externalUrl": "https://techcrunch.com/2024/10/31/oura-buys-sparta-science-its-third-acquisition-in-two-years/"
+    },
+    {
+      "date": "2024-11-19",
+      "title": "Dexcom 7,500 万美元战略投资 + 合作协议",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "Dexcom 投资 7,500 万美元，并签署联合营销和数据共享协议，将 CGM 血糖数据与 Oura 生物指标融合。首个应用整合计划于 2025 年上半年上线。",
+      "externalUrl": "https://techcrunch.com/2024/11/19/oura-valued-at-5b-following-deal-with-medical-device-firm-dexcom/",
+      "articleSlug": "2024-11-dexcom-partnership"
+    },
+    {
+      "date": "2024-12-19",
+      "title": "D 轮 2 亿美元 / 52 亿美元估值",
+      "type": "funding",
+      "description": "由 Fidelity 领投，Dexcom 7,500 万美元战略投资计入其中。估值较 2022 年翻倍至 52 亿美元。Oura 披露 2024 年营收「翻倍」至约 5 亿美元，且公司已实现盈利。",
+      "externalUrl": "https://www.fiercehealthcare.com/health-tech/oura-closes-200m-round-boosting-smart-ring-makers-valuation-52b"
+    },
+    {
+      "date": "2025-03-31",
+      "title": "Oura Advisor（AI 健康教练）正式发布",
+      "type": "product",
+      "gtmTag": "科技叙事升级",
+      "description": "AI 健康教练大模型向所有会员推出。测试版累计产生超过 100 万条消息，60% 的周活跃使用率。标志着 Oura 从被动追踪器向对话式健康平台的转变。",
+      "externalUrl": "https://www.businesswire.com/news/home/20250331565896/en/Oura-Advisor-an-AI-powered-Personal-Health-Companion-Now-Rolling-Out-to-All-Oura-Members"
+    },
+    {
+      "date": "2025-09-22",
+      "title": "披露累计售出 550 万枚戒指",
+      "type": "media",
+      "description": "Oura 披露终身销售量达 550 万枚（2024 年 6 月以来新增 300 万枚），2024 年营收连续第二年翻倍。2025 年营收追踪超过 10 亿美元。"
+    },
+    {
+      "date": "2025-10-14",
+      "title": "E 轮 9 亿美元 / 110 亿美元估值",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "Fidelity 领投，新进投资人包括 ICONIQ、Whale Rock 和 Atreides。估值较 2024 年 12 月翻超一倍。Tom Hale 向 CNBC 表示公司 2026 年营收有望接近 20 亿美元。",
+      "externalUrl": "https://techcrunch.com/2025/10/14/smart-ring-maker-oura-raises-900m-from-fidelity/",
+      "articleSlug": "2025-10-series-e"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2020-03-01",
+      "value": 30000000,
+      "source": "Sacra 估算（约 15 万枚戒指 × 约 199 美元均价）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2022-03-01",
+      "value": 200000000,
+      "source": "Sacra 在百万枚里程碑前后的估算",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2023-12-31",
+      "value": 227000000,
+      "source": "Sacra（根据「2024 年翻倍至 5 亿美元」反向推算）",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-12-31",
+      "value": 500000000,
+      "source": "Oura / The Information",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-12-31",
+      "value": 1000000000,
+      "source": "Tom Hale 接受 CNBC 采访，2025 年 9 月",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-12-31",
+      "value": 2000000000,
+      "source": "Tom Hale 接受 CNBC 采访，2025 年 11 月（前瞻指引）",
+      "confidence": "official"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2020-03-13",
+      "value": 200000000,
+      "round": "B 轮",
+      "source": "Crunchbase / 媒体估算",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2021-05-04",
+      "value": 800000000,
+      "round": "C 轮",
+      "source": "TechCrunch / Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2022-04-05",
+      "value": 2550000000,
+      "round": "C 轮延伸",
+      "source": "BusinessWire",
+      "confidence": "official"
+    },
+    {
+      "date": "2024-12-19",
+      "value": 5200000000,
+      "round": "D 轮",
+      "source": "Fierce Healthcare",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-10-14",
+      "value": 11000000000,
+      "round": "E 轮",
+      "source": "TechCrunch / CNBC",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "instagram",
+      "name": "Instagram",
+      "score": 5,
+      "bestStage": "订阅制 + 病毒式增长 / 平台化阶段",
+      "effort": "高——持续的创作者 + 网红合作项目",
+      "role": "健康美学 + 名人光环效应",
+      "description": "Oura 的核心社交引擎。戒指小巧的珠宝感外形，在 Instagram 的生活方式框架里表现出色——这是胸带或腕带根本做不到的。Jennifer Aniston、Prince Harry、Sofia Richie、Kim Kardashian——全都被拍到戴着 Oura，大多数是自发的。这里是「佩戴戒指」成为健康身份标签的平台。",
+      "catalyst": "Jennifer Aniston 在 Jimmy Kimmel 节目上的意外提及（2021 年 9 月），以及 Prince Harry 自 2018 年起佩戴 Oura 的一系列狗仔队照片——两者都主要在 Instagram 上被发现和放大传播。",
+      "accountUrl": "https://www.instagram.com/ouraring/",
+      "accountLabel": "@ouraring on Instagram",
+      "whenItWorks": "当产品具有上镜感，并与人们想要对外展示的健康/生活方式身份绑定时。Oura 的哑光黑钛金属，在大多数可穿戴设备里，看起来像珠宝",
+      "whenItDoesnt": "如果你的产品看起来像医疗器械，Instagram 救不了它。戒指的低调感，是这一切成立的先决条件"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 5,
+      "bestStage": "订阅制 + 病毒式增长 / 平台化阶段",
+      "effort": "阶段性——每次新品发布一次长评测周期",
+      "role": "长视频评测的信任构建层",
+      "description": "MKBHD、Marques Brownlee、Jonathan Morrison，以及整个健康科技评测生态（Andrew Steele、Bryan Johnson 的追踪内容、Peter Attia 相关圈子）为 Oura 提供了深度公信力背书。每次新一代产品发布都会触发一波 20–30 分钟的深度拆解评测——这是消费硬件突破「为什么要付 349 美元？」这道门槛所必需的内容格式。",
+      "catalyst": "第三代（2021 年 10 月）和第四代（2024 年 10 月）的发布评测周期。每次在发布后两周内产生数十个评测视频，并在此后 6 个月内持续带来中长尾流量。",
+      "accountUrl": "https://www.youtube.com/@ouraring",
+      "accountLabel": "Oura on YouTube",
+      "whenItWorks": "当产品有足够的技术含量，能撑起一段 15 分钟的评测，且价格要求这种深度——低于 50 美元的硬件不值得这种深度",
+      "whenItDoesnt": "如果你的产品是快速冲动购买，跳过 YouTube 评测。YouTube 评测是经过深思熟虑的硬件购买的中漏斗，不是钩子"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit（r/ouraring）",
+      "score": 4,
+      "bestStage": "全阶段——承重结构性社区",
+      "effort": "社区自驱，公司极少介入",
+      "role": "留存 + 口碑传播 + 用户情绪诊断",
+      "description": "r/ouraring 超过 20 万成员。现有用户在这里分享准备状态评分，讨论固件更新，并为搜索真实评价的新买家提供参考。第三代订阅制反弹也是在这里结晶的——Oura 的管理层在决定如何传达相关信息时，正是通过这里感知用户情绪温度的。",
+      "catalyst": "第三代订阅制公告（2021 年 10 月）。r/ouraring 成为用户反叛叙事的核心阵地。Oura 的应对——保留第二代老用户功能访问权——明显受到了帖子情绪的影响。",
+      "accountUrl": "https://www.reddit.com/r/ouraring/",
+      "accountLabel": "Visit r/ouraring",
+      "whenItWorks": "当你拥有一个痴迷于数据测量的用户群时。Reddit 捕捉「每天早上都看准备状态评分」这种用户身份认同的能力，是其他平台无法比拟的",
+      "whenItDoesnt": "不要刷水军。Oura 对这个论坛相对沉默，正是论坛能保持自身公信力的原因"
+    },
+    {
+      "slug": "tiktok",
+      "name": "TikTok",
+      "score": 4,
+      "bestStage": "平台化阶段 / 2023 年以来",
+      "effort": "持续运营的创作者主导内容",
+      "role": "Z 世代 + 女性受众获取",
+      "description": "将 Oura 带出早期「健身极客」受众圈的平台。#OuraRing 已有数千万次浏览——睡眠追踪「揭晓」视频、经期追踪内容，以及「什么是好的准备状态评分」科普内容。受众明显向女性倾斜，而这个群体现在是 Oura 增长最快的用户人群。",
+      "catalyst": "2023–2024 年的经期追踪 + 女性健康内容浪潮，与 Oura 进入 Target 渠道时间节点高度重合。平台与受众的契合度是赢来的，不是买来的。",
+      "accountUrl": "https://www.tiktok.com/@ouraring",
+      "accountLabel": "@ouraring on TikTok",
+      "whenItWorks": "当你的产品有可视化的、每日的、值得分享的输出内容（比如一个每日分数）。睡眠数据和经期数据是 TikTok 的天然素材",
+      "whenItDoesnt": "如果你的产品不可见或者是 B2B，TikTok 会吞噬你的投入却毫无回报"
+    },
+    {
+      "slug": "x",
+      "name": "X（推特）",
+      "score": 3,
+      "bestStage": "全阶段——叙事溢出渠道",
+      "effort": "新闻稿放大 + 创始人声音",
+      "role": "科技媒体报道的传播放大器",
+      "description": "对健康品牌而言，承重度不如对开发者工具创业公司那么高。Oura 的用户群不在开发者推特上。但 TechCrunch、彭博社、CNBC、Sacra 和 Fortune 的报道，就是通过这里交叉传播给健康关注的泛科技圈用户的。Tom Hale 保持适度活跃。",
+      "catalyst": "每一轮融资和每一代新品都会在科技媒体推特上产生涟漪。Dexcom 合作（2024 年 11 月）是最典型的案例——报道在 48 小时内跨越资本、健康科技和消费科技账号，形成叠加覆盖。",
+      "accountUrl": "https://x.com/ouraring",
+      "accountLabel": "@ouraring on X",
+      "whenItWorks": "当你拥有有公信力的媒体关系，且可以预期 VC 和记者的自发转发时",
+      "whenItDoesnt": "不要指望 X 直接驱动消费者的戒指购买决策。它是媒体放大器，不是购买渠道"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 3,
+      "bestStage": "平台化阶段——企业 + 国防渠道",
+      "effort": "融资公告 + 高管声音",
+      "role": "企业与国防采购方的信任核查渠道",
+      "description": "随着 Oura Teams（B2B）和国防部合作关系的增长，LinkedIn 的重要性逐步提升。Tom Hale 和新的 C 级高管团队用 LinkedIn 广播企业合作胜利，财富 500 强企业健康项目的采购团队在签约前也会通过这里做尽调核查。对直接消费者获取的直接贡献相对有限。",
+      "catalyst": "9,600 万美元美国国防部合同（2024 年 10 月）是 LinkedIn 优先放大的典型案例——国防采购、联邦科技和投资者圈子在两周内持续转发这条消息。",
+      "accountUrl": "https://www.linkedin.com/company/oura/",
+      "accountLabel": "Oura on LinkedIn",
+      "whenItWorks": "当你有真实的企业或政府渠道，且采购方会在约定通话前通过 LinkedIn 核查可信度时",
+      "whenItDoesnt": "如果你的业务是纯粹的 DTC 消费健康，LinkedIn 的投资回报率接近于零。跳过它"
+    }
+  ]
+}

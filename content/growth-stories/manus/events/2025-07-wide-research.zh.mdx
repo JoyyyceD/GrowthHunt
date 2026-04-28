@@ -1,0 +1,102 @@
+---
+title: "Wide Research——回应「套壳」批评的百 Agent 并行架构（2025 年 7 月 31 日）"
+description: "Manus 推出由 100+ 个并行 Agent 协同完成单一任务的架构。这是对四个月「不过是个 Claude 套壳」批评的蓄意回应——也是先于 9,000 万美元 ARR 披露发生的可信度跃升。"
+date: "2025-07-31"
+type: "product"
+gtmTag: "技术叙事升维"
+eventTitle: "Wide Research 发布"
+externalUrl: "https://manus.im/blog/introducing-wide-research"
+---
+
+<Catalyst>
+Wide Research 不是一个功能——它是一次定位动作。发布四个月后，针对 Manus 的主流质疑框架是「Claude + Browser-Use 套壳」。一个能在单一任务上编排一百个子 Agent 的架构，是回应这个框架的答案。你无法把一个并行编排百个子智能体的系统，用「套壳」来打发掉。
+</Catalyst>
+
+2025 年 7 月 31 日。Manus 推出 Wide Research——由 100+ 个 Manus Agent 并行实例协同处理单一任务的架构，每个实例独立运行，通过 Agent 间通信协议进行协作。
+
+发布通过 Manus 博客宣布，当天由 Bloomberg 和 VentureBeat 同步报道，并由纪宇超（Yichao Ji）账号在 X 上进行串帖传播。**当天午间即登上 Hacker News 首页，并获得数百条实质性的技术评论。**
+
+## 它所回应的「套壳」批评
+
+针对 Manus 的质疑声，从 3 月发布后第二周就持续存在。
+
+| 质疑观点 | 出现渠道 |
+|---|---|
+| 「不过是加了 UI 的 Claude」 | 3 月 13 日 Threads 帖子 |
+| 「不过是跑在沙盒里的 Browser-Use 加 Claude」 | 3 月多篇 X 拆解文 |
+| 「泄露的系统提示词证明只是编排」 | 4 月在 GitHub Gist 流传 |
+| 「没有任何自研模型」 | 5 月到 6 月持续出现 |
+
+从组件层面看，这种批评不无道理。**Manus 确实在使用 Claude Sonnet 做推理。Manus 确实在使用开源的 Browser-Use 项目做导航。Manus 确实没有自研基础模型。**
+
+批评所忽视的是：**一个能在单一多步骤任务上稳定编排一百个子 Agent 的系统，与运行单次 Claude 调用的系统，是完全不同的工程对象。** 可靠性层、Agent 间通信协议、故障恢复机制，以及成本管理基础设施——真正的差异化就在这里。
+
+Wide Research 是 Manus 让这种差异化变得清晰可见的尝试。
+
+## 为什么「宽」是针对「深」的定位
+
+到 2025 年中期，OpenAI 的 Deep Research 和 Google 的 Deep Think，是自主 Agent 研究产品的现有参照系。两者都是顺序式的：单个 Agent，多个步骤，每步推理更深。
+
+Wide Research 倒转了这个框架。**一百个 Agent 并行，各自能力完整，各自负责不同子任务，最终汇聚成单一输出。**
+
+这个定位是蓄意为之的。用「Wide」对应已有的「Deep」定位，创造了一个 Bloomberg 标题编辑可以直接使用的单词区分。**大多数产品发布定位都是在和现有词汇竞争。Wide Research 则是在扩展词汇。**
+
+背后的技术主张：并行扩展与深度扩展的形态不同。一次 Deep Research 会话可能运行三十分钟，产生一份报告。Wide Research 会话可以并行运行一百个独立调查，在更短时间内产生结构化比较。**不同形态的问题，需要不同的架构。**
+
+## Wide Research 是什么，不是什么
+
+它是什么：
+
+- 100+ 个相同的 Manus Agent 实例，针对单一任务并行运行
+- 每个子 Agent 功能完整（不是专门化为「管理者」或「执行者」角色）
+- 在此之上叠加的 Agent 间协作协议
+- 最初向 199 美元/月专业版用户开放，后续逐步下放
+
+它不是什么：
+
+- 新的基础模型
+- 自研推理引擎
+- 顺序深度研究的替代品——它是补充
+
+诚实的解读是：**Wide Research 是编排层的创新，不是基础模型层的创新。** Manus 的主张是，在 2025 年的智能体 AI 领域，编排层才是真正的产品价值所在。**你是否接受这个主张，是整个品类核心争论所在。**
+
+## 它赢得的可信度提升
+
+这次发布带来了连续两个月比 3 月演示以来更具实质性的报道：
+
+- Bloomberg 当天的「OpenAI 竞争对手 Manus 准备重大升级」——首次明确将 Manus 定位为 OpenAI 的对手
+- HN 首页，技术评论直接针对架构本身展开，而不仅仅是演示
+- VentureBeat 的「100+ Agent 遍历网络」——传播最广的标题
+- Sacra 在 8 月中旬发布的深度报告，将 Wide Research 列为架构护城河
+
+发布三周后，Bloomberg 报道 Manus 达到 9,000 万美元年化收入。**Wide Research 带来的可信度提升，先于收入披露 21 天发生，而不是相反。** 架构故事，让收入故事听起来更像一门可持续的生意。
+
+## 捆绑里程碑模式在运转
+
+Wide Research 并非单独发布。它落在一个事件群的中心：
+
+| 日期 | 事件 |
+|---|---|
+| 7 月 10 日 | 新加坡总部迁移宣布 |
+| 7 月 31 日 | Wide Research 发布 |
+| 8 月 20 日 | 9,000 万美元 ARR 披露 |
+| 9 月 8 日 | MIT Technology Review 将纪宇超列入「35 岁以下创新者」 |
+
+四个事件，每一个都落在前一个报道热度尚未冷却的窗口内。**回头看，这四个事件组成了一个完整的第三季度叙事脉冲**——地理合法性、架构可信度、财务规模，再到个人创始人认可，依次递进。
+
+捆绑里程碑的纪律，是 Manus 最一贯的动作。**这家公司从不让一个功能、一个数字或一条合作公告单独引爆。**
+
+<Conclusion title="可以复用的东西">
+
+- **「套壳」批评只能用架构来回答，不能用帖子。** 当批评者说你的产品很浅，就发布一个让这种批评显得不够格的功能。Wide Research 迫使质疑者转移到全新的战场上来。
+- **用现有词汇库的延伸来定位你的发布，而不是在词汇库内竞争。** 「Wide」针对「Deep」，给标题作者提供了一个可以直接使用的单词。大多数产品名称是在与词汇库竞争，而不是扩展它。
+- **架构发布应该先于收入披露两到三周。** 架构故事，让收入故事听起来更持久。如果顺序颠倒，收入故事听起来像是一次峰值，而不是起点。
+
+</Conclusion>
+
+## 来源
+
+- [Manus 博客：Wide Research 介绍](https://manus.im/blog/introducing-wide-research)
+- [Bloomberg：OpenAI 竞争对手 Manus 准备重大升级](https://www.bloomberg.com/news/articles/2025-07-31/openai-challenger-manus-preps-big-upgrade-to-main-agent-platform)
+- [VentureBeat：Wide Research 调动 100+ Agent 遍历网络](https://venturebeat.com/ai/youve-heard-of-ai-deep-research-tools-now-manus-is-launching-wide-research-that-spins-up-100-agents-to-scour-the-web-for-you)
+- [Sacra：Manus 年化收入达 9,000 万美元](https://sacra.com/research/manus-at-90m-year/)

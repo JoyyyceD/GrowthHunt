@@ -1,0 +1,476 @@
+{
+  "company": {
+    "slug": "lovable",
+    "name": "Lovable",
+    "legalName": "Lovable AB",
+    "tagline": "从两次失败发布到 15 个月内 ARR 4 亿美元",
+    "summary": "Lovable 的增长曲线，是标准 SaaS 模式的镜像。大多数成功软件公司需要经历 18 到 24 个月的静默期才会迎来拐点；Lovable 在 8 天内达到 ARR 100 万美元，8 个月达到 1 亿，15 个月达到 4 亿。秘诀不是病毒式发布——而是一个拥有 5 万颗星的开源项目（gpt-engineer）提前建好了受众，两次失败的商业化尝试让团队认清品牌锚定了错误的目标市场，第三次以一个真正合适的名字发布，引爆了一切。",
+    "founded": "2023-11",
+    "founders": [
+      "Anton Osika",
+      "Fabian Hedin"
+    ],
+    "seriesNumber": 2
+  },
+  "phases": [
+    {
+      "start": "2023-06",
+      "end": "2024-10",
+      "name": "开源飞轮",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2024-10",
+      "end": "2025-02",
+      "name": "品牌重塑发布",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2025-02",
+      "end": "2025-09",
+      "name": "捆绑里程碑循环",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2025-09",
+      "end": "2026-04",
+      "name": "超高速增长",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2023-06-15",
+      "title": "GPT Engineer 开源",
+      "type": "product",
+      "gtmTag": "开源飞轮",
+      "description": "Anton Osika 利用周末时间，在担任 Depict.ai CTO 期间构建了一个将文字转化为代码库的命令行工具，并推送至 GitHub。",
+      "externalUrl": "https://github.com/AntonOsika/gpt-engineer",
+      "articleSlug": "2023-06-gpt-engineer-oss"
+    },
+    {
+      "date": "2023-08-15",
+      "title": "GPT Engineer GitHub Star 突破 4 万",
+      "type": "media",
+      "description": "2023 年增长最快的代码仓库之一。在 Lovable AB 成立之前，已建立了对 vibe coding 品类需求的早期市场规模验证。"
+    },
+    {
+      "date": "2023-11-01",
+      "title": "Lovable AB 注册成立",
+      "type": "product",
+      "description": "Anton Osika（CEO）与 Fabian Hedin（CTO）在 Stockholm 注册成立公司，初始名称为 GPT Engineer AB。"
+    },
+    {
+      "date": "2024-04-01",
+      "title": "第一次失败发布（GPT Engineer App）",
+      "type": "product",
+      "gtmTag": "失败到成功的品牌重塑",
+      "description": "第一次以 GPT Engineer App 名义发布商业化产品——面向非技术构建者的网页界面。品牌暗示开发者工具，但目标市场是非技术用户，发布未能实现转化。",
+      "articleSlug": "2024-failed-launches"
+    },
+    {
+      "date": "2024-08-01",
+      "title": "第二次失败发布",
+      "type": "product",
+      "description": "2024 年夏天的再次尝试——产品相同，依然没有找到市场契合点。内部已增加多模型支持。"
+    },
+    {
+      "date": "2024-10-15",
+      "title": "种子前融资 750 万美元 / 680 万欧元",
+      "type": "funding",
+      "description": "Hummingbird Ventures 与 byFounders 联合领投。天使投资人包括 Shopify、Voi 和 Creandum 的创始人。在发布前一个月完成交割。",
+      "externalUrl": "https://www.eu-startups.com/2024/10/stockholm-based-lovable-raises-e6-8-million-to-make-everyone-a-software-engineer/"
+    },
+    {
+      "date": "2024-11-21",
+      "title": "Lovable v1 发布",
+      "type": "product",
+      "gtmTag": "品牌重塑发布",
+      "description": "第三次发布，全新名字。通过 Anton 的 X 账户软发布。随之而来的增长曲线，是任何 SaaS 公司公开披露过的最极端案例。",
+      "externalUrl": "https://lovable.dev/blog/2025-01-13-rebranding-gpt-engineer-to-lovable",
+      "articleSlug": "2024-11-lovable-launch"
+    },
+    {
+      "date": "2024-11-29",
+      "title": "8 天 ARR 100 万美元",
+      "type": "media",
+      "description": "付费用户超过 3,000 人。Anton 的发布回顾：任何 SaaS 公司公开披露过的最快第一周增速。",
+      "externalUrl": "https://x.com/antonosika"
+    },
+    {
+      "date": "2024-12-21",
+      "title": "4 周 ARR 400 万美元（Anton 长帖）",
+      "type": "media",
+      "gtmTag": "创始人即 IP",
+      "description": "Anton 关于 Lovable 增长的第一条爆款 X 长帖——将 Lovable 定位为欧洲增长最快的初创公司。",
+      "externalUrl": "https://x.com/antonosika/status/1870554039462814013"
+    },
+    {
+      "date": "2025-01-13",
+      "title": "官方品牌重塑公告",
+      "type": "media",
+      "description": "GPT Engineer 更名为 Lovable 的公开说明。多模型 AI 支持 + 面向非技术用户的目标市场扩展。",
+      "externalUrl": "https://lovable.dev/blog/2025-01-13-rebranding-gpt-engineer-to-lovable"
+    },
+    {
+      "date": "2025-01-25",
+      "title": "60 天 ARR 1,000 万美元",
+      "type": "media",
+      "description": "成为 Lovable 在运营者和产品经理圈子里流通的标志性数字。"
+    },
+    {
+      "date": "2025-02-02",
+      "title": "Karpathy「vibe coding」推文",
+      "type": "media",
+      "description": "累计超 450 万次浏览。没有直接点名 Lovable——但 Karpathy 所创造的品类正是 Lovable 的主场，Lovable 乘上了这波浪潮。",
+      "externalUrl": "https://x.com/karpathy/status/1886192184808149383"
+    },
+    {
+      "date": "2025-02-25",
+      "title": "A 轮前 1,500 万美元（Creandum 领投）",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "与 ARR 1,700 万美元 + 3 万付费用户 + 50 万总用户 + 每日 2.5 万个项目数据捆绑发布。Charlie Songhurst、Adam D'Angelo、Thomas Wolf 参与投资。",
+      "externalUrl": "https://techcrunch.com/2025/02/25/swedens-lovable-an-app-building-ai-platform-rakes-in-16m-after-spectacular-growth/"
+    },
+    {
+      "date": "2025-02-26",
+      "title": "ARR 1,700 万美元 + 付费用户 3 万",
+      "type": "media",
+      "description": "与 A 轮前融资同步披露：50 万用户，每日 2.5 万个项目。这是 Lovable 发布以来第一批官方数字。"
+    },
+    {
+      "date": "2025-03-09",
+      "title": "Anton 登上 Lenny's 播客",
+      "type": "media",
+      "gtmTag": "创始人即 IP",
+      "description": "「15 人团队，60 天 ARR 1,000 万美元」——Lovable 版的 Lex Fridman 时刻。创始人 IP 长篇内容，让 Anton 进入美国产品经理和运营人员的视野。",
+      "externalUrl": "https://www.lennysnewsletter.com/p/building-lovable-anton-osika",
+      "articleSlug": "2025-03-lennys-podcast"
+    },
+    {
+      "date": "2025-04-15",
+      "title": "面向进阶开发者的代码编辑器",
+      "type": "product",
+      "description": "将目标市场从非技术构建者扩展至开发者高级用户——同时保留消费者定位。"
+    },
+    {
+      "date": "2025-05-02",
+      "title": "ARR 4,000 万美元（第 5 个月）",
+      "type": "media",
+      "description": "Anton 发推：「欧洲有史以来增长最快的初创公司」——地理位置从传记背景升级为战略叙事。",
+      "externalUrl": "https://x.com/antonosika/status/1918429039280439645",
+      "gtmTag": "地理位置差异化",
+      "articleSlug": "2025-04-european-narrative"
+    },
+    {
+      "date": "2025-05-20",
+      "title": "ARR 5,000 万美元（年中）",
+      "type": "media",
+      "description": "年中加速里程碑——Lovable ARR 首次在单月内翻倍。"
+    },
+    {
+      "date": "2025-07-02",
+      "title": "TC 泄露「1.5 亿 / 20 亿估值」",
+      "type": "media",
+      "description": "预公告泄露积累期待。现代 AI 融资标准打法——先泄露，当天捆绑，用里程碑做后续跟进。",
+      "externalUrl": "https://techcrunch.com/2025/07/02/lovable-on-track-to-raise-150m-at-2b-valuation/"
+    },
+    {
+      "date": "2025-07-17",
+      "title": "A 轮 2 亿美元 / 估值 18 亿",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "Accel 领投。与 ARR 7,500 万 + 230 万用户 + Klarna/HubSpot 企业客户案例 + 天使投资人阵容（Klarna CEO、Slack 联合创始人、HubSpot 联合创始人）捆绑发布。",
+      "externalUrl": "https://techcrunch.com/2025/07/17/lovable-becomes-a-unicorn-with-200m-series-a-just-8-months-after-launch/",
+      "articleSlug": "2025-07-series-a"
+    },
+    {
+      "date": "2025-07-23",
+      "title": "8 个月内 ARR 突破 1 亿美元",
+      "type": "media",
+      "description": "「有史以来达到 ARR 1 亿美元最快的记录」——Anton 的标志性表述。A 轮捆绑公告六天后的独立报道。",
+      "externalUrl": "https://techcrunch.com/2025/07/23/eight-months-in-swedish-unicorn-lovable-crosses-the-100m-arr-milestone/"
+    },
+    {
+      "date": "2025-09-29",
+      "title": "Lovable Cloud + Lovable AI",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "垂直整合——Supabase 驱动后端 + Google Cloud / Gemini 合作。将 Lovable 从「应用构建工具」重新定位为「全栈 AI 平台」。",
+      "externalUrl": "https://lovable.dev/blog/lovable-cloud",
+      "articleSlug": "2025-09-lovable-cloud"
+    },
+    {
+      "date": "2025-11-25",
+      "title": "收购 Molnett",
+      "type": "acquisition",
+      "description": "瑞典云基础设施初创公司。为新的 Lovable Cloud 平台带来技术和人才，进一步押注垂直整合战略。",
+      "externalUrl": "https://lovable.dev/blog/lovable-welcomes-molnett"
+    },
+    {
+      "date": "2025-11-10",
+      "title": "用户接近 800 万",
+      "type": "media",
+      "description": "TechCrunch 访谈——Anton 释放企业转型信号。每日新产品发布量达 10 万个。",
+      "externalUrl": "https://techcrunch.com/2025/11/10/lovable-says-its-nearing-8-million-users-as-the-year-old-ai-coding-startup-eyes-more-corporate-employees/"
+    },
+    {
+      "date": "2025-11-18",
+      "title": "ARR 2 亿美元（Slush 舞台公告）",
+      "type": "media",
+      "description": "Anton Osika 在赫尔辛基 Slush 大会舞台上宣布 ARR 2 亿美元——距 1 亿美元仅四个月，实现翻倍。Bloomberg 当天报道；TechCrunch 和 Fortune 专访在随后 72 小时内相继发出。",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2025-11-18/lovable-hits-200-million-arr-and-raising-funds-above-6-billion-valuation"
+    },
+    {
+      "date": "2025-12-16",
+      "title": "CNBC 泄露「66 亿美元估值」",
+      "type": "media",
+      "description": "预公告泄露，与 7 月模式如出一辙。距 B 轮公告前两天。",
+      "externalUrl": "https://www.cnbc.com/2025/12/16/ai-startup-lovables-round-values-it-at-6point6-billion-sources.html"
+    },
+    {
+      "date": "2025-12-18",
+      "title": "B 轮 3.3 亿美元 / 估值 66 亿",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "CapitalG + Menlo（Anthology）联合领投，Khosla Ventures、DST Global、EQT Growth、T.Capital（Deutsche Telekom）和 Kinship Ventures 跟投。NVIDIA、Salesforce、Databricks、Atlassian、HubSpot 战略投资。",
+      "externalUrl": "https://techcrunch.com/2025/12/18/vibe-coding-startup-lovable-raises-330m-at-a-6-6b-valuation/"
+    },
+    {
+      "date": "2025-12-31",
+      "title": "ARR 2.5 亿美元（年末）",
+      "type": "media",
+      "description": "年末运行率进入 2026 年后持续加速。"
+    },
+    {
+      "date": "2026-01-31",
+      "title": "ARR 3 亿美元",
+      "type": "media",
+      "description": "单月新增 5,000 万美元。"
+    },
+    {
+      "date": "2026-02-27",
+      "title": "首次重大安全报道",
+      "type": "media",
+      "description": "The Register 报道一款 Lovable 生成的应用中 1.8 万条用户记录遭到泄露——首次真实品牌损伤。",
+      "externalUrl": "https://www.theregister.com/2026/02/27/lovable_app_vulnerabilities/"
+    },
+    {
+      "date": "2026-03-11",
+      "title": "ARR 4 亿美元 / 2 月单月新增 1 亿",
+      "type": "media",
+      "gtmTag": "捆绑里程碑",
+      "description": "公开披露：ARR 4 亿美元，146 名员工（每人 ARR 2.77 万美元），2 月单月新增 1 亿美元。TechCrunch 3 月 11 日率先报道；Bloomberg 3 月 12 日跟进，使用「最后一款软件」的框架。",
+      "externalUrl": "https://techcrunch.com/2026/03/11/lovable-says-it-added-100m-in-revenue-last-month-alone-with-just-146-employees/"
+    },
+    {
+      "date": "2026-03-23",
+      "title": "宣布启动并购搜寻",
+      "type": "media",
+      "description": "Théo Daniellot 被任命为并购与合作负责人。Lovable 主动寻找初创公司收购和人才收购目标。",
+      "externalUrl": "https://techcrunch.com/2026/03/23/vibe-coding-startup-lovable-is-on-the-hunt-for-acquisitions/"
+    },
+    {
+      "date": "2026-04-20",
+      "title": "BOLA 漏洞披露",
+      "type": "media",
+      "description": "更广泛的「对象级授权漏洞」（BOLA）浮出水面——研究人员报告 2026 年 2 月 3 日至 4 月 20 日期间，公开项目的聊天记录和源代码可被跨用户访问。Lovable 最初将泄露数据称为「预期行为」，随后澄清。此事件与 2 月 27 日单一教育科技应用事件不同，是整个增长弧线中首次真实品牌损伤。",
+      "externalUrl": "https://www.theregister.com/2026/04/20/lovable_denies_data_leak/"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2024-11-21",
+      "value": 0,
+      "source": "Lovable 发布基准线",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-11-29",
+      "value": 1000000,
+      "source": "Anton Osika / X",
+      "confidence": "official"
+    },
+    {
+      "date": "2024-12-21",
+      "value": 4000000,
+      "source": "Anton Osika / X",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-01-25",
+      "value": 10000000,
+      "source": "Lenny's Newsletter",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-02-25",
+      "value": 17000000,
+      "source": "Lovable 博客 / TechCrunch",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-05-02",
+      "value": 40000000,
+      "source": "Anton Osika / X",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-05-20",
+      "value": 50000000,
+      "source": "TheCreators AI",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-07-17",
+      "value": 75000000,
+      "source": "TechCrunch / A 轮",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-07-23",
+      "value": 100000000,
+      "source": "TechCrunch",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-11-21",
+      "value": 200000000,
+      "source": "Fortune",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-12-31",
+      "value": 250000000,
+      "source": "Bloomberg",
+      "confidence": "media"
+    },
+    {
+      "date": "2026-01-31",
+      "value": 300000000,
+      "source": "Bloomberg",
+      "confidence": "media"
+    },
+    {
+      "date": "2026-02-28",
+      "value": 400000000,
+      "source": "Bloomberg / TechCrunch",
+      "confidence": "official"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2024-10-15",
+      "value": 40000000,
+      "round": "种子前（估算）",
+      "source": "TheSaaSNews",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-07-17",
+      "value": 1800000000,
+      "round": "A 轮",
+      "source": "TechCrunch",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-12-18",
+      "value": 6600000000,
+      "round": "B 轮",
+      "source": "TechCrunch",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X（推特）",
+      "score": 5,
+      "bestStage": "全阶段——承重结构",
+      "effort": "全程在线，每日更新",
+      "role": "创始人广播 + ARR 计分板",
+      "description": "X 是 Lovable 增长被*宣布*的地方。Anton Osika 维持了一套每日披露数字的节奏——「8 天 100 万」「4 周 400 万」「5 个月 4,000 万」——把 ARR 里程碑变成了可自我复制的帖子。公司账号负责放大；创始人账号引领。",
+      "catalyst": "Anton「4 周 ARR 400 万」长帖（2024 年 12 月 21 日）——关于 Lovable 增长的第一条爆款创始人帖。设定了所有后续里程碑效仿的模板。",
+      "catalystUrl": "https://x.com/antonosika/status/1870554039462814013",
+      "accountUrl": "https://x.com/lovable_dev",
+      "accountLabel": "@lovable_dev on X",
+      "whenItWorks": "当创始人愿意实时发布个人 ARR 数字，用自己的声音，在没有任何人有理由听的时候就开始",
+      "whenItDoesnt": "如果里程碑推文来自企业账号，以新闻稿语气发出——这种格式一触即死"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 4,
+      "bestStage": "拐点期 + 超高速增长期",
+      "effort": "阶段性发力，单期投入极高",
+      "role": "创始人 IP 长篇内容 + 教程库",
+      "description": "Lovable 的 YouTube 存在是双头的。Anton 出席 Lenny's、Slush、TechBBQ 和 Accel 播客，承载创始人 IP 的重量。lovable.dev 视频库承载用户引导的重量——简短教程 + 用户构建的应用案例，无需销售话术地展示产品能力。",
+      "catalyst": "Lenny's 播客「Building Lovable: $10M ARR in 60 days with 15 people」（2025 年 3 月 9 日）。让 Anton 进入美国产品经理和运营人员视野的长篇破圈节目。",
+      "catalystUrl": "https://www.youtube.com/watch?v=DZtGxNs9AVg",
+      "accountUrl": "https://lovable.dev/videos",
+      "accountLabel": "Lovable 视频库",
+      "whenItWorks": "当创始人能在运营者级别的采访者（如 Lenny）面前，用具体数字、真实产品决策撑过 90 分钟对谈",
+      "whenItDoesnt": "试图从零开始用企业制作内容建立品牌频道。先借用现有播客的注意力，之后再考虑自建"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 4,
+      "bestStage": "潜伏期 + 品牌重塑发布期",
+      "effort": "随发布和事件节点性发力",
+      "role": "开发者可信度验证器",
+      "description": "HN 的开发者受众骗不了。gpt-engineer 在 2023 年中期的首页登顶（当时 GitHub 仓库突破 4 万颗星）是团队拿到有分量的外部信号的第一次。Lovable v1 发布、GitHub 下架事件和开源发布后来也相继登上首页——每一次都是用实质内容转化开发者怀疑态度的机会。",
+      "catalyst": "gpt-engineer 在 2023 年中期的 HN 首页登顶。仓库在约 3 个月内（2023 年 6 月 10 日至 9 月 2 日）积累了 4 万颗星，在 Lovable AB 成立之前就给了 Anton 市场规模验证和约 2.7 万人的候补名单。",
+      "catalystUrl": "https://news.ycombinator.com/item?id=42206666",
+      "accountUrl": "https://hn.algolia.com/?q=lovable.dev",
+      "accountLabel": "在 HN 搜索 Lovable",
+      "whenItWorks": "当发布具有工程师可以争论的技术新意时——开源仓库、全栈架构文章、事故复盘报告",
+      "whenItDoesnt": "不要发布针对非技术用户的增量产品更新。HN 对消费者营销语气充满敌意"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 3,
+      "bestStage": "超高速增长期 + 持续",
+      "effort": "跨社区，公司几乎无需介入",
+      "role": "跨社区讨论层",
+      "description": "Lovable 没有一个主导性的单一 subreddit。讨论分散于 r/vibecoding（8.9 万成员）、r/nocode、r/indiehackers、r/SideProject 和 r/SaaS——契合 Lovable「任何有想法的人」的定位。代价是：没有集中的倡导声音，但覆盖面更广。",
+      "catalyst": "r/vibecoding 在 2025 年成长为拥有 8.9 万成员的社区——Lovable 作为和 Bolt 并列的知名工具之一搭上了这波浪潮。",
+      "catalystUrl": "https://www.reddit.com/r/vibecoding/",
+      "accountUrl": "https://www.reddit.com/r/vibecoding/",
+      "accountLabel": "访问 r/vibecoding",
+      "whenItWorks": "当用户在通用 subreddit 上自发组织讨论时。不要过早尝试建立品牌专属 subreddit——等待它自然涌现",
+      "whenItDoesnt": "如果公司试图在企业控制的论坛里集中讨论。Reddit 的可信度一触营销即死"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 4,
+      "bestStage": "超高速增长期（企业拓展阶段）",
+      "effort": "创始人主导，里程碑节奏",
+      "role": "企业端和融资放大器",
+      "description": "LinkedIn 对 Lovable 的承重程度异常之高，因为 Anton 把它当作第二个 X 来运营。他的融资公告和 ARR 长帖跨发至 LinkedIn，触达了一个不活跃于开发者圈的不同受众——运营者、企业高管、欧洲 VC。A 轮中 Klarna / HubSpot / Slack 天使投资人的具名，在 LinkedIn 上的落地效果比在 X 上更重。",
+      "catalyst": "Anton 的 A 轮 LinkedIn 帖子（2025 年 7 月）——「Lovable 以 18 亿美元估值完成 Accel 领投的 2 亿美元融资。」被 Klarna 的 Sebastian Siemiatkowski、Slack 的 Stewart Butterfield、HubSpot 的 Dharmesh Shah 转发。一个周期内完成企业背书。",
+      "catalystUrl": "https://www.linkedin.com/posts/antonosika_today-lovable-raised-200m-at-a-18b-valuation-activity-7351665204838985728-LJs6",
+      "accountUrl": "https://se.linkedin.com/in/antonosika",
+      "accountLabel": "Anton Osika 的 LinkedIn",
+      "whenItWorks": "当创始人愿意用自己的声音写个人化的文章和里程碑帖，且天使投资人足够资深，其转发本身就有分量",
+      "whenItDoesnt": "作为企业发布渠道。节奏必须由创始人主导、里程碑驱动、带有情感细节"
+    },
+    {
+      "slug": "instagram",
+      "name": "Instagram",
+      "score": 3,
+      "bestStage": "超高速增长期（消费者延伸）",
+      "effort": "Reels 优先，持续产出",
+      "role": "消费者构建者触达",
+      "description": "Lovable 的 @lovable.dev 账号拥有 23.1 万粉丝——比大多数 B2B SaaS 公司愿意投入的规模高出一个数量级。原因是：Lovable 的实际目标市场包括独立创业者、独立开发者和「任何有想法的人」，与 Instagram 创作者受众有实质性重叠。展示几分钟内从零构建应用的 Reels，在这里表现出色，而在纯开发者工具账号上则不会。",
+      "catalyst": "持续发布的展示实时构建应用的 Reels——没有单一爆发时刻，但 23.1 万粉丝规模是所有 vibe-coding 工具中最高的。纯开发者工具同行无法复制这一点，也不应该尝试；产品的视觉化输出，才是 Instagram 奏效的原因。",
+      "accountUrl": "https://www.instagram.com/lovable.dev/",
+      "accountLabel": "@lovable.dev on Instagram",
+      "whenItWorks": "当产品输出是视觉化的，且演示可以在 60 秒内完成。Lovable 的「描述应用，看见应用」闭环，天然适配短视频格式",
+      "whenItDoesnt": "对于产品隐藏在 IDE 内部的 B2B 开发者工具。不要伪造一个视觉友好的故事；选择另一个平台"
+    }
+  ]
+}

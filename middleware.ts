@@ -11,8 +11,39 @@ const PROTECTED_DEEP_PREFIXES: string[] = []
 const PROTECTED_API_ROUTES: string[] = ['/api/dashboard']
 const SOFT_AUTH_COOKIE = 'gh-soft-user'
 
+/** Returns true if the Accept-Language header indicates a Chinese-language browser. */
+function isChineseBrowser(acceptLanguage: string): boolean {
+  return acceptLanguage
+    .split(',')
+    .map(s => s.split(';')[0].trim().toLowerCase())
+    .some(lang => lang === 'zh' || lang.startsWith('zh-'))
+}
+
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
+
+  // ── Language detection for growth-story pages ─────────────────────────────
+  // Fully automatic — no manual switcher, no cookie. Accept-Language only.
+  const basePath = pathname.match(/^\/growth-story\/([^/]+)$/)    // /growth-story/cursor
+  const zhPath   = pathname.match(/^\/growth-story\/([^/]+)\/zh$/) // /growth-story/cursor/zh
+
+  if (basePath || zhPath) {
+    const acceptLanguage = request.headers.get('accept-language') ?? ''
+    const chinese = isChineseBrowser(acceptLanguage)
+
+    if (basePath && chinese) {
+      const url = request.nextUrl.clone()
+      url.pathname = `${pathname}/zh`
+      return NextResponse.redirect(url, { status: 307 })
+    }
+
+    if (zhPath && !chinese) {
+      const url = request.nextUrl.clone()
+      url.pathname = `/growth-story/${zhPath[1]}`
+      return NextResponse.redirect(url, { status: 307 })
+    }
+  }
+  // ──────────────────────────────────────────────────────────────────────────
 
   let response = NextResponse.next({ request: { headers: request.headers } })
 

@@ -41,7 +41,8 @@ const UI = {
         eyebrow: 'Platform Mix',
         title: 'Which channels mattered ',
         titleAccent: 'when.',
-        lede: 'Cursor used six platforms differently. Some carried the entire arc; some were episodic catalysts; one was the discipline of staying off.',
+        lede: (name: string, count: number) =>
+          `${name} used ${count} platform${count !== 1 ? 's' : ''} differently. Some carried the entire arc; others were episodic catalysts.`,
       },
       synthesis: {
         eyebrow: 'Synthesis',
@@ -70,12 +71,11 @@ const UI = {
       backToGrowthHunt: '← GrowthHunt',
       copyright: '© 2026 GrowthHunt Labs',
     },
-    langSwitch: { label: '中文版', href: (company: string) => `/growth-story/${company}` },
   },
   zh: {
     growthStoryLabel: (n: string) => `增长故事 · 第 ${n} 期`,
     tags: {
-      read: '分钟阅读',
+      read: '阅读',
       founded: '成立于',
       eventsTracked: '个事件',
       deepDives: '篇深度拆解',
@@ -91,7 +91,8 @@ const UI = {
         eyebrow: '平台组合',
         title: '哪些渠道，',
         titleAccent: '在哪个阶段真正起作用。',
-        lede: 'Cursor 对六个平台的用法各不相同。有些贯穿始终；有些是阶段性催化剂；有一个平台，最重要的选择是不去做。',
+        lede: (name: string, count: number) =>
+          `${name} 对 ${count} 个平台的用法各不相同。有些贯穿始终，有些是阶段性催化剂。`,
       },
       synthesis: {
         eyebrow: '综合分析',
@@ -120,7 +121,6 @@ const UI = {
       backToGrowthHunt: '← GrowthHunt',
       copyright: '© 2026 GrowthHunt Labs',
     },
-    langSwitch: { label: 'English', href: (company: string) => `/growth-story/${company}/en` },
   },
 } as const
 // (Shape parity between locales is enforced informally — the original
@@ -211,29 +211,9 @@ export default async function GrowthStoryPage({ company, locale }: Props) {
       {/* Hero */}
       <section style={{ padding: '96px 0 72px', borderBottom: '1px solid var(--rule)', position: 'relative', overflow: 'hidden' }}>
         <div className="shell" style={{ position: 'relative', zIndex: 2 }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16, marginBottom: 28 }}>
-            <div className="eyebrow" style={{ display: 'inline-flex', alignItems: 'center', gap: 10 }}>
-              <span className="dot" />
-              {t.growthStoryLabel(seriesNum)}
-            </div>
-            {/* Language switcher */}
-            <a
-              href={t.langSwitch.href(company)}
-              style={{
-                fontFamily: 'var(--mono)',
-                fontSize: 11,
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-                color: 'var(--ink-faint)',
-                textDecoration: 'none',
-                padding: '5px 12px',
-                border: '1px solid var(--rule)',
-                borderRadius: 999,
-                transition: 'color 0.15s, border-color 0.15s',
-              }}
-            >
-              {t.langSwitch.label}
-            </a>
+          <div className="eyebrow" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 28 }}>
+            <span className="dot" />
+            {t.growthStoryLabel(seriesNum)}
           </div>
           <h1 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(60px, 9vw, 132px)', lineHeight: 0.92, letterSpacing: '-0.038em', fontWeight: 400, margin: '0 0 28px', maxWidth: 1100 }}>
             {timeline.company.name}{' '}
@@ -279,7 +259,7 @@ export default async function GrowthStoryPage({ company, locale }: Props) {
               eyebrow={t.sections.platformMix.eyebrow}
               title={t.sections.platformMix.title}
               titleAccent={t.sections.platformMix.titleAccent}
-              lede={t.sections.platformMix.lede}
+              lede={t.sections.platformMix.lede(timeline.company.name, timeline.platforms?.length ?? 0)}
             />
             <PlatformMix platforms={timeline.platforms} />
           </div>

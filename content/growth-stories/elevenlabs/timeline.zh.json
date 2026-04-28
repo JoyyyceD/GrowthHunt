@@ -1,0 +1,376 @@
+{
+  "company": {
+    "slug": "elevenlabs",
+    "name": "ElevenLabs",
+    "legalName": "ElevenLabs Inc.",
+    "tagline": "不到四年，从隐秘的 TTS 押注到 110 亿美元的语音 AI 平台",
+    "summary": "ElevenLabs 在秘密开发 12 个月后，于 2023 年 1 月发布测试版。产品在数天内病毒式传播——先是创作者现象，然后是滥用丑闻，再后来成为媒体、出版商和语音智能体领域的默认语音基础设施。每轮融资都捆绑着一次模型发布，每次模型发布都重新定义了语音 AI 的能力上限。",
+    "founded": "2022-04",
+    "founders": [
+      "Mati Staniszewski",
+      "Piotr Dabkowski"
+    ],
+    "seriesNumber": 5
+  },
+  "phases": [
+    {
+      "start": "2022-04",
+      "end": "2023-01",
+      "name": "波兰隐身期",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2023-01",
+      "end": "2024-01",
+      "name": "创作者优先的病毒式增长",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2024-01",
+      "end": "2025-01",
+      "name": "平台建设期",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2025-01",
+      "end": "2026-04",
+      "name": "语音智能体超高速增长",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2022-04-15",
+      "title": "ElevenLabs 成立",
+      "type": "product",
+      "description": "Mati Staniszewski（前 Palantir）和 Piotr Dabkowski（前 Google）在伦敦注册成立 ElevenLabs。起源洞察：在波兰看到的糟糕外语配音——创始人立志解决跨语言的声音质量问题，而不仅仅是克隆说话者。"
+    },
+    {
+      "date": "2023-01-23",
+      "title": "种前轮 200 万美元 + 公开测试版",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "种前轮由 Credo Ventures 领投，Concept Ventures 跟投。同一周测试版向公众开放，支持英语和波兰语——慷慨的免费套餐和高质量输出立即吸引了创作者涌入。",
+      "externalUrl": "https://elevenlabs.io/blog/elevenlabs-raises-2m-pre-seed-and-announces-ai-speech-platform-promising-to-revolutionize-audio-storytelling",
+      "articleSlug": "2023-01-pre-seed-beta-launch"
+    },
+    {
+      "date": "2023-01-30",
+      "title": "4chan 滥用丑闻",
+      "type": "media",
+      "gtmTag": "强制信任姿态",
+      "description": "公开测试版上线不到一周，4chan 用户克隆了 Emma Watson、Joe Rogan 和 Ben Shapiro 的声音，生成了侮辱性内容。ElevenLabs 在下一个工作日便推出付费专属语音克隆、AI 检测工具和全链路追溯机制。第一次危机成为第一次运营纪律的证明。",
+      "externalUrl": "https://www.vice.com/en/article/ai-voice-firm-4chan-celebrity-voices-emma-watson-joe-rogan-elevenlabs/",
+      "articleSlug": "2023-01-4chan-misuse-response"
+    },
+    {
+      "date": "2023-06-21",
+      "title": "A 轮 1900 万美元，估值约 1 亿美元",
+      "type": "funding",
+      "description": "由 a16z、Nat Friedman 和 Daniel Gross 联合领投。天使投资人包括 Mike Krieger（Instagram）、Brendan Iribe（Oculus）、Mustafa Suleyman（DeepMind）和 Tim O'Reilly。此时披露注册用户约 100 万。",
+      "externalUrl": "https://elevenlabs.io/blog/elevenlabs-launches-new-generative-voice-ai-products-and-announces-19m-series-a-round-led-by-nat-friedman-daniel-gross-and-andreessen-horowitz"
+    },
+    {
+      "date": "2023-08-22",
+      "title": "Eleven Multilingual v2 正式发布",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "告别测试版。v2 多语言模型覆盖近 30 种语言，能够保留原说话者的口音和情感——第一天起就立下的配音论点，至此被产品化。",
+      "externalUrl": "https://elevenlabs.io/blog/elevenlabs-comes-out-of-beta-and-releases-eleven-multilingual-v2-a-foundational-ai-speech-model-for-nearly-30-languages"
+    },
+    {
+      "date": "2023-10-10",
+      "title": "AI 配音功能上线",
+      "type": "product",
+      "description": "一键将语音翻译成 20 多种语言，同时保留说话者的声音、情感和语调。创始人第一天就想做的产品，终于落地。"
+    },
+    {
+      "date": "2024-01-22",
+      "title": "B 轮 8000 万美元，估值 11 亿美元 + Dubbing Studio",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "由 a16z 领投，Sequoia、Nat Friedman 和 Daniel Gross 跟投。同一公告捆绑了 Voice Marketplace + Dubbing Studio + 移动端 SDK。距成立约 21 个月，成为速度最快的欧洲 AI 独角兽。",
+      "externalUrl": "https://techcrunch.com/2024/01/22/voice-cloning-startup-elevenlabs-lands-80m-achieves-unicorn-status/",
+      "articleSlug": "2024-01-series-b-unicorn"
+    },
+    {
+      "date": "2024-01-26",
+      "title": "拜登深度伪造自动电话 + 账户封禁",
+      "type": "media",
+      "gtmTag": "强制信任姿态",
+      "description": "Pindrop 追踪到一条虚假拜登新罕布什尔州初选自动电话，溯源至 ElevenLabs。公司在 72 小时内封禁了相关账户，成为 2024 年美国选举年中被引用最多的 AI 厂商公开追责案例。",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2024-01-26/ai-startup-elevenlabs-bans-account-blamed-for-biden-audio-deepfake",
+      "articleSlug": "2024-01-biden-deepfake-response"
+    },
+    {
+      "date": "2024-06-25",
+      "title": "ElevenReader 应用上线",
+      "type": "product",
+      "description": "iOS 版发布（Android 随后跟进）。阅读器应用可将任意文章、PDF 或 ePub 转为有声收听——这是公司第一个不依赖开发者 API 的主要消费者端产品。"
+    },
+    {
+      "date": "2024-07-03",
+      "title": "Iconic Voices：Garland、Dean、Reynolds、Olivier",
+      "type": "media",
+      "gtmTag": "受众边界突破",
+      "description": "与 CMG Worldwide 达成遗产授权协议，将 Judy Garland、James Dean、Burt Reynolds 和 Sir Laurence Olivier 的声音带入 ElevenReader。报道覆盖 CNN、CBS News、Variety——推动 ElevenLabs 进入主流媒体报道圈。",
+      "externalUrl": "https://variety.com/2024/biz/news/ai-judy-garland-james-dean-burt-reynolds-elevenlabs-reader-app-1236058829/",
+      "articleSlug": "2024-07-iconic-voices"
+    },
+    {
+      "date": "2024-10-30",
+      "title": "披露 ARR 达 9000 万美元",
+      "type": "media",
+      "description": "10 月底 ARR 约为 9000 万美元，较 2024 年早些时候的约 2500 万美元大幅增长。这是首个证明语音 AI 是真实收入赛道而非演示噱头的数据点。"
+    },
+    {
+      "date": "2024-11-18",
+      "title": "对话式 AI v1 上线",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "首个完整集成的对话智能体平台：TTS + STT + LLM 编排整合为单一技术栈。ElevenLabs 从 TTS API 转型为语音智能体平台，而此时竞争对手 Vapi 和 Retell 仍处于预览阶段。",
+      "externalUrl": "https://techcrunch.com/2024/11/18/elevenlabs-now-offers-ability-to-build-conversational-ai-agents/",
+      "articleSlug": "2024-11-conversational-ai-launch"
+    },
+    {
+      "date": "2025-01-30",
+      "title": "C 轮 1.8 亿美元，估值 33 亿美元",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "由 a16z 和 ICONIQ Growth 联合领投。新进战略投资人：Deutsche Telekom、NTT DOCOMO Ventures、RingCentral Ventures、HubSpot Ventures 和 LG Technology Ventures。返场投资人：NEA、Sequoia、Salesforce Ventures、Smash Capital、SV Angel。战略投资人阵容标志着向电信、CRM 和企业语音基础设施的跃迁。",
+      "externalUrl": "https://techcrunch.com/2025/01/30/elevenlabs-raises-180-million-in-series-c-funding-at-3-3-billion-valuation/",
+      "articleSlug": "2025-01-series-c"
+    },
+    {
+      "date": "2025-02-22",
+      "title": "与 a16z 联合举办全球黑客马拉松",
+      "type": "media",
+      "description": "与 a16z 联合举办，9 座城市同步进行，主题聚焦语音智能体。将黑客马拉松作为营销手段，应用于大规模语音 AI 开发者平台——高杠杆率的开发者平台跃迁策略。"
+    },
+    {
+      "date": "2025-06-03",
+      "title": "对话式 AI 2.0 上线",
+      "type": "product",
+      "description": "原生轮流对话模型、集成语言检测、多角色模式、批量外呼功能。距 v1 仅五个月——刻意为之的发布节奏，目标是让「语音智能体」成为一个 ElevenLabs 主导的品类。"
+    },
+    {
+      "date": "2025-06-05",
+      "title": "Eleven v3（测试版）发布",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "70 多种语言、多说话者对话、音频标签（[excited]、[whispers]、[laughing]）。v3 测试版是首个提供舞台指示语法的 TTS 模型——将声音表演压缩为一种脚本语法。",
+      "externalUrl": "https://x.com/elevenlabsio/status/1930689774278570003",
+      "articleSlug": "2025-06-eleven-v3"
+    },
+    {
+      "date": "2025-08-01",
+      "title": "ARR 达 2 亿美元",
+      "type": "media",
+      "description": "Mati Staniszewski 在 LinkedIn 上确认 ARR 达到 2 亿美元。从 0 到 1 亿美元用了 20 个月，从 1 亿到 2 亿美元仅用了 10 个月——曲线在每段都在压缩。"
+    },
+    {
+      "date": "2025-09-08",
+      "title": "员工二次出售 1 亿美元，估值 66 亿美元",
+      "type": "funding",
+      "gtmTag": "叙事飞轮启动",
+      "description": "由 Sequoia 和 ICONIQ 联合领投，a16z、Smash Capital、World Innovation Lab 参与。估值在八个月内翻番。以二次出售（而非增发）的形式，传递出高度信心信号，同时不进行稀释。",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2025-09-08/elevenlabs-to-let-staff-sell-shares-at-6-6-billion-valuation"
+    },
+    {
+      "date": "2025-09-15",
+      "title": "Nvidia 战略投资",
+      "type": "funding",
+      "description": "Nvidia 入股。Mati Staniszewski 数月后在 D 轮报道中披露了这一消息。Nvidia 内部使用 ElevenLabs 进行音频生成——这位战略投资人同时也是一个标志性客户。"
+    },
+    {
+      "date": "2025-12-11",
+      "title": "33 城黑客马拉松",
+      "type": "media",
+      "description": "为期三小时的对话智能体构建冲刺，覆盖 33 座城市；逾 1000 名开发者参与，是 ElevenLabs 有史以来规模最大的黑客马拉松。大规模社区建设。"
+    },
+    {
+      "date": "2026-01-13",
+      "title": "2025 年底 ARR 达 3.3 亿美元",
+      "type": "media",
+      "description": "Mati Staniszewski 告诉 TechCrunch，2025 年末 ARR 超过 3.3 亿美元。从 2 亿到 3.3 亿美元仅用五个月。企业收入接近总营收的 50%——Deutsche Telekom 和 Revolut 被公开点名。",
+      "externalUrl": "https://techcrunch.com/2026/01/13/elevenlabs-ceo-says-the-voice-ai-startup-crossed-330-million-arr-last-year/"
+    },
+    {
+      "date": "2026-02-04",
+      "title": "D 轮 5 亿美元，估值 110 亿美元 + IPO 话题",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "由 Sequoia 领投，a16z、ICONIQ、Lightspeed、Bond、Evantic 参与。估值较 9 月二次出售价格三倍增长。Mati Staniszewski 向媒体表示公司正在「迈向 IPO」——首次在公开记录中明确 IPO 框架。",
+      "externalUrl": "https://techcrunch.com/2026/02/04/elevenlabs-raises-500m-from-sequioia-at-a-11-billion-valuation/",
+      "articleSlug": "2026-02-series-d-ipo-track"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2024-01-22",
+      "value": 25000000,
+      "source": "Sacra / Sifted estimates",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2024-10-30",
+      "value": 90000000,
+      "source": "Sacra / The Information",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-12-31",
+      "value": 120000000,
+      "source": "ElevenLabs / SaaStr",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-08-01",
+      "value": 200000000,
+      "source": "Mati Staniszewski / LinkedIn",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-12-31",
+      "value": 330000000,
+      "source": "ElevenLabs / TechCrunch",
+      "confidence": "official"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2023-01-23",
+      "value": 12000000,
+      "round": "种前轮",
+      "source": "Crunchbase",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2023-06-21",
+      "value": 100000000,
+      "round": "A 轮",
+      "source": "Sifted / a16z",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-01-22",
+      "value": 1100000000,
+      "round": "B 轮",
+      "source": "Fortune / TechCrunch",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-01-30",
+      "value": 3300000000,
+      "round": "C 轮",
+      "source": "TechCrunch",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-09-08",
+      "value": 6600000000,
+      "round": "二次出售",
+      "source": "Bloomberg",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-02-04",
+      "value": 11000000000,
+      "round": "D 轮",
+      "source": "TechCrunch / CNBC",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X（推特）",
+      "score": 5,
+      "bestStage": "全阶段——承重结构",
+      "effort": "全程在线",
+      "role": "创始人 + 产品发布渠道",
+      "description": "Mati Staniszewski（@matiii）和 @elevenlabsio 账号驱动了每一次重要发布。音频演示在 X 上的传播效果异常出色——语音片段推文可以自动播放，并且转发时原始音频一并附带，这是罕见的。每次模型发布都以片段长推首先落地。",
+      "catalyst": "Eleven v3 测试版发布推文（2025 年 6 月 5 日）——带有音频标签演示片段，由创始人、Karpathy 以及 AI 开发者圈转发。原生片段传播让 v3 在第一天就有了「全新品类」的感觉。",
+      "catalystUrl": "https://x.com/elevenlabsio/status/1930689774278570003",
+      "accountUrl": "https://x.com/elevenlabsio",
+      "accountLabel": "@elevenlabsio on X",
+      "whenItWorks": "当产品输出本身就是可分享的内容单元时（音频片段、声音演示）。该平台会内嵌自动播放音频——让每次发布都是一个片段，而不是截图",
+      "whenItDoesnt": "如果团队发布的是新闻稿式文字。语音 AI 圈子期待帖子里有新的音频，而不是博客链接"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 4,
+      "bestStage": "拐点前 + 超高速增长期",
+      "effort": "阶段性创作者驱动，加上创始人长篇访谈",
+      "role": "演示放大 + 投资人叙事",
+      "description": "两个层次并行：创始人长篇播客（Sequoia Training Data、a16z Show、Nothing Left Unsaid）与创作者教程。Mati Staniszewski 在 2025 年的投资人播客巡回，将外界对 ElevenLabs 的认知从「TTS 初创公司」重塑为「语音基础设施公司」。创作者教程则在后台持续推动自助注册转化。",
+      "catalyst": "Mati Staniszewski 登上 Sequoia Training Data（2025 年中）——这个长篇内容资产，是 a16z、ICONIQ 以及后来的 Sequoia 在每轮后续融资之前，在其 LP 和高管网络内部传阅的参考材料。",
+      "catalystUrl": "https://www.sequoiacap.com/podcast/training-data-mati-staniszewski/",
+      "accountUrl": "https://www.youtube.com/@elevenlabsio",
+      "accountLabel": "ElevenLabs on YouTube",
+      "whenItWorks": "当创始人能撑过 60-90 分钟的投资人级追问，且每一集都有新的产品演示时。创始人 + 创作者双层叠加，效果是复利式的",
+      "whenItDoesnt": "无后续跟进的一次性主题演讲。这套模式只有在持续的访谈节奏下才奏效，单次亮相不行"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 4,
+      "bestStage": "隐身期 + 平台建设期",
+      "effort": "随重要发布节点性发力",
+      "role": "技术可信度验证器",
+      "description": "Multilingual v2、对话式 AI v1、Eleven v3 和 Reader 都登上了 HN 首页，获得数百条评论。对话式 AI 于 2024 年 11 月上线时，HN 信号最为关键——它向 ElevenLabs 需要争取的开发者群体证明了平台跃迁在技术上是可信的。",
+      "catalyst": "对话式 AI v1 发布帖（2024 年 11 月）——首页登顶，获得严肃的技术审视。两个月后：33 亿美元 C 轮。",
+      "catalystUrl": "https://hn.algolia.com/?q=elevenlabs",
+      "accountUrl": "https://hn.algolia.com/?q=elevenlabs.io",
+      "accountLabel": "Search HN for ElevenLabs",
+      "whenItWorks": "当发布具有可量化的技术新意时——新模型、新架构、真实基准测试。HN 用户奖励能展现能力的演示",
+      "whenItDoesnt": "不要发布「我们达到了 X 亿 ARR」或定价调整。HN 会惩罚商业通报式的定格方式"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 3,
+      "bestStage": "创作者优先的病毒式增长期 + 持续",
+      "effort": "社区驱动",
+      "role": "使用场景发现 + 用户留存层",
+      "description": "r/ElevenLabs 及相关社区（r/AIVoiceCloning、r/audiobooks、r/IndieDev）成了创作者交流声音 ID、提示词技巧和使用场景模板的聚集地。与其说是获客渠道，不如说是激活渠道——新用户在这里学会如何在第一个小时内获得好的输出。",
+      "catalyst": "没有单一触发时刻。社区在 2023 年围绕免费套餐自然形成，并在 2024-2025 年间成熟为一个自助式支持中枢。",
+      "catalystUrl": "https://www.reddit.com/r/ElevenLabs/",
+      "accountUrl": "https://www.reddit.com/r/ElevenLabs/",
+      "accountLabel": "Visit r/ElevenLabs",
+      "whenItWorks": "当你拥有慷慨到让用户愿意主动分享作品的免费套餐时。社区从产品中涌现，而不是靠外联催生",
+      "whenItDoesnt": "如果你尝试刷水军，社区几天内就会识破"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 3,
+      "bestStage": "语音智能体超高速增长期（企业端）",
+      "effort": "创始人帖子 + 融资放大",
+      "role": "企业 + 投资人信号",
+      "description": "Mati Staniszewski 的 LinkedIn 自 2025 年中起开始发挥实质性影响。ARR 里程碑、融资公告和客户案例以个人帖子的形式发布，并在 Deutsche Telekom 类型的企业采购网络中二次传播。相比典型的开发者工具公司，得分更高，因为语音智能体的买家是企业联络中心负责人，而非开发者。",
+      "catalyst": "Mati Staniszewski 发布 2 亿美元 ARR LinkedIn 帖子（2025 年 8 月）——在一条帖子里披露了数据、客户 logo 以及明确的「迈向 IPO」定位。为 9 月二次出售和 2 月 D 轮定下了基调。",
+      "catalystUrl": "https://www.linkedin.com/posts/matiii_we-dont-often-share-numbers-but-with-yesterday-activity-7371289071534428161-fPME",
+      "accountUrl": "https://www.linkedin.com/company/elevenlabsio/",
+      "accountLabel": "ElevenLabs on LinkedIn",
+      "whenItWorks": "当你的买家是企业客户，且你所在的品类是「语音基础设施 / 联络中心」时。所有 CIO 和客户体验负责人都在 LinkedIn 上，而不在 X 上",
+      "whenItDoesnt": "面向纯创作者的发布。LinkedIn 受众不会像 X 用户那样对 v3 音频标签演示产生共鸣"
+    },
+    {
+      "slug": "instagram",
+      "name": "Instagram",
+      "score": 3,
+      "bestStage": "创作者优先的病毒式增长期",
+      "effort": "创作者驱动，公司介入较少",
+      "role": "消费者创作者放大",
+      "description": "对一家 B2B AI 公司来说得分异常高——且实至名归。声音克隆（达斯·维达、Iconic Voices、名人恶搞）经常在 ElevenLabs 毫不费力的情况下，从 TikTok 流转到 Instagram Reels。Reader 应用中 Judy Garland 和 James Dean 的演示天然契合这个格式。公司自己发得不多；创作者代劳了。",
+      "catalyst": "Iconic Voices 上线报道（2024 年 7 月）——Garland 朗读《绿野仙踪》的片段通过 CBS、CNN 和 Variety 的社交账号以 Instagram Reels 形式传播。主流媒体分发，零付费。",
+      "catalystUrl": "https://www.instagram.com/elevenlabsio/",
+      "accountUrl": "https://www.instagram.com/elevenlabsio/",
+      "accountLabel": "@elevenlabsio on Instagram",
+      "whenItWorks": "当产品输出兼具视觉和音频吸引力时（语音片段配名人面孔、视频演示）。Instagram 是 TikTok 创作者内容的下游，而非主渠道",
+      "whenItDoesnt": "面向开发者的功能、API 发布和对话式 AI 配置相关内容。这些场景完全跳过 Instagram"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+---
+title: "对话式 AI v1——11 周内完成平台跃迁，彻底重塑销售动作（2024 年 11 月）"
+description: "ElevenLabs 在 2024 年 11 月 18 日从 TTS API 变身为集成语音智能体平台。11 周后，电信和 CRM 战略投资人领投了 C 轮。这次向上迁移的速度，让竞争对手根本来不及反应。"
+date: "2024-11-18"
+type: "product"
+gtmTag: "技术叙事升维"
+eventTitle: "对话式 AI v1 上线"
+externalUrl: "https://techcrunch.com/2024/11/18/elevenlabs-now-offers-ability-to-build-conversational-ai-agents/"
+---
+
+<Catalyst>
+ElevenLabs 花了两年成为最好的 TTS API。2024 年 11 月 18 日，它成为了一个语音智能体平台——2025 年 1 月 30 日，它以 33 亿美元估值完成了由 a16z、ICONIQ、Deutsche Telekom 和 NTT DOCOMO 领投的 1.8 亿美元 C 轮融资。发布与融资之间的这 11 周，是整个故事的枢纽。
+</Catalyst>
+
+2024 年 11 月 18 日。ElevenLabs 上线对话式 AI v1——一个将 TTS、语音转文字（STT）和 LLM 编排整合进单一智能体技术栈的平台层。开发者现在可以直接在 ElevenLabs 开发者控制台内构建完整的对话智能体。
+
+11 周后，C 轮融资以 33 亿美元估值完成，战略投资人来自电信、CRM 和联络中心领域。
+
+## 这次发布实际上交付了什么
+
+对话式 AI v1 是一个平台级产品，而不是一个功能。一个控制台，四个组件：
+
+- **语音（TTS）**：ElevenLabs 现有的 Eleven Multilingual v2 模型
+- **语音转文字**：处理用户输入的原生 ASR（自动语音识别）
+- **LLM 编排**：可接入 OpenAI、Anthropic 或自托管 LLM
+- **知识库**：以文件 / URL / 文本块作为智能体上下文
+
+配置界面相当完整——声音、延迟、稳定性、对话长度、身份验证等。SDK 支持 Python、JavaScript、React 和 Swift，另提供 WebSocket API。
+
+换句话说：开发者在一个地方就能构建一个可用的语音智能体，无需串联 5 个供应商。
+
+## 为什么时机至关重要
+
+语音智能体品类正在 2024 年末成形。当时的竞争格局：
+
+| 厂商 | 2024 年 11 月的定位 | 技术栈 |
+|---|---|---|
+| **ElevenLabs** | 最佳 TTS，现在是完整平台 | 垂直集成 |
+| Vapi | 语音智能体平台，无自研 TTS | 最优第三方 API 拼接 |
+| Retell | 语音智能体平台，无自研 TTS | 最优第三方 API 拼接 |
+| Cartesia | 最强 TTS 竞争对手，无智能体层 | 仅 TTS |
+| PlayHT | TTS，在构建智能体功能 | TTS + 薄智能体层 |
+| Deepgram | STT 领导者，在构建 TTS | STT + TTS，无智能体 |
+
+ElevenLabs 是唯一同时拥有顶级自研 TTS 模型和完整智能体技术栈的厂商。Vapi 和 Retell 正在把 ElevenLabs 的 TTS 接入自己的技术栈——这使得平台跃迁直接构成了对它们的竞争威胁。
+
+> 对话式 AI v1 的上线，实际上将 Vapi 和 Retell 的成本折叠进了 ElevenLabs 自己的平台。原本同时付费给 ElevenLabs TTS 和 Vapi 编排的开发者，现在可以合并这两笔账单。
+
+## 11 周连锁
+
+这次发布是一段紧密排布的时间线的第一步：
+
+| 日期 | 事件 |
+|---|---|
+| **2024 年 11 月 18 日** | **对话式 AI v1 上线** |
+| 2024 年 11 月末 | 披露 ARR 达 9000 万美元（Sacra / The Information） |
+| 2024 年 12 月 | ARR 年底达 1.2 亿美元 |
+| 2025 年 1 月 | C 轮条款单活动（被融资报道预示） |
+| **2025 年 1 月 30 日** | **C 轮 1.8 亿美元，估值 33 亿美元** |
+| 2025 年 2 月 22-23 日 | a16z + ElevenLabs 全球黑客马拉松（语音智能体主题） |
+
+从产品发布到融资关闭，仅用 11 周。这种速度的实现，需要以下三个前提条件同时成立：
+
+1. 预先存在的投资人关系（a16z + ICONIQ 已在跟进中）
+2. 可核实的营收拐点（2024 年全年 ARR 从 2500 万 → 9000 万 → 1.2 亿美元）
+3. 一次重新定义品类的产品发布
+
+C 轮新进战略投资人名单——Deutsche Telekom、NTT DOCOMO Ventures、RingCentral Ventures、HubSpot Ventures 和 LG Technology Ventures（Salesforce Ventures 返场）——都因为对话式 AI v1 将 ElevenLabs 从 TTS 重新定位为电信和 CRM 基础设施而加入。
+
+## 战略投资人实际上在买什么
+
+四家电信 / CRM 战略投资人，各有明确的投资逻辑：
+
+| 投资人 | 战略角度 |
+|---|---|
+| **Deutsche Telekom** | 欧洲 B2B 服务的语音智能体 |
+| **NTT DOCOMO Ventures** | 日本市场联络中心的语音智能体 |
+| **RingCentral Ventures** | UCaaS / 联络中心语音集成 |
+| **HubSpot Ventures** | 中小企业 CRM 语音智能体层 |
+| **LG Technology Ventures** | 消费电子设备的语音界面 |
+
+五位战略投资人，五条不同的企业集成路径。任何一家都不会投资一个 TTS API。所有人对语音智能体平台都有清晰的投资论点。
+
+平台跃迁是吸引战略投资人的前提条件。ElevenLabs 从"有趣的 AI 初创公司"变成"潜在的基础设施合作伙伴"，用了 11 周。
+
+## 对话式 AI 2.0 的跟进
+
+对话式 AI v1 是第一步。对话式 AI 2.0（2025 年 6 月 3 日）是可信度的延伸：
+
+- 原生轮流对话模型（处理犹豫、打断、填充词）
+- 集成语言检测（无需手动配置）
+- 多角色模式（单一智能体，多个人设）
+- 批量外呼（并发呼叫发起）
+
+2.0 的发布刻意在 v1 发布七个月后——这个发布节奏传递出"这是我们主导的品类"的信号。Vapi 和 Retell 还在他们的第一或第二个平台迭代上。ElevenLabs 已经发布了两代产品。
+
+节奏本身就是 GTM。不是单个功能。
+
+## 平台跃迁对 ARR 曲线的影响
+
+平台层的转变以纯 TTS 规模扩张无法实现的方式复利加速了营收曲线：
+
+| 日期 | ARR | 驱动力 |
+|---|---|---|
+| 2024 年 Q1 | 2500 万美元 | TTS API + Dubbing Studio |
+| 2024 年 Q4 | 1.2 亿美元 | TTS 规模扩张 + 早期对话式 AI 采用 |
+| 2025 年 8 月 | 2 亿美元 | 对话式 AI 2.0 + 企业合同 |
+| 2025 年 12 月 | 3.3 亿美元以上 | 规模化语音智能体，企业接近总营收 50% |
+
+2024 年 Q4 → 2025 年 8 月的跳升（1.2 亿到 2 亿美元，仅八个月），是对话式 AI 营收开始在顶线上体现的阶段。2025 年 8 月 → 12 月的跳升（2 亿到 3.3 亿美元，仅五个月），是企业合同开始规模化成交的阶段。
+
+没有 2024 年 11 月的对话式 AI v1，曲线会在 2 亿美元 ARR 附近趋于平稳——一家不错的 TTS 公司。**有了对话式 AI v1，曲线继续压缩，一路延伸到 D 轮和 IPO 轨道。**
+
+<Conclusion title="可以复用的东西">
+
+- **平台跃迁必须在竞争对手能够重新定位之前完成。** ElevenLabs 有一个 11 周的窗口，是唯一同时拥有自研顶级 TTS 模型和完整智能体技术栈的厂商。到 Vapi 和 Retell 构建自己的 TTS 或签下独家协议时，ElevenLabs 已经完成了战略性 C 轮融资。
+- **战略投资人是叙事验证，而非融资规模。** Deutsche Telekom 和 NTT DOCOMO 没有推动 ElevenLabs 的估值，他们推动了一个叙事——ElevenLabs 是语音基础设施，而不是一个创作者工具。这个叙事驱动了后续两轮融资。
+- **节奏比功能数量更重要。** 对话式 AI v1 → 2.0，七个月的间隔，是竞争对手难以匹配的发布节奏。节奏本身成为竞争壁垒——每个押注某个厂商的客户都想知道这个厂商会持续交付。
+
+</Conclusion>
+
+## 来源
+
+- [TechCrunch：ElevenLabs 对话式 AI 发布](https://techcrunch.com/2024/11/18/elevenlabs-now-offers-ability-to-build-conversational-ai-agents/)
+- [VentureBeat：对话式 AI 2.0](https://venturebeat.com/ai/elevenlabs-debuts-conversational-ai-2-0-voice-assistants-that-understand-when-to-pause-speak-and-take-turns-talking)
+- [TechCrunch：C 轮融资](https://techcrunch.com/2025/01/30/elevenlabs-raises-180-million-in-series-c-funding-at-3-3-billion-valuation/)
+- [ICONIQ：投资论点](https://www.iconiq.com/growth/insights/shaping-the-future-of-audio-our-investment-in-elevenlabs)

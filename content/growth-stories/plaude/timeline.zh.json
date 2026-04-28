@@ -1,0 +1,350 @@
+{
+  "company": {
+    "slug": "plaude",
+    "name": "Plaud",
+    "legalName": "PLAUD Inc.",
+    "tagline": "用一张 179 美元的录音卡片，27 个月内做到 2.5 亿美元年化营收",
+    "summary": "Plaud 是一个本不该成功的 AI 硬件故事。Humane 融了 2.3 亿美元却走向停服，而 Plaud 从 Kickstarter 拿走 110 万美元，把生产留在深圳，把总部放在旧金山，靠 YouTube 和创作者评测把 150 万台设备卖向 2.5 亿美元年化营收——没有任何真正的风险投资轮次。这条弧线把所有经典的硬件打法压缩进了 30 个月：众筹上线、零售阶梯扩张、产品线扩充，最终完成软件与企业转型。",
+    "founded": "2021-12",
+    "founders": [
+      "Nathan Xu (Xu Gao)",
+      "Charles Liu"
+    ],
+    "seriesNumber": 6
+  },
+  "phases": [
+    {
+      "start": "2021-12",
+      "end": "2023-06",
+      "name": "iZYREC 前身期",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2023-06",
+      "end": "2024-08",
+      "name": "众筹到零售",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2024-08",
+      "end": "2025-08",
+      "name": "产品线扩张与创作者飞轮",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2025-08",
+      "end": "2026-04",
+      "name": "平台化与企业转型",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-12-01",
+      "title": "Plaud Inc. 成立",
+      "type": "product",
+      "description": "徐高（Nathan Xu）和 Charles Liu 在特拉华州注册成立 Plaud Inc.。徐高拥有银行 / 风险投资和消费硬件从业背景；刘持有一家深圳可穿戴设备工厂。从第一天起就是自举结构：零外部资本，创始人自行为库存融资。"
+    },
+    {
+      "date": "2022-09-25",
+      "title": "iZYREC 出海上线",
+      "type": "product",
+      "gtmTag": "结构性差异化",
+      "description": "首款产品：iZYREC——一款 50 美元的 App 联动录音机，主要通过 Indiegogo 面向海外支持者销售。2023 年初实现盈利。确立了深圳制造 / DTC 众筹的模式，Plaud 此后直接继承了这套打法。",
+      "externalUrl": "https://www.indiegogo.com/en/projects/plaud/izyrec-smallest-most-easy-to-use-voice-recorder"
+    },
+    {
+      "date": "2023-03-01",
+      "title": "ChatGPT 时代的战略转型",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "GPT-4 发布后，团队决定在录音硬件上叠加 AI 转录与摘要层。同一颗物理芯片摇身一变，成为定价比 iZYREC 高三倍的「AI 记录仪」。"
+    },
+    {
+      "date": "2023-06-27",
+      "title": "Plaud Note 众筹上线",
+      "type": "product",
+      "gtmTag": "众筹优先的 GTM",
+      "description": "Kickstarter 活动以 5000 美元为目标上线。磁吸卡片录音机定价 159 美元，以「ChatGPT 赋能 AI 录音机」为卖点。36 小时内募集超过 20 万美元，跻身 2023 年 7 月众筹热门项目。",
+      "externalUrl": "https://www.kickstarter.com/projects/izyrec/plaud-note-chatgpt-empowered-ai-voice-recorder",
+      "articleSlug": "2023-06-kickstarter-launch"
+    },
+    {
+      "date": "2023-08-16",
+      "title": "众筹结束：110 万美元 / 7563 位支持者",
+      "type": "media",
+      "gtmTag": "众筹优先的 GTM",
+      "description": "50 天活动以 7563 位支持者、1,108,067 美元收官——超出目标 22,000%。Indiegogo InDemand 接力运营；合并众筹金额在 Plaud 建立 DTC 站点之前已突破 150 万美元。",
+      "externalUrl": "https://www.kicktraq.com/projects/izyrec/plaud-note-chatgpt-empowered-ai-voice-recorder/"
+    },
+    {
+      "date": "2023-12-01",
+      "title": "DTC + Amazon 开始发货",
+      "type": "product",
+      "description": "众筹首批设备开始发货。plaud.ai DTC 官网开张。Amazon 商品列表随后上线——这个渠道在此后 24 个月持续复利。"
+    },
+    {
+      "date": "2024-04-23",
+      "title": "Humane AI Pin 评测崩盘",
+      "type": "media",
+      "gtmTag": "实用工具定位",
+      "description": "Marques Brownlee 将他对 Humane 的评测命名为「我评测过的最烂产品……目前为止」。Plaud 所在的品类——语音优先 AI 可穿戴——突然被 Humane 的错误定义了边界。Plaud 成为最显而易见的反面案例：便宜、聚焦、好用。",
+      "externalUrl": "https://www.youtube.com/watch?v=TitZV6k8zfA",
+      "articleSlug": "2024-04-humane-counter-positioning"
+    },
+    {
+      "date": "2024-08-28",
+      "title": "PLAUD NotePin 发布",
+      "type": "product",
+      "gtmTag": "受众边界拓展",
+      "description": "可穿戴形态——别针 / 项链 / 手环 / 夹子——售价 169 美元。在 Humane 崩盘五个月后发布，明确以「更简洁的 AI 别针」作为定位框架。TechCrunch 预购报道给了 Plaud 想要的那个标题。",
+      "externalUrl": "https://techcrunch.com/2024/08/28/plaud-takes-a-crack-at-a-simpler-ai-pin/",
+      "articleSlug": "2024-08-notepin-launch"
+    },
+    {
+      "date": "2024-09-20",
+      "title": "TechCrunch「旅行包」评测",
+      "type": "media",
+      "gtmTag": "搭乘 KOL 浪头",
+      "description": "Brian Heater 发表「Plaud 169 美元的 ChatGPT 驱动 NotePin 已经永久进驻我的旅行包」。同一媒体曾嘲讽 Humane，如今给出了科技媒体的背书。为此后所有评测定下了基调。",
+      "externalUrl": "https://techcrunch.com/2024/09/20/plauds-169-chatgpt-powered-notepin-has-a-permanent-place-in-my-travel-bag/"
+    },
+    {
+      "date": "2024-11-01",
+      "title": "NotePin 上架 Amazon",
+      "type": "product",
+      "description": "NotePin 在 Amazon 开放零售需求。与 Note 合并后，Plaud SKU 开始在 Amazon 录音机品类中占据排名。"
+    },
+    {
+      "date": "2024-12-31",
+      "title": "1 亿美元营收里程碑",
+      "type": "media",
+      "gtmTag": "捆绑里程碑",
+      "description": "创始人披露 2024 年营收突破 1 亿美元——连续第二年实现同比十倍增长。约 30 万台出货量。仍然零外部融资。这个让投资人开始主动联系的数字，本身也证明了投资人的资金已经没有必要。",
+      "externalUrl": "https://eu.36kr.com/en/p/3315175009200386",
+      "articleSlug": "2024-12-100m-revenue"
+    },
+    {
+      "date": "2025-01-15",
+      "title": "Best Buy 零售铺货",
+      "type": "product",
+      "gtmTag": "零售阶梯扩张",
+      "description": "Plaud Note 进入 Best Buy。继 Amazon 之后首家大型连锁合作，巩固了美国渠道布局。Plaud 开始招募「美洲区渠道销售」团队，同步洽谈 Costco、Target、Walmart。"
+    },
+    {
+      "date": "2025-04-15",
+      "title": "收购 StarJar（YC 支持）",
+      "type": "acquisition",
+      "gtmTag": "收购竞争对手",
+      "description": "收购 YC 支持的医疗 AI 创业公司 StarJar。联合创始人郑如明（前特斯拉、Intuit、斯坦福）和张琦（前 Amazon）领导 Plaud for Business 的开发——这次平台转型在八个月前就已提前布局。",
+      "externalUrl": "https://www.prnewswire.com/news-releases/plaudai-acquires-yc-backed-starjar-to-power-its-new-enterprise-solution-plaud-for-business-302428716.html",
+      "articleSlug": "2025-04-starjar-acquisition"
+    },
+    {
+      "date": "2025-04-24",
+      "title": "可转换票据 475 万美元",
+      "type": "funding",
+      "description": "首笔也是唯一一笔外部资金：由 Carbide Ventures 领投，J12 Ventures 和天使投资人 Patrick Kavanagh 跟投的可转换票据。在宣布 PLAUD Inc. 日本业务的同一媒体活动中完成。相对于营收体量，这是一笔极小的融资——战略价值重于财务价值。",
+      "externalUrl": "https://www.crunchbase.com/organization/plaud-ai/financial_details"
+    },
+    {
+      "date": "2025-03-31",
+      "title": "1.8 亿美元年化营收",
+      "type": "media",
+      "description": "ARR Club / Sacra 将 Plaud 年化营收定格于 1.8 亿美元——自举，覆盖 170 余个国家的 100 万以上用户，约 70 万台已出货设备。被「a16z 前 50 大 AI 应用半数分析」引用为消费 AI 硬件赛道的标杆故事。",
+      "externalUrl": "https://www.arr.club/signal/plaud-ai-bootstrapped-to-180m-arr"
+    },
+    {
+      "date": "2025-06-11",
+      "title": "Plaud Note SKU 销售额突破 1000 万美元",
+      "type": "media",
+      "gtmTag": "搭乘 KOL 浪头",
+      "description": "Plaud 披露 Note 单一 SKU 自上线以来销售额已突破 1000 万美元——这是一次主要面向分销商和潜在渠道合作伙伴的肌肉展示，而非针对终端消费者的宣传。",
+      "externalUrl": "https://www.plaud.ai/blogs/news/your-go-to-ai-voice-recorder-plaud-note-just-cracks-10-million-in-sales",
+      "articleSlug": "2025-06-creator-marketing-flywheel"
+    },
+    {
+      "date": "2025-08-27",
+      "title": "Plaud Note Pro + Intelligence 3.0",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "旗舰款以 179 美元发布，配备 0.95 英寸 AMOLED 屏、四麦克风阵列、64GB 存储、50 小时录音时长，以及被定格为「全球首款支持实时人机对齐」的「按键高亮」功能。Plaud Intelligence 3.0 同日发布——成为硬件的操作系统。",
+      "externalUrl": "https://techcrunch.com/2025/08/27/plaud-launches-a-new-ai-hardware-notetaker-the-179-note-pro/",
+      "articleSlug": "2025-08-note-pro-launch"
+    },
+    {
+      "date": "2025-09-22",
+      "title": "进入中国市场",
+      "type": "product",
+      "description": "Plaud 正式进入中国大陆市场——全系 SKU 以人民币定价。「海外优先」的自举路径，如今被反向工程进了蓄意跳过三年的本土市场。"
+    },
+    {
+      "date": "2025-09-30",
+      "title": "2.5 亿美元年化营收",
+      "type": "media",
+      "gtmTag": "捆绑里程碑",
+      "description": "Sacra 估算 Plaud 年化营收达 2.5 亿美元，同比增长 83%。约 50% 的买家升级为付费 Pro 计划（99.99 美元/年或 239.99 美元/年无限版）——在硬件获客基础上叠加了一层软件级利润率。",
+      "externalUrl": "https://sacra.com/c/plaud/"
+    },
+    {
+      "date": "2025-10-08",
+      "title": "累计用户突破 100 万",
+      "type": "media",
+      "description": "在 Plaud 日本发布 Note Pro 的活动上披露——Plaud 全系产品线累计用户超过 100 万，覆盖 170 余个国家。"
+    },
+    {
+      "date": "2025-10-07",
+      "title": "开发者平台发布",
+      "type": "product",
+      "gtmTag": "PLG 转企业",
+      "description": "Plaud 开发者平台：API、SDK、JSON 输出，支持 CRM / EHR / 仪表盘集成。符合 SOC 2、HIPAA、GDPR、EN18031 合规标准。这家硬件公司，已经发布了一个真正的企业软件表面。",
+      "externalUrl": "https://www.prnewswire.com/news-releases/plaud-launches-developer-platform-to-unlock-the-missing-half-of-conversational-intelligence-in-person-interactions-302576832.html"
+    },
+    {
+      "date": "2025-12-29",
+      "title": "TechCrunch「随身携带」年终评测",
+      "type": "media",
+      "description": "TechCrunch 年终回顾将 Note Pro 评为「一款我随身携带的出色 AI 录音机」。这是进入 CES 2026 前，科技媒体对这个品类的定格性评价。",
+      "externalUrl": "https://techcrunch.com/2025/12/29/plaud-note-pro-is-an-excellent-ai-powered-recorder-that-i-carry-everywhere/"
+    },
+    {
+      "date": "2026-01-04",
+      "title": "CES 2026：NotePin S + Plaud Desktop",
+      "type": "product",
+      "gtmTag": "受众边界拓展",
+      "description": "NotePin S 新增实体按键，售价 179 美元。Plaud Desktop 是一款支持 Zoom / Teams / Meet 的无机器人会议捕获 App。这家原本只做硬件的公司，现在横跨「当面 + 电话 + 线上」——覆盖了对话捕获场景中此前缺失的第三条腿。",
+      "externalUrl": "https://techcrunch.com/2026/01/04/plaud-launches-a-new-ai-pin-and-a-desktop-meeting-notetaker/",
+      "articleSlug": "2026-01-ces-platform-turn"
+    },
+    {
+      "date": "2026-02-15",
+      "title": "累计出货 150 万台",
+      "type": "media",
+      "description": "累计出货量突破 150 万台，在 CES 后续报道中披露。约 50% Pro 计划转化率保持稳定。Plaud 现已成为 Euromonitor 数据下全球出货量第一的 AI 记录仪品牌。"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2023-12-31",
+      "value": 10000000,
+      "source": "Plaud / Momentum Works",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2024-12-31",
+      "value": 100000000,
+      "source": "36Kr / Plaud",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-03-31",
+      "value": 180000000,
+      "source": "ARR Club / readthesignal",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-09-30",
+      "value": 250000000,
+      "source": "Sacra",
+      "confidence": "media"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2025-04-24",
+      "value": 4750000,
+      "round": "Convertible note (cap undisclosed)",
+      "source": "Crunchbase",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 5,
+      "bestStage": "全阶段——核心支柱渠道",
+      "effort": "常态化运营，创作者驱动",
+      "role": "最主要的获客渠道",
+      "description": "YouTube 是 Plaud 实际发生购买决策的地方。来自生产力创作者、医生、律师和科技评测人的长视频评测，完成了产品自身在缩略图里无法完成的解释工作。每款 Plaud SKU 在上架 Amazon 之前，都已有一批 5 到 20 分钟的评测视频在队列里——这才是真正的转化漏斗。",
+      "catalyst": "2024 年 9 月 TechCrunch 的 NotePin「旅行包」评测确立了基调，此后 18 个月里被创作者评测人反复回响。到 2025 年 8 月 Note Pro 发布时，每位生产力 YouTuber 的发布队列里都已有一条 Plaud 视频。",
+      "catalystUrl": "https://techcrunch.com/2024/09/20/plauds-169-chatgpt-powered-notepin-has-a-permanent-place-in-my-travel-bag/",
+      "accountUrl": "https://www.youtube.com/@PLAUDAI",
+      "accountLabel": "Plaud YouTube 频道",
+      "whenItWorks": "当产品有单一、可演示的转化——录音进去、结构化摘要出来——且能被屏幕录制清晰呈现时。解决可见工作流痛点的硬件，天然适合 YouTube",
+      "whenItDoesnt": "如果价值主张需要超过 60 秒才能解释清楚，或者在手机屏幕上演示时效果失真，YouTube 就会停滞。承诺通用智能的生活方式可穿戴（Humane、Friend）没有清晰的 YouTube 演示循环"
+    },
+    {
+      "slug": "instagram",
+      "name": "Instagram",
+      "score": 4,
+      "bestStage": "众筹到零售阶段",
+      "effort": "Reels + 创作者 UGC",
+      "role": "视觉演示渠道",
+      "description": "Instagram Reels 是那条「AI 秒级总结我的会议」短片的家园。卡片形态非常上镜：贴在 iPhone 背面很好看，外观像苹果配件，天然适配「带文字叠加的 Reels」格式。买家产出的 UGC 在没有付费放大的情况下持续复利。",
+      "catalyst": "没有单一触发时刻——而是医生、顾问和记者持续发布的「会议到摘要循环」专业买家 Reels 的稳定滴流。这个格式的可复制性如此之强，以至于它成为了 Plaud 用户群体内部的内容模板。",
+      "accountUrl": "https://www.instagram.com/plaud.ai/",
+      "accountLabel": "@plaud.ai on Instagram",
+      "whenItWorks": "当产品体积小、上镜好，且能产出截图价值高的「使用后」状态时。Plaud 的转录 / 思维导图 / 摘要界面正是为这类内容而生的",
+      "whenItDoesnt": "没有实体物件的纯软件产品在 Instagram 上很难破圈。「摆在桌上的东西」这个画面，比它运行的软件更重要"
+    },
+    {
+      "slug": "tiktok",
+      "name": "TikTok",
+      "score": 4,
+      "bestStage": "产品线扩张与创作者飞轮阶段",
+      "effort": "创作者 UGC + 付费放大",
+      "role": "触达非科技买家的发现渠道",
+      "description": "TikTok 触达了 YouTube 无法覆盖的受众——学生、初级知识工作者、ESL 专业人士——通过 30 秒的「换个视角：你在开会时不再记笔记」短片。「TikTok 让我买了它」标签和 Amazon 联盟链接，将一批永远不会读 TechCrunch 的买家群体纳入漏斗。",
+      "catalyst": "2024 至 2025 年间持续的创作者 UGC——尤其是医生 / 律师 / 治疗师人设视频。格式的可复制性极强，以至于潜在买家通过自己的算法发现了 Plaud，而不是通过 Plaud 的主动推广。",
+      "accountUrl": "https://www.tiktok.com/@plaud.ai",
+      "accountLabel": "@plaud.ai on TikTok",
+      "whenItWorks": "当产品解决的是一个可被感知、每日发生、非技术性的痛点（记笔记、记住开会内容）且演示无需任何前置背景知识时。Plaud 的卖点五秒内就能说清楚",
+      "whenItDoesnt": "没有消费者感知痛点的 B2B SaaS。TikTok 奖励即时的、个人层面的、直觉性的利益——而不是组织层面的 ROI"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 3,
+      "bestStage": "产品线扩张与创作者飞轮阶段",
+      "effort": "社区自发，公司低接触",
+      "role": "买家端验证",
+      "description": "r/productivity、r/medicine、r/lawyers、r/notetaking 承载着「Plaud 到底值不值」的讨论串——这是处于最终购买决策阶段的买家会去阅读的内容。Reddit 不负责获取用户——它把 YouTube 观望者转化为 Amazon 下单，靠的是验证「这款产品用了一个月之后还靠谱」。",
+      "catalyst": "2024 至 2025 年间社区的慢燃式自然生长。生产力版块里长期运行的「用了一年的 Plaud 更新」帖子，成为谷歌搜索评测的新买家的复利式社会证明。",
+      "accountUrl": "https://www.reddit.com/r/Plaud/",
+      "accountLabel": "访问 r/Plaud",
+      "whenItWorks": "当产品经受得住持续使用的考验，且用户群体中有愿意写详细跟踪帖的深度用户时。Reddit 奖励真材实料，而不是预算投入",
+      "whenItDoesnt": "如果你试图播种帖子。社区能在几小时内识别出假扮用户的公司员工，一次被抓就会毁掉这款 SKU 在 Reddit 上的所有公信力"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 3,
+      "bestStage": "平台化与企业转型阶段",
+      "effort": "仅针对企业的定向运营",
+      "role": "企业侧入站 + 招聘",
+      "description": "LinkedIn 在 Plaud for Business 于 2025 年中发布时，才真正成为核心渠道。创始人发布的关于 StarJar 收购、企业集成以及 SOC 2 / HIPAA 认证的内容，触达的是不看生产力 YouTuber 的企业买家。IT 部门和采购团队在批准试点项目前，会用 LinkedIn 来核实「这是不是一家真实的公司」。",
+      "catalyst": "2025 年 4 月的 StarJar 收购——第一个需要通过 LinkedIn 而不是 Reddit 来传播的公告。从那之后，Plaud 的 LinkedIn 内容节奏从招聘帖转向了企业功能发布。",
+      "catalystUrl": "https://www.linkedin.com/company/plaudai",
+      "accountUrl": "https://www.linkedin.com/company/plaudai",
+      "accountLabel": "Plaud on LinkedIn",
+      "whenItWorks": "当企业销售动作已经存在，且受众需要在采购电话之前确认「这是不是一家真实的公司」时。适合用作可信度背书，而不是漏斗顶端",
+      "whenItDoesnt": "作为消费硬件的漏斗顶端。CPM 不对，受众也不对——IG / TikTok 以十分之一的成本完成同样的工作"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 2,
+      "bestStage": "平台化与企业转型阶段",
+      "effort": "以开发者向发布为节点的间歇性运营",
+      "role": "触达技术受众",
+      "description": "HN 对 Plaud 硬件发布的兴趣充其量也就是温和而已——这里的受众不是在逛 179 美元录音机的。2025 年 10 月的开发者平台发布，是唯一一个「HN 形状」的时刻，即便如此也只是次要渠道。对于 Plaud 正在招募的工程师来说，它的价值是能力信号，而不是获客渠道。",
+      "catalyst": "2025 年 10 月的 Plaud 开发者平台——API / SDK / CRM 和 EHR 集成 JSON 输出。这是 HN 能够参与讨论的发布形态，即便它并不直接带动销量。",
+      "catalystUrl": "https://news.ycombinator.com/from?site=plaud.ai",
+      "accountUrl": "https://news.ycombinator.com/from?site=plaud.ai",
+      "accountLabel": "在 HN 上搜索 Plaud",
+      "whenItWorks": "当发布有真实的开发者表面——API、SDK、端侧 ML 时。HN 响应的是构建积木，而不是成品消费硬件",
+      "whenItDoesnt": "没有开发者视角的消费硬件发布。HN 在早年的每次消费者发布帖子上都对「Plaud Note」投了反对票——而且投得没错"
+    }
+  ]
+}

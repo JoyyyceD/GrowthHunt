@@ -1,0 +1,344 @@
+{
+  "company": {
+    "slug": "character-ai",
+    "name": "Character.AI",
+    "legalName": "Character Technologies, Inc.",
+    "tagline": "从 10 亿美元聊天机器人独角兽到 27 亿美元反向收购——以及那个不得不在没有创始人的情况下重建的消费者 AI 公司",
+    "summary": "Character.AI 将三条完整的公司发展弧线压缩进了 36 个月：无人能匹敌的参与度数据驱动的病毒式消费者大爆发、一场因青少年自杀引发的安全危机，以及一笔独一无二的 Google 交易——创始人回归山景城，公司在技术上仍然存续。这个故事的形态是参与度极高、营收极轻，以及一次强制重组，彻底改写了「消费者 AI」所能意味的一切。",
+    "founded": "2021-11",
+    "founders": [
+      "Noam Shazeer",
+      "Daniel De Freitas"
+    ],
+    "seriesNumber": 8
+  },
+  "phases": [
+    {
+      "start": "2021-11",
+      "end": "2022-09",
+      "name": "潜行期",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2022-09",
+      "end": "2024-02",
+      "name": "消费者病毒期",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2024-02",
+      "end": "2024-08",
+      "name": "危机与转型",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2024-08",
+      "end": "2026-04",
+      "name": "交易后重建",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-01",
+      "title": "Character Technologies 成立",
+      "type": "product",
+      "gtmTag": "创始人即 IP",
+      "description": "Noam Shazeer（Transformer 论文共同作者）和 Daniel De Freitas（LaMDA / Meena 主导者）在 Google 拒绝向公众发布他们的聊天机器人后离职。他们在特拉华州注册成立 Character Technologies，自己来发布这个产品。",
+      "articleSlug": "2021-11-founding"
+    },
+    {
+      "date": "2021-12-15",
+      "title": "种子轮（约 4300 万美元）",
+      "type": "funding",
+      "description": "来自 Elad Gil、SV Angel、Nat Friedman、A Capital 的早期种子 / 种子前融资。潜行期构建阶段。",
+      "externalUrl": "https://www.crunchbase.com/funding_round/character-ai-seed--57b92e7f"
+    },
+    {
+      "date": "2022-09-16",
+      "title": "公测上线",
+      "type": "product",
+      "gtmTag": "受众边界突破",
+      "description": "Character.AI 向公众开放——免费，无需候补名单。用户可以创建自定义 AI 角色并与之对话。ChatGPT 尚未上线（还有整整 11 周）。数周内对话量已达数十万。",
+      "externalUrl": "https://blog.character.ai/introducing-our-next-generation-web-platform/",
+      "articleSlug": "2022-09-public-launch"
+    },
+    {
+      "date": "2023-03-23",
+      "title": "A 轮 1.5 亿美元 / 10 亿美元估值",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "由 Andreessen Horowitz（Sarah Wang 进入董事会）领投，Nat Friedman、Elad Gil、SV Angel、A Capital 跟投。上线六个月即成为独角兽——凭借的是参与度数据，而非营收。",
+      "externalUrl": "https://www.cnbc.com/2023/03/23/characterai-valued-at-1-billion-after-150-million-round-from-a16z.html",
+      "articleSlug": "2023-03-series-a"
+    },
+    {
+      "date": "2023-05-23",
+      "title": "iOS + Android App — 首周安装量 170 万次",
+      "type": "product",
+      "description": "移动端上线。Android 48 小时安装量 70 万次，一周内总安装量达 170 万次。在娱乐榜单上超越 Netflix、Disney+、Prime Video。99% 为自然增长。",
+      "externalUrl": "https://techcrunch.com/2023/05/31/character-ai-the-a16z-backed-chatbot-startup-tops-1-7m-installs-in-first-week/"
+    },
+    {
+      "date": "2023-05-11",
+      "title": "c.ai+ 订阅上线，定价 9.99 美元/月",
+      "type": "product",
+      "gtmTag": "PLG → 企业转型",
+      "description": "第一个变现层：高峰期优先访问权、更快响应速度、早期功能体验。社区反应两极分化——参与度与变现矛盾的第一个信号。",
+      "externalUrl": "https://blog.character.ai/c-ai/",
+      "articleSlug": "2023-05-cai-plus-monetization"
+    },
+    {
+      "date": "2024-02-28",
+      "title": "Sewell Setzer III 自杀身亡",
+      "type": "media",
+      "description": "佛罗里达州一名 14 岁男孩自杀身亡。此事于八个月后公开，届时其母亲的诉讼（Garcia v. Character Technologies）指控，死亡源于数月间在平台上与一名《权力的游戏》主题角色的对话。"
+    },
+    {
+      "date": "2024-03-19",
+      "title": "Character Voice 上线",
+      "type": "product",
+      "description": "1:1 对话中加入 AI 语音——初期仅限 c.ai+ 用户，后向所有用户开放。超越纯文字的第一步多模态探索。",
+      "externalUrl": "https://blog.character.ai/character-voice-for-everyone/"
+    },
+    {
+      "date": "2024-06-27",
+      "title": "Character Calls — 电话模式",
+      "type": "product",
+      "description": "支持 9 种以上语言的双向语音对话。上线前测试记录了来自 300 万用户的 2000 万次通话。产品能力跨越幅度大于文字转语音。",
+      "externalUrl": "https://blog.character.ai/introducing-character-calls/"
+    },
+    {
+      "date": "2024-08-02",
+      "title": "Google 交易——27 亿美元反向收购",
+      "type": "acquisition",
+      "gtmTag": "收购竞争对手",
+      "description": "Google 以约 27 亿美元获得 Character.AI 技术的非独家许可，将 Noam Shazeer + Daniel De Freitas + 约 30 名研究人员接回 Google DeepMind。Character.AI 作为独立公司继续运营。投资人按隐含估值退出；剩余股权转移给员工。",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2024-08-02/character-ai-co-founders-hired-by-google-in-licensing-deal",
+      "articleSlug": "2024-08-google-deal"
+    },
+    {
+      "date": "2024-08-02",
+      "title": "Dominic Perella 出任临时 CEO",
+      "type": "product",
+      "description": "前法务总监在 Google 交易完成当天接手领导权。公开表态：Character.AI 退出基础模型竞争，专注消费者产品。"
+    },
+    {
+      "date": "2024-10-02",
+      "title": "Erin Teague（前 YouTube 高管）加入，出任首席产品官",
+      "type": "product",
+      "description": "交易后首位重量级非创始人外部招募。信号明确：公司正在为消费娱乐而非基础模型竞争重建自己。",
+      "externalUrl": "https://techcrunch.com/2024/10/02/character-ai-hires-ex-youtube-exec-as-cpo-says-will-raise-money-next-year-with-new-partners/"
+    },
+    {
+      "date": "2024-10-22",
+      "title": "Garcia v. Character Technologies 立案",
+      "type": "media",
+      "gtmTag": "受众边界突破",
+      "description": "Megan Garcia 在佛罗里达联邦法院提起非正常死亡诉讼（案件于 10 月 23 日立案）。严格产品责任、过失违法、欺骗性商业行为。被告包括 Character.AI、Shazeer、De Freitas 和 Google。NYT、CNN、NBC、《华盛顿邮报》铺天盖地报道。",
+      "externalUrl": "https://www.cnn.com/2024/10/30/tech/teen-suicide-character-ai-lawsuit",
+      "articleSlug": "2024-10-garcia-lawsuit"
+    },
+    {
+      "date": "2024-12-10",
+      "title": "德克萨斯州诉讼——第二起青少年安全案件",
+      "type": "media",
+      "description": "在德克萨斯州东区联邦法院提起。两名未成年原告，包括一名 17 岁自闭症患者，其聊天机器人据称暗示它「理解」孩子为何在屏幕使用时间争吵中会杀死父母。原告要求强制平台下线。德克萨斯州检察长在诉讼提交三天后启动调查。",
+      "externalUrl": "https://www.washingtonpost.com/technology/2024/12/10/character-ai-lawsuit-teen-kill-parents-texas/"
+    },
+    {
+      "date": "2024-12-12",
+      "title": "青少年安全模型 + 每日使用时限",
+      "type": "product",
+      "description": "专用未成年人模型、自杀预防弹窗、未成年人每日两小时使用上限、内部年龄核验系统。迄今最激进的消费者 AI 安全重置——在法律压力下紧急完成。",
+      "externalUrl": "https://blog.character.ai/community-safety-updates/"
+    },
+    {
+      "date": "2025-04-22",
+      "title": "AvatarFX 上线",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "图像 + 语音 → 动态逼真视频角色。基于 DiT 的扩散模型，Character.AI 自研 TTS。这是新公司第一次以自身技术优势定义产品边界——明确定位为娱乐，而非助手。",
+      "externalUrl": "https://blog.character.ai/avatar-fx-cutting-edge-video-generation-by-character-ai/",
+      "articleSlug": "2025-04-avatarfx"
+    },
+    {
+      "date": "2025-06-02",
+      "title": "社交信息流 + 社区视频功能",
+      "type": "product",
+      "description": "平台从 1:1 对话转向创作者信息流。Yelp、Webtoon 等品牌开始在信息流中投放广告——首个广告营收层。",
+      "externalUrl": "https://techcrunch.com/2025/06/02/chatbot-platform-character-ai-unveils-video-generation-social-feeds/"
+    },
+    {
+      "date": "2025-06-20",
+      "title": "Karandeep Anand 出任 CEO",
+      "type": "product",
+      "description": "前 Brex 总裁、前 Meta VP 商业产品、前微软高管。先在董事会担任顾问九个月。Google 交易后公司的首位正式 CEO。公开表态的优先事项：记忆系统、模型质量、减少过度干预的安全过滤器、变现。",
+      "externalUrl": "https://blog.character.ai/character-ai-names-karandeep-anand-as-ceo/",
+      "articleSlug": "2025-06-karandeep-anand"
+    },
+    {
+      "date": "2025-09-30",
+      "title": "TechCrunch Disrupt——公开重置叙事",
+      "type": "media",
+      "description": "Anand 出任 CEO 后首次大型舞台访谈。将 Character.AI 定位为「AI 娱乐」，而非助手或陪伴。报告 Scenes & Streams 及社交信息流参与度在月活跃用户下滑期间保持稳定。",
+      "externalUrl": "https://techcrunch.com/2025/09/30/ai-that-talks-back-character-ai-in-the-spotlight-with-karandeep-anand-at-techcrunch-disrupt-2025/"
+    },
+    {
+      "date": "2025-10-29",
+      "title": "18 岁以下对话禁令公告",
+      "type": "product",
+      "gtmTag": "受众边界突破",
+      "description": "11 月 25 日前对 18 岁以下用户关闭开放式对话功能。未成年用户保留创意工具访问权（AvatarFX、Imagine Chat、故事、信息流）。核心用户群——超过半数访客处于 18–24 岁——被主动隔离在外。",
+      "externalUrl": "https://blog.character.ai/u18-chat-announcement/",
+      "articleSlug": "2025-10-under-18-ban"
+    },
+    {
+      "date": "2026-01-07",
+      "title": "Garcia 案 + 德克萨斯州诉讼达成和解",
+      "type": "media",
+      "description": "法庭文件披露与 Garcia 家族及其他原告达成和解协议。Google 作为共同被告参与和解。和解条款未予公开。",
+      "externalUrl": "https://edition.cnn.com/2026/01/07/business/character-ai-google-settle-teen-suicide-lawsuit"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2023-12-31",
+      "value": 15200000,
+      "source": "Sacra / Latka",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-12-31",
+      "value": 32200000,
+      "source": "Sacra / Latka",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-07-15",
+      "value": 30000000,
+      "source": "ARR Club",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-12-31",
+      "value": 50000000,
+      "source": "Business of Apps",
+      "confidence": "media"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2021-12-15",
+      "value": 150000000,
+      "round": "种子轮",
+      "source": "Crunchbase",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2023-03-23",
+      "value": 1000000000,
+      "round": "A 轮",
+      "source": "CNBC",
+      "confidence": "official"
+    },
+    {
+      "date": "2024-08-02",
+      "value": 2700000000,
+      "round": "Google 许可 / 反向收购",
+      "source": "Bloomberg",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "tiktok",
+      "name": "TikTok",
+      "score": 5,
+      "bestStage": "消费者病毒期（2022–2024）",
+      "effort": "创作者驱动，公司几乎无需介入",
+      "role": "真正的顶端流量来源",
+      "description": "TikTok 是 Character.AI 真正实现增长的地方。「我做了我最喜欢的动漫角色」这类仿妆风格的演示视频，在两年时间里持续复合增长。公司从未运营过一个有影响力的账号——平台的算法完成了分发工作。#characterai 到 2024 年中已积累数十亿次浏览。",
+      "catalyst": "没有单一引爆时刻。是青少年和 Z 世代创作者两年间持续发布与洛基、爆豪等粉丝向角色对话录屏视频所形成的浪潮。这是 Character.AI 参与度数据远超所有其他消费者 AI 产品的最根本原因。",
+      "catalystUrl": "https://www.tiktok.com/tag/characterai",
+      "accountUrl": "https://www.tiktok.com/@character.ai",
+      "accountLabel": "@character.ai on TikTok",
+      "whenItWorks": "当产品自然地产出可录屏的时刻——尤其是能以自身为内容自发传播的粉丝向或角色扮演输出",
+      "whenItDoesnt": "如果你试图用品牌达人来播种。受众会立刻识破付费内容，算法也会惩罚它"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 5,
+      "bestStage": "全阶段——承重结构",
+      "effort": "社区自驱动，公司仅轻度管理",
+      "role": "重度用户聚集地与危机爆发第一现场",
+      "description": "r/CharacterAI 是最大的消费者 AI 版块之一。在 2023–2024 年间，它是事实上的支持、倡导和反馈渠道——过滤器调整、模型退化和功能上线都会在这里实时分诊。2024 年底的安全功能反弹，也在这里集中爆发。",
+      "catalyst": "2023–2024 年的「过滤器战争」帖子——社区在这里反抗削弱角色行为的安全过滤器。每次调整都在数小时内出现在 r/CharacterAI，并塑造了下一个产品周期。",
+      "catalystUrl": "https://www.reddit.com/r/CharacterAI/",
+      "accountUrl": "https://www.reddit.com/r/CharacterAI/",
+      "accountLabel": "访问 r/CharacterAI",
+      "whenItWorks": "当你有一个愿意布道和投诉的临界质量用户群时。Reddit 是消费者 AI 产品了解自身真实问题的地方",
+      "whenItDoesnt": "如果公司试图管控叙事。社区会察觉，信任会崩塌"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 4,
+      "bestStage": "消费者病毒期",
+      "effort": "创作者经济，自然驱动",
+      "role": "长篇证明与教程渠道",
+      "description": "YouTube 承载了「如何使用 Character.AI」的教程视频和角色扮演式叙事视频。单条视频的爆发力不如 TikTok，但半衰期更长。该平台同时承载了 Shazeer 的播客访谈，帮助建立了投资人和科技媒体的公信力。",
+      "catalyst": "Noam Shazeer 在 No Priors 和 Cognitive Revolution 的亮相（2023–2024 年）——将创始人叙事（Transformer 共同作者、对 LaMDA 的不满、消费者 AI 的赌注）以投资人真正会消费的长篇形式记录下来。",
+      "catalystUrl": "https://www.youtube.com/results?search_query=noam+shazeer+character+ai",
+      "accountUrl": "https://www.youtube.com/@CharacterAi",
+      "accountLabel": "Character.AI on YouTube",
+      "whenItWorks": "当产品能产出可观看的素材——角色扮演、语音通话、视频——且创始人有真实的技术叙事可以讲述时",
+      "whenItDoesnt": "如果你的内容只有 30 秒片段。那些属于 TikTok 或 Shorts，不属于主 YouTube"
+    },
+    {
+      "slug": "instagram",
+      "name": "Instagram",
+      "score": 3,
+      "bestStage": "消费者病毒期 + 交易后重建期",
+      "effort": "TikTok 输出的 Reels 镜像",
+      "role": "受众溢出渠道",
+      "description": "Reels 承接了 TikTok 内容的第二波浪潮——相同的仿妆和角色扮演视频，受众年龄略高。有用但处于次要地位，相比 TikTok 和 Reddit 影响力有限。AvatarFX 上线后内容视觉质量提升，Instagram 的重要性随之提高。",
+      "catalyst": "AvatarFX 上线（2025 年 4 月）——这是 Character.AI 第一次拥有天然适合 Instagram 的视觉输出。动态角色视频在 Reels 上传播效果良好。",
+      "catalystUrl": "https://blog.character.ai/avatar-fx-cutting-edge-video-generation-by-character-ai/",
+      "accountUrl": "https://www.instagram.com/character.ai/",
+      "accountLabel": "@character.ai on Instagram",
+      "whenItWorks": "当你在 TikTok 上已经有视频内容在流通时。Reels 是低成本的第二平台移植",
+      "whenItDoesnt": "如果从这里起步。Instagram 奖励平台原生创作者，不奖励 B2C 工具品牌页"
+    },
+    {
+      "slug": "x",
+      "name": "X（推特）",
+      "score": 3,
+      "bestStage": "潜行期 + 融资公告",
+      "effort": "间歇性——投资人和媒体信号",
+      "role": "资本层放大器",
+      "description": "X 从来不是消费者增长渠道——用户群生活在 TikTok 和 Reddit 上，而不在科技推特里。但 X 承载了融资所需的创始人公信力：Noam Shazeer 的 Transformer 背景和 A 轮公告，通过 AI 推特圈传播，塑造了投资人的认知。",
+      "catalyst": "2023 年 3 月 A 轮——a16z 和 Sarah Wang 在投资人 X 圈子里放大了这条公告。「Transformer 共同作者创办消费者 AI」这个框架，是一个 X 原生故事。",
+      "accountUrl": "https://x.com/character_ai",
+      "accountLabel": "@character_ai on X",
+      "whenItWorks": "用于投资人层面的信号传递和 AI 研究公信力的建立。创始人的分量比账号运营更重要",
+      "whenItDoesnt": "作为 Z 世代产品的消费者获客渠道。受众完全不对"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 3,
+      "bestStage": "潜行期 + 危机时刻",
+      "effort": "节点性——发布和诉讼周期",
+      "role": "创始人履历验证器",
+      "description": "HN 登上头条的有两次：2022 年的公开发布和 2024 年的 Google 交易——两次都是对识别 Shazeer 名字的受众天然适配的内容。在消费者增长的年份里 HN 的相关性较低（HN 受众不会去和动漫角色角色扮演），但在这个故事的开篇和结尾处都发挥了承重作用。",
+      "catalyst": "2024 年 8 月 Google 交易——HN 头条，数百条评论剖析反向收购结构及其对 Anthropic / Inflection / 未来交易的启示。",
+      "catalystUrl": "https://news.ycombinator.com/from?site=character.ai",
+      "accountUrl": "https://hn.algolia.com/?q=character.ai",
+      "accountLabel": "在 HN 搜索 Character.AI",
+      "whenItWorks": "当你的故事有结构性新意（创始人背景、交易结构、技术创新）",
+      "whenItDoesnt": "不要发布产品增量更新。对于 B2C 娱乐产品，HN 会惩罚「我们上了一个新功能」这种定格方式"
+    }
+  ]
+}

@@ -1,0 +1,366 @@
+{
+  "company": {
+    "slug": "manus",
+    "name": "Manus",
+    "legalName": "Butterfly Effect Pte. Ltd.",
+    "tagline": "两分钟演示视频到 1 亿美元 ARR，历时九个月——以及被北京叫停的 20 亿美元 Meta 收购案",
+    "summary": "Manus 是单一演示视频重置品类的最典型案例。2025 年 3 月 6 日的产品演示视频，让两百万人涌入候补名单，将邀请码炒至 7,000 美元，并迫使美国各大 AI 实验室在十二周内相继给出「智能体」答案。在病毒式表象之下：一位正在进行第三次创业的连续创业者、一位从高中起就在发布消费级 AI 产品的首席科学家，以及一个蓄意为之的选择——在 X 上用英语发布，而不是在国内用中文。",
+    "founded": "2022-06",
+    "founders": [
+      "Xiao Hong",
+      "Yichao 'Peak' Ji",
+      "Zhang Tao"
+    ],
+    "seriesNumber": 4
+  },
+  "phases": [
+    {
+      "start": "2022-06",
+      "end": "2025-02",
+      "name": "Monica 时代",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2025-02",
+      "end": "2025-04",
+      "name": "病毒式拐点",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2025-04",
+      "end": "2025-12",
+      "name": "规模化与新加坡迁移",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2025-12",
+      "end": "2026-04",
+      "name": "收购与叫停",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2022-04-15",
+      "title": "Butterfly Effect 成立",
+      "type": "product",
+      "description": "小红在从武汉夜莺科技退出后，于北京注册成立 Butterfly Effect Technology Co.（2022 年 4 月）。真格基金支持的公司于 2022 年中期正式运营，初始产品 Monica.im 是一款优先面向海外市场的 AI 浏览器扩展助手。"
+    },
+    {
+      "date": "2023-02-15",
+      "title": "种子轮（真格基金）",
+      "type": "funding",
+      "description": "真格基金领投，投后估值约 1,400 万美元。这是在任何产品牵引力公开可见之前，两轮真格基金投资中的第一轮。"
+    },
+    {
+      "date": "2023-08-20",
+      "title": "天使轮（真格基金）",
+      "type": "funding",
+      "description": "真格基金第二轮，投后估值约 5,000 万美元。Monica 的 Chrome 扩展在非中国市场开始实现早期规模化。"
+    },
+    {
+      "date": "2024-03-15",
+      "title": "Monica 用户突破 100 万",
+      "type": "product",
+      "description": "Monica.im 成为全球安装量领先的 AI 浏览器扩展之一，用户绝大多数在中国大陆以外。"
+    },
+    {
+      "date": "2024-11-20",
+      "title": "A 轮——估值 8,500 万美元",
+      "type": "funding",
+      "description": "华兴资本（原红杉中国）、腾讯、真格基金和美团联合创始人王慧文联合投资。投后估值约 8,500 万美元。本轮融资为从浏览器扩展转型为自主 Agent 提供资金支持。"
+    },
+    {
+      "date": "2025-02-25",
+      "title": "Manus 内部 Alpha 向投资人展示",
+      "type": "product",
+      "description": "在公开发布前两周，向现有股东展示内部 Alpha 版本。与 OpenAI Deep Research 的内部基准测试，是发布定位的基础。"
+    },
+    {
+      "date": "2025-03-06",
+      "title": "Manus 在 X 上的公开演示",
+      "type": "media",
+      "gtmTag": "受众边界突破",
+      "description": "纪宇超（Peak Ji）在 X 上发布两分钟演示视频。视频展示单个 Agent 端到端独立完成搜索公寓、填充电子表格、比较机票价格、生成旅行文档全流程，不到 20 小时突破 100 万浏览。",
+      "externalUrl": "https://x.com/ManusAI_HQ/status/1897294098945728752",
+      "articleSlug": "2025-03-viral-launch"
+    },
+    {
+      "date": "2025-03-08",
+      "title": "候补名单突破 200 万",
+      "type": "media",
+      "gtmTag": "叙事飞轮启动",
+      "description": "演示发布 48 小时内，仅限邀请的候补名单突破两百万。Discord 服务器在同一周内超过 138,000 名成员。邀请码开始出现在闲鱼（中国）和 eBay 上。",
+      "articleSlug": "2025-03-waitlist-economy"
+    },
+    {
+      "date": "2025-03-09",
+      "title": "TechCrunch「第二个 DeepSeek？」",
+      "type": "media",
+      "description": "TechCrunch 发文「Manus 可能不是中国的第二个 DeepSeek 时刻」——这个框架本身成为主流叙事。七天内所有主要西方媒体相继报道 Manus。",
+      "externalUrl": "https://techcrunch.com/2025/03/09/manus-probably-isnt-chinas-second-deepseek-moment/"
+    },
+    {
+      "date": "2025-03-11",
+      "title": "阿里巴巴 Qwen 合作",
+      "type": "media",
+      "gtmTag": "技术叙事升维",
+      "description": "Manus 与阿里巴巴 Qwen 团队宣布合作，将 Manus 全部功能接入国内模型和基础设施。这是 2025 年所有病毒式 AI 产品中，回应「你有中国算力叙事吗？」最快的答案。",
+      "externalUrl": "https://www.chinadaily.com.cn/a/202503/11/WS67d02d70a310c240449da346.html"
+    },
+    {
+      "date": "2025-03-31",
+      "title": "付费计划 + iOS 应用",
+      "type": "product",
+      "gtmTag": "捆绑里程碑",
+      "description": "入门版 39 美元/月（3,900 积分），专业版 199 美元/月（19,900 积分）。iOS 应用同日上线。后端升级为 Claude 3.7 Sonnet。从病毒式演示到变现，仅历时 25 天。",
+      "externalUrl": "https://techcrunch.com/2025/03/31/manus-launches-paid-subscription-plans-and-a-mobile-app/",
+      "articleSlug": "2025-03-paid-plans"
+    },
+    {
+      "date": "2025-04-25",
+      "title": "B 轮——7,500 万美元 / 5 亿美元估值",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "Benchmark 领投，腾讯 / 真格基金 / 华兴资本跟投。投后估值约 5 亿美元——约为 11 月 A 轮的六倍。Chetan Puttagunta 加入董事会。",
+      "externalUrl": "https://techcrunch.com/2025/04/25/chinese-ai-startup-manus-reportedly-gets-funding-from-benchmark-at-500m-valuation/",
+      "articleSlug": "2025-04-benchmark-series-b"
+    },
+    {
+      "date": "2025-05-09",
+      "title": "美国 CFIUS 式审查 Benchmark 投资",
+      "type": "media",
+      "description": "美国财政部依据涵盖中国 AI 公司的对外投资规则，审查 Benchmark 对 Manus 的投资。这是公司股权结构上出现的第一道监管阴影——也是引发新加坡讨论的导火索。",
+      "externalUrl": "https://techcrunch.com/2025/05/09/the-us-is-reviewing-benchmarks-investment-into-chinese-ai-startup-manus/"
+    },
+    {
+      "date": "2025-07-10",
+      "title": "新加坡总部 + 北京裁员",
+      "type": "product",
+      "gtmTag": "结构性差异化",
+      "description": "Manus 将总部迁往新加坡，约 40 名核心技术人员随迁，北京约 120 人团队大部分被裁员。产品在中国大陆全面下线。一次迁移，以国内分发渠道换取西方芯片和资本通道。",
+      "externalUrl": "https://technode.com/2025/07/10/manus-trims-china-team-relocates-core-staff-to-singapore-headquarters/",
+      "articleSlug": "2025-07-singapore-pivot"
+    },
+    {
+      "date": "2025-07-31",
+      "title": "Wide Research 发布",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "Manus 推出 Wide Research——由 100+ 个并行 Manus Agent 实例协同处理单一任务的架构。这是对「不过是个 Claude 套壳」批评的架构层面回答。Bloomberg 当天跟进报道。",
+      "externalUrl": "https://manus.im/blog/introducing-wide-research",
+      "articleSlug": "2025-07-wide-research"
+    },
+    {
+      "date": "2025-08-20",
+      "title": "年化收入达 9,000 万美元",
+      "type": "media",
+      "description": "Bloomberg 报道 Manus 年化收入运营率达到 9,000 万美元。距付费计划发布仅五个月。Sacra 在同一周发布深度报告，成为事实上的标准参考文献。",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2025-08-20/openai-challenger-manus-projects-annual-revenue-of-90-million"
+    },
+    {
+      "date": "2025-09-08",
+      "title": "MIT Technology Review 35 岁以下创新者",
+      "type": "media",
+      "gtmTag": "创始人即 IP",
+      "description": "MIT Technology Review 将纪宇超（Peak Ji）列入「35 岁以下创新者」名单。这是 Manus 创始人首次获得西方权威机构的具名认可——纪宇超的 X 账号，自此成为一个媒体意义上的 IP。",
+      "externalUrl": "https://www.technologyreview.com/2025/09/08/1122642/ji-peak-yichao-innovator-manus-app-ai/"
+    },
+    {
+      "date": "2025-10-15",
+      "title": "Manus 1.5",
+      "type": "product",
+      "description": "重大升级：任务完成速度提升约 4 倍，Agent 内置全栈 Web 应用构建与部署，内部基准测试显示质量提升 15%。触发了超过 20% 的月环比收入增长。",
+      "externalUrl": "https://manus.im/blog/manus-1.5-release"
+    },
+    {
+      "date": "2025-12-17",
+      "title": "Manus 1.6 + 1 亿美元 ARR",
+      "type": "product",
+      "gtmTag": "捆绑里程碑",
+      "description": "Manus 1.6 发布，带来 Max 性能模式、移动端开发和 Design View 功能。Bloomberg 于 2025 年 12 月 17 日报道 1 亿美元 ARR / 1.25 亿美元收入运营率披露——Manus 博客发布时间在同一窗口内。两个数字均在 Meta 收购公告前释放。",
+      "externalUrl": "https://manus.im/blog/manus-100m-arr"
+    },
+    {
+      "date": "2025-12-29",
+      "title": "Meta 收购 Manus",
+      "type": "acquisition",
+      "gtmTag": "捆绑里程碑",
+      "description": "Meta 宣布以报道估值 20 至 30 亿美元收购 Butterfly Effect。约 100 名 Manus 员工预计迁往 Meta 新加坡办公室。小红据报将出任 Meta 副总裁。",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2025-12-29/meta-acquires-startup-manus-to-bolster-ai-business",
+      "articleSlug": "2025-12-meta-acquisition"
+    },
+    {
+      "date": "2026-01-20",
+      "title": "中国启动国家安全审查",
+      "type": "media",
+      "description": "中国商务部宣布将依据技术出口和数据安全规则审查 Meta 收购案。长达六个月的悬而未决期就此开始。"
+    },
+    {
+      "date": "2026-03-25",
+      "title": "联合创始人遭处出境禁令",
+      "type": "media",
+      "description": "据报道，小红和纪宇超在审查进行期间被禁止离境（《金融时报》/ 路透社 3 月 25 至 26 日报道）。收购交易此时已处于主动风险状态。"
+    },
+    {
+      "date": "2026-04-27",
+      "title": "中国叫停 Meta 收购案",
+      "type": "acquisition",
+      "gtmTag": "结构性差异化",
+      "description": "中国国家发展和改革委员会命令双方撤回交易，援引技术出口和国家安全顾虑。这是有史以来第一笔以这种规模、在监管层面被叫停的中国源头 AI 公司跨境收购案。",
+      "externalUrl": "https://techcrunch.com/2026/04/27/china-vetoes-metas-2b-manus-deal-after-months-long-probe/",
+      "articleSlug": "2026-04-china-blocks-deal"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2025-03-31",
+      "value": 0,
+      "source": "TechCrunch",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-08-20",
+      "value": 90000000,
+      "source": "Bloomberg / Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-12-17",
+      "value": 100000000,
+      "source": "Manus blog",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-12-17",
+      "value": 125000000,
+      "source": "Manus blog (revenue run-rate)",
+      "confidence": "official"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2023-02-15",
+      "value": 14000000,
+      "round": "种子轮",
+      "source": "36Kr",
+      "confidence": "media"
+    },
+    {
+      "date": "2023-08-20",
+      "value": 50000000,
+      "round": "天使轮",
+      "source": "36Kr",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-11-20",
+      "value": 85000000,
+      "round": "A 轮",
+      "source": "36Kr",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-04-25",
+      "value": 500000000,
+      "round": "B 轮",
+      "source": "TechCrunch / Bloomberg",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-12-29",
+      "value": 2500000000,
+      "round": "Meta 收购（已宣布）",
+      "source": "Bloomberg",
+      "confidence": "media"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X（推特）",
+      "score": 5,
+      "bestStage": "发布期——承重结构",
+      "effort": "集中爆发，之后持续在线",
+      "role": "发射台与整个病毒式拐点的核心",
+      "description": "Manus 选择在 X 上用英语发布，而不是在微博上用中文。2025 年 3 月 6 日由纪宇超发布的演示视频，是整条增长弧线赖以旋转的单一资产。西方所有媒体的报道都从这里起源。",
+      "catalyst": "纪宇超的发布演示（2025 年 3 月 6 日）——一段 2 分钟的 Manus 端到端完成多步任务演示。不到二十小时突破百万浏览，在一个周末内让 Manus 出现在所有 AI Twitter 时间线上。",
+      "catalystUrl": "https://x.com/ManusAI_HQ/status/1897294098945728752",
+      "accountUrl": "https://x.com/ManusAI_HQ",
+      "accountLabel": "@ManusAI_HQ on X",
+      "whenItWorks": "当你拥有一段能完整展示新行为的 90 秒演示，并且帖子附带一张可信的创始人面孔时。这种格式奖励「展示，而非推销」",
+      "whenItDoesnt": "如果你的产品需要在演示开始前先解释一番。需要用一大段背景铺垫才能看懂的 X 演示，很少能破圈"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 3,
+      "bestStage": "拐点前到规模化阶段",
+      "effort": "阶段性发力，创始人主导",
+      "role": "面向质疑者的长篇佐证",
+      "description": "纪宇超做过少量高质量的长篇访谈——MIT Technology Review 的人物专访和 Asia Tech Lens 的对谈，是留存价值最高的参考内容。YouTube 是「不过是个 Claude 套壳」这场争论，能得到真实创始人声音回应的地方。",
+      "catalyst": "纪宇超入选 MIT Technology Review「35 岁以下创新者」（2025 年 9 月）——Manus 创始人获得西方权威机构具名认可的第一次，也是质疑者终于有了演示视频之外的东西可以引用的时刻。",
+      "catalystUrl": "https://www.technologyreview.com/2025/09/08/1122642/ji-peak-yichao-innovator-manus-app-ai/",
+      "accountUrl": "https://www.youtube.com/@ManusAI_HQ",
+      "accountLabel": "Manus on YouTube",
+      "whenItWorks": "当你有一位能在镜头前实时回应技术质疑的首席科学家型创始人时。长篇内容会让套壳产品露出原形，同时让真正的架构获得应有的认可",
+      "whenItDoesnt": "不要在产品公开接受审视的前 60 天就上长篇播客。这种形式会让漏洞暴露的速度远超你的产品路线图能填补的速度"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 3,
+      "bestStage": "拐点周",
+      "effort": "一次发布 + 持续接受审视",
+      "role": "质疑者可信度检验",
+      "description": "Manus 在与 X 演示相同的 3 月那周冲上了 HN 首页。HN 帖子成为「套壳还是真架构」争论展开的主阵地——泄露的系统提示词也在这里给批评者提供了弹药。7 月发布的 Wide Research，是 Manus 针对 HN 可信度问题的蓄意回应。",
+      "catalyst": "Wide Research 发布（2025 年 7 月 31 日）——100+ 并行 Agent 架构。登上 HN 首页，获得大量实质性技术评论。两周后：9,000 万美元 ARR 披露。HN 信号先于收入新闻出现。",
+      "catalystUrl": "https://manus.im/blog/introducing-wide-research",
+      "accountUrl": "https://hn.algolia.com/?q=manus.im",
+      "accountLabel": "Search HN for Manus",
+      "whenItWorks": "当质疑是真实的，且答案能用技术细节加以捍卫时。HN 奖励「我们构建了这个东西，是因为现有方案在这个特定的地方撞了墙」",
+      "whenItDoesnt": "不要在 HN 上发营销演示。社区会把你不想被问到的架构问题挖出来，然后你会花一整周在辩解，而不是在销售"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 3,
+      "bestStage": "付费计划发布后到规模化阶段",
+      "effort": "社区驱动，公司低介入",
+      "role": "定价争议的试金石",
+      "description": "r/ManusAI 和相邻社区成为积分制定价争议展开的主阵地。3 月，Reddit 也是邀请码寻求者和二手卖家的聚集地——这是先于任何官方披露的实时需求信号。",
+      "catalyst": "没有单一时刻。2025 年 4 月到 5 月的积分制帖子群，迫使 Manus 澄清定价措辞，并影响了后续的 UI 改动。这是公司最终不得不正视的、缓慢燃烧的压力。",
+      "catalystUrl": "https://www.reddit.com/r/ManusAI/",
+      "accountUrl": "https://www.reddit.com/r/ManusAI/",
+      "accountLabel": "Visit r/ManusAI",
+      "whenItWorks": "当你拥有一套用户会公开审视的定价模型时。Reddit 让那张电子表格变得可见——与其视而不见，不如主动去读",
+      "whenItDoesnt": "如果你试图植入正面帖子，社区会在一周内察觉。Reddit 完全依赖社区信任，水军帖子死得很快"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 2,
+      "bestStage": "仅限融资公告",
+      "effort": "低频，阶段性",
+      "role": "融资轮次和收购案的放大器",
+      "description": "LinkedIn 在 B 轮和 Meta 收购公告前后才变得有意义。Benchmark 合伙人的帖子和新加坡科技媒体转发的 Meta 收购声明，是两项真正发挥过作用的 LinkedIn 内容。其他时候基本沉默。",
+      "catalyst": "Meta 收购公告（2025 年 12 月 29 日）——在数小时内被新加坡风险投资圈和 Meta 员工网络大量转发。这是 LinkedIn 首次承载真正意义上的 Manus 叙事权重。",
+      "accountUrl": "https://www.linkedin.com/company/manus-im/",
+      "accountLabel": "Manus on LinkedIn",
+      "whenItWorks": "当这条公告本身就是新闻的时候——融资轮次、收购、招募到知名人物。LinkedIn 不制造新闻，只是放大器",
+      "whenItDoesnt": "作为一款仅限邀请的消费级 Agent 产品的获客渠道——投资回报率接近于零。不要维护内容日历"
+    },
+    {
+      "slug": "instagram",
+      "name": "Instagram",
+      "score": 1,
+      "bestStage": "不适用",
+      "effort": "零",
+      "role": "反面教材",
+      "description": "Manus 没有建立 Instagram 账号。受众与产品不匹配——智能体 AI 演示以视频形式在 X 和 YouTube 上传播，而不是以 IG 九宫格形式——创始人本人也不在那里发帖。",
+      "catalyst": "作为反例很有价值。一款产品的整个病毒式时刻是「智能体工作」的录屏，在方形视觉流媒体上毫无收获。",
+      "whenItWorks": "面向消费者的创作者工具或视觉优先产品。Manus 两者都不是",
+      "whenItDoesnt": "B2B 风格的 Agent 产品，技术演示为主。不做，不要有心理负担"
+    }
+  ]
+}
