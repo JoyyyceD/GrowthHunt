@@ -1,0 +1,366 @@
+{
+  "company": {
+    "slug": "manus",
+    "name": "Manus",
+    "legalName": "Butterfly Effect Pte. Ltd.",
+    "tagline": "From a 2-minute demo video to $100M ARR in nine months — and a $2B Meta deal Beijing killed",
+    "summary": "Manus is the cleanest example of a single demo video resetting a category. A March 6, 2025 product video pulled two million people onto a waitlist, sent invite codes to $7,000 on the resale market, and forced every major US lab to ship an 'agent' answer within twelve weeks. Behind the viral surface: a serial founder on his third company, a chief scientist who had been shipping consumer AI since high school, and a deliberate choice to launch in English on X rather than at home in Chinese.",
+    "founded": "2022-06",
+    "founders": [
+      "Xiao Hong",
+      "Yichao 'Peak' Ji",
+      "Zhang Tao"
+    ],
+    "seriesNumber": 4
+  },
+  "phases": [
+    {
+      "start": "2022-06",
+      "end": "2025-02",
+      "name": "Monica Era",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2025-02",
+      "end": "2025-04",
+      "name": "Viral Inflection",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2025-04",
+      "end": "2025-12",
+      "name": "Scale and Singapore",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2025-12",
+      "end": "2026-04",
+      "name": "Acquisition and Block",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2022-06-15",
+      "title": "Butterfly Effect founded",
+      "type": "product",
+      "description": "Xiao Hong founds Butterfly Effect in Beijing after exiting Wuhan Nightingale Technology. Initial product is Monica.im, an AI browser-extension copilot targeting overseas markets first."
+    },
+    {
+      "date": "2023-02-15",
+      "title": "Seed round (ZhenFund)",
+      "type": "funding",
+      "description": "ZhenFund-led seed at roughly $14M post-money. The first of two ZhenFund rounds before any product traction is visible publicly."
+    },
+    {
+      "date": "2023-08-20",
+      "title": "Angel round (ZhenFund)",
+      "type": "funding",
+      "description": "Second ZhenFund round at roughly $50M post-money. Monica's Chrome extension hits early scale in non-Chinese markets."
+    },
+    {
+      "date": "2024-03-15",
+      "title": "Monica passes 1M users",
+      "type": "product",
+      "description": "Monica.im, Butterfly Effect's first product, becomes one of the more-installed AI browser extensions globally — overwhelmingly outside mainland China."
+    },
+    {
+      "date": "2024-11-20",
+      "title": "Series A — $85M valuation",
+      "type": "funding",
+      "description": "HSG (formerly Sequoia China), Tencent, ZhenFund, and Meituan founder Wang Huiwen invest. Post-money around $85M. The round funds the pivot from extension to autonomous agent."
+    },
+    {
+      "date": "2025-02-25",
+      "title": "Internal Manus alpha to investors",
+      "type": "product",
+      "description": "Closed alpha shown to existing backers in the two weeks before public launch. Internal benchmarks against OpenAI Deep Research are the basis of the launch positioning."
+    },
+    {
+      "date": "2025-03-06",
+      "title": "Manus public demo on X",
+      "type": "media",
+      "gtmTag": "Audience boundary push",
+      "description": "Yichao 'Peak' Ji posts a 2-minute demo video on X. The video shows a single agent searching apartments, populating a spreadsheet, comparing flight prices, and writing a finished travel doc — end-to-end, no human intervention. Crosses 1M views in under 20 hours.",
+      "externalUrl": "https://x.com/ManusAI_HQ/status/1897294098945728752",
+      "articleSlug": "2025-03-viral-launch"
+    },
+    {
+      "date": "2025-03-08",
+      "title": "Waitlist hits 2M",
+      "type": "media",
+      "gtmTag": "Narrative flywheel starts",
+      "description": "Within 48 hours of the demo, the invite-only waitlist crosses two million. Discord server passes 138,000 members in the same week. Invite codes start appearing on Xianyu (China) and eBay.",
+      "articleSlug": "2025-03-waitlist-economy"
+    },
+    {
+      "date": "2025-03-09",
+      "title": "TechCrunch 'second DeepSeek?'",
+      "type": "media",
+      "description": "TechCrunch publishes 'Manus probably isn't China's second DeepSeek moment' — and the framing itself becomes the dominant frame. Every major Western outlet covers Manus inside seven days.",
+      "externalUrl": "https://techcrunch.com/2025/03/09/manus-probably-isnt-chinas-second-deepseek-moment/"
+    },
+    {
+      "date": "2025-03-11",
+      "title": "Alibaba Qwen partnership",
+      "type": "media",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Manus and Alibaba's Qwen team announce a partnership to bring all Manus features onto domestic Chinese models and infrastructure. The fastest 'we have a China-compute story' answer of any 2025 viral AI product.",
+      "externalUrl": "https://www.chinadaily.com.cn/a/202503/11/WS67d02d70a310c240449da346.html"
+    },
+    {
+      "date": "2025-03-31",
+      "title": "Paid plans + iOS app",
+      "type": "product",
+      "gtmTag": "Bundled milestone",
+      "description": "Starter at $39/mo (3,900 credits), Pro at $199/mo (19,900 credits). iOS app ships the same day. Backend is upgraded to Claude 3.7 Sonnet. 25 days from viral demo to monetization.",
+      "externalUrl": "https://techcrunch.com/2025/03/31/manus-launches-paid-subscription-plans-and-a-mobile-app/",
+      "articleSlug": "2025-03-paid-plans"
+    },
+    {
+      "date": "2025-04-25",
+      "title": "Series B — $75M / $500M",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Benchmark leads, Tencent / ZhenFund / HSG follow on. Post-money around $500M — roughly six times the November Series A. Chetan Puttagunta joins the board.",
+      "externalUrl": "https://techcrunch.com/2025/04/25/chinese-ai-startup-manus-reportedly-gets-funding-from-benchmark-at-500m-valuation/",
+      "articleSlug": "2025-04-benchmark-series-b"
+    },
+    {
+      "date": "2025-05-09",
+      "title": "US CFIUS-style review of Benchmark",
+      "type": "media",
+      "description": "Treasury reviews Benchmark's investment in Manus under outbound-investment rules covering Chinese AI. The first regulatory shadow over the company's cap table — and the trigger for the Singapore conversation.",
+      "externalUrl": "https://techcrunch.com/2025/05/09/the-us-is-reviewing-benchmarks-investment-into-chinese-ai-startup-manus/"
+    },
+    {
+      "date": "2025-07-10",
+      "title": "Singapore HQ + China layoffs",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "Manus moves headquarters to Singapore, relocates roughly 40 core technical staff, and lays off most of the 120-person Beijing team. The product is shelved on mainland China entirely. A single move trades domestic distribution for Western chip and capital access.",
+      "externalUrl": "https://technode.com/2025/07/10/manus-trims-china-team-relocates-core-staff-to-singapore-headquarters/",
+      "articleSlug": "2025-07-singapore-pivot"
+    },
+    {
+      "date": "2025-07-31",
+      "title": "Wide Research launch",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Manus introduces Wide Research — clusters of 100+ parallel Manus instances working a single task. The architectural answer to 'is this just a Claude wrapper?' Bloomberg covers the launch the same day.",
+      "externalUrl": "https://manus.im/blog/introducing-wide-research",
+      "articleSlug": "2025-07-wide-research"
+    },
+    {
+      "date": "2025-08-20",
+      "title": "$90M annualized revenue",
+      "type": "media",
+      "description": "Bloomberg reports Manus has reached a $90M annualized revenue run-rate. Five months from paid-plan launch. Sacra publishes a same-week deep-dive that becomes the de facto reference.",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2025-08-20/openai-challenger-manus-projects-annual-revenue-of-90-million"
+    },
+    {
+      "date": "2025-09-08",
+      "title": "MIT Tech Review 35-under-35",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "MIT Technology Review names Yichao 'Peak' Ji to its Innovators Under 35 list. The first Western institutional validation of a Manus founder by name — and the moment Ji's X account becomes a media object in its own right.",
+      "externalUrl": "https://www.technologyreview.com/2025/09/08/1122642/ji-peak-yichao-innovator-manus-app-ai/"
+    },
+    {
+      "date": "2025-10-15",
+      "title": "Manus 1.5",
+      "type": "product",
+      "description": "Major upgrade: tasks finish ~4× faster, full-stack web app build-and-deploy lands inside the agent, internal benchmarks show 15% quality improvement. Triggers 20%+ month-over-month revenue growth.",
+      "externalUrl": "https://manus.im/blog/manus-1.5-release"
+    },
+    {
+      "date": "2025-12-15",
+      "title": "Manus 1.6 + $100M ARR",
+      "type": "product",
+      "gtmTag": "Bundled milestone",
+      "description": "Manus 1.6 ships with Max performance mode, mobile dev, and Design View. Same week, the company discloses $100M ARR / $125M revenue run-rate. Both numbers fire into the lead-up to the Meta announcement.",
+      "externalUrl": "https://manus.im/blog/manus-100m-arr"
+    },
+    {
+      "date": "2025-12-29",
+      "title": "Meta acquires Manus",
+      "type": "acquisition",
+      "gtmTag": "Bundled milestone",
+      "description": "Meta announces the acquisition of Butterfly Effect at a reported valuation between $2B and $3B. Roughly 100 Manus employees set to relocate to Meta's Singapore office. Xiao Hong reportedly slated to become a Meta VP.",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2025-12-29/meta-acquires-startup-manus-to-bolster-ai-business",
+      "articleSlug": "2025-12-meta-acquisition"
+    },
+    {
+      "date": "2026-01-20",
+      "title": "China opens national-security review",
+      "type": "media",
+      "description": "China's Ministry of Commerce announces it will examine the Meta deal under technology-export and data-security rules. A six-month limbo begins."
+    },
+    {
+      "date": "2026-03-12",
+      "title": "Exit bans on co-founders",
+      "type": "media",
+      "description": "Xiao Hong and Yichao Ji are reportedly barred from leaving China while the review proceeds. The acquisition is now in active jeopardy."
+    },
+    {
+      "date": "2026-04-27",
+      "title": "China blocks the Meta deal",
+      "type": "acquisition",
+      "gtmTag": "Structural differentiation",
+      "description": "China's National Development and Reform Commission orders the parties to withdraw the transaction, citing tech-export and national-security concerns. The first Chinese-origin AI deal of this size killed at the regulatory level.",
+      "externalUrl": "https://techcrunch.com/2026/04/27/china-vetoes-metas-2b-manus-deal-after-months-long-probe/",
+      "articleSlug": "2026-04-china-blocks-deal"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2025-03-31",
+      "value": 0,
+      "source": "TechCrunch",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-08-20",
+      "value": 90000000,
+      "source": "Bloomberg / Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-12-15",
+      "value": 100000000,
+      "source": "Manus blog",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-12-15",
+      "value": 125000000,
+      "source": "Manus blog (revenue run-rate)",
+      "confidence": "official"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2023-02-15",
+      "value": 14000000,
+      "round": "Seed",
+      "source": "36Kr",
+      "confidence": "media"
+    },
+    {
+      "date": "2023-08-20",
+      "value": 50000000,
+      "round": "Angel",
+      "source": "36Kr",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-11-20",
+      "value": 85000000,
+      "round": "Series A",
+      "source": "36Kr",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-04-25",
+      "value": 500000000,
+      "round": "Series B",
+      "source": "TechCrunch / Bloomberg",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-12-29",
+      "value": 2500000000,
+      "round": "Meta acquisition (announced)",
+      "source": "Bloomberg",
+      "confidence": "media"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 5,
+      "bestStage": "Launch — load-bearing",
+      "effort": "Concentrated, then always-on",
+      "role": "The launchpad and the entire viral inflection",
+      "description": "Manus chose to launch in English on X — not in Chinese on Weibo. The March 6, 2025 demo video posted by Yichao Ji on X is the single asset the entire arc pivots on. Every Western outlet picked the story up from there.",
+      "catalyst": "Yichao Ji's launch demo (Mar 6, 2025) — a 2-minute walkthrough of Manus completing a multi-step task end-to-end. Crossed one million views in under twenty hours and put Manus on every AI Twitter timeline within a weekend.",
+      "catalystUrl": "https://x.com/ManusAI_HQ/status/1897294098945728752",
+      "accountUrl": "https://x.com/ManusAI_HQ",
+      "accountLabel": "@ManusAI_HQ on X",
+      "whenItWorks": "When you have a 90-second demo that fully shows the new behavior — and a credible founder face attached to the post. The format rewards 'show, don't pitch'",
+      "whenItDoesnt": "If your product needs explanation before the demo makes sense. X demos that need a thread to set up rarely break out"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 3,
+      "bestStage": "Pre-inflection through scale",
+      "effort": "Episodic, founder-led",
+      "role": "Long-form proof for the skeptics",
+      "description": "Yichao Ji has done a small number of high-quality long-form interviews — the MIT Technology Review profile and an Asia Tech Lens conversation are the durable references. YouTube is where the 'is this just a Claude wrapper?' debate gets answered with an actual founder voice.",
+      "catalyst": "Yichao Ji's MIT Tech Review Innovators Under 35 profile (Sep 2025) — the first Western institutional validation of a Manus founder by name, and the moment skeptics had something other than a demo video to cite.",
+      "catalystUrl": "https://www.technologyreview.com/2025/09/08/1122642/ji-peak-yichao-innovator-manus-app-ai/",
+      "accountUrl": "https://www.youtube.com/@ManusAI_HQ",
+      "accountLabel": "Manus on YouTube",
+      "whenItWorks": "When you have a chief-scientist founder who can answer technical pushback in real time on camera. Long-form is where wrappers get exposed and architecture gets credit",
+      "whenItDoesnt": "Don't go on long-form podcasts when your product is still in its first 60 days of public scrutiny. The format will surface gaps faster than your roadmap can fill them"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 3,
+      "bestStage": "Inflection week",
+      "effort": "One launch + sustained scrutiny",
+      "role": "The skeptic-credibility check",
+      "description": "Manus broke containment to HN in the same March week as the X demo. The HN thread became the place where the 'wrapper or real architecture' question got debated — and where a leaked system prompt gave critics ammunition. The Wide Research launch in July was Manus's deliberate HN-credibility answer.",
+      "catalyst": "Wide Research launch (Jul 31, 2025) — 100+ parallel agent architecture. Front-paged on HN with substantive technical comments. Two weeks later: $90M ARR disclosure. The HN signal preceded the revenue news.",
+      "catalystUrl": "https://manus.im/blog/introducing-wide-research",
+      "accountUrl": "https://hn.algolia.com/?q=manus.im",
+      "accountLabel": "Search HN for Manus",
+      "whenItWorks": "When the skepticism is real and the answer can be defended in technical detail. HN rewards 'we built this thing because the existing approach hits this specific limit'",
+      "whenItDoesnt": "Don't post a marketing demo on HN. The crowd will surface the architectural questions you didn't want asked, and you'll spend a week defending instead of selling"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 3,
+      "bestStage": "Post-paid-plans through scale",
+      "effort": "Community-led, low company touch",
+      "role": "Pricing-controversy litmus test",
+      "description": "r/ManusAI and adjacent subs became the place where the credit-system pricing controversy played out. Reddit is also where invite-code seekers and resellers congregated in March — a real-time signal of demand far ahead of any official disclosure.",
+      "catalyst": "No single moment. The credit-system threads through April–May 2025 forced Manus to clarify pricing language and shape later UI changes. Slow-burn pressure that the company eventually had to address.",
+      "catalystUrl": "https://www.reddit.com/r/ManusAI/",
+      "accountUrl": "https://www.reddit.com/r/ManusAI/",
+      "accountLabel": "Visit r/ManusAI",
+      "whenItWorks": "When you have a pricing model users will scrutinize publicly. Reddit makes the spreadsheet visible — better to read it than ignore it",
+      "whenItDoesnt": "If you try to seed positive threads, the community detects it inside a week. Reddit is community-trust dependent and astroturfing dies fast"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 2,
+      "bestStage": "Funding announcements only",
+      "effort": "Low, episodic",
+      "role": "Funding-round and acquisition amplifier",
+      "description": "LinkedIn became material around the Series B and the Meta announcement. The Benchmark partner posts and the Meta acquisition statement re-shared by Singaporean tech press are the two LinkedIn assets that did real work. Otherwise inert.",
+      "catalyst": "The Meta acquisition announcement (Dec 29, 2025) — re-shared across the Singapore VC and Meta employee networks within hours. The first time LinkedIn carried meaningful Manus narrative weight.",
+      "accountUrl": "https://www.linkedin.com/company/manus-im/",
+      "accountLabel": "Manus on LinkedIn",
+      "whenItWorks": "When the announcement is itself news — funding round, acquisition, hire of a notable name. LinkedIn doesn't make news, it amplifies",
+      "whenItDoesnt": "As an acquisition channel for an invite-only consumer agent — near zero ROI. Skip the content calendar"
+    },
+    {
+      "slug": "instagram",
+      "name": "Instagram",
+      "score": 1,
+      "bestStage": "Not applicable",
+      "effort": "Zero",
+      "role": "Negative example",
+      "description": "Manus has not built an Instagram presence. The audience-product fit is wrong — agentic AI demos play as videos on X and YouTube, not as IG carousels — and the founders themselves don't post there.",
+      "catalyst": "Useful as a counter-example. A product whose entire viral moment is a screen-recording of an agent working has nothing to gain from a square-format visual feed.",
+      "whenItWorks": "For consumer-facing creator tools or visual-first products. Manus is neither",
+      "whenItDoesnt": "B2B-style agent products with technical demos. Skip it without guilt"
+    }
+  ]
+}

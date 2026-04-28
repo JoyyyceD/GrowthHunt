@@ -1,0 +1,376 @@
+{
+  "company": {
+    "slug": "elevenlabs",
+    "name": "ElevenLabs",
+    "legalName": "ElevenLabs Inc.",
+    "tagline": "From a stealth-mode TTS bet to an $11B voice-AI platform in under four years",
+    "summary": "ElevenLabs spent 12 months in stealth before shipping a beta in January 2023. The product went viral in days — first as a creator phenomenon, then as a misuse scandal, then as the default voice infrastructure for media, publishers, and voice agents. Every funding round bundled a model release. Every model release re-set the ceiling on what voice AI was assumed to do.",
+    "founded": "2022-04",
+    "founders": [
+      "Mati Staniszewski",
+      "Piotr Dabkowski"
+    ],
+    "seriesNumber": 5
+  },
+  "phases": [
+    {
+      "start": "2022-04",
+      "end": "2023-01",
+      "name": "Polish stealth",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2023-01",
+      "end": "2024-01",
+      "name": "Creator-first virality",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2024-01",
+      "end": "2025-01",
+      "name": "Platform build-out",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2025-01",
+      "end": "2026-04",
+      "name": "Voice-agent hypergrowth",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2022-04-15",
+      "title": "ElevenLabs founded",
+      "type": "product",
+      "description": "Mati Staniszewski (ex-Palantir) and Piotr Dabkowski (ex-Google) incorporate ElevenLabs in London. Origin insight: bad dubbing of foreign films in Poland — the founders set out to fix voice quality across languages, not just clone speakers."
+    },
+    {
+      "date": "2023-01-23",
+      "title": "$2M pre-seed + public beta",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Pre-seed led by Credo Ventures with Concept Ventures. Beta opens to the public the same week with English and Polish voices — a generous free tier and high-quality output drive immediate creator pickup.",
+      "externalUrl": "https://elevenlabs.io/blog/elevenlabs-raises-2m-pre-seed-and-announces-ai-speech-platform-promising-to-revolutionize-audio-storytelling",
+      "articleSlug": "2023-01-pre-seed-beta-launch"
+    },
+    {
+      "date": "2023-01-30",
+      "title": "4chan misuse scandal",
+      "type": "media",
+      "gtmTag": "Forced trust posture",
+      "description": "Within a week of public beta, 4chan users clone Emma Watson, Joe Rogan, and Ben Shapiro to spew abusive content. ElevenLabs responds the next business day with paid-only voice cloning, an AI detection tool, and traceability. The first crisis becomes the first proof of operating discipline.",
+      "externalUrl": "https://www.vice.com/en/article/ai-voice-firm-4chan-celebrity-voices-emma-watson-joe-rogan-elevenlabs/",
+      "articleSlug": "2023-01-4chan-misuse-response"
+    },
+    {
+      "date": "2023-06-21",
+      "title": "Series A $19M / ~$100M",
+      "type": "funding",
+      "description": "Co-led by a16z, Nat Friedman, and Daniel Gross. Angels include Mike Krieger (Instagram), Brendan Iribe (Oculus), Mustafa Suleyman (DeepMind), and Tim O'Reilly. Disclosed ~1M registered users at this point.",
+      "externalUrl": "https://elevenlabs.io/blog/elevenlabs-launches-new-generative-voice-ai-products-and-announces-19m-series-a-round-led-by-nat-friedman-daniel-gross-and-andreessen-horowitz"
+    },
+    {
+      "date": "2023-08-22",
+      "title": "Eleven Multilingual v2 + GA",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Out of beta. The v2 multilingual model covers nearly 30 languages with the original speaker's accent and emotion preserved across all of them — the dubbing thesis from day one, productized.",
+      "externalUrl": "https://elevenlabs.io/blog/elevenlabs-comes-out-of-beta-and-releases-eleven-multilingual-v2-a-foundational-ai-speech-model-for-nearly-30-languages"
+    },
+    {
+      "date": "2023-10-10",
+      "title": "AI Dubbing launches",
+      "type": "product",
+      "description": "One-click translation of speech into 20+ languages while preserving the speaker's voice, emotion, and intonation. The product the founders said they wanted to build on day one finally ships."
+    },
+    {
+      "date": "2024-01-22",
+      "title": "Series B $80M / $1.1B + Dubbing Studio",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Led by a16z with Sequoia, Nat Friedman, and Daniel Gross. Same announcement bundles Voice Marketplace + Dubbing Studio + Mobile SDK. Fastest European AI unicorn status, ~21 months from incorporation.",
+      "externalUrl": "https://techcrunch.com/2024/01/22/voice-cloning-startup-elevenlabs-lands-80m-achieves-unicorn-status/",
+      "articleSlug": "2024-01-series-b-unicorn"
+    },
+    {
+      "date": "2024-01-26",
+      "title": "Biden deepfake robocall + ban",
+      "type": "media",
+      "gtmTag": "Forced trust posture",
+      "description": "Pindrop traces a fake Biden New Hampshire-primary robocall to ElevenLabs. The company suspends the account within 72 hours, becomes the most-cited example of an AI vendor being publicly held accountable in a US election year.",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2024-01-26/ai-startup-elevenlabs-bans-account-blamed-for-biden-audio-deepfake",
+      "articleSlug": "2024-01-biden-deepfake-response"
+    },
+    {
+      "date": "2024-06-25",
+      "title": "ElevenReader app ships",
+      "type": "product",
+      "description": "iOS launch (Android shortly after). Reader app turns any article, PDF, or ePub into an audio listening session — first major consumer surface that isn't a developer API."
+    },
+    {
+      "date": "2024-07-03",
+      "title": "Iconic Voices: Garland, Dean, Reynolds, Olivier",
+      "type": "media",
+      "gtmTag": "Audience boundary push",
+      "description": "Estate licensing deals with CMG Worldwide bring Judy Garland, James Dean, Burt Reynolds, and Sir Laurence Olivier to ElevenReader. Picks up CNN, CBS News, Variety — pushes ElevenLabs into mainstream-media coverage rooms.",
+      "externalUrl": "https://variety.com/2024/biz/news/ai-judy-garland-james-dean-burt-reynolds-elevenlabs-reader-app-1236058829/",
+      "articleSlug": "2024-07-iconic-voices"
+    },
+    {
+      "date": "2024-10-30",
+      "title": "$90M ARR disclosed",
+      "type": "media",
+      "description": "End-of-October ARR around $90M, up from ~$25M earlier in 2024. The first dataset confirming voice AI is a real revenue category, not a demo curiosity."
+    },
+    {
+      "date": "2024-11-18",
+      "title": "Conversational AI v1 ships",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "First fully integrated conversational agent platform: TTS + STT + LLM-orchestration in one stack. Moves ElevenLabs from a TTS API to a voice-agent platform, on the same week competitors Vapi and Retell are still in preview.",
+      "externalUrl": "https://techcrunch.com/2024/11/18/elevenlabs-now-offers-ability-to-build-conversational-ai-agents/",
+      "articleSlug": "2024-11-conversational-ai-launch"
+    },
+    {
+      "date": "2025-01-30",
+      "title": "Series C $180M / $3.3B",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Co-led by a16z and ICONIQ Growth, with NEA, Sequoia, Salesforce Ventures, World Innovation Lab, Deutsche Telekom, HubSpot Ventures, NTT DOCOMO Ventures, and others. Strategic-investor density signals a pivot toward telco and enterprise voice infrastructure.",
+      "externalUrl": "https://techcrunch.com/2025/01/30/elevenlabs-raises-180-million-in-series-c-funding-at-3-3-billion-valuation/",
+      "articleSlug": "2025-01-series-c"
+    },
+    {
+      "date": "2025-02-22",
+      "title": "Worldwide hackathon w/ a16z",
+      "type": "media",
+      "description": "Co-hosted with a16z, 9 cities in parallel, voice-agents-only theme. The hackathon-as-marketing pattern from Cursor / Lovable, applied to voice AI for the first time at scale."
+    },
+    {
+      "date": "2025-06-03",
+      "title": "Conversational AI 2.0 ships",
+      "type": "product",
+      "description": "Native turn-taking model, integrated language detection, multi-character mode, batch outbound calling. Five months after v1 — a deliberate cadence aimed at making 'voice agents' feel like an ElevenLabs category."
+    },
+    {
+      "date": "2025-06-05",
+      "title": "Eleven v3 (alpha) launches",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "70+ languages, multi-speaker dialogue, audio tags ([excited], [whispers], [laughing]). The v3 alpha is the first TTS model that ships with a stage-direction syntax — collapsing voice acting into a script grammar.",
+      "externalUrl": "https://x.com/elevenlabsio/status/1930689774278570003",
+      "articleSlug": "2025-06-eleven-v3"
+    },
+    {
+      "date": "2025-08-01",
+      "title": "$200M ARR",
+      "type": "media",
+      "description": "Mati Staniszewski confirms $200M ARR on LinkedIn. 20 months from $0 to $100M, then 10 months from $100M to $200M — the curve compresses each leg."
+    },
+    {
+      "date": "2025-09-08",
+      "title": "$100M employee tender / $6.6B",
+      "type": "funding",
+      "gtmTag": "Narrative flywheel starts",
+      "description": "Co-led by Sequoia and ICONIQ with a16z, Smash Capital, World Innovation Lab. Doubles the Series C valuation in eight months. Tender (not primary) signals confidence without dilution.",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2025-09-08/elevenlabs-to-let-staff-sell-shares-at-6-6-billion-valuation"
+    },
+    {
+      "date": "2025-09-15",
+      "title": "Nvidia investment",
+      "type": "funding",
+      "description": "Nvidia takes a strategic stake. Disclosed by Mati Staniszewski months later in the Series D coverage. Nvidia uses ElevenLabs internally for audio generation — the strategic investor is also a marquee customer."
+    },
+    {
+      "date": "2025-12-11",
+      "title": "33-city hackathon",
+      "type": "media",
+      "description": "Three-hour conversational-agent build sprint across 33 cities; 1,000+ builders in the largest-ever ElevenLabs hackathon. Community manufacturing at scale."
+    },
+    {
+      "date": "2026-01-13",
+      "title": "$330M ARR (year-end 2025)",
+      "type": "media",
+      "description": "Mati Staniszewski tells TechCrunch ARR closed 2025 at $330M+. Five months from $200M to $330M. Enterprise approaching 50% of revenue — Deutsche Telekom and Revolut publicly cited.",
+      "externalUrl": "https://techcrunch.com/2026/01/13/elevenlabs-ceo-says-the-voice-ai-startup-crossed-330-million-arr-last-year/"
+    },
+    {
+      "date": "2026-02-04",
+      "title": "Series D $500M / $11B + IPO talk",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Led by Sequoia with a16z, ICONIQ, Lightspeed, Bond, Evantic. Triples the September secondary valuation. Mati Staniszewski tells the press the company is 'building toward an IPO' — first time the IPO frame is set on the public record.",
+      "externalUrl": "https://techcrunch.com/2026/02/04/elevenlabs-raises-500m-from-sequioia-at-a-11-billion-valuation/",
+      "articleSlug": "2026-02-series-d-ipo-track"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2024-01-22",
+      "value": 25000000,
+      "source": "Sacra / Sifted estimates",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2024-10-30",
+      "value": 90000000,
+      "source": "Sacra / The Information",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-12-31",
+      "value": 120000000,
+      "source": "ElevenLabs / SaaStr",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-08-01",
+      "value": 200000000,
+      "source": "Mati Staniszewski / LinkedIn",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-12-31",
+      "value": 330000000,
+      "source": "ElevenLabs / TechCrunch",
+      "confidence": "official"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2023-01-23",
+      "value": 12000000,
+      "round": "Pre-seed",
+      "source": "Crunchbase",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2023-06-21",
+      "value": 100000000,
+      "round": "Series A",
+      "source": "Sifted / a16z",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-01-22",
+      "value": 1100000000,
+      "round": "Series B",
+      "source": "Fortune / TechCrunch",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-01-30",
+      "value": 3300000000,
+      "round": "Series C",
+      "source": "TechCrunch",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-09-08",
+      "value": 6600000000,
+      "round": "Tender offer",
+      "source": "Bloomberg",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-02-04",
+      "value": 11000000000,
+      "round": "Series D",
+      "source": "TechCrunch / CNBC",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 5,
+      "bestStage": "All stages — load-bearing",
+      "effort": "Always-on",
+      "role": "Founder + product launch channel",
+      "description": "Mati Staniszewski (@matiii) and the @elevenlabsio handle drive every major launch. Audio demos travel exceptionally well on X — voice-clip tweets autoplay and get re-shared with the original audio attached, which is rare. Each model release lands as a clip thread first.",
+      "catalyst": "Eleven v3 alpha launch tweet (June 5, 2025) — audio-tag demo clips shared by founders, Karpathy, and the AI-builder crowd. Clip-native delivery is what made v3 feel like a 'new category' on day one.",
+      "catalystUrl": "https://x.com/elevenlabsio/status/1930689774278570003",
+      "accountUrl": "https://x.com/elevenlabsio",
+      "accountLabel": "@elevenlabsio on X",
+      "whenItWorks": "When the product output is itself a shareable artifact (audio clip, voice demo). The platform autoplays audio inline — make every launch a clip, not a screenshot",
+      "whenItDoesnt": "If the team posts press-release prose. Voice AI Twitter expects new audio in the post, not links to a blog"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 4,
+      "bestStage": "Pre-inflection + Hypergrowth",
+      "effort": "Episodic creator-led, plus founder long-form",
+      "role": "Demo amplification + investor narrative",
+      "description": "Two layers: founder long-form podcasts (Sequoia Training Data, a16z Show, Nothing Left Unsaid) and creator tutorials. Mati Staniszewski's investor-podcast circuit through 2025 reset perception from 'TTS startup' to 'voice infrastructure company.' Creator tutorials drive self-serve sign-ups continuously in the background.",
+      "catalyst": "Mati Staniszewski on Sequoia's Training Data (mid-2025) — the long-form artifact a16z, ICONIQ, and later Sequoia could circulate inside their own LP and exec networks before each subsequent funding round.",
+      "catalystUrl": "https://www.sequoiacap.com/podcast/training-data-mati-staniszewski/",
+      "accountUrl": "https://www.youtube.com/@elevenlabsio",
+      "accountLabel": "ElevenLabs on YouTube",
+      "whenItWorks": "When the founder can carry a 60-90 minute investor-grade conversation, AND the product has new demos in every episode. The double layer — founder + creator — compounds",
+      "whenItDoesnt": "One-off keynote talks with no follow-up. The pattern only works as a continuous interview cadence, not single appearances"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 4,
+      "bestStage": "Latent + Platform build-out",
+      "effort": "Punctuated by major launches",
+      "role": "Technical credibility validator",
+      "description": "Multilingual v2, Conversational AI v1, Eleven v3, and Reader all landed on HN front page with hundreds of comments. The HN signal mattered most for the conversational-AI launch in November 2024 — it proved the platform pivot was technically credible to the developers ElevenLabs needed to build agents on top.",
+      "catalyst": "Conversational AI v1 launch threads (Nov 2024) — front-page placement with serious technical scrutiny. Two months later: Series C at $3.3B.",
+      "catalystUrl": "https://hn.algolia.com/?q=elevenlabs",
+      "accountUrl": "https://hn.algolia.com/?q=elevenlabs.io",
+      "accountLabel": "Search HN for ElevenLabs",
+      "whenItWorks": "When the launch has measurable technical novelty — a new model, a new architecture, real benchmarks. HN voters reward demos that reveal capability",
+      "whenItDoesnt": "Don't post 'we hit $X ARR' or pricing changes. HN punishes business-update framing"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 3,
+      "bestStage": "Creator-first virality + ongoing",
+      "effort": "Community-led",
+      "role": "Use-case discovery + retention layer",
+      "description": "r/ElevenLabs and adjacent communities (r/AIVoiceCloning, r/audiobooks, r/IndieDev) became the place where creators trade voice IDs, prompt tricks, and use-case templates. Less acquisition, more activation — it's where new users learn how to get good output in their first hour.",
+      "catalyst": "No single moment. The community formed organically around the free tier in 2023 and matured as a self-serve support hub through 2024-2025.",
+      "catalystUrl": "https://www.reddit.com/r/ElevenLabs/",
+      "accountUrl": "https://www.reddit.com/r/ElevenLabs/",
+      "accountLabel": "Visit r/ElevenLabs",
+      "whenItWorks": "When you have a free tier generous enough that users want to share what they made. The community emerges from the product, not from outreach",
+      "whenItDoesnt": "If you try to seed posts. The community detects vendor accounts within days"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 3,
+      "bestStage": "Voice-agent hypergrowth (enterprise)",
+      "effort": "Founder posts + funding amplification",
+      "role": "Enterprise + investor signal",
+      "description": "Mati Staniszewski's LinkedIn has carried real weight since mid-2025. ARR milestones, funding rounds, and customer wins announced as personal posts get re-shared inside Deutsche Telekom-style enterprise procurement networks. Higher score than typical for a dev-tools company because the buyer for voice agents is an enterprise contact-center exec, not a developer.",
+      "catalyst": "Mati Staniszewski's $200M ARR LinkedIn post (Aug 2025) — disclosed numbers, customer logos, and explicit 'building toward IPO' framing all in one post. Set the tone for the September tender and February Series D.",
+      "catalystUrl": "https://www.linkedin.com/posts/matiii_we-dont-often-share-numbers-but-with-yesterday-activity-7371289071534428161-fPME",
+      "accountUrl": "https://www.linkedin.com/company/elevenlabsio/",
+      "accountLabel": "ElevenLabs on LinkedIn",
+      "whenItWorks": "When your buyer is enterprise and your category is 'voice infrastructure / contact center.' Every CIO and head of CX is on LinkedIn — not on X",
+      "whenItDoesnt": "For purely creator-targeted launches. LinkedIn audiences won't engage with a v3 audio-tag demo the way X will"
+    },
+    {
+      "slug": "instagram",
+      "name": "Instagram",
+      "score": 3,
+      "bestStage": "Creator-first virality",
+      "effort": "Creator-led, light company touch",
+      "role": "Consumer-creator amplification",
+      "description": "Unusually high score for a B2B AI company — and it's earned. Voice clones (Darth Vader, Iconic Voices, celebrity parodies) routinely cross from TikTok to Instagram Reels without ElevenLabs lifting a finger. Reader-app demos with Judy Garland and James Dean read native to the format. The company doesn't post heavily; the creators do.",
+      "catalyst": "Iconic Voices launch coverage (July 2024) — Garland reading 'Wizard of Oz' clips circulated as Instagram Reels through CBS, CNN, and Variety social handles. Mainstream-press distribution, not paid.",
+      "catalystUrl": "https://www.instagram.com/elevenlabsio/",
+      "accountUrl": "https://www.instagram.com/elevenlabsio/",
+      "accountLabel": "@elevenlabsio on Instagram",
+      "whenItWorks": "When the product output has visual + audio appeal (voice clips paired with celebrity faces, video demos). Instagram is downstream of TikTok creator content, not a primary channel",
+      "whenItDoesnt": "For developer features, API launches, conversational-AI configuration. Skip Instagram for those entirely"
+    }
+  ]
+}

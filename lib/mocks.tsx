@@ -209,9 +209,9 @@ export function MockFor({ feature }: { feature: Feature }) {
     )
   }
 
-  if (id === 'listingbott') {
+  if (id === 'get-backlinks') {
     return (
-      <MockFrame url="listingbott.com">
+      <MockFrame url="growthhunt.ai/get-backlinks">
         <div>
           {['Product Hunt', 'BetaList', 'Hacker News', 'IndieHackers', 'SaaSHub', 'AlternativeTo', 'StartupBase'].map((d, i) => (
             <div key={d} style={{ display: 'flex', justifyContent: 'space-between', padding: '7px 0', borderBottom: '1px solid var(--rule)', fontSize: 13 }}>

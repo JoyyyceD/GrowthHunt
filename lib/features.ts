@@ -31,10 +31,10 @@ export const MODULES: ModuleDef[] = [
 export const FEATURES: Feature[] = [
   // ── Live products ──
   {
-    id: 'listingbott', name: 'Get Backlinks', tag: 'Live', module: 'distribution',
-    pitch: 'Auto-submit your launch to 100+ directories overnight.',
-    hook: 'Sleep through directory submission. Wake up indexed.',
-    summary: 'A no-touch agent that fans your launch out across the web — directory listings, niche communities, SEO-feeding link farms — while you sleep.',
+    id: 'get-backlinks', name: 'Get Backlinks', tag: 'Live', module: 'distribution',
+    pitch: 'Submit your website to 100+ directories — overnight.',
+    hook: 'Submit Website To Directories. Sleep through it. Wake up indexed.',
+    summary: 'Submit Website To Directories — a no-touch agent that fans your launch out across directory listings, niche communities, and SEO-feeding link farms while you sleep.',
     problem: 'Manually submitting to directories takes 30–40 hours per launch. Most founders skip it, lose backlinks, and watch competitors out-rank them.',
     solution: 'Drop your URL. The agent handles forms, captchas, and follow-ups across 100+ directories — and reports what got accepted.',
     example: { input: 'https://yourapp.com', output: '93 / 104 directories submitted · 47 confirmed · 24 backlinks live' },

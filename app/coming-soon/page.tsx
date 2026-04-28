@@ -37,7 +37,7 @@ function Footer() {
         <div>
           <h4>Live products</h4>
           <ul>
-            <li><Link href="/listingbott">ListingBott</Link></li>
+            <li><Link href="/get-backlinks">Get Backlinks</Link></li>
             <li><Link href="/microlaunch">MicroLaunch</Link></li>
             <li><Link href="/viral-sense">Viral Sense</Link></li>
             <li><Link href="/x-templates">X Templates</Link></li>

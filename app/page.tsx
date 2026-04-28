@@ -46,7 +46,7 @@ function Hero() {
 
 // ── Live cases ────────────────────────────────────────────────────────────────
 function LiveCases() {
-  const backlinks = getFeatureById('listingbott')
+  const backlinks = getFeatureById('get-backlinks')
   const companies = getAllCompanies()
   const firstStory = companies[0] ? getStory(companies[0]) : null
   const storyHref = companies[0] ? `/growth-story/${companies[0]}` : '/growth-story'
@@ -71,7 +71,7 @@ function LiveCases() {
             <Link href={storyHref} className="visit">Read the story →</Link>
           </div>
 
-          {/* Get Backlinks (renamed ListingBott) card */}
+          {/* Get Backlinks card */}
           {backlinks && (
             <div className="eco-card">
               <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
@@ -176,7 +176,7 @@ function Footer() {
           <h4>Live products</h4>
           <ul>
             <li><Link href="/growth-story">Growth Story</Link></li>
-            <li><Link href="/listingbott">Get Backlinks</Link></li>
+            <li><Link href="/get-backlinks">Get Backlinks</Link></li>
           </ul>
         </div>
         <div>

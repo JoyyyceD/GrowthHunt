@@ -240,7 +240,7 @@ function OrderForm() {
     setStatus('loading')
     setErrMsg('')
     try {
-      const res = await fetch('/api/listingbott', {
+      const res = await fetch('/api/get-backlinks', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ product_url: url, product_name: name, description: desc, goal, contact_email: email }),
@@ -336,7 +336,7 @@ function OrderForm() {
 }
 
 // ── Main page ─────────────────────────────────────────────────────────────────
-export default function ListingBottPage() {
+export default function GetBacklinksPage() {
   function scrollToForm() {
     document.getElementById('order-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
