@@ -9,6 +9,16 @@ const PLATFORM_ICON: Record<string, string> = {
   instagram: '◉',
 }
 
+// Per-platform "view source" CTA label for the catalyst link
+const CATALYST_CTA: Record<string, string> = {
+  x: 'View tweet',
+  youtube: 'Watch episode',
+  'hacker-news': 'Read on HN',
+  reddit: 'Open r/cursor',
+  linkedin: 'View source',
+  instagram: 'View source',
+}
+
 interface Props {
   platforms: Platform[]
 }
@@ -136,90 +146,65 @@ export default function PlatformMix({ platforms }: Props) {
             {p.description}
           </p>
 
-          {/* Catalyst (clickable if URL provided) */}
-          {p.catalystUrl ? (
-            <a
-              href={p.catalystUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                borderLeft: '2px solid var(--accent)',
-                paddingLeft: 14,
-                marginTop: 4,
-                textDecoration: 'none',
-                display: 'block',
-                transition: 'background 0.15s, padding 0.15s',
-                marginRight: -8,
-                paddingRight: 8,
-                paddingTop: 4,
-                paddingBottom: 4,
-              }}
-              className="catalyst-link"
-            >
-              <div
-                style={{
-                  fontFamily: 'var(--mono)',
-                  fontSize: 10,
-                  letterSpacing: '0.14em',
-                  textTransform: 'uppercase',
-                  color: 'var(--accent)',
-                  marginBottom: 6,
-                  fontWeight: 600,
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 6,
-                }}
-              >
-                Catalyst moment <span style={{ opacity: 0.7 }}>↗</span>
-              </div>
-              <p
-                style={{
-                  fontSize: 13.5,
-                  lineHeight: 1.55,
-                  color: 'var(--ink)',
-                  margin: 0,
-                  fontFamily: 'var(--serif)',
-                  fontStyle: 'italic',
-                }}
-              >
-                {p.catalyst}
-              </p>
-            </a>
-          ) : (
+          {/* Catalyst block (with explicit View Source CTA below text) */}
+          <div
+            style={{
+              borderLeft: '2px solid var(--accent)',
+              paddingLeft: 14,
+              marginTop: 4,
+            }}
+          >
             <div
               style={{
-                borderLeft: '2px solid var(--accent)',
-                paddingLeft: 14,
-                marginTop: 4,
+                fontFamily: 'var(--mono)',
+                fontSize: 10,
+                letterSpacing: '0.14em',
+                textTransform: 'uppercase',
+                color: 'var(--accent)',
+                marginBottom: 6,
+                fontWeight: 700,
               }}
             >
-              <div
+              ⚡ Catalyst moment
+            </div>
+            <p
+              style={{
+                fontSize: 13.5,
+                lineHeight: 1.55,
+                color: 'var(--ink)',
+                margin: 0,
+                fontFamily: 'var(--serif)',
+                fontStyle: 'italic',
+              }}
+            >
+              {p.catalyst}
+            </p>
+            {p.catalystUrl && (
+              <a
+                href={p.catalystUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 6,
+                  marginTop: 10,
                   fontFamily: 'var(--mono)',
-                  fontSize: 10,
-                  letterSpacing: '0.14em',
+                  fontSize: 11,
+                  fontWeight: 700,
+                  letterSpacing: '0.08em',
                   textTransform: 'uppercase',
                   color: 'var(--accent)',
-                  marginBottom: 6,
-                  fontWeight: 600,
+                  textDecoration: 'none',
+                  paddingBottom: 2,
+                  borderBottom: '1.5px solid var(--accent)',
                 }}
+                className="catalyst-cta"
               >
-                Catalyst moment
-              </div>
-              <p
-                style={{
-                  fontSize: 13.5,
-                  lineHeight: 1.55,
-                  color: 'var(--ink)',
-                  margin: 0,
-                  fontFamily: 'var(--serif)',
-                  fontStyle: 'italic',
-                }}
-              >
-                {p.catalyst}
-              </p>
-            </div>
-          )}
+                {CATALYST_CTA[p.slug] ?? 'View source'} <span aria-hidden>↗</span>
+              </a>
+            )}
+          </div>
 
           {/* When it works / doesn't work */}
           <div
@@ -269,7 +254,7 @@ export default function PlatformMix({ platforms }: Props) {
             </div>
           </div>
 
-          {/* Account link footer */}
+          {/* Account link footer — full-width button with arrow */}
           {p.accountUrl ? (
             <a
               href={p.accountUrl}
@@ -279,26 +264,25 @@ export default function PlatformMix({ platforms }: Props) {
                 marginTop: 'auto',
                 marginLeft: -32,
                 marginRight: -32,
-                marginBottom: 0,
-                padding: '16px 32px',
+                padding: '18px 32px',
                 borderTop: '1px solid var(--rule)',
-                background: 'var(--bg-card)',
+                background: 'var(--ink)',
                 fontFamily: 'var(--mono)',
-                fontSize: 11,
+                fontSize: 11.5,
                 letterSpacing: '0.12em',
                 textTransform: 'uppercase',
-                color: 'var(--ink)',
-                fontWeight: 600,
+                color: 'var(--bg)',
+                fontWeight: 700,
                 textDecoration: 'none',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                transition: 'background 0.15s',
+                transition: 'background 0.15s, color 0.15s',
               }}
               className="platform-account-link"
             >
               <span>{p.accountLabel ?? `Visit ${p.name}`}</span>
-              <span style={{ color: 'var(--accent)' }}>↗</span>
+              <span style={{ fontSize: 14 }}>↗</span>
             </a>
           ) : (
             <div
@@ -306,7 +290,7 @@ export default function PlatformMix({ platforms }: Props) {
                 marginTop: 'auto',
                 marginLeft: -32,
                 marginRight: -32,
-                padding: '16px 32px',
+                padding: '18px 32px',
                 borderTop: '1px solid var(--rule)',
                 background: 'var(--bg-card)',
                 fontFamily: 'var(--mono)',
