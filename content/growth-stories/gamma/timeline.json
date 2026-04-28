@@ -1,0 +1,332 @@
+{
+  "company": {
+    "slug": "gamma",
+    "name": "Gamma",
+    "legalName": "Gamma Tech, Inc.",
+    "tagline": "From a 'modern documents' tool nobody bought to a $100M ARR profitable business with 50 people",
+    "summary": "Gamma is the rare AI hit that wasn't a 2023 ChatGPT wrapper. The team spent two and a half years quietly building a 'modern documents' editor that didn't take off — then bolted GPT onto it in March 2023 and grew from 60K to 3M users in three months. The company stayed lean, stayed profitable, and reached $100M ARR with around 50 employees and only $23M raised before the round that made them a unicorn.",
+    "founded": "2020-11",
+    "founders": [
+      "Grant Lee",
+      "James Fox",
+      "Jon Noronha"
+    ],
+    "seriesNumber": 9
+  },
+  "phases": [
+    {
+      "start": "2020-11",
+      "end": "2023-03",
+      "name": "Pre-AI Gamma",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2023-03",
+      "end": "2024-05",
+      "name": "AI inflection",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2024-05",
+      "end": "2025-09",
+      "name": "Default-alive scale",
+      "color": "#dcfce7"
+    },
+    {
+      "start": "2025-09",
+      "end": "2026-05",
+      "name": "Platform expansion",
+      "color": "#fce7f3"
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-11-01",
+      "title": "Gamma founded",
+      "type": "product",
+      "description": "Three ex-Optimizely colleagues — Grant Lee (CEO, ex-CFO at Optimizely), James Fox (CTO), Jon Noronha (CPO) — incorporate Gamma. The thesis: PowerPoint is broken, knowledge work needs a 'modern document' that blends deck, doc, and webpage."
+    },
+    {
+      "date": "2021-08-01",
+      "title": "Private beta opens",
+      "type": "product",
+      "description": "After ten months of nights-and-weekends prototyping, Gamma opens a private beta of its non-AI 'modern documents' editor — a card-based tool emphasizing design and embeddable content."
+    },
+    {
+      "date": "2021-10-28",
+      "title": "Seed $7M (Accel)",
+      "type": "funding",
+      "description": "Led by Accel. Angels include Zoom CEO Eric Yuan, ex-LinkedIn CEO Jeff Weiner, and founders of Airtable, Patreon, Segment, Honey, and Optimizely. South Park Commons, LocalGlobe, Afore, Hustle Fund participate.",
+      "externalUrl": "https://techcrunch.com/2021/10/28/gamma-brings-in-7m-to-bring-the-slide-deck-into-the-21st-century/",
+      "articleSlug": "2021-10-seed-accel"
+    },
+    {
+      "date": "2022-04-01",
+      "title": "Public launch — pre-AI",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "Gamma exits beta as a non-AI 'card-based modern document' editor. Reaches roughly 60K users by early 2023 — moderate traction, not a hit. Paul Graham reportedly calls the product 'the dumbest idea I've heard.'",
+      "articleSlug": "2022-04-pre-ai-gamma"
+    },
+    {
+      "date": "2023-03-09",
+      "title": "AI rebuild ships",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "After a three-month internal sprint, Gamma re-launches as 'a new medium for presenting ideas, powered by GPT-4.' Type a prompt, get a full deck. Servers crash for three days under load.",
+      "externalUrl": "https://www.producthunt.com/products/gamma-3",
+      "articleSlug": "2023-03-ai-inflection"
+    },
+    {
+      "date": "2023-03-27",
+      "title": "Product Hunt relaunch",
+      "type": "media",
+      "description": "Gamma re-launches on Product Hunt as the AI version. Combined with an organic Twitter moment, signups jump from 2,000/day to 60,000/day. By June, Gamma is at roughly 3M users."
+    },
+    {
+      "date": "2023-05-01",
+      "title": "First paying customers",
+      "type": "product",
+      "description": "Within two months of turning on payments, Gamma crosses $1M ARR. Users had been throwing money over the wall during the server crashes assuming payment was the fix."
+    },
+    {
+      "date": "2023-05-15",
+      "title": "Seed extension (angels)",
+      "type": "funding",
+      "description": "A small, quiet seed top-up from angel investors after the AI rebuild's traction is undeniable. Total raised to date sits around $11M. The team explicitly chooses not to chase a large round."
+    },
+    {
+      "date": "2023-12-01",
+      "title": "10M users",
+      "type": "media",
+      "description": "Nine months after the AI rebuild, Gamma's user count crosses ten million. Headcount: under 20. Revenue per employee already dwarfing typical SaaS benchmarks."
+    },
+    {
+      "date": "2024-01-15",
+      "title": "Profitability",
+      "type": "media",
+      "gtmTag": "Capital efficiency as positioning",
+      "description": "Gamma turns profitable. The team will later cite 15+ consecutive months of profitability — running with more cash in the bank than they had ever raised.",
+      "articleSlug": "2024-01-default-alive"
+    },
+    {
+      "date": "2024-05-22",
+      "title": "Series A $12M (Accel)",
+      "type": "funding",
+      "description": "Accel doubles down. Tiny round by 2024 AI standards — the team frames it as optional, not necessary. Total funding to date: ~$23M.",
+      "externalUrl": "https://www.thesaasnews.com/news/gamma-raises-12-million-in-series-a",
+      "articleSlug": "2024-05-series-a"
+    },
+    {
+      "date": "2024-09-01",
+      "title": "Tome layoffs hit press",
+      "type": "media",
+      "description": "Direct competitor Tome — which had raised $80M+ — restructures and lays off ~20% of staff in April, then a further ~31% later in the year. The 'well-funded competitor collapses' contrast becomes part of Gamma's investor narrative.",
+      "externalUrl": "https://www.semafor.com/article/04/16/2024/ai-startup-tome-lays-off-staff-to-focus-on-revenue",
+      "articleSlug": "2024-09-tome-collapse"
+    },
+    {
+      "date": "2024-12-15",
+      "title": "$30M ARR · 50M users",
+      "type": "media",
+      "description": "Year-end checkpoint. Sacra estimates ~$30.5M ARR. User base around 50 million. Headcount ~30. The 'small team, large product' narrative becomes a recurring press hook."
+    },
+    {
+      "date": "2025-04-16",
+      "title": "Gamma 2.0",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Gamma 2.0 ships: presentations, websites, and social posts from a single prompt. The product positioning explicitly widens from 'AI presentations' to 'AI design partner.'",
+      "externalUrl": "https://www.producthunt.com/posts/gamma-2-0"
+    },
+    {
+      "date": "2025-08-15",
+      "title": "$50M ARR (35-person team)",
+      "type": "media",
+      "gtmTag": "Capital efficiency as positioning",
+      "description": "Grant Lee discloses $50M ARR with roughly 35 employees. Revenue per employee crosses $1.4M — the headline becomes the small-team story.",
+      "externalUrl": "https://www.upstartsmedia.com/p/gamma-ai-startup-profits"
+    },
+    {
+      "date": "2025-09-16",
+      "title": "Gamma 3.0 + AI Agent",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Gamma 3.0 ships globally with an AI design agent — natural-language editing, web research, restyling across an entire document. The platform shifts from 'generator' to 'design partner.'",
+      "articleSlug": "2025-09-gamma-3-agent"
+    },
+    {
+      "date": "2025-11-10",
+      "title": "Series B $68M / $2.1B",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Led by a16z, with Accel and Uncork. Includes secondary for early employees. Disclosed simultaneously: $100M ARR. Founder Grant Lee posts a long-form 'how we built a $100M business differently' essay the same day.",
+      "externalUrl": "https://techcrunch.com/2025/11/10/ai-powerpoint-killer-gamma-hits-2-1b-valuation-100m-arr-founder-says/",
+      "articleSlug": "2025-11-series-b"
+    },
+    {
+      "date": "2025-11-13",
+      "title": "Lenny's Podcast",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "Grant Lee on Lenny Rachitsky: '\"Dumbest idea I've heard\" to $100M ARR.' Episode covers PG's early dismissal, the onboarding rebuild, the 1,000+ creator program, and the deliberate small-team strategy.",
+      "externalUrl": "https://www.lennysnewsletter.com/p/how-50-people-built-a-profitable-ai-unicorn"
+    },
+    {
+      "date": "2026-03-17",
+      "title": "Gamma Imagine",
+      "type": "product",
+      "description": "Gamma Imagine launches — a standalone AI design surface for logos, infographics, diagrams, and social posts. The platform-tier expansion from documents into general visual design assets.",
+      "externalUrl": "https://www.businesswire.com/news/home/20260317085752/en/Gamma-Launches-Gamma-Imagine-to-Bring-AI-Native-Design-to-the-Masses"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2023-05-01",
+      "value": 1000000,
+      "source": "Lenny's Podcast",
+      "confidence": "official"
+    },
+    {
+      "date": "2024-01-15",
+      "value": 10000000,
+      "source": "Sacra (estimate)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2024-12-15",
+      "value": 30500000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-08-15",
+      "value": 50000000,
+      "source": "Upstarts Media / Grant Lee",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-10-15",
+      "value": 102000000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-11-10",
+      "value": 100000000,
+      "source": "Gamma / TechCrunch",
+      "confidence": "official"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2021-10-28",
+      "value": 35000000,
+      "round": "Seed",
+      "source": "Crunchbase (estimate)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2024-05-22",
+      "value": 84000000,
+      "round": "Series A",
+      "source": "Crunchbase (estimate)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-11-10",
+      "value": 2100000000,
+      "round": "Series B",
+      "source": "TechCrunch",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 5,
+      "bestStage": "All stages — load-bearing",
+      "effort": "Always-on",
+      "role": "Founder voice + product retrospectives",
+      "description": "Grant Lee writes long-form retrospective threads on X — the 'dumbest idea I've heard' story, the 95% drop-off teardown, the small-team revenue-per-employee comparisons. These threads become the source material every secondary creator quotes from.",
+      "catalyst": "March 2023 Product Hunt + Twitter relaunch as 'a new medium for presenting ideas, powered by GPT-4.' Signups went from 2,000/day to 60,000/day. Servers crashed for three days.",
+      "catalystUrl": "https://x.com/grantslee",
+      "accountUrl": "https://x.com/grantslee",
+      "accountLabel": "@grantslee on X",
+      "whenItWorks": "When the founder personally has the appetite to write retrospectives that reveal real numbers — drop-off rates, headcount, revenue. Specificity drives the share rate",
+      "whenItDoesnt": "If the founder posts only product news. Retrospectives with concrete numbers and humility ('PG called it dumb') outperform polished launch tweets every time"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 5,
+      "bestStage": "Default-alive scale + Platform expansion",
+      "effort": "Episodic; per-episode high",
+      "role": "The trust-building catalyst",
+      "description": "YouTube is where Gamma's distribution actually compounds. Two surfaces: long-form podcast appearances (Lenny, Sequoia's Training Data, a16z), and a 150+ creator program producing daily product walkthroughs in the productivity-tool genre. The combination owns the search query 'AI presentation tool review.'",
+      "catalyst": "Grant Lee on Lenny's Podcast (Nov 13, 2025): '\"Dumbest idea I've heard\" to $100M ARR.' Bundled with the Series B announcement three days earlier — funding press + founder long-form video into the same week.",
+      "catalystUrl": "https://www.youtube.com/watch?v=3H0ngGU5pbM",
+      "accountUrl": "https://www.youtube.com/@gamma_app",
+      "accountLabel": "Gamma on YouTube",
+      "whenItWorks": "When the product is highly visual and the result is screen-recordable in under 60 seconds. Creator economics work because the demo IS the content — no separate production needed",
+      "whenItDoesnt": "Don't lean on YouTube creators if the 'aha' isn't visible in a single screen recording. If the value requires a setup, the format won't carry it"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 3,
+      "bestStage": "Default-alive scale",
+      "effort": "Founder posts + reposts",
+      "role": "Knowledge-worker reach",
+      "description": "LinkedIn is the natural home for Gamma's actual buyer — the consultant, founder, salesperson, educator who lives in slides. Grant Lee's milestone announcements ($50M ARR with 35 people, the $100M ARR essay) consistently outperform on LinkedIn vs X for absolute reach.",
+      "catalyst": "Grant Lee's LinkedIn post announcing the $12M Series A (May 2024): explicit framing that the round was small by design, paired with the headcount and ARR numbers. Reposted hundreds of times by founders citing it as the counter-example to the AI mega-round trend.",
+      "catalystUrl": "https://www.linkedin.com/posts/grantslee_gamma-just-raised-a-12m-series-a-led-by-activity-7196507754197303297-03H1",
+      "accountUrl": "https://www.linkedin.com/company/meet-gamma/",
+      "accountLabel": "Gamma on LinkedIn",
+      "whenItWorks": "When the audience is non-developer knowledge workers and the content frames the company as a counter-narrative ('we did it with a small team / less capital'). LinkedIn rewards that frame",
+      "whenItDoesnt": "Pure product-update posts. LinkedIn punishes anything that reads like a press release"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 3,
+      "bestStage": "AI inflection + ongoing",
+      "effort": "Community-emergent",
+      "role": "Comparison search capture",
+      "description": "Reddit is where the queries 'Gamma vs Tome,' 'Gamma vs Beautiful.AI,' 'is Gamma worth paying for' actually get answered. Threads in r/ChatGPT, r/productivity, r/Notion, and r/EntrepreneurRideAlong have done more for Gamma's bottom-funnel conversion than any paid acquisition.",
+      "catalyst": "No single moment. The slow 2023–2025 emergence of Reddit threads naming Gamma as the default 'AI presentation' answer — the kind of recurring social proof you can't buy.",
+      "accountUrl": "https://www.reddit.com/search/?q=gamma.app",
+      "accountLabel": "Gamma threads on Reddit",
+      "whenItWorks": "When the product has clear free-tier value that users can validate in one session. Reddit wisdom-of-crowd recommendations only happen for products people actually use",
+      "whenItDoesnt": "Don't seed threads. The community detects astroturfing within hours and the backlash is permanent"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 3,
+      "bestStage": "AI inflection",
+      "effort": "Punctuated by launches",
+      "role": "Technical credibility validator",
+      "description": "Less load-bearing for Gamma than for developer-tool companies, but the front-page placement of the March 2023 AI relaunch and Gamma 3.0 functioned as 'serious technical attention' proof — visible to investors, employees, and competitors at the same time.",
+      "catalyst": "March 2023 AI relaunch front-page thread. Combined with the Product Hunt #1 placement, it produced the technical-credibility ceiling that supported the ARR ramp.",
+      "catalystUrl": "https://hn.algolia.com/?q=gamma.app",
+      "accountUrl": "https://hn.algolia.com/?q=gamma.app",
+      "accountLabel": "Search HN for Gamma",
+      "whenItWorks": "When the launch has a clear technical novelty — multimodel orchestration, an agent layer, a non-trivial inference pipeline. HN rewards substance",
+      "whenItDoesnt": "For consumer-facing UX iterations, HN is the wrong room. Don't expect it to carry incremental design updates"
+    },
+    {
+      "slug": "instagram",
+      "name": "Instagram",
+      "score": 2,
+      "bestStage": "Platform expansion",
+      "effort": "Creator-led, low company touch",
+      "role": "Visual demo distribution",
+      "description": "Higher score than for a B2B dev tool because Gamma's output is genuinely visual and the audience overlaps with Instagram's design-curious knowledge workers. But it's still a secondary channel — creators redistribute YouTube clips here, the company itself doesn't lead with IG.",
+      "catalyst": "Reels showing the prompt-to-finished-deck flow in 30 seconds. The visual delta between blank canvas and polished output is exactly what Instagram's algorithm rewards.",
+      "whenItWorks": "When the product output is screen-recordable, visually striking, and the 'before / after' delta is large. Gamma qualifies; most B2B SaaS doesn't",
+      "whenItDoesnt": "Don't spin up an IG presence as the primary channel. As a secondary clip-redistribution surface for YouTube wins, fine. As a lead source, near zero ROI"
+    }
+  ]
+}

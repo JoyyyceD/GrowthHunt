@@ -1,0 +1,92 @@
+---
+title: "Gamma's GPT-4 Rebuild — From 2,000 to 60,000 Signups a Day (Mar 2023)"
+description: "March 9, 2023. Gamma re-launches as 'a new medium for presenting ideas, powered by GPT-4.' Servers crash for three days. The 95% drop-off collapses. Two months later, the company hits $1M ARR."
+date: "2023-03-09"
+type: "product"
+gtmTag: "Tech narrative upgrade"
+eventTitle: "AI rebuild ships"
+externalUrl: "https://www.producthunt.com/products/gamma-3"
+---
+
+<Catalyst>
+The AI integration didn't change Gamma's product. It changed Gamma's input. The card schema, design system, and editing engine all stayed identical. What changed was that users no longer had to start from a blank canvas — and the 95% activation drop-off became the unlock.
+</Catalyst>
+
+March 9, 2023. After a three-month internal sprint, Gamma re-launches with GPT-4 generating directly into its existing document schema. New tagline: **"A new medium for presenting ideas, powered by GPT-4."**
+
+The numbers in the first weeks:
+
+| Metric | Pre-launch | Post-launch (within ~2 weeks) |
+|---|---|---|
+| Daily signups | ~2,000 | ~60,000 |
+| Server status | Stable | Crashed for 3 days |
+| User behavior | 95% drop-off at activation | Drop-off collapses; users actually finish documents |
+| Payment flow | Live but quiet | Users sending money during the outage assuming it was the fix |
+
+Within nine months the user base goes from 60K to 10M.
+
+## What the three-month sprint actually built
+
+The team did not rebuild Gamma. The team built **a generation pipeline that fed into the existing Gamma**.
+
+What that meant in practice, reconstructed from interviews:
+
+- **A multi-model orchestration layer.** Twenty-plus model calls per generation — outline, narrative shape, layout selection, diagram generation, image selection. Not one prompt, not one model.
+- **Generation into the card schema.** Output was structured, not free text. The model produced cards Gamma could render, not markdown the team had to parse.
+- **An iteration interface that preserved AI choices.** Users could edit any generated card without losing the structure of the rest of the document.
+- **A prompt input that wasn't a chat box.** A single text field with example prompts — friction-minimized in a way that mattered when the audience was non-developers.
+
+The substrate Gamma had built since 2020 absorbed all of this without rewrites. **The three-month sprint was AI integration, not AI product development.**
+
+## The Product Hunt moment
+
+March 27, 2023. Gamma re-launches on Product Hunt. The page has 229+ upvotes — solid but not the biggest launch of the day.
+
+The viral moment came from outside Product Hunt. Lee posted the launch on X. Paul Graham — possibly remembering the earlier "dumbest idea" call — quote-tweeted it negatively. **The negative QT became the propagation event.**
+
+Lee's later retelling: signups went from 2,000/day to 60,000/day in the immediate aftermath. The PG QT, intended as dismissive, became the most expensive piece of free distribution Gamma had ever received.
+
+The mechanic is one of those rare cases where the negative-attention algorithm works for you. PG's audience is high-quality founders and early adopters — exactly the people who tried Gamma in volume that week. **The hostility filtered out skeptics and concentrated the trial population in the segment most likely to convert.**
+
+## Why pure GPT wrappers didn't get this curve
+
+Dozens of AI presentation tools shipped in spring 2023. Beautiful.AI added GPT. Tome had been GPT-powered from launch in mid-2022. Pitch added AI. New entrants — Decktopus, Plus AI, SlidesAI, dozens more — flooded the category.
+
+Almost none of them got Gamma's curve. The pattern was consistent:
+
+- They generated into a slide template, not a design system. Output looked generic.
+- They didn't preserve user edits cleanly. Iteration broke structure.
+- They didn't have the embed / live-data / multi-format substrate. Output couldn't grow into a real document.
+- They didn't have the brand recognition Gamma had quietly accumulated through 2022.
+
+The lesson: **AI is a thin layer. The product is everything underneath it.** Teams that bet AI was the product shipped fast and lost. Teams that bet AI was an interface upgrade on a real product won.
+
+## The unintentional pricing experiment
+
+The three-day server outage produced an unplanned pricing test.
+
+Users hitting the broken product assumed payment was the fix. They threw money at Gamma without being asked — credit cards, subscription signups, a noticeable spike in revenue **during downtime**.
+
+When the team turned payments back on, they discovered:
+
+- The willingness-to-pay was higher than they had assumed
+- The "wow" of the AI generation was strong enough that users converted before fully exploring the free tier
+- The free-to-paid friction was a UX problem, not a value problem
+
+Within two months of formally enabling payments, Gamma crossed **$1M ARR.**
+
+This kind of accidental signal is rare and load-bearing. It calibrated the team's pricing assumptions for the next two years — including the credit-based freemium model that became the company's monetization spine.
+
+<Conclusion title="What to copy">
+
+- **AI integration is faster than AI product development.** If you have a real substrate, generation into that substrate is a three-month engineering project, not a 24-month rewrite. Don't conflate the two.
+- **The negative QT can be the launch.** A dismissive quote-tweet from a high-status person, in front of an audience that's biased toward the dismissive person being wrong, propagates faster than any positive endorsement. Don't avoid friction in launch posts.
+- **Server crashes are diagnostic.** The fact that users threw money at Gamma during downtime is the kind of signal a controlled launch wouldn't have produced. Don't optimize launches for smoothness; optimize for high-information signal.
+
+</Conclusion>
+
+## Sources
+
+- [Gamma on Product Hunt — March 27, 2023](https://www.producthunt.com/products/gamma-3)
+- [How Gamma Turned a 95% Drop-Off into $100M ARR — Product Growth](https://www.productgrowth.blog/p/gamma-growth-teardown-100m-arr)
+- [Gamma vs. PowerPoint: How a 35-person Team Built a $50M ARR Competitor — AI Native GTM](https://ainativegtm.substack.com/p/gamma-vs-powerpoint-how-a-35-person)

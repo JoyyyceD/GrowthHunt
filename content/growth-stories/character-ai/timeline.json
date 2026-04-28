@@ -1,0 +1,344 @@
+{
+  "company": {
+    "slug": "character-ai",
+    "name": "Character.AI",
+    "legalName": "Character Technologies, Inc.",
+    "tagline": "From a $1B chatbot unicorn to a $2.7B reverse-acquihire — and the consumer AI company that had to be rebuilt without its founders",
+    "summary": "Character.AI compressed three full company arcs into 36 months: a viral consumer launch with engagement metrics no one could match, a safety crisis triggered by a teen suicide, and a one-of-a-kind Google deal that returned its co-founders to Mountain View while leaving the company technically alive. The shape of this story is engagement-rich and revenue-light, with a forced restructuring that rewrote what 'consumer AI' could even mean.",
+    "founded": "2021-11",
+    "founders": [
+      "Noam Shazeer",
+      "Daniel De Freitas"
+    ],
+    "seriesNumber": 8
+  },
+  "phases": [
+    {
+      "start": "2021-11",
+      "end": "2022-09",
+      "name": "Stealth",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2022-09",
+      "end": "2024-02",
+      "name": "Consumer Viral",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2024-02",
+      "end": "2024-08",
+      "name": "Crisis & Pivot",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2024-08",
+      "end": "2026-04",
+      "name": "Post-Deal Rebuild",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-01",
+      "title": "Character Technologies founded",
+      "type": "product",
+      "gtmTag": "Founder-as-IP",
+      "description": "Noam Shazeer (Transformer co-author) and Daniel De Freitas (LaMDA / Meena lead) leave Google after the company refuses to ship their chatbot publicly. They incorporate Character Technologies in Delaware to build the consumer version themselves.",
+      "articleSlug": "2021-11-founding"
+    },
+    {
+      "date": "2021-12-15",
+      "title": "Seed round (~$43M)",
+      "type": "funding",
+      "description": "Early seed/pre-Series A capital from Elad Gil, SV Angel, Nat Friedman, A Capital. Stealth-mode build.",
+      "externalUrl": "https://www.crunchbase.com/funding_round/character-ai-seed--57b92e7f"
+    },
+    {
+      "date": "2022-09-16",
+      "title": "Public beta launch",
+      "type": "product",
+      "gtmTag": "Audience boundary push",
+      "description": "Character.AI opens to the public — free, no waitlist. Users can create and chat with custom AI characters. ChatGPT had not launched yet (still 11 weeks away). Hundreds of thousands of conversations within weeks.",
+      "externalUrl": "https://blog.character.ai/introducing-our-next-generation-web-platform/",
+      "articleSlug": "2022-09-public-launch"
+    },
+    {
+      "date": "2023-03-23",
+      "title": "Series A $150M / $1B",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Led by Andreessen Horowitz (Sarah Wang to the board), with Nat Friedman, Elad Gil, SV Angel, A Capital. Unicorn status six months after launch — driven by engagement, not revenue.",
+      "externalUrl": "https://www.cnbc.com/2023/03/23/characterai-valued-at-1-billion-after-150-million-round-from-a16z.html",
+      "articleSlug": "2023-03-series-a"
+    },
+    {
+      "date": "2023-05-23",
+      "title": "iOS + Android app — 1.7M installs in week one",
+      "type": "product",
+      "description": "Mobile launch. 700K Android installs in 48 hours, 1.7M total in under a week. Outpaces Netflix, Disney+, Prime Video on the entertainment chart. 99% organic.",
+      "externalUrl": "https://techcrunch.com/2023/05/31/character-ai-the-a16z-backed-chatbot-startup-tops-1-7m-installs-in-first-week/"
+    },
+    {
+      "date": "2023-05-31",
+      "title": "c.ai+ subscription launches at $9.99/mo",
+      "type": "product",
+      "gtmTag": "PLG → Enterprise pivot",
+      "description": "First monetization layer: priority access during peak load, faster responses, early features. Community reaction mixed — first signal of the engagement-vs-monetization tension.",
+      "externalUrl": "https://blog.character.ai/c-ai/",
+      "articleSlug": "2023-05-cai-plus-monetization"
+    },
+    {
+      "date": "2024-02-28",
+      "title": "Sewell Setzer III dies by suicide",
+      "type": "media",
+      "description": "A 14-year-old in Florida dies after months of conversations with a Game of Thrones-themed character on the platform. The case becomes public eight months later in the Garcia v. Character Technologies lawsuit."
+    },
+    {
+      "date": "2024-03-19",
+      "title": "Character Voice ships",
+      "type": "product",
+      "description": "AI voices in 1:1 chat — initially gated to c.ai+, then opened to all users. The first multimodal step beyond text.",
+      "externalUrl": "https://blog.character.ai/character-voice-for-everyone/"
+    },
+    {
+      "date": "2024-06-27",
+      "title": "Character Calls — phone-call mode",
+      "type": "product",
+      "description": "Two-way voice conversations in 9+ languages. The pre-launch test logged 20M calls from 3M users. A bigger product leap than text → voice.",
+      "externalUrl": "https://blog.character.ai/introducing-character-calls/"
+    },
+    {
+      "date": "2024-08-02",
+      "title": "Google deal — $2.7B reverse acquihire",
+      "type": "acquisition",
+      "gtmTag": "Acqui-hire competitor",
+      "description": "Google pays ~$2.7B for a non-exclusive license to Character.AI's technology, brings Noam Shazeer + Daniel De Freitas + ~30 researchers back to Google DeepMind. Character.AI continues operating as an independent company. Investors are bought out at the implied valuation; remaining equity passes to employees.",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2024-08-02/character-ai-co-founders-hired-by-google-in-licensing-deal",
+      "articleSlug": "2024-08-google-deal"
+    },
+    {
+      "date": "2024-08-02",
+      "title": "Dominic Perella named interim CEO",
+      "type": "product",
+      "description": "Former general counsel takes over the day the Google deal closes. Public message: Character.AI exits the foundation-model race and concentrates on the consumer product."
+    },
+    {
+      "date": "2024-10-02",
+      "title": "Erin Teague (ex-YouTube) joins as CPO",
+      "type": "product",
+      "description": "First major non-founder hire post-deal. Signal that the company is rebuilding for consumer entertainment, not foundation-model competition.",
+      "externalUrl": "https://techcrunch.com/2024/10/02/character-ai-hires-ex-youtube-exec-as-cpo-says-will-raise-money-next-year-with-new-partners/"
+    },
+    {
+      "date": "2024-10-23",
+      "title": "Garcia v. Character Technologies filed",
+      "type": "media",
+      "gtmTag": "Audience boundary push",
+      "description": "Megan Garcia files a wrongful-death suit in Florida federal court. Strict product liability, negligence, deceptive trade practices. The case names Character.AI, Shazeer, De Freitas, and Google. Wall-to-wall coverage in NYT, CNN, NBC, Washington Post.",
+      "externalUrl": "https://www.cnn.com/2024/10/30/tech/teen-suicide-character-ai-lawsuit",
+      "articleSlug": "2024-10-garcia-lawsuit"
+    },
+    {
+      "date": "2024-12-10",
+      "title": "Texas lawsuit — second teen safety case",
+      "type": "media",
+      "description": "Filed in eastern Texas federal court. Two minors, including a 17-year-old with autism whose chatbot allegedly suggested it 'understood' children killing parents. Plaintiffs seek to force the platform offline. Texas AG opens its own investigation three days later.",
+      "externalUrl": "https://www.washingtonpost.com/technology/2024/12/10/character-ai-lawsuit-teen-kill-parents-texas/"
+    },
+    {
+      "date": "2024-12-12",
+      "title": "Teen safety model + chat-time caps",
+      "type": "product",
+      "description": "Dedicated under-18 model, suicide-prevention pop-ups, two-hour daily caps for minors, in-house age-verification work. The most aggressive consumer-AI safety reset to date — built under legal duress.",
+      "externalUrl": "https://blog.character.ai/community-safety-updates/"
+    },
+    {
+      "date": "2025-04-22",
+      "title": "AvatarFX ships",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Image + voice → animated lifelike video character. DiT-based diffusion, Character.AI proprietary TTS. The first product launch where the new company defines its own technical edge — explicitly entertainment, not assistant.",
+      "externalUrl": "https://blog.character.ai/avatar-fx-cutting-edge-video-generation-by-character-ai/",
+      "articleSlug": "2025-04-avatarfx"
+    },
+    {
+      "date": "2025-06-02",
+      "title": "Social feed + community video features",
+      "type": "product",
+      "description": "Platform pivots from 1:1 chat to creator-feed. Brands like Yelp, Webtoon start placing ads in the feed — first ad-revenue layer.",
+      "externalUrl": "https://techcrunch.com/2025/06/02/chatbot-platform-character-ai-unveils-video-generation-social-feeds/"
+    },
+    {
+      "date": "2025-06-20",
+      "title": "Karandeep Anand named CEO",
+      "type": "product",
+      "description": "Ex-Brex president, ex-Meta VP of Business Products, ex-Microsoft. Nine months on the board first. The first permanent CEO of the post-Google company. Stated priorities: memory, model quality, less-overbearing safety filters, monetization.",
+      "externalUrl": "https://blog.character.ai/character-ai-names-karandeep-anand-as-ceo/",
+      "articleSlug": "2025-06-karandeep-anand"
+    },
+    {
+      "date": "2025-09-30",
+      "title": "TechCrunch Disrupt — public reset narrative",
+      "type": "media",
+      "description": "Anand's first big-stage interview as CEO. Frames Character.AI as 'AI entertainment,' not assistant or companion. Reports Scenes & Streams, social feed engagement holding despite MAU decline.",
+      "externalUrl": "https://techcrunch.com/2025/09/30/ai-that-talks-back-character-ai-in-the-spotlight-with-karandeep-anand-at-techcrunch-disrupt-2025/"
+    },
+    {
+      "date": "2025-10-29",
+      "title": "Under-18 chat ban announced",
+      "type": "product",
+      "gtmTag": "Audience boundary push",
+      "description": "Open-ended chat for users under 18 deprecated by November 25. Minors retained access only to creative tools (AvatarFX, Imagine Chat, stories, streams). A core demographic — over half the visitor base sat in 18–24 — voluntarily walled off.",
+      "externalUrl": "https://blog.character.ai/u18-chat-announcement/",
+      "articleSlug": "2025-10-under-18-ban"
+    },
+    {
+      "date": "2026-01-07",
+      "title": "Garcia + Texas lawsuits settled",
+      "type": "media",
+      "description": "Court filing discloses agreements with the Garcia family and additional plaintiffs. Google co-defendant in the settlement. Terms not disclosed.",
+      "externalUrl": "https://edition.cnn.com/2026/01/07/business/character-ai-google-settle-teen-suicide-lawsuit"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2023-12-31",
+      "value": 15200000,
+      "source": "Sacra / Latka",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-12-31",
+      "value": 32200000,
+      "source": "Sacra / Latka",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-07-15",
+      "value": 30000000,
+      "source": "ARR Club",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-12-31",
+      "value": 50000000,
+      "source": "Business of Apps",
+      "confidence": "media"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2021-12-15",
+      "value": 150000000,
+      "round": "Seed",
+      "source": "Crunchbase",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2023-03-23",
+      "value": 1000000000,
+      "round": "Series A",
+      "source": "CNBC",
+      "confidence": "official"
+    },
+    {
+      "date": "2024-08-02",
+      "value": 2700000000,
+      "round": "Google license / acquihire",
+      "source": "Bloomberg",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "tiktok",
+      "name": "TikTok",
+      "score": 5,
+      "bestStage": "Consumer Viral (2022–2024)",
+      "effort": "Creator-driven, near-zero company touch",
+      "role": "The actual top-of-funnel",
+      "description": "TikTok was where Character.AI grew. Cosplay-style 'I made my favorite anime character' demo videos compounded for two years. The company never ran an account that mattered — the platform's algorithm did the distribution work. #characterai stacked billions of views by mid-2024.",
+      "catalyst": "No single moment. A two-year wave of teen and Gen-Z creators posting screen-recorded conversations with Loki, Bakugo, and other fandom characters. The single biggest reason engagement metrics ran ahead of every other consumer AI product.",
+      "catalystUrl": "https://www.tiktok.com/tag/characterai",
+      "accountUrl": "https://www.tiktok.com/@character.ai",
+      "accountLabel": "@character.ai on TikTok",
+      "whenItWorks": "When the product naturally turns into a screen-recordable moment — especially fandom or roleplay output that travels as content on its own",
+      "whenItDoesnt": "If you try to seed it with brand creators. The audience reads sponsored content instantly, and the algorithm punishes it"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 5,
+      "bestStage": "All stages — load-bearing",
+      "effort": "Community-led, light moderation only",
+      "role": "Power-user habitat and crisis ground zero",
+      "description": "r/CharacterAI is one of the largest consumer-AI subreddits. Through 2023–2024 it was the de facto support, advocacy, and feedback channel — where filter changes, model regressions, and feature launches got triaged in real time. Also where the safety-feature backlash organized in late 2024.",
+      "catalyst": "The 'filter wars' threads (2023–2024) where the community pushed back on safety filters that softened character behavior. Each adjustment surfaced in r/CharacterAI within hours and shaped the next product cycle.",
+      "catalystUrl": "https://www.reddit.com/r/CharacterAI/",
+      "accountUrl": "https://www.reddit.com/r/CharacterAI/",
+      "accountLabel": "Visit r/CharacterAI",
+      "whenItWorks": "When you have a critical-mass user base willing to evangelize and complain. Reddit is where consumer AI products learn what's actually breaking",
+      "whenItDoesnt": "If the company tries to control the narrative. The community detects it and trust collapses"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 4,
+      "bestStage": "Consumer Viral",
+      "effort": "Creator economy, organic",
+      "role": "Long-form proof and tutorial channel",
+      "description": "YouTube was where 'How to use Character.AI' tutorials and roleplay-style storytelling videos lived. Less explosive than TikTok per video, but longer half-life. The platform also carried podcast appearances by Shazeer that built investor and tech-press credibility.",
+      "catalyst": "Noam Shazeer's No Priors and Cognitive Revolution appearances (2023–2024) put the founder narrative — Transformer co-author, LaMDA frustration, consumer AI bet — into the long-form record investors actually consume.",
+      "catalystUrl": "https://www.youtube.com/results?search_query=noam+shazeer+character+ai",
+      "accountUrl": "https://www.youtube.com/@CharacterAi",
+      "accountLabel": "Character.AI on YouTube",
+      "whenItWorks": "When the product produces watchable artifacts — roleplay, voice calls, video — and the founder has a real technical narrative",
+      "whenItDoesnt": "If your only assets are 30-second clips. Those belong on TikTok or Shorts, not main YouTube"
+    },
+    {
+      "slug": "instagram",
+      "name": "Instagram",
+      "score": 3,
+      "bestStage": "Consumer Viral + Post-Deal Rebuild",
+      "effort": "Reels mirror of TikTok output",
+      "role": "Demographic spillover",
+      "description": "Reels picked up the second wave of TikTok content — the same cosplay and roleplay clips, slightly older audience. Useful but secondary to TikTok and Reddit. Became more important once AvatarFX launched and content became visually richer.",
+      "catalyst": "AvatarFX launch (April 2025) — the first time Character.AI had visual output that was genuinely Instagram-native. Animated character clips travelled well in Reels.",
+      "catalystUrl": "https://blog.character.ai/avatar-fx-cutting-edge-video-generation-by-character-ai/",
+      "accountUrl": "https://www.instagram.com/character.ai/",
+      "accountLabel": "@character.ai on Instagram",
+      "whenItWorks": "When you already have video output traveling on TikTok. Reels is the cheap second-platform port",
+      "whenItDoesnt": "If you start there. Instagram rewards platform-native creators, not B2C-tool brand pages"
+    },
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 3,
+      "bestStage": "Stealth + funding announcements",
+      "effort": "Episodic — investor and press signal",
+      "role": "Capital-class amplifier",
+      "description": "X was never the consumer growth channel — the user base lives on TikTok and Reddit, not in tech-Twitter. But X carried the founder credibility for fundraising: Noam Shazeer's Transformer pedigree and the Series A announcement traveled through the AI-Twitter network and shaped investor mind-share.",
+      "catalyst": "March 2023 Series A — a16z and Sarah Wang amplified the announcement across investor X. The 'Transformer co-author starts consumer AI' frame was an X-native story.",
+      "accountUrl": "https://x.com/character_ai",
+      "accountLabel": "@character_ai on X",
+      "whenItWorks": "For investor-class signal and AI-research credibility. Your founders matter more than your account here",
+      "whenItDoesnt": "As a consumer acquisition channel for a Gen-Z product. The audience is wrong"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 3,
+      "bestStage": "Stealth + crisis moments",
+      "effort": "Punctuated — launch and lawsuit cycles",
+      "role": "Founder-pedigree validator",
+      "description": "HN front-paged the 2022 public launch and again the 2024 Google deal — both natural fits for an audience that recognized Shazeer's name. Less relevant during the consumer growth years (HN's audience isn't roleplaying with anime characters) but load-bearing at the bookends of the story.",
+      "catalyst": "August 2024 Google deal — front-page HN with hundreds of comments dissecting the reverse-acquihire structure and what it implied for Anthropic / Inflection / future deals.",
+      "catalystUrl": "https://news.ycombinator.com/from?site=character.ai",
+      "accountUrl": "https://hn.algolia.com/?q=character.ai",
+      "accountLabel": "Search HN for Character.AI",
+      "whenItWorks": "When your story has a structural-novelty hook (founder pedigree, deal structure, technical novelty)",
+      "whenItDoesnt": "Don't post incremental product news. HN punishes 'we shipped a feature' framing for a B2C entertainment product"
+    }
+  ]
+}
