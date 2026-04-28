@@ -1,0 +1,420 @@
+{
+  "company": {
+    "slug": "oura",
+    "name": "Oura",
+    "legalName": "Oura Health Oy",
+    "tagline": "13 years from a Kickstarter ring in Oulu to an $11B health platform",
+    "summary": "Oura is the slow hardware story most consumer-tech narratives skip. Eleven years of patient sensor work, a Kickstarter that delivered two years late, and one inflection moment — the 2020 NBA bubble — that converted a quiet Finnish wellness company into the default smart-ring brand. The arc only flips vertical after the Gen 3 subscription pivot reset the unit economics in late 2021.",
+    "founded": "2013",
+    "founders": [
+      "Petteri Lahtela",
+      "Markku Koskela",
+      "Kari Kivelä"
+    ],
+    "seriesNumber": 7
+  },
+  "phases": [
+    {
+      "start": "2013-01",
+      "end": "2018-06",
+      "name": "Indiegogo Era (Gen 1)",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2018-06",
+      "end": "2020-06",
+      "name": "Gen 2 to NBA Bubble",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2020-06",
+      "end": "2023-04",
+      "name": "Subscription + Viral",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2023-04",
+      "end": "2026-06",
+      "name": "Platform + Glucose",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2013-06-01",
+      "title": "Oura Health founded in Oulu",
+      "type": "product",
+      "description": "Petteri Lahtela, Markku Koskela, and Kari Kivelä incorporate Oura Health Oy in Oulu, Finland. The three founders carry deep R&D experience from Polar, Nokia, and the Oulu sensor cluster."
+    },
+    {
+      "date": "2015-03-15",
+      "title": "Gen 1 unveiled at SF Launch Festival",
+      "type": "product",
+      "description": "First-generation Oura Ring debuts publicly at the San Francisco Launch Festival. A finger-worn 'wellness computer' aimed at sleep tracking, in a market dominated by wrist-based Fitbits and Apple Watch."
+    },
+    {
+      "date": "2015-08-18",
+      "title": "Kickstarter campaign opens",
+      "type": "media",
+      "gtmTag": "Bundled milestone",
+      "description": "Hits the $100,000 goal in 15 hours. Closes Sep 24, 2015 with 2,383 backers and $651,803 — six times the goal. The first proof that a smart ring had a real audience.",
+      "externalUrl": "https://www.kickstarter.com/projects/oura/oura-ring-improve-sleep-perform-better",
+      "articleSlug": "2015-08-kickstarter-launch"
+    },
+    {
+      "date": "2015-11-11",
+      "title": "Seed $2.3M led by Lifeline Ventures",
+      "type": "funding",
+      "description": "Earliest institutional capital. Lifeline Ventures, the Helsinki firm behind Supercell and Wolt, becomes the long-term anchor investor."
+    },
+    {
+      "date": "2017-11-30",
+      "title": "Gen 2 debuts at Slush",
+      "type": "product",
+      "description": "Second-generation Oura Ring launches at Slush in Helsinki — slimmer profile, Heritage and Horizon shapes, a properly working Readiness Score. Sales of Gen 2 quickly reach ~10,000 units."
+    },
+    {
+      "date": "2018-04-01",
+      "title": "Series A €5M",
+      "type": "funding",
+      "description": "Closes a Series A round of about €5M ($5.3M). Over 75% of the capital comes from US angels including Joi Ito and Jaan Tallinn — the first signal of US investor pull."
+    },
+    {
+      "date": "2018-06-01",
+      "title": "Harpreet Rai becomes CEO",
+      "type": "media",
+      "description": "Founder Petteri Lahtela steps aside. Harpreet Singh Rai, a former Eminence Capital portfolio manager, takes over as CEO. Lahtela moves to Chief Innovation Officer to focus on product roadmap."
+    },
+    {
+      "date": "2018-12-03",
+      "title": "$20M from Michael Dell, Will Smith, Shaq",
+      "type": "funding",
+      "gtmTag": "Founder-as-IP",
+      "description": "Funding round led by MSD Capital with YouTube co-founder Steve Chen, Twitch co-founder Kevin Lin, Will Smith via The Dreamer's Fund, Shaquille O'Neal, and Lance Armstrong. The first round that engineered celebrity-investor halo into the cap table.",
+      "externalUrl": "https://techcrunch.com/2018/12/03/sleep-tracking-ring-oura-raises-20-million-from-michael-dell-lance-armstrong-and-others/"
+    },
+    {
+      "date": "2020-03-13",
+      "title": "Series B $28M",
+      "type": "funding",
+      "description": "Forerunner Ventures, Square (Jack Dorsey), and Google's Gradient Ventures lead the round. First top-tier consumer-tech VC validation. Closes the week the world goes into COVID lockdown.",
+      "externalUrl": "https://www.mobihealthnews.com/news/oura-announces-28m-series-b-funding-150000-plus-lifetime-smart-ring-sales"
+    },
+    {
+      "date": "2020-03-25",
+      "title": "UCSF TemPredict study begins",
+      "type": "media",
+      "description": "UCSF launches the TemPredict study using Oura Rings to detect COVID-19 from skin temperature, heart rate, and HRV. 63,153 participants enroll. Algorithm later flags COVID 2.75 days before symptoms with 82% sensitivity."
+    },
+    {
+      "date": "2020-06-23",
+      "title": "NBA bubble deploys Oura",
+      "type": "media",
+      "gtmTag": "Ride the KOL wave",
+      "description": "NBA partners with Oura to deploy rings to all players and essential staff in the Disney World 'bubble.' The single moment that flipped Oura from quiet wellness brand to mainstream-recognized product. Picked up by NYT, ESPN, CBS, CNBC.",
+      "externalUrl": "https://ouraring.com/blog/partners-with-the-nba/",
+      "articleSlug": "2020-06-nba-bubble"
+    },
+    {
+      "date": "2020-09-15",
+      "title": "UFC partnership announced",
+      "type": "media",
+      "description": "UFC names Oura its first-ever 'Official Health Wearable' in a multi-year deal. Rings made available to all 600 fighters. NASCAR, WNBA, and the Seattle Mariners follow within months."
+    },
+    {
+      "date": "2021-05-04",
+      "title": "Series C $100M",
+      "type": "funding",
+      "description": "Led by The Chernin Group and Elysian Park (the Dodgers' investment arm). Forerunner, Square, MSD, Marc Benioff, and Lifeline reup. Brings total raised to $148.3M.",
+      "externalUrl": "https://techcrunch.com/2021/05/04/fitness-ring-maker-oura-raises-100m/"
+    },
+    {
+      "date": "2021-10-26",
+      "title": "Gen 3 launch + subscription pivot",
+      "type": "product",
+      "gtmTag": "PLG → Enterprise pivot",
+      "description": "Third-generation ring announced with 24/7 heart rate, blood oxygen, and period prediction. New $5.99/month membership puts most features behind a paywall. Backlash is loud — but ARR economics flip from one-shot hardware to recurring software.",
+      "externalUrl": "https://ouraring.com/blog/discover-oura-ring-generation-3/",
+      "articleSlug": "2021-10-gen3-subscription"
+    },
+    {
+      "date": "2022-03-24",
+      "title": "1 million rings sold",
+      "type": "media",
+      "description": "Crosses one million lifetime rings, with Gen 3 outselling all prior generations combined in five months. Cumulative milestone reached in roughly seven years.",
+      "externalUrl": "https://techcrunch.com/2022/03/24/oura-sells-its-millionth-ring/"
+    },
+    {
+      "date": "2022-04-05",
+      "title": "$2.55B valuation reached",
+      "type": "funding",
+      "description": "Capital raise at $2.55B announced one month after the 1M-rings milestone. Bundled disclosure compresses the funding and unit-volume narratives into a single news cycle.",
+      "externalUrl": "https://www.businesswire.com/news/home/20220405006108/en/On-the-Heels-of-1-Million-Rings-Sold-Oura-Now-Valued-at-%242.55-Billion"
+    },
+    {
+      "date": "2022-04-25",
+      "title": "Tom Hale appointed CEO",
+      "type": "media",
+      "gtmTag": "PLG → Enterprise pivot",
+      "description": "Former SurveyMonkey/Momentive president Tom Hale named CEO to lead the pre-IPO push. Brings consumer-software discipline — pricing, subscription mechanics, enterprise sales — to a hardware-first founder team.",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2022-04-25/oura-ring-startup-brings-on-new-ceo-to-lead-pre-ipo-growth-push",
+      "articleSlug": "2022-04-tom-hale-ceo"
+    },
+    {
+      "date": "2022-05-26",
+      "title": "Gucci x Oura ring drops",
+      "type": "product",
+      "gtmTag": "Audience boundary push",
+      "description": "Gucci x Oura limited edition launches at $950 — black PVD titanium with 18k gold detailing. Sells out within weeks. The single move that converted Oura from gym-bro health tracker to luxury wearable.",
+      "externalUrl": "https://techcrunch.com/2022/05/26/gucci-x-oura-launch-an-1100-smart-ring-to-help-you-discover-yourself/",
+      "articleSlug": "2022-05-gucci-collaboration"
+    },
+    {
+      "date": "2023-04-24",
+      "title": "Best Buy nationwide launch",
+      "type": "media",
+      "description": "Oura enters physical retail in 850 Best Buy locations, including 50 store-within-store concepts with sizing tools and demo displays. The first major DTC-to-retail bridge."
+    },
+    {
+      "date": "2023-05-09",
+      "title": "Acquires Proxy ($165M all-equity)",
+      "type": "acquisition",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Buys digital-identity startup Proxy in an all-equity deal valued around $165M. The move signals an ambition beyond health — payments, access, identity — though the strategic payoff is still unfolding.",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2023-05-09/oura-ring-maker-to-buy-digital-identification-startup-proxy"
+    },
+    {
+      "date": "2024-04-22",
+      "title": "Target distribution opens",
+      "type": "media",
+      "description": "Oura begins selling in select Target stores nationwide. Target framed as the right fit for the female-skewing demographic now driving growth. Coincides with Samsung Galaxy Ring's pre-launch hype."
+    },
+    {
+      "date": "2024-09-11",
+      "title": "Acquires Veri (metabolic health)",
+      "type": "acquisition",
+      "description": "Buys Helsinki-based Veri, a continuous-glucose-monitoring software platform. Sets up the metabolic-health roadmap that the Dexcom partnership will build on two months later.",
+      "externalUrl": "https://techcrunch.com/2024/09/11/oura-has-acquired-metabolic-heath-startup-veri/"
+    },
+    {
+      "date": "2024-10-03",
+      "title": "Oura Ring 4 launches at $349",
+      "type": "product",
+      "description": "Fourth-generation ring announced with full-titanium interior, Smart Sensing algorithms, 8-day battery, and 40+ workout types. Ships Oct 15, 2024. Membership unchanged at $5.99/mo or $69.99/yr.",
+      "externalUrl": "https://www.cnbc.com/2024/10/03/oura-ring-4-price-release-date.html",
+      "articleSlug": "2024-10-ring-4-launch"
+    },
+    {
+      "date": "2024-10-08",
+      "title": "$96M Department of Defense contract",
+      "type": "media",
+      "description": "Defense Health Agency awards Oura a firm-fixed-price contract worth $96.1M for biometric sensor devices. Builds on the 2019 DoD partnership and tens of thousands of rings already deployed."
+    },
+    {
+      "date": "2024-10-31",
+      "title": "Acquires Sparta Science",
+      "type": "acquisition",
+      "description": "Bay Area-based movement-health platform. Brings the Trinsic data layer to Oura Teams (B2B). Third acquisition in 18 months.",
+      "externalUrl": "https://techcrunch.com/2024/10/31/oura-buys-sparta-science-its-third-acquisition-in-two-years/"
+    },
+    {
+      "date": "2024-11-19",
+      "title": "Dexcom $75M + strategic partnership",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Dexcom invests $75M and signs a co-marketing/data-sharing deal to merge CGM glucose data with Oura biometrics. First app integration set for H1 2025.",
+      "externalUrl": "https://techcrunch.com/2024/11/19/oura-valued-at-5b-following-deal-with-medical-device-firm-dexcom/",
+      "articleSlug": "2024-11-dexcom-partnership"
+    },
+    {
+      "date": "2024-12-19",
+      "title": "Series D $200M / $5.2B",
+      "type": "funding",
+      "description": "Series D led by Fidelity, with Dexcom's strategic $75M folded in. Doubles the 2022 valuation to $5.2B. Oura discloses 2024 revenue 'doubled' to roughly $500M and the company is profitable.",
+      "externalUrl": "https://www.fiercehealthcare.com/health-tech/oura-closes-200m-round-boosting-smart-ring-makers-valuation-52b"
+    },
+    {
+      "date": "2025-03-31",
+      "title": "Oura Advisor (AI) goes GA",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "AI health-coach LLM rolls out to all members. Beta logs 1M+ messages with 60% weekly use. Marks Oura's pivot from passive tracker to conversational health platform.",
+      "externalUrl": "https://www.businesswire.com/news/home/20250331565896/en/Oura-Advisor-an-AI-powered-Personal-Health-Companion-Now-Rolling-Out-to-All-Oura-Members"
+    },
+    {
+      "date": "2025-09-22",
+      "title": "5.5M rings sold disclosed",
+      "type": "media",
+      "description": "Oura discloses 5.5M lifetime rings (3M added since June 2024) and 2024 revenue doubling for the second straight year. 2025 revenue tracking past $1B."
+    },
+    {
+      "date": "2025-10-14",
+      "title": "Series E $900M / $11B",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Fidelity leads, with new investors ICONIQ, Whale Rock, and Atreides. Valuation more than doubles since December 2024. Tom Hale tells CNBC the company is on track for ~$2B in 2026 revenue.",
+      "externalUrl": "https://techcrunch.com/2025/10/14/smart-ring-maker-oura-raises-900m-from-fidelity/"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2020-03-01",
+      "value": 30000000,
+      "source": "Sacra estimate (~150K rings × ~$199 ASP)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2022-03-01",
+      "value": 200000000,
+      "source": "Sacra estimate around 1M-rings milestone",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2023-12-31",
+      "value": 227000000,
+      "source": "Sacra (back-calculated from 'doubled to $500M in 2024')",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-12-31",
+      "value": 500000000,
+      "source": "Oura / The Information",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-12-31",
+      "value": 1000000000,
+      "source": "Tom Hale on CNBC, Sep 2025",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-12-31",
+      "value": 2000000000,
+      "source": "Tom Hale on CNBC, Nov 2025 (forward guidance)",
+      "confidence": "official"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2020-03-13",
+      "value": 200000000,
+      "round": "Series B",
+      "source": "Crunchbase / press estimate",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2021-05-04",
+      "value": 800000000,
+      "round": "Series C",
+      "source": "TechCrunch / Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2022-04-05",
+      "value": 2550000000,
+      "round": "Series C extension",
+      "source": "BusinessWire",
+      "confidence": "official"
+    },
+    {
+      "date": "2024-12-19",
+      "value": 5200000000,
+      "round": "Series D",
+      "source": "Fierce Healthcare",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-10-14",
+      "value": 11000000000,
+      "round": "Series E",
+      "source": "TechCrunch / CNBC",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "instagram",
+      "name": "Instagram",
+      "score": 5,
+      "bestStage": "Subscription + Viral / Platform",
+      "effort": "High — sustained creator + influencer program",
+      "role": "Wellness aesthetic + celebrity halo",
+      "description": "Oura's core social engine. The ring's small, jewelry-like form factor performs in IG's lifestyle frame in a way no chest-strap or wrist-band could. Jennifer Aniston, Prince Harry, Sofia Richie, Kim Kardashian — all photographed wearing Oura, mostly unpaid. The platform where ring-wearing became a wellness identity marker.",
+      "catalyst": "Jennifer Aniston's unprompted Jimmy Kimmel mention (Sep 2021) and the wave of paparazzi shots of Prince Harry wearing Oura since 2018 — both surfaced and amplified primarily on Instagram.",
+      "accountUrl": "https://www.instagram.com/ouraring/",
+      "accountLabel": "@ouraring on Instagram",
+      "whenItWorks": "When the product is photogenic and ties to a wellness/lifestyle identity people want to broadcast. Oura's matte black titanium reads as jewelry in a way most wearables don't",
+      "whenItDoesnt": "If your product looks like medical equipment, IG won't save it. The ring's discreetness was the prerequisite"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 5,
+      "bestStage": "Subscription + Viral / Platform",
+      "effort": "Episodic — long-form review cycle per launch",
+      "role": "Long-form reviewer trust layer",
+      "description": "MKBHD, Marques Brownlee, Jonathan Morrison, and the entire wellness-tech reviewer ecosystem (Andrew Steele, Bryan Johnson's tracking content, Peter Attia adjacent) carry Oura's depth credibility. Each Gen launch triggers a wave of 20–30 minute teardown reviews — the format consumer hardware needs to overcome the 'why pay $349?' objection.",
+      "catalyst": "Gen 3 (Oct 2021) and Gen 4 (Oct 2024) launch review cycles. Each generated dozens of reviewer videos in the first two weeks, with sustained mid-tail discovery for 6+ months after.",
+      "accountUrl": "https://www.youtube.com/@ouraring",
+      "accountLabel": "Oura on YouTube",
+      "whenItWorks": "When the product has enough technical substance to fill a 15-minute review and the price requires it — sub-$50 hardware doesn't earn that depth",
+      "whenItDoesnt": "Skip if your product is a quick-purchase impulse. YouTube reviews are mid-funnel for considered hardware purchases, not hooks"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit (r/ouraring)",
+      "score": 4,
+      "bestStage": "All stages — load-bearing community",
+      "effort": "Community-led, low company touch",
+      "role": "Retention + advocacy + diagnostic",
+      "description": "r/ouraring crossed 200K members. Where existing owners share readiness scores, debate firmware updates, and onboard new buyers searching for honest reviews. Also where the Gen 3 subscription backlash crystallized — and where Oura's leadership read the temperature when deciding how to communicate around it.",
+      "catalyst": "Gen 3 subscription announcement (Oct 2021). r/ouraring became the de facto venue for the user-revolt narrative. Oura's response — keeping legacy Gen 2 features unlocked — was visibly shaped by the thread sentiment.",
+      "accountUrl": "https://www.reddit.com/r/ouraring/",
+      "accountLabel": "Visit r/ouraring",
+      "whenItWorks": "When you have an obsessive measurement-loving user base. Reddit captures the 'I check my readiness score every morning' identity better than any other platform",
+      "whenItDoesnt": "Don't astroturf. Oura's relative silence on the sub is part of why the sub trusts itself"
+    },
+    {
+      "slug": "tiktok",
+      "name": "TikTok",
+      "score": 4,
+      "bestStage": "Platform / 2023 onwards",
+      "effort": "Always-on creator-led content",
+      "role": "Gen Z + female demographic acquisition",
+      "description": "The platform that pulled Oura past its early gym-bro audience. #OuraRing has tens of millions of views — sleep-tracking 'reveals,' cycle-tracking content, and 'what's a good readiness score' explainers. Disproportionately female-skewing, which now drives Oura's fastest-growing demographic.",
+      "catalyst": "The cycle-tracking + women's-health content wave through 2023–2024, coinciding with Oura's Target distribution launch. The platform-demographic fit was earned, not bought.",
+      "accountUrl": "https://www.tiktok.com/@ouraring",
+      "accountLabel": "@ouraring on TikTok",
+      "whenItWorks": "When your product has visible, daily, share-worthy outputs (like a daily score). Sleep numbers and cycle data are perfect TikTok fodder",
+      "whenItDoesnt": "If your product is invisible or B2B, TikTok will swallow your effort with no return"
+    },
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 3,
+      "bestStage": "All stages — narrative spillover",
+      "effort": "Press-release amplification + founder voice",
+      "role": "Tech-press coverage spreader",
+      "description": "Less load-bearing than Cursor or Lovable would treat it. Oura's audience isn't dev-Twitter. But still the venue where TechCrunch, Bloomberg, CNBC, Sacra, and Fortune coverage gets cross-pollinated to the wellness-curious tech-adjacent crowd. Tom Hale is moderately active.",
+      "catalyst": "Each funding round and product generation ripples through tech-press X. The Dexcom partnership (Nov 2024) was the cleanest example — coverage stacked across capital, health-tech, and consumer accounts in 48 hours.",
+      "accountUrl": "https://x.com/ouraring",
+      "accountLabel": "@ouraring on X",
+      "whenItWorks": "When you have credentialed press relationships and can expect organic re-shares from VCs and journalists",
+      "whenItDoesnt": "Don't expect X to drive consumer ring sales directly. It's a press-amplifier, not a purchase channel"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 3,
+      "bestStage": "Platform — Enterprise + DoD",
+      "effort": "Funding announcements + executive voice",
+      "role": "Enterprise + defense buyer signal",
+      "description": "Climbed in importance as Oura Teams (B2B) and the DoD relationship grew. Tom Hale and the new C-suite use LinkedIn to broadcast enterprise wins, and procurement teams at Fortune 500 health-and-wellness programs check it before signing. Less for direct consumer acquisition.",
+      "catalyst": "The $96M Department of Defense contract (Oct 2024) was a LinkedIn-first amplification — defense procurement, federal-tech, and investor circles rebroadcast the news for two weeks.",
+      "accountUrl": "https://www.linkedin.com/company/oura/",
+      "accountLabel": "Oura on LinkedIn",
+      "whenItWorks": "When you have a real enterprise or government channel and the buyers verify legitimacy via LinkedIn before scheduling calls",
+      "whenItDoesnt": "If your business is purely DTC consumer wellness, LinkedIn returns near-zero ROI. Skip it"
+    }
+  ]
+}

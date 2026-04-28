@@ -1,0 +1,347 @@
+{
+  "company": {
+    "slug": "plaude",
+    "name": "Plaud",
+    "legalName": "PLAUD Inc.",
+    "tagline": "Bootstrapped a $179 voice card to a $250M ARR run rate in 27 months",
+    "summary": "Plaud is the AI-hardware story that wasn't supposed to work. While Humane raised $230M and bricked itself, Plaud took $1.1M off Kickstarter, kept manufacturing in Shenzhen, ran headquarters out of San Francisco, and rode YouTube + creator demos into 1.5M units shipped and a $250M annualized run rate — without a real venture round. The arc compresses every classic hardware pattern into 30 months: crowdfunding launch, retail laddering, product-line expansion, then a software/enterprise turn.",
+    "founded": "2021-12",
+    "founders": [
+      "Nathan Xu (Xu Gao)",
+      "Charles Liu"
+    ],
+    "seriesNumber": 6
+  },
+  "phases": [
+    {
+      "start": "2021-12",
+      "end": "2023-06",
+      "name": "Pre-Plaud iZYREC",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2023-06",
+      "end": "2024-08",
+      "name": "Crowdfunding to retail",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2024-08",
+      "end": "2025-08",
+      "name": "Product line + creator flywheel",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2025-08",
+      "end": "2026-04",
+      "name": "Platform & enterprise",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-12-01",
+      "title": "Plaud Inc. founded",
+      "type": "product",
+      "description": "Nathan Xu (Xu Gao) and Charles Liu incorporate Plaud Inc. in Delaware. Xu brings banking/VC and consumer hardware experience; Liu owns a Shenzhen wearables factory. From day one the structure is bootstrapped: no outside capital, founders fund inventory."
+    },
+    {
+      "date": "2022-08-01",
+      "title": "iZYREC ships overseas",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "First product: iZYREC, a $50 app-linked voice recorder marketed primarily through Indiegogo to overseas backers. Profitable by early 2023. Establishes the Shenzhen-manufacturing / DTC-crowdfunding loop that Plaud later inherits.",
+      "externalUrl": "https://www.indiegogo.com/en/projects/plaud/izyrec-smallest-most-easy-to-use-voice-recorder"
+    },
+    {
+      "date": "2023-03-01",
+      "title": "ChatGPT-era pivot",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "After GPT-4's release the team decides to wrap the recorder hardware in an AI transcript / summary layer. The same physical chip becomes an 'AI note-taker' priced 3x higher than iZYREC."
+    },
+    {
+      "date": "2023-06-27",
+      "title": "Plaud Note Kickstarter launch",
+      "type": "product",
+      "gtmTag": "Crowdfunding-first GTM",
+      "description": "Kickstarter campaign goes live with a $5,000 goal. Magnetic card recorder priced at $159, marketed as 'ChatGPT-empowered AI voice recorder.' Hits $200K within 36 hours; flagged as one of the most-backed July 2023 crowdfunding projects.",
+      "externalUrl": "https://www.kickstarter.com/projects/izyrec/plaud-note-chatgpt-empowered-ai-voice-recorder",
+      "articleSlug": "2023-06-kickstarter-launch"
+    },
+    {
+      "date": "2023-08-16",
+      "title": "Kickstarter closes $1.1M / 7,564 backers",
+      "type": "media",
+      "gtmTag": "Crowdfunding-first GTM",
+      "description": "50-day campaign ends at $1,108,181 from 7,564 backers — 22,000% over goal. Indiegogo InDemand carries the campaign forward; combined crowdfunding tops $1.5M before Plaud has a real DTC site.",
+      "externalUrl": "https://www.kicktraq.com/projects/izyrec/plaud-note-chatgpt-empowered-ai-voice-recorder/"
+    },
+    {
+      "date": "2023-12-01",
+      "title": "DTC + Amazon shipping",
+      "type": "product",
+      "description": "First wave of Kickstarter units ships. plaud.ai DTC store opens. Amazon listing goes live shortly after — the channel that compounds for the next 24 months."
+    },
+    {
+      "date": "2024-04-23",
+      "title": "Humane AI Pin reviews collapse",
+      "type": "media",
+      "gtmTag": "Useful-utility positioning",
+      "description": "Marques Brownlee titles his Humane review 'The Worst Product I've Ever Reviewed... For Now.' The category Plaud is in — voice-first AI wearables — is suddenly defined by what Humane got wrong. Plaud becomes the obvious counter-example: cheap, narrow, useful.",
+      "externalUrl": "https://www.youtube.com/watch?v=TitZV6k8zfA",
+      "articleSlug": "2024-04-humane-counter-positioning"
+    },
+    {
+      "date": "2024-08-28",
+      "title": "PLAUD NotePin announced",
+      "type": "product",
+      "gtmTag": "Audience boundary push",
+      "description": "Wearable form factor — pin / necklace / wristband / clip — at $169. Launched five months after Humane's collapse, with the explicit framing 'a simpler AI pin.' TechCrunch pre-order coverage gives Plaud the headline it wanted.",
+      "externalUrl": "https://techcrunch.com/2024/08/28/plaud-takes-a-crack-at-a-simpler-ai-pin/",
+      "articleSlug": "2024-08-notepin-launch"
+    },
+    {
+      "date": "2024-09-20",
+      "title": "TechCrunch travel-bag review",
+      "type": "media",
+      "gtmTag": "Ride the KOL wave",
+      "description": "Brian Heater publishes 'Plaud's $169 ChatGPT-powered NotePin has a permanent place in my travel bag.' Tech-press validation in the same outlet that mocked Humane. Sets the take for every subsequent review.",
+      "externalUrl": "https://techcrunch.com/2024/09/20/plauds-169-chatgpt-powered-notepin-has-a-permanent-place-in-my-travel-bag/"
+    },
+    {
+      "date": "2024-11-01",
+      "title": "NotePin lands on Amazon",
+      "type": "product",
+      "description": "NotePin opens up retail demand on Amazon. Combined with Note, Plaud SKUs start ranking in Amazon's voice-recorder category."
+    },
+    {
+      "date": "2024-12-31",
+      "title": "$100M revenue milestone",
+      "type": "media",
+      "gtmTag": "Bundled milestone",
+      "description": "Founder discloses $100M in 2024 revenue — 10x year-over-year for a second consecutive year. ~300K units shipped. Still zero outside funding. The number that makes investor inbound start.",
+      "externalUrl": "https://eu.36kr.com/en/p/3315175009200386",
+      "articleSlug": "2024-12-100m-revenue"
+    },
+    {
+      "date": "2025-01-15",
+      "title": "Best Buy retail rollout",
+      "type": "product",
+      "gtmTag": "Retail laddering",
+      "description": "Plaud Note arrives on Best Buy. The first big-box partnership after Amazon, anchoring US distribution. Plaud begins hiring an 'Americas Channel Sales' org to court Costco, Target, Walmart in parallel."
+    },
+    {
+      "date": "2025-04-15",
+      "title": "Acquires StarJar (YC-backed)",
+      "type": "acquisition",
+      "gtmTag": "Acqui-hire competitor",
+      "description": "Acquires StarJar, a YC-backed medical-AI startup. Co-founders Ruming Zhen (ex-Tesla, Intuit, Stanford) and Qi Zhang (ex-Amazon) lead the development of Plaud for Business — the platform turn telegraphed eight months in advance.",
+      "externalUrl": "https://www.prnewswire.com/news-releases/plaudai-acquires-yc-backed-starjar-to-power-its-new-enterprise-solution-plaud-for-business-302428716.html",
+      "articleSlug": "2025-04-starjar-acquisition"
+    },
+    {
+      "date": "2025-04-24",
+      "title": "Convertible note $4.75M",
+      "type": "funding",
+      "description": "First and only outside money: a convertible note led by Carbide Ventures with J12 Ventures and angel Patrick Kavanagh. Raised at the same media event that launches PLAUD Inc.'s Japan operations. Tiny round relative to the revenue line — strategic, not financial.",
+      "externalUrl": "https://www.crunchbase.com/organization/plaud-ai/financial_details"
+    },
+    {
+      "date": "2025-03-31",
+      "title": "$180M ARR run rate",
+      "type": "media",
+      "description": "ARR Club / Sacra peg Plaud at $180M annualized — bootstrapped, 1M+ users across 170+ countries, ~700K devices shipped. Cited in the 'Half of a16z's Top50 AI Apps' analysis as the standout consumer-AI hardware story.",
+      "externalUrl": "https://www.arr.club/signal/plaud-ai-bootstrapped-to-180m-arr"
+    },
+    {
+      "date": "2025-06-11",
+      "title": "$10M Plaud Note SKU milestone",
+      "type": "media",
+      "description": "Plaud publishes that the Note SKU alone has cracked $10M in sales since launch — a creator-marketing flex aimed at distributors and prospective channel partners more than at end customers."
+    },
+    {
+      "date": "2025-08-27",
+      "title": "Plaud Note Pro + Intelligence 3.0",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Flagship re-launch at $179 with a 0.95-inch AMOLED, 4-mic array, 64GB, 50-hour record window, and a 'Press to Highlight' feature framed as 'the world's first real-time human-AI alignment.' Plaud Intelligence 3.0 ships at the same time — the OS for the hardware.",
+      "externalUrl": "https://techcrunch.com/2025/08/27/plaud-launches-a-new-ai-hardware-notetaker-the-179-note-pro/",
+      "articleSlug": "2025-08-note-pro-launch"
+    },
+    {
+      "date": "2025-09-22",
+      "title": "China market entry",
+      "type": "product",
+      "description": "Plaud officially enters the Chinese mainland market — full SKU lineup priced in RMB. The 'overseas-first' bootstrap is now reverse-engineered into the home market it deliberately skipped for three years."
+    },
+    {
+      "date": "2025-09-30",
+      "title": "$250M ARR run rate",
+      "type": "media",
+      "gtmTag": "Bundled milestone",
+      "description": "Sacra estimate puts Plaud at $250M annualized, up 83% YoY. ~50% of buyers convert to a paid Pro plan ($99.99/yr or $239.99/yr Unlimited) — a software-margin layer on a hardware-acquisition base.",
+      "externalUrl": "https://sacra.com/c/plaud/"
+    },
+    {
+      "date": "2025-10-08",
+      "title": "1M cumulative users",
+      "type": "media",
+      "description": "Disclosed at Plaud's Japan launch event for Note Pro — 1M cumulative users across the Plaud product line, 170+ countries."
+    },
+    {
+      "date": "2025-10-15",
+      "title": "Developer Platform launch",
+      "type": "product",
+      "gtmTag": "PLG → Enterprise pivot",
+      "description": "Plaud Developer Platform: APIs, SDKs, JSON outputs for CRM/EHR/dashboard integration. SOC 2, HIPAA, GDPR, EN18031. The hardware company has now shipped a real enterprise software surface.",
+      "externalUrl": "https://www.prnewswire.com/news-releases/plaud-launches-developer-platform-to-unlock-the-missing-half-of-conversational-intelligence-in-person-interactions-302576832.html"
+    },
+    {
+      "date": "2025-12-29",
+      "title": "TechCrunch 'carry everywhere' review",
+      "type": "media",
+      "description": "Year-end TechCrunch retrospective rates Note Pro 'an excellent AI-powered recorder that I carry everywhere.' The category-defining take heading into CES 2026.",
+      "externalUrl": "https://techcrunch.com/2025/12/29/plaud-note-pro-is-an-excellent-ai-powered-recorder-that-i-carry-everywhere/"
+    },
+    {
+      "date": "2026-01-04",
+      "title": "CES 2026: NotePin S + Plaud Desktop",
+      "type": "product",
+      "gtmTag": "Audience boundary push",
+      "description": "NotePin S adds a physical button at $179. Plaud Desktop is a no-bot meeting capture app for Zoom / Teams / Meet. The hardware-only company now spans 'in person + on phone + online' — the missing third leg of conversation capture.",
+      "externalUrl": "https://techcrunch.com/2026/01/04/plaud-launches-a-new-ai-pin-and-a-desktop-meeting-notetaker/",
+      "articleSlug": "2026-01-ces-platform-turn"
+    },
+    {
+      "date": "2026-02-15",
+      "title": "1.5M units shipped",
+      "type": "media",
+      "description": "Cumulative units shipped crosses 1.5M, disclosed in CES follow-up coverage. ~50% Pro-plan attach holds. Plaud is now the World's No.1 AI note-taking device brand by unit volume per Euromonitor."
+    }
+  ],
+  "arr": [
+    {
+      "date": "2023-12-31",
+      "value": 10000000,
+      "source": "Plaud / Momentum Works",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2024-12-31",
+      "value": 100000000,
+      "source": "36Kr / Plaud",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-03-31",
+      "value": 180000000,
+      "source": "ARR Club / readthesignal",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-09-30",
+      "value": 250000000,
+      "source": "Sacra",
+      "confidence": "media"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2025-04-24",
+      "value": 4750000,
+      "round": "Convertible note (cap undisclosed)",
+      "source": "Crunchbase",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 5,
+      "bestStage": "All stages — load-bearing",
+      "effort": "Always-on, creator-led",
+      "role": "The dominant acquisition channel",
+      "description": "YouTube is where Plaud is bought. Long-form reviews from productivity creators, doctors, lawyers, and tech reviewers do the explaining the product can't do in a thumbnail. Every Plaud SKU has a queue of 5–20 minute review videos by the time it hits Amazon — that's the actual funnel.",
+      "catalyst": "TechCrunch's NotePin travel-bag review in September 2024 set the take that creator reviewers then echoed for 18 months. By Note Pro's launch in August 2025, every productivity YouTuber had a Plaud video in the queue.",
+      "catalystUrl": "https://techcrunch.com/2024/09/20/plauds-169-chatgpt-powered-notepin-has-a-permanent-place-in-my-travel-bag/",
+      "accountUrl": "https://www.youtube.com/@PLAUDAI",
+      "accountLabel": "Plaud on YouTube",
+      "whenItWorks": "When the product has a single, demonstrable transformation — recording goes in, structured summary comes out — that screen-records cleanly. Hardware that solves a visible workflow gap is YouTube-native",
+      "whenItDoesnt": "If the value prop requires more than 60 seconds to explain or doesn't survive being demoed on a phone screen, YouTube stalls. Lifestyle wearables that promise general intelligence (Humane, Friend) don't have a clean YouTube demo loop"
+    },
+    {
+      "slug": "instagram",
+      "name": "Instagram",
+      "score": 4,
+      "bestStage": "Crowdfunding to retail",
+      "effort": "Reels + creator UGC",
+      "role": "The visual-demo channel",
+      "description": "Instagram Reels is where the 'AI summarized my meeting in seconds' clip lives. The card form factor is camera-friendly: it photographs well on the back of an iPhone, looks like an Apple accessory, and translates instantly to the Reels-with-text-overlay format. UGC from buyers compounds without paid amplification.",
+      "catalyst": "No single moment — a steady drip of professional-buyer Reels from doctors, consultants, and journalists demoing a meeting → summary loop. The format is repeatable enough that it became a template inside the Plaud user base.",
+      "accountUrl": "https://www.instagram.com/plaud.ai/",
+      "accountLabel": "@plaud.ai on Instagram",
+      "whenItWorks": "When the product is small, photogenic, and produces a screenshot-worthy after state. Plaud's transcript / mind-map / summary screens are built for this kind of content",
+      "whenItDoesnt": "Pure-software products with no physical artifact rarely break through on Instagram. The 'thing on a desk' shot matters more than the software it runs"
+    },
+    {
+      "slug": "tiktok",
+      "name": "TikTok",
+      "score": 4,
+      "bestStage": "Product line + creator flywheel",
+      "effort": "Creator UGC + paid amplification",
+      "role": "Discovery for non-tech buyers",
+      "description": "TikTok unlocks the audience YouTube can't — students, junior knowledge workers, ESL professionals — through 30-second 'POV: you stop taking notes in meetings' clips. The TikTok-Made-Me-Buy-It tag and Amazon affiliate links closed the loop on a buyer cohort that would never read TechCrunch.",
+      "catalyst": "Sustained creator UGC through 2024–2025 — particularly the doctor / lawyer / therapist persona videos. The format is so reproducible that prospective buyers find Plaud through their own algorithm, not Plaud's outreach.",
+      "accountUrl": "https://www.tiktok.com/@plaud.ai",
+      "accountLabel": "@plaud.ai on TikTok",
+      "whenItWorks": "When the product solves a relatable, daily, non-technical pain (taking notes, remembering meetings) and the demo can be shown without context. Plaud's pitch fits in five seconds",
+      "whenItDoesnt": "B2B SaaS with no consumer-felt pain. TikTok rewards visceral, immediate, individual benefit — not org-level ROI"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 3,
+      "bestStage": "Product line + creator flywheel",
+      "effort": "Community-led, low company touch",
+      "role": "Buyer-side validation",
+      "description": "r/productivity, r/medicine, r/lawyers, r/notetaking host the 'is Plaud actually worth it?' threads that final-stage buyers read. Reddit doesn't acquire users — it converts the YouTube-curious into Amazon-clicks by validating that the product holds up after a month of use.",
+      "catalyst": "Slow-burn community emergence through 2024–2025. Long-running 'Plaud one-year update' posts in productivity subreddits became compounding social proof for new buyers Googling reviews.",
+      "accountUrl": "https://www.reddit.com/r/Plaud/",
+      "accountLabel": "Visit r/Plaud",
+      "whenItWorks": "When the product survives extended use and the user base includes power-users willing to write detailed retrospectives. Reddit rewards substance, not spend",
+      "whenItDoesnt": "If you try to seed posts. The community detects company-employees-pretending-to-be-users within hours, and a single bust nukes Reddit credibility for the SKU"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 3,
+      "bestStage": "Platform & enterprise",
+      "effort": "Enterprise-targeted only",
+      "role": "Enterprise inbound + hiring",
+      "description": "LinkedIn becomes load-bearing exactly when Plaud for Business launched in mid-2025. Founder posts about the StarJar acquisition, enterprise integrations, and SOC 2 / HIPAA certifications target a buyer that doesn't watch productivity YouTubers. Used by IT and procurement to verify legitimacy before approving a pilot.",
+      "catalyst": "StarJar acquisition in April 2025 — the first announcement that needed LinkedIn rather than Reddit. From there, Plaud's LinkedIn cadence shifts from hiring posts to enterprise-feature drops.",
+      "catalystUrl": "https://www.linkedin.com/company/plaudai",
+      "accountUrl": "https://www.linkedin.com/company/plaudai",
+      "accountLabel": "Plaud on LinkedIn",
+      "whenItWorks": "When the enterprise sales motion exists and the audience needs to confirm 'is this a real company?' before a procurement call. Useful as legitimacy ceiling, not as funnel top",
+      "whenItDoesnt": "As a top-of-funnel for consumer hardware. The CPM is wrong and the audience is wrong — IG / TikTok do the same job for a tenth of the spend"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 2,
+      "bestStage": "Platform & enterprise",
+      "effort": "Punctuated by developer-facing launches",
+      "role": "Technical audience reach",
+      "description": "HN treats Plaud's hardware launches with mild interest at best — the audience isn't shopping for $179 voice recorders. The Developer Platform launch in October 2025 is the only HN-shaped moment, and even that's a secondary channel. Useful as a competence signal to engineers Plaud is hiring, not as acquisition.",
+      "catalyst": "Plaud Developer Platform in October 2025 — APIs / SDKs / JSON output for CRM and EHR integration. The shape of a launch HN can engage with, even if it doesn't move units.",
+      "catalystUrl": "https://news.ycombinator.com/from?site=plaud.ai",
+      "accountUrl": "https://news.ycombinator.com/from?site=plaud.ai",
+      "accountLabel": "Search HN for Plaud",
+      "whenItWorks": "When the launch has genuine developer surface — APIs, SDKs, on-device ML. HN responds to building blocks, not finished consumer hardware",
+      "whenItDoesnt": "Consumer hardware launches without a developer angle. HN voted 'Plaud Note' down on every consumer-launch post in the early years — and was right to"
+    }
+  ]
+}

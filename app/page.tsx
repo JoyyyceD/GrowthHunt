@@ -53,9 +53,11 @@ function LiveCases() {
   return (
     <section id="live" className="eco">
       <div className="shell">
-        <div className="section-head" style={{ borderBottom: 0, paddingBottom: 0 }}>
-          <div className="num serif">01</div>
-          <h2>Live cases — <em>tools shipping traffic today</em>.</h2>
+        <div className="section-head" style={{ borderBottom: 0, paddingBottom: 0, display: 'block' }}>
+          <h2 style={{ margin: '0 0 12px' }}>Use it <em>today</em>.</h2>
+          <p style={{ fontSize: 16, color: 'var(--ink-dim)', margin: 0, maxWidth: 540 }}>
+            Two products live right now. No waitlist, no setup — just click in and go.
+          </p>
         </div>
         <div className="eco-grid">
           {/* Growth Story card — links to landing page */}

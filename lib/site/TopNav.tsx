@@ -75,7 +75,7 @@ export function TopNav({ variant = 'page' }: Props) {
           </div>
         ) : (
           <Link href="/login" className="cta" style={{ textDecoration: 'none' }}>
-            Log in
+            Log in / Sign up
           </Link>
         )}
       </div>

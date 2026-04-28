@@ -1,19 +1,19 @@
 'use client'
 
 import { useState, Suspense } from 'react'
-import { useSearchParams } from 'next/navigation'
-import Link from 'next/link'
+import { useSearchParams, useRouter } from 'next/navigation'
 import { createBrowserClient } from '@/lib/supabase/browser'
 import { TopNav } from '@/lib/site/TopNav'
 
 function LoginContent() {
   const searchParams = useSearchParams()
+  const router = useRouter()
   const next = searchParams.get('next') || '/'
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState<'google' | 'guest' | null>(null)
   const [error, setError] = useState('')
 
   const handleGoogleLogin = async () => {
-    setLoading(true)
+    setLoading('google')
     setError('')
     try {
       const supabase = createBrowserClient()
@@ -25,7 +25,28 @@ function LoginContent() {
       if (error) throw error
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : 'Failed to sign in with Google.')
-      setLoading(false)
+      setLoading(null)
+    }
+  }
+
+  const handleGuestLogin = async () => {
+    setLoading('guest')
+    setError('')
+    try {
+      const supabase = createBrowserClient()
+      const { error } = await supabase.auth.signInAnonymously()
+      if (error) {
+        // Most common case: anonymous provider not enabled in Supabase dashboard
+        if (error.message?.toLowerCase().includes('anonymous')) {
+          throw new Error('Guest sign-in is not enabled yet. Please use Google to continue.')
+        }
+        throw error
+      }
+      router.push(next)
+      router.refresh()
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Failed to continue as guest.')
+      setLoading(null)
     }
   }
 
@@ -65,16 +86,16 @@ function LoginContent() {
             textAlign: 'center',
             lineHeight: 1.05,
           }}>
-            Welcome back.
+            Welcome.
           </h1>
           <p style={{ textAlign: 'center', color: 'var(--ink-dim)', fontSize: 15, margin: '0 0 36px' }}>
-            Sign in to your GrowthHunt account.
+            Sign in to GrowthHunt — or skip and try it as a guest.
           </p>
 
           {/* Google button */}
           <button
             onClick={handleGoogleLogin}
-            disabled={loading}
+            disabled={loading !== null}
             style={{
               width: '100%',
               display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12,
@@ -86,14 +107,47 @@ function LoginContent() {
               fontWeight: 600,
               color: 'var(--ink)',
               cursor: loading ? 'not-allowed' : 'pointer',
-              opacity: loading ? 0.7 : 1,
+              opacity: loading && loading !== 'google' ? 0.5 : 1,
               transition: 'all 0.15s',
               fontFamily: 'inherit',
             }}
           >
             <GoogleIcon />
-            {loading ? 'Redirecting...' : 'Continue with Google'}
+            {loading === 'google' ? 'Redirecting...' : 'Continue with Google'}
           </button>
+
+          {/* Divider */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, margin: '20px 0' }}>
+            <div style={{ flex: 1, height: 1, background: 'var(--rule)' }} />
+            <span style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ink-faint)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>or</span>
+            <div style={{ flex: 1, height: 1, background: 'var(--rule)' }} />
+          </div>
+
+          {/* Guest button */}
+          <button
+            onClick={handleGuestLogin}
+            disabled={loading !== null}
+            style={{
+              width: '100%',
+              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+              height: 52,
+              background: 'var(--accent)',
+              border: 'none',
+              borderRadius: 999,
+              fontSize: 15,
+              fontWeight: 600,
+              color: 'var(--accent-ink)',
+              cursor: loading ? 'not-allowed' : 'pointer',
+              opacity: loading && loading !== 'guest' ? 0.5 : 1,
+              transition: 'all 0.15s',
+              fontFamily: 'inherit',
+            }}
+          >
+            {loading === 'guest' ? 'Setting up…' : 'Continue as guest →'}
+          </button>
+          <p style={{ marginTop: 10, textAlign: 'center', color: 'var(--ink-faint)', fontSize: 12, lineHeight: 1.5 }}>
+            No email, no password. Your work is saved temporarily — link a Google account anytime to keep it.
+          </p>
 
           {error && (
             <div style={{
@@ -111,7 +165,7 @@ function LoginContent() {
           )}
 
           <p style={{ marginTop: 32, textAlign: 'center', fontSize: 12, color: 'var(--ink-faint)', fontFamily: 'var(--mono)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-            Private beta · Invite only
+            Private beta · Open access
           </p>
         </div>
       </div>
