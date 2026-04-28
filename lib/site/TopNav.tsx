@@ -16,19 +16,31 @@ export function TopNav({ variant = 'page' }: Props) {
   const router = useRouter()
 
   useEffect(() => {
+    function readSoftUser(): string | null {
+      if (typeof window === 'undefined') return null
+      try {
+        const raw = localStorage.getItem('gh-soft-user')
+        if (!raw) return null
+        const parsed = JSON.parse(raw) as { email?: string }
+        return parsed.email ?? null
+      } catch { return null }
+    }
+
     let supabase
     try {
       supabase = createBrowserClient()
     } catch {
+      // Supabase env missing — fall back to soft auth only
+      setEmail(readSoftUser())
       setLoaded(true)
       return
     }
     supabase.auth.getUser().then(({ data }) => {
-      setEmail(data.user?.email ?? null)
+      setEmail(data.user?.email ?? readSoftUser())
       setLoaded(true)
     })
     const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
-      setEmail(session?.user?.email ?? null)
+      setEmail(session?.user?.email ?? readSoftUser())
     })
     return () => sub.subscription.unsubscribe()
   }, [])
@@ -38,6 +50,9 @@ export function TopNav({ variant = 'page' }: Props) {
       const supabase = createBrowserClient()
       await supabase.auth.signOut()
     } catch { /* env missing or already out */ }
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('gh-soft-user')
+    }
     setEmail(null)
     router.refresh()
   }

@@ -9,7 +9,8 @@ function LoginContent() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const next = searchParams.get('next') || '/'
-  const [loading, setLoading] = useState<'google' | 'guest' | null>(null)
+  const [loading, setLoading] = useState<'google' | 'email' | null>(null)
+  const [email, setEmail] = useState('')
   const [error, setError] = useState('')
 
   const handleGoogleLogin = async () => {
@@ -29,23 +30,30 @@ function LoginContent() {
     }
   }
 
-  const handleGuestLogin = async () => {
-    setLoading('guest')
+  const handleEmailLogin = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!email.trim()) return
+    setLoading('email')
     setError('')
     try {
-      const supabase = createBrowserClient()
-      const { error } = await supabase.auth.signInAnonymously()
-      if (error) {
-        // Most common case: anonymous provider not enabled in Supabase dashboard
-        if (error.message?.toLowerCase().includes('anonymous')) {
-          throw new Error('Guest sign-in is not enabled yet. Please use Google to continue.')
-        }
-        throw error
+      // Save email for marketing / future communication
+      await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email.trim().toLowerCase(), source: 'login-email' }),
+      }).catch(() => { /* non-blocking */ })
+
+      // Soft auth: save email locally so TopNav and gates recognize the user
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('gh-soft-user', JSON.stringify({
+          email: email.trim().toLowerCase(),
+          ts: Date.now(),
+        }))
       }
       router.push(next)
       router.refresh()
     } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : 'Failed to continue as guest.')
+      setError(err instanceof Error ? err.message : 'Could not continue. Try again?')
       setLoading(null)
     }
   }
@@ -123,30 +131,54 @@ function LoginContent() {
             <div style={{ flex: 1, height: 1, background: 'var(--rule)' }} />
           </div>
 
-          {/* Guest button */}
-          <button
-            onClick={handleGuestLogin}
-            disabled={loading !== null}
-            style={{
-              width: '100%',
-              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
-              height: 52,
-              background: 'var(--accent)',
-              border: 'none',
-              borderRadius: 999,
-              fontSize: 15,
-              fontWeight: 600,
-              color: 'var(--accent-ink)',
-              cursor: loading ? 'not-allowed' : 'pointer',
-              opacity: loading && loading !== 'guest' ? 0.5 : 1,
-              transition: 'all 0.15s',
-              fontFamily: 'inherit',
-            }}
-          >
-            {loading === 'guest' ? 'Setting up…' : 'Continue as guest →'}
-          </button>
+          {/* Email form */}
+          <form onSubmit={handleEmailLogin}>
+            <input
+              type="email"
+              required
+              placeholder="founder@yourstartup.com"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              disabled={loading !== null}
+              style={{
+                width: '100%',
+                height: 52,
+                padding: '0 18px',
+                background: 'var(--bg-card)',
+                border: '1px solid var(--rule-strong)',
+                borderRadius: 999,
+                fontSize: 15,
+                color: 'var(--ink)',
+                fontFamily: 'inherit',
+                outline: 'none',
+                marginBottom: 10,
+                opacity: loading && loading !== 'email' ? 0.5 : 1,
+              }}
+            />
+            <button
+              type="submit"
+              disabled={loading !== null || !email.trim()}
+              style={{
+                width: '100%',
+                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+                height: 52,
+                background: email.trim() ? 'var(--accent)' : 'var(--bg-card)',
+                color: email.trim() ? 'var(--accent-ink)' : 'var(--ink-faint)',
+                border: 'none',
+                borderRadius: 999,
+                fontSize: 15,
+                fontWeight: 600,
+                cursor: loading || !email.trim() ? 'not-allowed' : 'pointer',
+                opacity: loading && loading !== 'email' ? 0.5 : 1,
+                transition: 'all 0.15s',
+                fontFamily: 'inherit',
+              }}
+            >
+              {loading === 'email' ? 'Letting you in…' : 'Continue with email →'}
+            </button>
+          </form>
           <p style={{ marginTop: 10, textAlign: 'center', color: 'var(--ink-faint)', fontSize: 12, lineHeight: 1.5 }}>
-            No email, no password. Your work is saved temporarily — link a Google account anytime to keep it.
+            No password needed. We&apos;ll email you when new modules ship.
           </p>
 
           {error && (

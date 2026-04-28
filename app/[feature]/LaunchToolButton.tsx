@@ -14,19 +14,24 @@ export default function LaunchToolButton({
   const [authState, setAuthState] = useState<'loading' | 'in' | 'out'>('loading')
 
   useEffect(() => {
+    function hasSoftUser(): boolean {
+      if (typeof window === 'undefined') return false
+      try { return !!localStorage.getItem('gh-soft-user') } catch { return false }
+    }
+
     let supabase
     try {
       supabase = createBrowserClient()
     } catch {
-      // Env vars missing — treat as logged out
-      setAuthState('out')
+      // Env vars missing — fall back to soft auth only
+      setAuthState(hasSoftUser() ? 'in' : 'out')
       return
     }
     supabase.auth.getUser().then(({ data }) => {
-      setAuthState(data.user ? 'in' : 'out')
+      setAuthState(data.user || hasSoftUser() ? 'in' : 'out')
     })
     const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
-      setAuthState(session?.user ? 'in' : 'out')
+      setAuthState(session?.user || hasSoftUser() ? 'in' : 'out')
     })
     return () => sub.subscription.unsubscribe()
   }, [])
