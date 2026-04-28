@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { FEATURES, getFeatureById } from '@/lib/features'
 import { MockFor } from '@/lib/mocks'
 import DetailEmailForm from './DetailEmailForm'
+import LaunchToolButton from './LaunchToolButton'
 
 interface Props {
   params: Promise<{ feature: string }>
@@ -61,8 +62,8 @@ export default async function FeaturePage({ params }: Props) {
       {/* Hero */}
       <section className="detail-hero">
         <div className="shell">
-          <Link href={`/#${f.module}`} className="detail-back">
-            ← {f.module} module
+          <Link href={f.tag === 'Live' ? '/#live' : `/coming-soon#${f.module}`} className="detail-back">
+            ← {f.tag === 'Live' ? 'Live tools' : `${f.module} module`}
           </Link>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 0 }}>
             <span className={`tag ${f.tag === 'Live' ? 'live' : 'soon'}`}>
@@ -133,8 +134,12 @@ export default async function FeaturePage({ params }: Props) {
               <>Notify me when <em>{f.name}</em> ships.</>
             )}
           </h2>
-          <p>{f.tag === 'Live' ? "This one's already shipping traffic." : 'No spam. One email when it\'s ready.'}</p>
-          <DetailEmailForm featureId={f.id} featureName={f.name} isLive={f.tag === 'Live'} />
+          <p>{f.tag === 'Live' ? "This one's already shipping traffic — log in to launch it." : 'No spam. One email when it\'s ready.'}</p>
+          {f.tag === 'Live' ? (
+            <LaunchToolButton featureId={f.id} featureName={f.name} launchUrl={f.launchUrl} />
+          ) : (
+            <DetailEmailForm featureId={f.id} featureName={f.name} isLive={false} />
+          )}
         </div>
       </section>
 

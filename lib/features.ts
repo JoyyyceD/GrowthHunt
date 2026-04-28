@@ -9,6 +9,8 @@ export interface Feature {
   problem: string
   solution: string
   example: { input: string; output: string }
+  /** External URL to the actual shipped tool. Only set for `tag === 'Live'` features. */
+  launchUrl?: string
 }
 
 export interface ModuleDef {
