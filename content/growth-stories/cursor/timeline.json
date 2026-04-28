@@ -1,0 +1,193 @@
+{
+  "company": {
+    "slug": "cursor",
+    "name": "Cursor",
+    "legalName": "Anysphere",
+    "tagline": "24 months from a VS Code fork to a $29B valuation",
+    "summary": "Cursor wasn't an overnight viral hit. It's a two-stage curve: 22 months of slow burn, then 13 months of vertical growth. Every valuation jump rode a narrative moment — and the narrative moments were not luck. They were the systematic byproduct of the founders treating themselves as media properties.",
+    "founded": "2022-01",
+    "founders": ["Michael Truell", "Sualeh Asif", "Arvid Lunnemark", "Aman Sanger"]
+  },
+  "phases": [
+    {"start": "2022-01", "end": "2023-03", "name": "Latent", "color": "#fef3c7"},
+    {"start": "2023-03", "end": "2024-08", "name": "Product Polish", "color": "#dbeafe"},
+    {"start": "2024-08", "end": "2024-12", "name": "Pre-inflection", "color": "#fce7f3"},
+    {"start": "2024-12", "end": "2026-06", "name": "Hypergrowth", "color": "#dcfce7"}
+  ],
+  "events": [
+    {
+      "date": "2022-01-15",
+      "title": "Anysphere founded",
+      "type": "product",
+      "description": "Four MIT undergrads (Truell / Sanger / Asif / Lunnemark) incorporate Anysphere. Initial direction: AI autocomplete for CAD software."
+    },
+    {
+      "date": "2022-04-01",
+      "title": "Pre-seed $400K",
+      "type": "funding",
+      "description": "Earliest funding to begin development."
+    },
+    {
+      "date": "2022-07-01",
+      "title": "Pivot from CAD to coding",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "Realized CAD market was stagnant and that GitHub Copilot's plugin-on-VS-Code architecture was structurally limited. Decided to fork the entire VS Code instead of writing a plugin."
+    },
+    {
+      "date": "2023-03-15",
+      "title": "Cursor v0 launch",
+      "type": "product",
+      "gtmTag": "Fork, not plugin",
+      "description": "Public release of Cursor as a VS Code fork — an AI-native editor, not a plugin riding inside another IDE.",
+      "articleSlug": "2023-03-public-launch"
+    },
+    {
+      "date": "2023-10-15",
+      "title": "Seed $8M",
+      "type": "funding",
+      "description": "Led by OpenAI Startup Fund. Angels include Nat Friedman (former GitHub CEO) and Arash Ferdowsi (Dropbox co-founder).",
+      "externalUrl": "https://research.contrary.com/company/cursor"
+    },
+    {
+      "date": "2024-06-01",
+      "title": "Cursor Tab (Copilot++)",
+      "type": "product",
+      "description": "First feature that's clearly better than GitHub Copilot. Becomes the core daily-driver delight."
+    },
+    {
+      "date": "2024-08-09",
+      "title": "Series A $60M / $400M",
+      "type": "funding",
+      "gtmTag": "Narrative flywheel starts",
+      "description": "Led by a16z and Thrive Capital. TechCrunch exclusive — the first time Cursor uses an 'exclusive leak' format that becomes the template for every subsequent round.",
+      "externalUrl": "https://techcrunch.com/2024/08/09/anysphere-a-github-copilot-rival-has-raised-60m-series-a-at-400m-valuation-from-a16z-thrive-sources-say/",
+      "articleSlug": "2024-08-series-a"
+    },
+    {
+      "date": "2024-08-20",
+      "title": "8-year-old codes w/ Cursor",
+      "type": "media",
+      "gtmTag": "Audience boundary push",
+      "description": "Cloudflare VP Ricky Robinett tweets a video of his 8-year-old daughter building a chatbot in 45 minutes. 2.7M views. Boosted by Tobi Lutke, Karpathy, Lenny Rachitsky.",
+      "externalUrl": "https://x.com/rickyrobinett/status/1825581674870055189",
+      "articleSlug": "2024-08-eight-year-old"
+    },
+    {
+      "date": "2024-10-06",
+      "title": "Lex Fridman #447",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "All four founders, 2h 38m. The crossover moment from dev-twitter darling to 'serious AI company' in the eyes of investors and non-dev tech audiences.",
+      "externalUrl": "https://www.youtube.com/watch?v=oFfVt3S51T4",
+      "articleSlug": "2024-10-lex-fridman"
+    },
+    {
+      "date": "2024-11-01",
+      "title": "Composer v1 ships",
+      "type": "product",
+      "description": "Multi-file editing. Moves Cursor from 'better autocomplete' to 'AI that edits across your whole codebase'."
+    },
+    {
+      "date": "2024-11-12",
+      "title": "Acquires Supermaven",
+      "type": "acquisition",
+      "gtmTag": "Acqui-hire competitor",
+      "description": "Buys Jacob Jackson (former Tabnine founder + ex-OpenAI) and his team. One move = tech + talent + competitor removal + 'consolidator' narrative.",
+      "externalUrl": "https://techcrunch.com/2024/11/12/anysphere-acquires-supermaven-to-beef-up-cursor/",
+      "articleSlug": "2024-11-supermaven"
+    },
+    {
+      "date": "2024-12-15",
+      "title": "Series B $105M / $2.6B",
+      "type": "funding",
+      "description": "Led by Thrive Capital. Valuation jumps 6.5x in four months — almost entirely from narrative repricing, not revenue."
+    },
+    {
+      "date": "2025-01-15",
+      "title": "$100M ARR",
+      "type": "media",
+      "description": "21 months from public launch. The fastest SaaS company in history to reach this milestone."
+    },
+    {
+      "date": "2025-02-06",
+      "title": "Karpathy 'vibe coding' tweet",
+      "type": "media",
+      "gtmTag": "Ride the KOL wave",
+      "description": "4.5M+ views. Karpathy names Cursor Composer + Sonnet as the example. Cursor becomes the de facto referent for the term — later inducted into the Collins Dictionary.",
+      "externalUrl": "https://x.com/karpathy/status/1886192184808149383",
+      "articleSlug": "2025-02-karpathy-vibe-coding"
+    },
+    {
+      "date": "2025-04-15",
+      "title": "1M DAU · 14K enterprise",
+      "type": "media",
+      "description": "Crosses one million daily active users. Fast Company World's 50 Most Innovative Companies, ranked #26."
+    },
+    {
+      "date": "2025-06-05",
+      "title": "Series C $900M / $9.9B",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Led by Thrive, with Accel, a16z, DST. $500M ARR disclosed simultaneously — funding announcement + revenue milestone fired together for compound coverage.",
+      "externalUrl": "https://techcrunch.com/2025/06/05/cursors-anysphere-nabs-9-9b-valuation-soars-past-500m-arr/"
+    },
+    {
+      "date": "2025-07-15",
+      "title": "Pro pricing controversy",
+      "type": "media",
+      "description": "Pro tier usage caps trigger community backlash. The only meaningful public-relations dent in the entire arc — fully absorbed by subsequent growth."
+    },
+    {
+      "date": "2025-10-29",
+      "title": "Cursor 2.0 + own Composer model",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Multi-agent architecture, up to 8 agents in parallel, 4x speed. The shift from 'application layer' to 'application + own model' that supports the next valuation tier.",
+      "externalUrl": "https://cursor.com/blog/2-0",
+      "articleSlug": "2025-10-cursor-2"
+    },
+    {
+      "date": "2025-11-13",
+      "title": "Series D $2.3B / $29.3B",
+      "type": "funding",
+      "description": "Co-led by Accel and Coatue. Strategic participation from Google and Nvidia.",
+      "externalUrl": "https://www.cnbc.com/2025/11/13/cursor-ai-startup-funding-round-valuation.html"
+    },
+    {
+      "date": "2025-11-20",
+      "title": "$1B ARR",
+      "type": "media",
+      "description": "The fastest SaaS to ever reach $1B ARR — 24 months from $1M."
+    },
+    {
+      "date": "2026-02-15",
+      "title": "$2B ARR",
+      "type": "media",
+      "description": "The doubling pace continues. ARR roughly 2x every two months across the 2025–2026 stretch."
+    },
+    {
+      "date": "2026-04-21",
+      "title": "xAI $60B option deal",
+      "type": "media",
+      "description": "xAI announces an option to acquire Cursor for $60B by year-end, or pay $10B for ongoing collaboration."
+    }
+  ],
+  "arr": [
+    {"date": "2023-12-01", "value": 1000000, "source": "Sacra", "confidence": "media"},
+    {"date": "2024-04-01", "value": 4000000, "source": "Sacra", "confidence": "media"},
+    {"date": "2024-10-01", "value": 48000000, "source": "Sacra", "confidence": "media"},
+    {"date": "2025-01-15", "value": 100000000, "source": "Cursor / Sacra", "confidence": "official"},
+    {"date": "2025-03-01", "value": 200000000, "source": "Sacra", "confidence": "media"},
+    {"date": "2025-06-05", "value": 500000000, "source": "Cursor / TechCrunch", "confidence": "official"},
+    {"date": "2025-11-13", "value": 1000000000, "source": "SaaStr", "confidence": "official"},
+    {"date": "2026-02-15", "value": 2000000000, "source": "Let's Data Science", "confidence": "media"}
+  ],
+  "valuation": [
+    {"date": "2024-08-09", "value": 400000000, "round": "Series A", "source": "TechCrunch", "confidence": "official"},
+    {"date": "2024-12-15", "value": 2600000000, "round": "Series B", "source": "Crunchbase", "confidence": "official"},
+    {"date": "2025-06-05", "value": 9900000000, "round": "Series C", "source": "TechCrunch", "confidence": "official"},
+    {"date": "2025-11-13", "value": 29300000000, "round": "Series D", "source": "CNBC", "confidence": "official"},
+    {"date": "2026-04-21", "value": 55000000000, "round": "xAI option", "source": "Fortune", "confidence": "media"}
+  ]
+}

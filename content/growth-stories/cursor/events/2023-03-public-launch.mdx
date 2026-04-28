@@ -1,0 +1,58 @@
+---
+title: "Fork, Not Plugin — Cursor's Public Launch (Mar 2023)"
+description: "Choosing to fork all of VS Code — instead of writing a plugin — looked like an over-investment. It turned out to be the structural decision that unlocked every later differentiator."
+date: "2023-03-15"
+type: "product"
+gtmTag: "Fork, not plugin"
+eventTitle: "Cursor v0 launch"
+---
+
+## What happened
+
+In March 2023, Anysphere shipped the first public version of Cursor. It wasn't a VS Code extension. It was a **complete fork** — a separate desktop application you had to download and install.
+
+That was a counterintuitive call. GitHub Copilot had become *the* AI-coding brand by mid-2022, and the plugin model has the lowest distribution friction by far. Forking an IDE meant: users have to install a new app, lose VS Code's auto-update flow, re-authenticate the entire team toolchain, and so on.
+
+Cursor took the heavy path anyway.
+
+## Why fork beats plugin (structurally)
+
+Plugin architectures have a low ceiling. Copilot's early experience exposed three structural limits:
+
+1. **Constrained context window.** As a plugin, Copilot only sees what the host IDE's APIs surface — no full-codebase semantic understanding.
+2. **UI gated by the host.** Want a chat panel? Copilot couldn't really build one in early VS Code, because the extension API didn't allow it.
+3. **Capability dependent on IDE upgrades.** If Microsoft doesn't open a particular API, you can't build the corresponding feature.
+
+Once you've forked, none of those constraints apply. The whole editor is yours. You can rewrite the command system, redesign the keymap, embed AI at the cursor (not in a side panel), control the indexing engine, and eventually ship your own model.
+
+Every later "killer feature" — **Tab autocomplete (Copilot++), Composer multi-file editing, Agent mode, the in-house Composer model** — required this full-stack control. Plugin-based competitors like Tabnine and Codeium ended up structurally capped: they could only innovate inside whatever boundary the host IDE allowed.
+
+## Counterintuitive: harder distribution can be the advantage
+
+The naive analysis is "forks have higher friction = higher CAC." But dev-tool distribution dynamics flip the script:
+
+- **Installing a new IDE is a "commitment" act** — 10× heavier than installing a plugin. Once made, retention is much higher. Devs don't switch IDEs weekly. They might install and uninstall five plugins in a week.
+- **Deeper mental real estate.** "I use Cursor" is identity; "I have a Cursor plugin in VS Code" is just a tool in a list.
+- **Massively higher brand visibility.** Every demo, screenshot, and screen-share from a Cursor user shows the *Cursor* window. A plugin user shows VS Code with a small icon.
+
+These are **compounding GTM variables**. Each Cursor user produces an order of magnitude more "seen by colleagues" surface than a plugin user does.
+
+## What the launch did right
+
+A few details on the launch itself:
+
+- **Preserved VS Code keybindings, themes, and ~90% extension compatibility.** Switching cost from VS Code → Cursor was effectively zero.
+- **AI-first, not AI-plus.** Not "VS Code with AI features" — instead, the UI was reorganized around AI as a first-class citizen.
+- **Codebase-level indexing on day one.** Solved a problem plugins can never solve cleanly — actually understanding the whole codebase.
+
+## Reusable lessons
+
+- **When the de facto standard in a category is "an attachment to some platform," picking "independent product" can be a structural win** — but only if your category's core value requires full-stack control.
+- **Distribution friction is also a filter.** Higher initial friction screens out tire-kickers. The users who do install have real pain to solve.
+- **Compatibility-as-decompression.** Cursor chose VS Code fork rather than "build an editor from scratch" — standing on a giant's shoulders made the cold start possible.
+
+## Sources
+
+- [Contrary Research: Cursor Business Breakdown](https://research.contrary.com/company/cursor)
+- [Anysphere on Wikipedia](https://en.wikipedia.org/wiki/Anysphere)
+- Lex Fridman Podcast #447 — the founders discuss the fork decision in detail

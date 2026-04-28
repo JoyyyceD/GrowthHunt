@@ -6,3 +6,6 @@ node_modules/
 # TypeScript incremental build cache — should not be in git
 tsconfig.tsbuildinfo
 *.tsbuildinfo
+
+# Local Claude Code config (per-machine, not shared)
+.claude/
