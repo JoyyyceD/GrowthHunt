@@ -102,56 +102,9 @@ function LoginContent() {
           }}>
             Welcome.
           </h1>
-          <p style={{ textAlign: 'center', color: 'var(--ink-dim)', fontSize: 15, margin: '0 0 28px' }}>
+          <p style={{ textAlign: 'center', color: 'var(--ink-dim)', fontSize: 15, margin: '0 0 36px' }}>
             Sign in with Google or just leave your email.
           </p>
-
-          {/* Shared invitation code field — works with either Google or email below */}
-          <div style={{ marginBottom: 28 }}>
-            <label
-              htmlFor="invite-code"
-              style={{
-                display: 'block',
-                fontSize: 11,
-                fontFamily: 'var(--mono)',
-                color: 'var(--ink-faint)',
-                textTransform: 'uppercase',
-                letterSpacing: '0.08em',
-                marginBottom: 8,
-                paddingLeft: 4,
-              }}
-            >
-              Invitation code (optional)
-            </label>
-            <input
-              id="invite-code"
-              type="text"
-              placeholder="GH-XXXXXX"
-              value={inviteCode}
-              onChange={e => setInviteCode(e.target.value)}
-              disabled={loading !== null}
-              autoComplete="off"
-              maxLength={32}
-              style={{
-                width: '100%',
-                height: 48,
-                padding: '0 18px',
-                background: 'var(--bg-card)',
-                border: '1px solid var(--rule)',
-                borderRadius: 999,
-                fontSize: 14,
-                color: 'var(--ink)',
-                fontFamily: 'var(--mono)',
-                letterSpacing: '0.06em',
-                textTransform: 'uppercase',
-                outline: 'none',
-                opacity: loading ? 0.5 : 1,
-              }}
-            />
-            <p style={{ marginTop: 8, color: 'var(--ink-faint)', fontSize: 11, lineHeight: 1.5, paddingLeft: 4 }}>
-              Have a code? It applies to whichever sign-in method you pick below.
-            </p>
-          </div>
 
           {/* Google button */}
           <button
@@ -233,6 +186,53 @@ function LoginContent() {
           <p style={{ marginTop: 10, textAlign: 'center', color: 'var(--ink-faint)', fontSize: 12, lineHeight: 1.5 }}>
             No password needed. We&apos;ll email you when new modules ship.
           </p>
+
+          {/* Invitation code — secondary, applies to whichever method above is used */}
+          <div style={{ marginTop: 28, paddingTop: 24, borderTop: '1px solid var(--rule)' }}>
+            <label
+              htmlFor="invite-code"
+              style={{
+                display: 'block',
+                fontSize: 11,
+                fontFamily: 'var(--mono)',
+                color: 'var(--ink-faint)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
+                marginBottom: 8,
+                paddingLeft: 4,
+              }}
+            >
+              Invitation code (optional)
+            </label>
+            <input
+              id="invite-code"
+              type="text"
+              placeholder="GH-XXXXXX"
+              value={inviteCode}
+              onChange={e => setInviteCode(e.target.value)}
+              disabled={loading !== null}
+              autoComplete="off"
+              maxLength={32}
+              style={{
+                width: '100%',
+                height: 44,
+                padding: '0 18px',
+                background: 'var(--bg-card)',
+                border: '1px solid var(--rule)',
+                borderRadius: 999,
+                fontSize: 13,
+                color: 'var(--ink)',
+                fontFamily: 'var(--mono)',
+                letterSpacing: '0.06em',
+                textTransform: 'uppercase',
+                outline: 'none',
+                opacity: loading ? 0.5 : 1,
+              }}
+            />
+            <p style={{ marginTop: 8, color: 'var(--ink-faint)', fontSize: 11, lineHeight: 1.5, paddingLeft: 4 }}>
+              Enter your code first, then sign in above. Works with either method.
+            </p>
+          </div>
 
           {error && (
             <div style={{
