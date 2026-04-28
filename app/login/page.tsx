@@ -12,6 +12,7 @@ function LoginContent() {
   const next = searchParams.get('next') || '/'
   const [loading, setLoading] = useState<'google' | 'email' | null>(null)
   const [email, setEmail] = useState('')
+  const [inviteCode, setInviteCode] = useState('')
   const [error, setError] = useState('')
 
   const handleGoogleLogin = async () => {
@@ -41,7 +42,11 @@ function LoginContent() {
       await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email.trim().toLowerCase(), source: 'login-email' }),
+        body: JSON.stringify({
+          email: email.trim().toLowerCase(),
+          source: 'login-email',
+          inviteCode: inviteCode.trim().toUpperCase() || undefined,
+        }),
       }).catch(() => { /* non-blocking */ })
 
       // Soft auth: localStorage for display + cookie for middleware gate
@@ -151,6 +156,31 @@ function LoginContent() {
                 opacity: loading && loading !== 'email' ? 0.5 : 1,
               }}
             />
+            <input
+              type="text"
+              placeholder="Invitation code (optional)"
+              value={inviteCode}
+              onChange={e => setInviteCode(e.target.value)}
+              disabled={loading !== null}
+              autoComplete="off"
+              maxLength={32}
+              style={{
+                width: '100%',
+                height: 52,
+                padding: '0 18px',
+                background: 'var(--bg-card)',
+                border: '1px solid var(--rule)',
+                borderRadius: 999,
+                fontSize: 14,
+                color: 'var(--ink)',
+                fontFamily: 'var(--mono)',
+                letterSpacing: '0.04em',
+                textTransform: 'uppercase',
+                outline: 'none',
+                marginBottom: 14,
+                opacity: loading && loading !== 'email' ? 0.5 : 1,
+              }}
+            />
             <button
               type="submit"
               disabled={loading !== null || !email.trim()}
@@ -174,7 +204,7 @@ function LoginContent() {
             </button>
           </form>
           <p style={{ marginTop: 10, textAlign: 'center', color: 'var(--ink-faint)', fontSize: 12, lineHeight: 1.5 }}>
-            No password needed. We&apos;ll email you when new modules ship.
+            No password needed. Have a code? Drop it in for early-founder perks.
           </p>
 
           {error && (
