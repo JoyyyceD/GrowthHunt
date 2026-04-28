@@ -3,6 +3,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { getAllSlugs, getPostBySlug } from '@/lib/blog'
+import { TopNav } from '@/lib/site/TopNav'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -84,14 +85,7 @@ export default async function BlogPost({ params }: Props) {
     <div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <nav className="top">
-        <div className="shell row">
-          <Link href="/" className="brand" style={{ textDecoration: 'none' }}>
-            <div className="mark" />GrowthHunt
-          </Link>
-          <Link href="/blog" className="detail-back" style={{ marginBottom: 0 }}>← All articles</Link>
-        </div>
-      </nav>
+      <TopNav variant="page" />
 
       {/* Hero */}
       <section style={{ padding: '72px 0 56px', borderBottom: '1px solid var(--rule)' }}>

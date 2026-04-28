@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { getAllPosts } from '@/lib/blog'
+import { TopNav } from '@/lib/site/TopNav'
 
 export const metadata: Metadata = {
   title: 'Blog — GTM tactics for indie founders & growth teams',
@@ -21,22 +22,7 @@ export default function BlogIndex() {
 
   return (
     <div>
-      <nav className="top">
-        <div className="shell row">
-          <Link href="/" className="brand" style={{ textDecoration: 'none' }}>
-            <div className="mark" />GrowthHunt
-          </Link>
-          <ul>
-            <li><Link href="/#research">Research</Link></li>
-            <li><Link href="/#discovery">Discovery</Link></li>
-            <li><Link href="/#outreach">Outreach</Link></li>
-            <li><Link href="/blog" style={{ color: 'var(--ink)' }}>Blog</Link></li>
-          </ul>
-          <Link href="/" className="cta" style={{ borderRadius: 999, fontSize: 13, fontWeight: 600, padding: '9px 18px', background: 'var(--ink)', color: 'var(--bg)', textDecoration: 'none' }}>
-            ← Back to product
-          </Link>
-        </div>
-      </nav>
+      <TopNav variant="page" />
 
       <section style={{ padding: '80px 0 48px' }}>
         <div className="shell">

@@ -5,6 +5,7 @@ import { FEATURES, getFeatureById } from '@/lib/features'
 import { MockFor } from '@/lib/mocks'
 import DetailEmailForm from './DetailEmailForm'
 import LaunchToolButton from './LaunchToolButton'
+import { TopNav } from '@/lib/site/TopNav'
 
 interface Props {
   params: Promise<{ feature: string }>
@@ -46,18 +47,7 @@ export default async function FeaturePage({ params }: Props) {
 
   return (
     <div>
-      {/* Nav */}
-      <nav className="top">
-        <div className="shell row">
-          <Link href="/" className="brand" style={{ textDecoration: 'none' }}>
-            <div className="mark" />
-            GrowthHunt
-          </Link>
-          <Link href="/" className="btn-line" style={{ fontSize: 13 }}>
-            ← Back to all features
-          </Link>
-        </div>
-      </nav>
+      <TopNav variant="page" />
 
       {/* Hero */}
       <section className="detail-hero">

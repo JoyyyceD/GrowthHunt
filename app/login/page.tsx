@@ -4,6 +4,7 @@ import { useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { createBrowserClient } from '@/lib/supabase/browser'
+import { TopNav } from '@/lib/site/TopNav'
 
 function LoginContent() {
   const searchParams = useSearchParams()
@@ -30,15 +31,7 @@ function LoginContent() {
 
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg)', display: 'flex', flexDirection: 'column' }}>
-      {/* Nav */}
-      <nav className="top">
-        <div className="shell row">
-          <Link href="/" className="brand" style={{ textDecoration: 'none' }}>
-            <div className="mark" />
-            GrowthHunt
-          </Link>
-        </div>
-      </nav>
+      <TopNav variant="page" />
 
       {/* Card */}
       <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '48px 24px' }}>

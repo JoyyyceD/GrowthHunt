@@ -12,6 +12,7 @@ import {
 import { mdxComponents } from '@/lib/growth-story-mdx'
 import CaseStudyTimeline from '@/components/CaseStudyTimeline'
 import PlatformMix from '@/components/PlatformMix'
+import { TopNav } from '@/lib/site/TopNav'
 
 interface Props {
   params: Promise<{ company: string }>
@@ -163,39 +164,7 @@ export default async function GrowthStoryPage({ params }: Props) {
 
   return (
     <div>
-      <nav className="top">
-        <div className="shell row">
-          <Link href="/" className="brand" style={{ textDecoration: 'none' }}>
-            <div className="mark" />
-            GrowthHunt
-          </Link>
-          <ul>
-            <li>
-              <Link href="/blog">Blog</Link>
-            </li>
-            <li>
-              <Link href={`/growth-story/${company}`} style={{ color: 'var(--ink)' }}>
-                Growth Story
-              </Link>
-            </li>
-          </ul>
-          <Link
-            href="/"
-            className="cta"
-            style={{
-              borderRadius: 999,
-              fontSize: 13,
-              fontWeight: 600,
-              padding: '9px 18px',
-              background: 'var(--ink)',
-              color: 'var(--bg)',
-              textDecoration: 'none',
-            }}
-          >
-            ← Back to product
-          </Link>
-        </div>
-      </nav>
+      <TopNav variant="page" />
 
       {/* Hero */}
       <section

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { TopNav } from '@/lib/site/TopNav'
 
 export const metadata: Metadata = {
   title: 'Terms of Service — GrowthHunt',
@@ -9,14 +10,7 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg)', color: 'var(--ink)' }}>
-      <nav className="top">
-        <div className="shell row">
-          <Link href="/" className="brand" style={{ textDecoration: 'none' }}>
-            <div className="mark" />
-            GrowthHunt
-          </Link>
-        </div>
-      </nav>
+      <TopNav variant="page" />
 
       <main className="shell" style={{ maxWidth: 720, padding: '64px 24px 96px' }}>
         <div className="eyebrow"><span className="dot"></span>Last updated · April 26, 2026</div>

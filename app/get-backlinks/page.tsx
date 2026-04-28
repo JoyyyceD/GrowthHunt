@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { DIRECTORIES, CATEGORIES, getDirectories } from '@/lib/directories'
+import { TopNav } from '@/lib/site/TopNav'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 type Goal = 'dr' | 'awareness'
@@ -343,16 +344,7 @@ export default function GetBacklinksPage() {
 
   return (
     <div>
-      {/* Nav */}
-      <nav className="top">
-        <div className="shell row">
-          <Link href="/" className="brand" style={{ textDecoration: 'none' }}>
-            <div className="mark" />
-            GrowthHunt
-          </Link>
-          <Link href="/" style={{ fontSize: 13, color: 'var(--ink-dim)' }}>← All tools</Link>
-        </div>
-      </nav>
+      <TopNav variant="page" />
 
       {/* Hero */}
       <section style={{ padding: '64px 0 48px', borderBottom: '1px solid var(--rule)' }}>
