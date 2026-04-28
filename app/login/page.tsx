@@ -4,6 +4,7 @@ import { useState, Suspense } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { createBrowserClient } from '@/lib/supabase/browser'
 import { TopNav } from '@/lib/site/TopNav'
+import { setSoftUser } from '@/lib/soft-auth'
 
 function LoginContent() {
   const searchParams = useSearchParams()
@@ -43,13 +44,8 @@ function LoginContent() {
         body: JSON.stringify({ email: email.trim().toLowerCase(), source: 'login-email' }),
       }).catch(() => { /* non-blocking */ })
 
-      // Soft auth: save email locally so TopNav and gates recognize the user
-      if (typeof window !== 'undefined') {
-        localStorage.setItem('gh-soft-user', JSON.stringify({
-          email: email.trim().toLowerCase(),
-          ts: Date.now(),
-        }))
-      }
+      // Soft auth: localStorage for display + cookie for middleware gate
+      setSoftUser(email)
       router.push(next)
       router.refresh()
     } catch (err: unknown) {

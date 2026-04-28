@@ -2,8 +2,9 @@ import { createServerClient } from '@supabase/ssr'
 import { NextRequest, NextResponse } from 'next/server'
 
 // Add protected routes here when dashboard is ready
-const PROTECTED_PAGE_ROUTES: string[] = ['/dashboard']
+const PROTECTED_PAGE_ROUTES: string[] = ['/dashboard', '/growth-story']
 const PROTECTED_API_ROUTES: string[] = ['/api/dashboard']
+const SOFT_AUTH_COOKIE = 'gh-soft-user'
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
@@ -43,8 +44,10 @@ export async function middleware(request: NextRequest) {
   if (!isProtectedPage && !isProtectedApi) return response
 
   const { data: { user } } = await supabase.auth.getUser()
+  const hasSoftUser = !!request.cookies.get(SOFT_AUTH_COOKIE)?.value
+  const isAuthed = !!user || hasSoftUser
 
-  if (!user) {
+  if (!isAuthed) {
     if (isProtectedApi) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }

@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { createBrowserClient } from '@/lib/supabase/browser'
+import { readSoftUserEmail } from '@/lib/soft-auth'
 
 export default function LaunchToolButton({
   featureId, featureName, launchUrl,
@@ -14,24 +15,20 @@ export default function LaunchToolButton({
   const [authState, setAuthState] = useState<'loading' | 'in' | 'out'>('loading')
 
   useEffect(() => {
-    function hasSoftUser(): boolean {
-      if (typeof window === 'undefined') return false
-      try { return !!localStorage.getItem('gh-soft-user') } catch { return false }
-    }
+    const hasSoft = () => !!readSoftUserEmail()
 
     let supabase
     try {
       supabase = createBrowserClient()
     } catch {
-      // Env vars missing — fall back to soft auth only
-      setAuthState(hasSoftUser() ? 'in' : 'out')
+      setAuthState(hasSoft() ? 'in' : 'out')
       return
     }
     supabase.auth.getUser().then(({ data }) => {
-      setAuthState(data.user || hasSoftUser() ? 'in' : 'out')
+      setAuthState(data.user || hasSoft() ? 'in' : 'out')
     })
     const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
-      setAuthState(session?.user || hasSoftUser() ? 'in' : 'out')
+      setAuthState(session?.user || hasSoft() ? 'in' : 'out')
     })
     return () => sub.subscription.unsubscribe()
   }, [])

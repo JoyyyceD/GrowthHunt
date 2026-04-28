@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { createBrowserClient } from '@/lib/supabase/browser'
+import { readSoftUserEmail, clearSoftUser } from '@/lib/soft-auth'
 
 interface Props {
   /** When provided, this page is the homepage and module/section anchors are local. */
@@ -16,31 +17,20 @@ export function TopNav({ variant = 'page' }: Props) {
   const router = useRouter()
 
   useEffect(() => {
-    function readSoftUser(): string | null {
-      if (typeof window === 'undefined') return null
-      try {
-        const raw = localStorage.getItem('gh-soft-user')
-        if (!raw) return null
-        const parsed = JSON.parse(raw) as { email?: string }
-        return parsed.email ?? null
-      } catch { return null }
-    }
-
     let supabase
     try {
       supabase = createBrowserClient()
     } catch {
-      // Supabase env missing — fall back to soft auth only
-      setEmail(readSoftUser())
+      setEmail(readSoftUserEmail())
       setLoaded(true)
       return
     }
     supabase.auth.getUser().then(({ data }) => {
-      setEmail(data.user?.email ?? readSoftUser())
+      setEmail(data.user?.email ?? readSoftUserEmail())
       setLoaded(true)
     })
     const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
-      setEmail(session?.user?.email ?? readSoftUser())
+      setEmail(session?.user?.email ?? readSoftUserEmail())
     })
     return () => sub.subscription.unsubscribe()
   }, [])
@@ -50,9 +40,7 @@ export function TopNav({ variant = 'page' }: Props) {
       const supabase = createBrowserClient()
       await supabase.auth.signOut()
     } catch { /* env missing or already out */ }
-    if (typeof window !== 'undefined') {
-      localStorage.removeItem('gh-soft-user')
-    }
+    clearSoftUser()
     setEmail(null)
     router.refresh()
   }
