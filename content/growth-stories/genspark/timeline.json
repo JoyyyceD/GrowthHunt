@@ -1,0 +1,303 @@
+{
+  "company": {
+    "slug": "genspark",
+    "name": "Genspark",
+    "legalName": "MainFunc, Inc.",
+    "tagline": "Two product launches, one ruthless pivot, and $200M+ ARR in 11 months",
+    "summary": "Genspark is the inverse of Cursor. There is no 22-month latent period — Day 0 was a $60M pre-revenue seed and a TechCrunch headline, engineered around founder Eric Jing's reputation as 'the father of Xiaoice' and former Baidu VP. The company spent nine months as an AI search engine, then in April 2025 abandoned 5M Sparkpages users and launched Super Agent three weeks behind Manus's viral wave. Nine days later it had $10M ARR — the fastest in AI history.",
+    "founded": "2023-12",
+    "founders": ["Eric Jing", "Kay Zhu", "Wen Sang"]
+  },
+  "phases": [
+    {"start": "2023-12", "end": "2024-06", "name": "Day 0 PR launch", "color": "#fef3c7"},
+    {"start": "2024-06", "end": "2025-04", "name": "Sparkpages era", "color": "#dbeafe"},
+    {"start": "2025-04", "end": "2025-11", "name": "Super Agent pivot", "color": "#fce7f3"},
+    {"start": "2025-11", "end": "2026-06", "name": "Hypergrowth", "color": "#dcfce7"}
+  ],
+  "events": [
+    {
+      "date": "2023-12-01",
+      "title": "MainFunc Inc founded",
+      "type": "product",
+      "description": "Eric Jing (former Baidu VP, Xiaodu CEO, founding member of Microsoft Bing and 'father of Xiaoice') and Kay Zhu (former Xiaodu CTO, ex-Google ranking) incorporate MainFunc, Inc. in Palo Alto. Wen Sang (MIT PhD, Smarking founder, YC alum) joins as COO."
+    },
+    {
+      "date": "2024-06-18",
+      "title": "Day 1: Seed $60M + Sparkpages launch",
+      "type": "funding",
+      "gtmTag": "Day-0 narrative flywheel",
+      "description": "Pre-revenue $60M seed at $260M post-money, led by Lanchi Ventures. Genspark and the Sparkpages product launch the same day. TechCrunch and SiliconANGLE break the news in parallel — funding + product + founder pedigree fired together as a single narrative event.",
+      "externalUrl": "https://techcrunch.com/2024/06/18/genspark-is-the-latest-attempt-at-an-ai-powered-search-engine/",
+      "articleSlug": "2024-06-launch"
+    },
+    {
+      "date": "2024-10-01",
+      "title": "Autopilot Agent ships",
+      "type": "product",
+      "description": "Asynchronous multi-step research agent — Genspark's first agentic product, packaged as 'a smarter Sparkpage.' Important in retrospect: the team was already prototyping the agent direction six months before the Super Agent pivot."
+    },
+    {
+      "date": "2024-12-01",
+      "title": "5M+ cumulative users",
+      "type": "media",
+      "description": "Sparkpages crosses 5M registered users on the AI search story. Free product, almost no monetization signal in the public record. The denominator that would later be sacrificed."
+    },
+    {
+      "date": "2025-02-21",
+      "title": "Series A $100M / $530M",
+      "type": "funding",
+      "description": "SiliconANGLE breaks the Series A — $100M at $530M post-money. 5.3× valuation jump in eight months on a still-thin revenue base. The AI search narrative is at peak credibility just weeks before the pivot.",
+      "externalUrl": "https://siliconangle.com/2025/02/21/ai-search-engine-startup-genspark-reportedly-raises-100m-530m-valuation/"
+    },
+    {
+      "date": "2025-04-02",
+      "title": "Super Agent launch",
+      "type": "product",
+      "gtmTag": "Comparative pivot",
+      "description": "Mixture-of-Agents architecture: 8–9 LLMs, 80+ tools, 10+ proprietary datasets. Claims GAIA benchmark 87.8% (Manus: 86%). Killer demo: 'AI Call For Me' — the agent dials real phones. Three weeks behind Manus's viral wave, Genspark launches the comparable product with the missing feature.",
+      "externalUrl": "https://venturebeat.com/ai/gensparks-super-agent-ups-the-ante-in-the-general-ai-agent-race",
+      "articleSlug": "2025-04-super-agent"
+    },
+    {
+      "date": "2025-04-04",
+      "title": "VentureBeat: 'ups the ante'",
+      "type": "media",
+      "description": "VentureBeat publishes a deep dive positioning Super Agent as the Western counter to Manus. The framing is the win: every subsequent piece treats Genspark and Manus as a paired story.",
+      "externalUrl": "https://venturebeat.com/ai/gensparks-super-agent-ups-the-ante-in-the-general-ai-agent-race"
+    },
+    {
+      "date": "2025-04-11",
+      "title": "$10M ARR in 9 days",
+      "type": "media",
+      "gtmTag": "Active wave-riding",
+      "description": "Nine days after launch, Super Agent crosses $10M ARR — the fastest AI product to that line on record. Lovable took two months. Cursor took six. The number itself becomes the next narrative beat.",
+      "externalUrl": "https://aisecret.us/record-breaking-launch-genspark-super-agent-reaches-10-million-arr-faster-than-any-ai-product/",
+      "articleSlug": "2025-04-manus-wave"
+    },
+    {
+      "date": "2025-04-15",
+      "title": "Japan 'AI quit my job' goes viral",
+      "type": "media",
+      "gtmTag": "Audience boundary push",
+      "description": "Japanese users use 'AI Call For Me' to phone in their resignations. The screenshots and audio clips spread on X and YouTube in Japanese tech-Twitter. Japan becomes Genspark's #1 paid market within months."
+    },
+    {
+      "date": "2025-04-22",
+      "title": "AI Slides ships",
+      "type": "product",
+      "description": "Document/PDF-to-presentation with built-in research. First in the rapid-fire 'workspace primitive' release cadence that bolts new agentic verbs onto the Super Agent base."
+    },
+    {
+      "date": "2025-05-08",
+      "title": "AI Sheets ships",
+      "type": "product",
+      "description": "One-prompt spreadsheet generation. Second workspace primitive in a month."
+    },
+    {
+      "date": "2025-05-17",
+      "title": "$36M ARR / 2M users / 20 people",
+      "type": "media",
+      "gtmTag": "Narrative flywheel",
+      "description": "Forty-five days after Super Agent: $36M ARR, 2M+ users, 20-person team. The number triple — '20 people, 45 days, $36M ARR' — becomes Wen Sang's headline across DealMakers, ProductLed, Founders Coho, and Evolving Edge podcasts."
+    },
+    {
+      "date": "2025-09-01",
+      "title": "$50M ARR / enterprise pricing",
+      "type": "media",
+      "description": "Five months in: $50M ARR. Enterprise tier rolls out at $30/seat/month, planting the seed for the AI Workspace push."
+    },
+    {
+      "date": "2025-09-12",
+      "title": "Genspark AI Browser",
+      "type": "product",
+      "description": "Native browser with 169 on-device open-source models — full local privacy. Lands at #9 on Product Hunt. Functions as a reposition demo: Genspark is no longer just a chat interface."
+    },
+    {
+      "date": "2025-11-11",
+      "title": "Bloomberg: unicorn + LG/SBI",
+      "type": "media",
+      "description": "Bloomberg breaks the unicorn news nine days early. LG Technology Ventures and SBI Investment join the Series B — Korean and Japanese strategic capital staked into a US-headquartered Chinese-founded company.",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2025-11-11/genspark-becomes-newest-ai-unicorn-after-winning-lg-sbi-funding"
+    },
+    {
+      "date": "2025-11-20",
+      "title": "Series B $275M + AI Workspace + Microsoft",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Three announcements, one day. Series B $275M at $1.25B (Emergence Capital lead). AI Workspace launches. Microsoft Agent 365 names Genspark a launch partner. The single highest-density media day of the entire arc.",
+      "externalUrl": "https://www.businesswire.com/news/home/20251120036880/en/Genspark-Raises-$275M-Series-B-Launches-AI-Workspace-to-Put-Busywork-on-Autopilot",
+      "articleSlug": "2025-11-triple-launch"
+    },
+    {
+      "date": "2025-11-20",
+      "title": "Microsoft Agent 365 launch partner",
+      "type": "media",
+      "description": "Genspark integrates into Microsoft 365 (Outlook, Teams) on the day Microsoft's Agent 365 platform debuts. Enterprise channel access without an enterprise sales team.",
+      "externalUrl": "https://news.microsoft.com/source/asia/features/with-microsoft-agent-365-one-startup-furthers-goal-of-making-ai-agents-more-intuitive/"
+    },
+    {
+      "date": "2025-11-25",
+      "title": "Sparkpages publicly retired",
+      "type": "product",
+      "gtmTag": "Public pivot",
+      "description": "Genspark openly redirects the old Sparkpages surface into the Workspace experience. 5M registered users on the original product written off in public — most companies hide pivots; Genspark made it the story.",
+      "articleSlug": "2025-11-public-pivot"
+    },
+    {
+      "date": "2026-01-28",
+      "title": "Series B extension to $300M / $100M ARR",
+      "type": "funding",
+      "description": "Existing investors top up the Series B by $25M to $300M. AI Workspace 2.0 ships the same day. BusinessWire headline: 'crosses $100M ARR in 9 months,' with 1,000+ enterprise organizations.",
+      "externalUrl": "https://www.businesswire.com/news/home/20260128322682/en/Genspark-Launches-AI-Workspace-2.0-as-It-Crosses-$100M-ARR-and-Tops-off-$300M-Series-B"
+    },
+    {
+      "date": "2026-01-28",
+      "title": "AI Workspace 2.0",
+      "type": "product",
+      "description": "Same-day product release alongside the funding extension. 1,000+ enterprise customers cited in the press release — the AI Workspace narrative compounds with the funding event."
+    },
+    {
+      "date": "2026-04-04",
+      "title": "Series B extension to $385M / $1.6B",
+      "type": "funding",
+      "gtmTag": "Geographic capital arbitrage",
+      "description": "Series B tops up again: $385M total at $1.6B. Mirae Asset, HartBeat, Markham Valley, and Honda Keisuke (yes, the footballer) join. Total disclosed funding crosses $545M. $200M+ run rate cited the same day.",
+      "externalUrl": "https://hoodline.com/2026/04/palo-alto-ai-upstart-genspark-rockets-to-1-6-billion-in-11-months/",
+      "articleSlug": "2026-04-three-region"
+    },
+    {
+      "date": "2026-04-04",
+      "title": "$200M+ run rate",
+      "type": "media",
+      "description": "Eleven months from Super Agent launch. Disclosed alongside the $385M close — funding and revenue milestones bundled, again."
+    },
+    {
+      "date": "2026-04-08",
+      "title": "AI Workspace 4.0 + Genspark Claw",
+      "type": "product",
+      "description": "Desktop client and native Microsoft Office integration. The product moves from web-only to local files — an enterprise-readiness signal four days after the funding bundle."
+    },
+    {
+      "date": "2025-04-02",
+      "title": "Eric Jing rejoins X",
+      "type": "media",
+      "gtmTag": "Borrowed founder authority",
+      "description": "Eric Jing's @ericjing_ai account, dormant since November 2023, becomes active around the Super Agent launch. The 'Seeing AGI' essay series begins. Founder IP gets activated exactly when the second product needs a face.",
+      "externalUrl": "https://x.com/ericjing_ai",
+      "articleSlug": "2024-06-eric-jing"
+    },
+    {
+      "date": "2025-05-20",
+      "title": "OpenAI case study published",
+      "type": "media",
+      "description": "OpenAI publishes an official case study on Genspark's use of GPT-4.1 and Realtime API. Vendor-as-validator: when your model supplier writes the marketing for you.",
+      "externalUrl": "https://openai.com/index/genspark/"
+    }
+  ],
+  "arr": [
+    {"date": "2025-04-11", "value": 10000000, "source": "AISecret", "confidence": "media"},
+    {"date": "2025-05-02", "value": 22000000, "source": "VentureBeat", "confidence": "media"},
+    {"date": "2025-05-17", "value": 36000000, "source": "AIBase / Wen Sang", "confidence": "official"},
+    {"date": "2025-09-01", "value": 50000000, "source": "Microsoft Source Asia", "confidence": "official"},
+    {"date": "2025-12-15", "value": 85000000, "source": "Sacra estimate", "confidence": "estimate"},
+    {"date": "2026-01-28", "value": 100000000, "source": "BusinessWire", "confidence": "official"},
+    {"date": "2026-04-04", "value": 200000000, "source": "Hoodline / company", "confidence": "official"}
+  ],
+  "valuation": [
+    {"date": "2024-06-18", "value": 260000000, "round": "Seed", "source": "TechCrunch", "confidence": "official"},
+    {"date": "2025-02-21", "value": 530000000, "round": "Series A", "source": "SiliconANGLE", "confidence": "official"},
+    {"date": "2025-11-20", "value": 1250000000, "round": "Series B", "source": "BusinessWire", "confidence": "official"},
+    {"date": "2026-01-28", "value": 1400000000, "round": "Series B+", "source": "BusinessWire", "confidence": "estimate"},
+    {"date": "2026-04-04", "value": 1600000000, "round": "Series B++", "source": "TheSaaSNews", "confidence": "official"}
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 4,
+      "bestStage": "Pivot + hypergrowth",
+      "effort": "Always-on, founder-driven",
+      "role": "The pivot amplifier",
+      "description": "X is where the Super Agent vs Manus comparison lived. @genspark_ai's launch tweet pulled 317K+ views in three weeks; @ericjing_ai's account, dormant from late 2023, came back to life exactly when the agent narrative needed a founder face. Wen Sang (@sang_wen) carries the long-form discourse.",
+      "catalyst": "April 2, 2025 — @genspark_ai's Super Agent thread cross-posts with VentureBeat coverage and triggers the wave of 'Genspark vs Manus' creator demos that ran through April.",
+      "catalystUrl": "https://x.com/genspark_ai/status/1907460298916921372",
+      "accountUrl": "https://x.com/genspark_ai",
+      "accountLabel": "@genspark_ai on X",
+      "whenItWorks": "When you have a comparable, demo-able feature your category leader is missing — a 'wait, you can do that?' moment a creator can record in 60 seconds",
+      "whenItDoesnt": "If your founders aren't posting in their own voice. Genspark's catch was reactivating Eric Jing on X around the pivot — without that, the company account is talking to itself"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 4,
+      "bestStage": "Pivot phase",
+      "effort": "Creator-led, mostly third-party",
+      "role": "The comparative-demo battleground",
+      "description": "Genspark's growth on YouTube was almost entirely earned — Julian Goldie, AI commentary channels, and Japanese tech YouTubers cut 'Genspark vs Manus' demos in the weeks after launch. The official Genspark channel exists but is secondary; the creator demos are the asset.",
+      "catalyst": "Mid-April 2025 — third-party 'FREE Manus alternative' demo videos start landing 100K+ views each. The 'AI Call For Me' phone-dialing scene becomes the screenshot of the era.",
+      "catalystUrl": "https://www.youtube.com/watch?v=GbP9AEKyLwY",
+      "accountUrl": "https://www.youtube.com/@GensparkProduct",
+      "accountLabel": "Genspark on YouTube",
+      "whenItWorks": "When the 'before/after' on a single user task is dramatic enough that a creator can show it in two minutes — phone calls, slide generation, browser automation",
+      "whenItDoesnt": "For abstract enterprise products. YouTube rewards the visible demo; if the magic is invisible (workflow, retention) the format fails"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 2,
+      "bestStage": "All stages — but lower-yield",
+      "effort": "Punctuated by launches",
+      "role": "Skeptical-validator (not the catalyst)",
+      "description": "HN is structurally cooler on Genspark than on Cursor. Threads on Sparkpages, Super Agent, and AI Workspace surface but with lower comment volume and the recurring 'thin wrapper' skepticism. Genspark's growth did not come through HN — it came around HN.",
+      "catalyst": "No single catalyst. The most-cited HN thread is the late 'What is Genspark?' discussion in February 2026 — a sign that Genspark broke out without HN being the first to know.",
+      "catalystUrl": "https://news.ycombinator.com/item?id=46941269",
+      "accountUrl": "https://hn.algolia.com/?q=genspark",
+      "accountLabel": "Search HN for Genspark",
+      "whenItWorks": "When the technical claim is verifiable on launch day — open-source on-device browser models, a real benchmark number with a reproducible setup",
+      "whenItDoesnt": "When the product is a closed-loop demo. HN punishes 'trust me' framing; Genspark's GAIA 87.8% claim is a textbook example of what HN will sandbag"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 2,
+      "bestStage": "Hypergrowth",
+      "effort": "Community-led, low company touch",
+      "role": "Support and friction layer",
+      "description": "r/genspark_ai exists but is more support forum than evangelism hub. Heavy threads on credit-billing complaints and refund disputes — the cost of growing user count faster than the support org. Reddit is not where Genspark's narrative gets made; it's where post-purchase friction surfaces.",
+      "catalyst": "No single moment. Slow-burn community emergence post-Super Agent. The signal value is negative: when Reddit complaint volume spiked, Genspark's actual product issues surfaced there before customer-success could catch them.",
+      "accountUrl": "https://www.reddit.com/r/genspark_ai/",
+      "accountLabel": "Visit r/genspark_ai",
+      "whenItWorks": "As an early-warning system for product friction. Reddit threads predict the issues your support tickets are about to spike on",
+      "whenItDoesnt": "As an acquisition channel for AI agents in 2025–26. The Reddit user base is more skeptical than Twitter's; expect a tougher reception"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 3,
+      "bestStage": "Hypergrowth + enterprise",
+      "effort": "Founder + funding announcements",
+      "role": "Enterprise-credibility amplifier",
+      "description": "Higher-leverage for Genspark than for Cursor — because the AI Workspace pitch is enterprise. Wen Sang's LinkedIn carries the long-form 'how we hit $200M ARR' content that doesn't fit on X. Eric Jing's funding announcements get re-shared by Microsoft, LG, and SBI executives, which is the actual enterprise channel.",
+      "catalyst": "Series B announcement (November 20, 2025) — Microsoft's enterprise leadership amplifies the Agent 365 partnership. That single re-share is more valuable for enterprise pipeline than any campaign.",
+      "accountUrl": "https://www.linkedin.com/company/gensparkai",
+      "accountLabel": "Genspark on LinkedIn",
+      "whenItWorks": "When you have a strategic enterprise partner whose own executives will re-share your news. LG, SBI, and Microsoft did the work for Genspark",
+      "whenItDoesnt": "Without that strategic amplification. A Genspark-only post on LinkedIn would have decayed within hours. The leverage is in the partner's audience, not yours"
+    },
+    {
+      "slug": "instagram",
+      "name": "Instagram + TikTok",
+      "score": 3,
+      "bestStage": "Hypergrowth, Japan-led",
+      "effort": "Regional, audience-specific",
+      "role": "The Japan / consumer flank",
+      "description": "Unlike Cursor — which correctly skipped Instagram — Genspark runs a dedicated @genspark_japan account (~2.6K followers) and a TikTok presence around 'Claw Party' offline events. The reason: Japan is Genspark's largest paid subscription market, and Japanese consumer-AI discovery is more visual-first than the US dev-Twitter equivalent.",
+      "catalyst": "Spring 2025 — Japanese users sharing 'AI Call For Me' clips of resignation calls. The narrative moves from text-based screenshots on X to vertical video on TikTok and Instagram Reels.",
+      "catalystUrl": "https://www.instagram.com/genspark_japan/",
+      "accountUrl": "https://www.instagram.com/genspark_ai/",
+      "accountLabel": "@genspark_ai on Instagram",
+      "whenItWorks": "For a product with a visible, emotional consumer use case in a visual-first market. Genspark's Japanese resignation-call use case is exactly that",
+      "whenItDoesnt": "For US-first developer tools. The Genspark playbook here is regional — Cursor's choice to skip is the right call for a US dev-tool product"
+    }
+  ]
+}

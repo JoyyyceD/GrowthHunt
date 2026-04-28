@@ -1,0 +1,487 @@
+{
+  "company": {
+    "slug": "lovable",
+    "name": "Lovable",
+    "legalName": "Lovable AB",
+    "tagline": "From two failed launches to $400M ARR in 15 months",
+    "summary": "Lovable is the inverse of Cursor's curve. Where Cursor took 22 quiet months before its inflection, Lovable hit $1M ARR in 8 days, $100M in 8 months, $400M in 15 months. The trick wasn't a viral launch — it was a 50K-star open-source project (gpt-engineer) that pre-built the audience, two failed commercial launches that taught the team the brand was anchoring the wrong TAM, and a third launch under a name that finally fit.",
+    "founded": "2023-11",
+    "founders": [
+      "Anton Osika",
+      "Fabian Hedin"
+    ]
+  },
+  "phases": [
+    {
+      "start": "2023-06",
+      "end": "2024-10",
+      "name": "OSS Flywheel",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2024-10",
+      "end": "2025-02",
+      "name": "Branded Relaunch",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2025-02",
+      "end": "2025-09",
+      "name": "Bundled Milestone Loop",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2025-09",
+      "end": "2026-04",
+      "name": "Platform & Hypergrowth",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2023-06-15",
+      "title": "GPT Engineer open-sourced",
+      "type": "product",
+      "gtmTag": "OSS flywheel",
+      "description": "Anton Osika builds a CLI tool that turns text prompts into codebases over a weekend while CTO at Depict.ai. Pushes it to GitHub.",
+      "externalUrl": "https://github.com/AntonOsika/gpt-engineer",
+      "articleSlug": "2023-06-gpt-engineer-oss"
+    },
+    {
+      "date": "2023-08-15",
+      "title": "GPT Engineer hits 40K GitHub stars",
+      "type": "media",
+      "description": "One of the fastest-growing repos of 2023. Establishes early TAM proof for vibe coding before Lovable AB exists."
+    },
+    {
+      "date": "2023-11-01",
+      "title": "Lovable AB incorporated",
+      "type": "product",
+      "description": "Anton Osika (CEO) + Fabian Hedin (CTO) incorporate in Stockholm. Initially named GPT Engineer AB."
+    },
+    {
+      "date": "2023-12-15",
+      "title": "GPT Engineer App commercial launch",
+      "type": "product",
+      "description": "First commercial version with web UI — targeting non-technical users under the GPT Engineer brand."
+    },
+    {
+      "date": "2024-04-01",
+      "title": "First failed launch",
+      "type": "product",
+      "gtmTag": "Failure-to-success rebrand",
+      "description": "Spring 2024 GPT Engineer App launch fails. Brand implies dev tool but the TAM is non-technical builders.",
+      "articleSlug": "2024-failed-launches"
+    },
+    {
+      "date": "2024-08-01",
+      "title": "Second failed launch",
+      "type": "product",
+      "description": "Summer 2024 attempt — same product, still no fit. Multi-provider support added internally."
+    },
+    {
+      "date": "2024-10-15",
+      "title": "Pre-seed $7.5M / €6.8M",
+      "type": "funding",
+      "description": "Co-led by Hummingbird Ventures + byFounders. Angels include Shopify, Voi, and Creandum founders. Closes one month before launch.",
+      "externalUrl": "https://www.eu-startups.com/2024/10/stockholm-based-lovable-raises-e6-8-million-to-make-everyone-a-software-engineer/"
+    },
+    {
+      "date": "2024-11-21",
+      "title": "Lovable v1 launch",
+      "type": "product",
+      "gtmTag": "Branded relaunch",
+      "description": "Third launch, new name. Soft launch via Anton's X. The curve that follows is the most extreme launch any SaaS has publicly disclosed.",
+      "externalUrl": "https://lovable.dev/blog/2025-01-13-rebranding-gpt-engineer-to-lovable",
+      "articleSlug": "2024-11-lovable-launch"
+    },
+    {
+      "date": "2024-11-29",
+      "title": "$1M ARR in 8 days",
+      "type": "media",
+      "description": "3K+ paying customers. Anton's launch retro: fastest week-1 ramp publicly disclosed by any SaaS.",
+      "externalUrl": "https://x.com/antonosika"
+    },
+    {
+      "date": "2024-12-21",
+      "title": "$4M ARR in 4 weeks (Anton thread)",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "Anton's first viral X thread about Lovable's growth — frames Lovable as Europe's fastest-growing startup.",
+      "externalUrl": "https://x.com/antonosika/status/1870554039462814013"
+    },
+    {
+      "date": "2025-01-13",
+      "title": "Official rebrand post",
+      "type": "media",
+      "description": "GPT Engineer → Lovable transition explained publicly. Multi-provider AI + non-technical TAM expansion.",
+      "externalUrl": "https://lovable.dev/blog/2025-01-13-rebranding-gpt-engineer-to-lovable"
+    },
+    {
+      "date": "2025-01-25",
+      "title": "$10M ARR in 60 days",
+      "type": "media",
+      "description": "Headline number that becomes Lovable's calling card across operator and PM circles."
+    },
+    {
+      "date": "2025-02-06",
+      "title": "Karpathy 'vibe coding' tweet",
+      "type": "media",
+      "description": "4.5M+ views. Names Cursor specifically, not Lovable — but the category Karpathy creates is Lovable's home turf and Lovable rides the wave.",
+      "externalUrl": "https://x.com/karpathy/status/1886192184808149383"
+    },
+    {
+      "date": "2025-02-25",
+      "title": "Pre-Series A $15M (Creandum)",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Bundled with $17M ARR + 30K paying customers + 500K users + 25K projects/day disclosure. Charlie Songhurst, Adam D'Angelo, Thomas Wolf participate.",
+      "externalUrl": "https://techcrunch.com/2025/02/25/swedens-lovable-an-app-building-ai-platform-rakes-in-16m-after-spectacular-growth/"
+    },
+    {
+      "date": "2025-02-26",
+      "title": "$17M ARR + 30K paying customers",
+      "type": "media",
+      "description": "Disclosed alongside the pre-Series A: 500K users and 25K projects/day. The first official numbers from Lovable since launch."
+    },
+    {
+      "date": "2025-03-09",
+      "title": "Anton on Lenny's Podcast",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "'$10M ARR in 60 days with 15 people' — Lovable's Lex-Fridman-equivalent. Long-form founder IP that puts Anton on US PM/operator radar.",
+      "externalUrl": "https://www.lennysnewsletter.com/p/building-lovable-anton-osika",
+      "articleSlug": "2025-03-lennys-podcast"
+    },
+    {
+      "date": "2025-04-15",
+      "title": "Code editor for advanced devs",
+      "type": "product",
+      "description": "Expands TAM from non-technical builder to also serve dev power-users — without losing the consumer pitch."
+    },
+    {
+      "date": "2025-05-02",
+      "title": "$40M ARR (5 months)",
+      "type": "media",
+      "description": "Anton's tweet 'Europe's fastest-growing startup ever' — geography moves from biographical fact to strategic narrative.",
+      "externalUrl": "https://x.com/antonosika/status/1918429039280439645",
+      "gtmTag": "Geography as differentiation",
+      "articleSlug": "2025-04-european-narrative"
+    },
+    {
+      "date": "2025-05-20",
+      "title": "$50M ARR (mid-year)",
+      "type": "media",
+      "description": "Mid-year acceleration milestone — the first time Lovable's ARR doubles inside a single month."
+    },
+    {
+      "date": "2025-07-02",
+      "title": "TC leaks $150M @ $2B round",
+      "type": "media",
+      "description": "Pre-announcement leak builds anticipation. Same playbook as the Cursor cycle.",
+      "externalUrl": "https://techcrunch.com/2025/07/02/lovable-on-track-to-raise-150m-at-2b-valuation/"
+    },
+    {
+      "date": "2025-07-17",
+      "title": "Series A $200M @ $1.8B",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Led by Accel. Bundled with $75M ARR + 2.3M users + Klarna/HubSpot enterprise namedrop + angels (Klarna CEO, Slack co-founder, HubSpot co-founder).",
+      "externalUrl": "https://techcrunch.com/2025/07/17/lovable-becomes-a-unicorn-with-200m-series-a-just-8-months-after-launch/",
+      "articleSlug": "2025-07-series-a"
+    },
+    {
+      "date": "2025-07-23",
+      "title": "$100M ARR in 8 months",
+      "type": "media",
+      "description": "'Faster than OpenAI / Cursor / Wiz' — Anton's headline framing. Standalone story 6 days after Series A bundle.",
+      "externalUrl": "https://techcrunch.com/2025/07/23/eight-months-in-swedish-unicorn-lovable-crosses-the-100m-arr-milestone/"
+    },
+    {
+      "date": "2025-09-29",
+      "title": "Lovable Cloud + Lovable AI",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Vertical integration — Supabase-powered backend + Google Cloud / Gemini partnership. Reframes Lovable from 'app builder' to 'full-stack AI platform.'",
+      "externalUrl": "https://lovable.dev/blog/lovable-cloud",
+      "articleSlug": "2025-09-lovable-cloud"
+    },
+    {
+      "date": "2025-11-01",
+      "title": "Acquires Molnett",
+      "type": "acquisition",
+      "description": "Swedish cloud infrastructure startup. Talent + tech for the new Lovable Cloud platform. Doubles down on vertical integration.",
+      "externalUrl": "https://lovable.dev/blog/lovable-welcomes-molnett"
+    },
+    {
+      "date": "2025-11-10",
+      "title": "Nearing 8M users",
+      "type": "media",
+      "description": "TechCrunch interview — Anton signals enterprise pivot. 100K new products built per day.",
+      "externalUrl": "https://techcrunch.com/2025/11/10/lovable-says-its-nearing-8-million-users-as-the-year-old-ai-coding-startup-eyes-more-corporate-employees/"
+    },
+    {
+      "date": "2025-11-21",
+      "title": "$200M ARR (one-year mark)",
+      "type": "media",
+      "description": "Doubled from $100M in 4 months. Fortune profile lands on Lovable's first anniversary.",
+      "externalUrl": "https://fortune.com/2025/11/21/lovables-ceo-ai-vibe-coding-enterprise-ambitions-annual-revenue/"
+    },
+    {
+      "date": "2025-12-16",
+      "title": "CNBC leaks $6.6B valuation",
+      "type": "media",
+      "description": "Pre-announcement leak mirrors July pattern. Two days before Series B announcement.",
+      "externalUrl": "https://www.cnbc.com/2025/12/16/ai-startup-lovables-round-values-it-at-6point6-billion-sources.html"
+    },
+    {
+      "date": "2025-12-18",
+      "title": "Series B $330M @ $6.6B",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Co-led by CapitalG + Menlo (Anthology). Strategic checks from NVIDIA, Salesforce, Databricks, Atlassian, HubSpot.",
+      "externalUrl": "https://techcrunch.com/2025/12/18/vibe-coding-startup-lovable-raises-330m-at-a-6-6b-valuation/"
+    },
+    {
+      "date": "2025-12-31",
+      "title": "$250M ARR (year-end)",
+      "type": "media",
+      "description": "Year-end run-rate continues acceleration into 2026."
+    },
+    {
+      "date": "2026-01-31",
+      "title": "$300M ARR",
+      "type": "media",
+      "description": "$50M added in a single month."
+    },
+    {
+      "date": "2026-02-27",
+      "title": "First major security story",
+      "type": "media",
+      "description": "The Register reports 18K user records exposed in a Lovable-generated app — first real brand damage.",
+      "externalUrl": "https://www.theregister.com/2026/02/27/lovable_app_vulnerabilities/"
+    },
+    {
+      "date": "2026-02-28",
+      "title": "$400M ARR ($100M in Feb)",
+      "type": "media",
+      "description": "+$100M in a single month with 146 employees ($2.77M ARR/employee). Bloomberg + TechCrunch report.",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2026-03-12/vibe-coding-startup-lovable-hits-400-million-recurring-revenue"
+    },
+    {
+      "date": "2026-03-11",
+      "title": "$400M ARR coverage cycle",
+      "type": "media",
+      "description": "TechCrunch + Bloomberg run the 'last piece of software' framing. Trillion-dollar firm narrative formalized.",
+      "externalUrl": "https://techcrunch.com/2026/03/11/lovable-says-it-added-100m-in-revenue-last-month-alone-with-just-146-employees/"
+    },
+    {
+      "date": "2026-03-23",
+      "title": "M&A search announced",
+      "type": "media",
+      "description": "Théo Daniellot named Head of M&A and Partnerships. Lovable actively hunting startups + acqui-hire targets.",
+      "externalUrl": "https://techcrunch.com/2026/03/23/vibe-coding-startup-lovable-is-on-the-hunt-for-acquisitions/"
+    },
+    {
+      "date": "2026-04-20",
+      "title": "Mass data exposure controversy",
+      "type": "media",
+      "description": "Lovable calls exposed data 'intentional behaviour' — PR misstep amplifies the story. First real brand dent in the arc.",
+      "externalUrl": "https://www.theregister.com/2026/04/20/lovable_denies_data_leak/"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2024-11-21",
+      "value": 0,
+      "source": "Lovable launch baseline",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-11-29",
+      "value": 1000000,
+      "source": "Anton Osika / X",
+      "confidence": "official"
+    },
+    {
+      "date": "2024-12-21",
+      "value": 4000000,
+      "source": "Anton Osika / X",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-01-25",
+      "value": 10000000,
+      "source": "Lenny's Newsletter",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-02-25",
+      "value": 17000000,
+      "source": "Lovable blog / TechCrunch",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-05-02",
+      "value": 40000000,
+      "source": "Anton Osika / X",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-05-20",
+      "value": 50000000,
+      "source": "TheCreators AI",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-07-17",
+      "value": 75000000,
+      "source": "TechCrunch / Series A",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-07-23",
+      "value": 100000000,
+      "source": "TechCrunch",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-11-21",
+      "value": 200000000,
+      "source": "Fortune",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-12-31",
+      "value": 250000000,
+      "source": "Bloomberg",
+      "confidence": "media"
+    },
+    {
+      "date": "2026-01-31",
+      "value": 300000000,
+      "source": "Bloomberg",
+      "confidence": "media"
+    },
+    {
+      "date": "2026-02-28",
+      "value": 400000000,
+      "source": "Bloomberg / TechCrunch",
+      "confidence": "official"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2024-10-15",
+      "value": 40000000,
+      "round": "Pre-seed (implied)",
+      "source": "TheSaaSNews",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-07-17",
+      "value": 1800000000,
+      "round": "Series A",
+      "source": "TechCrunch",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-12-18",
+      "value": 6600000000,
+      "round": "Series B",
+      "source": "TechCrunch",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 5,
+      "bestStage": "All stages — load-bearing",
+      "effort": "Always-on, daily",
+      "role": "Founder broadcast + ARR scoreboard",
+      "description": "X is where Lovable's growth was *announced*. Anton Osika ran a daily metric-disclosure cadence — '$1M in 8 days,' '$4M in 4 weeks,' '$40M in 5 months' — turning ARR milestones into self-replicating posts. The company account amplifies; the founder account leads.",
+      "catalyst": "Anton's '$4M ARR in 4 weeks' thread (Dec 21, 2024) — the first viral founder post about Lovable. Set the template every later milestone followed.",
+      "catalystUrl": "https://x.com/antonosika/status/1870554039462814013",
+      "accountUrl": "https://x.com/lovable_dev",
+      "accountLabel": "@lovable_dev on X",
+      "whenItWorks": "When the founder is willing to post personal ARR numbers in real time, in their own voice, before there is any reason for anyone to listen",
+      "whenItDoesnt": "If milestone tweets come from a corporate handle in press-release tone — the format dies on contact"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 4,
+      "bestStage": "Inflection + Hypergrowth",
+      "effort": "Episodic, very high per ep",
+      "role": "Long-form founder IP + tutorial library",
+      "description": "Lovable's YouTube presence is two-headed. Anton on Lenny's, Slush, TechBBQ, and the Accel podcast carries the founder-as-IP load. The lovable.dev video library carries the user-onboarding load — short tutorials + customer-built apps that show the product working without a sales pitch.",
+      "catalyst": "Lenny's Podcast 'Building Lovable: $10M ARR in 60 days with 15 people' (Mar 9, 2025). Long-form crossover episode that put Anton on the US PM/operator map.",
+      "catalystUrl": "https://www.youtube.com/watch?v=DZtGxNs9AVg",
+      "accountUrl": "https://lovable.dev/videos",
+      "accountLabel": "Lovable video library",
+      "whenItWorks": "When the founder can sustain a 90-minute conversation with concrete numbers, real product decisions, and an operator-grade interviewer like Lenny",
+      "whenItDoesnt": "Trying to build a brand-channel from scratch with corporate produced content. Borrow attention from existing podcasts first"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 4,
+      "bestStage": "Latent + Branded Relaunch",
+      "effort": "Punctuated by launches and incidents",
+      "role": "Developer credibility validator",
+      "description": "HN's developer audience can't be marketed to. gpt-engineer's front-page run in mid-2023 (when the GitHub repo crossed 40K stars) was the first serious external signal that the team had something. The Lovable v1 launch, the GitHub takedown incident, and the open-source release all hit the front page later — each one a chance to convert dev skepticism on substance.",
+      "catalyst": "gpt-engineer's mid-2023 HN front page run. The repo's 40K stars in 2 months gave Anton TAM proof and a ~27K-person waitlist before Lovable AB existed.",
+      "catalystUrl": "https://news.ycombinator.com/item?id=42206666",
+      "accountUrl": "https://hn.algolia.com/?q=lovable.dev",
+      "accountLabel": "Search HN for Lovable",
+      "whenItWorks": "When the launch has technical novelty an engineer can argue about — open source repos, full-stack architecture posts, incident retros",
+      "whenItDoesnt": "Don't post incremental product updates aimed at non-technical users. HN is hostile to consumer marketing tone"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 3,
+      "bestStage": "Hypergrowth + ongoing",
+      "effort": "Cross-community, low company touch",
+      "role": "Cross-community discussion layer",
+      "description": "Lovable doesn't have a dominant single subreddit the way Cursor has r/cursor. Discussion is distributed across r/vibecoding (89K members), r/nocode, r/indiehackers, r/SideProject, and r/SaaS — fitting Lovable's 'anyone with an idea' positioning. The trade-off: less concentrated advocacy, broader surface area.",
+      "catalyst": "r/vibecoding's emergence as a 89K-member community in 2025 — Lovable rides as one of the named tools alongside Bolt and others.",
+      "catalystUrl": "https://www.reddit.com/r/vibecoding/",
+      "accountUrl": "https://www.reddit.com/r/vibecoding/",
+      "accountLabel": "Visit r/vibecoding",
+      "whenItWorks": "When users self-organize across general-purpose subreddits. Don't try to seed a branded subreddit early — wait for it to emerge",
+      "whenItDoesnt": "If the company tries to centralize discussion in a corporate-controlled forum. Reddit credibility dies on contact with marketing"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 4,
+      "bestStage": "Hypergrowth (enterprise expansion)",
+      "effort": "Founder-led, milestone cadence",
+      "role": "Enterprise + funding amplifier",
+      "description": "LinkedIn is unusually load-bearing for Lovable because Anton uses it as a second X. His funding announcements and ARR threads cross-post to LinkedIn and pull in a different audience — operators, enterprise execs, European VCs — that doesn't live on dev-Twitter. The Klarna / HubSpot / Slack angel namedrop in the Series A landed harder on LinkedIn than X.",
+      "catalyst": "Anton's Series A LinkedIn post (July 2025) — '$200M at $1.8B led by Accel.' Re-shared by Klarna's Sebastian Siemiatkowski, Slack's Stewart Butterfield, HubSpot's Dharmesh Shah. Enterprise validation in one cycle.",
+      "catalystUrl": "https://www.linkedin.com/posts/antonosika_today-lovable-raised-200m-at-a-18b-valuation-activity-7351665204838985728-LJs6",
+      "accountUrl": "https://se.linkedin.com/in/antonosika",
+      "accountLabel": "Anton Osika on LinkedIn",
+      "whenItWorks": "When the founder is willing to write personal essays and milestone posts in their voice — and the angel investors are senior enough that re-shares carry weight",
+      "whenItDoesnt": "As a corporate posting channel. The cadence has to be founder-led, milestone-driven, and emotionally specific"
+    },
+    {
+      "slug": "instagram",
+      "name": "Instagram",
+      "score": 3,
+      "bestStage": "Hypergrowth (consumer extension)",
+      "effort": "Reels-first, sustained",
+      "role": "Consumer-builder reach",
+      "description": "Lovable's @lovable.dev account has 231K followers — an order of magnitude bigger than what most B2B SaaS companies bother with. The reason: Lovable's actual TAM includes solopreneurs, indie hackers, and 'anyone with an idea,' which overlaps materially with Instagram's creator audience. Reels showing apps built in minutes do well in a way they never would for a dev-only tool.",
+      "catalyst": "Cumulative reels showing live app-building demos — no single moment, but the 231K follower base is the highest of any vibe-coding tool. Cursor cannot match this and shouldn't try.",
+      "accountUrl": "https://www.instagram.com/lovable.dev/",
+      "accountLabel": "@lovable.dev on Instagram",
+      "whenItWorks": "When the product output is visual and the demo runs in under 60 seconds. Lovable's 'describe app, see app' loop is purpose-built for short-form video",
+      "whenItDoesnt": "For B2B dev tools where the product is invisible inside an IDE. Don't fake a video-friendly story; pick a different platform"
+    }
+  ]
+}
