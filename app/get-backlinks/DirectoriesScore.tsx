@@ -74,12 +74,12 @@ export default function DirectoriesScore({ directories }: { directories: Directo
   }))
   const xTicks = [0, 0.25, 0.5, 0.75, 1].map(f => {
     const i = Math.max(1, Math.round(f * maxRank))
-    return { x: xAt(i), label: i.toString() }
+    return { x: xAt(i), label: `${Math.round(f * 100)}%` }
   })
 
   const stats = [
     { key: 'reach',   label: 'Combined reach',  value: `${formatBig(totalReach)}+`, active: true  },
-    { key: 'dirs',    label: 'Hand-picked',     value: totalDirs.toString(),         active: true  },
+    { key: 'dirs',    label: 'Hand-picked',     value: '200+',                       active: true  },
     { key: 'avg-dr',  label: 'Average DR',      value: avgDr.toString(),             active: false },
     { key: 'premium', label: 'DR 80+',          value: dr80Plus.toString(),          active: false },
   ]
@@ -105,7 +105,7 @@ export default function DirectoriesScore({ directories }: { directories: Directo
           Directories score <em style={{ fontStyle: 'italic', color: 'var(--accent)' }}>{formatBig(totalReach)}+</em> visitors/mo.
         </h2>
         <p style={{ fontSize: 17, color: 'var(--ink-dim)', maxWidth: 640, lineHeight: 1.6, margin: '0 0 36px' }}>
-          We submit to <strong style={{ color: 'var(--ink)' }}>{totalDirs} hand-picked directories</strong> your buyers already trust. Backlinks compound — each one is a vote that lifts your search rank, indexes your site faster, and sends real referral traffic.
+          We submit to <strong style={{ color: 'var(--ink)' }}>200+ hand-picked directories</strong> your buyers already trust. Backlinks compound — each one is a vote that lifts your search rank, indexes your site faster, and sends real referral traffic.
         </p>
 
         {/* Stats strip */}
@@ -221,7 +221,7 @@ export default function DirectoriesScore({ directories }: { directories: Directo
         </div>
 
         <p style={{ fontSize: 11, color: 'var(--ink-faint)', marginTop: 16, fontFamily: 'var(--mono)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-          Reach = Σ monthly visitors across {totalDirs} directories · Sourced from Ahrefs / SimilarWeb · Updated quarterly
+          Reach = Σ monthly visitors across our directory database · Sourced from Ahrefs / SimilarWeb · Updated quarterly
         </p>
       </div>
     </section>

@@ -6,9 +6,10 @@ import DirectoriesScore from './DirectoriesScore'
 
 export const dynamic = 'force-dynamic'
 
+const DISPLAY_DIR_COUNT = '200+'
+
 export default async function GetBacklinksPage() {
   const directories = await fetchDirectories()
-  const totalCount = directories.length
 
   return (
     <div>
@@ -24,11 +25,11 @@ export default async function GetBacklinksPage() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 40, alignItems: 'end' }}>
             <div>
               <h1 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(44px, 6vw, 80px)', fontWeight: 400, lineHeight: 0.96, letterSpacing: '-0.033em', margin: '0 0 20px' }}>
-                Submit to {totalCount}+ hand-picked directories.<br />
+                Submit to {DISPLAY_DIR_COUNT} hand-picked directories.<br />
                 <em style={{ fontStyle: 'italic', color: 'var(--accent)' }}>While you sleep.</em>
               </h1>
               <p style={{ fontSize: 17, color: 'var(--ink-dim)', maxWidth: 520, lineHeight: 1.6, margin: 0 }}>
-                Manual directory submissions take 30–40 hours per launch. We handle every form, every captcha, every follow-up — and report what got accepted. No inflated numbers. Every directory is shown.
+                Manual directory submissions take 30–40 hours per launch. We handle every form, every captcha, every follow-up — and report what got accepted.
               </p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16, flexShrink: 0 }}>
@@ -55,7 +56,7 @@ export default async function GetBacklinksPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 32 }}>
             {[
               ['DR 15+ guaranteed', 'New sites. Or we keep working until it happens — or refund.'],
-              [`${totalCount} directories, all visible`, 'No blurred cards, no hidden lists. What you see is what gets submitted.'],
+              [`${DISPLAY_DIR_COUNT} hand-picked directories`, 'Curated for quality, not quantity. Top picks shown — full list delivered with your order.'],
               ['30-day drip', 'Human-paced posting over a full month. No spam signals.'],
               ['Full ownership', 'You own every listing. Edit or remove at any time.'],
             ].map(([title, body]) => (

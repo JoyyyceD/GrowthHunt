@@ -53,7 +53,7 @@ function DirectoryBrowser({
         </svg>
         <input
           type="text"
-          placeholder={`Search among ${directories.length} directories`}
+          placeholder="Search the directory database"
           value={search}
           onChange={e => setSearch(e.target.value)}
           style={{
@@ -96,11 +96,10 @@ function DirectoryBrowser({
         ))}
       </div>
 
-      {/* Results count + submit all */}
+      {/* Results count + place order CTA */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
         <span style={{ fontSize: 13, color: 'var(--ink-faint)', fontFamily: 'var(--mono)' }}>
-          {filtered.length} {filtered.length === 1 ? 'directory' : 'directories'}
-          {activeCategory ? ` · ${activeCategory}` : ''}
+          {filtered.length} shown{activeCategory ? ` · ${activeCategory}` : ' · sample'}
         </span>
         <button
           onClick={onSubmitAll}
@@ -116,7 +115,7 @@ function DirectoryBrowser({
             fontFamily: 'inherit',
           }}
         >
-          Submit to all {filtered.length} →
+          Place an order →
         </button>
       </div>
 
@@ -377,7 +376,7 @@ export default function InteractiveSection({ directories }: { directories: Direc
           <div style={{ marginBottom: 32 }}>
             <div className="eyebrow" style={{ marginBottom: 12 }}><span className="dot" />Browse the directory database</div>
             <p style={{ fontSize: 15, color: 'var(--ink-dim)', margin: 0, maxWidth: 720 }}>
-              <strong style={{ color: 'var(--ink)' }}>Every directory we submit to.</strong> No hidden lists. Search by name, filter by category. Click <strong style={{ color: 'var(--ink)' }}>Submit</strong> on any card to place your order.
+              <strong style={{ color: 'var(--ink)' }}>Sample of our directory database.</strong> Search by name, filter by category. Click <strong style={{ color: 'var(--ink)' }}>Submit</strong> on any card to place your order.
             </p>
           </div>
           <DirectoryBrowser directories={directories} onSubmitAll={scrollToForm} />
