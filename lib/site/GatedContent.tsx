@@ -44,7 +44,7 @@ const COPY: Record<Locale, {
   },
   zh: {
     eyebrow: '免费阅读',
-    titleA: '继续阅读这份',
+    titleA: '免费阅读这份',
     titleAccent: '完整拆解',
     titleB: '。',
     body: '下方的综合分析和每一篇深度拆解都对登录读者免费开放——无需密码、无需付费，留下邮箱即可继续阅读。',
