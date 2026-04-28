@@ -2,7 +2,12 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import { getStory, getAllCompanies } from '@/lib/growth-story'
+import {
+  getStory,
+  getAllCompanies,
+  getEventArticle,
+  type EventArticle,
+} from '@/lib/growth-story'
 import { mdxComponents } from '@/lib/growth-story-mdx'
 import CaseStudyTimeline from '@/components/CaseStudyTimeline'
 import PlatformMix from '@/components/PlatformMix'
@@ -35,28 +40,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const TYPE_COLOR: Record<string, string> = {
+  product: '#2563eb',
+  funding: '#16a34a',
+  media: '#dc2626',
+  acquisition: '#9333ea',
+}
+
+const TYPE_LABEL: Record<string, string> = {
+  product: 'Product',
+  funding: 'Funding',
+  media: 'Media',
+  acquisition: 'M&A',
+}
+
 export default async function GrowthStoryPage({ params }: Props) {
   const { company } = await params
   const story = getStory(company)
   if (!story) notFound()
 
   const { timeline } = story
-  const TYPE_COLOR: Record<string, string> = {
-    product: '#2563eb',
-    funding: '#16a34a',
-    media: '#dc2626',
-    acquisition: '#9333ea',
-  }
-  const TYPE_LABEL: Record<string, string> = {
-    product: 'Product',
-    funding: 'Funding',
-    media: 'Media',
-    acquisition: 'M&A',
-  }
 
-  const deepDives = timeline.events.filter(e => e.articleSlug)
+  // Load all event articles in chronological order
+  const deepDives: EventArticle[] = timeline.events
+    .filter(e => e.articleSlug)
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+    .map(e => getEventArticle(company, e.articleSlug!))
+    .filter((a): a is EventArticle => a !== null)
 
-  // Section heading helper component (number + serif title + lede)
+  // Section heading helper
   const SectionHead = ({
     num,
     eyebrow,
@@ -185,7 +197,14 @@ export default async function GrowthStoryPage({ params }: Props) {
       </nav>
 
       {/* Hero */}
-      <section style={{ padding: '96px 0 72px', borderBottom: '1px solid var(--rule)', position: 'relative', overflow: 'hidden' }}>
+      <section
+        style={{
+          padding: '96px 0 72px',
+          borderBottom: '1px solid var(--rule)',
+          position: 'relative',
+          overflow: 'hidden',
+        }}
+      >
         <div className="shell" style={{ position: 'relative', zIndex: 2 }}>
           <div
             className="eyebrow"
@@ -229,7 +248,15 @@ export default async function GrowthStoryPage({ params }: Props) {
           >
             {timeline.company.tagline}
           </p>
-          <p style={{ fontSize: 17.5, color: 'var(--ink-dim)', maxWidth: 720, lineHeight: 1.65, margin: '0 0 34px' }}>
+          <p
+            style={{
+              fontSize: 17.5,
+              color: 'var(--ink-dim)',
+              maxWidth: 720,
+              lineHeight: 1.65,
+              margin: '0 0 34px',
+            }}
+          >
             {timeline.company.summary}
           </p>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
@@ -241,7 +268,7 @@ export default async function GrowthStoryPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Timeline chart */}
+      {/* 01 — Timeline chart */}
       <section style={{ padding: '88px 0 64px', borderBottom: '1px solid var(--rule)' }}>
         <div className="shell">
           <SectionHead
@@ -249,13 +276,13 @@ export default async function GrowthStoryPage({ params }: Props) {
             eyebrow="Timeline"
             title="ARR, valuation, and every GTM move, "
             titleAccent="on one timeline."
-            lede="Events split into four horizontal bands by type. Markers with a halo open a deep dive. Hover anything for a summary; click external markers to jump to the original source."
+            lede="Events split into four horizontal bands by type. Markers with a halo jump to a deep-dive section below. Hover anything for a summary; click external markers to jump to the original source."
           />
           <CaseStudyTimeline timeline={timeline} company={company} />
         </div>
       </section>
 
-      {/* Platform Mix */}
+      {/* 02 — Platform Mix */}
       {timeline.platforms && timeline.platforms.length > 0 && (
         <section style={{ padding: '88px 0 64px', borderBottom: '1px solid var(--rule)' }}>
           <div className="shell">
@@ -271,102 +298,15 @@ export default async function GrowthStoryPage({ params }: Props) {
         </section>
       )}
 
-      {/* Deep dives index */}
-      {deepDives.length > 0 && (
-        <section style={{ padding: '88px 0 64px', borderBottom: '1px solid var(--rule)' }}>
-          <div className="shell">
-            <SectionHead
-              num="03"
-              eyebrow="Deep Dives"
-              title={`${deepDives.length} key moments, `}
-              titleAccent="fully unpacked."
-              lede="For each: what happened, what the catalyst was, why it landed, and the reusable GTM pattern underneath."
-            />
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(380px, 1fr))',
-                gap: 1,
-                background: 'var(--rule)',
-                border: '1px solid var(--rule)',
-              }}
-            >
-              {deepDives.map(e => (
-                <Link
-                  key={e.articleSlug}
-                  href={`/growth-story/${company}/${e.articleSlug}`}
-                  className="blog-card"
-                  style={{ textDecoration: 'none', display: 'block' }}
-                >
-                  <article
-                    style={{
-                      padding: '36px 32px 28px',
-                      minHeight: 240,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: 16,
-                    }}
-                  >
-                    <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-                      <span
-                        className="tag"
-                        style={{
-                          color: TYPE_COLOR[e.type],
-                          borderColor: 'transparent',
-                          background: 'var(--bg-card)',
-                        }}
-                      >
-                        {TYPE_LABEL[e.type]}
-                      </span>
-                      {e.gtmTag && <span className="tag">{e.gtmTag}</span>}
-                    </div>
-                    <h3
-                      style={{
-                        fontFamily: 'var(--serif)',
-                        fontSize: 26,
-                        lineHeight: 1.18,
-                        letterSpacing: '-0.022em',
-                        fontWeight: 400,
-                        margin: 0,
-                        flex: 1,
-                      }}
-                    >
-                      {e.title}
-                    </h3>
-                    <p style={{ fontSize: 14, color: 'var(--ink-dim)', margin: 0, lineHeight: 1.55 }}>
-                      {e.description}
-                    </p>
-                    <div
-                      style={{
-                        fontFamily: 'var(--mono)',
-                        fontSize: 11,
-                        color: 'var(--ink-faint)',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.1em',
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        marginTop: 'auto',
-                      }}
-                    >
-                      <span>{e.date}</span>
-                      <span style={{ color: 'var(--accent)' }}>Read →</span>
-                    </div>
-                  </article>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Body — synthesis essay */}
-      <section style={{ padding: '96px 0 96px' }}>
+      {/* 03 — Synthesis */}
+      <section style={{ padding: '88px 0 64px', borderBottom: '1px solid var(--rule)' }}>
         <div className="shell" style={{ maxWidth: 760 }}>
           <SectionHead
-            num="04"
+            num="03"
             eyebrow="Synthesis"
-            title="The full thesis"
-            lede="Stitching the data and the deep dives into one read on what actually drove the curve."
+            title="The full "
+            titleAccent="thesis."
+            lede="The big-picture read on what actually drove the curve — before zooming in on each key moment."
           />
           <div style={{ marginTop: 8 }}>
             <MDXRemote source={story.content} components={mdxComponents} />
@@ -374,9 +314,321 @@ export default async function GrowthStoryPage({ params }: Props) {
         </div>
       </section>
 
+      {/* 04 — Deep Dives (inline, all 7 articles in one flow) */}
+      {deepDives.length > 0 && (
+        <section style={{ padding: '88px 0 0' }}>
+          <div className="shell">
+            <SectionHead
+              num="04"
+              eyebrow="Deep Dives"
+              title={`${deepDives.length} key moments, `}
+              titleAccent="fully unpacked."
+              lede="For each: the catalyst, the concrete numbers, why it landed, and the reusable pattern underneath. Read straight through, or jump to any one."
+            />
+
+            {/* Jump-to navigation strip */}
+            <nav
+              aria-label="Deep dive navigation"
+              style={{
+                margin: '8px 0 0',
+                paddingTop: 24,
+                paddingBottom: 24,
+                borderTop: '1px solid var(--rule)',
+                borderBottom: '1px solid var(--rule)',
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
+                gap: 4,
+              }}
+            >
+              {deepDives.map((a, idx) => (
+                <a
+                  key={a.slug}
+                  href={`#deep-dive-${a.slug}`}
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 4,
+                    padding: '12px 14px',
+                    textDecoration: 'none',
+                    borderRadius: 6,
+                    transition: 'background 0.15s',
+                    color: 'var(--ink)',
+                  }}
+                  className="blog-card"
+                >
+                  <span
+                    style={{
+                      fontFamily: 'var(--mono)',
+                      fontSize: 10,
+                      letterSpacing: '0.14em',
+                      textTransform: 'uppercase',
+                      color: TYPE_COLOR[a.type],
+                      fontWeight: 600,
+                    }}
+                  >
+                    {String(idx + 1).padStart(2, '0')} · {a.date}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: 'var(--serif)',
+                      fontSize: 15,
+                      lineHeight: 1.25,
+                      fontWeight: 400,
+                      letterSpacing: '-0.012em',
+                      color: 'var(--ink)',
+                    }}
+                  >
+                    {a.eventTitle}
+                  </span>
+                </a>
+              ))}
+            </nav>
+          </div>
+
+          {/* Inline deep-dive articles */}
+          {deepDives.map((a, idx) => (
+            <article
+              key={a.slug}
+              id={`deep-dive-${a.slug}`}
+              style={{
+                padding: '88px 0 88px',
+                borderBottom:
+                  idx === deepDives.length - 1 ? '1px solid var(--rule)' : 'none',
+                scrollMarginTop: 88,
+              }}
+            >
+              <div className="shell" style={{ maxWidth: 760 }}>
+                {/* Per-event header */}
+                <div style={{ marginBottom: 36 }}>
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'baseline',
+                      gap: 20,
+                      marginBottom: 18,
+                      flexWrap: 'wrap',
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontFamily: 'var(--serif)',
+                        fontStyle: 'italic',
+                        fontSize: 44,
+                        lineHeight: 1,
+                        color: 'var(--ink-faint)',
+                        letterSpacing: '-0.02em',
+                      }}
+                    >
+                      04 / {String(idx + 1).padStart(2, '0')}
+                    </span>
+                    <span
+                      style={{
+                        fontFamily: 'var(--mono)',
+                        fontSize: 11,
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.14em',
+                        color: 'var(--ink-faint)',
+                      }}
+                    >
+                      {a.date}
+                    </span>
+                  </div>
+                  <div style={{ display: 'flex', gap: 8, marginBottom: 24, flexWrap: 'wrap' }}>
+                    <span
+                      className="tag"
+                      style={{
+                        color: TYPE_COLOR[a.type],
+                        borderColor: 'transparent',
+                        background: 'var(--bg-card)',
+                      }}
+                    >
+                      {TYPE_LABEL[a.type]}
+                    </span>
+                    {a.gtmTag && <span className="tag">{a.gtmTag}</span>}
+                  </div>
+                  <h2
+                    style={{
+                      fontFamily: 'var(--serif)',
+                      fontSize: 'clamp(34px, 4.4vw, 52px)',
+                      lineHeight: 1.02,
+                      letterSpacing: '-0.028em',
+                      fontWeight: 400,
+                      margin: '0 0 22px',
+                    }}
+                  >
+                    {a.title}
+                  </h2>
+                  <p
+                    style={{
+                      fontSize: 19,
+                      color: 'var(--ink-dim)',
+                      lineHeight: 1.5,
+                      margin: 0,
+                      maxWidth: 720,
+                      fontFamily: 'var(--serif)',
+                      fontStyle: 'italic',
+                      letterSpacing: '-0.005em',
+                    }}
+                  >
+                    {a.description}
+                  </p>
+                  {a.externalUrl && (
+                    <a
+                      href={a.externalUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: 10,
+                        marginTop: 28,
+                        fontFamily: 'var(--mono)',
+                        fontSize: 11.5,
+                        color: 'var(--accent)',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.1em',
+                        textDecoration: 'none',
+                        padding: '8px 16px',
+                        border: '1px solid var(--accent-border)',
+                        borderRadius: 999,
+                        background: 'var(--accent-soft)',
+                        fontWeight: 600,
+                      }}
+                    >
+                      Original source ↗
+                    </a>
+                  )}
+                </div>
+
+                {/* MDX body */}
+                <MDXRemote source={a.content} components={mdxComponents} />
+
+                {/* Inline navigation: prev / next */}
+                <div
+                  style={{
+                    marginTop: 56,
+                    paddingTop: 24,
+                    borderTop: '1px solid var(--rule)',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    gap: 16,
+                    flexWrap: 'wrap',
+                  }}
+                >
+                  {idx > 0 ? (
+                    <a
+                      href={`#deep-dive-${deepDives[idx - 1].slug}`}
+                      style={{
+                        textDecoration: 'none',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: 2,
+                        maxWidth: '46%',
+                      }}
+                    >
+                      <span
+                        style={{
+                          fontFamily: 'var(--mono)',
+                          fontSize: 10,
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.14em',
+                          color: 'var(--ink-faint)',
+                        }}
+                      >
+                        ← Previous
+                      </span>
+                      <span
+                        style={{
+                          fontFamily: 'var(--serif)',
+                          fontSize: 16,
+                          color: 'var(--ink)',
+                          letterSpacing: '-0.012em',
+                        }}
+                      >
+                        {deepDives[idx - 1].eventTitle}
+                      </span>
+                    </a>
+                  ) : (
+                    <span />
+                  )}
+                  {idx < deepDives.length - 1 ? (
+                    <a
+                      href={`#deep-dive-${deepDives[idx + 1].slug}`}
+                      style={{
+                        textDecoration: 'none',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: 2,
+                        textAlign: 'right',
+                        maxWidth: '46%',
+                      }}
+                    >
+                      <span
+                        style={{
+                          fontFamily: 'var(--mono)',
+                          fontSize: 10,
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.14em',
+                          color: 'var(--ink-faint)',
+                        }}
+                      >
+                        Next →
+                      </span>
+                      <span
+                        style={{
+                          fontFamily: 'var(--serif)',
+                          fontSize: 16,
+                          color: 'var(--ink)',
+                          letterSpacing: '-0.012em',
+                        }}
+                      >
+                        {deepDives[idx + 1].eventTitle}
+                      </span>
+                    </a>
+                  ) : (
+                    <a
+                      href="#top"
+                      style={{
+                        textDecoration: 'none',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: 2,
+                        textAlign: 'right',
+                      }}
+                    >
+                      <span
+                        style={{
+                          fontFamily: 'var(--mono)',
+                          fontSize: 10,
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.14em',
+                          color: 'var(--ink-faint)',
+                        }}
+                      >
+                        ↑ Back to top
+                      </span>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </article>
+          ))}
+        </section>
+      )}
+
       {/* Footer */}
-      <footer style={{ borderTop: '1px solid var(--rule)', padding: '32px 0', background: 'var(--bg-card)' }}>
-        <div className="shell" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <footer
+        style={{
+          borderTop: '1px solid var(--rule)',
+          padding: '32px 0',
+          background: 'var(--bg-card)',
+        }}
+      >
+        <div
+          className="shell"
+          style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+        >
           <Link href="/" className="detail-back" style={{ marginBottom: 0 }}>
             ← GrowthHunt
           </Link>

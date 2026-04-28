@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useMemo, useRef } from 'react'
-import Link from 'next/link'
 import { line, curveMonotoneX } from 'd3-shape'
 import type { Timeline, TimelineEvent, DataPoint, EventType } from '@/lib/growth-story'
 
@@ -620,13 +619,13 @@ export default function CaseStudyTimeline({ timeline, company }: Props) {
 
           if (hasArticle) {
             return (
-              <Link
+              <a
                 key={`evt-${e.date}-${e.title}`}
-                href={`/growth-story/${company}/${e.articleSlug}`}
+                href={`#deep-dive-${e.articleSlug}`}
                 style={{ cursor: 'pointer' }}
               >
                 <g {...handlers}>{markerInner}</g>
-              </Link>
+              </a>
             )
           }
           if (hasExternal) {
