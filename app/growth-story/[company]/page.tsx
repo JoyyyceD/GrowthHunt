@@ -20,7 +20,10 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return getAllCompanies().map(company => ({ company }))
+  // 'cursor' has its own static routes at /growth-story/cursor and /growth-story/cursor/en
+  return getAllCompanies()
+    .filter(company => company !== 'cursor')
+    .map(company => ({ company }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

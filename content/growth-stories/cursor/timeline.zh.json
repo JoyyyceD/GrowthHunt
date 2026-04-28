@@ -1,0 +1,378 @@
+{
+  "company": {
+    "slug": "cursor",
+    "name": "Cursor",
+    "legalName": "Anysphere",
+    "tagline": "24 个月，从 VS Code 分支到 293 亿美元估值",
+    "summary": "Cursor 不是一夜爆红的产品。它是一条两段式曲线：22 个月的缓慢蓄力，然后是 13 个月的垂直增长。每一次估值跳升都踩在一个叙事节点上——而这些叙事节点，都不是运气，而是创始人长达 18 个月把自己当作媒体资产来经营的系统性结果。",
+    "founded": "2022-01",
+    "founders": [
+      "Michael Truell",
+      "Sualeh Asif",
+      "Arvid Lunnemark",
+      "Aman Sanger"
+    ],
+    "seriesNumber": 1
+  },
+  "phases": [
+    {
+      "start": "2022-01",
+      "end": "2023-03",
+      "name": "潜伏期",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2023-03",
+      "end": "2024-08",
+      "name": "产品打磨",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2024-08",
+      "end": "2024-12",
+      "name": "拐点前",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2024-12",
+      "end": "2026-06",
+      "name": "超高速增长",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2022-01-15",
+      "title": "Anysphere 成立",
+      "type": "product",
+      "description": "四位 MIT 本科生（Truell / Sanger / Asif / Lunnemark）注册成立 Anysphere。初始方向：CAD 软件的 AI 自动补全。"
+    },
+    {
+      "date": "2022-04-01",
+      "title": "天使轮 40 万美元",
+      "type": "funding",
+      "description": "启动开发的最早期融资。"
+    },
+    {
+      "date": "2022-07-01",
+      "title": "从 CAD 转向编程",
+      "type": "product",
+      "gtmTag": "结构性差异化",
+      "description": "意识到 CAD 市场停滞，且 GitHub Copilot 的「插件依附 VS Code」架构存在结构性局限。决定 fork 整个 VS Code，而非写一个插件。"
+    },
+    {
+      "date": "2023-03-15",
+      "title": "Cursor v0 发布",
+      "type": "product",
+      "gtmTag": "分叉，而非插件",
+      "description": "以 VS Code fork 的形式公开发布 Cursor——一个 AI 原生编辑器，而非依附于另一个 IDE 的插件。",
+      "articleSlug": "2023-03-public-launch"
+    },
+    {
+      "date": "2023-10-15",
+      "title": "种子轮 800 万美元",
+      "type": "funding",
+      "description": "由 OpenAI Startup Fund 领投。天使投资人包括 Nat Friedman（前 GitHub CEO）和 Arash Ferdowsi（Dropbox 联合创始人）。",
+      "externalUrl": "https://research.contrary.com/company/cursor"
+    },
+    {
+      "date": "2024-06-01",
+      "title": "Cursor Tab（Copilot++）",
+      "type": "product",
+      "description": "第一个明显优于 GitHub Copilot 的功能，成为用户每日核心体验的所在。"
+    },
+    {
+      "date": "2024-08-09",
+      "title": "A 轮 6000 万 / 估值 4 亿",
+      "type": "funding",
+      "gtmTag": "叙事飞轮启动",
+      "description": "由 a16z 和 Thrive Capital 联合领投。TechCrunch 独家——Cursor 首次采用「独家泄露」格式，此后成为每轮融资的固定模板。",
+      "externalUrl": "https://techcrunch.com/2024/08/09/anysphere-a-github-copilot-rival-has-raised-60m-series-a-at-400m-valuation-from-a16z-thrive-sources-say/",
+      "articleSlug": "2024-08-series-a"
+    },
+    {
+      "date": "2024-08-19",
+      "title": "8 岁孩子用 Cursor 写代码",
+      "type": "media",
+      "gtmTag": "受众边界突破",
+      "description": "Cloudflare VP Ricky Robinett 发布其 8 岁女儿 45 分钟搭出聊天机器人的视频。约 270 万次累计浏览。被 Tobi Lutke、Karpathy、Lenny Rachitsky 放大转发。",
+      "externalUrl": "https://x.com/rickyrobinett/status/1825581674870055189",
+      "articleSlug": "2024-08-eight-year-old"
+    },
+    {
+      "date": "2024-10-06",
+      "title": "Lex Fridman #447",
+      "type": "media",
+      "gtmTag": "创始人即 IP",
+      "description": "四位创始人全员出场，时长 2 小时 38 分钟。从「开发者圈宠儿」到「被投资人和非技术受众认可的严肃 AI 公司」的跨越时刻。",
+      "externalUrl": "https://www.youtube.com/watch?v=oFfVt3S51T4",
+      "articleSlug": "2024-10-lex-fridman"
+    },
+    {
+      "date": "2024-08-29",
+      "title": "Composer 默认开启（Cursor 0.40）",
+      "type": "product",
+      "description": "多文件编辑——Composer 功能随 Cursor 0.40 默认开启。Cursor 从「更好的自动补全」进化为「能跨整个代码库编辑的 AI」。（注：「Composer 模型」这个名字后来在 2025 年 10 月被复用，指 Cursor 自研的代码模型。）"
+    },
+    {
+      "date": "2024-11-12",
+      "title": "收购 Supermaven",
+      "type": "acquisition",
+      "gtmTag": "收购竞争对手",
+      "description": "收购 Jacob Jackson（前 Tabnine 创始人 + 前 OpenAI 实习生）及其团队。一笔交易 = 技术 + 人才 + 竞争者清除 + 「整合者」叙事。",
+      "externalUrl": "https://techcrunch.com/2024/11/12/anysphere-acquires-supermaven-to-beef-up-cursor/",
+      "articleSlug": "2024-11-supermaven"
+    },
+    {
+      "date": "2024-12-15",
+      "title": "B 轮 1.05 亿 / 估值 26 亿",
+      "type": "funding",
+      "description": "由 Thrive Capital 领投。估值在四个月内跳涨 6.5 倍——几乎完全来自叙事重定价，而非营收。"
+    },
+    {
+      "date": "2025-01-15",
+      "title": "ARR 达到 1 亿美元",
+      "type": "media",
+      "description": "距公开发布 22 个月。有史以来达到这一里程碑速度最快的 SaaS 公司。"
+    },
+    {
+      "date": "2025-02-02",
+      "title": "Karpathy「vibe coding」帖子",
+      "type": "media",
+      "gtmTag": "踩上 KOL 的浪头",
+      "description": "超 450 万次浏览。Karpathy 点名 Cursor Composer + Sonnet 为例子。Cursor 成为「vibe coding」的默认代名词——后被柯林斯词典收录。",
+      "externalUrl": "https://x.com/karpathy/status/1886192184808149383",
+      "articleSlug": "2025-02-karpathy-vibe-coding"
+    },
+    {
+      "date": "2025-04-15",
+      "title": "日活 100 万 · 企业客户 1.4 万",
+      "type": "media",
+      "description": "日活突破 100 万。Fast Company 全球 50 家最具创新力公司，排名第 26 位。"
+    },
+    {
+      "date": "2025-06-05",
+      "title": "C 轮 9 亿 / 估值 99 亿",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "由 Thrive 领投，Accel、a16z、DST 跟投。同步披露 5 亿美元 ARR——融资公告 + 营收里程碑捆绑发布，获得复合覆盖。",
+      "externalUrl": "https://techcrunch.com/2025/06/05/cursors-anysphere-nabs-9-9b-valuation-soars-past-500m-arr/"
+    },
+    {
+      "date": "2025-07-15",
+      "title": "Pro 定价风波",
+      "type": "media",
+      "description": "Pro 版使用量上限引发社区反弹。整个弧线中唯一一次明显的公关损伤——被随后的增长完全吸收。"
+    },
+    {
+      "date": "2025-10-29",
+      "title": "Cursor 2.0 + 自研 Composer 模型",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "多 Agent 架构，最多 8 个并行，速度提升 4 倍。从「应用层」到「应用层 + 自研模型」的转变，支撑了下一个估值台阶。",
+      "externalUrl": "https://cursor.com/blog/2-0",
+      "articleSlug": "2025-10-cursor-2"
+    },
+    {
+      "date": "2025-11-13",
+      "title": "D 轮 23 亿 / 估值 293 亿",
+      "type": "funding",
+      "description": "由 Accel 和 Coatue 联合领投。Google 和 Nvidia 战略参与。",
+      "externalUrl": "https://www.cnbc.com/2025/11/13/cursor-ai-startup-funding-round-valuation.html"
+    },
+    {
+      "date": "2025-11-13",
+      "title": "ARR 达到 10 亿美元",
+      "type": "media",
+      "description": "有史以来达到 10 亿 ARR 速度最快的 SaaS 公司——从 100 万到 10 亿，历时 24 个月。与 D 轮公告同步披露，经典的捆绑里程碑操作。"
+    },
+    {
+      "date": "2026-02-15",
+      "title": "ARR 达到 20 亿美元",
+      "type": "media",
+      "description": "翻倍节奏持续。2025–2026 年间，ARR 大约每两个月翻一番。"
+    },
+    {
+      "date": "2026-04-21",
+      "title": "SpaceX 600 亿美元期权交易",
+      "type": "media",
+      "description": "SpaceX 宣布持有以 600 亿美元收购 Cursor 的期权（年底前可执行），或支付 100 亿美元维持持续合作。（马斯克已于 2026 年 2 月将 SpaceX 与 xAI 合并；公告方及合同主体为 SpaceX。）",
+      "externalUrl": "https://techcrunch.com/2026/04/21/spacex-is-working-with-cursor-and-has-an-option-to-buy-the-startup-for-60-billion/"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2023-12-01",
+      "value": 1000000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-04-01",
+      "value": 4000000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-10-01",
+      "value": 48000000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-01-15",
+      "value": 100000000,
+      "source": "Cursor / Sacra",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-03-01",
+      "value": 200000000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-06-05",
+      "value": 500000000,
+      "source": "Cursor / TechCrunch",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-11-13",
+      "value": 1000000000,
+      "source": "SaaStr",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-02-15",
+      "value": 2000000000,
+      "source": "Let's Data Science",
+      "confidence": "media"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2024-08-09",
+      "value": 400000000,
+      "round": "A 轮",
+      "source": "TechCrunch",
+      "confidence": "official"
+    },
+    {
+      "date": "2024-12-15",
+      "value": 2600000000,
+      "round": "B 轮",
+      "source": "Crunchbase",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-06-05",
+      "value": 9900000000,
+      "round": "C 轮",
+      "source": "TechCrunch",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-11-13",
+      "value": 29300000000,
+      "round": "D 轮",
+      "source": "CNBC",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-04-21",
+      "value": 55000000000,
+      "round": "SpaceX 期权",
+      "source": "Fortune",
+      "confidence": "media"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X（推特）",
+      "score": 5,
+      "bestStage": "全阶段——承重结构",
+      "effort": "全程在线",
+      "role": "开发者圈子注意力的主动脉",
+      "description": "开发者社区真正活跃的地方。Cursor 的创始人们从 2022 年到 2026 年保持着账号的持续活跃和个人风格——这是整条增长弧线不可或缺的前提。",
+      "catalyst": "Karpathy 的「vibe coding」帖子（2025 年 2 月 6 日）——超 450 万次浏览。Karpathy 具名点出了 Cursor Composer + Sonnet。Cursor 成为这个新范式的默认代名词。",
+      "catalystUrl": "https://x.com/karpathy/status/1886192184808149383",
+      "accountUrl": "https://x.com/cursor_ai",
+      "accountLabel": "@cursor_ai on X",
+      "whenItWorks": "当创始人能用真实声音发内容时——产品更新、小演示、技术观点——持续 18 个月以上，哪怕还没有人在看",
+      "whenItDoesnt": "把 X 当企业扩音器用的时候。没有什么比新闻稿语气更能快速摧毁在开发者圈里的可信度"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 5,
+      "bestStage": "拐点前",
+      "effort": "阶段性发力，单期投入极高",
+      "role": "破圈催化剂",
+      "description": "开发者圈子触达不到的地方。长篇视频倒逼深度，能把开发者圈子的可信度转化为投资人和高管的可信度——恰恰是决定 B 轮以上估值的那些受众。",
+      "catalyst": "Lex Fridman #447（2024 年 10 月 6 日）——四位创始人全员出场，时长 2 小时 38 分钟。接下来四个月，B 轮估值跳涨了 6.5 倍。",
+      "catalystUrl": "https://www.youtube.com/watch?v=oFfVt3S51T4",
+      "accountUrl": "https://www.youtube.com/@cursor",
+      "accountLabel": "Cursor on YouTube",
+      "whenItWorks": "当创始人有足够的技术深度，能撑过 2.5 小时的专家级追问，且产品有值得讨论的架构决策",
+      "whenItDoesnt": "不要带着一个单薄的产品去上长篇播客，形式会把所有的空洞暴露出来"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 4,
+      "bestStage": "潜伏期 + 产品打磨期",
+      "effort": "随产品发布节点性发力",
+      "role": "技术可信度验证器",
+      "description": "HN 的受众骗不了。Cursor v0、Cursor Tab、Composer 和 2.0 在 HN 上相继登上首页，起到了「严肃的开发者在关注这个」的证明作用——对投资人和竞争对手工程师同样可见。",
+      "catalyst": "Cursor 2.0 发布（2025 年 10 月 29 日）——首页，数百条评论。两周后：293 亿美元 D 轮。HN 的信号在估值对话之前就已经发出。",
+      "catalystUrl": "https://news.ycombinator.com/item?id=45748727",
+      "accountUrl": "https://hn.algolia.com/?q=cursor.com",
+      "accountLabel": "Search HN for Cursor",
+      "whenItWorks": "当你的发布有真正的技术新意——多文件编辑、自研模型、agentic 工作流。HN 社区奖励有实质的内容",
+      "whenItDoesnt": "不要发布增量更新。HN 会惩罚「我们上了一个小功能」这种定格方式"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 3,
+      "bestStage": "超高速增长期 + 持续",
+      "effort": "社区驱动，公司几乎不需要介入",
+      "role": "用户留存层",
+      "description": "与其说是获客渠道，不如说是现有用户留存的地方。r/cursor 和 r/programming 的帖子，为谷歌搜索评测的新用户积累了「这是严肃开发者在用的东西」的社会证明。",
+      "catalyst": "没有单一时刻，2024–2025 年间缓慢涌现的社区。等 Cursor 日活突破 100 万时，r/cursor 已经自然成长为事实上的支持和倡导中枢。",
+      "catalystUrl": "https://www.reddit.com/r/cursor/",
+      "accountUrl": "https://www.reddit.com/r/cursor/",
+      "accountLabel": "Visit r/cursor",
+      "whenItWorks": "当你有一个愿意主动布道的临界质量用户群时，不要人为造势，让它自然涌现",
+      "whenItDoesnt": "如果你尝试刷水军，社区几天内就会察觉。Reddit 完全依赖社区信任"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 2,
+      "bestStage": "超高速增长期（仅企业拓展阶段）",
+      "effort": "融资公告 + 招聘帖",
+      "role": "企业客户信用核查",
+      "description": "在企业销售动作出现之前基本沉默。被企业采购方用来核查「这家公司是真实存在的吗」，然后才会安排采购通话。融资公告的放大器——永远是放大器，不是信源。",
+      "catalyst": "C / D 轮公告被高管和 VC 二次转发。每个周期都提升了企业买家眼中的合法性上限。",
+      "accountUrl": "https://www.linkedin.com/company/anysphere-inc/",
+      "accountLabel": "Anysphere on LinkedIn",
+      "whenItWorks": "当你已经有一定知名度，需要在采购委员会层面确认合法性的时候",
+      "whenItDoesnt": "作为开发者工具 PLG 增长的获客渠道——接近零投资回报。不要在这上面浪费精力"
+    },
+    {
+      "slug": "instagram",
+      "name": "Instagram",
+      "score": 1,
+      "bestStage": "不适用",
+      "effort": "零——这是正确答案",
+      "role": "反面教材",
+      "description": "Cursor 从未建立 Instagram 账号。受众与产品不匹配：IG 用户不是在选 AI 开发工具，开发工具内容也无法在 IG 的视觉优先格式里发挥作用。",
+      "catalyst": "作为反例很有价值——证明了「所有平台都要有」是错的。Cursor 在这里的克制，是整套打法中纪律性的一部分。",
+      "whenItWorks": "面向消费者或有强视觉演示的创作者工具。Lovable、Cluely 或许可以。Cursor 不行",
+      "whenItDoesnt": "B2B 开发者工具。不去做，不要有心理负担"
+    }
+  ]
+}

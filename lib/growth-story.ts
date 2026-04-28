@@ -92,20 +92,53 @@ export interface EventArticle {
 
 export function getAllCompanies(): string[] {
   if (!fs.existsSync(STORIES_DIR)) return []
-  return fs
+  const slugs = fs
     .readdirSync(STORIES_DIR, { withFileTypes: true })
     .filter(d => d.isDirectory())
     .map(d => d.name)
+
+  // Sort by company.seriesNumber from each timeline.json (1, 2, 3, ...).
+  // Falls back to a large number for any company missing seriesNumber so it
+  // sorts to the end; ties resolve alphabetically for stability.
+  const slugsWithOrder = slugs.map(slug => {
+    let seriesNumber = Number.MAX_SAFE_INTEGER
+    try {
+      const t = JSON.parse(
+        fs.readFileSync(path.join(STORIES_DIR, slug, 'timeline.json'), 'utf-8'),
+      ) as Partial<Timeline>
+      if (typeof t.company?.seriesNumber === 'number') {
+        seriesNumber = t.company.seriesNumber
+      }
+    } catch {
+      // ignore — fall through to MAX_SAFE_INTEGER
+    }
+    return { slug, seriesNumber }
+  })
+
+  slugsWithOrder.sort((a, b) => {
+    if (a.seriesNumber !== b.seriesNumber) return a.seriesNumber - b.seriesNumber
+    return a.slug.localeCompare(b.slug)
+  })
+
+  return slugsWithOrder.map(x => x.slug)
 }
 
-export function getStory(company: string): GrowthStoryMain | null {
-  const indexPath = path.join(STORIES_DIR, company, 'index.mdx')
-  const timelinePath = path.join(STORIES_DIR, company, 'timeline.json')
-  if (!fs.existsSync(indexPath) || !fs.existsSync(timelinePath)) return null
+export function getStory(company: string, locale: 'en' | 'zh' = 'en'): GrowthStoryMain | null {
+  const indexFile = locale === 'zh' ? 'index.zh.mdx' : 'index.mdx'
+  const timelineFile = locale === 'zh' ? 'timeline.zh.json' : 'timeline.json'
 
-  const raw = fs.readFileSync(indexPath, 'utf-8')
+  const indexPath = path.join(STORIES_DIR, company, indexFile)
+  const timelinePath = path.join(STORIES_DIR, company, timelineFile)
+
+  // Fall back to English files if locale-specific ones don't exist
+  const resolvedIndex = fs.existsSync(indexPath) ? indexPath : path.join(STORIES_DIR, company, 'index.mdx')
+  const resolvedTimeline = fs.existsSync(timelinePath) ? timelinePath : path.join(STORIES_DIR, company, 'timeline.json')
+
+  if (!fs.existsSync(resolvedIndex) || !fs.existsSync(resolvedTimeline)) return null
+
+  const raw = fs.readFileSync(resolvedIndex, 'utf-8')
   const { data, content } = matter(raw)
-  const timeline = JSON.parse(fs.readFileSync(timelinePath, 'utf-8')) as Timeline
+  const timeline = JSON.parse(fs.readFileSync(resolvedTimeline, 'utf-8')) as Timeline
 
   return {
     slug: company,
@@ -118,11 +151,18 @@ export function getStory(company: string): GrowthStoryMain | null {
   }
 }
 
-export function getEventArticle(company: string, slug: string): EventArticle | null {
-  const filePath = path.join(STORIES_DIR, company, 'events', `${slug}.mdx`)
-  if (!fs.existsSync(filePath)) return null
+export function getEventArticle(company: string, slug: string, locale: 'en' | 'zh' = 'en'): EventArticle | null {
+  const file = locale === 'zh' ? `${slug}.zh.mdx` : `${slug}.mdx`
+  const filePath = path.join(STORIES_DIR, company, 'events', file)
 
-  const raw = fs.readFileSync(filePath, 'utf-8')
+  // Fall back to English if locale-specific file doesn't exist
+  const resolved = fs.existsSync(filePath)
+    ? filePath
+    : path.join(STORIES_DIR, company, 'events', `${slug}.mdx`)
+
+  if (!fs.existsSync(resolved)) return null
+
+  const raw = fs.readFileSync(resolved, 'utf-8')
   const { data, content } = matter(raw)
 
   return {
