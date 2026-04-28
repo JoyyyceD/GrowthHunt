@@ -72,7 +72,7 @@ export function TopNav({ variant = 'page' }: Props) {
       <div className="shell row">
         <Link href="/" className="brand" style={{ textDecoration: 'none' }}>
           <div className="mark" />
-          GrowthHunt
+          GrowthHunt.ai
         </Link>
         <ul>
           <li>
