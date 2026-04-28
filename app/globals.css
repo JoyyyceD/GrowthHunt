@@ -685,3 +685,9 @@ footer.bottom .copyright {
 
 .blog-card { background: var(--bg); transition: background 0.15s; }
 .blog-card:hover { background: var(--bg-elev); }
+
+/* Platform card interactive elements */
+.catalyst-link { background: transparent; border-radius: 0 6px 6px 0; }
+.catalyst-link:hover { background: var(--accent-soft); }
+.platform-account-link { transition: background 0.15s, color 0.15s; }
+.platform-account-link:hover { background: var(--accent-soft); color: var(--accent); }

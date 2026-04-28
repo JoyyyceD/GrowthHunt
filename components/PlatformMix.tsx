@@ -48,11 +48,10 @@ export default function PlatformMix({ platforms }: Props) {
           key={p.slug}
           style={{
             background: 'var(--bg)',
-            padding: '32px 32px 28px',
+            padding: '32px 32px 0',
             display: 'flex',
             flexDirection: 'column',
             gap: 16,
-            minHeight: 460,
           }}
         >
           {/* Header: name + score */}
@@ -137,45 +136,94 @@ export default function PlatformMix({ platforms }: Props) {
             {p.description}
           </p>
 
-          {/* Catalyst */}
-          <div
-            style={{
-              borderLeft: '2px solid var(--accent)',
-              paddingLeft: 14,
-              marginTop: 4,
-            }}
-          >
+          {/* Catalyst (clickable if URL provided) */}
+          {p.catalystUrl ? (
+            <a
+              href={p.catalystUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                borderLeft: '2px solid var(--accent)',
+                paddingLeft: 14,
+                marginTop: 4,
+                textDecoration: 'none',
+                display: 'block',
+                transition: 'background 0.15s, padding 0.15s',
+                marginRight: -8,
+                paddingRight: 8,
+                paddingTop: 4,
+                paddingBottom: 4,
+              }}
+              className="catalyst-link"
+            >
+              <div
+                style={{
+                  fontFamily: 'var(--mono)',
+                  fontSize: 10,
+                  letterSpacing: '0.14em',
+                  textTransform: 'uppercase',
+                  color: 'var(--accent)',
+                  marginBottom: 6,
+                  fontWeight: 600,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 6,
+                }}
+              >
+                Catalyst moment <span style={{ opacity: 0.7 }}>↗</span>
+              </div>
+              <p
+                style={{
+                  fontSize: 13.5,
+                  lineHeight: 1.55,
+                  color: 'var(--ink)',
+                  margin: 0,
+                  fontFamily: 'var(--serif)',
+                  fontStyle: 'italic',
+                }}
+              >
+                {p.catalyst}
+              </p>
+            </a>
+          ) : (
             <div
               style={{
-                fontFamily: 'var(--mono)',
-                fontSize: 10,
-                letterSpacing: '0.14em',
-                textTransform: 'uppercase',
-                color: 'var(--accent)',
-                marginBottom: 6,
-                fontWeight: 600,
+                borderLeft: '2px solid var(--accent)',
+                paddingLeft: 14,
+                marginTop: 4,
               }}
             >
-              Catalyst moment
+              <div
+                style={{
+                  fontFamily: 'var(--mono)',
+                  fontSize: 10,
+                  letterSpacing: '0.14em',
+                  textTransform: 'uppercase',
+                  color: 'var(--accent)',
+                  marginBottom: 6,
+                  fontWeight: 600,
+                }}
+              >
+                Catalyst moment
+              </div>
+              <p
+                style={{
+                  fontSize: 13.5,
+                  lineHeight: 1.55,
+                  color: 'var(--ink)',
+                  margin: 0,
+                  fontFamily: 'var(--serif)',
+                  fontStyle: 'italic',
+                }}
+              >
+                {p.catalyst}
+              </p>
             </div>
-            <p
-              style={{
-                fontSize: 13.5,
-                lineHeight: 1.55,
-                color: 'var(--ink)',
-                margin: 0,
-                fontFamily: 'var(--serif)',
-                fontStyle: 'italic',
-              }}
-            >
-              {p.catalyst}
-            </p>
-          </div>
+          )}
 
           {/* When it works / doesn't work */}
           <div
             style={{
-              marginTop: 'auto',
               paddingTop: 16,
               borderTop: '1px solid var(--rule)',
               display: 'grid',
@@ -213,13 +261,65 @@ export default function PlatformMix({ platforms }: Props) {
                   fontWeight: 700,
                 }}
               >
-                ✗ Don't expect
+                ✗ Don&apos;t expect
               </div>
               <p style={{ fontSize: 12.5, lineHeight: 1.5, color: 'var(--ink-dim)', margin: 0 }}>
                 {p.whenItDoesnt}
               </p>
             </div>
           </div>
+
+          {/* Account link footer */}
+          {p.accountUrl ? (
+            <a
+              href={p.accountUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                marginTop: 'auto',
+                marginLeft: -32,
+                marginRight: -32,
+                marginBottom: 0,
+                padding: '16px 32px',
+                borderTop: '1px solid var(--rule)',
+                background: 'var(--bg-card)',
+                fontFamily: 'var(--mono)',
+                fontSize: 11,
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                color: 'var(--ink)',
+                fontWeight: 600,
+                textDecoration: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                transition: 'background 0.15s',
+              }}
+              className="platform-account-link"
+            >
+              <span>{p.accountLabel ?? `Visit ${p.name}`}</span>
+              <span style={{ color: 'var(--accent)' }}>↗</span>
+            </a>
+          ) : (
+            <div
+              style={{
+                marginTop: 'auto',
+                marginLeft: -32,
+                marginRight: -32,
+                padding: '16px 32px',
+                borderTop: '1px solid var(--rule)',
+                background: 'var(--bg-card)',
+                fontFamily: 'var(--mono)',
+                fontSize: 10.5,
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                color: 'var(--ink-faint)',
+                fontStyle: 'italic',
+              }}
+            >
+              No presence — by design
+            </div>
+          )}
         </article>
       ))}
     </div>

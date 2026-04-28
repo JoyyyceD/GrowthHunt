@@ -50,6 +50,9 @@ export interface Platform {
   role: string
   description: string
   catalyst: string
+  catalystUrl?: string
+  accountUrl?: string
+  accountLabel?: string
   whenItWorks: string
   whenItDoesnt: string
 }

@@ -200,6 +200,9 @@
       "role": "The bloodstream of dev-twitter",
       "description": "Where the dev community's attention actually lives. Cursor's founders kept their accounts active and in-character from 2022 through 2026 — a non-negotiable for the entire arc.",
       "catalyst": "Karpathy's 'vibe coding' tweet (Feb 6, 2025) — 4.5M views. Karpathy named Cursor Composer + Sonnet specifically. Cursor became the de facto referent for the new paradigm.",
+      "catalystUrl": "https://x.com/karpathy/status/1886192184808149383",
+      "accountUrl": "https://x.com/cursor_ai",
+      "accountLabel": "@cursor_ai on X",
       "whenItWorks": "When founders can post in real voice — product updates, mini-demos, technical takes — for 18+ months before anyone is watching",
       "whenItDoesnt": "If the team treats X as a corporate megaphone. Nothing kills dev-twitter credibility faster than press-release tone"
     },
@@ -212,6 +215,9 @@
       "role": "The crossover catalyst",
       "description": "Where dev-twitter doesn't reach. Long-form video forces depth, which converts dev credibility into investor and exec credibility — the exact audiences who set Series B+ valuations.",
       "catalyst": "Lex Fridman #447 (Oct 6, 2024) — 2 hours 38 minutes with all four founders. Series B valuation 6.5×'d in the four months that followed.",
+      "catalystUrl": "https://www.youtube.com/watch?v=oFfVt3S51T4",
+      "accountUrl": "https://www.youtube.com/@cursor",
+      "accountLabel": "Cursor on YouTube",
       "whenItWorks": "When founders have technical depth that survives 2.5 hours of expert questioning, AND the product has architectural decisions worth talking about",
       "whenItDoesnt": "Don't go on long-form podcasts to talk about a thin product. The format will exposes the gaps"
     },
@@ -224,6 +230,9 @@
       "role": "Technical credibility validator",
       "description": "HN's audience can't be fooled by marketing. Front-page placement on Cursor v0, Cursor Tab, Composer, and 2.0 functioned as 'serious devs are paying attention' proof — visible to investors and competing engineers alike.",
       "catalyst": "Cursor 2.0 launch (Oct 29, 2025) — front page, hundreds of comments. Two weeks later: $29.3B Series D. The HN signal was upstream of the valuation conversation.",
+      "catalystUrl": "https://news.ycombinator.com/item?id=45748727",
+      "accountUrl": "https://hn.algolia.com/?q=cursor.com",
+      "accountLabel": "Search HN for Cursor",
       "whenItWorks": "When your launch has genuine technical novelty — multi-file editing, in-house model, agentic flows. The HN crowd rewards substance",
       "whenItDoesnt": "Don't post incremental updates. HN punishes 'we shipped a small feature' framing"
     },
@@ -236,6 +245,9 @@
       "role": "The user retention layer",
       "description": "Less an acquisition channel, more the place where existing users stick. r/cursor and r/programming threads compound the 'this is what serious devs are using' social proof for newcomers Googling reviews.",
       "catalyst": "No single moment. Slow-burn community emergence through 2024–2025. By the time Cursor hit 1M DAU, r/cursor existed as the de facto support and advocacy hub.",
+      "catalystUrl": "https://www.reddit.com/r/cursor/",
+      "accountUrl": "https://www.reddit.com/r/cursor/",
+      "accountLabel": "Visit r/cursor",
       "whenItWorks": "When you have a critical-mass user base willing to evangelize. Don't seed; let it emerge",
       "whenItDoesnt": "If you try to astroturf, the community detects it within days. Reddit is 100% community-trust dependent"
     },
@@ -248,6 +260,8 @@
       "role": "Enterprise signal-checking",
       "description": "Mostly inert until the enterprise sales motion exists. Used by enterprise buyers to verify 'is this company real?' before scheduling a procurement call. Funding announcement amplifier — never the source.",
       "catalyst": "Series C / D announcements re-shared by execs and VCs. Each cycle shifted the perceived legitimacy ceiling for enterprise buyers.",
+      "accountUrl": "https://www.linkedin.com/company/anysphere-inc/",
+      "accountLabel": "Anysphere on LinkedIn",
       "whenItWorks": "When you're already known and need to confirm legitimacy at the buying-committee level",
       "whenItDoesnt": "As an acquisition channel for product-led growth in dev tools — near zero ROI. Don't waste effort"
     },
