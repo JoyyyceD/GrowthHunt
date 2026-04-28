@@ -217,7 +217,7 @@ export default async function GrowthStoryPage({ params }: Props) {
             }}
           >
             <span className="dot" />
-            Growth Story · No. 01
+            Growth Story · No. {String(timeline.company.seriesNumber ?? 1).padStart(2, '0')}
           </div>
           <h1
             style={{

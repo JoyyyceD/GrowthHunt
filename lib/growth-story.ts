@@ -39,6 +39,7 @@ export interface CompanyMeta {
   summary: string
   founded: string
   founders: string[]
+  seriesNumber?: number
 }
 
 export interface Platform {

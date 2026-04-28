@@ -6,13 +6,38 @@
     "tagline": "Two product launches, one ruthless pivot, and $200M+ ARR in 11 months",
     "summary": "Genspark inverts the standard SaaS launch pattern. There is no latent period — Day 0 was a $60M pre-revenue seed and a TechCrunch headline, engineered around founder Eric Jing's reputation as 'the father of Xiaoice' and former Baidu VP. The company spent nine months as an AI search engine, then in April 2025 abandoned 5M Sparkpages users and launched Super Agent three weeks behind Manus's viral wave. Nine days later it had $10M ARR — the fastest in AI product history.",
     "founded": "2023-12",
-    "founders": ["Eric Jing", "Kay Zhu", "Wen Sang"]
+    "founders": [
+      "Eric Jing",
+      "Kay Zhu",
+      "Wen Sang"
+    ],
+    "seriesNumber": 3
   },
   "phases": [
-    {"start": "2023-12", "end": "2024-06", "name": "Day 0 PR launch", "color": "#fef3c7"},
-    {"start": "2024-06", "end": "2025-04", "name": "Sparkpages era", "color": "#dbeafe"},
-    {"start": "2025-04", "end": "2025-11", "name": "Super Agent pivot", "color": "#fce7f3"},
-    {"start": "2025-11", "end": "2026-06", "name": "Hypergrowth", "color": "#dcfce7"}
+    {
+      "start": "2023-12",
+      "end": "2024-06",
+      "name": "Day 0 PR launch",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2024-06",
+      "end": "2025-04",
+      "name": "Sparkpages era",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2025-04",
+      "end": "2025-11",
+      "name": "Super Agent pivot",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2025-11",
+      "end": "2026-06",
+      "name": "Hypergrowth",
+      "color": "#dcfce7"
+    }
   ],
   "events": [
     {
@@ -195,20 +220,85 @@
     }
   ],
   "arr": [
-    {"date": "2025-04-11", "value": 10000000, "source": "AISecret", "confidence": "media"},
-    {"date": "2025-05-02", "value": 22000000, "source": "VentureBeat", "confidence": "media"},
-    {"date": "2025-05-17", "value": 36000000, "source": "AIBase / Wen Sang", "confidence": "official"},
-    {"date": "2025-09-01", "value": 50000000, "source": "Microsoft Source Asia", "confidence": "official"},
-    {"date": "2025-12-15", "value": 85000000, "source": "Sacra estimate", "confidence": "estimate"},
-    {"date": "2026-01-28", "value": 100000000, "source": "BusinessWire", "confidence": "official"},
-    {"date": "2026-04-04", "value": 200000000, "source": "Hoodline / company", "confidence": "official"}
+    {
+      "date": "2025-04-11",
+      "value": 10000000,
+      "source": "AISecret",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-05-02",
+      "value": 22000000,
+      "source": "VentureBeat",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-05-17",
+      "value": 36000000,
+      "source": "AIBase / Wen Sang",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-09-01",
+      "value": 50000000,
+      "source": "Microsoft Source Asia",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-12-15",
+      "value": 85000000,
+      "source": "Sacra estimate",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2026-01-28",
+      "value": 100000000,
+      "source": "BusinessWire",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-04-04",
+      "value": 200000000,
+      "source": "Hoodline / company",
+      "confidence": "official"
+    }
   ],
   "valuation": [
-    {"date": "2024-06-18", "value": 260000000, "round": "Seed", "source": "TechCrunch", "confidence": "official"},
-    {"date": "2025-02-21", "value": 530000000, "round": "Series A", "source": "SiliconANGLE", "confidence": "official"},
-    {"date": "2025-11-20", "value": 1250000000, "round": "Series B", "source": "BusinessWire", "confidence": "official"},
-    {"date": "2026-01-28", "value": 1400000000, "round": "Series B+", "source": "BusinessWire", "confidence": "estimate"},
-    {"date": "2026-04-04", "value": 1600000000, "round": "Series B++", "source": "TheSaaSNews", "confidence": "official"}
+    {
+      "date": "2024-06-18",
+      "value": 260000000,
+      "round": "Seed",
+      "source": "TechCrunch",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-02-21",
+      "value": 530000000,
+      "round": "Series A",
+      "source": "SiliconANGLE",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-11-20",
+      "value": 1250000000,
+      "round": "Series B",
+      "source": "BusinessWire",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-01-28",
+      "value": 1400000000,
+      "round": "Series B+",
+      "source": "BusinessWire",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2026-04-04",
+      "value": 1600000000,
+      "round": "Series B++",
+      "source": "TheSaaSNews",
+      "confidence": "official"
+    }
   ],
   "platforms": [
     {

@@ -6,13 +6,39 @@
     "tagline": "24 months from a VS Code fork to a $29B valuation",
     "summary": "Cursor wasn't an overnight viral hit. It's a two-stage curve: 22 months of slow burn, then 13 months of vertical growth. Every valuation jump rode a narrative moment — and the narrative moments were not luck. They were the systematic byproduct of the founders treating themselves as media properties.",
     "founded": "2022-01",
-    "founders": ["Michael Truell", "Sualeh Asif", "Arvid Lunnemark", "Aman Sanger"]
+    "founders": [
+      "Michael Truell",
+      "Sualeh Asif",
+      "Arvid Lunnemark",
+      "Aman Sanger"
+    ],
+    "seriesNumber": 1
   },
   "phases": [
-    {"start": "2022-01", "end": "2023-03", "name": "Latent", "color": "#fef3c7"},
-    {"start": "2023-03", "end": "2024-08", "name": "Product Polish", "color": "#dbeafe"},
-    {"start": "2024-08", "end": "2024-12", "name": "Pre-inflection", "color": "#fce7f3"},
-    {"start": "2024-12", "end": "2026-06", "name": "Hypergrowth", "color": "#dcfce7"}
+    {
+      "start": "2022-01",
+      "end": "2023-03",
+      "name": "Latent",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2023-03",
+      "end": "2024-08",
+      "name": "Product Polish",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2024-08",
+      "end": "2024-12",
+      "name": "Pre-inflection",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2024-12",
+      "end": "2026-06",
+      "name": "Hypergrowth",
+      "color": "#dcfce7"
+    }
   ],
   "events": [
     {
@@ -174,21 +200,91 @@
     }
   ],
   "arr": [
-    {"date": "2023-12-01", "value": 1000000, "source": "Sacra", "confidence": "media"},
-    {"date": "2024-04-01", "value": 4000000, "source": "Sacra", "confidence": "media"},
-    {"date": "2024-10-01", "value": 48000000, "source": "Sacra", "confidence": "media"},
-    {"date": "2025-01-15", "value": 100000000, "source": "Cursor / Sacra", "confidence": "official"},
-    {"date": "2025-03-01", "value": 200000000, "source": "Sacra", "confidence": "media"},
-    {"date": "2025-06-05", "value": 500000000, "source": "Cursor / TechCrunch", "confidence": "official"},
-    {"date": "2025-11-13", "value": 1000000000, "source": "SaaStr", "confidence": "official"},
-    {"date": "2026-02-15", "value": 2000000000, "source": "Let's Data Science", "confidence": "media"}
+    {
+      "date": "2023-12-01",
+      "value": 1000000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-04-01",
+      "value": 4000000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-10-01",
+      "value": 48000000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-01-15",
+      "value": 100000000,
+      "source": "Cursor / Sacra",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-03-01",
+      "value": 200000000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-06-05",
+      "value": 500000000,
+      "source": "Cursor / TechCrunch",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-11-13",
+      "value": 1000000000,
+      "source": "SaaStr",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-02-15",
+      "value": 2000000000,
+      "source": "Let's Data Science",
+      "confidence": "media"
+    }
   ],
   "valuation": [
-    {"date": "2024-08-09", "value": 400000000, "round": "Series A", "source": "TechCrunch", "confidence": "official"},
-    {"date": "2024-12-15", "value": 2600000000, "round": "Series B", "source": "Crunchbase", "confidence": "official"},
-    {"date": "2025-06-05", "value": 9900000000, "round": "Series C", "source": "TechCrunch", "confidence": "official"},
-    {"date": "2025-11-13", "value": 29300000000, "round": "Series D", "source": "CNBC", "confidence": "official"},
-    {"date": "2026-04-21", "value": 55000000000, "round": "xAI option", "source": "Fortune", "confidence": "media"}
+    {
+      "date": "2024-08-09",
+      "value": 400000000,
+      "round": "Series A",
+      "source": "TechCrunch",
+      "confidence": "official"
+    },
+    {
+      "date": "2024-12-15",
+      "value": 2600000000,
+      "round": "Series B",
+      "source": "Crunchbase",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-06-05",
+      "value": 9900000000,
+      "round": "Series C",
+      "source": "TechCrunch",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-11-13",
+      "value": 29300000000,
+      "round": "Series D",
+      "source": "CNBC",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-04-21",
+      "value": 55000000000,
+      "round": "xAI option",
+      "source": "Fortune",
+      "confidence": "media"
+    }
   ],
   "platforms": [
     {
