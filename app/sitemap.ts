@@ -20,12 +20,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  const growthStoryCompanies: MetadataRoute.Sitemap = getAllCompanies().map(slug => ({
-    url: `${BASE}/growth-story/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.9,
-  }))
+  // Each company has parallel EN + ZH pages. Emit both URLs and cross-link
+  // them with hreflang alternates so Google treats them as locale variants
+  // rather than duplicate content.
+  const growthStoryCompanies: MetadataRoute.Sitemap = getAllCompanies().flatMap(slug => {
+    const enUrl = `${BASE}/growth-story/${slug}`
+    const zhUrl = `${BASE}/growth-story/${slug}/zh`
+    const alternates = {
+      languages: {
+        'en-US': enUrl,
+        'zh-CN': zhUrl,
+      },
+    }
+    return [
+      {
+        url: enUrl,
+        alternates,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.9,
+      },
+      {
+        url: zhUrl,
+        alternates,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.9,
+      },
+    ]
+  })
 
   return [
     {
