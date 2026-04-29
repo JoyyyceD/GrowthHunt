@@ -56,7 +56,7 @@ function LiveCases() {
         <div className="section-head" style={{ borderBottom: 0, paddingBottom: 0, display: 'block' }}>
           <h2 style={{ margin: '0 0 12px' }}>Use it <em>today</em>.</h2>
           <p style={{ fontSize: 16, color: 'var(--ink-dim)', margin: 0, maxWidth: 540 }}>
-            Two products live right now. No waitlist, no setup — just click in and go.
+            Three products live right now. No waitlist, no setup — just click in and go.
           </p>
         </div>
         <div className="eco-grid">
@@ -81,6 +81,16 @@ function LiveCases() {
               <span className="visit">View product →</span>
             </Link>
           )}
+
+          {/* OPChampion card — weekly launch board for solo founders */}
+          <Link href="/OPChampion" className="eco-card eco-card-link">
+            <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
+            <div className="eco-title">OPChampion</div>
+            <p>
+              A weekly launch board for one-person companies — twelve solo-founder products picked every Monday. Upvote, comment, follow.
+            </p>
+            <span className="visit">See this week&apos;s issue →</span>
+          </Link>
         </div>
       </div>
     </section>
@@ -178,6 +188,7 @@ function Footer() {
           <ul>
             <li><Link href="/growth-story">Growth Story</Link></li>
             <li><Link href="/get-backlinks">Get Backlinks</Link></li>
+            <li><Link href="/OPChampion">OPChampion</Link></li>
           </ul>
         </div>
         <div>
