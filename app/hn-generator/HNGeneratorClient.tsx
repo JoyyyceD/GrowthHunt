@@ -27,53 +27,43 @@ type Template = {
 type Step = 1 | 2 | 3 | 4
 type GenerateStatus = 'idle' | 'loading' | 'done' | 'error'
 
-// ── Scenario config ────────────────────────────────────────────────────────────
+// ── Scenario config — monochrome, accent-only ──────────────────────────────────
 
 const SCENARIOS = [
   {
     id: 'launch',
-    icon: '🚀',
+    num: '01',
     label: 'Launch my product',
+    sub: 'Show HN patterns',
     description: 'Show HN patterns that get your product in front of the right people.',
-    color: 'var(--accent)',
-    bg: 'var(--accent-soft)',
-    border: 'var(--accent-border)',
   },
   {
     id: 'discussion',
-    icon: '💬',
+    num: '02',
     label: 'Start a discussion',
-    description: 'Ask HN patterns that pull in the community and start real conversations.',
-    color: '#2563eb',
-    bg: '#eff6ff',
-    border: 'rgba(37,99,235,0.25)',
+    sub: 'Ask HN patterns',
+    description: 'Ask HN patterns that pull in the community and spark real conversations.',
   },
   {
     id: 'data',
-    icon: '📊',
+    num: '03',
     label: 'Share data or research',
-    description: 'Data-driven patterns that make readers stop and take notice.',
-    color: '#059669',
-    bg: '#ecfdf5',
-    border: 'rgba(5,150,105,0.25)',
+    sub: 'Data & list patterns',
+    description: 'Data-driven patterns that make readers stop and pay attention.',
   },
   {
     id: 'ai-tool',
-    icon: '🤖',
+    num: '04',
     label: 'Showcase an AI tool',
-    description: 'Patterns built for AI launches that stand out from the noise.',
-    color: '#7c3aed',
-    bg: '#f5f3ff',
-    border: 'rgba(124,58,237,0.25)',
+    sub: 'AI launch patterns',
+    description: 'Patterns built for AI product launches that cut through the noise.',
   },
   {
     id: 'contrarian',
-    icon: '🔥',
+    num: '05',
     label: 'Share a hot take',
-    description: 'Opinion and contrarian patterns that spark arguments (the good kind).',
-    color: '#d97706',
-    bg: '#fffbeb',
-    border: 'rgba(217,119,6,0.25)',
+    sub: 'Opinion patterns',
+    description: 'Contrarian and opinion patterns that spark arguments — the good kind.',
   },
 ]
 
@@ -103,8 +93,9 @@ function PatternText({ pattern, values }: { pattern: string; values: Record<stri
             color: filled ? 'var(--ink)' : 'var(--accent)',
             background: filled ? 'var(--bg-card)' : 'var(--accent-soft)',
             borderRadius: 4,
-            padding: '1px 5px',
-            fontSize: '0.9em',
+            padding: '1px 6px',
+            fontSize: '0.88em',
+            letterSpacing: 0,
           }}>
             {filled || part}
           </span>
@@ -114,9 +105,9 @@ function PatternText({ pattern, values }: { pattern: string; values: Record<stri
   )
 }
 
-// ── Step indicator ─────────────────────────────────────────────────────────────
+// ── Step bar — uses eyebrow + tag design language ──────────────────────────────
 
-function StepBar({ current, onStep }: { current: Step; onStep: (s: Step) => void }) {
+function StepBar({ current }: { current: Step }) {
   const steps: { n: Step; label: string }[] = [
     { n: 1, label: 'Goal' },
     { n: 2, label: 'Template' },
@@ -124,41 +115,39 @@ function StepBar({ current, onStep }: { current: Step; onStep: (s: Step) => void
     { n: 4, label: 'Generate' },
   ]
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 0, marginBottom: 48 }}>
+    <div style={{
+      display: 'flex', alignItems: 'center', gap: 0,
+      marginBottom: 56,
+      fontFamily: 'var(--mono)', fontSize: 11,
+      textTransform: 'uppercase', letterSpacing: '0.1em',
+    }}>
       {steps.map((s, i) => (
         <div key={s.n} style={{ display: 'flex', alignItems: 'center' }}>
-          <button
-            onClick={() => s.n < current && onStep(s.n)}
-            disabled={s.n >= current}
-            style={{
-              display: 'flex', alignItems: 'center', gap: 8,
-              background: 'none', border: 'none', cursor: s.n < current ? 'pointer' : 'default',
-              padding: '4px 0',
-            }}
-          >
+          <div style={{
+            display: 'flex', alignItems: 'center', gap: 8,
+            color: s.n === current ? 'var(--ink)' : s.n < current ? 'var(--ink-dim)' : 'var(--ink-faint)',
+          }}>
             <div style={{
-              width: 28, height: 28, borderRadius: '50%',
-              background: s.n === current ? 'var(--ink)' : s.n < current ? 'var(--accent)' : 'var(--bg-card)',
-              border: s.n === current ? '2px solid var(--ink)' : s.n < current ? '2px solid var(--accent)' : '1.5px solid var(--rule-strong)',
-              color: s.n <= current ? '#fff' : 'var(--ink-faint)',
+              width: 22, height: 22, borderRadius: '50%', flexShrink: 0,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontSize: 11, fontWeight: 700, fontFamily: 'var(--mono)',
-              flexShrink: 0,
+              fontSize: 10, fontWeight: 700,
+              background: s.n === current
+                ? 'var(--ink)'
+                : s.n < current
+                ? 'var(--accent)'
+                : 'transparent',
+              border: s.n > current ? '1.5px solid var(--rule-strong)' : 'none',
+              color: s.n >= current ? (s.n === current ? 'var(--bg)' : 'var(--ink-faint)') : '#fff',
             }}>
               {s.n < current ? '✓' : s.n}
             </div>
-            <span style={{
-              fontSize: 12.5, fontWeight: s.n === current ? 600 : 400,
-              color: s.n === current ? 'var(--ink)' : s.n < current ? 'var(--ink-dim)' : 'var(--ink-faint)',
-            }}>
-              {s.label}
-            </span>
-          </button>
+            <span style={{ fontWeight: s.n === current ? 600 : 400 }}>{s.label}</span>
+          </div>
           {i < steps.length - 1 && (
             <div style={{
-              width: 32, height: 1,
-              background: s.n < current ? 'var(--accent)' : 'var(--rule-strong)',
-              margin: '0 8px',
+              width: 28, height: 1,
+              background: s.n < current ? 'var(--rule-strong)' : 'var(--rule)',
+              margin: '0 12px',
             }} />
           )}
         </div>
@@ -269,76 +258,113 @@ export default function HNGeneratorClient({ templates }: { templates: Template[]
     })
   }
 
-  // ── Shared styles
+  // ── Shared input style — matches existing forms ────────────────────────────
+
   const inputStyle: React.CSSProperties = {
-    width: '100%', background: 'var(--bg-elev)',
-    border: '1px solid var(--rule-strong)', borderRadius: 10,
-    padding: '11px 14px', fontSize: 14, fontFamily: 'inherit',
-    color: 'var(--ink)', outline: 'none', boxSizing: 'border-box',
+    width: '100%',
+    background: 'var(--bg-elev)',
+    border: '1px solid var(--rule-strong)',
+    borderRadius: 10,
+    padding: '11px 14px',
+    fontSize: 14,
+    fontFamily: 'inherit',
+    color: 'var(--ink)',
+    outline: 'none',
+    boxSizing: 'border-box',
   }
 
-  const labelStyle: React.CSSProperties = {
-    display: 'block', fontSize: 11, fontFamily: 'var(--mono)',
-    letterSpacing: '0.09em', textTransform: 'uppercase',
-    color: 'var(--ink-faint)', marginBottom: 6,
+  const eyebrowStyle: React.CSSProperties = {
+    fontFamily: 'var(--mono)',
+    fontSize: 11,
+    fontWeight: 500,
+    letterSpacing: '0.12em',
+    textTransform: 'uppercase',
+    color: 'var(--ink-faint)',
+    display: 'block',
+    marginBottom: 8,
   }
 
   return (
-    <section style={{ padding: '64px 0 96px', borderTop: '1px solid var(--rule)' }}>
-      <div className="shell" style={{ maxWidth: 860 }}>
+    <section style={{ padding: '72px 0 100px', borderTop: '1px solid var(--rule)' }}>
+      <div className="shell" style={{ maxWidth: 900 }}>
         <div ref={topRef} style={{ scrollMarginTop: 80 }} />
-        <StepBar current={step} onStep={goStep} />
+        <StepBar current={step} />
 
-        {/* ── STEP 1: Choose scenario ── */}
+        {/* ── STEP 1: Goal ── */}
         {step === 1 && (
           <div>
+            <div className="eyebrow" style={{ marginBottom: 16 }}>
+              <span className="dot" />Choose your goal
+            </div>
             <h2 style={{
-              fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 4vw, 42px)',
-              fontWeight: 400, letterSpacing: '-0.02em', margin: '0 0 10px',
+              fontFamily: 'var(--serif)',
+              fontSize: 'clamp(32px, 4vw, 52px)',
+              fontWeight: 400,
+              letterSpacing: '-0.025em',
+              lineHeight: 1.04,
+              margin: '0 0 48px',
             }}>
-              What's your goal?
+              What are you trying to<br />
+              <em style={{ fontStyle: 'italic', color: 'var(--accent)' }}>accomplish on HN?</em>
             </h2>
-            <p style={{ fontSize: 15, color: 'var(--ink-dim)', margin: '0 0 40px', lineHeight: 1.6 }}>
-              Pick a scenario and we'll show you the HN patterns that actually work for it.
-            </p>
+
+            {/* Grid like .eco-grid — 1px gap, rule background */}
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-              gap: 12,
+              gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+              gap: 1,
+              background: 'var(--rule)',
+              border: '1px solid var(--rule)',
             }}>
               {SCENARIOS.map(s => (
                 <button
                   key={s.id}
                   onClick={() => pickScenario(s.id)}
                   style={{
-                    background: 'var(--bg-elev)', border: '1.5px solid var(--rule)',
-                    borderRadius: 14, padding: '24px 22px', textAlign: 'left',
-                    cursor: 'pointer', transition: 'border-color 0.12s, box-shadow 0.12s',
+                    background: 'var(--bg)',
+                    padding: '32px',
+                    textAlign: 'left',
+                    cursor: 'pointer',
+                    border: 'none',
                     fontFamily: 'inherit',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 12,
+                    transition: 'background 0.15s',
+                    minHeight: 180,
                   }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.borderColor = s.color
-                    e.currentTarget.style.boxShadow = `0 2px 16px rgba(0,0,0,0.07)`
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.borderColor = 'var(--rule)'
-                    e.currentTarget.style.boxShadow = 'none'
-                  }}
+                  onMouseEnter={e => (e.currentTarget.style.background = 'var(--bg-elev)')}
+                  onMouseLeave={e => (e.currentTarget.style.background = 'var(--bg)')}
                 >
-                  <div style={{ fontSize: 28, marginBottom: 12 }}>{s.icon}</div>
-                  <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)', marginBottom: 6 }}>
-                    {s.label}
-                  </div>
-                  <div style={{ fontSize: 13, color: 'var(--ink-dim)', lineHeight: 1.55 }}>
-                    {s.description}
+                  <div style={{
+                    fontFamily: 'var(--mono)',
+                    fontSize: 11,
+                    color: 'var(--accent)',
+                    letterSpacing: '0.1em',
+                    textTransform: 'uppercase',
+                  }}>
+                    {s.num}
                   </div>
                   <div style={{
-                    marginTop: 16, display: 'inline-flex', alignItems: 'center', gap: 5,
-                    fontSize: 12, fontFamily: 'var(--mono)', color: s.color,
-                    background: s.bg, border: `1px solid ${s.border}`,
-                    borderRadius: 999, padding: '3px 10px',
+                    fontFamily: 'var(--serif)',
+                    fontSize: 28,
+                    letterSpacing: '-0.02em',
+                    color: 'var(--ink)',
+                    lineHeight: 1.1,
                   }}>
-                    {templates.filter(t => t.scenario === s.id).length} patterns →
+                    {s.label}
+                  </div>
+                  <div style={{ fontSize: 13.5, color: 'var(--ink-dim)', lineHeight: 1.55, flex: 1 }}>
+                    {s.description}
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <span className="tag">{templates.filter(t => t.scenario === s.id).length} patterns</span>
+                    <span style={{
+                      fontFamily: 'var(--mono)', fontSize: 11,
+                      color: 'var(--accent)', letterSpacing: '0.05em',
+                    }}>
+                      Select →
+                    </span>
                   </div>
                 </button>
               ))}
@@ -346,65 +372,82 @@ export default function HNGeneratorClient({ templates }: { templates: Template[]
           </div>
         )}
 
-        {/* ── STEP 2: Pick template ── */}
+        {/* ── STEP 2: Template ── */}
         {step === 2 && scenarioConfig && (
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
-              <span style={{ fontSize: 28 }}>{scenarioConfig.icon}</span>
-              <h2 style={{
-                fontFamily: 'var(--serif)', fontSize: 'clamp(24px, 3.5vw, 36px)',
-                fontWeight: 400, letterSpacing: '-0.02em', margin: 0,
-              }}>
-                {scenarioConfig.label}
-              </h2>
-            </div>
-            <p style={{ fontSize: 14, color: 'var(--ink-dim)', margin: '0 0 36px', lineHeight: 1.6 }}>
-              {scenarioTemplates.length} patterns — each backed by real high-scoring HN posts.
-              Click one to start writing.
-            </p>
+            {/* Back */}
+            <button
+              onClick={() => goStep(1)}
+              className="detail-back"
+              style={{ border: 'none', background: 'none', padding: 0, marginBottom: 32 }}
+            >
+              ← Back
+            </button>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            <div className="section-head" style={{ padding: '0 0 28px', marginBottom: 36 }}>
+              <div className="num">{scenarioConfig.num}</div>
+              <div>
+                <h2 style={{
+                  fontFamily: 'var(--serif)',
+                  fontSize: 'clamp(28px, 3.5vw, 44px)',
+                  fontWeight: 400,
+                  letterSpacing: '-0.022em',
+                  margin: '0 0 8px',
+                }}>
+                  {scenarioConfig.label}
+                </h2>
+                <p style={{ fontSize: 14, color: 'var(--ink-dim)', margin: 0 }}>
+                  {scenarioTemplates.length} patterns, each backed by real high-scoring posts.
+                  Click one to continue.
+                </p>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 1, background: 'var(--rule)', border: '1px solid var(--rule)' }}>
               {scenarioTemplates.map(t => (
                 <button
                   key={t.id}
                   onClick={() => pickTemplate(t.id)}
                   style={{
-                    background: 'var(--bg-elev)', border: '1px solid var(--rule)',
-                    borderRadius: 12, padding: '18px 20px', textAlign: 'left',
-                    cursor: 'pointer', fontFamily: 'inherit',
-                    transition: 'border-color 0.1s, box-shadow 0.1s',
-                    display: 'grid', gridTemplateColumns: '1fr auto',
-                    gap: 16, alignItems: 'start',
+                    background: 'var(--bg)',
+                    border: 'none',
+                    padding: '24px 28px',
+                    textAlign: 'left',
+                    cursor: 'pointer',
+                    fontFamily: 'inherit',
+                    display: 'grid',
+                    gridTemplateColumns: '1fr auto',
+                    gap: 24,
+                    alignItems: 'start',
+                    transition: 'background 0.12s',
                   }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.borderColor = scenarioConfig.color
-                    e.currentTarget.style.boxShadow = '0 2px 12px rgba(0,0,0,0.06)'
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.borderColor = 'var(--rule)'
-                    e.currentTarget.style.boxShadow = 'none'
-                  }}
+                  onMouseEnter={e => (e.currentTarget.style.background = 'var(--bg-elev)')}
+                  onMouseLeave={e => (e.currentTarget.style.background = 'var(--bg)')}
                 >
                   <div>
                     {/* Pattern */}
-                    <p style={{ fontWeight: 600, fontSize: 14.5, margin: '0 0 10px', lineHeight: 1.5, color: 'var(--ink)' }}>
+                    <p style={{
+                      fontWeight: 600, fontSize: 15,
+                      margin: '0 0 12px', lineHeight: 1.5, color: 'var(--ink)',
+                    }}>
                       <PatternText pattern={t.pattern} values={{}} />
                     </p>
 
                     {/* Real examples */}
                     {t.examples?.length > 0 && (
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: 3, marginBottom: 12 }}>
                         {t.examples.slice(0, 2).map((ex, i) => (
                           <a key={i} href={ex.url} target="_blank" rel="noopener noreferrer"
                             onClick={e => e.stopPropagation()}
                             style={{
-                              display: 'flex', alignItems: 'baseline', gap: 7,
-                              textDecoration: 'none', fontSize: 12,
+                              display: 'flex', alignItems: 'baseline', gap: 8,
+                              textDecoration: 'none', fontSize: 12.5,
                             }}
                           >
-                            <span style={{ fontFamily: 'var(--mono)', fontSize: 10.5, color: scenarioConfig.color, flexShrink: 0 }}>
-                              ▲{ex.score}
-                            </span>
+                            <span style={{
+                              fontFamily: 'var(--mono)', fontSize: 10.5,
+                              color: 'var(--accent)', flexShrink: 0,
+                            }}>▲{ex.score}</span>
                             <span style={{
                               color: 'var(--ink-dim)',
                               overflow: 'hidden', display: '-webkit-box',
@@ -416,26 +459,29 @@ export default function HNGeneratorClient({ templates }: { templates: Template[]
                     )}
 
                     {/* Tags */}
-                    <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 10 }}>
+                    <div style={{ display: 'flex', gap: 6 }}>
                       <span className="tag">{t.format}</span>
                       <span className="tag">{t.hook_type}</span>
                     </div>
                   </div>
 
-                  {/* Score + arrow */}
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 8, flexShrink: 0 }}>
-                    <div style={{
-                      fontFamily: 'var(--mono)', fontSize: 12,
-                      color: scenarioConfig.color, display: 'flex', alignItems: 'center', gap: 4,
+                  {/* Right side */}
+                  <div style={{
+                    display: 'flex', flexDirection: 'column',
+                    alignItems: 'flex-end', gap: 10, flexShrink: 0,
+                  }}>
+                    <span style={{
+                      fontFamily: 'var(--mono)', fontSize: 11,
+                      color: 'var(--ink-faint)',
                     }}>
-                      <span style={{ fontSize: 10 }}>▲</span>{t.avg_score} avg
-                    </div>
-                    <div style={{
-                      width: 28, height: 28, borderRadius: '50%',
-                      background: 'var(--bg-card)', border: '1px solid var(--rule-strong)',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontSize: 13, color: 'var(--ink-dim)',
-                    }}>→</div>
+                      ▲ {t.avg_score} avg
+                    </span>
+                    <span style={{
+                      fontFamily: 'var(--mono)', fontSize: 11,
+                      color: 'var(--accent)', letterSpacing: '0.05em',
+                    }}>
+                      Use →
+                    </span>
                   </div>
                 </button>
               ))}
@@ -443,53 +489,84 @@ export default function HNGeneratorClient({ templates }: { templates: Template[]
           </div>
         )}
 
-        {/* ── STEP 3: Fill details ── */}
-        {step === 3 && selected && scenarioConfig && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
-            {/* Pattern card */}
-            <div style={{
-              background: 'var(--bg-elev)',
-              border: `1.5px solid ${scenarioConfig.border}`,
-              borderRadius: 12, padding: '20px 24px',
-            }}>
-              <div style={{ ...labelStyle, marginBottom: 10 }}>Selected pattern</div>
-              <p style={{ fontWeight: 600, fontSize: 15.5, lineHeight: 1.55, margin: '0 0 12px', color: 'var(--ink)' }}>
-                <PatternText pattern={selected.pattern} values={values} />
-              </p>
-              {/* Live preview */}
-              {placeholders.some(k => values[k]) && (
-                <div style={{
-                  background: 'var(--bg-card)', borderRadius: 8, padding: '10px 14px',
-                  fontSize: 13.5, color: 'var(--ink-dim)', lineHeight: 1.5, fontStyle: 'italic', marginBottom: 12,
+        {/* ── STEP 3: Details ── */}
+        {step === 3 && selected && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
+            {/* Back */}
+            <button
+              onClick={() => goStep(2)}
+              className="detail-back"
+              style={{ border: 'none', background: 'none', padding: 0, alignSelf: 'flex-start' }}
+            >
+              ← Back to templates
+            </button>
+
+            {/* Pattern panel — example-box style */}
+            <div className="example-box">
+              <div className="head">
+                <span>Selected pattern</span>
+                <span style={{ color: 'var(--accent)' }}>▲ {selected.avg_score} avg score</span>
+              </div>
+              <div className="body">
+                <p style={{
+                  fontFamily: 'var(--sans)', fontSize: 15, fontWeight: 600,
+                  color: 'var(--ink)', lineHeight: 1.55, margin: '0 0 12px',
                 }}>
-                  <span style={{ ...labelStyle, fontStyle: 'normal', marginBottom: 4 }}>Preview</span>
-                  {buildPreview()}
+                  <PatternText pattern={selected.pattern} values={values} />
+                </p>
+
+                {/* Live preview */}
+                {placeholders.some(k => values[k]) && (
+                  <div style={{
+                    background: 'var(--bg-elev)', borderRadius: 6,
+                    padding: '8px 12px', fontSize: 13, color: 'var(--ink-dim)',
+                    lineHeight: 1.5, fontStyle: 'italic', marginBottom: 12,
+                    border: '1px solid var(--rule)',
+                  }}>
+                    {buildPreview()}
+                  </div>
+                )}
+
+                {/* Tip */}
+                <div style={{
+                  display: 'flex', gap: 8, alignItems: 'flex-start',
+                  paddingTop: 10, borderTop: '1px solid var(--rule)',
+                  marginTop: 4,
+                }}>
+                  <span style={{
+                    fontFamily: 'var(--mono)', fontSize: 10,
+                    textTransform: 'uppercase', letterSpacing: '0.1em',
+                    color: 'var(--accent)', flexShrink: 0, paddingTop: 1,
+                  }}>Tip</span>
+                  <span style={{ fontSize: 12.5, color: 'var(--ink-dim)', lineHeight: 1.55 }}>
+                    {selected.tips}
+                  </span>
                 </div>
-              )}
-              {/* Tip */}
-              <div style={{
-                padding: '9px 13px', background: scenarioConfig.bg,
-                border: `1px solid ${scenarioConfig.border}`, borderRadius: 8,
-                fontSize: 12.5, lineHeight: 1.55,
-                color: scenarioConfig.color,
-              }}>
-                <strong>Tip: </strong>{selected.tips}
               </div>
             </div>
 
-            {/* Placeholder inputs */}
+            {/* Inputs */}
             {placeholders.length > 0 && (
               <div>
-                <div style={{ ...labelStyle, marginBottom: 16 }}>Fill in your details</div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                <div className="eyebrow" style={{ marginBottom: 20 }}>
+                  <span className="dot" />Fill in the blanks
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                   {placeholders.map(key => (
-                    <label key={key}>
-                      <span style={labelStyle}>{formatLabel(key)}</span>
+                    <label key={key} style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                      <span style={eyebrowStyle}>{formatLabel(key)}</span>
                       <input
                         type="text"
                         value={values[key] || ''}
                         onChange={e => setValues(v => ({ ...v, [key]: e.target.value }))}
-                        placeholder={`e.g. ${key === 'product' ? 'my SaaS tool' : key === 'metric' ? '10k users' : key === 'timeframe' ? '3 months' : key}`}
+                        placeholder={
+                          key === 'product' ? 'e.g. my SaaS analytics tool' :
+                          key === 'metric' ? 'e.g. 10k users' :
+                          key === 'timeframe' ? 'e.g. 3 months' :
+                          key === 'revenue' ? 'e.g. 5,000' :
+                          key === 'competitor' ? 'e.g. Notion' :
+                          `{${key}}`
+                        }
                         style={inputStyle}
                       />
                     </label>
@@ -498,64 +575,69 @@ export default function HNGeneratorClient({ templates }: { templates: Template[]
               </div>
             )}
 
-            {/* Product description */}
-            <label>
-              <span style={labelStyle}>Product description (for AI generation)</span>
+            {/* Description */}
+            <div>
+              <div className="eyebrow" style={{ marginBottom: 8 }}>
+                Product description
+              </div>
               <textarea
                 value={description}
                 onChange={e => setDescription(e.target.value)}
-                placeholder="What does your product do? Who is it for? What problem does it solve? The more context, the better the output."
+                placeholder="What does your product do? Who is it for? Any key numbers or differentiators? More context = better output."
                 rows={4}
-                style={{ ...inputStyle, resize: 'vertical' as const, lineHeight: 1.6 }}
+                style={{ ...inputStyle, resize: 'vertical' as const, lineHeight: 1.65 }}
               />
-            </label>
+            </div>
 
             {/* Real examples */}
             {selected.examples?.length > 0 && (
               <div>
-                <div style={labelStyle}>Real posts using this pattern</div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                <div className="eyebrow" style={{ marginBottom: 12 }}>
+                  Real posts using this pattern
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 1, background: 'var(--rule)', border: '1px solid var(--rule)' }}>
                   {selected.examples.map((ex, i) => (
                     <a key={i} href={ex.url} target="_blank" rel="noopener noreferrer"
                       style={{
-                        display: 'flex', alignItems: 'baseline', gap: 8, textDecoration: 'none',
-                        padding: '8px 12px', background: 'var(--bg-elev)', borderRadius: 8,
-                        border: '1px solid var(--rule)', transition: 'border-color 0.1s',
+                        display: 'flex', alignItems: 'baseline', gap: 12,
+                        padding: '12px 16px', textDecoration: 'none',
+                        background: 'var(--bg)', transition: 'background 0.12s',
                       }}
-                      onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--rule-strong)')}
-                      onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--rule)')}
+                      onMouseEnter={e => (e.currentTarget.style.background = 'var(--bg-elev)')}
+                      onMouseLeave={e => (e.currentTarget.style.background = 'var(--bg)')}
                     >
-                      <span style={{ fontFamily: 'var(--mono)', fontSize: 11, color: scenarioConfig.color, flexShrink: 0, minWidth: 44 }}>
-                        ▲ {ex.score}
+                      <span style={{
+                        fontFamily: 'var(--mono)', fontSize: 11,
+                        color: 'var(--accent)', flexShrink: 0, minWidth: 44,
+                      }}>▲ {ex.score}</span>
+                      <span style={{ fontSize: 13.5, color: 'var(--ink-dim)', lineHeight: 1.45, flex: 1 }}>
+                        {ex.title}
                       </span>
-                      <span style={{ fontSize: 13, color: 'var(--ink-dim)', lineHeight: 1.4, flex: 1 }}>{ex.title}</span>
-                      <span style={{ fontSize: 11, color: 'var(--ink-faint)', flexShrink: 0 }}>↗</span>
+                      <span style={{
+                        fontFamily: 'var(--mono)', fontSize: 10,
+                        color: 'var(--ink-faint)', flexShrink: 0,
+                        textTransform: 'uppercase', letterSpacing: '0.08em',
+                      }}>↗</span>
                     </a>
                   ))}
                 </div>
               </div>
             )}
 
-            {/* Actions */}
-            <div style={{ display: 'flex', gap: 10 }}>
-              <button
-                onClick={() => goStep(2)}
-                style={{
-                  background: 'var(--bg-elev)', border: '1px solid var(--rule-strong)',
-                  borderRadius: 10, padding: '11px 20px', fontSize: 14,
-                  color: 'var(--ink-dim)', cursor: 'pointer', fontFamily: 'inherit',
-                }}
-              >
-                ← Back
-              </button>
+            {/* CTA */}
+            <div style={{ display: 'flex', gap: 10, paddingTop: 8 }}>
               <button
                 onClick={handleGenerate}
                 style={{
-                  background: scenarioConfig.color, border: 'none',
-                  borderRadius: 10, padding: '11px 28px', fontSize: 14,
-                  fontWeight: 600, color: '#fff', cursor: 'pointer',
+                  background: 'var(--ink)', color: 'var(--bg)',
+                  border: 'none', borderRadius: 999,
+                  padding: '12px 32px', fontSize: 13,
+                  fontWeight: 600, cursor: 'pointer',
                   fontFamily: 'inherit', flex: 1,
+                  transition: 'background 0.15s',
                 }}
+                onMouseEnter={e => (e.currentTarget.style.background = 'var(--accent)')}
+                onMouseLeave={e => (e.currentTarget.style.background = 'var(--ink)')}
               >
                 Generate with AI →
               </button>
@@ -563,26 +645,37 @@ export default function HNGeneratorClient({ templates }: { templates: Template[]
           </div>
         )}
 
-        {/* ── STEP 4: Results ── */}
+        {/* ── STEP 4: Output ── */}
         {step === 4 && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
+            {/* Back */}
+            <button
+              onClick={() => goStep(3)}
+              className="detail-back"
+              style={{ border: 'none', background: 'none', padding: 0, alignSelf: 'flex-start' }}
+            >
+              ← Edit details
+            </button>
+
             {status === 'loading' && (
               <div style={{
-                background: 'var(--bg-elev)', border: '1px solid var(--rule)',
-                borderRadius: 14, padding: '64px 40px', textAlign: 'center',
+                background: 'var(--bg-card)', border: '1px solid var(--rule)',
+                borderRadius: 12, padding: '64px 40px', textAlign: 'center',
               }}>
-                <div style={{ fontSize: 13, color: 'var(--ink-faint)', fontFamily: 'var(--mono)' }}>
-                  Generating your HN post…
-                </div>
+                <div className="eyebrow">Generating your post…</div>
               </div>
             )}
 
             {status === 'error' && (
               <div style={{
-                background: '#fff5f5', border: '1px solid #fecaca',
-                borderRadius: 12, padding: '20px 24px', fontSize: 14, color: '#dc2626',
+                background: 'var(--bg-card)', border: '1px solid var(--rule-strong)',
+                borderRadius: 10, padding: '20px 24px',
               }}>
-                {result?.error || 'Something went wrong.'} Make sure ANTHROPIC_API_KEY is set.
+                <span className="eyebrow" style={{ color: 'var(--warn)' }}>Error</span>
+                <p style={{ margin: '8px 0 0', fontSize: 14, color: 'var(--ink-dim)' }}>
+                  {result?.error || 'Something went wrong.'}{' '}
+                  Make sure <code style={{ fontFamily: 'var(--mono)', fontSize: 12 }}>ANTHROPIC_API_KEY</code> is set in <code style={{ fontFamily: 'var(--mono)', fontSize: 12 }}>.env.local</code>.
+                </p>
               </div>
             )}
 
@@ -590,21 +683,40 @@ export default function HNGeneratorClient({ templates }: { templates: Template[]
               <>
                 {/* Title variants */}
                 <div>
-                  <div style={labelStyle}>Choose a title ({result.titles?.length} variants)</div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                  <div className="eyebrow" style={{ marginBottom: 12 }}>
+                    <span className="dot" />Choose a title
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 1, background: 'var(--rule)', border: '1px solid var(--rule)' }}>
                     {result.titles?.map((title, i) => (
                       <button
                         key={i}
                         onClick={() => setActiveTitle(i)}
                         style={{
-                          textAlign: 'left', background: activeTitle === i ? (scenarioConfig?.bg ?? 'var(--accent-soft)') : 'var(--bg-elev)',
-                          border: `1.5px solid ${activeTitle === i ? (scenarioConfig?.color ?? 'var(--accent)') : 'var(--rule)'}`,
-                          borderRadius: 10, padding: '12px 16px', fontSize: 14,
-                          lineHeight: 1.5, color: 'var(--ink)', cursor: 'pointer',
-                          fontFamily: 'inherit', transition: 'all 0.1s',
+                          textAlign: 'left',
+                          background: activeTitle === i ? 'var(--accent-soft)' : 'var(--bg)',
+                          border: 'none',
+                          padding: '16px 20px',
+                          display: 'flex', alignItems: 'flex-start', gap: 12,
+                          cursor: 'pointer', fontFamily: 'inherit',
+                          transition: 'background 0.1s',
+                          borderLeft: activeTitle === i ? '3px solid var(--accent)' : '3px solid transparent',
+                        }}
+                        onMouseEnter={e => {
+                          if (activeTitle !== i) e.currentTarget.style.background = 'var(--bg-elev)'
+                        }}
+                        onMouseLeave={e => {
+                          if (activeTitle !== i) e.currentTarget.style.background = 'var(--bg)'
                         }}
                       >
-                        {title}
+                        <span style={{
+                          fontFamily: 'var(--mono)', fontSize: 10,
+                          color: activeTitle === i ? 'var(--accent)' : 'var(--ink-faint)',
+                          flexShrink: 0, paddingTop: 3,
+                          textTransform: 'uppercase', letterSpacing: '0.08em',
+                        }}>
+                          {String(i + 1).padStart(2, '0')}
+                        </span>
+                        <span style={{ fontSize: 14, color: 'var(--ink)', lineHeight: 1.5 }}>{title}</span>
                       </button>
                     ))}
                   </div>
@@ -613,56 +725,63 @@ export default function HNGeneratorClient({ templates }: { templates: Template[]
                 {/* Body */}
                 {result.body && (
                   <div>
-                    <div style={labelStyle}>Post body</div>
-                    <div style={{
-                      background: 'var(--bg-elev)', border: '1px solid var(--rule)',
-                      borderRadius: 10, padding: '20px 22px', fontSize: 14,
-                      lineHeight: 1.7, color: 'var(--ink-dim)', whiteSpace: 'pre-wrap',
-                    }}>
-                      {result.body}
+                    <div className="eyebrow" style={{ marginBottom: 12 }}>Post body</div>
+                    <div className="example-box">
+                      <div className="head">
+                        <span>HN post text</span>
+                        <span>{result.titles?.[activeTitle]?.slice(0, 40)}…</span>
+                      </div>
+                      <div className="body" style={{ whiteSpace: 'pre-wrap', lineHeight: 1.7, fontFamily: 'var(--sans)', fontSize: 14, color: 'var(--ink-dim)' }}>
+                        {result.body}
+                      </div>
                     </div>
                   </div>
                 )}
 
-                {/* Copy button */}
+                {/* Copy */}
                 <div style={{ display: 'flex', gap: 10 }}>
-                  <button
-                    onClick={() => goStep(3)}
-                    style={{
-                      background: 'var(--bg-elev)', border: '1px solid var(--rule-strong)',
-                      borderRadius: 10, padding: '11px 20px', fontSize: 14,
-                      color: 'var(--ink-dim)', cursor: 'pointer', fontFamily: 'inherit',
-                    }}
-                  >
-                    ← Edit
-                  </button>
                   <button
                     onClick={handleCopy}
                     style={{
-                      background: copied ? '#059669' : 'var(--ink)',
-                      border: 'none', borderRadius: 10, padding: '11px 28px',
-                      fontSize: 14, fontWeight: 600, color: '#fff',
-                      cursor: 'pointer', fontFamily: 'inherit', flex: 1,
-                      transition: 'background 0.2s',
+                      background: copied ? 'var(--ink)' : 'var(--accent)',
+                      color: '#fff', border: 'none',
+                      borderRadius: 999, padding: '12px 32px',
+                      fontSize: 13, fontWeight: 600,
+                      cursor: 'pointer', fontFamily: 'inherit',
+                      flex: 1, transition: 'background 0.15s',
                     }}
                   >
-                    {copied ? '✓ Copied' : 'Copy post'}
+                    {copied ? '✓ Copied to clipboard' : 'Copy post'}
+                  </button>
+                  <button
+                    onClick={() => { setStatus('idle'); setResult(null); goStep(3) }}
+                    className="btn-line"
+                    style={{ borderRadius: 999, padding: '12px 20px', whiteSpace: 'nowrap' }}
+                  >
+                    Regenerate
                   </button>
                 </div>
               </>
             )}
 
             {/* Start over */}
-            <button
-              onClick={() => { setStep(1); setScenario(null); setSelectedId(null); setResult(null); setStatus('idle') }}
-              style={{
-                background: 'none', border: 'none', fontSize: 13,
-                color: 'var(--ink-faint)', cursor: 'pointer', fontFamily: 'inherit',
-                textDecoration: 'underline', padding: 0, alignSelf: 'center',
-              }}
-            >
-              Start over
-            </button>
+            <div style={{ textAlign: 'center', paddingTop: 8 }}>
+              <button
+                onClick={() => {
+                  setStep(1); setScenario(null); setSelectedId(null)
+                  setResult(null); setStatus('idle')
+                }}
+                style={{
+                  background: 'none', border: 'none',
+                  fontSize: 12, fontFamily: 'var(--mono)',
+                  textTransform: 'uppercase', letterSpacing: '0.08em',
+                  color: 'var(--ink-faint)', cursor: 'pointer',
+                  textDecoration: 'underline', padding: 0,
+                }}
+              >
+                Start over
+              </button>
+            </div>
           </div>
         )}
       </div>
