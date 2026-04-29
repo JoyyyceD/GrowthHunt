@@ -510,22 +510,26 @@ export default function CaseStudyTimeline({ timeline, company }: Props) {
           )
         })}
 
-        {/* ARR area fill */}
-        <path
-          d={`${arrPath} L ${xScale(toTime(timeline.arr[timeline.arr.length - 1].date))} ${CHART_BOTTOM} L ${xScale(toTime(timeline.arr[0].date))} ${CHART_BOTTOM} Z`}
-          fill={ARR_COLOR}
-          opacity={0.04}
-        />
+        {/* ARR area fill — only renders when there's at least one data point */}
+        {timeline.arr.length > 0 && (
+          <path
+            d={`${arrPath} L ${xScale(toTime(timeline.arr[timeline.arr.length - 1].date))} ${CHART_BOTTOM} L ${xScale(toTime(timeline.arr[0].date))} ${CHART_BOTTOM} Z`}
+            fill={ARR_COLOR}
+            opacity={0.04}
+          />
+        )}
 
         {/* Curves */}
-        <path
-          d={arrPath}
-          fill="none"
-          stroke={ARR_COLOR}
-          strokeWidth={2.4}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+        {timeline.arr.length > 0 && (
+          <path
+            d={arrPath}
+            fill="none"
+            stroke={ARR_COLOR}
+            strokeWidth={2.4}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        )}
         <path
           d={valPath}
           fill="none"

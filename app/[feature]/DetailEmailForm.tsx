@@ -1,6 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { createBrowserClient } from '@/lib/supabase/browser'
+import { readSoftUserEmail } from '@/lib/soft-auth'
 
 export default function DetailEmailForm({
   featureId,
@@ -15,6 +17,43 @@ export default function DetailEmailForm({
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
 
+  // If the visitor is already signed in (soft email or Supabase), auto-record
+  // their interest in this specific feature and skip the email form entirely.
+  const [authedEmail, setAuthedEmail] = useState<string | null>(null)
+
+  useEffect(() => {
+    // Soft auth (cookie-backed) is the cheapest check
+    const soft = readSoftUserEmail()
+    if (soft) {
+      setAuthedEmail(soft)
+      autoSubscribe(soft)
+      return
+    }
+    // Then ask Supabase
+    let supabase
+    try {
+      supabase = createBrowserClient()
+    } catch {
+      return // env missing — leave the form for unauth path
+    }
+    supabase.auth.getUser().then(({ data }) => {
+      const e = data.user?.email
+      if (e) {
+        setAuthedEmail(e)
+        autoSubscribe(e)
+      }
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  const autoSubscribe = (e: string) => {
+    fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: e.toLowerCase(), source: `feature-${featureId}` }),
+    }).catch(() => { /* silent */ })
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
@@ -27,6 +66,18 @@ export default function DetailEmailForm({
     } catch { /* silent */ }
     setSubmitted(true)
     setLoading(false)
+  }
+
+  // Authed visitor — already on the list. Show a confirmation, no form.
+  if (authedEmail) {
+    return (
+      <div className="eyebrow" style={{ color: 'var(--accent)' }}>
+        <span className="dot" />
+        {isLive
+          ? `Already signed in as ${authedEmail} — link sent.`
+          : `You're on the list. We'll email ${authedEmail} when ${featureName} ships.`}
+      </div>
+    )
   }
 
   if (submitted) {
