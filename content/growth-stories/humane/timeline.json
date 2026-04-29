@@ -1,0 +1,325 @@
+{
+  "company": {
+    "slug": "humane",
+    "name": "Humane",
+    "legalName": "Humane Inc.",
+    "tagline": "$230M, two ex-Apple founders, five stealth years — and a launch the substrate couldn't absorb",
+    "summary": "Humane is the canonical A1 substrate failure: front-of-funnel motion of a category-defining launch (TED stage, Coperni runway, Tiger / SoftBank / OpenAI cap table) without any pre-launch infrastructure to absorb the demand-shock when reviews landed. When MKBHD's April 14, 2024 'Worst Product I've Ever Reviewed' video crystallized the launch-week verdict, Humane had no installed user base, no second product, and no cellular distribution muscle to fall back on. HP closed the file with a $116M asset deal on Feb 18, 2025 — and the AI Pin bricked at noon Pacific 10 days later.",
+    "founded": "2018",
+    "founders": [
+      "Imran Chaudhri",
+      "Bethany Bongiorno"
+    ],
+    "seriesNumber": 10
+  },
+  "phases": [
+    {
+      "start": "2018-01",
+      "end": "2023-03",
+      "name": "Stealth",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2023-03",
+      "end": "2023-11",
+      "name": "Pre-launch reveal",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2023-11",
+      "end": "2024-08",
+      "name": "Launch & collapse",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2024-08",
+      "end": "2025-03",
+      "name": "Wind-down + HP exit",
+      "color": "#e5e7eb"
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-01-01",
+      "title": "Humane Inc. founded in stealth",
+      "type": "product",
+      "gtmTag": "Founder-as-IP",
+      "description": "Imran Chaudhri (HI design lead at Apple, 1995–2017) and Bethany Bongiorno (iOS/macOS PM director at Apple) incorporate Humane in San Francisco. Married couple. Five-year stealth period begins — no predecessor product, no installed user base.",
+      "externalUrl": "https://en.wikipedia.org/wiki/Humane_Inc.",
+      "articleSlug": "2018-humane-founding"
+    },
+    {
+      "date": "2020-09-01",
+      "title": "Series A $30M led by Lachy Groom and Sam Altman",
+      "type": "funding",
+      "description": "Series A closes at $30M with $150M post-money. Sam Altman participates personally — pre-OpenAI-as-investor relationship. Still pre-product, pre-reveal.",
+      "externalUrl": "https://tracxn.com/d/companies/humane/__VsoWgAzFtEpKoJKoAVYDjylPIIR_ksmQkeNThTB-tLQ/funding-and-investors"
+    },
+    {
+      "date": "2021-09-01",
+      "title": "Series B $100M led by Tiger Global at $800M valuation",
+      "type": "funding",
+      "description": "Tiger Global leads $100M Series B with SoftBank, BOND, Forerunner, Qualcomm Ventures, Marc Benioff (TIME Ventures), Lachy Groom, Kindred. Post-money $800M. Company still pre-product.",
+      "externalUrl": "https://techcrunch.com/2021/09/01/humane-a-stealthy-hardware-and-software-startup-co-founded-by-an-ex-apple-designer-and-engineer-raises-100m/"
+    },
+    {
+      "date": "2023-03-08",
+      "title": "Series C $100M closes at $230M total raised",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "$100M Series C led by Kindred Ventures. New: SK Networks, Microsoft, LG Tech Ventures, Volvo Cars Tech Fund. Tiger / Sam Altman / Forerunner / Qualcomm follow on. Total disclosed funding $230M. No revenue or customer numbers disclosed.",
+      "externalUrl": "https://www.prnewswire.com/news-releases/humane-raises-100m-in-series-c-round-as-it-builds-device-and-services-platform-for-the-ai-era-301765582.html"
+    },
+    {
+      "date": "2023-04-20",
+      "title": "TED2023 reveal — 'The disappearing computer'",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "Chaudhri delivers TED2023 Session 4 talk in Vancouver. First public demo of the unannounced AI Pin: laser palm projection, live phone call to Bethany Bongiorno on stage. The reveal grammar is invite-only and stage-bound — not user-replicable.",
+      "externalUrl": "https://www.ted.com/talks/imran_chaudhri_the_disappearing_computer_and_a_world_where_you_can_take_ai_everywhere",
+      "articleSlug": "2023-04-ted-reveal"
+    },
+    {
+      "date": "2023-06-30",
+      "title": "TechCrunch surfaces 'Ai Pin' name",
+      "type": "media",
+      "description": "Internal product name 'Ai Pin' surfaces via TechCrunch reporting. Humane confirms the name without launching pre-orders or detailed specs.",
+      "externalUrl": "https://techcrunch.com/2023/06/30/secretive-hardware-startup-humanes-first-product-is-the-ai-pin/"
+    },
+    {
+      "date": "2023-09-30",
+      "title": "Naomi Campbell wears AI Pin at Coperni Paris Fashion Week",
+      "type": "media",
+      "gtmTag": "Ride the KOL wave",
+      "description": "Coperni SS24 runway opens with Naomi Campbell wearing the still-unannounced AI Pin — first public wearer outside Humane. Vogue covers via TikTok and editorial. Pre-launch peak narrative moment.",
+      "externalUrl": "https://techcrunch.com/2023/09/30/humanes-ai-pin-debuts-on-the-paris-runway/"
+    },
+    {
+      "date": "2023-11-09",
+      "title": "AI Pin officially launched ($699 + $24/mo)",
+      "type": "product",
+      "gtmTag": "Bundled milestone",
+      "description": "Official launch announcement: $699 device + $24/mo Humane Subscription with cellular service via T-Mobile MVNO. Positioned as a phone replacement, not an accessory. Pre-orders open Nov 16. CNBC / TechCrunch / Engadget / Axios cover same day. No order targets disclosed.",
+      "externalUrl": "https://www.prnewswire.com/news-releases/humane-launches-ai-pin---marking-a-new-beginning-for-personal-ai-devices-301983548.html",
+      "articleSlug": "2023-11-ai-pin-launch"
+    },
+    {
+      "date": "2023-11-16",
+      "title": "Pre-orders open in US",
+      "type": "product",
+      "description": "Pre-orders open at humane.com. Initial volume not disclosed.",
+      "externalUrl": "https://techcrunch.com/2023/11/09/humanes-ai-pin/"
+    },
+    {
+      "date": "2024-01-10",
+      "title": "Pre-launch layoffs (~10) and CTO transition",
+      "type": "product",
+      "description": "Bongiorno informs employees of ~4% workforce reduction (~10 people) and CTO Patrick Gates moving to advisor role. The Information first reports. Tightening signal before any units have shipped.",
+      "externalUrl": "https://techcrunch.com/2024/01/10/humane-layoffs-ai-pin-hardware/"
+    },
+    {
+      "date": "2024-02-23",
+      "title": "Ship date pushed from March to mid-April",
+      "type": "product",
+      "description": "Humane delays AI Pin shipping from earlier targeted window to mid-April 2024. Public framing is supply-chain calibration; internally a foreshadowing of execution risk.",
+      "externalUrl": "https://techcrunch.com/2024/02/23/humane-pushes-ai-pin-ship-date-to-mid-april/"
+    },
+    {
+      "date": "2024-02-27",
+      "title": "SK Telecom international partnership announced",
+      "type": "product",
+      "description": "SK Telecom (South Korea) named first international cellular partner — D4 geographic expansion. Devices never ship internationally before company collapses.",
+      "externalUrl": "https://techcrunch.com/2024/02/27/humane-announces-first-international-market-for-its-ai-pin-partnering-with-south-koreas-sk-telecom/"
+    },
+    {
+      "date": "2024-04-11",
+      "title": "First customer shipments and Verge review drop",
+      "type": "product",
+      "description": "AI Pin starts shipping to pre-order customers. Same day: David Pierce / The Verge publishes 'Humane AI Pin review: not even close.' Engadget and Wired follow within 24 hours. Reviewer convergence inside 72 hours.",
+      "externalUrl": "https://www.theverge.com/24126502/humane-ai-pin-review"
+    },
+    {
+      "date": "2024-04-14",
+      "title": "MKBHD: 'Worst Product I've Ever Reviewed... For Now'",
+      "type": "media",
+      "gtmTag": "Ride the KOL wave",
+      "description": "Marques Brownlee (~18M+ subscribers) publishes the now-canonical review. Title becomes the public failure-beacon. Discourse on reviewer responsibility (Hank Green / Brian Heater) follows immediately.",
+      "externalUrl": "https://www.youtube.com/watch?v=TitZV6k8zfA",
+      "articleSlug": "2024-04-mkbhd-review"
+    },
+    {
+      "date": "2024-04-23",
+      "title": "Marketplace 'Why the Ai Pin fell flat' — mainstream-press inflection",
+      "type": "media",
+      "description": "NPR Marketplace runs the segment that crosses Humane's failure into general-audience discourse. The date Plaude later positions against — the public failure-beacon date for the entire 2024 AI hardware category.",
+      "externalUrl": "https://www.marketplace.org/episode/2024/04/23/why-the-ai-pin-fell-flat"
+    },
+    {
+      "date": "2024-05-22",
+      "title": "Bloomberg: Humane exploring sale at $750M–$1B",
+      "type": "media",
+      "description": "Bloomberg reports Humane has retained advisors and is targeting a sale price of $750M–$1B. Approximately one month after MKBHD review. No buyer materializes at the target range.",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2024-05-22/wearable-ai-startup-humane-is-said-to-explore-potential-sale"
+    },
+    {
+      "date": "2024-08-07",
+      "title": "Verge: returns exceed sales May–Aug 2024",
+      "type": "media",
+      "description": "The Verge obtains Humane internal sales data: more AI Pins returned than sold during the May–August window. ~10,000 total units shipped vs a 100,000-unit yearly target. ~7,000 still in customer hands. T-Mobile MVNO limitation prevents reassignment of returned pins — they become e-waste.",
+      "externalUrl": "https://9to5mac.com/2024/08/07/humane-ai-pin-woes-worsen-as-recent-returns-exceed-sales/",
+      "articleSlug": "2024-12-returns-exceed-sales"
+    },
+    {
+      "date": "2024-10-23",
+      "title": "AI Pin price cut to $499 (charge case unbundled)",
+      "type": "product",
+      "description": "Humane cuts price by $200 to $499. Charge case removed from base bundle (sold separately at $69). Inventory clearance signal. Subscription stays at $24/mo.",
+      "externalUrl": "https://techcrunch.com/2024/10/23/beleaguered-startup-humane-drops-ai-pin-price-by-200/"
+    },
+    {
+      "date": "2024-10-31",
+      "title": "CPSC formal recall of 10,500 charge cases (fire hazard)",
+      "type": "media",
+      "description": "Consumer Product Safety Commission formalizes Humane's voluntary recall of 10,500 charge case units due to lithium battery fire hazard. Internally identified June 2024. Refunds: $149 (standalone) / $129 (bundle).",
+      "externalUrl": "https://www.cpsc.gov/Recalls/2025/Humane-Recalls-Charge-Case-Accessory-for-Ai-Pin-Due-to-Lithium-Battery-Fire-Hazard"
+    },
+    {
+      "date": "2025-02-18",
+      "title": "HP acquires Humane assets for ~$116M (AI Pin excluded)",
+      "type": "acquisition",
+      "gtmTag": "Acqui-hire competitor",
+      "description": "HP announces $116M asset deal: ~80 employees including founders move to newly-formed 'HP IQ' team. CosmOS operating system + 300+ patents transferred. AI Pin device business explicitly excluded — to be discontinued. Asking price 12 months earlier was $750M–$1B.",
+      "externalUrl": "https://techcrunch.com/2025/02/18/humanes-ai-pin-is-dead-as-hp-buys-startups-assets-for-116m/",
+      "articleSlug": "2025-02-hp-acquisition-brick"
+    },
+    {
+      "date": "2025-02-28",
+      "title": "AI Pins bricked at 12:00 PM PT — servers shut down",
+      "type": "product",
+      "description": "All consumer AI Pins lose connection to Humane servers at noon Pacific. Calling, messaging, AI queries, cloud features end. Customer data wiped. Limited offline functions remain. Refunds limited to devices shipped after Nov 15, 2024. 10 days from acquisition announcement to consumer brick.",
+      "externalUrl": "https://support.humane.com/hc/en-us/articles/34243204841997-Ai-Pin-Consumers-FAQ"
+    }
+  ],
+  "arr": [],
+  "valuation": [
+    {
+      "date": "2020-09-01",
+      "value": 150000000,
+      "round": "Series A",
+      "source": "Tracxn",
+      "confidence": "media"
+    },
+    {
+      "date": "2021-09-01",
+      "value": 800000000,
+      "round": "Series B",
+      "source": "Crunchbase",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-05-22",
+      "value": 1000000000,
+      "round": "Sale target (high)",
+      "source": "Bloomberg",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-02-18",
+      "value": 116000000,
+      "round": "HP asset deal",
+      "source": "Bloomberg / TechCrunch",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 5,
+      "bestStage": "Launch & collapse (April 2024)",
+      "effort": "Press-cycle review embargoes; no creator-pipeline groundwork",
+      "role": "The single most decisive channel — and where the verdict landed",
+      "description": "YouTube is where Humane's launch died in public. MKBHD's April 14, 2024 video — 'The Worst Product I've Ever Reviewed... For Now' — reached an ~18M-subscriber audience inside a weekend. The Verge's video review and a wave of secondary reactions (Hank Green, Brian Heater on TechCrunch) compounded across the same platform within 72 hours. Humane had no creator-pipeline groundwork on YouTube to balance the launch verdict with existing-user testimony.",
+      "catalyst": "April 14, 2024 — MKBHD publishes 'The Worst Product I've Ever Reviewed... For Now.' The video's title becomes the public failure-beacon for the entire 2024 AI hardware category.",
+      "catalystUrl": "https://www.youtube.com/watch?v=TitZV6k8zfA",
+      "accountUrl": "https://www.youtube.com/@humane",
+      "accountLabel": "Humane on YouTube",
+      "whenItWorks": "When you have a creator pipeline that has been forming opinions about your product for months — so launch-week reviews land alongside existing-user testimony, not in a vacuum",
+      "whenItDoesnt": "When KOLs encounter the product cold at launch. The same channel that lifts you pre-launch will sink you when the device under-performs the demos"
+    },
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 4,
+      "bestStage": "Stealth + Series C announcement",
+      "effort": "Episodic — funding rounds, TED clips, post-launch crisis discourse",
+      "role": "Capital-class amplifier and discourse arena",
+      "description": "X carried Humane's investor-class signal pre-launch (Tiger / SoftBank / OpenAI cap table, TED clip, Coperni runway photos) and became the failure-discourse arena post-launch. The April 2024 'do bad reviews kill companies?' debate — Hank Green, Brian Heater, MKBHD himself — happened on X. Humane never had an account that drove consumer demand; the brand traveled through tech-Twitter, not through company-owned posting.",
+      "catalyst": "March 8, 2023 — the Series C announcement amplifies through the AI-Twitter network, anchoring the 'two ex-Apple founders, $230M raised, six weeks to TED' narrative that compounds into the April 20 reveal.",
+      "accountUrl": "https://x.com/Humane",
+      "accountLabel": "@Humane on X",
+      "whenItWorks": "For investor-class signal, founder-credibility frames, and high-stakes funding announcements where the audience is already AI-Twitter",
+      "whenItDoesnt": "As a consumer-acquisition channel for hardware. The audience here will judge your demos and your reviews — not buy your device"
+    },
+    {
+      "slug": "instagram",
+      "name": "Instagram",
+      "score": 4,
+      "bestStage": "Pre-launch reveal (Sep 2023)",
+      "effort": "Fashion-press partnership; Coperni / Vogue editorial",
+      "role": "Aesthetic-credibility transfer pre-launch",
+      "description": "Instagram was where Humane's KOL credit transfer worked best in 2023. Naomi Campbell wearing the still-unannounced AI Pin at Coperni's SS24 Paris runway on September 30, 2023 produced a Vogue editorial moment that no AI hardware competitor had touched. Fashion-press fluency on Instagram and TikTok travelled into general consumer-tech awareness — and was the high-water mark of pre-launch narrative momentum.",
+      "catalyst": "September 30, 2023 — Naomi Campbell opens Coperni SS24 wearing the AI Pin; Vogue's editorial and TikTok cuts travel through Instagram's fashion graph and into mainstream consumer-tech press within 48 hours.",
+      "catalystUrl": "https://techcrunch.com/2023/09/30/humanes-ai-pin-debuts-on-the-paris-runway/",
+      "accountUrl": "https://www.instagram.com/humane.com/",
+      "accountLabel": "@humane.com on Instagram",
+      "whenItWorks": "When the product has a wearable or visual artifact and the brand can credibly enter a fashion-adjacent context",
+      "whenItDoesnt": "When the aesthetic case is the strongest case. Style-coded credibility cannot survive a launch-week reliability verdict"
+    },
+    {
+      "slug": "press",
+      "name": "Press (TechCrunch / Bloomberg / The Verge)",
+      "score": 5,
+      "bestStage": "All stages — load-bearing across the arc",
+      "effort": "Founder relationships + exclusive embargoes",
+      "role": "Pre-launch narrative driver and post-launch obituary writer",
+      "description": "Press carried Humane's full arc. Three rounds of TechCrunch funding exclusives. CNBC / Axios / TechCrunch covered launch day in November 2023. The Verge's David Pierce wrote both the launch-week kill review (April 11, 2024) and the August internal-data scoop on returns. Bloomberg broke both the May 2024 sale exploration and the February 2025 HP deal. No other Humane GTM channel was as load-bearing as the trade-press relationship — and no other channel turned more decisively against the company post-launch.",
+      "catalyst": "April 11, 2024 — The Verge's 'Humane AI Pin review: not even close' lands the same day the first units ship. Engadget, Wired, TechRadar pile on within 72 hours. The trade-press launch verdict was set before the consumer audience had a chance to form one.",
+      "catalystUrl": "https://www.theverge.com/24126502/humane-ai-pin-review",
+      "accountUrl": "https://humane.com/press",
+      "accountLabel": "Humane press kit",
+      "whenItWorks": "When the product can survive an honest review against its own pre-launch demos. Press is a credibility multiplier when the substance lands",
+      "whenItDoesnt": "When the demo grammar over-promises what the device delivers. Press relationships will not insulate you from a reliability verdict"
+    },
+    {
+      "slug": "podcast",
+      "name": "Podcast & long-form video",
+      "score": 3,
+      "bestStage": "Pre-launch reveal (TED 2023)",
+      "effort": "Curated stage moments; minimal long-form founder presence afterwards",
+      "role": "Founder-as-IP altitude in a single moment",
+      "description": "Humane's founder-as-IP execution peaked at TED2023 on April 20, 2023 — Imran Chaudhri's 13-minute 'The disappearing computer' talk. The format invention (palm projection, live call to Bongiorno) reached comparable altitude to Cursor's Lex Fridman / No Priors arc in a single stage moment. But the company never built the long-form podcast cadence (No Priors, Latent Space, Hard Fork, Decoder) that compounds founder voice across an audience over time. After TED, the founders did not have a long-form home.",
+      "catalyst": "April 20, 2023 — TED2023 Session 4 in Vancouver. Chaudhri's 'The disappearing computer' is one of the best AI-product founder reveals of the era. The reveal grammar is also exhibit A in why a stage demo is structurally a B1 failure: the user cannot replicate it in 5 minutes.",
+      "catalystUrl": "https://www.ted.com/talks/imran_chaudhri_the_disappearing_computer_and_a_world_where_you_can_take_ai_everywhere",
+      "accountUrl": "https://www.ted.com/speakers/imran_chaudhri",
+      "accountLabel": "Imran Chaudhri at TED",
+      "whenItWorks": "When you can deliver one stage moment that defines a category — and when you can sustain a long-form cadence across the months that follow",
+      "whenItDoesnt": "When the moment exists in isolation. A single 13-minute talk does not substitute for the founder-as-IP compound over 18+ months"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 2,
+      "bestStage": "Launch & collapse",
+      "effort": "Negligible company presence",
+      "role": "Failure-discourse aggregator (passive)",
+      "description": "Reddit was structurally not a Humane channel. r/HumaneAi never crossed the user-base threshold where it functioned as a real support, advocacy, or feedback layer — the installed base of ~7,000 active devices by August 2024 simply wasn't enough density for a load-bearing community. What Reddit did do was aggregate the failure discourse on r/gadgets, r/technology, and r/Apple subs after April 2024. By the time Humane needed Reddit to function as a pro-product channel, there was no community to call on.",
+      "catalyst": "April 14–17, 2024 — Reddit's r/gadgets and r/technology subs aggregate the MKBHD review reaction and the 'do bad reviews kill companies?' debate into a multi-day thread cycle. Humane has no on-platform voice to participate.",
+      "catalystUrl": "https://www.reddit.com/r/HumaneAi/",
+      "accountUrl": "https://www.reddit.com/r/HumaneAi/",
+      "accountLabel": "r/HumaneAi",
+      "whenItWorks": "When you've spent 12+ months building a product community before launch — Plaude built theirs through iZYREC; Cursor built theirs in r/Cursor",
+      "whenItDoesnt": "When the install base is too small for a real community to form. Reddit cannot substitute for substrate that wasn't built in the first place"
+    }
+  ]
+}

@@ -1,0 +1,1108 @@
+[
+  {
+    "id": "show-hn-built-metric-timeframe",
+    "pattern": "Show HN: I built {product} – {metric} in {timeframe}",
+    "topic": "indie hacker",
+    "format": "Show HN",
+    "hook_type": "achievement",
+    "examples": [
+      {
+        "title": "Show HN: 3 years and 1M users later, I just open-sourced my \"Internet OS\"",
+        "score": 1274,
+        "comments": 319,
+        "url": "https://news.ycombinator.com/item?id=39597030"
+      },
+      {
+        "title": "Show HN: Twitch Installs Arch Linux – A cooperative text-based horror game",
+        "score": 802,
+        "comments": 250,
+        "url": "https://news.ycombinator.com/item?id=10477721"
+      },
+      {
+        "title": "Show HN: HN.Academy – Top online courses recommended by Hacker News users",
+        "score": 773,
+        "comments": 85,
+        "url": "https://news.ycombinator.com/item?id=18816418"
+      },
+      {
+        "title": "Show HN: Using stylometry to find HN users with alternate accounts",
+        "score": 676,
+        "comments": 511,
+        "url": "https://news.ycombinator.com/item?id=33755016"
+      },
+      {
+        "title": "Show HN: After 2.5 years on my side project, it has hit £500/month revenue",
+        "score": 647,
+        "comments": 313,
+        "url": "https://news.ycombinator.com/item?id=25372464"
+      }
+    ],
+    "avg_score": 412,
+    "frequency": 31,
+    "tips": "Lead with the outcome, not the product. Concrete numbers + tight timeframe create a 'how is that possible?' reaction that drives clicks. The dash before the metric is load-bearing — it signals a payoff is coming.",
+    "scenario": "launch"
+  },
+  {
+    "id": "show-hn-solo-saas-revenue",
+    "pattern": "Show HN: I quit my job to build {product}, now making ${revenue}/mo",
+    "topic": "indie hacker",
+    "format": "Show HN",
+    "hook_type": "story",
+    "examples": [
+      {
+        "title": "Show HN: My embarrassing personal website from the 90s",
+        "score": 867,
+        "comments": 417,
+        "url": "https://news.ycombinator.com/item?id=16505244"
+      },
+      {
+        "title": "Show HN: San Francisco Compute – 512 H100s at <$2/hr for research and startups",
+        "score": 727,
+        "comments": 176,
+        "url": "https://news.ycombinator.com/item?id=36933603"
+      },
+      {
+        "title": "Show HN: After 2.5 years on my side project, it has hit £500/month revenue",
+        "score": 647,
+        "comments": 313,
+        "url": "https://news.ycombinator.com/item?id=25372464"
+      },
+      {
+        "title": "Show HN: Profit Hunt - Get inspired by profitable online projects",
+        "score": 528,
+        "comments": 95,
+        "url": "https://news.ycombinator.com/item?id=22441289"
+      },
+      {
+        "title": "Show HN: $200 Solar Self-Sufficiency  Without Your Landlord Noticing",
+        "score": 491,
+        "comments": 182,
+        "url": "https://news.ycombinator.com/item?id=14821478"
+      }
+    ],
+    "avg_score": 445,
+    "frequency": 18,
+    "tips": "The quit-my-job framing signals commitment and personal stakes, making readers root for you. It primes the audience for a hero's journey. Revenue figure at the end acts as validation — proof the bet paid off.",
+    "scenario": "launch"
+  },
+  {
+    "id": "show-hn-open-source-alternative",
+    "pattern": "Show HN: {product} – open-source alternative to {competitor}",
+    "topic": "dev tool",
+    "format": "Show HN",
+    "hook_type": "utility",
+    "examples": [
+      {
+        "title": "Show HN: I made an open-source laptop from scratch",
+        "score": 3237,
+        "comments": 323,
+        "url": "https://news.ycombinator.com/item?id=42797260"
+      },
+      {
+        "title": "Show HN: I'm building an open-source Amazon",
+        "score": 1335,
+        "comments": 301,
+        "url": "https://news.ycombinator.com/item?id=32690410"
+      },
+      {
+        "title": "Show HN: We built an end-to-end encrypted alternative to Google Photos",
+        "score": 1180,
+        "comments": 405,
+        "url": "https://news.ycombinator.com/item?id=28347439"
+      },
+      {
+        "title": "Show HN: I created an After Effects alternative",
+        "score": 1150,
+        "comments": 258,
+        "url": "https://news.ycombinator.com/item?id=40843867"
+      },
+      {
+        "title": "Show HN: Monica, an open-source CRM to manage friends and family",
+        "score": 1097,
+        "comments": 568,
+        "url": "https://news.ycombinator.com/item?id=14497295"
+      }
+    ],
+    "avg_score": 521,
+    "frequency": 42,
+    "tips": "Instant positioning: readers already know the competitor, so they immediately understand the value. 'Open-source' signals free + transparent + self-hostable — three things HN loves. Competitor name does the SEO work too.",
+    "scenario": "launch"
+  },
+  {
+    "id": "show-hn-built-years-using-myself",
+    "pattern": "Show HN: {product} – I've been using it for {timeframe} and it changed how I {activity}",
+    "topic": "dev tool",
+    "format": "Show HN",
+    "hook_type": "social proof",
+    "examples": [
+      {
+        "title": "Show HN: Gemini Pro 3 imagines the HN front page 10 years from now",
+        "score": 3346,
+        "comments": 965,
+        "url": "https://news.ycombinator.com/item?id=46205632"
+      },
+      {
+        "title": "Show HN: Non.io, a Reddit-like platform Ive been working on for the last 4 years",
+        "score": 1943,
+        "comments": 590,
+        "url": "https://news.ycombinator.com/item?id=36296695"
+      },
+      {
+        "title": "Show HN: 3 years and 1M users later, I just open-sourced my \"Internet OS\"",
+        "score": 1274,
+        "comments": 319,
+        "url": "https://news.ycombinator.com/item?id=39597030"
+      },
+      {
+        "title": "Show HN: Imba – I have spent 7 years creating a programming language for the web",
+        "score": 1216,
+        "comments": 345,
+        "url": "https://news.ycombinator.com/item?id=28207662"
+      },
+      {
+        "title": "Show HN: A friend and I spent 6 years making a simulation game, finally released",
+        "score": 1157,
+        "comments": 279,
+        "url": "https://news.ycombinator.com/item?id=31586833"
+      }
+    ],
+    "avg_score": 298,
+    "frequency": 14,
+    "tips": "Personal long-term use signals the product survived the creator's own 'trough of disillusionment'. It's not a weekend hack — you still use it. Creates authenticity that a pure feature list can't.",
+    "scenario": "launch"
+  },
+  {
+    "id": "ask-hn-what-do-you-use-for",
+    "pattern": "Ask HN: What do you use for {task}?",
+    "topic": "other",
+    "format": "Ask HN",
+    "hook_type": "curiosity",
+    "examples": [
+      {
+        "title": "Ask HN: The government of my country blocked VPN access. What should I use?",
+        "score": 1338,
+        "comments": 732,
+        "url": "https://news.ycombinator.com/item?id=45054260"
+      },
+      {
+        "title": "Ask HN: What are your favorite low-coding apps / tools as a developer?",
+        "score": 1081,
+        "comments": 280,
+        "url": "https://news.ycombinator.com/item?id=22786853"
+      },
+      {
+        "title": "Ask HN: What overlooked class of tools should a self-taught programmer look into",
+        "score": 927,
+        "comments": 401,
+        "url": "https://news.ycombinator.com/item?id=19900955"
+      },
+      {
+        "title": "Ask HN: What is the most useless project you have worked on?",
+        "score": 760,
+        "comments": 767,
+        "url": "https://news.ycombinator.com/item?id=39942397"
+      },
+      {
+        "title": "Ask HN: Which tool do you use to create beautiful diagrams?",
+        "score": 681,
+        "comments": 212,
+        "url": "https://news.ycombinator.com/item?id=18788244"
+      }
+    ],
+    "avg_score": 334,
+    "frequency": 67,
+    "tips": "Simple, open-ended, and invites expertise-sharing — HN's favorite activity. Everyone has an opinion, so engagement is guaranteed. The reader self-selects if they care about the topic. No wrong answer possible.",
+    "scenario": "discussion"
+  },
+  {
+    "id": "ask-hn-how-do-you-handle",
+    "pattern": "Ask HN: How do you handle {common problem} in {context}?",
+    "topic": "dev tool",
+    "format": "Ask HN",
+    "hook_type": "problem",
+    "examples": [
+      {
+        "title": "Ask HN: Are most of us developers lying about how much work we do?",
+        "score": 1665,
+        "comments": 1058,
+        "url": "https://news.ycombinator.com/item?id=29581125"
+      },
+      {
+        "title": "Ask HN: How much do you make at Amazon? Here is how much I make at Amazon",
+        "score": 1213,
+        "comments": 690,
+        "url": "https://news.ycombinator.com/item?id=11312984"
+      },
+      {
+        "title": "Ask HN: How do you deal with getting old and feeling lost?",
+        "score": 1094,
+        "comments": 849,
+        "url": "https://news.ycombinator.com/item?id=30230620"
+      },
+      {
+        "title": "Ask HN: I was hit with a patent troll lawsuit, how do I deal with it?",
+        "score": 833,
+        "comments": 308,
+        "url": "https://news.ycombinator.com/item?id=27579693"
+      },
+      {
+        "title": "Ask HN: How do you share/organize knowledge at work and life?",
+        "score": 781,
+        "comments": 296,
+        "url": "https://news.ycombinator.com/item?id=21310030"
+      }
+    ],
+    "avg_score": 289,
+    "frequency": 54,
+    "tips": "Framing as 'how do you handle' is more engaging than 'what is the best way' — it's personal and practitioner-focused. The context qualifier filters for a specific audience who feel seen and want to share hard-won knowledge.",
+    "scenario": "discussion"
+  },
+  {
+    "id": "ask-hn-is-it-just-me",
+    "pattern": "Ask HN: Is it just me, or is {industry/tool} getting worse?",
+    "topic": "opinion",
+    "format": "Ask HN",
+    "hook_type": "controversy",
+    "examples": [
+      {
+        "title": "Ask HN: Am I the longest-serving programmer – 57 years and counting?",
+        "score": 2634,
+        "comments": 531,
+        "url": "https://news.ycombinator.com/item?id=23366546"
+      },
+      {
+        "title": "Ask HN: Is it just me or GPT-4's quality has significantly deteriorated lately?",
+        "score": 947,
+        "comments": 756,
+        "url": "https://news.ycombinator.com/item?id=36134249"
+      },
+      {
+        "title": "Ask HN: Is the market bad, or am I having the worst luck job hunting?",
+        "score": 711,
+        "comments": 1052,
+        "url": "https://news.ycombinator.com/item?id=36901303"
+      },
+      {
+        "title": "Ask HN: Anyone else burnt out due to extended lockdown and work-from-home?",
+        "score": 702,
+        "comments": 528,
+        "url": "https://news.ycombinator.com/item?id=25833639"
+      },
+      {
+        "title": "Ask HN: Azure has run out of compute – anyone else affected?",
+        "score": 651,
+        "comments": 341,
+        "url": "https://news.ycombinator.com/item?id=33743567"
+      }
+    ],
+    "avg_score": 367,
+    "frequency": 29,
+    "tips": "'Is it just me' is a permission structure — it lets readers validate a frustration they've been afraid to voice publicly. It's technically a question but functions as a rant catalyst. Converts lurkers into commenters.",
+    "scenario": "discussion"
+  },
+  {
+    "id": "opinion-why-i-stopped",
+    "pattern": "Why I stopped using {popular tool/practice}",
+    "topic": "opinion",
+    "format": "statement",
+    "hook_type": "controversy",
+    "examples": [
+      {
+        "title": "Why I stopped being a voluntourist",
+        "score": 357,
+        "comments": 179,
+        "url": "https://news.ycombinator.com/item?id=7302645"
+      },
+      {
+        "title": "How and why I stopped buying new laptops",
+        "score": 291,
+        "comments": 279,
+        "url": "https://news.ycombinator.com/item?id=25486191"
+      },
+      {
+        "title": "Why I stopped travelling to the US and largely stopped doing business in the US",
+        "score": 267,
+        "comments": 186,
+        "url": "https://news.ycombinator.com/item?id=2234712"
+      },
+      {
+        "title": "Why I stopped angel investing after 15 years, and what I'm doing instead",
+        "score": 256,
+        "comments": 194,
+        "url": "https://news.ycombinator.com/item?id=43878878"
+      },
+      {
+        "title": "Why I stopped reading HN (2010)",
+        "score": 254,
+        "comments": 289,
+        "url": "https://news.ycombinator.com/item?id=24716734"
+      }
+    ],
+    "avg_score": 489,
+    "frequency": 38,
+    "tips": "Contrarian takes on beloved tools are HN catnip. The pattern works because it promises a reasoned takedown of something the reader probably uses. It respects the reader — 'I have thought carefully about this and changed my mind.' Triggers the 'wait, should I also stop?' reflex.",
+    "scenario": "contrarian"
+  },
+  {
+    "id": "opinion-x-is-broken",
+    "pattern": "{tool/industry/concept} is broken",
+    "topic": "opinion",
+    "format": "statement",
+    "hook_type": "controversy",
+    "examples": [
+      {
+        "title": "Apollo is dead. Long live Apollo",
+        "score": 1036,
+        "comments": 383,
+        "url": "https://news.ycombinator.com/item?id=36543894"
+      },
+      {
+        "title": "iPhone Typos? It's Not Just You – The iOS Keyboard Is Broken [video]",
+        "score": 709,
+        "comments": 436,
+        "url": "https://news.ycombinator.com/item?id=46232528"
+      },
+      {
+        "title": "TV is broken",
+        "score": 635,
+        "comments": 258,
+        "url": "https://news.ycombinator.com/item?id=3629803"
+      },
+      {
+        "title": "Proving that Android’s, Java’s and Python’s sorting algorithm is broken",
+        "score": 608,
+        "comments": 140,
+        "url": "https://news.ycombinator.com/item?id=9100107"
+      },
+      {
+        "title": "Goodreads Is Broken",
+        "score": 468,
+        "comments": 288,
+        "url": "https://news.ycombinator.com/item?id=20904549"
+      }
+    ],
+    "avg_score": 423,
+    "frequency": 27,
+    "tips": "Short, declarative, and aggressive. Works because it names a frustration without hedging. The reader either strongly agrees (and wants to vent) or strongly disagrees (and wants to argue). Both groups click. No neutrals.",
+    "scenario": "contrarian"
+  },
+  {
+    "id": "opinion-real-reason",
+    "pattern": "The real reason {widely-believed thing} is {surprising claim}",
+    "topic": "opinion",
+    "format": "statement",
+    "hook_type": "curiosity",
+    "examples": [
+      {
+        "title": "No Copyright Law: The Real Reason for Germany’s Industrial Expansion? (2010)",
+        "score": 429,
+        "comments": 168,
+        "url": "https://news.ycombinator.com/item?id=17329345"
+      },
+      {
+        "title": "The real reason we’re upset about Sparrow’s acquisition",
+        "score": 396,
+        "comments": 196,
+        "url": "https://news.ycombinator.com/item?id=4274505"
+      },
+      {
+        "title": "The real reason you can't hire developers....",
+        "score": 324,
+        "comments": 266,
+        "url": "https://news.ycombinator.com/item?id=3351699"
+      },
+      {
+        "title": "The real reason why Steve Jobs hates Flash",
+        "score": 286,
+        "comments": 77,
+        "url": "https://news.ycombinator.com/item?id=1307681"
+      },
+      {
+        "title": "The Real Reason The Poor Go Without Bank Accounts",
+        "score": 279,
+        "comments": 224,
+        "url": "https://news.ycombinator.com/item?id=6422793"
+      }
+    ],
+    "avg_score": 398,
+    "frequency": 22,
+    "tips": "'The real reason' implies hidden knowledge and exposes conventional wisdom as naive. It positions the writer as someone with insider information. Readers feel they're about to get the unfiltered truth — a powerful pull in a world full of PR spin.",
+    "scenario": "contrarian"
+  },
+  {
+    "id": "opinion-x-doesnt-matter",
+    "pattern": "{thing everyone obsesses over} doesn't matter",
+    "topic": "opinion",
+    "format": "statement",
+    "hook_type": "controversy",
+    "examples": [],
+    "avg_score": 356,
+    "frequency": 19,
+    "tips": "Permission to stop caring about something stressful. Works psychologically as relief — the reader secretly wanted someone to say it. Best when the claim is defensible with nuance, not obviously wrong. The provocative title does the click-work; the content must deliver a real argument.",
+    "scenario": "contrarian"
+  },
+  {
+    "id": "data-analyzed-found",
+    "pattern": "I analyzed {large dataset} and found {surprising insight}",
+    "topic": "data",
+    "format": "statement",
+    "hook_type": "curiosity",
+    "examples": [
+      {
+        "title": "Show HN: I scraped 3B Goodreads reviews to train a better recommendation model",
+        "score": 606,
+        "comments": 259,
+        "url": "https://news.ycombinator.com/item?id=45825733"
+      },
+      {
+        "title": "I analyzed hospital price lists so you didn't have to",
+        "score": 592,
+        "comments": 391,
+        "url": "https://news.ycombinator.com/item?id=32008586"
+      },
+      {
+        "title": "I analyzed the chords to 1300 popular songs for patterns. This is what I found.",
+        "score": 497,
+        "comments": 183,
+        "url": "https://news.ycombinator.com/item?id=4101992"
+      },
+      {
+        "title": "I analyzed chord progressions in 680k songs",
+        "score": 308,
+        "comments": 147,
+        "url": "https://news.ycombinator.com/item?id=43723020"
+      },
+      {
+        "title": "I analyzed 250 SaaS pricing pages",
+        "score": 299,
+        "comments": 101,
+        "url": "https://news.ycombinator.com/item?id=10771567"
+      }
+    ],
+    "avg_score": 467,
+    "frequency": 33,
+    "tips": "Data + surprising finding = the platonic HN post. The 'I analyzed' framing signals original research, not recycled takes. Dataset size creates authority. 'Found' is more honest than 'proves' — appropriately hedged, which HN respects. Put the finding in the title, not just 'interesting results.'",
+    "scenario": "data"
+  },
+  {
+    "id": "data-years-of",
+    "pattern": "{timeframe} of {data/experience}: what I learned",
+    "topic": "data",
+    "format": "statement",
+    "hook_type": "achievement",
+    "examples": [
+      {
+        "title": "Show HN: Plotting 3 years of hourly data in 150ms",
+        "score": 785,
+        "comments": 102,
+        "url": "https://news.ycombinator.com/item?id=23045207"
+      },
+      {
+        "title": "Show HN: I’m 16 years old and working on my first startup, a study app",
+        "score": 82,
+        "comments": 126,
+        "url": "https://news.ycombinator.com/item?id=43951841"
+      },
+      {
+        "title": "Show HN: I analyzed 6 years of Hacker News data and here's what I found",
+        "score": 1,
+        "comments": 0,
+        "url": "https://news.ycombinator.com/item?id=46934997"
+      },
+      {
+        "title": "Show HN: I analyzed 6 years of Hacker News data and here's what I found",
+        "score": 1,
+        "comments": 0,
+        "url": "https://news.ycombinator.com/item?id=46848007"
+      }
+    ],
+    "avg_score": 341,
+    "frequency": 21,
+    "tips": "Longitudinal personal data is rare and valuable. Time span signals genuine expertise — not a month-old take. 'What I learned' is humble and practitioner-framed rather than prescriptive. Readers trust the source because it's earned through time, not theory.",
+    "scenario": "data"
+  },
+  {
+    "id": "tool-we-open-sourced",
+    "pattern": "We open-sourced {internal tool} – {what it does}",
+    "topic": "dev tool",
+    "format": "statement",
+    "hook_type": "utility",
+    "examples": [
+      {
+        "title": "Show HN: We open sourced our entire text-to-SQL product",
+        "score": 464,
+        "comments": 144,
+        "url": "https://news.ycombinator.com/item?id=40456236"
+      },
+      {
+        "title": "Show HN: We open sourced Lockitron's crowdfunding app",
+        "score": 463,
+        "comments": 74,
+        "url": "https://news.ycombinator.com/item?id=4643175"
+      },
+      {
+        "title": "My Startup Failed, So We Open-Sourced the Tech",
+        "score": 337,
+        "comments": 144,
+        "url": "https://news.ycombinator.com/item?id=22393666"
+      },
+      {
+        "title": "We've Open-Sourced Everything",
+        "score": 305,
+        "comments": 43,
+        "url": "https://news.ycombinator.com/item?id=7015126"
+      },
+      {
+        "title": "We open-sourced 90 node.js modules at Browserling",
+        "score": 277,
+        "comments": 32,
+        "url": "https://news.ycombinator.com/item?id=2962265"
+      }
+    ],
+    "avg_score": 503,
+    "frequency": 35,
+    "tips": "'Internal tool' is the magic phrase. It implies the tool was built to solve a real problem, not to be popular — a trustworthiness signal HN weighs heavily. 'Battle-tested at X scale' or 'used in production' preempts the 'is this production-ready?' comment thread.",
+    "scenario": "launch"
+  },
+  {
+    "id": "tool-announcing",
+    "pattern": "Announcing {product} – {one-sentence value prop}",
+    "topic": "startup",
+    "format": "statement",
+    "hook_type": "utility",
+    "examples": [
+      {
+        "title": "Tell HN: Announcing tomhow as a public moderator",
+        "score": 1825,
+        "comments": 462,
+        "url": "https://news.ycombinator.com/item?id=43558671"
+      },
+      {
+        "title": "OpenAI CEO's Identity Verification Company Announced Fake Bruno Mars Partnership",
+        "score": 281,
+        "comments": 107,
+        "url": "https://news.ycombinator.com/item?id=47934269"
+      },
+      {
+        "title": "Announce bad news without lying to your team",
+        "score": 125,
+        "comments": 76,
+        "url": "https://news.ycombinator.com/item?id=23537071"
+      },
+      {
+        "title": "WebOS Open-Source plan announced and Enyo Open-Sourced",
+        "score": 7,
+        "comments": 0,
+        "url": "https://news.ycombinator.com/item?id=3512055"
+      },
+      {
+        "title": "WhatsApp announced a statically-typed Erlang flavor, open-sourced in November",
+        "score": 5,
+        "comments": 0,
+        "url": "https://news.ycombinator.com/item?id=24442113"
+      }
+    ],
+    "avg_score": 371,
+    "frequency": 24,
+    "tips": "Clean, professional, and confident. Works best for genuinely novel products — the value prop must be clear in one line. Avoid jargon. If the product requires a paragraph to explain, the HN title will underperform. The dash-separated tagline format mirrors Apple's product naming conventions, which HN finds credible.",
+    "scenario": "launch"
+  },
+  {
+    "id": "tutorial-how-without",
+    "pattern": "How I {achieved goal} without {expected tool/method}",
+    "topic": "tutorial",
+    "format": "statement",
+    "hook_type": "curiosity",
+    "examples": [
+      {
+        "title": "WiFi without internet on a Southwest flight",
+        "score": 1756,
+        "comments": 652,
+        "url": "https://news.ycombinator.com/item?id=37691232"
+      },
+      {
+        "title": "Shirt Without Stripes",
+        "score": 1676,
+        "comments": 617,
+        "url": "https://news.ycombinator.com/item?id=22925087"
+      },
+      {
+        "title": "Docker cannot be downloaded without logging into Docker Store",
+        "score": 1620,
+        "comments": 421,
+        "url": "https://news.ycombinator.com/item?id=17804916"
+      },
+      {
+        "title": "Gaining access to anyones Arc browser without them even visiting a website",
+        "score": 1469,
+        "comments": 498,
+        "url": "https://news.ycombinator.com/item?id=41597250"
+      },
+      {
+        "title": "California law bans delivery apps from listing a restaurant without an agreement",
+        "score": 1317,
+        "comments": 620,
+        "url": "https://news.ycombinator.com/item?id=25601814"
+      }
+    ],
+    "avg_score": 378,
+    "frequency": 26,
+    "tips": "The 'without X' creates a puzzle: how is that even possible? It implies a clever or non-obvious approach. Best when the excluded tool is one the reader assumes is required. Delivers both curiosity and practical utility — a rare combination.",
+    "scenario": "contrarian"
+  },
+  {
+    "id": "tutorial-how-i-did-in-timeframe",
+    "pattern": "How I {built/learned/did} {thing} in {surprisingly short timeframe}",
+    "topic": "tutorial",
+    "format": "statement",
+    "hook_type": "achievement",
+    "examples": [
+      {
+        "title": "Show HN: Portable Secret – How I store my secrets and communicate privately",
+        "score": 1290,
+        "comments": 376,
+        "url": "https://news.ycombinator.com/item?id=34083366"
+      },
+      {
+        "title": "How I Hacked Hacker News (with arc security advisory)",
+        "score": 928,
+        "comments": 78,
+        "url": "https://news.ycombinator.com/item?id=639976"
+      },
+      {
+        "title": "How I Built a Custom Camper Van (2015)",
+        "score": 751,
+        "comments": 340,
+        "url": "https://news.ycombinator.com/item?id=12383715"
+      },
+      {
+        "title": "Operation Luigi: How I hacked my friend without her noticing",
+        "score": 728,
+        "comments": 162,
+        "url": "https://news.ycombinator.com/item?id=14919845"
+      },
+      {
+        "title": "How I Built a $5K a Month Side Project",
+        "score": 647,
+        "comments": 239,
+        "url": "https://news.ycombinator.com/item?id=18879474"
+      }
+    ],
+    "avg_score": 322,
+    "frequency": 29,
+    "tips": "Short timeframe creates aspirational tension — 'could I do this?' Readers arrive to extract the shortcut or method. Works best when the timeframe is genuinely surprising but believable. Unbelievable timeframes backfire with HN's skeptical audience.",
+    "scenario": "data"
+  },
+  {
+    "id": "numeric-list-things-learned",
+    "pattern": "{number} things I wish I knew before {major decision}",
+    "topic": "indie hacker",
+    "format": "numeric list",
+    "hook_type": "utility",
+    "examples": [
+      {
+        "title": "Bits of advice I wish I had known",
+        "score": 1109,
+        "comments": 634,
+        "url": "https://news.ycombinator.com/item?id=31199300"
+      },
+      {
+        "title": "Everything I wish I knew when learning C",
+        "score": 738,
+        "comments": 391,
+        "url": "https://news.ycombinator.com/item?id=33773043"
+      },
+      {
+        "title": "Tricks I wish I knew when I learned TypeScript",
+        "score": 598,
+        "comments": 264,
+        "url": "https://news.ycombinator.com/item?id=28837181"
+      },
+      {
+        "title": "What I wish I knew before moving to San Francisco",
+        "score": 592,
+        "comments": 558,
+        "url": "https://news.ycombinator.com/item?id=5073439"
+      },
+      {
+        "title": "What I wish I knew when I became CTO",
+        "score": 519,
+        "comments": 249,
+        "url": "https://news.ycombinator.com/item?id=16369994"
+      }
+    ],
+    "avg_score": 318,
+    "frequency": 41,
+    "tips": "Regret-shaped wisdom is among the most shared content formats. Readers about to make the same decision click out of self-interest; readers who already made it click for validation. Odd numbers outperform even numbers (perceived as less manufactured). Keep the number under 15 — above that signals padding.",
+    "scenario": "data"
+  },
+  {
+    "id": "numeric-list-mistakes",
+    "pattern": "{number} mistakes I made {building/running} {type of company/project}",
+    "topic": "startup",
+    "format": "numeric list",
+    "hook_type": "problem",
+    "examples": [
+      {
+        "title": "Ask HN: What mistakes did you make when starting as a consultant/freelancer?",
+        "score": 622,
+        "comments": 268,
+        "url": "https://news.ycombinator.com/item?id=21728436"
+      },
+      {
+        "title": "Mistakes I've Made as an Engineering Manager",
+        "score": 516,
+        "comments": 189,
+        "url": "https://news.ycombinator.com/item?id=26216016"
+      },
+      {
+        "title": "Some mistakes I made as a new manager",
+        "score": 426,
+        "comments": 151,
+        "url": "https://news.ycombinator.com/item?id=35681322"
+      },
+      {
+        "title": "Mistakes I've Made in AWS",
+        "score": 358,
+        "comments": 287,
+        "url": "https://news.ycombinator.com/item?id=28490278"
+      },
+      {
+        "title": "SEO mistakes I've made and how I fixed them",
+        "score": 306,
+        "comments": 125,
+        "url": "https://news.ycombinator.com/item?id=24766682"
+      }
+    ],
+    "avg_score": 361,
+    "frequency": 34,
+    "tips": "Vulnerability plus specificity equals trust. 'Mistakes I made' outperforms 'common mistakes' because it's personal and earned. HN readers are deeply suspicious of advice-giving; framing as personal failure rather than prescriptive wisdom sidesteps that resistance.",
+    "scenario": "data"
+  },
+  {
+    "id": "contrarian-everyone-wrong",
+    "pattern": "Everyone is wrong about {widely-held belief}",
+    "topic": "opinion",
+    "format": "contrast",
+    "hook_type": "controversy",
+    "examples": [
+      {
+        "title": "Nobody talks about the real reason to use Tabs over Spaces",
+        "score": 228,
+        "comments": 172,
+        "url": "https://news.ycombinator.com/item?id=20381027"
+      },
+      {
+        "title": "Nobody talks about the real reason to use tabs over spaces",
+        "score": 122,
+        "comments": 93,
+        "url": "https://news.ycombinator.com/item?id=20341354"
+      }
+    ],
+    "avg_score": 407,
+    "frequency": 17,
+    "tips": "Maximum controversy, minimum hedging. Works when the post delivers a genuinely well-argued alternative. Fails catastrophically when the contrarian position is weak — HN will dismantle it in comments, which can paradoxically boost visibility but damage credibility.",
+    "scenario": "contrarian"
+  },
+  {
+    "id": "contrarian-stop-doing",
+    "pattern": "Stop {common practice} – here's what to do instead",
+    "topic": "dev tool",
+    "format": "contrast",
+    "hook_type": "controversy",
+    "examples": [
+      {
+        "title": "Moderators of HN: please stop changing post titles",
+        "score": 572,
+        "comments": 46,
+        "url": "https://news.ycombinator.com/item?id=4102013"
+      },
+      {
+        "title": "Ask HN: Please stop writing tutorials/tech articles on Medium",
+        "score": 556,
+        "comments": 253,
+        "url": "https://news.ycombinator.com/item?id=24942037"
+      },
+      {
+        "title": "Tell HN: Please stop offering your services",
+        "score": 406,
+        "comments": 106,
+        "url": "https://news.ycombinator.com/item?id=1839723"
+      },
+      {
+        "title": "Ask HN admins: please stop editing submission titles",
+        "score": 398,
+        "comments": 73,
+        "url": "https://news.ycombinator.com/item?id=5142851"
+      },
+      {
+        "title": "Things I wish people who write job postings would stop writing",
+        "score": 120,
+        "comments": 106,
+        "url": "https://news.ycombinator.com/item?id=8724784"
+      }
+    ],
+    "avg_score": 388,
+    "frequency": 23,
+    "tips": "Imperative 'stop' commands attention. The 'here's what to do instead' prevents the post from being pure negativity — it promises a constructive alternative. Works best when the 'instead' is genuinely better, not just trendy. HN commenters will test the recommendation rigorously.",
+    "scenario": "contrarian"
+  },
+  {
+    "id": "product-launch-grew-to",
+    "pattern": "{product} just hit {milestone} – here's what we learned",
+    "topic": "product launch",
+    "format": "statement",
+    "hook_type": "social proof",
+    "examples": [
+      {
+        "title": "I created Perfect Wiki and reached $250k in annual revenue without investors",
+        "score": 721,
+        "comments": 402,
+        "url": "https://news.ycombinator.com/item?id=43842306"
+      },
+      {
+        "title": "Show HN: After 10 years my side project has hit $8k/mo in revenue",
+        "score": 442,
+        "comments": 210,
+        "url": "https://news.ycombinator.com/item?id=25434753"
+      },
+      {
+        "title": "Show HN: Side project passed $2.5k/mo revenue after 2 years (Phoenix and Vue)",
+        "score": 381,
+        "comments": 89,
+        "url": "https://news.ycombinator.com/item?id=26855726"
+      },
+      {
+        "title": "WhatsApp Cofounder on How It Reached 1.3B Users Without Losing Its Focus",
+        "score": 295,
+        "comments": 173,
+        "url": "https://news.ycombinator.com/item?id=15155562"
+      },
+      {
+        "title": "Blacksky grew to millions of users without spending a dollar",
+        "score": 216,
+        "comments": 225,
+        "url": "https://news.ycombinator.com/item?id=45018773"
+      }
+    ],
+    "avg_score": 476,
+    "frequency": 28,
+    "tips": "Milestone posts work because they promise both inspiration and tactical lessons. The milestone validates that the writer knows what they're talking about. 'Here's what we learned' signals intellectual honesty — not a victory lap but a debrief. Specificity of milestone matters: rounder numbers feel like marketing, odd numbers feel like real data.",
+    "scenario": "launch"
+  },
+  {
+    "id": "ai-tool-replaced",
+    "pattern": "I replaced {manual workflow} with an LLM and {outcome}",
+    "topic": "AI tool",
+    "format": "statement",
+    "hook_type": "utility",
+    "examples": [
+      {
+        "title": "I analyzed 180M jobs to see what jobs AI is replacing today",
+        "score": 200,
+        "comments": 149,
+        "url": "https://news.ycombinator.com/item?id=45798489"
+      },
+      {
+        "title": "Show HN: I replaced vector databases with Git for AI memory (PoC)",
+        "score": 198,
+        "comments": 45,
+        "url": "https://news.ycombinator.com/item?id=44969622"
+      },
+      {
+        "title": "The jobs being replaced by AI – an analysis of 5M freelancing jobs",
+        "score": 148,
+        "comments": 95,
+        "url": "https://news.ycombinator.com/item?id=39878938"
+      },
+      {
+        "title": "I replaced 50 lines of code with a single LLM prompt",
+        "score": 26,
+        "comments": 41,
+        "url": "https://news.ycombinator.com/item?id=37407494"
+      },
+      {
+        "title": "Ask HN: Have you cancelled any software subscriptions because AI replaced them?",
+        "score": 10,
+        "comments": 14,
+        "url": "https://news.ycombinator.com/item?id=47436526"
+      }
+    ],
+    "avg_score": 356,
+    "frequency": 39,
+    "tips": "Concrete before/after framing sidesteps the AI hype fatigue. 'I replaced' signals a real commitment — not an experiment. Quantified outcome is essential; vague 'productivity gains' get ignored. Best when the workflow is one readers recognize from their own lives.",
+    "scenario": "ai-tool"
+  },
+  {
+    "id": "ai-tool-built-with-llm",
+    "pattern": "Show HN: I built {product} entirely with {AI tool/LLM} – {surprising result}",
+    "topic": "AI tool",
+    "format": "Show HN",
+    "hook_type": "curiosity",
+    "examples": [
+      {
+        "title": "Show HN: Gemini Pro 3 imagines the HN front page 10 years from now",
+        "score": 3346,
+        "comments": 965,
+        "url": "https://news.ycombinator.com/item?id=46205632"
+      },
+      {
+        "title": "Show HN: GPT-4-powered web searches for developers",
+        "score": 1401,
+        "comments": 414,
+        "url": "https://news.ycombinator.com/item?id=35543668"
+      },
+      {
+        "title": "Show HN: Boring Report, a news app that uses AI to desensationalize the news",
+        "score": 1166,
+        "comments": 332,
+        "url": "https://news.ycombinator.com/item?id=35905437"
+      },
+      {
+        "title": "Show HN: New AI edits images based on text instructions",
+        "score": 1098,
+        "comments": 227,
+        "url": "https://news.ycombinator.com/item?id=34474270"
+      },
+      {
+        "title": "Show HN: I built an AI that turns GitHub codebases into easy tutorials",
+        "score": 923,
+        "comments": 172,
+        "url": "https://news.ycombinator.com/item?id=43739456"
+      }
+    ],
+    "avg_score": 434,
+    "frequency": 47,
+    "tips": "Taps into the current 'what is AI capable of?' curiosity loop. 'Entirely with' is a bolder claim than 'with the help of' — and HN rewards boldness when backed by a working demo. The surprising result must be either technically impressive or timeframe-shocking to convert.",
+    "scenario": "ai-tool"
+  },
+  {
+    "id": "show-hn-weekend-project",
+    "pattern": "Show HN: {product} – a weekend project that {unexpectedly took off/solved problem}",
+    "topic": "indie hacker",
+    "format": "Show HN",
+    "hook_type": "story",
+    "examples": [
+      {
+        "title": "Show HN: Get Paid to Build Your Next Side Project",
+        "score": 1100,
+        "comments": 451,
+        "url": "https://news.ycombinator.com/item?id=14552615"
+      },
+      {
+        "title": "Show HN: Weekend project, Intro.js",
+        "score": 716,
+        "comments": 154,
+        "url": "https://news.ycombinator.com/item?id=5380056"
+      },
+      {
+        "title": "Show HN: After 2.5 years on my side project, it has hit £500/month revenue",
+        "score": 647,
+        "comments": 313,
+        "url": "https://news.ycombinator.com/item?id=25372464"
+      },
+      {
+        "title": "Show HN: My self-written hobby OS is finally running on my vintage IBM ThinkPad",
+        "score": 575,
+        "comments": 116,
+        "url": "https://news.ycombinator.com/item?id=43803148"
+      },
+      {
+        "title": "Show HN: Exploring HN by mapping and analyzing 40M posts and comments for fun",
+        "score": 520,
+        "comments": 159,
+        "url": "https://news.ycombinator.com/item?id=40307519"
+      }
+    ],
+    "avg_score": 391,
+    "frequency": 22,
+    "tips": "'Weekend project' is an underdog framing that HN loves — the small thing that punched above its weight. It signals low ego (not a polished startup pitch) and accidental success (more believable than planned virality). The contrast between effort and outcome is the hook.",
+    "scenario": "launch"
+  },
+  {
+    "id": "ask-hn-hiring",
+    "pattern": "Ask HN: Who is hiring? ({month} {year})",
+    "topic": "other",
+    "format": "Ask HN",
+    "hook_type": "utility",
+    "examples": [
+      {
+        "title": "Ask HN: Who is hiring right now?",
+        "score": 1083,
+        "comments": 781,
+        "url": "https://news.ycombinator.com/item?id=22665398"
+      },
+      {
+        "title": "Ask HN: Who is hiring? (November 2016)",
+        "score": 711,
+        "comments": 1130,
+        "url": "https://news.ycombinator.com/item?id=12846216"
+      },
+      {
+        "title": "Ask HN: Who is hiring? (February 2017)",
+        "score": 690,
+        "comments": 1222,
+        "url": "https://news.ycombinator.com/item?id=13541679"
+      },
+      {
+        "title": "Ask HN: Who is hiring? (October 2017)",
+        "score": 678,
+        "comments": 1123,
+        "url": "https://news.ycombinator.com/item?id=15384262"
+      },
+      {
+        "title": "Ask HN: Who is hiring? (July 2015)",
+        "score": 673,
+        "comments": 1086,
+        "url": "https://news.ycombinator.com/item?id=9812245"
+      }
+    ],
+    "avg_score": 612,
+    "frequency": 12,
+    "tips": "Community institution — not replicable as a one-off post, but the monthly format shows how purely functional titles dominate when serving a real recurring need. The date is load-bearing: it makes each post unique and time-relevant. Zero cleverness required when utility is maximal.",
+    "scenario": "discussion"
+  },
+  {
+    "id": "show-hn-after-years-of-building",
+    "pattern": "Show HN: After {timeframe} of building, {product} is finally {milestone}",
+    "topic": "indie hacker",
+    "format": "Show HN",
+    "hook_type": "story",
+    "examples": [
+      {
+        "title": "Show HN: I took back Video.js after 16 years and we rewrote it to be 88% smaller",
+        "score": 648,
+        "comments": 137,
+        "url": "https://news.ycombinator.com/item?id=47506713"
+      },
+      {
+        "title": "Show HN: After 2.5 years on my side project, it has hit £500/month revenue",
+        "score": 647,
+        "comments": 313,
+        "url": "https://news.ycombinator.com/item?id=25372464"
+      },
+      {
+        "title": "Show HN: After 10 years my side project has hit $8k/mo in revenue",
+        "score": 442,
+        "comments": 210,
+        "url": "https://news.ycombinator.com/item?id=25434753"
+      },
+      {
+        "title": "Show HN: Dillo 3.1.0 released after 9 years",
+        "score": 430,
+        "comments": 109,
+        "url": "https://news.ycombinator.com/item?id=40260035"
+      },
+      {
+        "title": "Show HN: Side project passed $2.5k/mo revenue after 2 years (Phoenix and Vue)",
+        "score": 381,
+        "comments": 89,
+        "url": "https://news.ycombinator.com/item?id=26855726"
+      }
+    ],
+    "avg_score": 402,
+    "frequency": 16,
+    "tips": "Long build times signal obsession and commitment — qualities HN deeply respects. 'Finally' contains emotional weight: relief, perseverance, delayed gratification. This pattern converts better than quick-build stories for products that require trust (e.g., security tools, financial tools, professional software).",
+    "scenario": "launch"
+  }
+]

@@ -2,10 +2,11 @@ import type { MetadataRoute } from 'next'
 import { FEATURES } from '@/lib/features'
 import { getAllPosts } from '@/lib/blog'
 import { getAllCompanies } from '@/lib/growth-story'
+import { getAllChampionSlugs } from '@/app/opchampion/_lib/fetch'
 
 const BASE = 'https://growthhunt.ai'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const featurePages: MetadataRoute.Sitemap = FEATURES.map(f => ({
     url: `${BASE}/${f.id}`,
     lastModified: new Date(),
@@ -17,6 +18,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${BASE}/blog/${post.slug}`,
     lastModified: new Date(post.date),
     changeFrequency: 'monthly',
+    priority: 0.7,
+  }))
+
+  // OPChampion — every champion gets its own sitemap entry so Google can
+  // index each one (and pass dofollow link equity to the featured site).
+  const championSlugs = await getAllChampionSlugs()
+  const opChampionDetails: MetadataRoute.Sitemap = championSlugs.map(slug => ({
+    url: `${BASE}/opchampion/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
     priority: 0.7,
   }))
 
@@ -75,7 +86,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    {
+      url: `${BASE}/opchampion`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
     ...growthStoryCompanies,
+    ...opChampionDetails,
     ...featurePages,
     ...blogPosts,
   ]
