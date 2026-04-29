@@ -56,7 +56,7 @@ function LiveCases() {
         <div className="section-head" style={{ borderBottom: 0, paddingBottom: 0, display: 'block' }}>
           <h2 style={{ margin: '0 0 12px' }}>Use it <em>today</em>.</h2>
           <p style={{ fontSize: 16, color: 'var(--ink-dim)', margin: 0, maxWidth: 540 }}>
-            Three products live right now. No waitlist, no setup — just click in and go.
+            Four products live right now. No waitlist, no setup — just click in and go.
           </p>
         </div>
         <div className="eco-grid">
@@ -91,6 +91,16 @@ function LiveCases() {
             </p>
             <span className="visit">Browse this week&apos;s issue →</span>
           </a>
+
+          {/* Xhunter card — viral X tweet templates lab */}
+          <Link href="/xhunter" className="eco-card eco-card-link">
+            <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
+            <div className="eco-title">Xhunter</div>
+            <p>
+              A searchable lab of viral tweet templates from 277 AI startup accounts — 3,447 tweets, filterable by category, founder voice, and content tag. Find the patterns closest to your startup.
+            </p>
+            <span className="visit">Open the lab →</span>
+          </Link>
         </div>
       </div>
     </section>
@@ -189,6 +199,7 @@ function Footer() {
             <li><Link href="/growth-story">Growth Story</Link></li>
             <li><Link href="/get-backlinks">Get Backlinks</Link></li>
             <li><a href="/opchampion">OP Champions</a></li>
+            <li><Link href="/xhunter">Xhunter</Link></li>
           </ul>
         </div>
         <div>

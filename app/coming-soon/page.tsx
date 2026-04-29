@@ -40,6 +40,7 @@ function Footer() {
             <li><Link href="/growth-story">Growth Story</Link></li>
             <li><Link href="/get-backlinks">Get Backlinks</Link></li>
             <li><a href="/opchampion">OP Champions</a></li>
+            <li><Link href="/xhunter">Xhunter</Link></li>
           </ul>
         </div>
         <div>
