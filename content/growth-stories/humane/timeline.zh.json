@@ -1,0 +1,325 @@
+{
+  "company": {
+    "slug": "humane",
+    "name": "Humane",
+    "legalName": "Humane Inc.",
+    "tagline": "2.3 亿美元、两位 ex-Apple 创始人、五年潜行——以及一场基础设施无法吸收的发布",
+    "summary": "Humane 是 A1 既有基础设施失败的标准案例：一场定义品类的发布在漏斗顶端启动了所有动作（TED 舞台、Coperni 走秀、Tiger / SoftBank / OpenAI 股东表），却没有任何发布前的基础设施在评测落地时承接需求冲击。当 MKBHD 在 2024 年 4 月 14 日的《我评测过的最差产品》视频把发布周的判决凝固下来时，Humane 没有既有用户基数、没有第二款产品、也没有蜂窝分销肌肉可以倚靠。HP 在 2025 年 2 月 18 日以 1.16 亿美元的资产交易关上了这个文件夹——10 天后，AI Pin 在太平洋时间中午被 brick。",
+    "founded": "2018",
+    "founders": [
+      "Imran Chaudhri",
+      "Bethany Bongiorno"
+    ],
+    "seriesNumber": 10
+  },
+  "phases": [
+    {
+      "start": "2018-01",
+      "end": "2023-03",
+      "name": "潜行期",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2023-03",
+      "end": "2023-11",
+      "name": "发布前预热",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2023-11",
+      "end": "2024-08",
+      "name": "发布与崩塌",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2024-08",
+      "end": "2025-03",
+      "name": "收尾与 HP 退出",
+      "color": "#e5e7eb"
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-01-01",
+      "title": "Humane Inc. 在潜行中成立",
+      "type": "product",
+      "gtmTag": "Founder-as-IP",
+      "description": "Imran Chaudhri（Apple HI 设计负责人，1995–2017）与 Bethany Bongiorno（Apple iOS/macOS PM 总监）在旧金山注册成立 Humane。已婚夫妻。五年潜行期开启——没有前置产品，没有既有用户基数。",
+      "externalUrl": "https://en.wikipedia.org/wiki/Humane_Inc.",
+      "articleSlug": "2018-humane-founding"
+    },
+    {
+      "date": "2020-09-01",
+      "title": "A 轮 3000 万美元，由 Lachy Groom 与 Sam Altman 领投",
+      "type": "funding",
+      "description": "A 轮以 3000 万美元、1.5 亿美元投后估值关账。Sam Altman 个人参投——彼时 OpenAI 尚未以投资人身份介入。仍处于产品前、揭幕前阶段。",
+      "externalUrl": "https://tracxn.com/d/companies/humane/__VsoWgAzFtEpKoJKoAVYDjylPIIR_ksmQkeNThTB-tLQ/funding-and-investors"
+    },
+    {
+      "date": "2021-09-01",
+      "title": "B 轮 1 亿美元，Tiger Global 领投，估值 8 亿美元",
+      "type": "funding",
+      "description": "Tiger Global 领投 1 亿美元 B 轮，跟投方包括 SoftBank、BOND、Forerunner、Qualcomm Ventures、Marc Benioff（TIME Ventures）、Lachy Groom、Kindred。投后估值 8 亿美元。公司仍处于产品前阶段。",
+      "externalUrl": "https://techcrunch.com/2021/09/01/humane-a-stealthy-hardware-and-software-startup-co-founded-by-an-ex-apple-designer-and-engineer-raises-100m/"
+    },
+    {
+      "date": "2023-03-08",
+      "title": "C 轮 1 亿美元关账，累计融资 2.3 亿美元",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "1 亿美元 C 轮由 Kindred Ventures 领投。新进股东：SK Networks、Microsoft、LG Tech Ventures、Volvo Cars Tech Fund。Tiger / Sam Altman / Forerunner / Qualcomm 跟投。累计披露融资 2.3 亿美元。未披露任何收入或客户数据。",
+      "externalUrl": "https://www.prnewswire.com/news-releases/humane-raises-100m-in-series-c-round-as-it-builds-device-and-services-platform-for-the-ai-era-301765582.html"
+    },
+    {
+      "date": "2023-04-20",
+      "title": "TED2023 揭幕——《消失的电脑》",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "Chaudhri 在温哥华 TED2023 第 4 场发表演讲。首次公开演示尚未发布的 AI Pin：激光投影到掌心、向 Bethany Bongiorno 的现场通话。揭幕语法是邀请制、舞台限定的——用户无法复现。",
+      "externalUrl": "https://www.ted.com/talks/imran_chaudhri_the_disappearing_computer_and_a_world_where_you_can_take_ai_everywhere",
+      "articleSlug": "2023-04-ted-reveal"
+    },
+    {
+      "date": "2023-06-30",
+      "title": "TechCrunch 曝光「Ai Pin」产品名",
+      "type": "media",
+      "description": "内部产品代号「Ai Pin」通过 TechCrunch 报道曝光。Humane 确认了名字，但未开放预订或公布详细规格。",
+      "externalUrl": "https://techcrunch.com/2023/06/30/secretive-hardware-startup-humanes-first-product-is-the-ai-pin/"
+    },
+    {
+      "date": "2023-09-30",
+      "title": "Naomi Campbell 在 Coperni 巴黎时装周佩戴 AI Pin",
+      "type": "media",
+      "gtmTag": "Ride the KOL wave",
+      "description": "Coperni SS24 走秀以 Naomi Campbell 佩戴尚未公开发布的 AI Pin 开场——Humane 之外的首位公开佩戴者。Vogue 通过 TikTok 与编辑稿覆盖。发布前叙事的最高点。",
+      "externalUrl": "https://techcrunch.com/2023/09/30/humanes-ai-pin-debuts-on-the-paris-runway/"
+    },
+    {
+      "date": "2023-11-09",
+      "title": "AI Pin 正式发布（699 美元 + 24 美元/月）",
+      "type": "product",
+      "gtmTag": "Bundled milestone",
+      "description": "正式发布公告：699 美元设备 + 24 美元/月 Humane 订阅，蜂窝服务通过 T-Mobile MVNO 提供。定位为手机替代品而非配件。预订于 11 月 16 日开放。CNBC / TechCrunch / Engadget / Axios 同日覆盖。未披露订单目标。",
+      "externalUrl": "https://www.prnewswire.com/news-releases/humane-launches-ai-pin---marking-a-new-beginning-for-personal-ai-devices-301983548.html",
+      "articleSlug": "2023-11-ai-pin-launch"
+    },
+    {
+      "date": "2023-11-16",
+      "title": "美国地区开放预订",
+      "type": "product",
+      "description": "humane.com 开放预订。未披露初始预订量。",
+      "externalUrl": "https://techcrunch.com/2023/11/09/humanes-ai-pin/"
+    },
+    {
+      "date": "2024-01-10",
+      "title": "发布前裁员（约 10 人）与 CTO 调整",
+      "type": "product",
+      "description": "Bongiorno 通知员工裁员约 4%（约 10 人），CTO Patrick Gates 转任顾问。The Information 首发。在任何设备发货之前的收紧信号。",
+      "externalUrl": "https://techcrunch.com/2024/01/10/humane-layoffs-ai-pin-hardware/"
+    },
+    {
+      "date": "2024-02-23",
+      "title": "发货时间从 3 月推迟至 4 月中",
+      "type": "product",
+      "description": "Humane 将 AI Pin 发货从更早的目标窗口推迟至 2024 年 4 月中。对外说法是供应链调度；内部上是执行风险的预兆。",
+      "externalUrl": "https://techcrunch.com/2024/02/23/humane-pushes-ai-pin-ship-date-to-mid-april/"
+    },
+    {
+      "date": "2024-02-27",
+      "title": "宣布 SK Telecom 国际合作",
+      "type": "product",
+      "description": "SK Telecom（韩国）被宣布为首个国际蜂窝合作伙伴——D4 地理扩张。设备在公司崩塌之前从未真正面向国际发货。",
+      "externalUrl": "https://techcrunch.com/2024/02/27/humane-announces-first-international-market-for-its-ai-pin-partnering-with-south-koreas-sk-telecom/"
+    },
+    {
+      "date": "2024-04-11",
+      "title": "首批客户发货 + The Verge 评测发布",
+      "type": "product",
+      "description": "AI Pin 开始向预订客户发货。同日：David Pierce / The Verge 发布《Humane AI Pin review: not even close》。Engadget 与 Wired 在 24 小时内跟进。72 小时内评测者意见汇聚。",
+      "externalUrl": "https://www.theverge.com/24126502/humane-ai-pin-review"
+    },
+    {
+      "date": "2024-04-14",
+      "title": "MKBHD：《我评测过的最差产品……目前为止》",
+      "type": "media",
+      "gtmTag": "Ride the KOL wave",
+      "description": "Marques Brownlee（约 1800 万+ 订阅者）发布如今已成标准案例的评测。标题成为公共失败信标。围绕评测者责任的讨论（Hank Green / Brian Heater）随即跟上。",
+      "externalUrl": "https://www.youtube.com/watch?v=TitZV6k8zfA",
+      "articleSlug": "2024-04-mkbhd-review"
+    },
+    {
+      "date": "2024-04-23",
+      "title": "Marketplace《为什么 Ai Pin 哑了火》——主流媒体拐点",
+      "type": "media",
+      "description": "NPR Marketplace 播出这期节目，把 Humane 的失败带入大众讨论。这是 Plaude 在 2025 年用以对位定位的日期——也是整个 2024 年 AI 硬件品类的公共失败信标日期。",
+      "externalUrl": "https://www.marketplace.org/episode/2024/04/23/why-the-ai-pin-fell-flat"
+    },
+    {
+      "date": "2024-05-22",
+      "title": "Bloomberg：Humane 探索以 7.5 亿–10 亿美元出售",
+      "type": "media",
+      "description": "Bloomberg 报道 Humane 已聘请财务顾问，目标售价 7.5 亿–10 亿美元。距 MKBHD 评测约一个月。在目标区间内未找到买家。",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2024-05-22/wearable-ai-startup-humane-is-said-to-explore-potential-sale"
+    },
+    {
+      "date": "2024-08-07",
+      "title": "The Verge：5–8 月退货量超过销量",
+      "type": "media",
+      "description": "The Verge 拿到 Humane 内部销售数据：5–8 月期间退回的 AI Pin 数量多于售出数量。累计发货约 1 万台，对照 10 万台年度目标。约 7,000 台仍在客户手中。T-Mobile MVNO 限制使退回的 pin 无法重分配——它们变成了电子垃圾。",
+      "externalUrl": "https://9to5mac.com/2024/08/07/humane-ai-pin-woes-worsen-as-recent-returns-exceed-sales/",
+      "articleSlug": "2024-12-returns-exceed-sales"
+    },
+    {
+      "date": "2024-10-23",
+      "title": "AI Pin 降价至 499 美元（充电盒拆出捆绑）",
+      "type": "product",
+      "description": "Humane 降价 200 美元至 499 美元。充电盒不再随基础包附赠（单售 69 美元）。库存清理信号。订阅价仍为 24 美元/月。",
+      "externalUrl": "https://techcrunch.com/2024/10/23/beleaguered-startup-humane-drops-ai-pin-price-by-200/"
+    },
+    {
+      "date": "2024-10-31",
+      "title": "CPSC 正式召回 10,500 个充电盒（火灾隐患）",
+      "type": "media",
+      "description": "美国消费品安全委员会（CPSC）正式公告 Humane 自愿召回 10,500 个充电盒，因锂电池存在火灾隐患。内部于 2024 年 6 月识别。退款：149 美元（单品）/ 129 美元（捆绑）。",
+      "externalUrl": "https://www.cpsc.gov/Recalls/2025/Humane-Recalls-Charge-Case-Accessory-for-Ai-Pin-Due-to-Lithium-Battery-Fire-Hazard"
+    },
+    {
+      "date": "2025-02-18",
+      "title": "HP 以约 1.16 亿美元收购 Humane 资产（不含 AI Pin）",
+      "type": "acquisition",
+      "gtmTag": "Acqui-hire competitor",
+      "description": "HP 宣布 1.16 亿美元资产交易：约 80 名员工（包括两位创始人）转入新成立的「HP IQ」团队。CosmOS 操作系统 + 300+ 项专利转移。AI Pin 设备业务被明确排除——将停产。十二个月前的目标售价是 7.5 亿–10 亿美元。",
+      "externalUrl": "https://techcrunch.com/2025/02/18/humanes-ai-pin-is-dead-as-hp-buys-startups-assets-for-116m/",
+      "articleSlug": "2025-02-hp-acquisition-brick"
+    },
+    {
+      "date": "2025-02-28",
+      "title": "AI Pin 在太平洋时间中午 12:00 被 brick——服务器关闭",
+      "type": "product",
+      "description": "所有消费版 AI Pin 在太平洋时间中午失去与 Humane 服务器的连接。通话、消息、AI 查询、云端功能全部停止。客户数据被清除。仅保留有限的离线功能。退款仅限于 2024 年 11 月 15 日之后发货的设备。从收购公告到消费端 brick 共 10 天。",
+      "externalUrl": "https://support.humane.com/hc/en-us/articles/34243204841997-Ai-Pin-Consumers-FAQ"
+    }
+  ],
+  "arr": [],
+  "valuation": [
+    {
+      "date": "2020-09-01",
+      "value": 150000000,
+      "round": "A 轮",
+      "source": "Tracxn",
+      "confidence": "media"
+    },
+    {
+      "date": "2021-09-01",
+      "value": 800000000,
+      "round": "B 轮",
+      "source": "Crunchbase",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-05-22",
+      "value": 1000000000,
+      "round": "目标售价（高位）",
+      "source": "Bloomberg",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-02-18",
+      "value": 116000000,
+      "round": "HP 资产交易",
+      "source": "Bloomberg / TechCrunch",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 5,
+      "bestStage": "发布与崩塌（2024 年 4 月）",
+      "effort": "媒体周期评测禁播期；没有任何创作者管道铺垫",
+      "role": "最具决定性的单一渠道——也是判决落地的地方",
+      "description": "YouTube 是 Humane 发布在公开场合死掉的地方。MKBHD 2024 年 4 月 14 日的视频《我评测过的最差产品……目前为止》在一个周末内触达约 1800 万订阅者的受众。The Verge 的视频评测以及 Hank Green、Brian Heater（TechCrunch）等二级反应在 72 小时内于同一平台堆叠形成共识。Humane 在 YouTube 上没有任何创作者管道的铺垫，无法用既有用户的证词来平衡发布周的判决。",
+      "catalyst": "2024 年 4 月 14 日——MKBHD 发布《我评测过的最差产品……目前为止》。视频标题成为整个 2024 年 AI 硬件品类的公共失败信标。",
+      "catalystUrl": "https://www.youtube.com/watch?v=TitZV6k8zfA",
+      "accountUrl": "https://www.youtube.com/@humane",
+      "accountLabel": "Humane 在 YouTube",
+      "whenItWorks": "当你已经有创作者管道在数月之间逐渐对你的产品形成观点——发布周的评测会与既有用户的证词并列落地，而不是落入真空",
+      "whenItDoesnt": "当 KOL 在发布时第一次冷启动接触产品。同一条在发布前抬高你的渠道，会在设备表现低于演示时把你按下去"
+    },
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 4,
+      "bestStage": "潜行期 + C 轮公告",
+      "effort": "节点式——融资轮、TED 片段、发布后危机讨论",
+      "role": "资本层放大器与讨论场",
+      "description": "X 在发布前承载了 Humane 的投资人级信号（Tiger / SoftBank / OpenAI 股东表、TED 片段、Coperni 走秀照片），并在发布后变成失败讨论的主场。2024 年 4 月那场关于「差评是否会杀死公司？」的辩论——Hank Green、Brian Heater、MKBHD 本人——发生在 X 上。Humane 从未拥有一个能驱动消费者需求的账号；品牌的传播是通过 tech-Twitter，而不是公司自己的发帖。",
+      "catalyst": "2023 年 3 月 8 日——C 轮公告通过 AI-Twitter 网络放大，把「两位 ex-Apple 创始人、累计 2.3 亿美元、距 TED 六周」的叙事锚定下来，复利至 4 月 20 日的揭幕。",
+      "accountUrl": "https://x.com/Humane",
+      "accountLabel": "@Humane on X",
+      "whenItWorks": "用于投资人级信号、创始人公信力框架、以及面向 AI-Twitter 受众的高分量融资公告",
+      "whenItDoesnt": "作为硬件的消费获客渠道。这里的受众会评判你的演示和你的评测——而不会买你的设备"
+    },
+    {
+      "slug": "instagram",
+      "name": "Instagram",
+      "score": 4,
+      "bestStage": "发布前预热（2023 年 9 月）",
+      "effort": "时尚媒体合作；Coperni / Vogue 编辑稿",
+      "role": "发布前的美学公信力转移",
+      "description": "Instagram 是 Humane 在 2023 年 KOL 信用转移最起作用的地方。2023 年 9 月 30 日 Naomi Campbell 在 Coperni SS24 巴黎走秀佩戴尚未公开发布的 AI Pin，催生了任何 AI 硬件竞品都未触及过的 Vogue 编辑稿时刻。Instagram 与 TikTok 上的时尚媒体话语权扩散到了大众科技消费者的认知中——也是发布前叙事势能的最高水位。",
+      "catalyst": "2023 年 9 月 30 日——Naomi Campbell 佩戴 AI Pin 为 Coperni SS24 走秀开场；Vogue 的编辑稿与 TikTok 剪辑通过 Instagram 的时尚关系图传播，并在 48 小时内进入主流科技消费媒体。",
+      "catalystUrl": "https://techcrunch.com/2023/09/30/humanes-ai-pin-debuts-on-the-paris-runway/",
+      "accountUrl": "https://www.instagram.com/humane.com/",
+      "accountLabel": "@humane.com on Instagram",
+      "whenItWorks": "当产品具有可穿戴或可视觉化的实体，且品牌可以可信地进入与时尚相邻的语境时",
+      "whenItDoesnt": "当美学是最强论据时。被风格编码的公信力，撑不过发布周的可靠性判决"
+    },
+    {
+      "slug": "press",
+      "name": "Press（TechCrunch / Bloomberg / The Verge）",
+      "score": 5,
+      "bestStage": "全阶段——贯穿故事弧线的承重结构",
+      "effort": "创始人关系 + 独家发布禁播期",
+      "role": "发布前的叙事推手与发布后的讣告作者",
+      "description": "媒体承载了 Humane 完整的故事弧线。三轮 TechCrunch 融资独家。CNBC / Axios / TechCrunch 在 2023 年 11 月覆盖发布日。The Verge 的 David Pierce 同时撰写了发布周致命评测（2024 年 4 月 11 日）与 8 月的退货内部数据独家。Bloomberg 同时披露了 2024 年 5 月的出售探索与 2025 年 2 月的 HP 交易。Humane 没有任何其他 GTM 渠道能像与行业媒体的关系一样承重——也没有任何其他渠道在发布后转向得如此彻底。",
+      "catalyst": "2024 年 4 月 11 日——The Verge《Humane AI Pin review: not even close》在首批设备发货同日发布。Engadget、Wired、TechRadar 在 72 小时内堆叠跟进。在消费者受众有机会形成判断之前，行业媒体的发布判决已经定型。",
+      "catalystUrl": "https://www.theverge.com/24126502/humane-ai-pin-review",
+      "accountUrl": "https://humane.com/press",
+      "accountLabel": "Humane 媒体资料",
+      "whenItWorks": "当产品能在面对自身发布前演示的诚实评测中存活下来时。在实质能落地的前提下，媒体是公信力放大器",
+      "whenItDoesnt": "当展示语法对设备实际表现做出过度承诺时。媒体关系无法把你与可靠性判决隔绝开"
+    },
+    {
+      "slug": "podcast",
+      "name": "Podcast 与长视频",
+      "score": 3,
+      "bestStage": "发布前预热（TED 2023）",
+      "effort": "精心策划的舞台时刻；之后几乎没有长篇创始人露出",
+      "role": "单一时刻达到的创始人即 IP 高度",
+      "description": "Humane 的「创始人即 IP」执行在 2023 年 4 月 20 日 TED2023 达到峰值——Imran Chaudhri 13 分钟的《消失的电脑》演讲。格式发明（掌心投影、向 Bongiorno 的现场通话）在单一舞台时刻达到了与 Cursor 的 Lex Fridman / No Priors 路径相当的高度。但公司从未建立起能在长时间窗口内复利创始人之声的长篇播客节奏（No Priors、Latent Space、Hard Fork、Decoder）。TED 之后，两位创始人没有一个长篇之家。",
+      "catalyst": "2023 年 4 月 20 日——温哥华 TED2023 第 4 场。Chaudhri 的《消失的电脑》是这个时代最优秀的 AI 产品创始人揭幕之一。这场揭幕语法同时是「为什么舞台演示在结构上是一次 B1 失败」的标准证据：用户无法在 5 分钟内复现。",
+      "catalystUrl": "https://www.ted.com/talks/imran_chaudhri_the_disappearing_computer_and_a_world_where_you_can_take_ai_everywhere",
+      "accountUrl": "https://www.ted.com/speakers/imran_chaudhri",
+      "accountLabel": "Imran Chaudhri 在 TED",
+      "whenItWorks": "当你能交付一次定义品类的舞台时刻——并且能在随后数月内维持长篇节奏",
+      "whenItDoesnt": "当那个时刻是孤立存在时。一次 13 分钟的演讲，无法替代 18 个月以上的创始人即 IP 复利"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 2,
+      "bestStage": "发布与崩塌",
+      "effort": "公司几乎无 presence",
+      "role": "失败讨论聚合地（被动）",
+      "description": "Reddit 在结构上从未是 Humane 的渠道。r/HumaneAi 从未跨过能让它作为真正支持、倡导或反馈层运转的用户基数门槛——到 2024 年 8 月仍仅有约 7,000 台活跃设备的安装基数，根本没有承重社区所需的密度。Reddit 真正做到的，是在 2024 年 4 月之后于 r/gadgets、r/technology、r/Apple 子版块聚合了失败讨论。等到 Humane 需要 Reddit 作为支持产品的渠道时，已经没有可以调用的社区。",
+      "catalyst": "2024 年 4 月 14–17 日——Reddit 的 r/gadgets 与 r/technology 子版块把 MKBHD 评测的反应以及「差评是否会杀死公司？」辩论汇聚成持续多日的讨论循环。Humane 在平台上没有任何声音可以参与。",
+      "catalystUrl": "https://www.reddit.com/r/HumaneAi/",
+      "accountUrl": "https://www.reddit.com/r/HumaneAi/",
+      "accountLabel": "r/HumaneAi",
+      "whenItWorks": "当你已经在发布前花 12 个月以上建立起产品社区时——Plaude 通过 iZYREC 建好了；Cursor 在 r/Cursor 建好了",
+      "whenItDoesnt": "当安装基数小到无法形成真实社区时。Reddit 无法替代一开始就没建好的基础设施"
+    }
+  ]
+}

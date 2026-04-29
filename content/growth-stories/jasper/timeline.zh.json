@@ -1,0 +1,358 @@
+{
+  "company": {
+    "slug": "jasper",
+    "name": "Jasper",
+    "legalName": "Jasper AI, Inc.",
+    "tagline": "从 15 亿美元 A 轮到 ChatGPT 上线，43 天——AI 创业公司迄今最干净的 D1 wrapper（GPT 套壳）失败案例",
+    "summary": "2021 年 1 月至 2022 年 10 月间，Jasper 把 AI 写作品类的 GTM 打法跑得近乎完美：「AI 写一篇博客」式的病毒级 demo 语法、9 名员工跑出 4250 万美元 ARR，再到捆绑式 1.25 亿美元 A 轮、15 亿美元估值与 7 万付费客户的同步披露。43 天后，ChatGPT 在同一个模型家族之上免费上线。此后所发生的一切——Jasper Chat、Brand Voice、裁员、新 CEO、Clipdrop 收购、多智能体改名——都是一个能力出色的团队，在底层模型商品化（commoditize）之后试图为自己制造护城河的故事。",
+    "founded": "2021-01",
+    "founders": [
+      "Dave Rogenmoser",
+      "Chris Hull",
+      "John \"JP\" Morgan"
+    ],
+    "seriesNumber": 11
+  },
+  "phases": [
+    {
+      "start": "2017-01",
+      "end": "2020-12",
+      "name": "前 Jasper / Proof 时期",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2021-01",
+      "end": "2021-12",
+      "name": "Conversion.ai / Jarvis 上线",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2022-01",
+      "end": "2022-10",
+      "name": "改名 Jasper + A 轮高点",
+      "color": "#dcfce7"
+    },
+    {
+      "start": "2022-11",
+      "end": "2023-09",
+      "name": "ChatGPT 冲击 + 重置",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2023-10",
+      "end": "2026-04",
+      "name": "企业转型 + 缩水后的现在",
+      "color": "#e9d5ff"
+    }
+  ],
+  "events": [
+    {
+      "date": "2017-01-01",
+      "title": "三位创始人将代理公司转型为 Proof（YC W18）",
+      "type": "product",
+      "description": "Rogenmoser、Hull 和 Morgan——自 2014 年起就在马里兰州 Annapolis 一起工作——将营销代理公司转型为 Proof，一款 YC W18 的社交证明（social proof）插件。以 1200 万美元上限完成 220 万美元种子轮。事后被自己定性为「一个功能，而不是一款产品」。",
+      "externalUrl": "https://research.contrary.com/company/jasper"
+    },
+    {
+      "date": "2020-10-01",
+      "title": "Proof 增长停滞，团队裁掉一半",
+      "type": "product",
+      "description": "被迫转型的时刻。创始人开始通过 YC 关系探索 GPT-3；Rogenmoser 拿到了早期内测权限。Jasper 之前的拐点。",
+      "externalUrl": "https://www.unusual.vc/post/how-jasper-found-product-market-fit-pivoting-to-ai-native-saas",
+      "articleSlug": "2021-01-jarvis-founding"
+    },
+    {
+      "date": "2021-01-15",
+      "title": "Conversion.ai 作为 GPT-3 前端上线",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "首款产品以 29 美元/月发布。一款基于 GPT-3 的强观点前端，专门用于撰写 Facebook 和 Google 广告文案。买家画像，恰好是 Rogenmoser 此前指导了五年多的那批受众。",
+      "externalUrl": "https://research.contrary.com/company/jasper",
+      "articleSlug": "2021-01-jarvis-founding"
+    },
+    {
+      "date": "2021-06-01",
+      "title": "种子轮（约 600 万美元，条款未披露）",
+      "type": "funding",
+      "description": "A 轮前的资金。根据 A 轮新闻稿，Bessemer 参与了这一轮。具体条款从未公开披露。",
+      "externalUrl": "https://research.contrary.com/company/jasper"
+    },
+    {
+      "date": "2021-09-01",
+      "title": "Boss Mode 上线——长篇博客写作",
+      "type": "product",
+      "gtmTag": "Format-as-credibility-constraint",
+      "description": "杀手级功能。「60 秒写出一篇博客」成为 2021–2022 年 AI 写作品类的标杆 demo。营销 KOL 反复复制这种格式，产品本身就成了自己的联盟营销引擎。",
+      "externalUrl": "https://www.jasper.ai/bossmode"
+    },
+    {
+      "date": "2021-12-31",
+      "title": "4250 万美元 ARR——9 名员工",
+      "type": "media",
+      "description": "公开引用的第一年末 ARR 为 4250 万美元，团队约 9 名员工外加 2 名客服，服务 4 万付费客户。同期 SaaS 启动中资本效率最高的案例之一。",
+      "externalUrl": "https://research.contrary.com/company/jasper"
+    },
+    {
+      "date": "2022-01-01",
+      "title": "Marvel/Disney 发律师函后，Jarvis 改名为 Jasper",
+      "type": "product",
+      "description": "Marvel/Disney 的律师就「JARVIS」商标——Tony Stark 的 AI——发出停止侵权函（cease-and-desist）。团队用一篇博客完成改名 Jasper，干净地吸收了过渡。（许多二手资料把这封函错误归咎于 OpenAI；公开记录非常清晰。）",
+      "externalUrl": "https://www.jasper.ai/blog/jarvis-rebranded-to-jasper",
+      "articleSlug": "2022-01-jasper-rebrand"
+    },
+    {
+      "date": "2022-08-01",
+      "title": "Jasper Art 上线（DALL-E 2 套壳）",
+      "type": "product",
+      "description": "在写作平台之上加入图像生成——多模态扩展的第一个信号。一个套壳之上的套壳。",
+      "externalUrl": "https://www.jasper.ai/art"
+    },
+    {
+      "date": "2022-10-18",
+      "title": "A 轮——1.25 亿美元 @ 15 亿美元（Insight Partners 领投）",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Coatue、Bessemer、IVP、Foundation Capital、Founders Circle、HubSpot Ventures，加上一组天使（Cancel、Masad、Mostaque、Delangue）。与 Browser Extension 上线和 7 万付费客户披露捆绑发布。一轮新闻周期里出三条新闻。",
+      "externalUrl": "https://techcrunch.com/2022/10/18/ai-content-platform-jasper-raises-125m-at-a-1-7b-valuation/",
+      "articleSlug": "2022-10-series-a-peak"
+    },
+    {
+      "date": "2022-11-30",
+      "title": "ChatGPT 上线——免费，基于同一个模型家族",
+      "type": "media",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "OpenAI 在 Jasper 完成 15 亿美元融资 43 天后，免费发布 ChatGPT。五天 100 万用户，两个月 1 亿用户。Jasper 的 GPT-3 套壳护城河在公开市场坍塌。",
+      "externalUrl": "https://openai.com/blog/chatgpt",
+      "articleSlug": "2022-11-chatgpt-shock"
+    },
+    {
+      "date": "2022-12-20",
+      "title": "Jasper Chat 上线",
+      "type": "product",
+      "description": "ChatGPT 上线后第 20 天。一款给 Jasper 客户用的可用对话界面——但这一动作本身就承认了「对话才是新范式」，没有去差异化对抗。套壳的两难，被字面化展现。",
+      "externalUrl": "https://www.jasper.ai/blog/announcing-jasper-chat"
+    },
+    {
+      "date": "2022-12-31",
+      "title": "约 8000 万美元 ARR，约 10 万付费客户",
+      "type": "media",
+      "description": "ARR 同比从 4250 万翻倍。新闻稿宣称「ARR 增长 100% 以上」、客户数 10 万。内部 2022 EOY 1.4 亿美元的预测未达成；2024 EOY 2.5 亿美元的预测被设定下来。",
+      "externalUrl": "https://www.prnewswire.com/news-releases/jasper-achieves-unprecedented-growth-in-2022-with-100-000-customers-and-over-100-increase-in-arr-301697081.html"
+    },
+    {
+      "date": "2023-02-14",
+      "title": "Jasper for Business + Brand Voice + API",
+      "type": "product",
+      "gtmTag": "PLG → Enterprise pivot",
+      "description": "第一个真正意义上的企业转型动作。试图把护城河从「GPT prompt UX」迁移到「企业上下文层」——公司记忆、品牌语调、API 接入。方向是对的；但每个竞品（包括 ChatGPT 在 2023 年 11 月推出的 custom GPTs）都在数月内推出了同类版本。",
+      "externalUrl": "https://www.jasper.ai/blog/introducing-brand-voice"
+    },
+    {
+      "date": "2023-07-11",
+      "title": "首次大规模裁员——具体人数未披露",
+      "type": "media",
+      "description": "Rogenmoser 发布博客「今天一个艰难的决定」。Voicebot 报道此前员工人数为「略多于 150 人」。The Information 证实 2023 年 ARR 预测下调至少 30%。",
+      "externalUrl": "https://www.jasper.ai/blog/july-11-important-update-from-ceo",
+      "articleSlug": "2023-07-first-layoffs"
+    },
+    {
+      "date": "2023-09-28",
+      "title": "Timothy Young（前 Dropbox）替代 Rogenmoser 出任 CEO",
+      "type": "media",
+      "description": "创始人退居董事长。内部估值下调约 20% 至约 12 亿美元。从履历画像上看，是企业 SaaS 转型的正确人选——但公司已经不是 Insight 当初投资的那个形状。",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2023-09-28/ai-startup-jasper-s-ceo-to-be-replaced-with-ex-dropbox-president"
+    },
+    {
+      "date": "2023-10-01",
+      "title": "面向营销团队的端到端 AI Copilot",
+      "type": "product",
+      "description": "从面向个人写作者重新定位为面向营销团队的 copilot。公司表示企业 ARR 同比 4 倍——但基数较小。",
+      "externalUrl": "https://www.prnewswire.com/news-releases/jasper-expands-to-become-an-end-to-end-ai-copilot-for-marketing-teams-301960233.html"
+    },
+    {
+      "date": "2024-02-22",
+      "title": "Jasper 从 Stability AI 收购 Clipdrop",
+      "type": "acquisition",
+      "gtmTag": "Acqui-hire competitor",
+      "description": "多模态升级动作。Stability 拥有 Clipdrop 不到一年。Jasper 拿到的是一个工具，而不是一条护城河。这件事帮助了 marketing copilot 的故事；并未撼动「平台」的叙事框架。",
+      "externalUrl": "https://venturebeat.com/ai/jasper-acquires-stability-ais-clipdrop-to-strengthen-marketing-copilot",
+      "articleSlug": "2024-02-clipdrop-acquisition"
+    },
+    {
+      "date": "2024-10-08",
+      "title": "企业战略加速——850 家企业客户",
+      "type": "product",
+      "description": "App Library + Workflows。850 家企业客户，约占 Fortune 500 的 20%（Prudential、Ulta、Wayfair）。企业营收同比 2 倍。连续 10 个季度超额完成销售业绩。转型在起作用——只是规模与 A 轮估值所对应的体量不同。",
+      "externalUrl": "https://www.prnewswire.com/news-releases/jasper-accelerates-enterprise-strategy-following-record-growth-introduces-new-purpose-built-products-for-marketers-302291388.html"
+    },
+    {
+      "date": "2024-12-01",
+      "title": "Jasper AI Studio 上线（无代码 AI 应用搭建器）",
+      "type": "product",
+      "description": "面向企业：无需工程师即可设计和部署 AI 应用。继续在营销团队工作流中扎根，而不是回到面向个人的 prompt 层。",
+      "externalUrl": "https://www.prnewswire.com/news-releases/jasper-launches-ai-studio-empowering-enterprise-marketing-teams-to-build--scale-generative-ai-solutions-302332509.html"
+    },
+    {
+      "date": "2025-06-10",
+      "title": "多智能体改名——Jasper Agents + Canvas",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "「业内首个面向营销人员的多智能体平台」。整体视觉重塑。Cannes Lions 2025 集中亮相。这可能是 ChatGPT 之后最具叙事力度的一次动作——押注下一层抽象是工作流 / agents，而不是 prompts。",
+      "externalUrl": "https://www.prnewswire.com/news-releases/jasper-ushers-in-the-agentic-era-of-marketing-with-the-launch-of-intelligent-workspaces-purpose-built-agents-and-bold-rebrand-302477677.html"
+    },
+    {
+      "date": "2025-12-31",
+      "title": "估算 ARR 约 8800 万–1.1 亿美元；约 12.5 万营销社区",
+      "type": "media",
+      "description": "通过企业方向的恢复轨迹。营收基本回到 2022 年高点——比 A 轮预测晚了 18 个月。Sacra/Latka 估值。Jasper 自 2023 年 9 月起未再官方披露具体数据。",
+      "externalUrl": "https://sacra.com/c/jasper/"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2021-12-31",
+      "value": 42500000,
+      "source": "Contrary Research",
+      "confidence": "media"
+    },
+    {
+      "date": "2022-12-31",
+      "value": 80000000,
+      "source": "Contrary Research / Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2023-09-30",
+      "value": 70000000,
+      "source": "The Information (forecast revision)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2024-12-31",
+      "value": 85000000,
+      "source": "Sacra / Latka",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-12-31",
+      "value": 95000000,
+      "source": "Sacra / Latka",
+      "confidence": "estimate"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2021-06-01",
+      "value": 60000000,
+      "round": "种子轮",
+      "source": "Contrary (estimate)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2022-10-18",
+      "value": 1500000000,
+      "round": "A 轮",
+      "source": "TechCrunch / PRNewswire",
+      "confidence": "official"
+    },
+    {
+      "date": "2023-09-28",
+      "value": 1200000000,
+      "round": "内部估值下调",
+      "source": "The Information / Maginative",
+      "confidence": "media"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 5,
+      "bestStage": "2021–2022 上线窗口",
+      "effort": "联盟营销驱动，公司几乎无需介入",
+      "role": "真正的顶端流量来源",
+      "description": "YouTube 是 Jasper 真正实现增长的地方。「我用 Jasper 在 20 分钟里写完一篇博客」式的教程视频和 AI 写作工具评测，在创作者经济渠道——Adam Enfroy、Income School 以及更广义的「AI 写作工具」垂类——上持续复合。联盟营销项目把整个营销 KOL 生态变成了销售队伍。Boss Mode（2021 年 9 月）是让这种格式成立的 demo 语法。",
+      "catalyst": "2021 年 9 月 Boss Mode 上线——「60 秒写出一篇博客」这一刻让长篇 AI demo 成为 YouTube 上的一个内容子类。ChatGPT 上线（2022 年 11 月 30 日）之后，同一批渠道在数周内转向 ChatGPT 教程——这正是 wrapper 问题的领先指标。",
+      "catalystUrl": "https://www.youtube.com/results?search_query=jasper+ai+boss+mode",
+      "accountUrl": "https://www.youtube.com/@JasperAI",
+      "accountLabel": "Jasper on YouTube",
+      "whenItWorks": "当产品能产出可以被创作者在 5 分钟内复制的可录屏 demo 时。demo 本身就是转化机制",
+      "whenItDoesnt": "当底层模型商品化时。同一批创作者会迁移到下一个新事物；你并不拥有那批受众"
+    },
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 4,
+      "bestStage": "A 轮 + 创始人即 IP",
+      "effort": "创始人主导，节点性",
+      "role": "投资人与 SaaS 创始人放大器",
+      "description": "Dave Rogenmoser 在 X 上以可识别的 SaaS 创始人风格运营——「公开建厂（building in public）」、ARR 里程碑、A 轮捆绑公告。融资当天，那批天使（David Cancel、Amjad Masad、Shaan Puri、Emad Mostaque、Clem Delangue）通过同一个网络放大了这条新闻。对资本层信号有用；从来不是主要的消费者获客渠道。",
+      "catalyst": "2022 年 10 月 18 日 A 轮。融资 + Browser Extension + 7 万客户披露的捆绑包，在 SaaS 创始人 X 圈里传了 48 小时。这是 Jasper 公开历史上单一信号最高的时刻。",
+      "catalystUrl": "https://x.com/dr_rogenmoser",
+      "accountUrl": "https://x.com/heyjasperai",
+      "accountLabel": "@heyjasperai on X",
+      "whenItWorks": "用于投资人层的信号、ARR 里程碑公告、SaaS 创始人公信力。创始人本人比品牌账号更重要",
+      "whenItDoesnt": "用作 B2B SaaS 的主要获客渠道。受众错配；X 推动的是叙事，不是 pipeline"
+    },
+    {
+      "slug": "press",
+      "name": "Tier-1 Press",
+      "score": 4,
+      "bestStage": "A 轮捆绑里程碑",
+      "effort": "创始人 + 公关团队",
+      "role": "资本层合法性",
+      "description": "TechCrunch、Crunchbase News、Bloomberg、Forbes 以及 SaaS 行业媒体（Built In、SiliconANGLE、FinSMEs）把 2022 年 10 月这一轮带到了整个投资人读者群。2023 年 9 月 Bloomberg 关于 CEO 更换的报道、2023 年 7 月 The Information 关于裁员的爆料，是被引用最多的负面报道。",
+      "catalyst": "2022 年 10 月 18 日——TechCrunch 独家报道 1.25 亿美元 A 轮，与 7 万客户披露捆绑发布。同一新闻周期里六家头部媒体跟进。",
+      "catalystUrl": "https://techcrunch.com/2022/10/18/ai-content-platform-jasper-raises-125m-at-a-1-7b-valuation/",
+      "accountUrl": "https://www.jasper.ai/blog",
+      "accountLabel": "Jasper 博客（press feed）",
+      "whenItWorks": "当你能把三条新闻打包进一个新闻周期时。一轮融资 = 三条故事，胜过三轮融资 = 三条故事",
+      "whenItDoesnt": "在下行轨道上。当年报道 15 亿美元那轮的同一批媒体，会以同样的力度报道你的裁员和 CEO 更换"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 3,
+      "bestStage": "长尾用户讨论",
+      "effort": "社区驱动；轻度运营",
+      "role": "重度用户反馈与价格锚点压力",
+      "description": "r/copywriting、r/SaaS、r/marketing 和 r/ArtificialIntelligence 在 2022–2023 年承载了关于 Jasper 的对话。ChatGPT 之后，这几个版块成了「为什么我要花 29 美元/月买 ChatGPT 免费就能做的事」式讨论的发酵地。这是价格锚点崩塌的领先指标。",
+      "catalyst": "2022 年 12 月起——r/copywriting 和 r/SaaS 上「Jasper vs ChatGPT」帖子的浪潮。社区切到 ChatGPT 的时间，比 Jasper 的流失率数据早了好几个月。",
+      "catalystUrl": "https://www.reddit.com/r/copywriting/search/?q=jasper+chatgpt",
+      "accountUrl": "https://www.reddit.com/r/JasperAI/",
+      "accountLabel": "r/JasperAI",
+      "whenItWorks": "当你拥有愿意为产品布道的重度用户群时。Reddit 会比你的流失率仪表盘更早告诉你什么坏了",
+      "whenItDoesnt": "当你的差异化是「相对底层模型的价格优势」时。一旦免费替代品上线，Reddit 会在公开场域里把你的价格锚点立刻击溃"
+    },
+    {
+      "slug": "hn",
+      "name": "Hacker News",
+      "score": 2,
+      "bestStage": "融资公告 + ChatGPT 之后的争论",
+      "effort": "节点性——只在新闻周期里出现",
+      "role": "结构性新意验证器",
+      "description": "HN 从未真正接受 Jasper——这群受众从产品上线起就把它读作 wrapper，并且从未更新过这一判断。A 轮帖子是怀疑的；ChatGPT 之后的帖子是不屑的。2023 年 7 月的裁员帖，是 Jasper 在 HN 档案中信号最高的一篇——多条置顶评论实时、外科手术般清晰地诊断出了 wrapper 问题。",
+      "catalyst": "2023 年 7 月 12 日——裁员帖登上头条。最高票评论以外科手术般的清晰度，把基于 GPT-3 的套壳定为结构性失败。这是公开记录中对 D1 wrapper 风险最好的一次表达。",
+      "catalystUrl": "https://hn.algolia.com/?q=jasper+ai",
+      "accountUrl": "https://hn.algolia.com/?q=jasper.ai",
+      "accountLabel": "在 HN 搜索 Jasper",
+      "whenItWorks": "当结构性批评本身就是对的时候。HN 会以其他平台所不具备的方式，把你护城河的问题用公共语言精确表达出来",
+      "whenItDoesnt": "如果你需要正面情绪。HN 对消费级 AI 套壳产品的判断从一开始就是对的，从未软化"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 3,
+      "bestStage": "企业转型（2023 年起）",
+      "effort": "持续，销售团队驱动",
+      "role": "企业 pipeline + Fortune 500 社交证明",
+      "description": "2023 年企业转型之后，LinkedIn 成了主要的 B2B 渠道。Tim Young CEO 公告、Clipdrop 收购、多智能体改名、850 家企业客户披露——都是经由 LinkedIn 传播，而非 X。客户 logo 帖（Prudential、Ulta、Wayfair）是这一阶段的标准内容形态。",
+      "catalyst": "2024 年 10 月——「850 家企业客户、约 20% 的 Fortune 500」披露。这是 Jasper 至今产出过的最有用的企业销售素材；连续两年被引用进各种 pitch deck。",
+      "catalystUrl": "https://www.linkedin.com/company/heyjasperai/",
+      "accountUrl": "https://www.linkedin.com/company/heyjasperai/",
+      "accountLabel": "Jasper on LinkedIn",
+      "whenItWorks": "当消费者浪潮过去、需要做 B2B 企业 GTM 时。logo 帖和 CEO thought leadership 会复合积累",
+      "whenItDoesnt": "在早期阶段做消费级 B2C 上线时。LinkedIn 在周期里出现得太晚"
+    }
+  ]
+}
