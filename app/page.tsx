@@ -82,15 +82,15 @@ function LiveCases() {
             </Link>
           )}
 
-          {/* OPChampion card — weekly launch board for solo founders */}
-          <Link href="/OPChampion" className="eco-card eco-card-link">
+          {/* OP Champions card — static page rewritten in next.config.ts */}
+          <a href="/opchampion" className="eco-card eco-card-link">
             <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
-            <div className="eco-title">OPChampion</div>
+            <div className="eco-title">OP Champions</div>
             <p>
-              A weekly launch board for one-person companies — twelve solo-founder products picked every Monday. Upvote, comment, follow.
+              A weekly launch board for one-person companies — the indie hackers, freelancers, and solo founders shipping real things. 12 picks every Monday. Upvote, comment, follow.
             </p>
-            <span className="visit">See this week&apos;s issue →</span>
-          </Link>
+            <span className="visit">Browse this week&apos;s issue →</span>
+          </a>
         </div>
       </div>
     </section>
@@ -188,7 +188,7 @@ function Footer() {
           <ul>
             <li><Link href="/growth-story">Growth Story</Link></li>
             <li><Link href="/get-backlinks">Get Backlinks</Link></li>
-            <li><Link href="/OPChampion">OPChampion</Link></li>
+            <li><a href="/opchampion">OP Champions</a></li>
           </ul>
         </div>
         <div>

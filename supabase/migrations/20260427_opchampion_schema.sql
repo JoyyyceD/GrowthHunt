@@ -226,6 +226,18 @@ create policy "comments_delete_author"
   using (author_id = auth.uid());
 
 -- ─────────────────────────────────────────────────────────────────────────────
+-- Table grants — service_role needs explicit privileges (Supabase doesn't
+-- auto-grant on public schema for tables created via SQL). Without this,
+-- API routes using the admin client get `42501 permission denied` even
+-- though service_role bypasses RLS.
+-- ─────────────────────────────────────────────────────────────────────────────
+grant all on table public.profiles  to service_role, postgres;
+grant all on table public.champions to service_role, postgres;
+grant all on table public.votes     to service_role, postgres;
+grant all on table public.comments  to service_role, postgres;
+grant usage, select on all sequences in schema public to service_role;
+
+-- ─────────────────────────────────────────────────────────────────────────────
 -- Storage bucket: opchampion-media (public read, owner write)
 -- ─────────────────────────────────────────────────────────────────────────────
 insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)

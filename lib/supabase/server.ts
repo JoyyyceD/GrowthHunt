@@ -3,7 +3,7 @@
  * Used in middleware.ts, route handlers, and server components
  */
 
-import { createServerClient as createClient, type CookieOptions } from '@supabase/ssr'
+import { createServerClient as createClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
 

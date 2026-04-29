@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       { source: '/OPChampion', destination: '/OPChampion/index.html' },
+      { source: '/opchampion', destination: '/OPChampion/index.html' },
     ]
   },
 }

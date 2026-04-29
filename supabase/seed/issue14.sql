@@ -128,7 +128,37 @@ values
    'Health & Wellness',
    'A journaling app that asks better questions.',
    'Pebble is a daily journal with one twist: instead of a blank page, it asks one question — chosen by an LLM that has read your past entries and noticed what you avoid. After 90 days, it generates a year-in-review essay about you that, by user accounts, is sometimes upsetting in how accurate it is.',
-   '#7c5e3a', 'live', false, 'editorial', null, now() - interval '120 hours')
+   '#7c5e3a', 'live', false, 'editorial', null, now() - interval '120 hours'),
+
+  -- 13. EverMemory
+  ('evermemory',
+   'EverMemory',
+   'Joyce Dong',
+   'Solo founder',
+   'Health & Wellness',
+   'Turn spoken memories into a printed life biography with AI.',
+   'EverMemory transforms family stories into hardcover memoirs through voice-first recording. Users speak naturally about their lives, and AI writes, edits, and structures the content into a beautifully designed book — no writing skill needed. Built for grandparents, parents, and anyone who wants their story preserved before it''s lost.',
+   '#4a90e2', 'live', true, 'editorial', null, now() - interval '6 hours'),
+
+  -- 14. Token Galaxy
+  ('token-galaxy',
+   'Token Galaxy',
+   'Joyce Dong',
+   'Solo founder',
+   'AI & Machine Learning',
+   'AI model comparison and recommendation, scenario by scenario.',
+   'Token Galaxy benchmarks language models across real-world scenarios — coding, writing, reasoning, multilingual — and recommends the best fit for your task. Stop guessing which LLM to use; pick the one that wins on the work you actually do.',
+   '#5b6dee', 'live', true, 'editorial', null, now() - interval '10 hours'),
+
+  -- 15. DeepTalk
+  ('deep-talking',
+   'DeepTalk',
+   'Joyce Dong',
+   'Solo founder',
+   'Health & Wellness',
+   '心流暗涌 — AI-guided deep conversation for the questions that matter.',
+   'DeepTalk is an AI conversation companion for the conversations you don''t usually have. Voice-first, prompt-rich, designed for couples, families, and friends to surface the questions worth asking. Less small talk; more meaningful connection.',
+   '#16746f', 'live', true, 'editorial', null, now() - interval '14 hours')
 
 on conflict (slug) do update set
   name         = excluded.name,
@@ -144,4 +174,4 @@ on conflict (slug) do update set
 -- Quick verification
 select count(*) as champion_count, count(*) filter (where featured) as featured_count
 from public.champions where source = 'editorial';
--- Expect: champion_count = 12, featured_count = 3
+-- Expect: champion_count = 15, featured_count = 6
