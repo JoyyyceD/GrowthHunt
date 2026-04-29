@@ -48,8 +48,9 @@ export function rateLimit(
 
 // Convenience presets
 export const RATE = {
-  vote: { max: 30, windowSec: 60 },          // 30 votes/min/IP
-  comment: { max: 20, windowSec: 3600 },     // 20 comments/hour/user
-  submit: { max: 5, windowSec: 86400 },      // 5 submissions/day/user
-  media: { max: 30, windowSec: 3600 },       // 30 uploads/hour/user
+  vote: { max: 30, windowSec: 60 },             // 30 votes/min/IP
+  comment: { max: 20, windowSec: 3600 },        // 20 comments/hour/user
+  submit: { max: 5, windowSec: 86400 },         // 5 submissions/day/user
+  media: { max: 30, windowSec: 3600 },          // 30 uploads/hour/user
+  xhunter_read: { max: 60, windowSec: 60 },     // 60 reads/min/IP — Xhunter tweets API
 }
