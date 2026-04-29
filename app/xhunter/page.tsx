@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import { createServerClient } from '@/lib/supabase/server'
+import { TopNav } from '@/lib/site/TopNav'
 import Lab from './Lab'
 
 export const dynamic = 'force-dynamic'
@@ -48,14 +49,17 @@ export default async function XhunterPage() {
   ])
 
   return (
-    <Lab
-      initial={initial}
-      isAuthed={!!user}
-      stats={{
-        tweets: totalTweets ?? 0,
-        accounts: totalAccounts ?? 0,
-        viral: totalViral ?? 0,
-      }}
-    />
+    <>
+      <TopNav variant="page" />
+      <Lab
+        initial={initial}
+        isAuthed={!!user}
+        stats={{
+          tweets: totalTweets ?? 0,
+          accounts: totalAccounts ?? 0,
+          viral: totalViral ?? 0,
+        }}
+      />
+    </>
   )
 }
