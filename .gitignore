@@ -9,3 +9,6 @@ tsconfig.tsbuildinfo
 
 # Local Claude Code config (per-machine, not shared)
 .claude/
+
+# Vercel CLI link metadata
+.vercel
