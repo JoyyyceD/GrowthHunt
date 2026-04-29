@@ -11,12 +11,20 @@ interface Props {
   params: Promise<{ feature: string }>
 }
 
+// Slugs that have their own dedicated page route (`app/<slug>/page.tsx`).
+// Exclude them here so Next.js doesn't generate a competing static page
+// from the [feature] template that would shadow the real one in production.
+const DEDICATED_ROUTES = new Set<string>(['get-backlinks'])
+
 export async function generateStaticParams() {
-  return FEATURES.map(f => ({ feature: f.id }))
+  return FEATURES
+    .filter(f => !DEDICATED_ROUTES.has(f.id))
+    .map(f => ({ feature: f.id }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { feature: id } = await params
+  if (DEDICATED_ROUTES.has(id)) return {}
   const feature = getFeatureById(id)
   if (!feature) return {}
   const url = `https://growthhunt.ai/${id}`
@@ -40,6 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function FeaturePage({ params }: Props) {
   const { feature: id } = await params
+  if (DEDICATED_ROUTES.has(id)) notFound()
   const feature = getFeatureById(id)
   if (!feature) notFound()
 
