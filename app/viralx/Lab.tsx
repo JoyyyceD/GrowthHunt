@@ -175,7 +175,7 @@ export default function Lab({ initial, isAuthed, stats }: Props) {
         <div className="shell">
           <span className="eyebrow"><span className="dot" />ViralX · Live tool</span>
           <h1 className="xh-h1">
-            Steal what works.<br />Ship to your <em>own X</em>.
+            See how others go viral on X.<br />Ship to your <em>own X</em>.
           </h1>
           <p className="xh-finding">
             <strong>10,000+ viral tweet templates</strong> from 500+ AI founders and startup accounts — Cursor, Lovable, DeepSeek, Hedra, Perplexity, and the indie operators behind them. Pick a pattern that fits your startup, customize it, schedule it, and post it straight to your own X account.
