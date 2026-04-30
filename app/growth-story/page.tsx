@@ -4,14 +4,14 @@ import { TopNav } from '@/lib/site/TopNav'
 import { getAllCompanies, getStory, type GrowthStoryMain } from '@/lib/growth-story'
 
 export const metadata: Metadata = {
-  title: 'Growth Story — how breakout startups actually grew',
-  description: 'Deep-dive timelines reconstructing how startups like Cursor, Lovable, and Genspark actually grew — funding rounds, viral moments, GTM bets, the works.',
+  title: 'AI Startup Growth Stories: How Cursor, Lovable & Anthropic Actually Grew',
+  description: 'Deep-dive timelines for 20 breakout AI startups — Cursor, Lovable, Anthropic, Clay, PostHog, Manus. Funding rounds, viral moments, GTM bets, all sourced.',
   alternates: { canonical: 'https://growthhunt.ai/growth-story' },
   openGraph: {
     type: 'website',
     url: 'https://growthhunt.ai/growth-story',
-    title: 'Growth Story — how breakout startups actually grew',
-    description: 'Deep-dive timelines of breakout startups, reconstructed from public sources.',
+    title: 'AI Startup Growth Stories: How Cursor, Lovable & Anthropic Actually Grew',
+    description: 'Deep-dive timelines for 20 breakout AI startups, reconstructed from public sources. ARR curves, viral moments, every GTM bet.',
   },
 }
 
