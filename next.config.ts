@@ -8,11 +8,14 @@ const nextConfig: NextConfig = {
     ]
   },
   async rewrites() {
-    return [
-      // OPChampion is served from the static HTML in public/
-      { source: '/opchampion', destination: '/OPChampion/index.html' },
-      { source: '/opchampion/:path*', destination: '/OPChampion/index.html' },
-    ]
+    return {
+      // beforeFiles runs before the App Router, so it takes priority over
+      // app/opchampion/page.tsx and serves the static HTML directly.
+      beforeFiles: [
+        { source: '/opchampion', destination: '/OPChampion/index.html' },
+        { source: '/opchampion/:path*', destination: '/OPChampion/index.html' },
+      ],
+    }
   },
 }
 
