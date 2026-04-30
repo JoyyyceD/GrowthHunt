@@ -1,0 +1,98 @@
+---
+title: "Claude Code 研究预览——从发布到约 10 亿美元 ARR 的 9 个月爬升（2025 年 2 月）"
+description: "2025 年 2 月 24 日：Claude 3.7 Sonnet 加上一款终端原生编程智能体的研究预览。到 2025 年 11 月，Claude Code 已突破约 10 亿美元 ARR——一波 Replit Agent 形状的产品浪潮，把数十亿美元的营收前置了 18 个月。"
+date: "2025-02-24"
+type: "product"
+gtmTag: "技术叙事升维"
+eventTitle: "Claude 3.7 Sonnet + Claude Code"
+externalUrl: "https://www.anthropic.com/news/claude-3-7-sonnet"
+---
+
+<Catalyst>
+仅次于 Claude 本身的 Anthropic 第二重要产品发布。一款终端原生编程智能体以研究预览发布，三个月后转正，再过九个月就突破约 10 亿美元 ARR。这种节奏的单产品爬升会重塑母公司整个 GTM 动作。
+</Catalyst>
+
+2025 年 2 月 24 日。Anthropic 发布 **Claude 3.7 Sonnet**——首个混合推理模型，同一个模型同时具备正常响应和扩展思考两种模式。同一公告捆绑了 **Claude Code** 的研究预览，一款终端原生编程智能体。
+
+研究预览在 **2025 年 5 月**转正。Web 版在 **2025 年 10 月 20 日**上线。到 **2025 年 11 月**，多个来源确认 Claude Code 已突破 **约 10 亿美元 ARR**。
+
+九个月，从研究预览到十亿美元产品。在一家已经盈利的母公司内部。
+
+## Claude Code 是什么——简短版
+
+Claude Code 是一款在终端里运行的开发者智能体。它读取代码库、写代码、执行命令、编辑文件、审查 diff。Claude 4（2025 年 5 月）在 SWE-bench 上达到 72.5%，发布时被框定为「世界最佳编程模型」。Claude Code 是这个能力的产品载体。
+
+发布时的竞争格局：
+
+| 产品 | 形态 | 锚点 |
+|---|---|---|
+| Cursor | VS Code fork | 2025 年中估值 90 亿美元 |
+| GitHub Copilot | VS Code 扩展 + 聊天 | Microsoft / OpenAI 集成 |
+| Cognition / Devin | Web UI + 自主智能体 | 估值 40 亿美元 |
+| Replit Agent | 浏览器 IDE | 超高速增长 |
+| **Claude Code** | **终端原生** | **基础模型 + 自家智能体** |
+
+终端原生定位是结构性选择。Cursor 与 Copilot 嵌入编辑器，使用任何对接的 LLM。Claude Code 跳过编辑器直接在 shell 里运行，基础模型与智能体作为同一个产品出货。*Cursor 是 fork——Anthropic 的押注是 Cursor 是 wrapper。*
+
+## 为什么爬升如此之快
+
+三个原因叠加：
+
+**1. 分发已经就位。** Anthropic 已经从 2023 年 9-10 月超大云轮次拿到了 AWS Bedrock 与 Google Vertex 的分发。通过既有云账号跑 Claude 推理的企业开发者，可以在零采购摩擦下启用 Claude Code。Cursor 与其他竞品则要从零谈企业合同。
+
+**2. 模型领先可见。** Claude 4 Opus 在 SWE-bench 上的 72.5%（2025 年 5 月），是 Cursor / Copilot 无法匹敌的基准领先，因为它们不拥有模型。「世界最佳编程模型」是底层能力差距的产品化面孔。等到 Cursor 或 GitHub Copilot 追上 Claude 4 能力时，Anthropic 已经发布了 Claude 4.5（2025 年 9 月）和 4.7（2026 年 4 月）。
+
+**3. 与融资轮次捆绑。** E 轮（2025 年 3 月 3 日，35 亿美元 @ 615 亿美元投后）捆绑了 Claude 3.7 Sonnet + Claude Code 研究预览。F 轮（2025 年 9 月 1 日，130 亿美元 @ 1830 亿美元投后）捆绑了 Sonnet 4.5。每一轮都是 Claude Code 的新闻周期。
+
+## 这次爬升重塑了什么
+
+母公司内部一条十亿美元产品线，不只是增量营收。它在三个方向上重塑母公司的 GTM 动作：
+
+| Claude Code 之前（2024）| Claude Code 之后（2025 年底）|
+|---|---|
+| Anthropic 把 API 接入卖给企业 | Anthropic 卖 API + 旗舰开发者智能体 |
+| 与 OpenAI 在基础模型层竞争 | 与 Cursor / GitHub / Cognition 在基础模型 + 智能体堆栈层竞争 |
+| 算力预算与 API 推理需求挂钩 | 算力预算与 API + Claude Code 推理挂钩（每开发者成本明显更高）|
+
+Claude Code 单开发者推理负载明显高于聊天式 API 用量。一次典型的 Claude Code 会话燃烧的 token 量是典型 Claude.ai 聊天的 10-100 倍。这个动力学解释了母公司 ARR 为什么从 2024 年底约 10 亿美元，爬到 2026 年 2 月约 140 亿，再到 2026 年 4 月约 300 亿——Claude Code 是结构性乘数，不只是新产品线。
+
+## 与 Replit Agent 的对比
+
+GrowthHunt 知识库里最接近的对照是 **Replit Agent**——一次单产品发布（2024 年 9 月），把 Replit 在六个月内从默认死亡变成了默认存活。两者都是把数十亿美元营收前置的 D1 叙事升维。
+
+差别也很重要：
+
+| | Replit Agent | Claude Code |
+|---|---|---|
+| 母公司发布时状态 | 默认死亡，接近零 ARR | 默认存活，ARR 约 10 亿 |
+| 爬升节奏 | 0 → 2 亿 ARR 约 9 个月 | 0 → 约 10 亿 ARR 约 9 个月 |
+| 战略效应 | 救活公司 | 加速已经健康的曲线 |
+| 分发 | 网页，自然发现 | AWS Bedrock + Google Vertex 现成分发 |
+
+Claude Code 是绝对金额上更大的爬升，但战略上风险更小。Anthropic 在 2025 年 2 月不是默认死亡。Replit 是。Claude Code 的发布是可选择性的加速；Replit Agent 的发布是被迫的产品重生。
+
+## Anthropic 在这件事上特有的前提
+
+三个无法泛化的前提条件让这次爬升成为可能：
+
+- **拥有基础模型。** Cursor、Copilot、Cognition 消费外部模型。Claude Code 内置 Anthropic 自己的 Claude 4。发布时的基准领先（以及以 Anthropic 自己的节奏发布 4.5、4.7 后续模型）对 wrapper 公司在结构上不可得。
+- **2023 年起的超大云分发。** 2023 年 9-10 月的 Amazon 与 Google 轮次，让 Claude Code 在 2025 年的企业分发零摩擦。没有并行超大云关系的基础模型实验室无法复制。
+- **资本与产品捆绑。** E 轮和 F 轮窗口分别对应 Claude 3.7 Sonnet + Claude Code 预览和 Sonnet 4.5 的发布。没有进行中的融资周期的公司无法捆绑得这么干净。
+
+教训不是「发一款编程智能体」——而是**基础模型实验室的 D1 升维，在结构上由「拥有模型 + 已经锁定的分发 + 资本节奏」共同支撑。** Cursor 与 Cognition 会响应，但他们要从一个结构上更不完整的位置响应。
+
+<Conclusion title="可以复用的东西">
+
+- **把 D1 升维的时机卡在模型代际领先点上，而不是营销窗口上。** Claude Code 的发布时点对齐 Claude 3.7 Sonnet（首个混合推理模型）和 Claude 4 Opus（GA 时 SWE-bench 72.5%）。基准领先才是真正的营销——并且通过 4.5 和 4.7 后续模型持续复利。
+- **如果可能，把发布与融资轮次捆绑。** E 轮 / F 轮窗口同时也是 Claude Code 的新闻周期。同样的公告预算产生跨多渠道的覆盖。
+- **在你需要分发之前就建好它。** Bedrock 和 Vertex 集成在 Claude Code 发布前已经上线 18 个月。2025 年 2 月注册 Claude Code 的企业开发者面对的采购摩擦为零。试图与发布同时建立分发的公司，会失去爬升曲线的前六个月。
+
+</Conclusion>
+
+## 来源
+
+- [Anthropic：Claude 3.7 Sonnet + Claude Code（2025 年 2 月）](https://www.anthropic.com/news/claude-3-7-sonnet)
+- [Anthropic：Claude 4（2025 年 5 月）](https://www.anthropic.com/news/claude-4)
+- [Anthropic E 轮公告（2025 年 3 月）](https://www.anthropic.com/news/anthropic-raises-series-e-at-usd61-5b-post-money-valuation)
+- [Yahoo Finance：Claude Code 突破约 10 亿 ARR（2025 年 11 月）](https://finance.yahoo.com/news/anthropic-arr-surges-19-billion-151028403.html)
+- [Anthropic F 轮公告（2025 年 9 月）](https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation)

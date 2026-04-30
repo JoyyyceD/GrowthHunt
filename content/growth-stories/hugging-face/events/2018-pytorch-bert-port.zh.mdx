@@ -1,0 +1,87 @@
+---
+title: "一周内交付的 PyTorch BERT 移植版（2018 年 10 月）"
+description: "Google 在 TensorFlow 中发布 BERT 大约一周后，Hugging Face 交付了一个 PyTorch 移植版——pytorch-pretrained-bert。几个月之内，它就成了大多数 NLP 论文使用 BERT 时引用的实现。这一技术拐点，正式表态要等 2019 年 12 月的 A 轮。"
+date: "2018-10-11"
+type: "product"
+gtmTag: "Structural differentiation"
+eventTitle: "开源 PyTorch BERT 移植版"
+externalUrl: "https://research.contrary.com/company/hugging-face"
+---
+
+<Catalyst>
+Google 用 TensorFlow 发布 BERT。学术 NLP 社区偏好 PyTorch。两边之间没有现成开源库充当桥梁。一支 3-4 人的工程团队，已经为聊天机器人产品在 PyTorch 工具上深耕 18 个月，把这个空缺在第一天就填上了。
+</Catalyst>
+
+2018 年 10 月 11 日。Google 发布 BERT——Bidirectional Encoder Representations from Transformers——以 TensorFlow 形式开源。论文同周登上 arXiv；代码也大约同周交付。
+
+大约一周之后，Hugging Face 公开 pytorch-pretrained-bert——一个 PyTorch 版的 BERT 移植，把 Google 原始权重转成 PyTorch 序列化格式。仓库小。代码干净。README 可读。
+
+几个月之内，pytorch-pretrained-bert 就成了大多数 NLP 论文使用 BERT 时引用的实现。
+
+## 为什么「一周」很重要
+
+2018 年 10 月，学术 NLP 社区已经悄然向 PyTorch 收敛——它成为了研究界的默认框架。TensorFlow 在产业生产中仍然主导，但在产出定义这个领域的论文的研究实验室里，PyTorch 的动态计算图与 Python 原生 API 已经赢了。
+
+Google 用 TensorFlow 发布 BERT，因为那是 Google 的框架。但 BERT 在发布时更像一个学术研究产物，而不是生产系统。最先想用它的人，是研究者。其中大多数人不愿意为此切换框架。
+
+| 受众 | 框架偏好（2018 年 10 月） | 他们需要的 |
+|---|---|---|
+| Google 工程师 | TensorFlow | 原生发布版即可 |
+| 生产 ML 团队 | TensorFlow / 混合 | 等移植版可以接受 |
+| 学术 NLP 研究者 | PyTorch | 立刻就要 PyTorch 移植版 |
+| 复现论文的研究生 | PyTorch | 简单可读的移植版 |
+
+官方发布与「想用 BERT 的受众」之间的缺口，宽到能塞进一个承重底层。Hugging Face——3-4 个深耕 PyTorch 基础设施的聊天机器人工程师——是第一天就能把这件事做出来的团队。
+
+## 「一周内交付」具体意味着什么
+
+「我们一周内交付了 PyTorch 移植版」这句话在 Hugging Face 的所有报道里被反复重复。实际工程记录比叙事单薄。
+
+Wolf 和他的小团队从至少 2017 年中起就在为聊天机器人产品构建 PyTorch 工具——分词器、注意力层、训练循环——这些都不是从零起步的工程。BERT 移植要做的事是：转换权重文件、把架构适配到 PyTorch 的序列化、写一个干净的推理 API。在已有工具的前提下，这真的就是一个一周的项目。
+
+不是一周项目的，是*决定去做这件事*。这个决定要求三件事提前到位：
+
+1. 一个会追 arXiv 预印本的研究科学家在创始团队里
+2. 已经为另一个不相关的消费产品构建好的 PyTorch 工具
+3. 强到足以把移植版公开发出来、而不是留作内部基础设施的开源直觉
+
+第三件最微妙。2018 年 10 月，Hugging Face 是一家拿了 400 万美元种子轮的挣扎期消费 AI 创业公司，需要做出成绩。把工程时间花在公开开源别人家的研究模型，可能会被看作偏离聊天机器人主线的分心。决定把它公开发出去——以 huggingface/pytorch-pretrained-bert 而不是内部聊天机器人基础设施的形式——才是「让承重底层出现」的那一刻。
+
+## 库的复利曲线
+
+pytorch-pretrained-bert 在 2019 年 7 月（v1.0.0）更名为 pytorch-transformers，加入了 XLNet 和 XLM。2019 年 9 月（v2.0.0）再次更名为 transformers，加入了 TensorFlow 2.0 支持。每次更名都是 API 在吸收更多领域。
+
+| 时间 | 名字 | 支持的模型 | 框架 |
+|---|---|---|---|
+| 2018 年 10 月 | pytorch-pretrained-bert | BERT | PyTorch |
+| 2019 年 7 月 | pytorch-transformers v1.0.0 | + XLNet、XLM（10 → 27 权重） | PyTorch |
+| 2019 年 9 月 | transformers v2.0.0 | + TF2 支持 | PyTorch + TensorFlow |
+| 2020+ | transformers（持续） | RoBERTa、T5、GPT-Neo、所有主流架构 | 全部 |
+
+到公司在 2019 年 12 月 A 轮正式转向的时候，库已经吸收了 XLNet、XLM、RoBERTa、GPT-2，以及十多个更小的架构。**2019 年 12 月转向公告，是事后正式确认了 12 个月前就已经发生的承重底层迁移。**
+
+## 复利机制：论文作为长尾 B3
+
+知识库里大多数 A1 承重底层是通过商业采纳复利的——Vercel 用户建付费网站、Cursor 用户买编辑器授权、Replit 用户付托管费。Hugging Face 的承重底层是通过*学术引用*复利的。
+
+当一篇论文写「我们使用 huggingface/pytorch-pretrained-bert 中的 BERT 实现」时，这条引用就是一次长尾 B3（KOL 公信力转移）推动。每个读到论文的人都学会了 URL。每个复现实验的研究生都会安装这个库。每个若干年后在产业界读到这篇论文的 ML 工程师，会因为论文里这么写而 import `from transformers import BertModel`。
+
+复利速度大致等于研究生轮换率——博士入学到产业就业大概 3-4 年。**2018 年 BERT 移植产出的库用户，在 2021–2022 年带着「已经预先分发」的状态进入产业。** 当 Hugging Face 需要企业客户时，被 Salesforce、Bloomberg、Pfizer、eBay 招的每一位 ML 工程师，都已经把研究生时代花在了 HF API 里。
+
+这一机制在大多数领域不可迁移。它在学术 ML 里能跑通，因为：(a) 论文引用具体实现是学科规范；(b) 领域足够快、迁移成本真实；(c) 受众足够小，一份好的库可以在几个月内拿下心智份额。一个 2026 年的创始人在 NLP 里再也复制不出来。能不能在机器人复制——这是 LeRobot 正在测试的问题。
+
+<Conclusion title="可以复用的东西">
+
+- **在还没有库可以交付之前，就用学术界默认框架（PyTorch 或别的）为你的真实产品构建工具。** 后来吸收 BERT 的基础设施已经存在于聊天机器人项目里。一个 2018 年 10 月才从零开始写基础设施的团队，不可能一周内交付移植版。
+- **把移植版以你公司的命名空间公开发出来，即使付出内部产品时间。** 决定把 huggingface/pytorch-pretrained-bert 作为公开 repo 而不是内部工具发布——这个动作就是承重底层创立事件。内部工具产生不了论文引用。
+- **技术转向是「承重底层出现」；正式转向是新闻周期。** Hugging Face 在 2018 年 10 月与 2019 年 12 月 A 轮之间等了 14 个月。延迟让库吸收了 XLNet、XLM、RoBERTa、GPT-2 与 TensorFlow 2.0 支持，再去做转向公告——公告把这一切压缩进一个新闻周期，而不是从零创造它。
+
+</Conclusion>
+
+## 来源
+
+- [Contrary Research：Hugging Face 报告](https://research.contrary.com/company/hugging-face)
+- [GitHub：huggingface/transformers releases](https://github.com/huggingface/transformers/releases)
+- [pytorch-transformers v1.0.0 release notes（2019 年 7 月）](https://github.com/huggingface/transformers/releases/tag/v1.0.0)
+- [Wolf 等——HuggingFace's Transformers 论文 arXiv 版本（2019 年 10 月）](https://arxiv.org/abs/1910.03771)
+- [Wikipedia：BERT (language model)](https://en.wikipedia.org/wiki/BERT_(language_model))

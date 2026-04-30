@@ -1,0 +1,88 @@
+---
+title: "Library Renamed to Transformers — v2.0.0 (September 2019)"
+description: "On September 26, 2019, pytorch-transformers became transformers (v2.0.0) — TensorFlow 2.0 support added, language-prefix dropped. The package became the de facto NLP toolkit across academia and industry. Eleven days earlier, the v1.0.0 rename had already added XLNet and XLM."
+date: "2019-09-26"
+type: "product"
+gtmTag: "Tech narrative upgrade"
+eventTitle: "Library renamed to transformers"
+externalUrl: "https://github.com/huggingface/transformers/releases"
+---
+
+<Catalyst>
+Library renames are usually cosmetic. This one was an audience expansion. Dropping the pytorch- prefix told TensorFlow users they were welcome. Adding TF2 support meant the library was no longer just the PyTorch port — it was the substrate for both ecosystems.
+</Catalyst>
+
+September 26, 2019. Hugging Face releases **transformers v2.0.0**. The package is renamed from `pytorch-transformers` to `transformers`. TensorFlow 2.0 support ships in the same release.
+
+This is the second rename in eleven months. The first — `pytorch-pretrained-bert` to `pytorch-transformers` (v1.0.0, July 16, 2019) — added XLNet and XLM and expanded pretrained model weights from 10 to 27. The September rename added TensorFlow.
+
+Each rename was the API absorbing more of the field.
+
+## The naming sequence as substrate trajectory
+
+| Date | Name | What changed | Audience signal |
+|---|---|---|---|
+| Oct 11, 2018 | pytorch-pretrained-bert | Initial PyTorch BERT port | "We solved the BERT-in-PyTorch problem" |
+| Jul 16, 2019 | pytorch-transformers v1.0.0 | + XLNet, XLM (10 → 27 weights) | "We are the place for PyTorch-based transformer models" |
+| Sep 26, 2019 | transformers v2.0.0 | + TF2 support, dropped framework prefix | "We are the place for transformer models, period" |
+
+The naming progression maps directly to the substrate's expanding scope. The October 2018 launch was tactical — a port of one model to one framework. By September 2019, the library was claiming the entire transformer-architecture ecosystem.
+
+The decision to drop the `pytorch-` prefix was load-bearing. **It signaled that TensorFlow users were not second-class citizens.** Academic researchers had largely converged on PyTorch by 2019, but production ML at Google, at large enterprises, and on TPUs still ran on TensorFlow. A library named `pytorch-transformers` would have been read by TF-using teams as "not for us." Dropping the prefix opened the audience.
+
+## Why TF2 support mattered to the substrate thesis
+
+In 2018-2019, the PyTorch-vs-TensorFlow framework war was the central architectural question in ML. Most analyses positioned the two as zero-sum competitors. Hugging Face's decision to support both in one library was structurally different.
+
+**The substrate thesis required Hugging Face to be the layer above the framework war, not a participant in it.** Researchers using PyTorch and production teams using TensorFlow both needed access to BERT, GPT-2, RoBERTa, XLNet. A library that served only one camp would have left the other camp to build their own — and that other library would have become a competing substrate.
+
+By making `transformers` framework-agnostic, Hugging Face removed the structural risk that a TensorFlow-equivalent library would emerge as a competitor. Every transformer model now had one canonical Python interface, regardless of which framework the underlying weights had been trained in.
+
+This is structurally similar to LangChain's later play in the LLM-orchestration layer (which Hugging Face does not occupy) — the move that forecloses competitor formation by being neutral across an axis the field assumes is competitive.
+
+## The October 2019 paper as academic anchor
+
+Two weeks after v2.0.0, on October 9, 2019, Wolf et al. published "HuggingFace's Transformers: State-of-the-art Natural Language Processing" on arXiv (eventually accepted to EMNLP 2020 demos).
+
+The paper's role was not to introduce new research. The library's contribution was already legible to the research community by the time the paper landed. The paper's role was to **formalize the academic-credibility leg** of the substrate — to give researchers a citation they could include in their own papers' related-work sections, and to position Hugging Face as a research-credible actor rather than an open-source-tooling vendor.
+
+| Layer | Format | Role |
+|---|---|---|
+| Library | GitHub repo | Substrate distribution |
+| Paper | arXiv submission | Academic citation infrastructure |
+| Conference | EMNLP 2020 demos | Peer-reviewed validation |
+| Documentation | huggingface.co model cards | Reference surface |
+
+Each layer reinforced the others. The arXiv paper became the canonical citation. The EMNLP demos acceptance gave it peer-review weight. The library kept shipping under the name and namespace the paper had legitimized.
+
+This is why a 2026 founder cannot replicate the play in NLP. The four-layer stack of substrate compounding (library + paper + conference + documentation) takes years to build, and once a library has occupied that stack in a given field, displacing it requires the field to undergo a paradigm shift — which is what Hugging Face is now betting on with LeRobot in robotics.
+
+## The competitive landscape at the rename moment
+
+In September 2019, the alternatives to `transformers` were:
+
+- **Google's official BERT repo** — TensorFlow-only, single-model, no unified API
+- **Facebook's XLM repo** — research code, hard to use in production
+- **Allen NLP** — academic library, narrower scope
+- **Plain PyTorch implementations** — every research lab maintaining their own port
+
+None of these had a unified API across architectures. None had a clean documentation surface. None had paper authors who would credibly cite them as the canonical implementation.
+
+By absorbing TensorFlow 2.0 support and dropping the framework prefix, `transformers` made it strictly easier for any researcher to use the library than to maintain their own port. **Switching cost: zero. Time saved: weeks. Citation footprint: large.**
+
+The substrate compounded from there. By the May 2022 Series C, the Hub was hosting 100K models, the library was supporting roughly fifty architectures, and the package import statement `from transformers import` was the de facto first line of every NLP-paper code release.
+
+<Conclusion title="What to copy">
+
+- **Drop the framework-prefix when you want to expand the audience.** `pytorch-transformers` was a defensible niche; `transformers` was a category. Renames are an under-used mechanism for audience expansion.
+- **Be the layer above the framework war.** A library serving only one of PyTorch / TensorFlow would have left structural room for a competing substrate to emerge in the other camp. Framework-agnostic substrate forecloses competitor formation.
+- **Pair the library release with an arXiv paper.** The October 2019 paper formalized academic citation infrastructure. Without it, transformers would have been popular software but not the canonical citation. The paper is the price of admission to the academic-substrate play.
+
+</Conclusion>
+
+## Sources
+
+- [GitHub: huggingface/transformers releases](https://github.com/huggingface/transformers/releases)
+- [pytorch-transformers v1.0.0 release notes (July 16, 2019)](https://github.com/huggingface/transformers/releases/tag/v1.0.0)
+- [Wolf et al. — HuggingFace's Transformers paper on arXiv (October 9, 2019)](https://arxiv.org/abs/1910.03771)
+- [Contrary Research: Hugging Face report](https://research.contrary.com/company/hugging-face)

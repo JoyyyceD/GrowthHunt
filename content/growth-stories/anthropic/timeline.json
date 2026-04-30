@@ -1,0 +1,439 @@
+{
+  "company": {
+    "slug": "anthropic",
+    "name": "Anthropic",
+    "legalName": "Anthropic, PBC",
+    "tagline": "Safety as reverse positioning, run for five years and stacked into the largest private AI valuation on record",
+    "summary": "Seven senior researchers walked out of OpenAI in late 2020 and incorporated Anthropic as a Public Benefit Corporation in early 2021. Constitutional AI, the Responsible Scaling Policy, and an unbroken cadence of bundled-milestone funding rounds turned a research thesis into the procurement-credible alternative to OpenAI. By April 2026 Anthropic is at roughly 30 billion dollars in ARR, eight of the Fortune 10 as customers, and a 380 billion dollar Series G post-money against secondary offers reported at 800 billion.",
+    "founded": "2021-01",
+    "founders": [
+      "Dario Amodei",
+      "Daniela Amodei",
+      "Tom Brown",
+      "Sam McCandlish",
+      "Jared Kaplan",
+      "Jack Clark",
+      "Chris Olah"
+    ],
+    "seriesNumber": 15
+  },
+  "phases": [
+    {
+      "start": "2021-01",
+      "end": "2022-04",
+      "name": "Founding + research substrate",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2022-04",
+      "end": "2023-09",
+      "name": "FTX entanglement + Constitutional AI + Claude",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2023-09",
+      "end": "2025-02",
+      "name": "Hyperscaler stack + Claude product family",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2025-02",
+      "end": "2026-04",
+      "name": "Claude Code + AI Cloud era",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-12-01",
+      "title": "OpenAI exodus begins",
+      "type": "media",
+      "description": "Dario Amodei (VP Research), Daniela Amodei (VP Safety and Policy), Tom Brown (GPT-3 lead author), Sam McCandlish, Jared Kaplan (scaling laws), Jack Clark (Policy Director), Chris Olah (interpretability), and others depart OpenAI over directional differences about how fast to ship."
+    },
+    {
+      "date": "2021-01-15",
+      "title": "Anthropic incorporated as a Delaware PBC",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "Founded as an AI safety lab. The Public Benefit Corporation structure is the first concrete signal that 'safety-first' is not a marketing line — it is a legally binding commitment that reverse-positions Anthropic against OpenAI's nonprofit-then-capped-profit shell.",
+      "articleSlug": "2021-01-anthropic-founding"
+    },
+    {
+      "date": "2021-05-28",
+      "title": "Series A 124M led by Jaan Tallinn",
+      "type": "funding",
+      "description": "Series A of 124 million dollars at roughly 550 million post-money. Jaan Tallinn (Skype co-founder, long-time AI safety funder) leads. Participation from James McClave, Dustin Moskovitz, Eric Schmidt, and Center for Emerging Risk Research. Philosophical capital, not commercial capital.",
+      "externalUrl": "https://www.anthropic.com/news/anthropic-raises-124-million-to-build-more-reliable-general-ai-systems"
+    },
+    {
+      "date": "2022-04-29",
+      "title": "Series B 580M led by Sam Bankman-Fried / Alameda Research",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Series B of 580 million dollars at roughly 4 billion post-money. Alameda Research contributes about 500 million of the total. Caroline Ellison, Jim McClave, Nishad Singh, and Jaan Tallinn participate. The capital funds Constitutional AI work and Claude 1 training — and becomes structurally consequential six months later.",
+      "externalUrl": "https://www.anthropic.com/news/anthropic-raises-series-b-to-build-safe-reliable-ai",
+      "articleSlug": "2022-04-series-b-ftx"
+    },
+    {
+      "date": "2022-11-11",
+      "title": "FTX bankruptcy filing",
+      "type": "media",
+      "description": "FTX collapses. The roughly 500 million dollar Anthropic stake from Alameda becomes part of the FTX bankruptcy estate. Anthropic itself is not implicated in any wrongdoing. The estate would later sell the position across two tranches in 2024 for a total recovery of about 1.3 billion — a profit for FTX creditors but a fraction of holding through 2026."
+    },
+    {
+      "date": "2022-12-15",
+      "title": "Constitutional AI paper published",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "arXiv 2212.08073 introduces RLAIF (Reinforcement Learning from AI Feedback). Published before Claude is a public product. Becomes the canonical safety differentiator versus OpenAI for the next three years and the audit trail enterprise procurement teams cite when picking Claude over GPT.",
+      "externalUrl": "https://arxiv.org/abs/2212.08073",
+      "articleSlug": "2022-12-constitutional-ai"
+    },
+    {
+      "date": "2023-03-14",
+      "title": "Claude 1 API launch",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "First commercial Claude API, partner-restricted (Quora, Notion, DuckDuckGo). Positioned as 'helpful, honest, and harmless' — explicit reverse positioning versus ChatGPT's pace-first launch (Nov 30, 2022). The product face of Constitutional AI.",
+      "externalUrl": "https://techcrunch.com/2023/03/14/anthropic-launches-claude-a-chatbot-to-rival-openais-chatgpt/"
+    },
+    {
+      "date": "2023-05-23",
+      "title": "Series C 450M @ 4.1B led by Spark Capital",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Series C of 450 million dollars at 4.1 billion post-money. Spark Capital lead (Yasmin Razavi to board). Google, Salesforce Ventures, Sound Ventures, and Zoom Ventures participate. Claude's Constitution is published in the same window — funding plus public safety artifact bundled.",
+      "externalUrl": "https://www.anthropic.com/news/anthropic-series-c"
+    },
+    {
+      "date": "2023-07-11",
+      "title": "Claude 2 broad consumer launch",
+      "type": "product",
+      "description": "Claude 2 launches via claude.ai, the first open-to-the-public Claude experience. 100K context window, improved coding, math, and reasoning. The first D1 narrative move from API to consumer surface."
+    },
+    {
+      "date": "2023-07-25",
+      "title": "Dario Amodei Senate Judiciary testimony",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "Bioweapon-risk testimony alongside Yoshua Bengio and Stuart Russell. Establishes Anthropic as the policy-engaged lab, distinct from OpenAI's lobbying posture. The first public-record artifact in what becomes a recurring pattern through 2026.",
+      "externalUrl": "https://www.judiciary.senate.gov/imo/media/doc/2023-07-26_-_testimony_-_amodei.pdf"
+    },
+    {
+      "date": "2023-09-25",
+      "title": "Amazon 4B commitment (1.25B initial)",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Amazon initial 1.25 billion dollars with option for 2.75 billion more. AWS becomes primary cloud, Trainium and Inferentia chips part of the deal, Amazon Bedrock as distribution. The hyperscaler-as-customer-and-investor pattern begins.",
+      "externalUrl": "https://www.aboutamazon.com/news/company-news/amazon-anthropic-ai-investment",
+      "articleSlug": "2023-09-amazon-google-hyperscaler-stack"
+    },
+    {
+      "date": "2023-10-27",
+      "title": "Google 2B convertible note",
+      "type": "funding",
+      "description": "500 million dollars wired immediately plus 1.5 billion convertible to equity. Vertex AI distribution bundled. Two of three hyperscalers now anchor the cap table. Three GTM motions — buyer, supplier, equity holder — collapsed into one relationship per cloud.",
+      "externalUrl": "https://www.cnbc.com/2023/10/27/google-commits-to-invest-2-billion-in-openai-competitor-anthropic.html"
+    },
+    {
+      "date": "2024-01-11",
+      "title": "Series D 750M @ 18.4B led by Menlo Ventures",
+      "type": "funding",
+      "description": "Series D of 750 million dollars at 18.4 billion post-money via the 'Anthology' SPV. 4.5x the Series C valuation in eight months. Menlo Ventures lead.",
+      "externalUrl": "https://www.cnbc.com/2023/12/21/openai-rival-anthropic-in-talks-to-raise-750-million-funding-round.html"
+    },
+    {
+      "date": "2024-03-04",
+      "title": "Claude 3 family (Opus / Sonnet / Haiku)",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "First multi-tier model family. Claude 3 Opus matches or exceeds GPT-4 on key benchmarks. The three-tier pricing surface (Opus / Sonnet / Haiku) becomes the template every foundation lab eventually copies.",
+      "externalUrl": "https://www.anthropic.com/news/claude-3-family"
+    },
+    {
+      "date": "2024-03-25",
+      "title": "FTX estate sells 884M Anthropic stake to Mubadala-aligned group",
+      "type": "media",
+      "description": "FTX bankruptcy estate sells the majority of its 8 percent Anthropic stake to a UAE sovereign wealth (Mubadala-aligned) group for 884 million dollars. Combined with a residual 450 million sale in June, total recovery on the original 500 million reaches about 1.3 billion — a profit of roughly 800 million for FTX creditors.",
+      "externalUrl": "https://www.cnbc.com/2024/03/25/ftx-estate-sells-majority-stake-in-startup-anthropic-for-884-million.html"
+    },
+    {
+      "date": "2024-06-20",
+      "title": "Claude 3.5 Sonnet + Artifacts",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Claude 3.5 Sonnet beats Claude 3 Opus on most benchmarks at Sonnet pricing. Artifacts reframes Claude as a 'collaborative work environment' — the D1 narrative shift from 'AI chatbot' to 'AI workspace.'",
+      "externalUrl": "https://www.anthropic.com/news/claude-3-5-sonnet"
+    },
+    {
+      "date": "2024-10-08",
+      "title": "Machines of Loving Grace essay",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "Dario Amodei publishes a roughly 14,000-word essay sketching positive AI futures across biology, mental health, governance, work, and economic development. Episodic founder-as-IP — substantively cited inside enterprise procurement decks.",
+      "externalUrl": "https://www.darioamodei.com/essay/machines-of-loving-grace"
+    },
+    {
+      "date": "2024-10-22",
+      "title": "Claude Computer Use",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "First 'computer use' API capability — Claude can take screenshots, click, and type. Agentic capability as a new product surface. The architectural step that makes Claude Code viable four months later.",
+      "externalUrl": "https://www.anthropic.com/news/3-5-models-and-computer-use"
+    },
+    {
+      "date": "2024-11-11",
+      "title": "Dario Amodei on Lex Fridman 5h22m",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "Lex Fridman Podcast Episode 452. Longest single-founder appearance in Anthropic's record. Amanda Askell and Chris Olah join for hour-long supplemental segments. Substantive thesis statement, not promotional.",
+      "externalUrl": "https://lexfridman.com/dario-amodei/"
+    },
+    {
+      "date": "2024-11-22",
+      "title": "Amazon adds 4B more (total 8B)",
+      "type": "funding",
+      "description": "Amazon doubles total commitment from 4 billion to 8 billion. Anthropic uses AWS Trainium chips at scale. Largest single venture commitment in Amazon's history at announcement.",
+      "externalUrl": "https://www.cnbc.com/2024/11/22/amazon-to-invest-another-4-billion-in-anthropic-openais-biggest-rival.html"
+    },
+    {
+      "date": "2025-02-24",
+      "title": "Claude 3.7 Sonnet + Claude Code research preview",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "First hybrid reasoning model — single model with normal and extended-thinking modes. Claude Code launches as terminal-native coding agent (research preview). Becomes the second-most-important product launch in Anthropic's history after Claude itself.",
+      "externalUrl": "https://www.anthropic.com/news/claude-3-7-sonnet",
+      "articleSlug": "2025-02-claude-code-launch"
+    },
+    {
+      "date": "2025-03-03",
+      "title": "Series E 3.5B @ 61.5B led by Lightspeed",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Series E of 3.5 billion dollars at 61.5 billion post-money. Bessemer, Cisco, D1 Capital, Fidelity, General Catalyst, Jane Street, Menlo, Salesforce Ventures participate. ARR roughly 1 billion disclosed, about 30 percent month-over-month growth. Bundled with Claude 3.7 Sonnet plus Claude Code preview.",
+      "externalUrl": "https://www.anthropic.com/news/anthropic-raises-series-e-at-usd61-5b-post-money-valuation"
+    },
+    {
+      "date": "2025-05-22",
+      "title": "Claude 4 (Opus 4 + Sonnet 4) + Claude Code GA",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Claude Opus 4 takes 'world's best coding model' positioning at 72.5 percent SWE-bench. Sonnet 4 succeeds 3.7. Claude Code reaches general availability. The product wave that drives Claude Code's roughly 1 billion ARR ramp by November.",
+      "externalUrl": "https://www.anthropic.com/news/claude-4"
+    },
+    {
+      "date": "2025-09-01",
+      "title": "Series F 13B @ 183B led by ICONIQ",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Series F of 13 billion dollars at 183 billion post-money. ARR roughly 5 billion at announcement, run-rate around 7 billion implied. Goldman Sachs Asset Management participation. Bundled with Sonnet 4.5.",
+      "externalUrl": "https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation"
+    },
+    {
+      "date": "2025-11-24",
+      "title": "Claude Opus 4.5 + Claude Code at 1B ARR",
+      "type": "product",
+      "description": "Opus refresh. About two months later Anthropic discloses Claude Code at roughly 1 billion ARR — about nine months from the February research preview. The single-product ramp pulls a multi-billion revenue surface forward by 18 months.",
+      "externalUrl": "https://www.anthropic.com/news/claude-opus-4-5"
+    },
+    {
+      "date": "2026-02-12",
+      "title": "Series G 30B @ 380B (GIC + Coatue co-lead)",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Second-largest venture deal in history. ARR roughly 14 billion at announcement. Microsoft and Nvidia as new strategic checks. 8 of the Fortune 10 as customers; 1,000+ companies spending more than 1 million dollars per year (doubled from 500 in two months post-announcement); 300,000+ business customers.",
+      "externalUrl": "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation",
+      "articleSlug": "2026-02-series-g-380b"
+    },
+    {
+      "date": "2026-04-17",
+      "title": "Claude Design launches",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Powered by Claude Opus 4.7. Anthropic Labs product targeting the Figma / Adobe / Canva surface. Most aggressive expansion into the application layer to date.",
+      "externalUrl": "https://techcrunch.com/2026/04/17/anthropic-launches-claude-design-a-new-product-for-creating-quick-visuals/"
+    },
+    {
+      "date": "2026-04-24",
+      "title": "Google plans up to 40B more",
+      "type": "funding",
+      "description": "Bloomberg reports Google plans up to 40 billion dollars in additional commitment. Re-anchors Google as primary capital plus distribution partner at the moment Anthropic crosses 30 billion dollars in ARR.",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2026-04-24/google-plans-to-invest-up-to-40-billion-in-anthropic"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2024-12-01",
+      "value": 1000000000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-06-01",
+      "value": 4000000000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-12-01",
+      "value": 9000000000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2026-02-12",
+      "value": 14000000000,
+      "source": "Anthropic Series G announcement",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-04-01",
+      "value": 30000000000,
+      "source": "TheNextWeb / Bloomberg",
+      "confidence": "media"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2021-05-28",
+      "value": 550000000,
+      "round": "Series A",
+      "source": "FinSMEs / Crunchbase",
+      "confidence": "media"
+    },
+    {
+      "date": "2022-04-29",
+      "value": 4000000000,
+      "round": "Series B",
+      "source": "SiliconAngle",
+      "confidence": "media"
+    },
+    {
+      "date": "2023-05-23",
+      "value": 4100000000,
+      "round": "Series C",
+      "source": "Axios",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-01-11",
+      "value": 18400000000,
+      "round": "Series D",
+      "source": "Bloomberg / CNBC",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-03-03",
+      "value": 61500000000,
+      "round": "Series E",
+      "source": "Anthropic",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-09-01",
+      "value": 183000000000,
+      "round": "Series F",
+      "source": "Anthropic",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-02-12",
+      "value": 380000000000,
+      "round": "Series G",
+      "source": "Anthropic",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 4,
+      "bestStage": "Pre-inflection + Hypergrowth",
+      "effort": "Punctuated, launch-driven",
+      "role": "Model launch + product announcement channel",
+      "description": "@AnthropicAI and Dario Amodei (@DarioAmodei) drive each model release with benchmark threads and launch demos. The pattern is quieter than OpenAI's daily presence — closer to episodic milestone broadcasts. Claude Code, Computer Use, Sonnet 3.5, and Claude 4 each landed as benchmark-led X launches.",
+      "catalyst": "Claude 3.7 Sonnet + Claude Code research preview launch (Feb 24, 2025) — the first X thread that established Claude Code as a category, driving the 1 billion ARR ramp by November.",
+      "catalystUrl": "https://x.com/AnthropicAI/status/1894092430560740879",
+      "accountUrl": "https://x.com/AnthropicAI",
+      "accountLabel": "@AnthropicAI on X",
+      "whenItWorks": "When the launch carries a verifiable benchmark or capability demo. Anthropic's audience expects technical proof in the first tweet, not marketing prose",
+      "whenItDoesnt": "Daily-presence engagement. Anthropic deliberately does not flood the timeline. Imitating OpenAI's cadence would dilute the trust posture"
+    },
+    {
+      "slug": "anthropic-blog",
+      "name": "Anthropic Blog",
+      "score": 5,
+      "bestStage": "All stages — load-bearing",
+      "effort": "Always-on long-form",
+      "role": "Canonical research + safety publication",
+      "description": "anthropic.com/news and anthropic.com/research are where the substantive work lives. Constitutional AI, the Responsible Scaling Policy, AI Safety Levels framework, model cards, and Claude's Constitution all anchor here. Enterprise procurement teams cite these pages directly in vendor evaluations — the blog is not marketing collateral, it is the audit trail.",
+      "catalyst": "Constitutional AI publication + Claude's Constitution post (Dec 2022 / May 2023) — turned the safety thesis into a citeable, dated public artifact. Three years later it is still the procurement-grade evidence.",
+      "catalystUrl": "https://www.anthropic.com/news/claudes-constitution",
+      "accountUrl": "https://www.anthropic.com/news",
+      "accountLabel": "Anthropic News",
+      "whenItWorks": "When you have research-grade output to publish on a recurring cadence. The blog works because the work is real, not the other way around",
+      "whenItDoesnt": "If the blog is a press-release archive. Anthropic's blog reads like a research lab's internal site by design — copy-paste startups will not get the same procurement-credible effect"
+    },
+    {
+      "slug": "arxiv",
+      "name": "arXiv",
+      "score": 4,
+      "bestStage": "Latent + Pre-inflection",
+      "effort": "Continuous research output",
+      "role": "Research substrate as positioning",
+      "description": "Constitutional AI (2212.08073), the scaling laws follow-ups, and mechanistic interpretability papers from Olah's team functioned as the academic substrate Claude could be marketed against. By the time Claude was a public product, Anthropic had 18 months of arXiv output positioning it as a research organization that ships rather than a product company that does research.",
+      "catalyst": "Constitutional AI paper (Dec 15, 2022) — the canonical safety differentiator versus OpenAI for the next three years.",
+      "catalystUrl": "https://arxiv.org/abs/2212.08073",
+      "accountUrl": "https://arxiv.org/a/anthropic",
+      "accountLabel": "Anthropic on arXiv",
+      "whenItWorks": "When you have authentic research credentials. arXiv is where credibility is minted, not borrowed — the GPT-3 + scaling laws + Distill.pub pedigree of the founding team is what makes the arXiv lane usable",
+      "whenItDoesnt": "For application-layer companies. The arXiv lane is structurally inaccessible without research staff who publish independently"
+    },
+    {
+      "slug": "lex-fridman",
+      "name": "Lex Fridman Podcast",
+      "score": 4,
+      "bestStage": "Pre-inflection + Hypergrowth",
+      "effort": "Episodic, ~1 per year",
+      "role": "Founder-as-IP long-form",
+      "description": "Dario Amodei has appeared multiple times, most notably the 5h22m Episode 452 (Nov 2024) with hour-long supplemental segments from Amanda Askell and Chris Olah. The cadence is 1-2 substantive appearances per year — closer to Cursor's E2 mode than Vercel's daily presence. Functions as a thesis statement that VPs of Engineering at Fortune 500 buyers actually watch.",
+      "catalyst": "Lex Fridman Episode 452 (Nov 11, 2024) — the longest single-founder podcast appearance in Anthropic's record. Substantive enough to be cited inside enterprise vendor evaluations.",
+      "catalystUrl": "https://lexfridman.com/dario-amodei/",
+      "accountUrl": "https://lexfridman.com/podcast/",
+      "accountLabel": "Lex Fridman Podcast",
+      "whenItWorks": "When the founder can carry 3-5 hours of substantive technical conversation. Anthropic's appearances work because Dario is a credentialed researcher, not a salesperson",
+      "whenItDoesnt": "For founders without genuine technical depth. The format brutally exposes thin product narratives over multi-hour runtime"
+    },
+    {
+      "slug": "senate-testimony",
+      "name": "US Senate testimony",
+      "score": 4,
+      "bestStage": "Pre-inflection + Hypergrowth",
+      "effort": "Episodic, ~1-2 per year",
+      "role": "Policy posture as enterprise sales collateral",
+      "description": "Dario Amodei testified before the Senate Judiciary Committee on AI bioweapon risks (Jul 25, 2023, alongside Yoshua Bengio and Stuart Russell) and returned in November 2025. Jack Clark's Policy Director background was deliberate substrate. The Senate appearances are not lobbying — they are the public-record artifact enterprise compliance teams use when justifying Claude over GPT.",
+      "catalyst": "Dario Amodei Senate Judiciary testimony (Jul 25, 2023) — the first formal positioning of Anthropic as the policy-engaged lab. Three years of structured commitment build the procurement-credible audit trail.",
+      "catalystUrl": "https://www.judiciary.senate.gov/imo/media/doc/2023-07-26_-_testimony_-_amodei.pdf",
+      "accountUrl": "https://www.judiciary.senate.gov/",
+      "accountLabel": "Senate Judiciary Committee",
+      "whenItWorks": "When the company genuinely has a safety / policy thesis with research evidence. Senate testimony amplifies what is already real — it cannot manufacture credibility",
+      "whenItDoesnt": "For startups without a policy organ. Anthropic hired Jack Clark and built the policy team before there was any commercial reason to. Imitators who skip the substrate will not be invited to testify"
+    },
+    {
+      "slug": "hyperscaler-distribution",
+      "name": "AWS Bedrock + Google Vertex",
+      "score": 5,
+      "bestStage": "Hypergrowth",
+      "effort": "Strategic partnership + co-sell",
+      "role": "Enterprise distribution layer",
+      "description": "Two-of-three hyperscalers as both customer and cap-table. Amazon (8 billion total commitment) sells Claude through Bedrock and supplies Trainium compute. Google (2 billion convertible plus reported up to 40 billion additional) sells Claude through Vertex AI. Replicable only at foundation-model scale, but for Anthropic specifically it collapses three GTM motions — buyer, supplier, equity holder — into one relationship per cloud.",
+      "catalyst": "Amazon 4 billion commitment (Sep 2023) + Google 2 billion convertible (Oct 2023) — the one-month window where Anthropic locked in two hyperscalers as strategic investors plus distribution channels at the same time.",
+      "catalystUrl": "https://www.aboutamazon.com/news/company-news/amazon-anthropic-ai-investment",
+      "accountUrl": "https://aws.amazon.com/bedrock/",
+      "accountLabel": "AWS Bedrock for Claude",
+      "whenItWorks": "Foundation-model labs at hyperscaler-relevance scale, in a window when hyperscalers are actively desperate for an OpenAI alternative. The same deal would not be available in the same shape today",
+      "whenItDoesnt": "App-layer or tool-layer companies. Hyperscalers do not invest billions of dollars to acquire startups as a distribution channel — they do so to lock in compute and AI-stack positioning"
+    }
+  ]
+}

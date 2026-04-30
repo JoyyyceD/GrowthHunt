@@ -1,0 +1,337 @@
+{
+  "company": {
+    "slug": "hugging-face",
+    "name": "Hugging Face",
+    "legalName": "Hugging Face, Inc.",
+    "tagline": "一款失败的青少年聊天机器人，一周内交付的 PyTorch 移植，知识库里最分散的战略投资人阵容",
+    "summary": "Hugging Face 头三年（2016–2019）作为一款只覆盖几千个青少年用户的消费聊天机器人步履蹒跚。2018 年 10 月 Google 发布 BERT，团队在大约一周内交付 PyTorch 移植版——pytorch-pretrained-bert，随后更名为 transformers。几个月之内，它就成了大多数 NLP 论文使用 BERT 时引用的实现。2019 年 A 轮把这次转向正式化。接下来四年，Transformers + Hub + Spaces 复合成为一种学术研究承重底层，是 16 家案例库里独一份。到 2023 年 8 月 D 轮，八家主流科技平台战略股东在同一轮联合参投。到 2024 年公司在约 1.3 亿美元营收上实现盈利，至今没有 E 轮。",
+    "founded": "2016-01",
+    "founders": [
+      "Clément Delangue",
+      "Julien Chaumond",
+      "Thomas Wolf"
+    ],
+    "seriesNumber": 16
+  },
+  "phases": [
+    {"start": "2016-01", "end": "2018-10", "name": "聊天机器人时期", "color": "#fef3c7"},
+    {"start": "2018-10", "end": "2021-12", "name": "Transformers + A/B 轮", "color": "#dbeafe"},
+    {"start": "2021-12", "end": "2023-08", "name": "Hub + Spaces + C/D 轮", "color": "#fce7f3"},
+    {"start": "2023-08", "end": "2026-04", "name": "战略股东时代 + 机器人", "color": "#dcfce7"}
+  ],
+  "events": [
+    {
+      "date": "2016-01-01",
+      "title": "Hugging Face Inc. 在纽约成立",
+      "type": "product",
+      "description": "三位法国联合创始人——Clément Delangue（CEO）、Julien Chaumond（CTO）、Thomas Wolf（CSO）——在纽约市注册成立公司。最初定位：面向青少年的 AI 聊天机器人「最好的朋友」。公司名取自 U+1F917 表情符号。",
+      "articleSlug": "2016-founding-chatbot"
+    },
+    {
+      "date": "2017-03-05",
+      "title": "天使轮 120 万美元",
+      "type": "funding",
+      "description": "Betaworks、SV Angel、Kevin Durant 参投。融资定位「AI for entertainment」——比 Transformers 库早两年半。",
+      "externalUrl": "https://www.crunchbase.com/funding_round/hugging-face-angel--dc675d37"
+    },
+    {
+      "date": "2017-03-09",
+      "title": "iOS 聊天机器人上线",
+      "type": "product",
+      "description": "面向青少年的免费 iOS 应用。TechCrunch 把它定位为「人工智能版 BFF」。MIT Tech Review（2017 年 3 月）报道用户基数仅「几千个青少年」——从未作为消费产品跑出来。",
+      "externalUrl": "https://techcrunch.com/2017/03/09/hugging-face-wants-to-become-your-artificial-bff/"
+    },
+    {
+      "date": "2018-05-23",
+      "title": "种子轮 400 万美元",
+      "type": "funding",
+      "description": "Ronny Conway（a_capital）领投。Betaworks、SV Angel、Kevin Durant 跟投。这一轮仍是基于聊天机器人论点融资——正式转向尚未发生。",
+      "externalUrl": "https://techcrunch.com/2018/05/23/hugging-face-raises-4-million-for-its-artificial-bff/"
+    },
+    {
+      "date": "2018-10-11",
+      "title": "BERT 发布约一周后开源 PyTorch 移植版",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "Google 在 TensorFlow 中发布 BERT 大约一周后，Hugging Face 交付了 PyTorch 移植版——pytorch-pretrained-bert。这是技术拐点。全球研究者几乎立即采用。",
+      "externalUrl": "https://research.contrary.com/company/hugging-face",
+      "articleSlug": "2018-pytorch-bert-port"
+    },
+    {
+      "date": "2019-07-16",
+      "title": "pytorch-transformers v1.0.0",
+      "type": "product",
+      "description": "库从 pytorch-pretrained-bert 更名。新增 XLNet + XLM。预训练权重从 10 个扩展到 27 个。跨架构的统一 API。",
+      "externalUrl": "https://github.com/huggingface/transformers/releases/tag/v1.0.0"
+    },
+    {
+      "date": "2019-09-26",
+      "title": "库更名为 transformers（v2.0.0）",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "v2.0.0 引入 TF2 支持，并启用规范名称 transformers（去掉框架前缀）。这一软件包成为学术界与工业界事实上的 NLP 工具集。",
+      "externalUrl": "https://github.com/huggingface/transformers/releases",
+      "articleSlug": "2019-transformers-v1"
+    },
+    {
+      "date": "2019-10-09",
+      "title": "Transformers 论文发表于 arXiv",
+      "type": "media",
+      "description": "Thomas Wolf 等在 arXiv 发表 HuggingFace's Transformers: State-of-the-art Natural Language Processing。后被 EMNLP 2020 demo track 接收。",
+      "externalUrl": "https://arxiv.org/abs/1910.03771"
+    },
+    {
+      "date": "2019-12-17",
+      "title": "A 轮 1500 万美元，Lux Capital 领投",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Lux Capital 领投。Salesforce 首席科学家 Richard Socher 与 OpenAI CTO Greg Brockman 以个人天使身份参投。市场定位为「打造 NLP 领域权威库」——聊天机器人时代的正式终结。",
+      "externalUrl": "https://techcrunch.com/2019/12/17/hugging-face-raises-15-million-to-build-the-definitive-natural-language-processing-library/"
+    },
+    {
+      "date": "2020-09-15",
+      "title": "Datasets 库发布",
+      "type": "product",
+      "description": "huggingface/datasets——Transformers 的姊妹库。统一 NLP、音频、视觉数据集访问。12 个月内达到 650 个数据集和 250+ 名贡献者。承重底层的第二根支柱。"
+    },
+    {
+      "date": "2021-03-11",
+      "title": "B 轮 4000 万美元，Addition 领投（披露现金流转正）",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Addition 领投。TechCrunch 报道 HF 在 2021 年 1 月与 2 月现金流为正，且 A 轮资金还有约 90% 留在账上——这是资本效率的第一个有力公开信号。",
+      "externalUrl": "https://techcrunch.com/2021/03/11/hugging-face-raises-40-million-for-its-natural-language-processing-library/",
+      "articleSlug": "2021-03-series-b"
+    },
+    {
+      "date": "2021-04-28",
+      "title": "BigScience 研究 workshop 启动",
+      "type": "product",
+      "description": "为期一年的开放研究 workshop。1000+ 名志愿研究者。部分由法国政府资助。将在 2022 年 7 月产出 BLOOM。"
+    },
+    {
+      "date": "2021-10-05",
+      "title": "Spaces 上线，集成 Gradio",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "ML demo 应用的免费托管。以 Gradio 作为默认 SDK。让模型可交互分享而无需容器化——可复制的 demo 语法。",
+      "externalUrl": "https://huggingface.co/blog/gradio-spaces"
+    },
+    {
+      "date": "2021-12-16",
+      "title": "收购 Gradio",
+      "type": "acquisition",
+      "gtmTag": "Strategic acquisition",
+      "description": "Gradio 五位工程师团队加入。Gradio 保持开源。成为 Spaces 上的标准 demo SDK——后来达到 200 万+ 月活用户 / 47 万+ 应用。",
+      "externalUrl": "https://huggingface.co/blog/gradio-joins-hf"
+    },
+    {
+      "date": "2022-05-09",
+      "title": "C 轮 1 亿美元 / 20 亿美元（首次独角兽）",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Lux Capital 第三次连续领投。Sequoia 与 Coatue 首次入局。捆绑里程碑：10 万+ 模型、1 万+ 数据集、1 万+ 企业客户、12 个月内团队从 30 人扩张到 120+。",
+      "externalUrl": "https://techcrunch.com/2022/05/09/hugging-face-reaches-2-billion-valuation-to-build-the-github-of-machine-learning/",
+      "articleSlug": "2022-05-series-c-2b"
+    },
+    {
+      "date": "2022-07-12",
+      "title": "BLOOM 发布",
+      "type": "product",
+      "description": "1760 亿参数开放多语言 LLM。比 GPT-3 更大。在法国 Jean Zay 公共超级计算机上训练。BigScience workshop 成果。HF 第一次与一个旗舰模型发布关联。"
+    },
+    {
+      "date": "2022-10-14",
+      "title": "Inference Endpoints 正式上线",
+      "type": "product",
+      "description": "Hub 模型的托管部署服务——一键部署到 AWS、Azure、GCP。CPU 起价 0.06 美元/小时。挂在 Hub 上的第一个可信的经常性收入产品。",
+      "externalUrl": "https://huggingface.co/blog/inference-endpoints"
+    },
+    {
+      "date": "2023-02-21",
+      "title": "AWS 优选 ML 平台合作",
+      "type": "product",
+      "description": "与 AWS 深化合作——在 SageMaker 上获优选 ML 平台地位，扩大联合工程。为半年后的战略投资人阵容铺商业基础。",
+      "externalUrl": "https://huggingface.co/blog/aws-partnership"
+    },
+    {
+      "date": "2023-07-18",
+      "title": "Llama 2 在 Hub 上线",
+      "type": "product",
+      "description": "与 Meta 协调发布。Llama 2 权重通过 huggingface.co/meta-llama 分发。本次发布让 HF 成为最重要开源 LLM 家族的事实分发渠道。",
+      "externalUrl": "https://huggingface.co/blog/llama2"
+    },
+    {
+      "date": "2023-08-24",
+      "title": "D 轮 2.35 亿美元 / 45 亿美元——八家战略投资人",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Salesforce Ventures 领投。参投：Google、Amazon、Nvidia、AMD、Intel、IBM、Qualcomm。八家主流科技平台战略股东在同一轮，其中数家彼此直接竞争。这是 16 家案例库里最分散的战略投资人阵容。",
+      "externalUrl": "https://techcrunch.com/2023/08/24/hugging-face-raises-235m-from-investors-including-salesforce-and-nvidia/",
+      "articleSlug": "2023-08-series-d-strategic-stack"
+    },
+    {
+      "date": "2024-05-06",
+      "title": "LeRobot 库上线",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "开源机器人库，定位为「机器人领域的 Transformers」。模型、数据集、PyTorch 中真实世界机器人学习工具。GitHub repo 12 个月内从 0 增长到 12000+ stars。",
+      "externalUrl": "https://venturebeat.com/automation/hugging-face-launches-lerobot-open-source-robotics-code-library"
+    },
+    {
+      "date": "2024-08-08",
+      "title": "收购 XetHub",
+      "type": "acquisition",
+      "gtmTag": "Strategic acquisition",
+      "description": "西雅图数据存储创业公司，由前 Apple 研究员创办。约 14 名员工加入。HF 历史上最大一笔收购。替换 Git LFS 作为 Hub 的存储后端——解决 TB 级模型文件瓶颈。",
+      "externalUrl": "https://huggingface.co/blog/xethub-joins-hf"
+    },
+    {
+      "date": "2024-09-26",
+      "title": "公开模型数突破 100 万",
+      "type": "media",
+      "description": "Hugging Face 宣布托管公开模型达 100 万。每约 10 秒新建一个 repo。这是 HF 反复引用、用以证明社区承重底层的模型数里程碑。"
+    },
+    {
+      "date": "2024-12-31",
+      "title": "在约 1.3 亿美元营收上宣布盈利",
+      "type": "media",
+      "description": "Clément Delangue 公开在 X 上声明 Hugging Face 在 2024 年盈利。报告营收约 1.3 亿美元（Sacra / Latka / Contrary 三方交叉验证）。各层级合计 5 万客户。",
+      "externalUrl": "https://research.contrary.com/company/hugging-face",
+      "articleSlug": "2024-profitability-and-acquisitions"
+    },
+    {
+      "date": "2025-03-06",
+      "title": "Thomas Wolf 发表「服务器上的应声虫」长文",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "Wolf 在个人网站发表长文，挑战 Dario Amodei 的「压缩的 21 世纪」论点。论点是当下 AI 正变成「服务器上的应声虫」，无法生成新知识。创始人 IP 三角中的学术公信力支柱由此公开激活。",
+      "externalUrl": "https://techcrunch.com/2025/03/06/hugging-faces-chief-science-officer-worries-ai-is-becoming-yes-men-on-servers/"
+    },
+    {
+      "date": "2025-04-14",
+      "title": "收购 Pollen Robotics",
+      "type": "acquisition",
+      "description": "法国机器人创业公司，做 Reachy 2 人形机器人（7 万美元，部署于康奈尔与卡耐基梅隆）。约 20 名员工加入。HF 第五笔收购；首次收购硬件产品公司。",
+      "externalUrl": "https://techcrunch.com/2025/04/14/hugging-face-buys-a-humanoid-robotics-startup/"
+    },
+    {
+      "date": "2025-07-09",
+      "title": "Reachy Mini 机器人上线（299/449 美元）",
+      "type": "product",
+      "gtmTag": "Audience boundary push",
+      "description": "HF 首款自有硬件产品。可用 Python 编程。Hub 上预装 15+ 行为。市场定位为开发者「进入 AI 机器人世界的入口」——D2 受众边界突破：从开发者扩展到 maker / 硬件爱好者。",
+      "externalUrl": "https://venturebeat.com/ai/hugging-face-just-launched-a-299-robot-that-could-disrupt-the-entire-robotics-industry"
+    },
+    {
+      "date": "2026-02-20",
+      "title": "收购 ggml.ai / llama.cpp",
+      "type": "acquisition",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Georgi Gerganov 与 ggml.ai 团队加入。llama.cpp 与 ggml repo 保持 MIT 开源协议。该收购把模型分发层（HF Hub）与主流本地推理层（llama.cpp）整合到同一屋檐下。HF 第六笔收购。",
+      "externalUrl": "https://simonwillison.net/2026/Feb/20/ggmlai-joins-hugging-face/"
+    }
+  ],
+  "arr": [
+    {"date": "2021-12-31", "value": 10000000, "source": "Contrary Research", "confidence": "estimate"},
+    {"date": "2022-12-31", "value": 15000000, "source": "Wikipedia", "confidence": "media"},
+    {"date": "2023-12-31", "value": 70000000, "source": "Sacra", "confidence": "estimate"},
+    {"date": "2024-12-31", "value": 130000000, "source": "Sacra / Latka / Contrary", "confidence": "estimate"}
+  ],
+  "valuation": [
+    {"date": "2019-12-17", "value": 15000000, "round": "Series A", "source": "TechCrunch", "confidence": "estimate"},
+    {"date": "2021-03-11", "value": 40000000, "round": "Series B", "source": "TechCrunch", "confidence": "estimate"},
+    {"date": "2022-05-09", "value": 2000000000, "round": "Series C", "source": "TechCrunch", "confidence": "official"},
+    {"date": "2023-08-24", "value": 4500000000, "round": "Series D", "source": "CNBC", "confidence": "official"}
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X（推特）",
+      "score": 5,
+      "bestStage": "全阶段——承重结构",
+      "effort": "每日，创始人主导",
+      "role": "创始人声音 + 社区表面",
+      "description": "@ClementDelangue（clem）每天发帖——模型发布、合作公告、员工 shoutout、社区 Spaces 转推。Fast Company（2023 年 4 月）的报道证实，每位员工都有官方账号权限；公司没有专职社区经理。这种节奏更接近 Vercel 的 Rauch（持续在线版），而不是 Cursor 的 Truell（阶段性长内容版）。",
+      "catalyst": "没有单条爆款推文。自 2017 年起持续每日在场，复合成开源 AI 公认的公开门面。2024 年的盈利披露就是 Delangue 一条 X 帖子，而不是新闻稿。",
+      "accountUrl": "https://x.com/ClementDelangue",
+      "accountLabel": "@ClementDelangue on X",
+      "whenItWorks": "当创始人是公司在该平台上关注度最高的那个人，并且能每日支撑技术深度时",
+      "whenItDoesnt": "没有工程或研究公信力的 CEO 一般会在六个月内失败——没有内容支撑的每日发帖会消耗受众"
+    },
+    {
+      "slug": "github",
+      "name": "GitHub",
+      "score": 5,
+      "bestStage": "全阶段——承重底层",
+      "effort": "承重底层级",
+      "role": "承重底层本身",
+      "description": "transformers 一度成为 GitHub 上 stars 最多的 ML repo。到 2026 年，HF 组织托管了几十个标志性库——transformers、datasets、accelerate、peft、diffusers、gradio、lerobot。每一篇引用 transformers 的论文都是一次小型 B3 推动。",
+      "catalyst": "2018 年 10 月——pytorch-pretrained-bert 在 Google 发布 BERT 大约一周内交付。几个月之内，它就成了大多数 NLP 论文使用 BERT 时引用的实现。2019 年之后学 NLP 的研究生，都是通过 HF 的 API 学的。",
+      "catalystUrl": "https://github.com/huggingface/transformers",
+      "accountUrl": "https://github.com/huggingface",
+      "accountLabel": "huggingface on GitHub",
+      "whenItWorks": "当一个领域足够快、需要统一 API，且尚未有现成开源库占位时",
+      "whenItDoesnt": "Source-available 或 copyleft 协议会切断学术传播效应。Apache 2.0 是唯一可行的选择"
+    },
+    {
+      "slug": "huggingface-co",
+      "name": "huggingface.co（Hub）",
+      "score": 5,
+      "bestStage": "2020 年后——平台级承重底层",
+      "effort": "平台级——公司主表面",
+      "role": "分发渠道 + 落地页 + 命名空间",
+      "description": "每张 model card 都是一张落地页。每个 Space 都是一个工作中的 demo。每条数据集 URL 都是一条引用。arXiv 论文在参考文献里直接链接到 huggingface.co/{user}/{model}。到 2026 年 1 月：240 万+ 模型、73 万+ 数据集、50 万+ Spaces。承重底层升级成了平台。",
+      "catalyst": "Stable Diffusion 在 2022 年 8 月发布，并先在 HF Spaces 上爆红，再扩散到别的渠道——标志性 demo Spaces 被 fork 数千次。format 验证了 substrate。",
+      "catalystUrl": "https://huggingface.co/spaces/stabilityai/stable-diffusion",
+      "accountUrl": "https://huggingface.co/",
+      "accountLabel": "huggingface.co",
+      "whenItWorks": "当用户会在自己的产出（论文、博客、README）中引用你的 URL 模式时——URL 本身就是分发",
+      "whenItDoesnt": "没有学术引用拉力时，托管平台 URL 不会自然传播。这一点比纯开源库采纳更难工程化"
+    },
+    {
+      "slug": "arxiv",
+      "name": "arXiv",
+      "score": 4,
+      "bestStage": "承重底层期——2019 年起",
+      "effort": "阶段性——论文绑定到发布节点",
+      "role": "学术公信力表面",
+      "description": "2019 年 10 月的 Transformers 论文（Wolf 等，HuggingFace's Transformers: State-of-the-art Natural Language Processing）是 HF 学术公信力的基石。后被 EMNLP 2020 demo 接收。后续每次重大库发布都附带一份论文级技术报告。这不是营销动作，而是进入学术承重底层游戏的入场费。",
+      "catalyst": "2019 年 10 月 9 日——Transformers 论文挂上 arXiv。这篇论文把已经事实采纳的现状形式化。后续论文（BLOOM、LeRobot、BigScience 报告）延续了同一模式。",
+      "catalystUrl": "https://arxiv.org/abs/1910.03771",
+      "accountUrl": "https://arxiv.org/a/wolf_t_1",
+      "accountLabel": "Thomas Wolf on arXiv",
+      "whenItWorks": "当你的创始人或早期员工能写出可被引用的论文时。arXiv 是学者唯一认可的可信平台",
+      "whenItDoesnt": "营销团队伪造不出 arXiv 存在感。没有研究公信的署名作者，论文尝试看起来就是「换成 LaTeX 排版的新闻稿」"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 4,
+      "bestStage": "库与平台发布节点",
+      "effort": "节点性——重大发布自然进 HN",
+      "role": "技术公信力验证器",
+      "description": "HF 每一次重大发布都会自然出现在 HN 上。transformers 各次发布、Spaces 上线、BLOOM、Inference Endpoints、LeRobot、D 轮——首页位置都拿到过。HN 圈在大盘之前就先验证了 transformer 时代的基础设施。",
+      "catalyst": "PyTorch BERT 移植版（2018 年 10 月）——HN 上第一次出现是一个开发者讨论帖，同一页就把空缺（仅 TF 版 BERT）和填补方案（这一 PyTorch 移植版）摆在一起。几周之内 URL 就在 NLP 圈传开。",
+      "catalystUrl": "https://hn.algolia.com/?q=hugging+face",
+      "accountUrl": "https://hn.algolia.com/?q=huggingface.co",
+      "accountLabel": "Search HN for Hugging Face",
+      "whenItWorks": "当发布具备真实技术新意时——新库、新模型、新格式。HN 奖励硬内容，惩罚 PR",
+      "whenItDoesnt": "安全事件（2024 年恶意模型、2024 年 Spaces 越权访问）在 HN 上会被严厉打。卫生型公关帖救不了你"
+    },
+    {
+      "slug": "discord",
+      "name": "Discord",
+      "score": 3,
+      "bestStage": "Spaces 之后——长期社区运营",
+      "effort": "全程在线，社区驱动",
+      "role": "实时研究者与开发者支持",
+      "description": "Hugging Face Discord 承接 transformers、datasets、Spaces 以及现在 LeRobot 的实时社区问题。比 GitHub issues 反馈更快，比 X 更具实质。LeRobot 的推广阶段尤其关键——目前用户群仍在定义机器人 ML 是什么样的。",
+      "catalyst": "BLOOM 发布（2022 年 7 月）——Discord 吸收了关于分布式推理与量化的研究者问题潮，否则这些会散落在多个 repo 的 GitHub issue tracker 上。",
+      "accountUrl": "https://discord.gg/hugging-face-879548962464493619",
+      "accountLabel": "Hugging Face Discord",
+      "whenItWorks": "当你交付的库需要不平凡的搭建步骤、且用户愿意公开互助时",
+      "whenItDoesnt": "没有真正的运营在频道里时，Discord 会变成无人应答的坟场"
+    }
+  ]
+}

@@ -1,0 +1,404 @@
+{
+  "company": {
+    "slug": "notion",
+    "name": "Notion",
+    "legalName": "Notion Labs, Inc.",
+    "tagline": "Six pre-PMF years on a stable thirteen-year thesis, then AI bolted on as a feature, not a transformation — and what the May 2025 pricing change reveals about the limits of that bet",
+    "summary": "Notion is the canonical case for a long pre-PMF wandering substrate, design-led product polish, and AI-as-feature-not-transformation. Founded in August 2013 with a 'tools for thought' thesis, the company spent six years in latent state — three years burning angel money on a developer-tool framing that never worked, a 2015 near-death that ended with co-founders Ivan Zhao and Simon Last laying off the team and moving to Kyoto, a from-scratch rewrite, an August 2016 1.0 launch that hit Product Hunt #1 but generated negligible revenue, and a March 2018 2.0 launch that finally turned Notion into the all-in-one workspace. The first institutional-style round closed in July 2019 — six years in, $10M at an $800M valuation, sized to substrate proof rather than ARR multiples. COVID compressed the curve: April 2020 Series B at $2B (36 hours from call to deal), October 2021 Series C at $10B. Notion AI shipped in February 2023 as a deliberate add-on, not a transformation. By the December 2025 secondary tender at $11B, ARR was reported at roughly $600M. The May 2025 pricing change — eliminating the standalone $10/mo AI tier and bundling AI access into Business at $20/mo — is the most diagnostic operational signal in the entire history.",
+    "founded": "2013-08",
+    "founders": [
+      "Ivan Zhao",
+      "Simon Last",
+      "Toby Schachman",
+      "Chris Prucha",
+      "Jessica Lam"
+    ],
+    "seriesNumber": 17
+  },
+  "phases": [
+    {
+      "start": "2013-08",
+      "end": "2015-04",
+      "name": "Wandering + first attempts",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2015-04",
+      "end": "2019-07",
+      "name": "Kyoto rewrite + slow burn",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2019-07",
+      "end": "2022-11",
+      "name": "Series A through C inflection",
+      "color": "#dcfce7"
+    },
+    {
+      "start": "2022-11",
+      "end": "2026-05",
+      "name": "AI as add-on era",
+      "color": "#fce7f3"
+    }
+  ],
+  "events": [
+    {
+      "date": "2013-08-01",
+      "title": "Notion Labs incorporated in San Francisco",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "Ivan Zhao founds Notion Labs with Toby Schachman, Chris Prucha, Jessica Lam, and Simon Last. The original product is a developer-focused 'tools for thought' substrate inspired by Smalltalk, Bret Victor, Alan Kay, and Doug Engelbart — closer to a no-code substrate than a notes app. The thesis is that most software treats users as consumers; Notion wants to treat them as authors.",
+      "externalUrl": "https://en.wikipedia.org/wiki/Notion_(productivity_software)",
+      "articleSlug": "2013-founding"
+    },
+    {
+      "date": "2014-06-01",
+      "title": "Multiple complete rewrites; the developer-tool framing fails",
+      "type": "product",
+      "description": "Across 2013-2015 Notion goes through several full code rewrites trying to make a Smalltalk-inspired environment for non-programmers to compose their own apps. The thesis survives every rewrite; the implementations don't. Family-and-friends seed money (~$2M) burns down."
+    },
+    {
+      "date": "2015-04-01",
+      "title": "Money runs out; team laid off",
+      "type": "funding",
+      "description": "Ivan Zhao and Simon Last lay off the four-person team and sublet the SF office. Co-founders Toby Schachman, Chris Prucha, and Jessica Lam are no longer part of the operating team. Three years and millions of family-and-friends money have produced a product no one uses.",
+      "externalUrl": "https://www.thesoftwarereport.com/the-kyoto-reboot-how-ivan-zhao-rebuilt-notion/",
+      "articleSlug": "2015-kyoto-rewrite"
+    },
+    {
+      "date": "2015-06-01",
+      "title": "Move to Kyoto; full rewrite begins",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "Ivan and Simon move to Kyoto, Japan — cost of living roughly half of San Francisco. They rent a two-story house with paper walls and no central heating, write code 18 hours a day, and rebuild Notion from scratch. The Japanese craft sensibility — shokunin discipline, design through restraint — becomes embedded in the product's visual language.",
+      "externalUrl": "https://x.com/ivanhzhao/status/1887548612441465208",
+      "articleSlug": "2015-kyoto-rewrite"
+    },
+    {
+      "date": "2016-08-01",
+      "title": "Notion 1.0 ships; Product Hunt #1 day/week/month",
+      "type": "product",
+      "gtmTag": "Audience boundary push",
+      "description": "Notion 1.0 launches as a docs-and-wiki product — what Ivan calls 'sugar-coated broccoli,' the radical thesis hidden inside familiar productivity framing. It hits #1 on Product Hunt for the day, week, and month. Revenue is negligible; the design-community resonance starts here.",
+      "externalUrl": "https://www.notion.com/blog/first-block-with-ivan-zhao-simon-last"
+    },
+    {
+      "date": "2017-06-01",
+      "title": "Small angel round (undisclosed)",
+      "type": "funding",
+      "description": "Notion accepts an undisclosed angel investment in 2017. Akshay Kothari (then at LinkedIn after the Pulse acquisition) participates as one of the early angels — three years before joining as COO."
+    },
+    {
+      "date": "2018-03-01",
+      "title": "Notion 2.0 launches with databases / Product Hunt #1 again",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Notion 2.0 adds tables, kanban boards, and calendars on top of databases — turning Notion from a notes-and-wiki app into the all-in-one workspace framing it carries today. Product Hunt #1 day/week/month for the second time. WSJ calls it 'a rare renaissance app.'",
+      "externalUrl": "https://www.producthunt.com/products/notion"
+    },
+    {
+      "date": "2018-08-01",
+      "title": "Akshay Kothari joins as COO (10th employee)",
+      "type": "product",
+      "description": "Akshay Kothari (Pulse co-founder, ex-LinkedIn after the Pulse acquisition) joins full-time as COO, employee #10. He becomes the operations and GTM counterweight to Ivan's product-and-design focus, and is referenced internally as a co-founder despite the 2018 join date.",
+      "externalUrl": "https://www.linkedin.com/posts/akothari_back-when-i-joined-notion-in-2018-the-whole-activity-7368776123859562497-dl6_"
+    },
+    {
+      "date": "2019-07-01",
+      "title": "Series A $10M @ $800M valuation",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Notion announces a $10M round led by an angel syndicate (Daniel Gross, Elad Gil, Aydin Senkut at Felicis, Ram Shriram at Sherpalo, Josh Kopelman at First Round, Lachy Groom). $800M post-money — implying a 267x ARR multiple on Lemkin's reconstructed ~$3M ARR estimate. Inverted-timing round: the company is six years old and the valuation is sized to a mature SaaS company because the substrate matured outside the capital cycle.",
+      "externalUrl": "https://pitchbook.com/newsletter/notion-labs-reaches-800m-valuation",
+      "articleSlug": "2019-series-a"
+    },
+    {
+      "date": "2019-09-01",
+      "title": "1 million users milestone",
+      "type": "media",
+      "description": "Notion crosses 1M users — six years after founding, three years after 1.0, and 18 months after 2.0. Growth is almost entirely organic: templates, YouTube creators (Thomas Frank, Marie Poulin, Easlo), and college-student virality on Reddit and YouTube. Paid acquisition is effectively zero."
+    },
+    {
+      "date": "2020-04-01",
+      "title": "Series B $50M @ $2B (Index Ventures lead, 36-hour close)",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "COVID hits. Akshay Kothari calls Sarah Cannon at Index Ventures on a Wednesday; term sheet on Friday — 36 hours from initial call to deal. $50M at $2B post-money. Notion publicly notes it has been profitable for the prior 18 months. Funding framed as remote-work tailwind catch, not survival capital.",
+      "externalUrl": "https://techcrunch.com/2020/04/01/notion-hits-2-billion-valuation-in-new-raise/"
+    },
+    {
+      "date": "2021-10-08",
+      "title": "Series C $275M @ $10B (Coatue + Sequoia co-lead)",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Coatue Management and Sequoia Capital co-lead a $275M Series C; Base10 participates. Valuation jumps 5x from April 2020 to $10B post-money. Disclosed enterprise customers include Pixar, Toyota, Uber, Figma, Match Group. Reported user count: 20M. ARR estimated at ~$31M — a 322x multiple, peak ZIRP froth.",
+      "externalUrl": "https://siliconangle.com/2021/10/08/productivity-startup-notion-valued-10b-latest-275m-funding-round/",
+      "articleSlug": "2021-series-c-10b"
+    },
+    {
+      "date": "2022-06-09",
+      "title": "Notion acquires Cron (calendar app)",
+      "type": "acquisition",
+      "gtmTag": "Acqui-hire competitor",
+      "description": "Notion acquires Cron, a 2020-founded calendar app run by Raphael Schaad. Cron continues operating standalone for 18 months while integration is built. Strategic intent: extend Notion's surface beyond docs into time-management.",
+      "externalUrl": "https://www.notion.com/blog/notion-acquires-cron"
+    },
+    {
+      "date": "2022-11-16",
+      "title": "Notion AI private alpha",
+      "type": "product",
+      "description": "Notion AI launches in closed beta as a writing-assistant feature embedded inline in any Notion page. Two weeks before ChatGPT's November 30 public release, Notion already has its AI surface — but framed as a feature on top of an existing product, not a new product.",
+      "externalUrl": "https://www.notion.com/blog/behind-the-scenes-notion-ai"
+    },
+    {
+      "date": "2023-02-22",
+      "title": "Notion AI general availability launch",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "After 10 weeks of beta feedback, Notion AI ships to all users on Feb 22, 2023 as a $10/user/month add-on available on every plan, including the free tier. The framing is deliberate: Notion now has AI, not Notion is AI. The product still resolves at a docs-and-databases identity.",
+      "externalUrl": "https://www.notion.com/releases/2023-02-22",
+      "articleSlug": "2023-02-notion-ai-launch"
+    },
+    {
+      "date": "2024-01-17",
+      "title": "Notion Calendar launches (Cron rebuild)",
+      "type": "product",
+      "description": "19 months after the Cron acquisition, Notion launches Notion Calendar — a free calendar app that ties events to Notion docs and workspaces. The standalone Cron brand shuts down. Distribution play: get into a daily-use surface (calendar) to drive Notion engagement.",
+      "externalUrl": "https://techcrunch.com/2024/01/17/notion-launches-a-calendar-app/"
+    },
+    {
+      "date": "2024-02-09",
+      "title": "Notion acquires Skiff (encrypted email/docs)",
+      "type": "acquisition",
+      "gtmTag": "Acqui-hire competitor",
+      "description": "Notion acquires Skiff for an undisclosed sum. Skiff's product is shut down with a six-month migration window. The real prize: the Skiff team and email infrastructure, which becomes the foundation for Notion Mail.",
+      "externalUrl": "https://techcrunch.com/2024/02/09/notion-acquires-privacy-focused-productivity-platform-skiff/"
+    },
+    {
+      "date": "2024-09-03",
+      "title": "100 million users milestone announced",
+      "type": "media",
+      "gtmTag": "Audience boundary push",
+      "description": "Notion publicly announces 100M users. Ivan Zhao writes a personal blog post (100 million people now use Notion). Implied 5x growth from 20M at Series C three years prior. ~80% of users now outside the US.",
+      "externalUrl": "https://www.notion.com/blog/100-million-of-you"
+    },
+    {
+      "date": "2025-03-01",
+      "title": "Lenny Rachitsky podcast — Ivan Zhao",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "Lenny Rachitsky's interview with Ivan Zhao becomes the canonical long-form Notion narrative — Notion's lost years, its near collapse during Covid, staying small to move fast, the joy and suffering of building horizontal. The episode is the founder-as-IP capstone for Ivan in 2025.",
+      "externalUrl": "https://www.lennysnewsletter.com/p/inside-notion-ivan-zhao"
+    },
+    {
+      "date": "2025-04-15",
+      "title": "Notion Mail launches (built on Skiff infra)",
+      "type": "product",
+      "description": "Notion Mail ships — an AI-powered Gmail client. Jason Ginsberg (ex-Skiff co-founder) leads the product. Strategic positioning: extend Notion's surface into a third daily-use destination, after docs and calendar.",
+      "externalUrl": "https://techcrunch.com/2025/04/15/notion-releases-its-ai-driven-email-inbox/"
+    },
+    {
+      "date": "2025-05-01",
+      "title": "Standalone AI tier eliminated; AI bundled into Business",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Notion eliminates the standalone $10/mo AI add-on for new subscribers. Full AI access (AI Agents, Ask Notion) now requires the Business tier at $20/user/month. Existing AI add-on subscribers are grandfathered. Effect: lifts ARPU, lifts AI revenue mix attribution, but constrains AI access for free and Plus users — a structural admission that standalone AI add-on economics were not accreting the way the team had hoped.",
+      "externalUrl": "https://www.notion.com/pricing",
+      "articleSlug": "2025-05-ai-pricing-change"
+    },
+    {
+      "date": "2025-09-15",
+      "title": "Sacra estimates ~$500M ARR (Sep 2025)",
+      "type": "media",
+      "description": "Sacra publishes an ARR estimate: Notion crossed $500M ARR in September 2025. Profitable. ~80% of users outside the US. AI products driving NRR uplift among enterprise customers."
+    },
+    {
+      "date": "2025-09-18",
+      "title": "Notion 3.0: Agents launches",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Notion 3.0 ships AI Agents — autonomous agents that can do up to 20 minutes of work across hundreds of pages. Notion rebuilds Notion AI from the ground up as Agents. Pulls context from Slack, Google Drive, GitHub. Custom Agents announced as coming soon. Sacra later estimates ~50% of ARR from AI products by Dec 2025.",
+      "externalUrl": "https://www.notion.com/blog/introducing-notion-3-0"
+    },
+    {
+      "date": "2025-12-15",
+      "title": "Secondary share sale at $11B valuation",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Notion completes a secondary tender (~$300M employee liquidity) at $11B valuation. Sequoia Capital, Index Ventures, and Singapore's GIC participate as buyers. Reported ARR ~$600M with ~50% from AI products (Tiger Brokers, upper-bound estimate). Bloomberg reports IPO chatter for late 2026.",
+      "externalUrl": "https://www.itiger.com/news/1136424118"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2019-12-31",
+      "value": 3000000,
+      "source": "SaaStr / Lemkin (estimate)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2020-12-31",
+      "value": 13000000,
+      "source": "SaaStr / Lemkin (estimate)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2021-12-31",
+      "value": 31000000,
+      "source": "SaaStr / Lemkin (estimate)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2022-12-31",
+      "value": 67000000,
+      "source": "SaaStr / Lemkin (estimate)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2023-12-31",
+      "value": 150000000,
+      "source": "Sacra (estimate)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2024-12-31",
+      "value": 400000000,
+      "source": "Sacra (estimate)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-09-30",
+      "value": 500000000,
+      "source": "Sacra (estimate)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-12-15",
+      "value": 600000000,
+      "source": "Latka / Tiger Brokers (estimate)",
+      "confidence": "estimate"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2019-07-01",
+      "value": 800000000,
+      "round": "Series A",
+      "source": "The Information / PitchBook",
+      "confidence": "media"
+    },
+    {
+      "date": "2020-04-01",
+      "value": 2000000000,
+      "round": "Series B",
+      "source": "TechCrunch",
+      "confidence": "media"
+    },
+    {
+      "date": "2021-10-08",
+      "value": 10000000000,
+      "round": "Series C",
+      "source": "TechCrunch / SiliconANGLE",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-12-15",
+      "value": 11000000000,
+      "round": "Secondary tender",
+      "source": "Tiger Brokers / Bloomberg",
+      "confidence": "media"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 4,
+      "bestStage": "All stages — episodic",
+      "effort": "Episodic founder voice",
+      "role": "Founder-as-IP origin-story surface",
+      "description": "Ivan Zhao's X is where the canonical Notion artifacts live in primary form — most importantly the Feb 6, 2025 post on the 2015 near-death and Kyoto restart, which has become the most-cited single piece of Notion's origin narrative. The account is low-frequency and philosophical rather than daily and operational.",
+      "catalyst": "Ivan Zhao's February 6, 2025 X post acknowledging the 2015 near-death experience and Kyoto restart. The post crystallized the Kyoto narrative as durable IP and gave every Notion-bound creator and journalist a primary-source quote to anchor on for the next 18 months.",
+      "catalystUrl": "https://x.com/ivanhzhao/status/1887548612441465208",
+      "accountUrl": "https://x.com/ivanhzhao",
+      "accountLabel": "@ivanhzhao on X",
+      "whenItWorks": "When the founder is willing to keep retelling the rough edges of the origin story instead of sanding them off. Specificity (Kyoto, paper walls, no heating) is what makes the post travel — not abstractions about resilience",
+      "whenItDoesnt": "If the account becomes a press feed for product launches. Notion-style episodic posting works because the rare posts are dense; daily product updates would dilute the format"
+    },
+    {
+      "slug": "podcast",
+      "name": "Podcasts (Lenny / 20VC)",
+      "score": 5,
+      "bestStage": "Series A through C inflection + AI as add-on era",
+      "effort": "Episodic, high-effort per episode",
+      "role": "Long-form founder authority",
+      "description": "Lenny Rachitsky and 20VC are the two podcasts that built Notion's founder-as-IP layer in the 2024-2025 window. The Lenny Rachitsky episode (Mar 2025) became the canonical long-form Ivan moment; the 20VC episode (Sep 2024) on Founder Mode and the earlier Akshay Kothari + Sarah Cannon episode on the 36-hour Series B close are the Akshay-side anchors. There is no Lex Fridman interview as of April 2026.",
+      "catalyst": "Ivan Zhao on Lenny's Podcast (March 2025): 'Notion's lost years, its near collapse during Covid, staying small to move fast, the joy and suffering of building horizontal.' The episode became the founder-as-IP capstone for Ivan and the most-cited Notion long-form for the rest of 2025.",
+      "catalystUrl": "https://www.lennysnewsletter.com/p/inside-notion-ivan-zhao",
+      "accountUrl": "https://www.lennysnewsletter.com/p/inside-notion-ivan-zhao",
+      "accountLabel": "Lenny's Podcast — Ivan Zhao",
+      "whenItWorks": "When the buyer is a senior product leader, designer, or founder with the authority to adopt a tool without procurement. Ninety-minute conversations are how those buyers do their due diligence",
+      "whenItDoesnt": "For SMB or self-serve markets where the buyer journey is shorter than 90 minutes. Long-form podcasts are top-of-funnel for considered B2B purchases, not transactional ones"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube (productivity creators)",
+      "score": 5,
+      "bestStage": "Kyoto rewrite + slow burn through Series C inflection",
+      "effort": "Creator-driven, near-zero company touch",
+      "role": "The community substrate that scaled Notion",
+      "description": "YouTube is where Notion's distribution actually compounded for the longest time. Thomas Frank, Marie Poulin, and Easlo became canonical names by building productivity-tutorial channels around Notion templates. The format is replicable — a five-minute video showing a personal CRM or course tracker — and it carried Notion from 1M users in 2019 to 100M in 2024 with effectively zero paid acquisition.",
+      "catalyst": "No single moment. The slow 2018-2024 emergence of a creator economy where Thomas Frank's $300K-month template business and Easlo's freelance template empire both proved Notion-native creators could earn a living distributing the product.",
+      "catalystUrl": "https://www.youtube.com/@ThomasFrankExplains",
+      "accountUrl": "https://www.youtube.com/@NotionHQ",
+      "accountLabel": "Notion on YouTube",
+      "whenItWorks": "When the product surface is composable enough that each creator can build their own version of the demo. Templates are the unit of replication; without that primitive, creator economies don't form around B2B SaaS",
+      "whenItDoesnt": "For products where the demo is the same every time. If a YouTuber can't show a unique angle in episode 14, the channel won't survive to episode 50"
+    },
+    {
+      "slug": "newsletter",
+      "name": "Lenny's Newsletter",
+      "score": 4,
+      "bestStage": "AI as add-on era",
+      "effort": "Single canonical interview",
+      "role": "Product-leader audience capture",
+      "description": "Lenny Rachitsky's newsletter (~700K subscribers in 2025) is where Notion's senior-product-leader audience reads about Notion. The March 2025 Ivan Zhao interview functioned as the 2025 canonical long-form for Notion's founder-as-IP and seeded the references for almost every secondary write-up of the company in the following nine months.",
+      "catalyst": "March 2025 Lenny + Ivan episode bundled with the Inside Notion deep-dive newsletter. Same week, same audience — the funding-press equivalent for product leaders.",
+      "catalystUrl": "https://www.lennysnewsletter.com/p/inside-notion-ivan-zhao",
+      "accountUrl": "https://www.lennysnewsletter.com",
+      "accountLabel": "Lenny's Newsletter",
+      "whenItWorks": "When the audience is senior PMs, founders, and product leaders who pay for substack-tier newsletters. Lenny's audience converts at a rate that mass-tech press doesn't",
+      "whenItDoesnt": "If the founder's narrative isn't articulated enough to fill a 90-minute episode plus a long-form post. Lenny's format rewards depth, not announcements"
+    },
+    {
+      "slug": "tiktok",
+      "name": "TikTok",
+      "score": 3,
+      "bestStage": "Kyoto rewrite + slow burn through Series C inflection",
+      "effort": "Creator-driven, organic",
+      "role": "Student-virality acceleration",
+      "description": "TikTok carried the consumer/student wave of Notion adoption during 2020-2022. College-student users posting study-aesthetic videos with Notion dashboards turned the product into a Gen Z productivity status symbol. The TikTok wave is what made Notion's user base global and student-heavy in a way Evernote and OneNote never were.",
+      "catalyst": "No single moment. The 2020-2022 wave of student creators posting aesthetic Notion-template walkthroughs that compounded into a category default for the under-25 productivity audience.",
+      "catalystUrl": "https://www.tiktok.com/tag/notion",
+      "accountUrl": "https://www.tiktok.com/@notion",
+      "accountLabel": "@notion on TikTok",
+      "whenItWorks": "When the product output is visually polished enough to function as study/work aesthetic content. Notion templates qualify; most B2B SaaS doesn't",
+      "whenItDoesnt": "If the company tries to run it as a paid channel. TikTok's algorithm punishes brand-account effort and rewards organic creator content"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit (r/Notion)",
+      "score": 3,
+      "bestStage": "All stages",
+      "effort": "Community-self-driven",
+      "role": "Heavy-user feedback and template exchange",
+      "description": "r/Notion is a 400K+ member community that functions as a template exchange, support forum, and feature-request channel. The community is heavy enough that Notion's product team has cited Reddit threads as input for shipping decisions. The role is operational rather than acquisition: Reddit retains, doesn't acquire.",
+      "catalyst": "No single moment. The slow 2018-2024 accretion of r/Notion as the place where heavy users debug, share templates, and surface bugs faster than the support team can.",
+      "catalystUrl": "https://www.reddit.com/r/Notion/",
+      "accountUrl": "https://www.reddit.com/r/Notion/",
+      "accountLabel": "r/Notion",
+      "whenItWorks": "When the product has enough composable depth that users can teach each other how to use it. Reddit communities form around tools that reward expertise",
+      "whenItDoesnt": "If the company tries to manage the narrative. The community will detect it and trust collapses; the channel works only as long as it stays user-owned"
+    }
+  ]
+}

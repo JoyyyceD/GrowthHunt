@@ -1,0 +1,337 @@
+{
+  "company": {
+    "slug": "hugging-face",
+    "name": "Hugging Face",
+    "legalName": "Hugging Face, Inc.",
+    "tagline": "A failed teen chatbot, a one-week PyTorch port, and the most diversified strategic-investor stack in the KB",
+    "summary": "Hugging Face spent its first three years (2016–2019) failing as a consumer chatbot with a few thousand teen users. In October 2018 Google released BERT and the team shipped a PyTorch port within a week — pytorch-pretrained-bert, soon renamed transformers. Within months it was the way most NLP papers reported using BERT. The 2019 Series A formalized the pivot. Over the next four years, Transformers + the Hub + Spaces compounded into an academic-research substrate of a kind no other case in the 16-case set has. By Series D in August 2023, eight major tech-platform strategics co-invested in a single round. By 2024 the company was profitable on ~$130M revenue with no Series E.",
+    "founded": "2016-01",
+    "founders": [
+      "Clément Delangue",
+      "Julien Chaumond",
+      "Thomas Wolf"
+    ],
+    "seriesNumber": 16
+  },
+  "phases": [
+    {"start": "2016-01", "end": "2018-10", "name": "Chatbot era", "color": "#fef3c7"},
+    {"start": "2018-10", "end": "2021-12", "name": "Transformers + Series A–B", "color": "#dbeafe"},
+    {"start": "2021-12", "end": "2023-08", "name": "Hub + Spaces + Series C–D", "color": "#fce7f3"},
+    {"start": "2023-08", "end": "2026-04", "name": "Strategic-stack era + robotics", "color": "#dcfce7"}
+  ],
+  "events": [
+    {
+      "date": "2016-01-01",
+      "title": "Hugging Face Inc. founded in NYC",
+      "type": "product",
+      "description": "Three French co-founders — Clément Delangue (CEO), Julien Chaumond (CTO), Thomas Wolf (CSO) — incorporate in New York City. Original mission: an AI chatbot 'best friend' for teenagers. Named after the U+1F917 emoji.",
+      "articleSlug": "2016-founding-chatbot"
+    },
+    {
+      "date": "2017-03-05",
+      "title": "Angel round $1.2M",
+      "type": "funding",
+      "description": "Betaworks, SV Angel, Kevin Durant. Round raised on the chatbot thesis — predates the Transformers library by 2.5 years.",
+      "externalUrl": "https://www.crunchbase.com/funding_round/hugging-face-angel--dc675d37"
+    },
+    {
+      "date": "2017-03-09",
+      "title": "iOS chatbot launches",
+      "type": "product",
+      "description": "Free iOS app targeted at teens. TechCrunch frames it as an 'artificial BFF.' MIT Tech Review (March 2017) reports a few thousand teenager users — never broke out as a consumer product.",
+      "externalUrl": "https://techcrunch.com/2017/03/09/hugging-face-wants-to-become-your-artificial-bff/"
+    },
+    {
+      "date": "2018-05-23",
+      "title": "Seed round $4M",
+      "type": "funding",
+      "description": "Led by Ronny Conway (a_capital). Betaworks, SV Angel, Kevin Durant participate. Raised on the chatbot thesis — formal pivot has not yet happened.",
+      "externalUrl": "https://techcrunch.com/2018/05/23/hugging-face-raises-4-million-for-its-artificial-bff/"
+    },
+    {
+      "date": "2018-10-11",
+      "title": "PyTorch BERT port shipped (~1 week after Google's BERT)",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "Within roughly a week of Google releasing BERT in TensorFlow, Hugging Face ships a PyTorch port — pytorch-pretrained-bert. The technical inflection. Researchers worldwide adopt it almost immediately.",
+      "externalUrl": "https://research.contrary.com/company/hugging-face",
+      "articleSlug": "2018-pytorch-bert-port"
+    },
+    {
+      "date": "2019-07-16",
+      "title": "pytorch-transformers v1.0.0",
+      "type": "product",
+      "description": "Library renamed from pytorch-pretrained-bert. Adds XLNet + XLM. Pretrained model weights expand from 10 to 27. Unified API across architectures.",
+      "externalUrl": "https://github.com/huggingface/transformers/releases/tag/v1.0.0"
+    },
+    {
+      "date": "2019-09-26",
+      "title": "Library renamed to transformers (v2.0.0)",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "v2.0.0 brings TF2 support and the canonical name transformers (no language prefix). The package becomes the de facto NLP toolkit across academia and industry.",
+      "externalUrl": "https://github.com/huggingface/transformers/releases",
+      "articleSlug": "2019-transformers-v1"
+    },
+    {
+      "date": "2019-10-09",
+      "title": "Transformers paper on arXiv",
+      "type": "media",
+      "description": "Thomas Wolf et al. publish HuggingFace's Transformers: State-of-the-art Natural Language Processing on arXiv. Eventually accepted to EMNLP 2020 demos.",
+      "externalUrl": "https://arxiv.org/abs/1910.03771"
+    },
+    {
+      "date": "2019-12-17",
+      "title": "Series A $15M led by Lux Capital",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Lux Capital lead. Salesforce chief scientist Richard Socher and OpenAI CTO Greg Brockman participate as personal angels. Marketed as building the definitive NLP library — formal end of the chatbot era.",
+      "externalUrl": "https://techcrunch.com/2019/12/17/hugging-face-raises-15-million-to-build-the-definitive-natural-language-processing-library/"
+    },
+    {
+      "date": "2020-09-15",
+      "title": "Datasets library released",
+      "type": "product",
+      "description": "huggingface/datasets — companion to Transformers. Standardizes dataset access for NLP, audio, vision. Reaches 650 datasets and 250+ contributors in 12 months. The second pillar of the substrate."
+    },
+    {
+      "date": "2021-03-11",
+      "title": "Series B $40M led by Addition (cash-flow positive disclosed)",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Addition lead. TechCrunch reports HF was cash-flow positive in January and February 2021 with ~90% of the prior round still in the bank — first hard signal of capital efficiency.",
+      "externalUrl": "https://techcrunch.com/2021/03/11/hugging-face-raises-40-million-for-its-natural-language-processing-library/",
+      "articleSlug": "2021-03-series-b"
+    },
+    {
+      "date": "2021-04-28",
+      "title": "BigScience research workshop launches",
+      "type": "product",
+      "description": "Year-long open research workshop. 1,000+ volunteer researchers. Funded in part by the French government. Will produce BLOOM in July 2022."
+    },
+    {
+      "date": "2021-10-05",
+      "title": "Spaces launches with Gradio integration",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "Free hosting for ML demo apps. Built around Gradio as the default SDK. Makes models interactively shareable without containerization — replicable demo grammar.",
+      "externalUrl": "https://huggingface.co/blog/gradio-spaces"
+    },
+    {
+      "date": "2021-12-16",
+      "title": "Acquires Gradio",
+      "type": "acquisition",
+      "gtmTag": "Strategic acquisition",
+      "description": "Five-engineer Gradio team joins. Gradio remains open source. Becomes the standard demo SDK on Spaces — eventually 2M+ monthly users / 470K+ apps.",
+      "externalUrl": "https://huggingface.co/blog/gradio-joins-hf"
+    },
+    {
+      "date": "2022-05-09",
+      "title": "Series C $100M @ $2B (first unicorn)",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Lux Capital leads a third consecutive round. Sequoia and Coatue invest for the first time. Bundled milestones: 100K+ models, 10K+ datasets, 10K+ corporate customers, team grew from 30 to 120+ in 12 months.",
+      "externalUrl": "https://techcrunch.com/2022/05/09/hugging-face-reaches-2-billion-valuation-to-build-the-github-of-machine-learning/",
+      "articleSlug": "2022-05-series-c-2b"
+    },
+    {
+      "date": "2022-07-12",
+      "title": "BLOOM released",
+      "type": "product",
+      "description": "176B parameter open multilingual LLM. Bigger than GPT-3. Trained on the Jean Zay public supercomputer in France. Output of BigScience workshop. First time HF is associated with a flagship-model release."
+    },
+    {
+      "date": "2022-10-14",
+      "title": "Inference Endpoints GA",
+      "type": "product",
+      "description": "Managed deployment service for Hub models — one-click deploy to AWS, Azure, GCP. Initial pricing from $0.06/hr CPU. The first credible recurring-revenue product attached to the Hub.",
+      "externalUrl": "https://huggingface.co/blog/inference-endpoints"
+    },
+    {
+      "date": "2023-02-21",
+      "title": "AWS preferred ML platform partnership",
+      "type": "product",
+      "description": "Deepening partnership with AWS — preferred ML platform on SageMaker, expanded co-engineering. Lays the commercial foundation for the strategic-investor stack six months later.",
+      "externalUrl": "https://huggingface.co/blog/aws-partnership"
+    },
+    {
+      "date": "2023-07-18",
+      "title": "Llama 2 launches on the Hub",
+      "type": "product",
+      "description": "Coordinated launch with Meta. Llama 2 weights distributed via huggingface.co/meta-llama. The launch makes HF the de facto distribution channel for the most important open LLM family.",
+      "externalUrl": "https://huggingface.co/blog/llama2"
+    },
+    {
+      "date": "2023-08-24",
+      "title": "Series D $235M @ $4.5B — eight strategic investors",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Salesforce Ventures lead. Participating: Google, Amazon, Nvidia, AMD, Intel, IBM, Qualcomm. Eight major tech-platform strategics in one round, several of whom compete with each other. The most diversified strategic-investor stack in the 16-case KB.",
+      "externalUrl": "https://techcrunch.com/2023/08/24/hugging-face-raises-235m-from-investors-including-salesforce-and-nvidia/",
+      "articleSlug": "2023-08-series-d-strategic-stack"
+    },
+    {
+      "date": "2024-05-06",
+      "title": "LeRobot library launches",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Open-source robotics library positioned as Transformers for robotics. Models, datasets, tools for real-world robot learning in PyTorch. GitHub repo grows from 0 to 12,000+ stars in twelve months.",
+      "externalUrl": "https://venturebeat.com/automation/hugging-face-launches-lerobot-open-source-robotics-code-library"
+    },
+    {
+      "date": "2024-08-08",
+      "title": "Acquires XetHub",
+      "type": "acquisition",
+      "gtmTag": "Strategic acquisition",
+      "description": "Seattle-based data storage startup founded by ex-Apple researchers. ~14 employees join. Largest HF acquisition to date. Replaces Git LFS as the storage backend for the Hub — addresses the TB-scale model file bottleneck.",
+      "externalUrl": "https://huggingface.co/blog/xethub-joins-hf"
+    },
+    {
+      "date": "2024-09-26",
+      "title": "1 million public models milestone",
+      "type": "media",
+      "description": "Hugging Face announces 1M public models hosted. New repository created every ~10 seconds. The model-count milestone HF leans on as evidence of community substrate."
+    },
+    {
+      "date": "2024-12-31",
+      "title": "Profitability declared on ~$130M revenue",
+      "type": "media",
+      "description": "Clément Delangue states publicly on X that Hugging Face was profitable in 2024. Reported revenue ~$130M (Sacra / Latka / Contrary triangulation). 50K total customers across all tiers.",
+      "externalUrl": "https://research.contrary.com/company/hugging-face",
+      "articleSlug": "2024-profitability-and-acquisitions"
+    },
+    {
+      "date": "2025-03-06",
+      "title": "Thomas Wolf yes-men-on-servers essay",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "Wolf publishes essay on his personal site challenging Dario Amodei's compressed 21st century framing. Argues current AI is yes-men on servers that does not generate new knowledge. The academic-credibility leg of the founder-IP triangle activates publicly.",
+      "externalUrl": "https://techcrunch.com/2025/03/06/hugging-faces-chief-science-officer-worries-ai-is-becoming-yes-men-on-servers/"
+    },
+    {
+      "date": "2025-04-14",
+      "title": "Acquires Pollen Robotics",
+      "type": "acquisition",
+      "description": "French robotics startup behind the Reachy 2 humanoid robot ($70K, deployed at Cornell + Carnegie Mellon). ~20 employees join. HF's fifth acquisition; first hardware-product company.",
+      "externalUrl": "https://techcrunch.com/2025/04/14/hugging-face-buys-a-humanoid-robotics-startup/"
+    },
+    {
+      "date": "2025-07-09",
+      "title": "Reachy Mini robot launches ($299 / $449)",
+      "type": "product",
+      "gtmTag": "Audience boundary push",
+      "description": "First-party hardware product from HF. Programmable in Python. 15+ pre-loaded behaviors on the Hub. Marketed as a gateway into AI robotics for developers — D2 audience boundary push from developers to maker hobbyists.",
+      "externalUrl": "https://venturebeat.com/ai/hugging-face-just-launched-a-299-robot-that-could-disrupt-the-entire-robotics-industry"
+    },
+    {
+      "date": "2026-02-20",
+      "title": "Acquires ggml.ai / llama.cpp",
+      "type": "acquisition",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Georgi Gerganov + ggml.ai team join. llama.cpp and ggml repos remain MIT-licensed and open source. The acquisition unifies the model-distribution layer (HF Hub) with the dominant local-inference layer (llama.cpp). HF's sixth acquisition.",
+      "externalUrl": "https://simonwillison.net/2026/Feb/20/ggmlai-joins-hugging-face/"
+    }
+  ],
+  "arr": [
+    {"date": "2021-12-31", "value": 10000000, "source": "Contrary Research", "confidence": "estimate"},
+    {"date": "2022-12-31", "value": 15000000, "source": "Wikipedia", "confidence": "media"},
+    {"date": "2023-12-31", "value": 70000000, "source": "Sacra", "confidence": "estimate"},
+    {"date": "2024-12-31", "value": 130000000, "source": "Sacra / Latka / Contrary", "confidence": "estimate"}
+  ],
+  "valuation": [
+    {"date": "2019-12-17", "value": 15000000, "round": "Series A", "source": "TechCrunch", "confidence": "estimate"},
+    {"date": "2021-03-11", "value": 40000000, "round": "Series B", "source": "TechCrunch", "confidence": "estimate"},
+    {"date": "2022-05-09", "value": 2000000000, "round": "Series C", "source": "TechCrunch", "confidence": "official"},
+    {"date": "2023-08-24", "value": 4500000000, "round": "Series D", "source": "CNBC", "confidence": "official"}
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 5,
+      "bestStage": "All stages — load-bearing",
+      "effort": "Daily, founder-led",
+      "role": "Founder voice and community surface",
+      "description": "@ClementDelangue (clem) posts daily — model launches, partnership announcements, employee shoutouts, retweets of community Spaces. The Fast Company profile (April 2023) confirmed every employee has access to the official accounts; no dedicated community manager. The cadence is closer to Vercel's Rauch (continuous-presence) than to Cursor's Truell (episodic).",
+      "catalyst": "No single tweet. Daily continuous presence since 2017 compounding into the canonical open-source-AI public face. The 2024 profitability disclosure was a Delangue X-post, not a press release.",
+      "accountUrl": "https://x.com/ClementDelangue",
+      "accountLabel": "@ClementDelangue on X",
+      "whenItWorks": "When the founder is the most-followed human at the company on the platform that matters and can sustain technical depth daily",
+      "whenItDoesnt": "CEOs without engineering or research credibility usually fail this pattern within six months — daily posting without substance burns the audience"
+    },
+    {
+      "slug": "github",
+      "name": "GitHub",
+      "score": 5,
+      "bestStage": "All stages — substrate",
+      "effort": "Substrate-level",
+      "role": "The substrate itself",
+      "description": "transformers became the #1 most-starred ML repo on GitHub. By 2026, HF organization hosts dozens of canonical libraries — transformers, datasets, accelerate, peft, diffusers, gradio, lerobot. Every paper that imports from transformers is a small B3 push.",
+      "catalyst": "October 2018 — pytorch-pretrained-bert ships within ~one week of Google's BERT release. Within months it was the way most NLP papers reported using BERT. Every grad student who learned NLP after 2019 learned it through the HF API.",
+      "catalystUrl": "https://github.com/huggingface/transformers",
+      "accountUrl": "https://github.com/huggingface",
+      "accountLabel": "huggingface on GitHub",
+      "whenItWorks": "When the field is moving fast enough to need a unifying API and there is no incumbent open-source library yet",
+      "whenItDoesnt": "Source-available or copyleft licensing breaks the academic propagation effect. Apache 2.0 was the only viable choice"
+    },
+    {
+      "slug": "huggingface-co",
+      "name": "huggingface.co (the Hub)",
+      "score": 5,
+      "bestStage": "Post-2020 — platform-tier substrate",
+      "effort": "Platform-level — the company's primary surface",
+      "role": "Distribution channel + landing page + namespace",
+      "description": "Every model card is a landing page. Every Space is a working demo. Every dataset URL is a citation. arXiv papers link to huggingface.co/{user}/{model} URLs in their reference lists. By Jan 2026: 2.4M+ models, 730K+ datasets, 500K+ Spaces. The substrate has become the platform.",
+      "catalyst": "Stable Diffusion launches in August 2022 and goes viral on HF Spaces before it goes viral anywhere else — canonical demo Spaces forked thousands of times. The format proved the substrate.",
+      "catalystUrl": "https://huggingface.co/spaces/stabilityai/stable-diffusion",
+      "accountUrl": "https://huggingface.co/",
+      "accountLabel": "huggingface.co",
+      "whenItWorks": "When users will reference your URL pattern in their own work product (papers, blog posts, READMEs). Then the URL is the distribution",
+      "whenItDoesnt": "Without academic citation pull, hosted-platform URLs do not propagate. This is harder to engineer than open-source library adoption"
+    },
+    {
+      "slug": "arxiv",
+      "name": "arXiv",
+      "score": 4,
+      "bestStage": "Substrate period — 2019 onward",
+      "effort": "Episodic — papers tied to releases",
+      "role": "Academic credibility surface",
+      "description": "The October 2019 Transformers paper (Wolf et al., HuggingFace's Transformers: State-of-the-art Natural Language Processing) is the foundation of HF's academic credibility. Eventually accepted to EMNLP 2020 demos. Every subsequent library release ships a paper-style technical report. This is not a marketing move — it is the price of admission to the academic substrate play.",
+      "catalyst": "October 9, 2019 — the Transformers paper hits arXiv. The paper formalizes what was already de facto adoption. Subsequent papers (BLOOM, LeRobot, BigScience reports) extend the same pattern.",
+      "catalystUrl": "https://arxiv.org/abs/1910.03771",
+      "accountUrl": "https://arxiv.org/a/wolf_t_1",
+      "accountLabel": "Thomas Wolf on arXiv",
+      "whenItWorks": "When your founders or early hires can write a credible paper. arXiv is the only credibility platform academics treat as authoritative",
+      "whenItDoesnt": "Marketing teams cannot fake arXiv presence. Without research-credible authorship, a paper attempt looks like a press release in LaTeX"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 4,
+      "bestStage": "Library and platform launches",
+      "effort": "Punctuated — major releases hit HN organically",
+      "role": "Technical-credibility validator",
+      "description": "Every major HF release surfaces on HN organically. Front-page placement for transformers releases, Spaces launch, BLOOM, Inference Endpoints, LeRobot, the Series D. The HN crowd validated transformer-era infra before broader markets did.",
+      "catalyst": "The PyTorch BERT port (Oct 2018) — the first HN appearance was a developer thread that named the gap (TF-only BERT) and the solution (this PyTorch port) on the same page. Within weeks the URL was being passed around the NLP community.",
+      "catalystUrl": "https://hn.algolia.com/?q=hugging+face",
+      "accountUrl": "https://hn.algolia.com/?q=huggingface.co",
+      "accountLabel": "Search HN for Hugging Face",
+      "whenItWorks": "When the launch has genuine technical novelty — new library, new model, new format. HN rewards substance over PR",
+      "whenItDoesnt": "Security incidents (malicious models 2024, Spaces unauthorized access 2024) get punished hard on HN. Hygiene posts do not save you"
+    },
+    {
+      "slug": "discord",
+      "name": "Discord",
+      "score": 3,
+      "bestStage": "Post-Spaces — ongoing community ops",
+      "effort": "Always-on, community-led",
+      "role": "Real-time researcher and developer support",
+      "description": "The Hugging Face Discord absorbs real-time community questions for transformers, datasets, Spaces, and now LeRobot. Faster feedback loop than GitHub issues, more substantive than X. Critical for the LeRobot rollout where the user base is still defining what robotics ML even looks like.",
+      "catalyst": "BLOOM release (July 2022) — Discord absorbed the wave of researcher questions about distributed inference and quantization that would otherwise have spilled across the GitHub issue trackers of multiple repos.",
+      "accountUrl": "https://discord.gg/hugging-face-879548962464493619",
+      "accountLabel": "Hugging Face Discord",
+      "whenItWorks": "When you ship libraries with non-trivial setup and your users are willing to help each other publicly",
+      "whenItDoesnt": "Without real ops presence in the channel, Discord becomes a graveyard of unanswered questions"
+    }
+  ]
+}
