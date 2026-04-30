@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 import { createServerClient } from '@/lib/supabase/server'
 import { TopNav } from '@/lib/site/TopNav'
 import Lab from './Lab'
@@ -64,6 +65,44 @@ export default async function ViralXPage() {
   return (
     <>
       <TopNav variant="page" />
+      <div
+        style={{
+          background: 'var(--bg-elev)',
+          borderBottom: '1px solid var(--rule)',
+          padding: '14px 24px',
+          display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16,
+          flexWrap: 'wrap',
+        }}
+      >
+        <p
+          style={{
+            margin: 0, fontSize: 13, color: 'var(--ink-dim)',
+            display: 'flex', alignItems: 'center', gap: 8,
+          }}
+        >
+          <span
+            style={{
+              fontSize: 10, fontFamily: 'var(--mono)', color: 'var(--ink-faint)',
+              textTransform: 'uppercase', letterSpacing: '0.08em',
+              padding: '3px 8px', border: '1px solid var(--rule)', borderRadius: 999,
+            }}
+          >
+            New
+          </span>
+          Skip the browsing — get a personalized 14-day launch plan in 60 seconds.
+        </p>
+        <Link
+          href="/viralx/start"
+          style={{
+            fontSize: 13, fontWeight: 600,
+            padding: '8px 18px', borderRadius: 999,
+            background: 'var(--accent)', color: 'var(--accent-ink)',
+            textDecoration: 'none',
+          }}
+        >
+          Generate my 14-day plan →
+        </Link>
+      </div>
       <Lab
         initial={initial}
         isAuthed={!!user}

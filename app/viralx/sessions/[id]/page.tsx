@@ -88,7 +88,7 @@ export default async function ViralxSessionPage({ params }: PageProps) {
               </Link>
             )}
             {' · '}
-            <Link href="/viralx" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>
+            <Link href="/viralx/start" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>
               start over
             </Link>
           </p>
