@@ -1,0 +1,37 @@
+name: ViralX scheduled publish cron
+
+# Vercel Hobby caps cron jobs at once-per-day, so we ping the publish endpoint
+# from GitHub Actions every 5 minutes instead. Free, works with the same
+# CRON_SECRET that's already in the Vercel env. Manual trigger also wired in
+# case we want to fire it on demand from the GitHub UI.
+
+on:
+  schedule:
+    # GitHub Actions cron minimum is 5 min. Actual delay can be up to ~15 min
+    # under load — acceptable for "schedule a tweet for Monday 10am" UX.
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: POST to /api/viralx/cron/publish
+        env:
+          CRON_SECRET: ${{ secrets.VIRALX_CRON_SECRET }}
+        run: |
+          if [ -z "$CRON_SECRET" ]; then
+            echo "VIRALX_CRON_SECRET secret is not set in GitHub repo settings"
+            exit 1
+          fi
+          response=$(curl -sS -w "\n%{http_code}" \
+            -H "Authorization: Bearer $CRON_SECRET" \
+            "https://www.growthhunt.ai/api/viralx/cron/publish")
+          body=$(echo "$response" | sed '$d')
+          status=$(echo "$response" | tail -n1)
+          echo "HTTP $status"
+          echo "$body"
+          if [ "$status" != "200" ]; then
+            exit 1
+          fi
