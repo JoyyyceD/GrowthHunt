@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import { createServerClient } from '@/lib/supabase/server'
+import { TopNav } from '@/lib/site/TopNav'
 import Lab from './Lab'
 
 export const dynamic = 'force-dynamic'
@@ -48,10 +49,13 @@ export default async function ViralXPage() {
   }))
 
   return (
-    <Lab
-      initial={initial}
-      isAuthed={!!user}
-      stats={HERO_STATS}
-    />
+    <>
+      <TopNav variant="page" />
+      <Lab
+        initial={initial}
+        isAuthed={!!user}
+        stats={HERO_STATS}
+      />
+    </>
   )
 }

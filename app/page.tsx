@@ -82,15 +82,15 @@ function LiveCases() {
             </Link>
           )}
 
-          {/* OPChampion card — static page rewritten in next.config.ts */}
-          <a href="/opchampion" className="eco-card eco-card-link">
+          {/* OPChampion card */}
+          <Link href="/opchampion" className="eco-card eco-card-link">
             <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
             <div className="eco-title">OPChampion</div>
             <p>
               A weekly launch board for one-person companies — the indie hackers, freelancers, and solo founders shipping real things. 12 picks every Monday. Upvote, comment, follow.
             </p>
             <span className="visit">Browse this week&apos;s issue →</span>
-          </a>
+          </Link>
 
           {/* ViralX card — templates → schedule → post to your own X */}
           <Link href="/viralx" className="eco-card eco-card-link">

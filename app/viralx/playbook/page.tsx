@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { TopNav } from '@/lib/site/TopNav'
 import PlaybookContent from './PlaybookContent'
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
 export default function PlaybookPage() {
   return (
     <>
+      <TopNav variant="page" />
       <PlaybookContent />
       <div className="xh-pb-bottom-cta">
         <div className="shell">

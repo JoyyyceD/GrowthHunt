@@ -1,0 +1,358 @@
+{
+  "company": {
+    "slug": "jasper",
+    "name": "Jasper",
+    "legalName": "Jasper AI, Inc.",
+    "tagline": "From a $1.5B Series A to ChatGPT in 43 days — the cleanest case study of D1 wrapper failure on record",
+    "summary": "Jasper executed the AI-writing GTM playbook nearly perfectly between January 2021 and October 2022 — viral 'AI writes a blog post' demo grammar, $42.5M ARR with nine employees, then a bundled $125M Series A at $1.5B with 70K paying customers. Forty-three days later, ChatGPT shipped for free on top of the same model family. Everything since — Jasper Chat, Brand Voice, layoffs, a new CEO, the Clipdrop acquisition, the multi-agent rebrand — is the story of a competent team trying to manufacture a moat after the substrate commoditized.",
+    "founded": "2021-01",
+    "founders": [
+      "Dave Rogenmoser",
+      "Chris Hull",
+      "John \"JP\" Morgan"
+    ],
+    "seriesNumber": 11
+  },
+  "phases": [
+    {
+      "start": "2017-01",
+      "end": "2020-12",
+      "name": "Pre-Jasper / Proof era",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2021-01",
+      "end": "2021-12",
+      "name": "Conversion.ai / Jarvis launch",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2022-01",
+      "end": "2022-10",
+      "name": "Jasper rebrand + Series A peak",
+      "color": "#dcfce7"
+    },
+    {
+      "start": "2022-11",
+      "end": "2023-09",
+      "name": "ChatGPT shock + reset",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2023-10",
+      "end": "2026-04",
+      "name": "Enterprise pivot + diminished present",
+      "color": "#e9d5ff"
+    }
+  ],
+  "events": [
+    {
+      "date": "2017-01-01",
+      "title": "Founders pivot agency into Proof (YC W18)",
+      "type": "product",
+      "description": "Rogenmoser, Hull, and Morgan — together since 2014 in Annapolis — turn their marketing agency into Proof, a YC W18 social-proof widget. Raised $2.2M seed at a $12M cap. Diagnosed later as 'feature, not a product.'",
+      "externalUrl": "https://research.contrary.com/company/jasper"
+    },
+    {
+      "date": "2020-10-01",
+      "title": "Proof stalls — half the team laid off",
+      "type": "product",
+      "description": "Forced pivot moment. Founders begin exploring GPT-3 via YC connections; Rogenmoser gets early beta access. The pre-Jasper inflection.",
+      "externalUrl": "https://www.unusual.vc/post/how-jasper-found-product-market-fit-pivoting-to-ai-native-saas",
+      "articleSlug": "2021-01-jarvis-founding"
+    },
+    {
+      "date": "2021-01-15",
+      "title": "Conversion.ai launches as a GPT-3 frontend",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "First product ships at $29/mo. Opinionated frontend over GPT-3 that writes Facebook and Google ad copy. The buyer persona is exactly the audience Rogenmoser had been coaching for half a decade.",
+      "externalUrl": "https://research.contrary.com/company/jasper",
+      "articleSlug": "2021-01-jarvis-founding"
+    },
+    {
+      "date": "2021-06-01",
+      "title": "Seed round (~$6M, terms undisclosed)",
+      "type": "funding",
+      "description": "Pre-Series A capital. Bessemer participated, per the Series A press release. Terms never publicly disclosed.",
+      "externalUrl": "https://research.contrary.com/company/jasper"
+    },
+    {
+      "date": "2021-09-01",
+      "title": "Boss Mode launches — long-form blog post writing",
+      "type": "product",
+      "gtmTag": "Format-as-credibility-constraint",
+      "description": "The killer feature. 'Write a blog post in 60 seconds' becomes the canonical AI-writing demo of 2021–2022. Marketing influencers reproduce the format endlessly; the product becomes its own affiliate engine.",
+      "externalUrl": "https://www.jasper.ai/bossmode"
+    },
+    {
+      "date": "2021-12-31",
+      "title": "$42.5M ARR — with 9 employees",
+      "type": "media",
+      "description": "End-of-year-1 ARR widely cited at $42.5M, with ~9 employees plus 2 customer support agents serving 40K paying customers. One of the most capital-efficient SaaS launches on record.",
+      "externalUrl": "https://research.contrary.com/company/jasper"
+    },
+    {
+      "date": "2022-01-01",
+      "title": "Jarvis renamed Jasper after Marvel/Disney C&D",
+      "type": "product",
+      "description": "Marvel/Disney's lawyers send a cease-and-desist over the 'JARVIS' trademark — Tony Stark's AI. The team rebrands to Jasper in a single blog post and absorbs the transition cleanly. (Many secondary sources misattribute the C&D to OpenAI; the public record is unambiguous.)",
+      "externalUrl": "https://www.jasper.ai/blog/jarvis-rebranded-to-jasper",
+      "articleSlug": "2022-01-jasper-rebrand"
+    },
+    {
+      "date": "2022-08-01",
+      "title": "Jasper Art launches (DALL-E 2 wrapper)",
+      "type": "product",
+      "description": "Image generation added to the writing platform — the first multimodal-expansion hint. A wrapper on a wrapper.",
+      "externalUrl": "https://www.jasper.ai/art"
+    },
+    {
+      "date": "2022-10-18",
+      "title": "Series A — $125M @ $1.5B (Insight Partners lead)",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Coatue, Bessemer, IVP, Foundation Capital, Founders Circle, HubSpot Ventures + an angel cohort (Cancel, Masad, Mostaque, Delangue). Bundled with Browser Extension launch and 70K paying-customer disclosure. Three news stories in one cycle.",
+      "externalUrl": "https://techcrunch.com/2022/10/18/ai-content-platform-jasper-raises-125m-at-a-1-7b-valuation/",
+      "articleSlug": "2022-10-series-a-peak"
+    },
+    {
+      "date": "2022-11-30",
+      "title": "ChatGPT shipped — free, on the same model family",
+      "type": "media",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "OpenAI releases ChatGPT for free, 43 days after Jasper's $1.5B raise. One million users in five days, 100M in two months. Jasper's wrapper-on-GPT-3 moat collapses in public.",
+      "externalUrl": "https://openai.com/blog/chatgpt",
+      "articleSlug": "2022-11-chatgpt-shock"
+    },
+    {
+      "date": "2022-12-20",
+      "title": "Jasper Chat launches",
+      "type": "product",
+      "description": "Twenty days after ChatGPT. A serviceable conversational interface for Jasper customers — but the move concedes that chat is the paradigm rather than differentiating from it. The wrapper's dilemma made literal.",
+      "externalUrl": "https://www.jasper.ai/blog/announcing-jasper-chat"
+    },
+    {
+      "date": "2022-12-31",
+      "title": "~$80M ARR, ~100K paying customers",
+      "type": "media",
+      "description": "ARR roughly doubled YoY from $42.5M. PR claims '100% increase in ARR' and 100K customers. Internal forecast of $140M EOY 2022 missed; $250M EOY 2024 forecast set.",
+      "externalUrl": "https://www.prnewswire.com/news-releases/jasper-achieves-unprecedented-growth-in-2022-with-100-000-customers-and-over-100-increase-in-arr-301697081.html"
+    },
+    {
+      "date": "2023-02-14",
+      "title": "Jasper for Business + Brand Voice + API",
+      "type": "product",
+      "gtmTag": "PLG → Enterprise pivot",
+      "description": "First serious enterprise pivot move. Tries to relocate the moat from 'GPT prompt UX' to 'enterprise context layer' — company memory, brand tone, API access. Right idea; every competitor including ChatGPT (custom GPTs, Nov 2023) ships a version within months.",
+      "externalUrl": "https://www.jasper.ai/blog/introducing-brand-voice"
+    },
+    {
+      "date": "2023-07-11",
+      "title": "First major layoff — staff cuts (count undisclosed)",
+      "type": "media",
+      "description": "Rogenmoser's 'A difficult decision today' blog. Voicebot reports staff was 'slightly more than 150' a few months prior. The Information confirms 2023 ARR forecast revised down 30%+.",
+      "externalUrl": "https://www.jasper.ai/blog/july-11-important-update-from-ceo",
+      "articleSlug": "2023-07-first-layoffs"
+    },
+    {
+      "date": "2023-09-28",
+      "title": "Timothy Young (ex-Dropbox) replaces Rogenmoser as CEO",
+      "type": "media",
+      "description": "Founder steps to Chairman. Internal valuation marked down ~20% to ~$1.2B. The right archetype for an enterprise SaaS pivot — but the company is now a different shape than the one Insight invested in.",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2023-09-28/ai-startup-jasper-s-ceo-to-be-replaced-with-ex-dropbox-president"
+    },
+    {
+      "date": "2023-10-01",
+      "title": "End-to-end AI Copilot for marketing teams",
+      "type": "product",
+      "description": "Repositioning from individual writer to marketing-team copilot. Enterprise ARR reportedly 4x YoY by this point — but off a small base.",
+      "externalUrl": "https://www.prnewswire.com/news-releases/jasper-expands-to-become-an-end-to-end-ai-copilot-for-marketing-teams-301960233.html"
+    },
+    {
+      "date": "2024-02-22",
+      "title": "Jasper acquires Clipdrop from Stability AI",
+      "type": "acquisition",
+      "gtmTag": "Acqui-hire competitor",
+      "description": "Multimodal upgrade move. Stability had owned Clipdrop for less than a year. Jasper inherits a tool, not a moat. Helps the marketing-copilot story; doesn't shift the platform narrative.",
+      "externalUrl": "https://venturebeat.com/ai/jasper-acquires-stability-ais-clipdrop-to-strengthen-marketing-copilot",
+      "articleSlug": "2024-02-clipdrop-acquisition"
+    },
+    {
+      "date": "2024-10-08",
+      "title": "Enterprise strategy acceleration — 850 enterprise customers",
+      "type": "product",
+      "description": "App Library + Workflows. 850 enterprise customers, ~20% of the Fortune 500 (Prudential, Ulta, Wayfair). Enterprise revenue 2x YoY. 10 consecutive quarters beating sales quota. The pivot is working — at a different scale than the Series A priced.",
+      "externalUrl": "https://www.prnewswire.com/news-releases/jasper-accelerates-enterprise-strategy-following-record-growth-introduces-new-purpose-built-products-for-marketers-302291388.html"
+    },
+    {
+      "date": "2024-12-01",
+      "title": "Jasper AI Studio launches (no-code app builder)",
+      "type": "product",
+      "description": "Enterprise-focused: design and deploy AI apps without engineering. Further entrenchment in the marketing-team workflow rather than the consumer prompt layer.",
+      "externalUrl": "https://www.prnewswire.com/news-releases/jasper-launches-ai-studio-empowering-enterprise-marketing-teams-to-build--scale-generative-ai-solutions-302332509.html"
+    },
+    {
+      "date": "2025-06-10",
+      "title": "Multi-agent rebrand — Jasper Agents + Canvas",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "'Industry's first multi-agent platform built for marketers.' Full visual rebrand. Cannes Lions 2025 showcase. Probably the strongest narrative move of the post-ChatGPT era — the bet is that the next abstraction is workflows/agents, not prompts.",
+      "externalUrl": "https://www.prnewswire.com/news-releases/jasper-ushers-in-the-agentic-era-of-marketing-with-the-launch-of-intelligent-workspaces-purpose-built-agents-and-bold-rebrand-302477677.html"
+    },
+    {
+      "date": "2025-12-31",
+      "title": "~$88–110M ARR estimated; ~125K marketing community",
+      "type": "media",
+      "description": "Recovery trajectory through enterprise. Revenue back near the 2022 peak — 18 months later than the Series A forecast implied. Sacra/Latka estimates. Jasper has not officially disclosed since September 2023.",
+      "externalUrl": "https://sacra.com/c/jasper/"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2021-12-31",
+      "value": 42500000,
+      "source": "Contrary Research",
+      "confidence": "media"
+    },
+    {
+      "date": "2022-12-31",
+      "value": 80000000,
+      "source": "Contrary Research / Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2023-09-30",
+      "value": 70000000,
+      "source": "The Information (forecast revision)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2024-12-31",
+      "value": 85000000,
+      "source": "Sacra / Latka",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-12-31",
+      "value": 95000000,
+      "source": "Sacra / Latka",
+      "confidence": "estimate"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2021-06-01",
+      "value": 60000000,
+      "round": "Seed",
+      "source": "Contrary (estimate)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2022-10-18",
+      "value": 1500000000,
+      "round": "Series A",
+      "source": "TechCrunch / PRNewswire",
+      "confidence": "official"
+    },
+    {
+      "date": "2023-09-28",
+      "value": 1200000000,
+      "round": "Internal mark-down",
+      "source": "The Information / Maginative",
+      "confidence": "media"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 5,
+      "bestStage": "2021–2022 launch window",
+      "effort": "Affiliate-driven, near-zero company touch",
+      "role": "The actual top-of-funnel",
+      "description": "YouTube was where Jasper grew. 'I wrote a blog post with Jasper in 20 minutes' tutorials and AI-writing-tool reviews compounded across creator economy channels — Adam Enfroy, Income School, the broader 'AI writing tools' niche. The affiliate program turned the marketing-influencer ecosystem into a sales force. Boss Mode (Sep 2021) was the demo grammar that made the format work.",
+      "catalyst": "Boss Mode launch, September 2021 — the 'write a blog post in 60 seconds' moment that made the long-form AI demo a YouTube genre. After ChatGPT (Nov 30, 2022), the same channels pivoted to ChatGPT tutorials in weeks — a leading indicator of the wrapper problem.",
+      "catalystUrl": "https://www.youtube.com/results?search_query=jasper+ai+boss+mode",
+      "accountUrl": "https://www.youtube.com/@JasperAI",
+      "accountLabel": "Jasper on YouTube",
+      "whenItWorks": "When the product produces a screen-recordable demo a creator can replicate in five minutes. The demo is the conversion mechanism",
+      "whenItDoesnt": "When the substrate commoditizes. The same creators will move to whatever ships next; you do not own the audience"
+    },
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 4,
+      "bestStage": "Series A + founder-as-IP",
+      "effort": "Founder-led, episodic",
+      "role": "Investor and SaaS-founder amplifier",
+      "description": "Dave Rogenmoser ran a recognizable SaaS-founder voice on X — building-in-public posts, ARR milestones, the bundled Series A announcement. The angel cohort (David Cancel, Amjad Masad, Shaan Puri, Emad Mostaque, Clem Delangue) amplified through the same network on the day of the round. Useful for capital-class signal; never the primary consumer channel.",
+      "catalyst": "October 18, 2022 Series A. The bundled funding + Browser Extension + 70K-customer disclosure traveled across SaaS-founder X for 48 hours. The single highest-signal moment in Jasper's public arc.",
+      "catalystUrl": "https://x.com/dr_rogenmoser",
+      "accountUrl": "https://x.com/heyjasperai",
+      "accountLabel": "@heyjasperai on X",
+      "whenItWorks": "For investor-class signal, ARR-milestone announcements, and SaaS-founder credibility. Founder voice matters more than the brand account",
+      "whenItDoesnt": "As primary acquisition for B2B SaaS. The audience is wrong; X drives narrative, not pipeline"
+    },
+    {
+      "slug": "press",
+      "name": "Tier-1 Press",
+      "score": 4,
+      "bestStage": "Series A bundled milestone",
+      "effort": "Founder-led + comms team",
+      "role": "Capital-class legitimacy",
+      "description": "TechCrunch, Crunchbase News, Bloomberg, Forbes, and the SaaS trade press (Built In, SiliconANGLE, FinSMEs) carried the October 2022 round across the investor-readership universe. The September 2023 Bloomberg piece on the CEO change and the July 2023 Information leak on layoffs are the most-cited downside coverage.",
+      "catalyst": "October 18, 2022 — TechCrunch exclusive on the $125M Series A bundled with the 70K-customer disclosure. Six tier-1 outlets in the same news cycle.",
+      "catalystUrl": "https://techcrunch.com/2022/10/18/ai-content-platform-jasper-raises-125m-at-a-1-7b-valuation/",
+      "accountUrl": "https://www.jasper.ai/blog",
+      "accountLabel": "Jasper blog (press feed)",
+      "whenItWorks": "When you can bundle three pieces of news into one cycle. One round = three stories beats three rounds = three stories",
+      "whenItDoesnt": "On the way down. The same outlets that covered the $1.5B raise covered the layoffs and CEO change with equal volume"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 3,
+      "bestStage": "Long-tail user discussion",
+      "effort": "Community-led; light moderation",
+      "role": "Power-user feedback and price-anchor pressure",
+      "description": "r/copywriting, r/SaaS, r/marketing, and r/ArtificialIntelligence carried the Jasper conversation through 2022–2023. After ChatGPT, the same subreddits became where the 'why am I paying $29/mo for what ChatGPT does for free' threads compounded. A leading indicator of the price-anchor collapse.",
+      "catalyst": "December 2022 onward — the wave of 'Jasper vs ChatGPT' threads in r/copywriting and r/SaaS. The community's switch to ChatGPT preceded Jasper's churn data by months.",
+      "catalystUrl": "https://www.reddit.com/r/copywriting/search/?q=jasper+chatgpt",
+      "accountUrl": "https://www.reddit.com/r/JasperAI/",
+      "accountLabel": "r/JasperAI",
+      "whenItWorks": "When you have a power-user base willing to evangelize the product. Reddit will tell you what's breaking before your churn dashboard does",
+      "whenItDoesnt": "If your differentiation is price-vs-substrate. Reddit will collapse the anchor in public the moment a free alternative ships"
+    },
+    {
+      "slug": "hn",
+      "name": "Hacker News",
+      "score": 2,
+      "bestStage": "Funding announcements + post-ChatGPT debate",
+      "effort": "Punctuated — coverage cycles only",
+      "role": "Structural-novelty validator",
+      "description": "HN never embraced Jasper — the audience treated it as a wrapper from launch and never updated that read. The Series A thread was sceptical; the post-ChatGPT threads were dismissive. The July 2023 layoff thread was the highest-signal post in the Jasper HN archive — multiple top comments correctly diagnosed the wrapper problem in real time.",
+      "catalyst": "July 12, 2023 — the layoff post hit the front page. The top-voted comments diagnosed wrapper-on-GPT-3 as the structural failure with surgical clarity. It is the single best public articulation of D1 wrapper risk we have on record.",
+      "catalystUrl": "https://hn.algolia.com/?q=jasper+ai",
+      "accountUrl": "https://hn.algolia.com/?q=jasper.ai",
+      "accountLabel": "Search HN for Jasper",
+      "whenItWorks": "When the structural critique is correct. HN will sharpen the public articulation of what's wrong with your moat in a way no other platform will",
+      "whenItDoesnt": "If you need positive sentiment. HN's read of consumer-AI wrappers was correct ex-ante and never softened"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 3,
+      "bestStage": "Enterprise pivot (2023 onward)",
+      "effort": "Sustained, sales-team driven",
+      "role": "Enterprise pipeline + Fortune 500 social proof",
+      "description": "LinkedIn became the primary B2B channel after the 2023 enterprise pivot. The Tim Young CEO announcement, the Clipdrop acquisition, the multi-agent rebrand, and the 850-enterprise-customer disclosure all traveled through LinkedIn rather than X. Customer-logo posts (Prudential, Ulta, Wayfair) are the canonical post format.",
+      "catalyst": "October 2024 — the '850 enterprise customers, ~20% of Fortune 500' disclosure. The single most useful enterprise-sales artifact Jasper has ever produced; quoted in pitch decks for two years.",
+      "catalystUrl": "https://www.linkedin.com/company/heyjasperai/",
+      "accountUrl": "https://www.linkedin.com/company/heyjasperai/",
+      "accountLabel": "Jasper on LinkedIn",
+      "whenItWorks": "For B2B enterprise GTM after the consumer wave passes. Logo posts and CEO thought leadership compound",
+      "whenItDoesnt": "For early-stage consumer B2C launch. LinkedIn is too late in the cycle"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+---
+title: "Returns Exceed Sales — The MVNO Substrate Failure (Aug 2024)"
+description: "August 7, 2024. The Verge obtains Humane's internal data. Returns are exceeding sales May–August. ~10,000 units shipped against a 100,000 yearly target. Only ~7,000 still in customer hands. The T-Mobile MVNO can't reassign returned pins — they become e-waste."
+date: "2024-08-07"
+type: "media"
+gtmTag: "Ride the KOL wave"
+eventTitle: "Returns exceed sales"
+externalUrl: "https://9to5mac.com/2024/08/07/humane-ai-pin-woes-worsen-as-recent-returns-exceed-sales/"
+---
+
+<Catalyst>
+The substrate failure stops being abstract at the moment a returned pin can't be reassigned to a new owner. *Humane's MVNO substrate gap turned every return into a destroyed unit plus a refund — making the returns curve mathematically unrecoverable once it inverted past sales.*
+</Catalyst>
+
+August 7, 2024. The Verge publishes the first piece of internal Humane data the public has seen since launch. The numbers are devastating:
+
+- **~10,000 total AI Pins shipped to customers** since April 11
+- **100,000 unit yearly target** — Humane is at ~10% of plan, with 4 months elapsed
+- **~$9M total AI Pin revenue** as of August
+- **~$1M in returns processed** by August
+- **Returns exceeding new sales May–August** — for four consecutive months
+- **Only ~7,000 units still in customer hands** — ~3,000+ already returned
+
+Humane disputed framings of the data publicly but did not release counter-numbers. The Verge's data is treated as `media` confidence — the best-available figure, single-source.
+
+## The MVNO reassignment limitation
+
+The most consequential structural detail in The Verge's reporting is one operational fact: **returned AI Pins cannot be reassigned to new customers.** The T-Mobile MVNO partnership Humane built from scratch had a technical limitation — a returned pin's cellular identity could not be reset and re-provisioned to a new owner.
+
+The practical consequence:
+
+| Scenario | Outcome |
+|---|---|
+| Customer keeps device | $699 in revenue, $24/mo subscription continues |
+| Customer returns within 30 days | $699 refunded; **device becomes e-waste, not refurbished inventory** |
+| Customer returns after 30 days | Out of warranty; partial / no refund; device becomes e-waste anyway |
+
+This is what *substrate failure made literal* looks like. **A predecessor product would have surfaced the MVNO reassignment limitation in advance.** Plaude shipped iZYREC in September 2022 and learned the operational patterns of refurbishment, supply-chain hiccups, and customer-support load before launching the AI hardware that would carry their brand. Humane discovered the MVNO limitation only when returns started arriving.
+
+> Returns processing for hardware companies is normally a margin-management exercise. Returns processing under Humane's MVNO architecture was a unit-destruction exercise. Each return cost the company a refund + a destroyed unit + the per-line MVNO carry cost still owed to T-Mobile through the customer's billing cycle.
+
+## Why the returns curve inverted past sales
+
+The May–August inversion wasn't a single bad month — it was four consecutive months where the rate of returns exceeded the rate of new sales. The structural drivers:
+
+1. **30-day return windows opening for early customers.** Customers who pre-ordered in November 2023 and received units in mid-April 2024 hit their 30-day window in mid-May. The first cohort of returns was structurally locked in.
+2. **MKBHD review depressing new sales.** New pre-orders slowed to a trickle after April 14. The company was filling existing pre-orders into a market that had already heard the launch verdict.
+3. **No installed-user testimony to counter the verdict.** With no substrate of existing users posting positive experiences, prospective buyers had only the launch-week reviews as a signal. That signal was uniformly negative.
+4. **No second product to absorb demand.** A company with multiple SKUs can route demand from a struggling product to a strong one. Humane had one SKU.
+
+The arithmetic is unrecoverable on this substrate. **A returns-exceeding-sales rate, on a 100,000 yearly target, with 30-day return windows still opening for the next several cohorts, with each return destroying a unit, on a ~$6M monthly burn — produces a 6–9 month survival window without a meaningful capital event.**
+
+That math is what drove Bloomberg's May 22, 2024 reporting that Humane had retained advisors and was targeting a $750M–$1B sale price. The math is also what produced no buyer at that range.
+
+## The $9M revenue against $230M raised
+
+The August figure is the cleanest single data point in the Humane case file. **$230M raised. ~$9M in cumulative AI Pin revenue four months post-launch.** That's a ~25x capital-to-revenue ratio at the moment a normal hardware company would be entering its first profitability conversation.
+
+The unit economics underneath:
+
+| Cost layer | Monthly drag |
+|---|---|
+| ~200 employees in SF, $400K fully-loaded | ~$6.7M / month payroll |
+| MVNO carry cost (T-Mobile per-active-line) | Scaled to ~7,000 active subs |
+| Hardware BOM on shipped units | Margin tight even at full ASP |
+| Returns processing | Refund + destroyed unit per return |
+| Customer support | Two-part hardware + cellular service per customer |
+
+By comparison, Plaude's monthly burn ratio was reportedly under $1M with margins of ~25% on a single-piece $159–$179 device. **Plaude had a substrate that absorbed shocks. Humane had a cost structure that amplified them.**
+
+## What this teaches about C2 (monetize-during-the-peak)
+
+The playbook's C2 move says: viral demand windows are short, and pricing during the window locks in the price signal before users anchor on free. **Humane is the limit case where the window never opened.**
+
+They priced at launch ($699 + $24/mo) — but the launch demand-spike was negative. Reviews killed the curve before it formed. So C2 isn't applicable in the standard sense; it's a degenerate case where the move's prerequisite (a peak) didn't exist.
+
+The October 23, 2024 price cut to $499 (with the charge case unbundled) was the structural admission that the original price could not produce demand at any volume. It was an inventory-clearance move, not a monetization move.
+
+The implication for the playbook: **C2 protects against a known failure mode (Character.AI not pricing during 200M MAU peak), but it does not protect against the failure mode where the peak never forms because A1 + B1 weren't built.** A different move higher in the stack governs that. Humane's collapse is not a C2 lesson. It's the A1 + B1 lesson the company spent five stealth years failing to learn.
+
+## What this teaches about returns architecture
+
+For any hardware company contemplating an MVNO partnership: **the reassignment question is the question that decides whether your returns are margin events or destruction events.**
+
+If returned units can be reassigned, your returns processing is a refurbishment + customer-support flow with manageable per-unit cost. If they cannot, **every return is a write-off plus a refund.** Humane's collapse-rate was structurally accelerated because the return architecture was designed in 2022–2023 against a substrate (no installed customer base, no refurbishment process, an MVNO built from scratch) that could not absorb the launch-shock.
+
+A predecessor product would have surfaced the reassignment limitation. The company would have either negotiated a fix with T-Mobile, switched MVNO partners, or designed a different return policy. **None of those options were available post-launch, when the limitation was discovered.**
+
+<Conclusion title="What to copy">
+
+- **Test the returns architecture before you ship.** If returned units cannot be refurbished and reassigned, model the return-rate sensitivity carefully — and either fix the architecture or limit the launch volume until it is fixed.
+- **MVNO partnerships are substrate decisions, not product decisions.** Building cellular service from scratch through a major carrier inherits the carrier's technical and contractual constraints. Surface those constraints under a smaller-volume product before betting the company launch on them.
+- **Capital-to-revenue ratio is the cleanest single signal of substrate failure.** $230M raised against $9M of four-month cumulative revenue is the kind of ratio that means the substrate wasn't built. Watch for the ratio early; it precedes the wind-down by 6–9 months.
+
+</Conclusion>
+
+## Sources
+
+- [9to5Mac — "Humane Ai Pin woes worsen as recent returns exceed sales" (Aug 7, 2024)](https://9to5mac.com/2024/08/07/humane-ai-pin-woes-worsen-as-recent-returns-exceed-sales/)
+- [Engadget — "People are returning Humane AI Pins faster than the company can sell them" (Aug 7, 2024)](https://www.engadget.com/ai/people-are-returning-humane-ai-pins-faster-than-the-company-can-sell-them-191523105.html)
+- [Tom's Guide — "Humane flooded with $1 million in AI Pin returns" (Aug 2024)](https://www.tomsguide.com/ai/humane-flooded-with-dollar1-million-in-ai-pin-returns-as-ai-gadget-dumpster-fire-rages-on)
+- [Bloomberg — Humane exploring sale at $750M–$1B (May 22, 2024)](https://www.bloomberg.com/news/articles/2024-05-22/wearable-ai-startup-humane-is-said-to-explore-potential-sale)
+- [TechCrunch — AI Pin price cut to $499 (Oct 23, 2024)](https://techcrunch.com/2024/10/23/beleaguered-startup-humane-drops-ai-pin-price-by-200/)

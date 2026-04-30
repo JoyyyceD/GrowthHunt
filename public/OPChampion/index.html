@@ -8,8 +8,80 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/OPChampion/opchampion.css?v=1">
+  <style>
+    /* GrowthHunt unified header — matches the Next.js TopNav (lib/site/TopNav.tsx)
+       so visitors landing on this static-HTML rewrite still feel like they're
+       inside GrowthHunt. */
+    :root {
+      --gh-bg: #fafaf7; --gh-ink: #14110d; --gh-ink-dim: rgba(20,17,13,0.6);
+      --gh-rule: rgba(20,17,13,0.1); --gh-rule-strong: rgba(20,17,13,0.18);
+      --gh-accent: #e84e1b; --gh-accent-ink: #ffffff;
+    }
+    .gh-top {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(20px);
+      background: rgba(250,250,247,0.82);
+      border-bottom: 1px solid var(--gh-rule);
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    .gh-top-shell {
+      max-width: 1280px; margin: 0 auto; padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .gh-brand {
+      display: flex; align-items: center; gap: 10px;
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 22px; letter-spacing: -0.02em;
+      color: var(--gh-ink); text-decoration: none;
+    }
+    .gh-mark {
+      width: 22px; height: 22px;
+      border: 1.5px solid var(--gh-ink);
+      border-radius: 50%;
+      position: relative; flex-shrink: 0;
+    }
+    .gh-mark::after {
+      content: ''; position: absolute; inset: 4px;
+      border-radius: 50%; background: var(--gh-accent);
+    }
+    .gh-nav-list {
+      display: flex; gap: 32px; list-style: none; padding: 0; margin: 0;
+      font-size: 13.5px; color: var(--gh-ink-dim);
+    }
+    .gh-nav-list a {
+      color: inherit; text-decoration: none; transition: color 0.12s;
+    }
+    .gh-nav-list a:hover { color: var(--gh-ink); }
+    .gh-cta {
+      background: var(--gh-ink); color: var(--gh-bg);
+      border: none; padding: 9px 18px; border-radius: 999px;
+      font-size: 13px; font-weight: 600; letter-spacing: -0.005em;
+      white-space: nowrap; cursor: pointer; text-decoration: none;
+      font-family: inherit; transition: background 0.12s, color 0.12s;
+    }
+    .gh-cta:hover { background: var(--gh-accent); color: var(--gh-accent-ink); }
+    @media (max-width: 720px) {
+      .gh-nav-list { display: none; }
+    }
+  </style>
 </head>
 <body>
+  <nav class="gh-top">
+    <div class="gh-top-shell">
+      <a href="/" class="gh-brand">
+        <span class="gh-mark"></span>
+        GrowthHunt.ai
+      </a>
+      <ul class="gh-nav-list">
+        <li><a href="/#live">Live tools</a></li>
+        <li><a href="/coming-soon">Coming soon</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <a href="/login" class="gh-cta">Log in / Sign up</a>
+    </div>
+  </nav>
+
   <div id="root"></div>
 
   <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
