@@ -93,3 +93,5 @@ create trigger viralx_days_updated_at
 -- ─────────────────────────────────────────────────────────────────────────────
 grant all privileges on table public.viralx_sessions      to service_role, postgres;
 grant all privileges on table public.viralx_calendar_days to service_role, postgres;
+grant select, insert, update, delete on public.viralx_sessions      to authenticated;
+grant select, insert, update, delete on public.viralx_calendar_days to authenticated;
