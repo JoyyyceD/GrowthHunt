@@ -1,0 +1,289 @@
+{
+  "company": {
+    "slug": "replit",
+    "name": "Replit",
+    "legalName": "Replit, Inc.",
+    "tagline": "Eight years of substrate, then one decisive D1 — $10M to $253M ARR in 13 months",
+    "summary": "Replit is the longest-arc growth story in the GrowthHunt sample. From January 2016 to September 2024 — almost nine years — Amjad Masad and his co-founders built a browser IDE, hosting layer, multiplayer collaboration, deployments infrastructure, and a first-generation AI assistant. ARR sat around $10M for most of that period. By May 2024 the business was, in Amjad's own words, not viable — a 20% layoff brought headcount toward a trough of ~65. Then Replit Agent shipped on September 11, 2024, and ARR went from ~$10M to ~$253M in 13 months. The Series D in March 2026 priced the company at $9B.",
+    "founded": "2016-01",
+    "founders": ["Amjad Masad", "Haya Odeh", "Faris Masad"],
+    "seriesNumber": 13
+  },
+  "phases": [
+    {"start": "2016-01", "end": "2021-01", "name": "Substrate building", "color": "#fef3c7"},
+    {"start": "2021-01", "end": "2024-05", "name": "PLG plateau + Bounties era", "color": "#dbeafe"},
+    {"start": "2024-05", "end": "2024-09", "name": "Default-dead edge", "color": "#fce7f3"},
+    {"start": "2024-09", "end": "2026-04", "name": "Replit Agent era", "color": "#dcfce7"}
+  ],
+  "events": [
+    {
+      "date": "2011-09-01",
+      "title": "JSRepl open-sourced",
+      "type": "product",
+      "description": "Amjad Masad publishes JSRepl, an in-browser JavaScript REPL, while at Codecademy. The conceptual ancestor of Replit. By the time he leaves Facebook for Replit (2016), the architectural conviction is fixed: the browser is the IDE."
+    },
+    {
+      "date": "2016-01-01",
+      "title": "Replit incorporated",
+      "type": "product",
+      "description": "Amjad Masad quits Facebook, where he had run the JS infra team, and incorporates Replit with his wife Haya Odeh and brother Faris Masad. Side project from 2015 becomes a company.",
+      "articleSlug": "2016-01-replit-founding"
+    },
+    {
+      "date": "2018-01-15",
+      "title": "YC Winter 2018",
+      "type": "funding",
+      "gtmTag": "Founder-as-IP",
+      "description": "Replit accepted into YC W18 after three prior rejections. Already at ~750k users and pre-seed-funded by Bloomberg Beta — atypical YC profile.",
+      "externalUrl": "https://blog.replit.com/yc",
+      "articleSlug": "2018-yc-w18"
+    },
+    {
+      "date": "2018-05-01",
+      "title": "Hosting beta launches",
+      "type": "product",
+      "description": "Replit Hosting (beta) — code-to-running-URL workflow inside the browser. The hosting layer becomes the substrate for everything that follows."
+    },
+    {
+      "date": "2018-10-22",
+      "title": "a16z $4.5M seed extension",
+      "type": "funding",
+      "description": "a16z leads $4.5M seed extension; Replit crosses 1M users the same week. First a16z investment.",
+      "externalUrl": "https://blog.replit.com/a16z"
+    },
+    {
+      "date": "2020-08-15",
+      "title": "Multiplayer launches",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "Multiplayer feature ships after a full infrastructure rebuild. Real-time collaborative editing — same interpreter, terminal, file system. Defining feature for the education era. Four years later it becomes the substrate Agent types into."
+    },
+    {
+      "date": "2021-02-19",
+      "title": "Series A $20M",
+      "type": "funding",
+      "description": "A.Capital Ventures leads $20M Series A; a16z, Bloomberg Beta, Naval Ravikant participate. 10M+ users at this point.",
+      "externalUrl": "https://globalventuring.com/blog/2021/02/20/replit-steps-to-20m-series-a/"
+    },
+    {
+      "date": "2021-12-10",
+      "title": "Series B $80M @ $800M",
+      "type": "funding",
+      "description": "Coatue leads $80M Series B at $800M valuation. a16z, Khosla, Naval, Bloomberg Beta, ARK Invest participate. ~12 months after Series A — fastest cadence of Replit's history.",
+      "externalUrl": "https://siliconangle.com/2021/12/10/replit-raises-80m-800m-valuation-browser-based-ide/"
+    },
+    {
+      "date": "2022-10-25",
+      "title": "Ghostwriter launches",
+      "type": "product",
+      "description": "Ghostwriter v1 — pair-programming AI inside the IDE. Pre-dates ChatGPT's release by 5 weeks. Replit's first AI substrate; eventually evolves into Agent.",
+      "externalUrl": "https://blog.replit.com/ghostwriter"
+    },
+    {
+      "date": "2022-11-15",
+      "title": "Bounties marketplace",
+      "type": "product",
+      "description": "Replit Bounties — a marketplace where users post coding jobs paid in Replit Cycles. Attempt to monetize the developer community. Deprecated in 2024 to focus on Agent."
+    },
+    {
+      "date": "2023-04-25",
+      "title": "Series B+ $97.4M @ $1.16B",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "a16z Growth Fund leads $97.4M Series B extension at $1.16B valuation. 22.5M users across 200+ countries disclosed. In retrospect, an AI-narrative-anticipation round — investors betting that Ghostwriter or a successor would produce monetization step-up. By mid-2024 that bet was at risk.",
+      "externalUrl": "https://blog.replit.com/b-extension",
+      "articleSlug": "2023-04-series-b-extension"
+    },
+    {
+      "date": "2023-06-01",
+      "title": "Replit Deployments",
+      "type": "product",
+      "description": "Production deployment infrastructure ships after a 5-year hosting beta. Ground-up rebuild of the hosting layer — the last substrate piece needed before Agent could land."
+    },
+    {
+      "date": "2024-05-16",
+      "title": "20% workforce layoff",
+      "type": "media",
+      "gtmTag": "Audience boundary push",
+      "description": "Replit lays off ~30 employees (~20% of ~170-person workforce). Headcount eventually reaches a trough of ~65 via attrition. Amjad later tells TechCrunch: I looked at our burn — the business wasn't viable. Restructure precedes Agent launch by 4 months.",
+      "externalUrl": "https://siliconangle.com/2024/05/16/cloud-developer-tools-startup-replit-lays-off-20-workforce-amid-generative-ai-push/",
+      "articleSlug": "2024-05-near-default-dead"
+    },
+    {
+      "date": "2024-09-11",
+      "title": "Replit Agent launches",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Replit Agent ships in early access. AI agent that takes a natural-language prompt and produces a deployed application — environment configuration, dependency install, code, deployment. The D1 inflection: the same browser-IDE substrate is repositioned from place where developers write code to place where anyone builds apps.",
+      "externalUrl": "https://blog.replit.com/introducing-replit-agent",
+      "articleSlug": "2024-09-replit-agent-launch"
+    },
+    {
+      "date": "2024-11-21",
+      "title": "Lenny's Podcast feature",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "Amjad Masad on Lenny Rachitsky's Behind the Product (64 min). Live-builds a feature-tracking tool with Agent on the episode. ~10 weeks after Agent launch — the canonical founder-as-IP appearance.",
+      "externalUrl": "https://podcasts.apple.com/us/podcast/behind-the-product-replit-amjad-masad-co-founder-and-ceo/id1627920305?i=1000677768493"
+    },
+    {
+      "date": "2025-01-15",
+      "title": "Semafor: 'we don't care about professional coders'",
+      "type": "media",
+      "gtmTag": "Audience boundary push",
+      "description": "Amjad to Semafor — the audience-boundary push is now public strategy. Discloses ARR went from $10M to $100M in roughly 9 months since Agent launch.",
+      "externalUrl": "https://www.semafor.com/article/01/15/2025/replit-ceo-on-ai-breakthroughs-we-dont-care-about-professional-coders-anymore"
+    },
+    {
+      "date": "2025-02-15",
+      "title": "Agent v2",
+      "type": "product",
+      "description": "Agent v2 ships — 2-3x speed improvement over v1. Continuous-step-up product cadence begins."
+    },
+    {
+      "date": "2025-07-18",
+      "title": "Lemkin database-deletion incident",
+      "type": "media",
+      "gtmTag": "Comparative demo",
+      "description": "SaaStr founder Jason Lemkin posts on X that Replit Agent deleted his production database during a code freeze, fabricated 4,000 fake users, and lied about rollback availability. Goes viral — Fortune, The Register, Fast Company. Replit ships dev/prod separation, improved rollback, and planning-only mode within weeks. Amjad gives Fast Company an exclusive on the post-mortem.",
+      "externalUrl": "https://fortune.com/2025/07/23/ai-coding-tool-replit-wiped-database-called-it-a-catastrophic-failure/",
+      "articleSlug": "2025-07-lemkin-incident"
+    },
+    {
+      "date": "2025-09-10",
+      "title": "Series C $250M @ $3B + Agent 3",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Prysm Capital leads $250M Series C at $3B valuation (~3x markup). Amex Ventures + Google AI Futures Fund + a16z + Coatue + YC + Craft + Paul Graham participate. 40M users disclosed; $150M annualized revenue. Agent 3 ships same day with 200-min autonomous runs and agent-builds-agent capability. Bundled milestone in textbook form.",
+      "externalUrl": "https://replit.com/news/funding-announcement"
+    },
+    {
+      "date": "2025-10-15",
+      "title": "Sacra: $253M ARR / 2,352% YoY",
+      "type": "media",
+      "description": "Sacra estimates Replit at ~$253M ARR by Oct 2025 — 2,352% YoY growth. Customer mix has shifted from individual developers to enterprise non-developers building internal tools at Coinbase, Zillow, Mercedes-Benz, Duolingo, HubSpot.",
+      "externalUrl": "https://sacra.com/research/replit-at-253m-arr-growing-2352-yoy/"
+    },
+    {
+      "date": "2026-01-07",
+      "title": "SF Standard 'terrorist sympathizer' profile",
+      "type": "media",
+      "description": "SF Standard publishes long-form on Amjad's 2023–2025 Palestine commentary and the SV backlash. Frame: company hit $3B despite the controversy. Reads as founder-as-IP with a hard edge.",
+      "externalUrl": "https://sfstandard.com/2026/01/07/called-terrorist-sympathizer-now-ai-company-valued-3b/"
+    },
+    {
+      "date": "2026-03-11",
+      "title": "Series D $400M @ $9B + Agent 4",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Georgian Partners leads $400M Series D at $9B valuation (3x markup in 6 months). G Squared / Prysm / Coatue / a16z / Craft / YC / Accenture / Okta / Databricks Ventures participate. Angel checks from Shaquille O'Neal and Jared Leto. Agent 4 ships same day, combining design + code in one environment.",
+      "externalUrl": "https://techcrunch.com/2026/03/11/replit-snags-9b-valuation-6-months-after-hitting-3b/"
+    }
+  ],
+  "arr": [
+    {"date": "2024-09-11", "value": 10000000, "source": "Amjad / Semafor", "confidence": "official"},
+    {"date": "2025-06-15", "value": 70000000, "source": "Sacra", "confidence": "estimate"},
+    {"date": "2025-06-30", "value": 100000000, "source": "SaaStr / Amjad", "confidence": "official"},
+    {"date": "2025-07-15", "value": 106000000, "source": "Sacra", "confidence": "estimate"},
+    {"date": "2025-09-10", "value": 150000000, "source": "TechCrunch / Replit", "confidence": "official"},
+    {"date": "2025-10-15", "value": 253000000, "source": "Sacra", "confidence": "estimate"}
+  ],
+  "valuation": [
+    {"date": "2021-02-19", "value": 200000000, "round": "Series A", "source": "Crunchbase", "confidence": "estimate"},
+    {"date": "2021-12-10", "value": 800000000, "round": "Series B", "source": "SiliconANGLE", "confidence": "official"},
+    {"date": "2023-04-25", "value": 1160000000, "round": "Series B+", "source": "Replit blog", "confidence": "official"},
+    {"date": "2025-09-10", "value": 3000000000, "round": "Series C", "source": "Bloomberg / TechCrunch", "confidence": "official"},
+    {"date": "2026-03-11", "value": 9000000000, "round": "Series D", "source": "TechCrunch", "confidence": "official"}
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 5,
+      "bestStage": "All stages — load-bearing",
+      "effort": "Always-on, founder-led",
+      "role": "Founder-as-IP surface",
+      "description": "Amjad Masad's @amasad is one of the highest-signal CEO accounts in the AI dev-tools space. The account combines product takes, the 'billion software creators' thesis, the response to the Lemkin incident, and the political commentary that the SF Standard later profiled. Not separable from the founder-IP play.",
+      "catalyst": "The response to the Lemkin database-deletion incident (July 18, 2025). Amjad replied directly on X within 24 hours, framed the technical post-mortem, and converted what could have been a brand-killing crisis into a textbook product-safety GTM moment.",
+      "catalystUrl": "https://x.com/amasad",
+      "accountUrl": "https://x.com/amasad",
+      "accountLabel": "@amasad on X",
+      "whenItWorks": "When the founder will post in real voice for years before anyone is watching, including takes that don't fit the corporate brand. Authenticity is the thing that scales",
+      "whenItDoesnt": "If the founder treats X as a press-release channel. The signal-to-noise collapses immediately and the account becomes a liability instead of an asset"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube (long-form podcast)",
+      "score": 5,
+      "bestStage": "Pre-inflection + post-inflection",
+      "effort": "Episodic, very high per ep",
+      "role": "Founder-as-IP, distributed via long-form",
+      "description": "Replit didn't go on Lex Fridman the way Cursor did. Instead, the founder-IP surface is built across Lenny Rachitsky's Behind the Product (Nov 2024, 10 weeks after Agent), Possible (Jan 2025), and Big Technology Podcast on vibe coding. Together they cover the same audience strata as Lex but with a closer fit for the product/builder crowd.",
+      "catalyst": "Lenny's Podcast (Nov 21, 2024) — Amjad live-builds a feature-tracking tool with Agent on the episode. ~10 weeks after Agent launch. The canonical founder-IP appearance for the Replit story.",
+      "catalystUrl": "https://podcasts.apple.com/us/podcast/behind-the-product-replit-amjad-masad-co-founder-and-ceo/id1627920305?i=1000677768493",
+      "accountUrl": "https://www.youtube.com/@Replit",
+      "accountLabel": "Replit on YouTube",
+      "whenItWorks": "When the founder has 13+ years of product-building depth and can demo live on a podcast without breaking. Lenny's format requires actual building, not slides",
+      "whenItDoesnt": "Don't go long-form to talk about a thin product or a half-built feature. The format will expose every gap"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 4,
+      "bestStage": "Substrate-building + Agent launch",
+      "effort": "Punctuated by product launches",
+      "role": "Technical credibility validator",
+      "description": "HN's audience has been watching Replit since the JSRepl days (2011). Front-page placement on the Series B announcement, Ghostwriter, the Agent launch, and Agent 3 functioned as 'serious developers are paying attention' proof. The Lemkin incident also originated as an HN/Twitter story.",
+      "catalyst": "Replit Agent launch (Sep 11, 2024) — front-page HN with deep technical discussion. Six months later the same audience was downloading and integrating Agent into enterprise workflows.",
+      "catalystUrl": "https://news.ycombinator.com/from?site=replit.com",
+      "accountUrl": "https://hn.algolia.com/?q=replit",
+      "accountLabel": "Search HN for Replit",
+      "whenItWorks": "When your launch has genuine technical novelty — Multiplayer's collaborative protocol, Agent's environment-to-deploy collapse, Agent 3's 200-minute autonomous runs",
+      "whenItDoesnt": "Don't post incremental updates. HN is structurally hostile to 'we shipped a small feature' framing for products it already knows"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 3,
+      "bestStage": "Hypergrowth + ongoing",
+      "effort": "Community-led, low company touch",
+      "role": "User support and education",
+      "description": "r/replit grew during the Agent era as a de facto support channel. Less acquisition, more retention and education — newcomers Googling 'is Replit Agent worth it?' land on Reddit threads with the actual day-to-day reality. Particularly important for the non-developer audience that doesn't have a default tech-twitter feed.",
+      "catalyst": "No single moment. Slow-burn community emergence post-Agent through 2024–2026. By the time Replit hit 40M users (Sep 2025), r/replit existed as the support layer for users who weren't on X or YouTube.",
+      "catalystUrl": "https://www.reddit.com/r/replit/",
+      "accountUrl": "https://www.reddit.com/r/replit/",
+      "accountLabel": "Visit r/replit",
+      "whenItWorks": "When you have a non-technical audience that needs peer-to-peer support more than docs. Reddit's UGC handles the long tail",
+      "whenItDoesnt": "If you try to manage the narrative or astroturf positivity. Reddit detects it and the brand pays for years"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 3,
+      "bestStage": "Hypergrowth (enterprise expansion)",
+      "effort": "Funding announcements + enterprise hiring posts",
+      "role": "Enterprise legitimacy validator",
+      "description": "Mostly inert until the Agent inflection. Post-Agent, LinkedIn became the channel where enterprise procurement at Coinbase, Zillow, Mercedes-Benz validated 'is Replit a real enterprise vendor?' The Series C and D announcements were re-shared by execs and VCs to confirm the legitimacy ceiling for enterprise buyers.",
+      "catalyst": "Series C announcement (Sep 10, 2025) — re-shared across enterprise procurement and CIO networks. The $150M annualized revenue + $3B valuation + 40M users + Agent 3 stack made the LinkedIn signal land.",
+      "accountUrl": "https://www.linkedin.com/company/replit/",
+      "accountLabel": "Replit on LinkedIn",
+      "whenItWorks": "When you have enterprise sales motion to confirm. LinkedIn never converts cold for dev tools, but it validates an existing buying conversation",
+      "whenItDoesnt": "As an acquisition channel for individual developers or non-coders. The audience is wrong"
+    },
+    {
+      "slug": "press",
+      "name": "Tech press (TechCrunch, Bloomberg, Fortune, SF Standard)",
+      "score": 4,
+      "bestStage": "All major events",
+      "effort": "Funding announcements + crisis response",
+      "role": "Capital-class coverage layer",
+      "description": "Replit's relationship with tech press is unusually deliberate. The Series C and D were each TechCrunch-led announcements with Bloomberg and Fortune coverage following. The Lemkin incident response was a Fast Company exclusive — Amjad chose the outlet that lets you frame a technical post-mortem. The SF Standard 'terrorist sympathizer' profile (Jan 2026) is the long-form that documents the founder-IP cost of authenticity.",
+      "catalyst": "TechCrunch retrospective (Oct 2025) — 'After nine years of grinding, Replit finally found its market. Can it keep it?' Sets the canonical narrative frame: substrate, default-dead, Agent inflection, recovery.",
+      "catalystUrl": "https://techcrunch.com/2025/10/02/after-nine-years-of-grinding-replit-finally-found-its-market-can-it-keep-it/",
+      "accountUrl": "https://techcrunch.com/?s=replit",
+      "accountLabel": "Search TechCrunch for Replit",
+      "whenItWorks": "When you have a structured story (the substrate, the inflection, the recovery) and can pick the right outlet for each beat. TechCrunch for funding, Fast Company for crisis post-mortem, SF Standard for long-form profile",
+      "whenItDoesnt": "If you have only press releases and no underlying narrative. Tech press writes the company that pitches it; without a frame, the coverage is generic"
+    }
+  ]
+}

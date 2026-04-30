@@ -1,0 +1,292 @@
+{
+  "company": {
+    "slug": "vercel",
+    "name": "Vercel",
+    "legalName": "Vercel, Inc.",
+    "tagline": "Eight years of free framework, then six rounds and $9.3B",
+    "summary": "Vercel spent eight years (2016–2024) building Next.js as a free MIT-licensed React framework — the substrate — before they ever needed it to do GTM work. When AI broke the dev-tools landscape in 2023, they didn't have to invent a distribution channel. Roughly 4.5M weekly Next.js downloads were already standing in line. Each major narrative shift (deployment to edge to AI cloud) was scaffolded onto the same audience.",
+    "founded": "2015-11",
+    "founders": ["Guillermo Rauch", "Naoyuki Kanezawa", "Tony Kovanen"],
+    "seriesNumber": 12
+  },
+  "phases": [
+    {"start": "2015-11", "end": "2020-04", "name": "ZEIT era", "color": "#fef3c7"},
+    {"start": "2020-04", "end": "2022-12", "name": "Rebrand + Series A–D", "color": "#dbeafe"},
+    {"start": "2022-12", "end": "2025-09", "name": "AI SDK + v0", "color": "#fce7f3"},
+    {"start": "2025-09", "end": "2026-06", "name": "AI Cloud", "color": "#dcfce7"}
+  ],
+  "events": [
+    {
+      "date": "2015-11-01",
+      "title": "Zeit Inc. founded",
+      "type": "product",
+      "description": "Guillermo Rauch (creator of Socket.IO), Naoyuki Kanezawa, and Tony Kovanen (ex-CTO) found Zeit (German for time) in San Francisco. First product is Now, a single-command deployment tool."
+    },
+    {
+      "date": "2016-10-25",
+      "title": "Next.js v1 open-sourced",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "React framework with file-system routing, SSR, and zero config released as MIT open source on GitHub. The free-forever framework that compounds for the entire arc.",
+      "externalUrl": "https://github.com/vercel/next.js",
+      "articleSlug": "2016-10-nextjs-launch"
+    },
+    {
+      "date": "2018-02-01",
+      "title": "Series A $7.5M (as Zeit)",
+      "type": "funding",
+      "description": "Accel-led; small round; Zeit positioned as a Now deployment platform. Pre-rebrand, pre-narrative.",
+      "externalUrl": "https://research.contrary.com/company/vercel"
+    },
+    {
+      "date": "2020-04-21",
+      "title": "Zeit rebrands to Vercel + Series A $21M",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Single news cycle: rebrand + $21M Accel/CRV led + Naval Ravikant, Nat Friedman, Jordan Walke as angels. The rename made a $21M Series A read like the start of a different company.",
+      "externalUrl": "https://vercel.com/blog/zeit-is-now-vercel",
+      "articleSlug": "2020-04-zeit-vercel-rebrand"
+    },
+    {
+      "date": "2020-10-15",
+      "title": "Next.js Conf inaugural (40K+ attendees)",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "Virtual conference becomes the canonical Next.js community event. Founder-as-IP plus community substrate fused into one annual narrative beat. Vercel's own house podcast."
+    },
+    {
+      "date": "2020-12-16",
+      "title": "Series B $40M led by GV",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Google Ventures leads. Total raised $61M; framed as the next generation of frontend development. Edge Functions teases through 2021.",
+      "externalUrl": "https://vercel.com/blog/series-b-40m-to-build-the-next-web"
+    },
+    {
+      "date": "2021-06-15",
+      "title": "Next.js 12 + SWC compiler",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Rust-based SWC compiler replaces Babel. Five times faster builds. Edge Functions early access. The first concrete edge narrative beat — bundled into Series C the same week."
+    },
+    {
+      "date": "2021-06-23",
+      "title": "Series C $102M @ $1.1B (unicorn)",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Bedrock Capital leads. Tiger, GGV, Salesforce Ventures join. Bundled with Next.js 12 plus enterprise customer name-drops (Hulu, Twitch, Uber).",
+      "externalUrl": "https://techcrunch.com/2021/06/23/vercel-raises-102m-series-c-for-its-next-js-based-front-end-development-platform/",
+      "articleSlug": "2021-06-series-c-bedrock"
+    },
+    {
+      "date": "2021-11-23",
+      "title": "Series D $150M @ $2.5B",
+      "type": "funding",
+      "description": "GGV leads. Valuation 2.3x in five months. Pitched as the end-to-end frontend dev platform.",
+      "externalUrl": "https://techcrunch.com/2021/11/23/vercel-raises-150m-series-d-as-it-looks-to-build-an-end-to-end-front-end-development-platform/"
+    },
+    {
+      "date": "2021-12-09",
+      "title": "Acquires Turborepo (Jared Palmer)",
+      "type": "acquisition",
+      "gtmTag": "Strategic acquisition",
+      "description": "Strategic acqui-hire 16 days after Series D. Monorepo build system plus Jared Palmer (creator of Formik, TSDX). Fills the build-performance gap.",
+      "externalUrl": "https://vercel.com/blog/vercel-acquires-turborepo"
+    },
+    {
+      "date": "2022-10-25",
+      "title": "Next.js 13 + App Router",
+      "type": "product",
+      "description": "React Server Components plus new routing paradigm at Next.js Conf 2022. Splitbee acquisition announced same day. Controversial but resets the framework narrative."
+    },
+    {
+      "date": "2022-12-15",
+      "title": "Edge Functions GA",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Generally available across all customers. Edge becomes the default-on infra layer. Tech narrative upgrade #1: deployment platform becomes edge platform.",
+      "externalUrl": "https://vercel.com/blog/edge-functions-generally-available"
+    },
+    {
+      "date": "2023-06-15",
+      "title": "Vercel AI SDK launched",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "Open-source TypeScript toolkit for streaming LLM UIs. First-class OpenAI, LangChain, Hugging Face support. Free, MIT-licensed. Framing: deploy AI at the speed of frontend.",
+      "externalUrl": "https://vercel.com/blog/introducing-the-vercel-ai-sdk"
+    },
+    {
+      "date": "2023-10-11",
+      "title": "v0 announced (private beta)",
+      "type": "product",
+      "gtmTag": "Audience boundary push",
+      "description": "Generative UI: prompt to React + Tailwind + shadcn/ui code. Over 100K signups in three weeks. The product that re-rates Vercel from frontend hosting to AI cloud.",
+      "externalUrl": "https://vercel.com/blog/announcing-v0-generative-ui",
+      "articleSlug": "2023-10-v0-launch"
+    },
+    {
+      "date": "2024-03-01",
+      "title": "$100M ARR crossed",
+      "type": "media",
+      "description": "Vercel hits $100M ARR per Sacra. Earned-media moment paired into Series E narrative two months later."
+    },
+    {
+      "date": "2024-05-16",
+      "title": "Series E $250M @ $3.25B",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Accel leads. CRV, GV, Tiger, Notable, Bedrock, Geodesic, 8VC, SV Angel join. Bundled with $100M+ ARR plus v0 momentum plus named enterprise customers (OpenAI, Under Armour, Perplexity).",
+      "externalUrl": "https://www.businesswire.com/news/home/20240516704768/en/",
+      "articleSlug": "2024-05-series-e"
+    },
+    {
+      "date": "2024-10-24",
+      "title": "Next.js 15 + Turbopack stable",
+      "type": "product",
+      "description": "Production-ready Rust bundler. React 19 support. Another tech narrative beat at Next.js Conf 2024."
+    },
+    {
+      "date": "2025-05-01",
+      "title": "$200M ARR",
+      "type": "media",
+      "description": "ARR doubles in roughly 14 months. v0 alone estimated at $42M ARR (~21% of total) by Feb 2025."
+    },
+    {
+      "date": "2025-07-08",
+      "title": "Acquires NuxtLabs",
+      "type": "acquisition",
+      "gtmTag": "Strategic acquisition",
+      "description": "Brings Sébastien Chopin, Daniel Roe, Anthony Fu, Pooya Parsa. Expands the substrate beyond React to Vue and Nuxt.",
+      "externalUrl": "https://vercel.com/blog/nuxtlabs-joins-vercel"
+    },
+    {
+      "date": "2025-09-30",
+      "title": "Series F $300M @ $9.3B",
+      "type": "funding",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Accel and GIC co-lead. BlackRock, Khosla, General Catalyst, StepStone new. Plus $300M secondary tender. Towards the AI Cloud narrative reframe — Vercel now reads as AI infra, not hosting.",
+      "externalUrl": "https://vercel.com/blog/series-f",
+      "articleSlug": "2025-09-series-f-9b"
+    },
+    {
+      "date": "2026-01-15",
+      "title": "v0.dev rebrands to v0.app",
+      "type": "product",
+      "description": "Reflects expansion from UI generator to full-stack app building agent. D1 narrative upgrade continues."
+    },
+    {
+      "date": "2026-03-01",
+      "title": "$340M GAAP run-rate",
+      "type": "media",
+      "description": "Sacra estimate. v0 revenue alone grew from roughly $100M to over $180M from 2024 to 2025 per company disclosures."
+    }
+  ],
+  "arr": [
+    {"date": "2019-12-01", "value": 1000000, "source": "Sacra", "confidence": "media"},
+    {"date": "2020-12-01", "value": 5000000, "source": "Sacra", "confidence": "media"},
+    {"date": "2021-12-01", "value": 21000000, "source": "Sacra", "confidence": "media"},
+    {"date": "2022-12-01", "value": 51000000, "source": "Sacra", "confidence": "media"},
+    {"date": "2023-12-01", "value": 86000000, "source": "Sacra", "confidence": "media"},
+    {"date": "2024-03-01", "value": 100000000, "source": "Sacra", "confidence": "media"},
+    {"date": "2024-12-01", "value": 144000000, "source": "Sacra", "confidence": "media"},
+    {"date": "2025-05-01", "value": 200000000, "source": "Vercel / Sacra", "confidence": "official"},
+    {"date": "2026-03-01", "value": 340000000, "source": "Sacra", "confidence": "estimate"}
+  ],
+  "valuation": [
+    {"date": "2018-02-01", "value": 30000000, "round": "Series A (as Zeit)", "source": "Contrary Research", "confidence": "estimate"},
+    {"date": "2021-06-23", "value": 1100000000, "round": "Series C", "source": "TechCrunch", "confidence": "official"},
+    {"date": "2021-11-23", "value": 2500000000, "round": "Series D", "source": "TechCrunch", "confidence": "official"},
+    {"date": "2024-05-16", "value": 3250000000, "round": "Series E", "source": "BusinessWire", "confidence": "official"},
+    {"date": "2025-09-30", "value": 9300000000, "round": "Series F", "source": "Bloomberg", "confidence": "official"}
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 5,
+      "bestStage": "All stages — load-bearing",
+      "effort": "Always-on, daily",
+      "role": "Founder voice and ship-it broadcast",
+      "description": "Where Rauch lives. Daily technical taste-making, framework ship-its in real time, framing AI as DX 2.0 rather than features. The substrate of the founder-as-IP play — continuous shorter-form, not episodic.",
+      "catalyst": "No single tweet. Eighteen years of continuous presence (since July 2008) compounding into ~303K followers and tier-1 dev-twitter status by 2026.",
+      "accountUrl": "https://x.com/rauchg",
+      "accountLabel": "@rauchg on X",
+      "whenItWorks": "When the founder built the framework themselves and can post with technical depth that survives daily exposure",
+      "whenItDoesnt": "CEOs without engineering background usually fail this pattern by month six of weekly hot takes"
+    },
+    {
+      "slug": "github",
+      "name": "GitHub",
+      "score": 5,
+      "bestStage": "All stages — substrate",
+      "effort": "Substrate-level — the framework lives here",
+      "role": "The substrate itself",
+      "description": "Next.js is open-sourced under MIT on GitHub. Roughly 4.5M weekly npm downloads by Feb 2024. The repo is the canonical place developers reach for the framework. Vercel earns no rent on those downloads — it earns the deployment relationship.",
+      "catalyst": "Next.js v1 released October 25, 2016. Eight years of public commits, issues, and releases compound into the most-used React meta-framework in the world.",
+      "catalystUrl": "https://github.com/vercel/next.js",
+      "accountUrl": "https://github.com/vercel",
+      "accountLabel": "vercel on GitHub",
+      "whenItWorks": "When you can fund a 5+ year substrate burn before the framework pays back via the paid product layer",
+      "whenItDoesnt": "Source-available or copyleft licensing kills the substrate (Elastic, MongoDB, HashiCorp). MIT was non-negotiable for Vercel"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 4,
+      "bestStage": "Annual cadence — Next.js Conf",
+      "effort": "Episodic, one big production per year",
+      "role": "Own house podcast",
+      "description": "Vercel never went on someone else's long-form podcast as the catalyst. Instead, Next.js Conf launched in 2020 (40K+ attendees) became the annual narrative beat — Edge Functions teased 2021, App Router 2022, Turbopack stable 2024. When you own the substrate, you don't need someone else's stage.",
+      "catalyst": "Next.js Conf 2021 — Next.js 12 plus SWC compiler reveal, fired the same week as the $102M Series C. The conference is the funding bundle's other half.",
+      "catalystUrl": "https://www.youtube.com/@VercelHQ",
+      "accountUrl": "https://www.youtube.com/@VercelHQ",
+      "accountLabel": "Vercel on YouTube",
+      "whenItWorks": "When you own a framework with a real community willing to show up annually",
+      "whenItDoesnt": "Conferences with no substrate behind them are events, not narrative beats"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 4,
+      "bestStage": "Product launches and funding rounds",
+      "effort": "Punctuated — one front-page hit per major release",
+      "role": "Technical-credibility validator",
+      "description": "Every major Vercel/Next.js release surfaces on HN organically. Front-page placement on Next.js 12, Edge Functions, AI SDK, v0, Series F — visible to the engineers who choose the framework and the investors who price the round.",
+      "catalyst": "v0 announcement (Oct 2023) on HN — over 100K signups in three weeks. The HN crowd validated the prompt-to-React paradigm before the broader market did.",
+      "catalystUrl": "https://news.ycombinator.com/from?site=vercel.com",
+      "accountUrl": "https://hn.algolia.com/?q=vercel",
+      "accountLabel": "Search HN for Vercel",
+      "whenItWorks": "When the launch has genuine technical novelty — Rust compiler, edge runtime, prompt-to-code",
+      "whenItDoesnt": "Telemetry / license disputes (Next.js telemetry 2020) get punished hard. HN is the place those fights happen"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 3,
+      "bestStage": "Hypergrowth and ongoing",
+      "effort": "Community-led, low company touch",
+      "role": "User retention and complaint channel",
+      "description": "r/nextjs and r/vercel exist as the support and feedback layer for the framework user base. Less an acquisition channel than the place existing developers stick — and the place v0 pricing complaints surface first.",
+      "catalyst": "No single thread. Slow-burn community emergence through 2021–2025 alongside Next.js adoption. By 2025 r/nextjs functions as the de facto framework-questions hub.",
+      "catalystUrl": "https://www.reddit.com/r/nextjs/",
+      "accountUrl": "https://www.reddit.com/r/vercel/",
+      "accountLabel": "r/vercel and r/nextjs",
+      "whenItWorks": "When you have a critical-mass framework user base willing to evangelize and complain in public",
+      "whenItDoesnt": "Astroturf is detected within days. Reddit is fully community-trust dependent"
+    },
+    {
+      "slug": "discord",
+      "name": "Discord",
+      "score": 4,
+      "bestStage": "Product Polish through Hypergrowth",
+      "effort": "Always-on community ops",
+      "role": "Real-time framework support and feedback loop",
+      "description": "The Next.js Discord (and Vercel community Discord) is where framework users live day-to-day. Faster feedback loop than GitHub issues, more substantive than X. By 2024 it functions as the primary inbound for high-intent developer questions and the place where breaking-change criticism gets triaged.",
+      "catalyst": "Next.js 13 App Router rollout (Oct 2022) — Discord absorbed the wave of migration questions and confusion that would otherwise have spilled to GitHub issues and X arguments.",
+      "accountUrl": "https://nextjs.org/discord",
+      "accountLabel": "Next.js Discord",
+      "whenItWorks": "When the framework has migration moments and complex behaviors that need synchronous discussion",
+      "whenItDoesnt": "Without a real ops team in the channel, Discord becomes a graveyard of unanswered questions"
+    }
+  ]
+}

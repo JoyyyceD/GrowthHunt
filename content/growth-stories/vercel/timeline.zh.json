@@ -1,0 +1,292 @@
+{
+  "company": {
+    "slug": "vercel",
+    "name": "Vercel",
+    "legalName": "Vercel, Inc.",
+    "tagline": "免费框架做八年，再用六轮融资和 93 亿美元估值收尾",
+    "summary": "Vercel 用八年时间（2016–2024）把 Next.js 当成免费 MIT 协议的 React 框架在做——这是承重底层（substrate），并不需要它去做 GTM 工作。当 AI 在 2023 年颠覆开发者工具市场时，他们不需要重新发明分发渠道。每周约 450 万次 Next.js 下载已经在排队。每一次重大叙事升维（部署 → 边缘 → AI Cloud）都搭建在同一群受众之上。",
+    "founded": "2015-11",
+    "founders": ["Guillermo Rauch", "Naoyuki Kanezawa", "Tony Kovanen"],
+    "seriesNumber": 12
+  },
+  "phases": [
+    {"start": "2015-11", "end": "2020-04", "name": "ZEIT 时期", "color": "#fef3c7"},
+    {"start": "2020-04", "end": "2022-12", "name": "更名 + A–D 轮", "color": "#dbeafe"},
+    {"start": "2022-12", "end": "2025-09", "name": "AI SDK + v0", "color": "#fce7f3"},
+    {"start": "2025-09", "end": "2026-06", "name": "AI Cloud", "color": "#dcfce7"}
+  ],
+  "events": [
+    {
+      "date": "2015-11-01",
+      "title": "Zeit Inc. 成立",
+      "type": "product",
+      "description": "Guillermo Rauch（Socket.IO 作者）、Naoyuki Kanezawa 和 Tony Kovanen（前 CTO）在旧金山创立 Zeit（德语意为「时间」）。第一款产品是 Now，一行命令完成部署。"
+    },
+    {
+      "date": "2016-10-25",
+      "title": "Next.js v1 开源",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "React 框架，自带文件路由、SSR 和零配置，以 MIT 协议开源在 GitHub。这是承重底层——会在接下来整整十年里持续复利。",
+      "externalUrl": "https://github.com/vercel/next.js",
+      "articleSlug": "2016-10-nextjs-launch"
+    },
+    {
+      "date": "2018-02-01",
+      "title": "Zeit 时期 A 轮 750 万美元",
+      "type": "funding",
+      "description": "Accel 领投，规模较小。Zeit 当时定位为 Now 部署平台。还在更名前、叙事尚未成形之前。",
+      "externalUrl": "https://research.contrary.com/company/vercel"
+    },
+    {
+      "date": "2020-04-21",
+      "title": "Zeit 更名为 Vercel + A 轮 2100 万美元",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "一个新闻周期内捆绑三件事：更名 + Accel/CRV 领投 2100 万美元 + Naval Ravikant、Nat Friedman、Jordan Walke 作为天使。这次更名让 2100 万美元的 A 轮看起来像是一家全新公司的起点。",
+      "externalUrl": "https://vercel.com/blog/zeit-is-now-vercel",
+      "articleSlug": "2020-04-zeit-vercel-rebrand"
+    },
+    {
+      "date": "2020-10-15",
+      "title": "首届 Next.js Conf（4 万+ 参会者）",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "线上大会成为 Next.js 社区的标志性活动。创始人即 IP 与社区底层叠加为一年一次的叙事节拍——Vercel 自己的「自营长内容播客」。"
+    },
+    {
+      "date": "2020-12-16",
+      "title": "B 轮 4000 万美元，GV 领投",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Google Ventures 领投。累计融资达到 6100 万美元。被定位为「下一代前端开发」。Edge Functions 通过 2021 年全年陆续放风。",
+      "externalUrl": "https://vercel.com/blog/series-b-40m-to-build-the-next-web"
+    },
+    {
+      "date": "2021-06-15",
+      "title": "Next.js 12 + SWC 编译器",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "基于 Rust 的 SWC 编译器替换 Babel。构建速度提升 5 倍。Edge Functions 早期访问权开放。第一次具体的「边缘」叙事节拍——和 C 轮在同一周捆绑发出。"
+    },
+    {
+      "date": "2021-06-23",
+      "title": "C 轮 1.02 亿美元 / 11 亿美元（独角兽）",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Bedrock Capital 领投。Tiger、GGV、Salesforce Ventures 跟投。与 Next.js 12 + 重磅企业客户名单（Hulu、Twitch、Uber）捆绑发布。",
+      "externalUrl": "https://techcrunch.com/2021/06/23/vercel-raises-102m-series-c-for-its-next-js-based-front-end-development-platform/",
+      "articleSlug": "2021-06-series-c-bedrock"
+    },
+    {
+      "date": "2021-11-23",
+      "title": "D 轮 1.5 亿美元 / 25 亿美元",
+      "type": "funding",
+      "description": "GGV 领投。估值 5 个月内涨到 2.3 倍。被包装为「端到端前端开发平台」。",
+      "externalUrl": "https://techcrunch.com/2021/11/23/vercel-raises-150m-series-d-as-it-looks-to-build-an-end-to-end-front-end-development-platform/"
+    },
+    {
+      "date": "2021-12-09",
+      "title": "收购 Turborepo（Jared Palmer）",
+      "type": "acquisition",
+      "gtmTag": "Strategic acquisition",
+      "description": "D 轮关闭后 16 天的人才收购。Monorepo 构建系统 + Jared Palmer（Formik、TSDX 作者）。补上「构建性能」这块缺口。",
+      "externalUrl": "https://vercel.com/blog/vercel-acquires-turborepo"
+    },
+    {
+      "date": "2022-10-25",
+      "title": "Next.js 13 + App Router",
+      "type": "product",
+      "description": "在 Next.js Conf 2022 上发布 React Server Components 和新路由范式。同日宣布收购 Splitbee。引发争议但重置了框架叙事。"
+    },
+    {
+      "date": "2022-12-15",
+      "title": "Edge Functions 全量上线（GA）",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "对所有客户开放。「边缘」成为默认开启的基础设施层。第一次技术叙事升维：从部署平台变为边缘平台。",
+      "externalUrl": "https://vercel.com/blog/edge-functions-generally-available"
+    },
+    {
+      "date": "2023-06-15",
+      "title": "Vercel AI SDK 发布",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "用于流式 LLM UI 的开源 TypeScript 工具包。一等支持 OpenAI、LangChain、Hugging Face。免费，MIT 协议。框架定位：「以前端的速度部署 AI」。",
+      "externalUrl": "https://vercel.com/blog/introducing-the-vercel-ai-sdk"
+    },
+    {
+      "date": "2023-10-11",
+      "title": "v0 公布（私测）",
+      "type": "product",
+      "gtmTag": "Audience boundary push",
+      "description": "生成式 UI：从自然语言提示词直接生成 React + Tailwind + shadcn/ui 代码。三周内注册超 10 万。这就是把 Vercel 从「前端托管」重新定位为「AI Cloud」的产品。",
+      "externalUrl": "https://vercel.com/blog/announcing-v0-generative-ui",
+      "articleSlug": "2023-10-v0-launch"
+    },
+    {
+      "date": "2024-03-01",
+      "title": "ARR 越过 1 亿美元",
+      "type": "media",
+      "description": "Sacra 数据。这一里程碑两个月后被打包进入 E 轮叙事。"
+    },
+    {
+      "date": "2024-05-16",
+      "title": "E 轮 2.5 亿美元 / 32.5 亿美元",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Accel 领投。CRV、GV、Tiger、Notable、Bedrock、Geodesic、8VC、SV Angel 跟投。捆绑「ARR 突破 1 亿美元」+ v0 势能 + 重磅企业客户（OpenAI、Under Armour、Perplexity）。",
+      "externalUrl": "https://www.businesswire.com/news/home/20240516704768/en/",
+      "articleSlug": "2024-05-series-e"
+    },
+    {
+      "date": "2024-10-24",
+      "title": "Next.js 15 + Turbopack 稳定版",
+      "type": "product",
+      "description": "可生产环境使用的 Rust 打包器。支持 React 19。Next.js Conf 2024 的又一个技术叙事节拍。"
+    },
+    {
+      "date": "2025-05-01",
+      "title": "ARR 突破 2 亿美元",
+      "type": "media",
+      "description": "ARR 在大约 14 个月内翻倍。截至 2025 年 2 月，v0 单产品估算贡献 4200 万美元 ARR（约占总 ARR 的 21%）。"
+    },
+    {
+      "date": "2025-07-08",
+      "title": "收购 NuxtLabs",
+      "type": "acquisition",
+      "gtmTag": "Strategic acquisition",
+      "description": "Sébastien Chopin、Daniel Roe、Anthony Fu、Pooya Parsa 加入。承重底层从 React 扩展到 Vue 与 Nuxt。",
+      "externalUrl": "https://vercel.com/blog/nuxtlabs-joins-vercel"
+    },
+    {
+      "date": "2025-09-30",
+      "title": "F 轮 3 亿美元 / 93 亿美元",
+      "type": "funding",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Accel 与 GIC 联合领投。BlackRock、Khosla、General Catalyst、StepStone 新进。另含 3 亿美元二级要约。「Towards the AI Cloud」叙事重新定调——Vercel 从此被读作 AI 基础设施，而非托管。",
+      "externalUrl": "https://vercel.com/blog/series-f",
+      "articleSlug": "2025-09-series-f-9b"
+    },
+    {
+      "date": "2026-01-15",
+      "title": "v0.dev 更名为 v0.app",
+      "type": "product",
+      "description": "反映从「UI 生成器」到「全栈应用搭建 Agent」的扩张。技术叙事升维仍在继续。"
+    },
+    {
+      "date": "2026-03-01",
+      "title": "GAAP 营收年化达 3.4 亿美元",
+      "type": "media",
+      "description": "Sacra 估算。根据公司披露，2024 至 2025 年 v0 单产品营收从约 1 亿美元增长到 1.8 亿美元以上。"
+    }
+  ],
+  "arr": [
+    {"date": "2019-12-01", "value": 1000000, "source": "Sacra", "confidence": "media"},
+    {"date": "2020-12-01", "value": 5000000, "source": "Sacra", "confidence": "media"},
+    {"date": "2021-12-01", "value": 21000000, "source": "Sacra", "confidence": "media"},
+    {"date": "2022-12-01", "value": 51000000, "source": "Sacra", "confidence": "media"},
+    {"date": "2023-12-01", "value": 86000000, "source": "Sacra", "confidence": "media"},
+    {"date": "2024-03-01", "value": 100000000, "source": "Sacra", "confidence": "media"},
+    {"date": "2024-12-01", "value": 144000000, "source": "Sacra", "confidence": "media"},
+    {"date": "2025-05-01", "value": 200000000, "source": "Vercel / Sacra", "confidence": "official"},
+    {"date": "2026-03-01", "value": 340000000, "source": "Sacra", "confidence": "estimate"}
+  ],
+  "valuation": [
+    {"date": "2018-02-01", "value": 30000000, "round": "A 轮（Zeit 时期）", "source": "Contrary Research", "confidence": "estimate"},
+    {"date": "2021-06-23", "value": 1100000000, "round": "C 轮", "source": "TechCrunch", "confidence": "official"},
+    {"date": "2021-11-23", "value": 2500000000, "round": "D 轮", "source": "TechCrunch", "confidence": "official"},
+    {"date": "2024-05-16", "value": 3250000000, "round": "E 轮", "source": "BusinessWire", "confidence": "official"},
+    {"date": "2025-09-30", "value": 9300000000, "round": "F 轮", "source": "Bloomberg", "confidence": "official"}
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X（推特）",
+      "score": 5,
+      "bestStage": "全阶段——承重结构",
+      "effort": "全天候，每日运营",
+      "role": "创始人之声与产品发布广播站",
+      "description": "Rauch 真正活跃的地方。每日技术品味输出、框架版本实时更新、把 AI 对开发者工具的影响框定为「DX 2.0」而非「AI 功能」。这是创始人即 IP 玩法的承重结构——持续性短内容，而非一次性长访谈。",
+      "catalyst": "没有单一推文。从 2008 年 7 月起累计 18 年的连续在线，复利出 2026 年约 30.3 万粉丝、跻身一线开发推特圈的格局。",
+      "accountUrl": "https://x.com/rauchg",
+      "accountLabel": "X 上的 @rauchg",
+      "whenItWorks": "当创始人本人就是框架作者，能以技术深度承受每日曝光",
+      "whenItDoesnt": "没有工程背景的 CEO 通常坚持不到 6 个月就会塌——每周热门观点撑不下来"
+    },
+    {
+      "slug": "github",
+      "name": "GitHub",
+      "score": 5,
+      "bestStage": "全阶段——承重底层",
+      "effort": "底层级——框架就活在这里",
+      "role": "承重底层本身",
+      "description": "Next.js 以 MIT 协议开源在 GitHub。截至 2024 年 2 月每周 npm 下载量约 450 万次。仓库就是开发者拿框架的标准入口。Vercel 在这些下载上不收一分钱——它赚的是部署关系。",
+      "catalyst": "Next.js v1 在 2016 年 10 月 25 日发布。八年公开提交、议题、版本，复利出全世界使用最广的 React 元框架。",
+      "catalystUrl": "https://github.com/vercel/next.js",
+      "accountUrl": "https://github.com/vercel",
+      "accountLabel": "GitHub 上的 vercel",
+      "whenItWorks": "当你能给底层 5 年以上的烧钱期，等付费产品层接棒时",
+      "whenItDoesnt": "改用 source-available 或 copyleft 协议会杀死底层（Elastic、MongoDB、HashiCorp 都踩过）。MIT 是 Vercel 不可让步的底线"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 4,
+      "bestStage": "年度节奏——Next.js Conf",
+      "effort": "节点性，每年一场重磅出品",
+      "role": "自营长内容播客",
+      "description": "Vercel 从未把别人家的长内容播客当作引爆点。取而代之的是 2020 年开办的 Next.js Conf（首届 4 万+ 参会），变成一年一次的叙事节拍——2021 年放风 Edge Functions、2022 年发布 App Router、2024 年 Turbopack 稳定版。当你拥有底层，就不需要别人的舞台。",
+      "catalyst": "Next.js Conf 2021——Next.js 12 与 SWC 编译器揭幕，与 1.02 亿美元 C 轮在同一周捆绑发出。这场大会就是融资捆绑的另一半。",
+      "catalystUrl": "https://www.youtube.com/@VercelHQ",
+      "accountUrl": "https://www.youtube.com/@VercelHQ",
+      "accountLabel": "YouTube 上的 Vercel",
+      "whenItWorks": "当你拥有一个真实社区愿意每年现身的框架时",
+      "whenItDoesnt": "没有底层在背后撑着的会议只是活动，不是叙事节拍"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 4,
+      "bestStage": "产品发布与融资周期",
+      "effort": "节点性——每次重磅发布换一次首页",
+      "role": "技术公信力的检验场",
+      "description": "Vercel/Next.js 的每次重大版本都会自然登上 HN。Next.js 12、Edge Functions、AI SDK、v0、F 轮都登上过头条——选择框架的工程师和给融资定价的投资人都会看到。",
+      "catalyst": "v0 的发布（2023 年 10 月）登上 HN——三周内注册超 10 万。HN 群体在更广阔市场之前就为「自然语言生成 React 代码」的范式背书。",
+      "catalystUrl": "https://news.ycombinator.com/from?site=vercel.com",
+      "accountUrl": "https://hn.algolia.com/?q=vercel",
+      "accountLabel": "在 HN 搜索 Vercel",
+      "whenItWorks": "当发布带有真正的技术新意——Rust 编译器、边缘运行时、提示词转代码",
+      "whenItDoesnt": "遥测 / 协议争议（2020 年 Next.js telemetry 事件）会被狠狠惩罚。HN 就是这些争论会爆发的地方"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 3,
+      "bestStage": "高速成长期与日常运营",
+      "effort": "社区主导，公司轻度介入",
+      "role": "用户留存与吐槽渠道",
+      "description": "r/nextjs 和 r/vercel 是框架用户群的支持与反馈层。与其说是获客渠道，不如说是已有开发者沉淀的地方——也是 v0 定价吐槽最先冒出来的地方。",
+      "catalyst": "没有单一爆点。2021–2025 年随 Next.js 采用率慢炖累积。到 2025 年，r/nextjs 已经成为框架问题的事实集散地。",
+      "catalystUrl": "https://www.reddit.com/r/nextjs/",
+      "accountUrl": "https://www.reddit.com/r/vercel/",
+      "accountLabel": "r/vercel 与 r/nextjs",
+      "whenItWorks": "当你拥有临界质量的框架用户群，他们愿意在公开场合做布道与吐槽",
+      "whenItDoesnt": "水军会在数天内被识破。Reddit 完全靠社区信任运转"
+    },
+    {
+      "slug": "discord",
+      "name": "Discord",
+      "score": 4,
+      "bestStage": "Product Polish 至高速成长期",
+      "effort": "全天候社区运营",
+      "role": "实时框架支持与反馈循环",
+      "description": "Next.js Discord（与 Vercel 社区 Discord）是框架用户日常待的地方。比 GitHub issues 反馈更快，比 X 讨论更有营养。到 2024 年，这里已经成为高意向开发者问答的主要入口，也是「破坏性变更」吐槽被分诊的地方。",
+      "catalyst": "Next.js 13 App Router 推出（2022 年 10 月）——Discord 吸收了大量迁移问题与困惑，这些原本会涌进 GitHub issues 与 X 争论。",
+      "accountUrl": "https://nextjs.org/discord",
+      "accountLabel": "Next.js Discord",
+      "whenItWorks": "当框架处于迁移节点、行为复杂、需要同步讨论时",
+      "whenItDoesnt": "如果频道里没有真实的运营团队回应，Discord 会变成无人接的问题坟场"
+    }
+  ]
+}

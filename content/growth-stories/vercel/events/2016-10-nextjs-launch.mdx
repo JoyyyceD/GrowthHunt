@@ -1,0 +1,72 @@
+---
+title: "Next.js v1 Open-Sourced — The Substrate Decision (Oct 2016)"
+description: "On October 25, 2016, eleven months after founding, Zeit released Next.js v1 under MIT. The substrate that compounds for the entire decade."
+date: "2016-10-25"
+type: "product"
+gtmTag: "Structural differentiation"
+eventTitle: "Next.js v1 open-sourced"
+externalUrl: "https://github.com/vercel/next.js"
+---
+
+<Catalyst>
+Three founders gave away the framework for free under the most permissive license available. Eight years later, ~4.5M weekly downloads were the distribution channel for v0. The substrate decision is invisible at the time it is made and structural in retrospect.
+</Catalyst>
+
+October 25, 2016. Zeit Inc. released **Next.js v1** as MIT open source on GitHub. React framework with file-system routing, server-side rendering, and zero config. The team was three people: Guillermo Rauch, Naoyuki Kanezawa, and Tony Kovanen.
+
+At the time of release, Zeit's commercial product was Now — a single-command deployment tool. Next.js had no obvious revenue path. It was given away for free, runnable on any host, with no contractual relationship to Now hosting required.
+
+## Three options on the table, one chosen
+
+A small team in 2016 had three structurally distinct ways to bring a React framework to market.
+
+| Path | Example | Why teams pick it |
+|---|---|---|
+| Proprietary framework tied to hosting | Heroku model | Captures every dollar of usage |
+| Source-available / copyleft license | Elastic, MongoDB, HashiCorp | Open enough to attract devs, closed enough to block competitor hosting |
+| MIT open source, no usage restriction | Next.js (Vercel chose this) | Maximum substrate effect; zero rent control |
+
+The MIT path is the hardest to fund. You let competitors host your framework. You earn nothing on framework usage itself. The bet is that **enough developers will choose your hosting voluntarily once the framework reaches default-tool status.**
+
+This is a 5+ year burn before the substrate compounds. Most teams that try this fail at one of two points: they over-license to prevent competitor hosting (Elastic, MongoDB) or they cannot fund the substrate-period operating cost.
+
+## Why MIT was non-negotiable
+
+Source-available licensing kills the substrate effect for frameworks. The ecosystem will not adopt a framework you cannot run anywhere.
+
+Elastic, MongoDB, and HashiCorp all relicensed in the late 2010s and early 2020s to stop AWS from reselling their software. The relicensing solved one problem (cloud-provider competition) and created a bigger one — community trust collapse, fork pressure (OpenSearch, Valkey), and frozen ecosystem growth. **Next.js 13 + App Router was a controversial release; imagine if it had also been a relicensing release.** The framework would not have survived.
+
+Rauch's bet — visible only in retrospect — was that the developer relationship was the moat, not the license. Vercel does not own Next.js (anyone can self-host). They own being the team that ships Next.js features first. That is a relationship moat, not a license moat.
+
+## The substrate-period economics
+
+Next.js v1 launched Oct 25, 2016. The first commercial inflection — Series A as Vercel — was April 21, 2020. **Three years and six months of pre-rebrand substrate burn before the company became commercially legible to institutional investors.**
+
+During that window, Zeit raised a $7.5M Series A in February 2018 (Accel-led, small money) — barely enough to keep the lights on while Next.js compounded. ARR was estimated at $1M by end of 2019.
+
+By the time Vercel raised the $21M Series A (post-rebrand, Apr 2020), the substrate was already producing the lift the round needed: Next.js was used by tier-1 companies (Hulu, Twitch, TikTok), the framework was a known quantity in the React ecosystem, and the deploy-from-git flow was concrete enough to demo in a sales call.
+
+The patient capital from Accel ($7.5M Series A as Zeit) is what made the substrate burn possible. **Today's open-source side projects do not get that runway anymore** — venture is much more impatient about pre-revenue dev-tool framework plays in 2024 than it was in 2018.
+
+## Why this is the canonical A1 in the KB
+
+A1 (substrate) appears in most KB cases. Manus had Monica.im global users. Cursor had a VS Code fork. Oura had seven years of sensor R&D. ElevenLabs had voice AI research.
+
+**Vercel is the only case where the substrate was deliberately given away for free as the GTM mechanism for the paid product.** Every other case had the substrate as a different product or a fork; Vercel made the substrate the framework, gave it away, and earned the deployment relationship.
+
+This is structurally closer to Red Hat than to any AI-era peer. Like Red Hat, the question of whether the substrate is a moat or a tax is permanently unresolved. So far, Vercel has been ahead of the erosion.
+
+<Conclusion title="What to copy">
+
+- **MIT, not source-available, if you want substrate effect.** Copyleft and source-available licenses kill ecosystem adoption. The cost of giving up cloud-rent control is the price of admission to substrate status.
+- **Plan for 5+ years of substrate burn before the framework pays back via the paid product.** Vercel needed Series A–D ($313M) before AI created the second compounding loop. Most teams cannot fund this.
+- **The moat is the relationship, not the license.** The team that ships features first owns the substrate's gravity. Vercel has been ahead of Cloudflare and AWS on Next.js feature parity for years; the day they fall behind, the moat thins.
+
+</Conclusion>
+
+## Sources
+
+- [Next.js GitHub repo (released Oct 25, 2016)](https://github.com/vercel/next.js)
+- [Wikipedia: Next.js](https://en.wikipedia.org/wiki/Next.js)
+- [Alex Savelyev: History of Vercel 2015–2020 (Medium)](https://medium.com/history-of-vercel/history-of-vercel-2015-2020-6-7-zeit-and-next-js-dc480a88e0b8)
+- [Snyk advisor: nextjs npm package health (Feb 2024)](https://snyk.io/advisor/npm-package/nextjs)

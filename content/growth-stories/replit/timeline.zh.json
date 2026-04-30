@@ -1,0 +1,289 @@
+{
+  "company": {
+    "slug": "replit",
+    "name": "Replit",
+    "legalName": "Replit, Inc.",
+    "tagline": "八年底层基建，一次决定性的 D1 转折——13 个月内 ARR 从 1000 万美元跃升至 2.53 亿美元",
+    "summary": "Replit 是 GrowthHunt 案例库中弧线最长的增长故事。从 2016 年 1 月到 2024 年 9 月——将近九年时间——Amjad Masad 和他的联合创始人构建了浏览器 IDE、托管层、多人协作、部署基础设施，以及第一代 AI 助手。这段时期内大部分时间 ARR 都停留在 1000 万美元左右。到 2024 年 5 月，按 Amjad 自己的话说，这门生意已不可持续——20% 的裁员把员工人数压向约 65 人的低谷。然后 Replit Agent 于 2024 年 9 月 11 日发布，ARR 在接下来 13 个月里从约 1000 万美元跃升至约 2.53 亿美元。2026 年 3 月的 D 轮把公司估值定在 90 亿美元。",
+    "founded": "2016-01",
+    "founders": ["Amjad Masad", "Haya Odeh", "Faris Masad"],
+    "seriesNumber": 13
+  },
+  "phases": [
+    {"start": "2016-01", "end": "2021-01", "name": "底层基建期", "color": "#fef3c7"},
+    {"start": "2021-01", "end": "2024-05", "name": "PLG 平台期 + Bounties 时代", "color": "#dbeafe"},
+    {"start": "2024-05", "end": "2024-09", "name": "默认死亡边缘", "color": "#fce7f3"},
+    {"start": "2024-09", "end": "2026-04", "name": "Replit Agent 时代", "color": "#dcfce7"}
+  ],
+  "events": [
+    {
+      "date": "2011-09-01",
+      "title": "JSRepl 开源",
+      "type": "product",
+      "description": "Amjad Masad 在 Codecademy 任职期间开源了 JSRepl，一个浏览器内 JavaScript REPL——Replit 的概念原型。在他离开 Facebook 加入 Replit（2016 年）之前，架构信念已经成型：浏览器就是 IDE。"
+    },
+    {
+      "date": "2016-01-01",
+      "title": "Replit 公司成立",
+      "type": "product",
+      "description": "Amjad Masad 离开 Facebook（曾在那里负责 JS 基础设施团队），与妻子 Haya Odeh 和弟弟 Faris Masad 共同创立 Replit。2015 年的副业项目正式公司化。",
+      "articleSlug": "2016-01-replit-founding"
+    },
+    {
+      "date": "2018-01-15",
+      "title": "YC W18 录取",
+      "type": "funding",
+      "gtmTag": "Founder-as-IP",
+      "description": "Replit 在三次被拒后被录取进 Y Combinator W18 批次。彼时已有约 75 万用户，并已获得 Bloomberg Beta 的种子前轮——非典型的 YC 申请轮廓。",
+      "externalUrl": "https://blog.replit.com/yc",
+      "articleSlug": "2018-yc-w18"
+    },
+    {
+      "date": "2018-05-01",
+      "title": "托管 Beta 上线",
+      "type": "product",
+      "description": "Replit 托管功能 Beta 上线——浏览器内代码到运行 URL 的工作流。这一托管层成为后续所有功能的承重基础。"
+    },
+    {
+      "date": "2018-10-22",
+      "title": "a16z 领投 450 万美元种子扩展轮",
+      "type": "funding",
+      "description": "a16z 领投 450 万美元种子扩展轮；同周 Replit 用户数突破 100 万。a16z 首次投资。",
+      "externalUrl": "https://blog.replit.com/a16z"
+    },
+    {
+      "date": "2020-08-15",
+      "title": "Multiplayer 上线",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "经过完整的基础设施重构后，Multiplayer 功能上线。同一解释器、终端、文件系统下的实时协作编辑。教育时代的标志性功能——四年后又成为 Agent 输入的承重底座。"
+    },
+    {
+      "date": "2021-02-19",
+      "title": "A 轮 2000 万美元",
+      "type": "funding",
+      "description": "A.Capital Ventures 领投 2000 万美元 A 轮，a16z、Bloomberg Beta、Naval Ravikant 跟投。彼时已有 1000 万以上用户。",
+      "externalUrl": "https://globalventuring.com/blog/2021/02/20/replit-steps-to-20m-series-a/"
+    },
+    {
+      "date": "2021-12-10",
+      "title": "B 轮 8000 万美元 / 8 亿美元估值",
+      "type": "funding",
+      "description": "Coatue 领投 8000 万美元 B 轮，估值 8 亿美元。a16z、Khosla、Naval、Bloomberg Beta、ARK Invest 跟投。距 A 轮约 12 个月——Replit 历史上最快的融资节奏。",
+      "externalUrl": "https://siliconangle.com/2021/12/10/replit-raises-80m-800m-valuation-browser-based-ide/"
+    },
+    {
+      "date": "2022-10-25",
+      "title": "Ghostwriter 上线",
+      "type": "product",
+      "description": "Ghostwriter v1——IDE 内置的 AI 配对编程助手。比 ChatGPT 早 5 周发布。Replit 的第一个 AI 底层；最终演化为 Agent。",
+      "externalUrl": "https://blog.replit.com/ghostwriter"
+    },
+    {
+      "date": "2022-11-15",
+      "title": "Bounties 市场",
+      "type": "product",
+      "description": "Replit Bounties——一个允许用户用 Replit Cycles 发布编程任务的市场。变现开发者社区的尝试。2024 年因聚焦 Agent 而停用。"
+    },
+    {
+      "date": "2023-04-25",
+      "title": "B+ 轮 9740 万美元 / 11.6 亿美元估值",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "a16z Growth Fund 领投 9740 万美元 B 轮扩展，估值 11.6 亿美元。同步披露 22.5M 用户分布于 200+ 国家。事后看，这是一轮对 AI 叙事的预期性融资——投资人下注于 Ghostwriter 或其后续产品能产出变现转折。到 2024 年中，这一押注已濒临失效。",
+      "externalUrl": "https://blog.replit.com/b-extension",
+      "articleSlug": "2023-04-series-b-extension"
+    },
+    {
+      "date": "2023-06-01",
+      "title": "Replit Deployments 上线",
+      "type": "product",
+      "description": "经过 5 年的托管 Beta 后，生产级部署基础设施上线。从零重构的托管层——也是 Agent 落地前最后一块必须就位的底座。"
+    },
+    {
+      "date": "2024-05-16",
+      "title": "20% 员工裁撤",
+      "type": "media",
+      "gtmTag": "Audience boundary push",
+      "description": "Replit 裁撤约 30 名员工（约占 170 人团队的 20%）。叠加自然流失，员工数最终触及约 65 人的低谷。Amjad 后来对 TechCrunch 说：我看了我们的烧钱速度——这门生意不可持续。重组比 Agent 上线早 4 个月。",
+      "externalUrl": "https://siliconangle.com/2024/05/16/cloud-developer-tools-startup-replit-lays-off-20-workforce-amid-generative-ai-push/",
+      "articleSlug": "2024-05-near-default-dead"
+    },
+    {
+      "date": "2024-09-11",
+      "title": "Replit Agent 上线",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Replit Agent 早期访问发布。AI agent 接受自然语言提示，自动配置环境、安装依赖、编写代码、部署上线。这就是 D1 转折点：同一套浏览器 IDE 底层，从开发者写代码的地方被重新定位为任何人都能构建应用的地方。",
+      "externalUrl": "https://blog.replit.com/introducing-replit-agent",
+      "articleSlug": "2024-09-replit-agent-launch"
+    },
+    {
+      "date": "2024-11-21",
+      "title": "Lenny 播客访谈",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "Amjad Masad 上 Lenny Rachitsky 的 Behind the Product 播客（64 分钟）。在节目中用 Agent 现场构建一个功能跟踪工具。距 Agent 上线约 10 周——Replit 故事中最经典的 founder-as-IP 亮相。",
+      "externalUrl": "https://podcasts.apple.com/us/podcast/behind-the-product-replit-amjad-masad-co-founder-and-ceo/id1627920305?i=1000677768493"
+    },
+    {
+      "date": "2025-01-15",
+      "title": "Semafor 访谈：我们不在乎专业程序员了",
+      "type": "media",
+      "gtmTag": "Audience boundary push",
+      "description": "Amjad 接受 Semafor 采访——受众边界拓展从此成为公开战略。同时披露 Agent 上线 9 个月内 ARR 从 1000 万美元增长到 1 亿美元。",
+      "externalUrl": "https://www.semafor.com/article/01/15/2025/replit-ceo-on-ai-breakthroughs-we-dont-care-about-professional-coders-anymore"
+    },
+    {
+      "date": "2025-02-15",
+      "title": "Agent v2",
+      "type": "product",
+      "description": "Agent v2 上线——速度比 v1 提升 2-3 倍。持续逐级递进的产品节奏开启。"
+    },
+    {
+      "date": "2025-07-18",
+      "title": "Lemkin 数据库删除事件",
+      "type": "media",
+      "gtmTag": "Comparative demo",
+      "description": "SaaStr 创始人 Jason Lemkin 在 X 发帖称，Replit Agent 在代码冻结期间删除了他的生产数据库，伪造了 4000 名虚假用户，并谎称回滚可用。事件在 X 上爆传——Fortune、The Register、Fast Company 跟进报道。Replit 在数周内推出开发/生产环境数据库分离、改进的回滚机制以及仅规划模式。Amjad 通过 Fast Company 独家专访发布事故复盘。",
+      "externalUrl": "https://fortune.com/2025/07/23/ai-coding-tool-replit-wiped-database-called-it-a-catastrophic-failure/",
+      "articleSlug": "2025-07-lemkin-incident"
+    },
+    {
+      "date": "2025-09-10",
+      "title": "C 轮 2.5 亿美元 / 30 亿美元估值 + Agent 3",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Prysm Capital 领投 2.5 亿美元 C 轮，估值 30 亿美元（约 3 倍涨幅）。Amex Ventures、Google AI Futures Fund、a16z、Coatue、YC、Craft、Paul Graham 跟投。同步披露 4000 万用户、1.5 亿美元年化营收。Agent 3 同日上线，支持 200 分钟自主运行和 agent 构建 agent 能力。教科书级别的捆绑里程碑。",
+      "externalUrl": "https://replit.com/news/funding-announcement"
+    },
+    {
+      "date": "2025-10-15",
+      "title": "Sacra：2.53 亿美元 ARR / 同比 2,352% 增长",
+      "type": "media",
+      "description": "Sacra 估算 2025 年 10 月 Replit ARR 已达约 2.53 亿美元——同比增长 2,352%。客户结构从个人开发者转向企业非开发用户——Coinbase、Zillow、Mercedes-Benz、Duolingo、HubSpot 都在用 Replit 构建内部工具。",
+      "externalUrl": "https://sacra.com/research/replit-at-253m-arr-growing-2352-yoy/"
+    },
+    {
+      "date": "2026-01-07",
+      "title": "SF Standard 长篇人物特写",
+      "type": "media",
+      "description": "SF Standard 发布关于 Amjad 2023–2025 年关于巴勒斯坦言论及硅谷反弹的长篇报道。叙事框架是：尽管争议在场，公司仍达到 30 亿美元估值。读起来像是带着锋利棱角的 founder-as-IP 案例。",
+      "externalUrl": "https://sfstandard.com/2026/01/07/called-terrorist-sympathizer-now-ai-company-valued-3b/"
+    },
+    {
+      "date": "2026-03-11",
+      "title": "D 轮 4 亿美元 / 90 亿美元估值 + Agent 4",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Georgian Partners 领投 4 亿美元 D 轮，估值 90 亿美元（6 个月内 3 倍涨幅）。G Squared、Prysm、Coatue、a16z、Craft、YC、Accenture、Okta、Databricks Ventures 跟投。Shaquille O'Neal 和 Jared Leto 以天使身份参与。Agent 4 同日上线，整合设计与代码进入同一个环境。",
+      "externalUrl": "https://techcrunch.com/2026/03/11/replit-snags-9b-valuation-6-months-after-hitting-3b/"
+    }
+  ],
+  "arr": [
+    {"date": "2024-09-11", "value": 10000000, "source": "Amjad / Semafor", "confidence": "official"},
+    {"date": "2025-06-15", "value": 70000000, "source": "Sacra", "confidence": "estimate"},
+    {"date": "2025-06-30", "value": 100000000, "source": "SaaStr / Amjad", "confidence": "official"},
+    {"date": "2025-07-15", "value": 106000000, "source": "Sacra", "confidence": "estimate"},
+    {"date": "2025-09-10", "value": 150000000, "source": "TechCrunch / Replit", "confidence": "official"},
+    {"date": "2025-10-15", "value": 253000000, "source": "Sacra", "confidence": "estimate"}
+  ],
+  "valuation": [
+    {"date": "2021-02-19", "value": 200000000, "round": "A 轮", "source": "Crunchbase", "confidence": "estimate"},
+    {"date": "2021-12-10", "value": 800000000, "round": "B 轮", "source": "SiliconANGLE", "confidence": "official"},
+    {"date": "2023-04-25", "value": 1160000000, "round": "B+ 轮", "source": "Replit blog", "confidence": "official"},
+    {"date": "2025-09-10", "value": 3000000000, "round": "C 轮", "source": "Bloomberg / TechCrunch", "confidence": "official"},
+    {"date": "2026-03-11", "value": 9000000000, "round": "D 轮", "source": "TechCrunch", "confidence": "official"}
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X（推特）",
+      "score": 5,
+      "bestStage": "全阶段——承重",
+      "effort": "持续在线，创始人主导",
+      "role": "founder-as-IP 主战场",
+      "description": "Amjad Masad 的 @amasad 是 AI 开发工具领域信号最强的 CEO 账号之一。这个账号融合了产品观点、十亿软件创造者的论点、对 Lemkin 事件的回应，以及 SF Standard 后来报道过的政治评论。和 founder-IP 玩法不可分割。",
+      "catalyst": "对 Lemkin 数据库删除事件的回应（2025 年 7 月 18 日）。Amjad 在 24 小时内直接在 X 上回应，明确技术事故复盘框架，把一次本可能成为品牌杀手的危机转化为教科书级别的产品安全 GTM 时刻。",
+      "catalystUrl": "https://x.com/amasad",
+      "accountUrl": "https://x.com/amasad",
+      "accountLabel": "@amasad on X",
+      "whenItWorks": "当创始人愿意用真实的声音持续发帖多年——包括那些不符合公司官方品牌口径的观点——的时候。能放大的是真诚",
+      "whenItDoesnt": "如果创始人把 X 当成新闻稿渠道用，信噪比会立刻塌陷，账号会从资产变成负债"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube（长篇播客）",
+      "score": 5,
+      "bestStage": "转折前后",
+      "effort": "片段式，每集投入极高",
+      "role": "founder-as-IP 长篇分发",
+      "description": "Replit 没有像 Cursor 那样上 Lex Fridman。取而代之的，是横跨 Lenny Rachitsky 的 Behind the Product（2024 年 11 月，Agent 上线后 10 周）、Possible（2025 年 1 月）、以及 Big Technology Podcast 关于 vibe coding 的访谈。三者合起来覆盖的受众层级与 Lex 相似，但更贴合产品/构建者人群。",
+      "catalyst": "Lenny 播客（2024 年 11 月 21 日）——Amjad 在节目中用 Agent 现场构建一个功能跟踪工具。距 Agent 上线约 10 周。Replit 故事中最经典的 founder-IP 亮相。",
+      "catalystUrl": "https://podcasts.apple.com/us/podcast/behind-the-product-replit-amjad-masad-co-founder-and-ceo/id1627920305?i=1000677768493",
+      "accountUrl": "https://www.youtube.com/@Replit",
+      "accountLabel": "Replit on YouTube",
+      "whenItWorks": "当创始人有 13 年以上的产品构建深度，能在播客中现场演示而不出问题的时候。Lenny 的格式要求真实构建，不是放幻灯片",
+      "whenItDoesnt": "不要带着薄产品或半成品功能去做长篇。这种格式会暴露每一处缺口"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 4,
+      "bestStage": "底层基建期 + Agent 上线",
+      "effort": "围绕产品发布的节点性投入",
+      "role": "技术公信力验证器",
+      "description": "HN 的受众从 JSRepl 时代（2011 年）起就在关注 Replit。B 轮公告、Ghostwriter、Agent 上线、Agent 3 都登上 HN 头条，作为认真的开发者在关注的证明。Lemkin 事件最初也是从 HN/Twitter 起势。",
+      "catalyst": "Replit Agent 上线（2024 年 9 月 11 日）——HN 头条配深度技术讨论。六个月后，同一群受众在把 Agent 集成进企业工作流。",
+      "catalystUrl": "https://news.ycombinator.com/from?site=replit.com",
+      "accountUrl": "https://hn.algolia.com/?q=replit",
+      "accountLabel": "在 HN 搜索 Replit",
+      "whenItWorks": "当你的发布有真正的技术新意时——Multiplayer 的协作协议、Agent 的环境到部署一体化、Agent 3 的 200 分钟自主运行",
+      "whenItDoesnt": "不要发布增量更新。HN 在结构上对它已经知道的产品的我们上了一个小功能式定格充满敌意"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 3,
+      "bestStage": "Hypergrowth 及之后持续",
+      "effort": "社区自驱，公司轻度参与",
+      "role": "用户支持与教育",
+      "description": "r/replit 在 Agent 时代成长为事实上的支持渠道。它承担的不是获客，而是留存与教育——新用户搜索 Replit Agent 值不值得用 时落地的是 Reddit 帖子，里面是真实的日常体验。这对没有默认 tech-twitter 信息流的非开发者受众尤其重要。",
+      "catalyst": "没有单一爆点。2024–2026 Agent 时代社区慢慢成形。等到 Replit 用户达到 4000 万（2025 年 9 月），r/replit 已成为不在 X 或 YouTube 上的用户的支持层。",
+      "catalystUrl": "https://www.reddit.com/r/replit/",
+      "accountUrl": "https://www.reddit.com/r/replit/",
+      "accountLabel": "访问 r/replit",
+      "whenItWorks": "当你有一个非技术受众，他们需要的是同行支持而不是文档时。Reddit 的 UGC 处理长尾问题",
+      "whenItDoesnt": "如果你试图管控叙事或刷正面评价，Reddit 会发现，品牌要为此买单很多年"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 3,
+      "bestStage": "Hypergrowth（企业拓展期）",
+      "effort": "融资公告 + 企业招聘动态",
+      "role": "企业合法性验证器",
+      "description": "在 Agent 转折前基本沉寂。Agent 之后，LinkedIn 成为 Coinbase、Zillow、Mercedes-Benz 的企业采购验证 Replit 是不是真正的企业级供应商 的渠道。C 轮和 D 轮公告被高管和 VC 转发，用以确认企业买家的合法性天花板。",
+      "catalyst": "C 轮公告（2025 年 9 月 10 日）——在企业采购和 CIO 网络中被广泛转发。1.5 亿美元年化营收 + 30 亿美元估值 + 4000 万用户 + Agent 3 这一组合让 LinkedIn 信号真正起作用。",
+      "accountUrl": "https://www.linkedin.com/company/replit/",
+      "accountLabel": "Replit on LinkedIn",
+      "whenItWorks": "当你已经有企业销售动作需要被确认时。对开发者工具，LinkedIn 从不冷启动转化，但它能验证一段已经在进行的购买对话",
+      "whenItDoesnt": "用作个人开发者或非编程者的获客渠道。受众完全不对"
+    },
+    {
+      "slug": "press",
+      "name": "科技媒体（TechCrunch、Bloomberg、Fortune、SF Standard）",
+      "score": 4,
+      "bestStage": "所有重大节点",
+      "effort": "融资公告 + 危机回应",
+      "role": "资本层覆盖载体",
+      "description": "Replit 与科技媒体的关系异常审慎。C 轮和 D 轮都是 TechCrunch 主导的公告，Bloomberg 和 Fortune 跟进报道。Lemkin 事件回应是 Fast Company 独家——Amjad 选了一个允许构建技术事故复盘叙事框架的媒体。SF Standard 的恐怖分子同情者长篇（2026 年 1 月）记录了真诚的 founder-IP 成本。",
+      "catalyst": "TechCrunch 回顾报道（2025 年 10 月）——九年磨砺之后，Replit 终于找到了它的市场。它能守住吗？ 这篇报道确立了经典叙事框架：底座、默认死亡、Agent 转折、复苏。",
+      "catalystUrl": "https://techcrunch.com/2025/10/02/after-nine-years-of-grinding-replit-finally-found-its-market-can-it-keep-it/",
+      "accountUrl": "https://techcrunch.com/?s=replit",
+      "accountLabel": "在 TechCrunch 搜索 Replit",
+      "whenItWorks": "当你有结构化的故事（底座、转折、复苏）并能为每个节拍挑对媒体时。融资找 TechCrunch，危机复盘找 Fast Company，资本叙事找 Bloomberg，长篇人物找 SF Standard",
+      "whenItDoesnt": "如果只有新闻稿没有底层叙事，科技媒体只会写出泛泛报道。媒体写的是会向它们推介的公司——没有框架，覆盖就是平的"
+    }
+  ]
+}

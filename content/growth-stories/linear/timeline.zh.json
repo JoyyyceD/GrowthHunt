@@ -1,0 +1,346 @@
+{
+  "company": {
+    "slug": "linear",
+    "name": "Linear",
+    "legalName": "Linear Orbit, Inc.",
+    "tagline": "六年累计融资 1.342 亿美元，对应估算 ARR 1 亿美元——现代 B2B SaaS 中最干净的反 Jira 反向定位 + 资本效率叠加打法",
+    "summary": "Linear 是这样一个案例：产品本身就是全部的 Pitch，克制本身就是策略。三位来自 Airbnb、Uber、Coinbase 的资深从业者于 2019 年创立公司，刻意只融了一笔小额 Sequoia 种子轮，把产品锁在邀请制内测里 14 个月，公开发布 12 个月后即实现盈利，并把「负的累计烧钱」公开披露为进攻型定位。到 2025 年 6 月 C 轮时，Linear 累计融资 1.342 亿美元，对应媒体估算的 1 亿美元 ARR、约 100 名员工、15,000 多家客户，以及大约 35,000 美元的累计付费营销支出。切入点是把设计审美用作针对 Jira 二十年累积复杂性的反向定位——而真正可持续的优势，是把资本效率转化为叙事。",
+    "founded": "2019-04",
+    "founders": [
+      "Karri Saarinen",
+      "Tuomas Artman",
+      "Jori Lallo"
+    ],
+    "seriesNumber": 14
+  },
+  "phases": [
+    {
+      "start": "2019-01",
+      "end": "2020-06",
+      "name": "潜行期 + 私测",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2020-06",
+      "end": "2023-09",
+      "name": "默认存活成形",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2023-09",
+      "end": "2025-06",
+      "name": "反 Jira 规模化",
+      "color": "#dcfce7"
+    },
+    {
+      "start": "2025-06",
+      "end": "2026-05",
+      "name": "Linear for Agents 时代",
+      "color": "#fce7f3"
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-01-15",
+      "title": "三位芬兰创始人全职投入",
+      "type": "product",
+      "description": "Karri Saarinen 离开 Airbnb（首席设计师）；Tuomas Artman 离开 Uber（高级 Staff 工程师，移动平台 5 年）；Jori Lallo 离开 Coinbase（早期工程师，源自被 Coinbase 收购的 Kippt YC W12 团队）。三人此前在 YC W12 共同创办过 Kippt。决定先自筹资金推进，再考虑融资。"
+    },
+    {
+      "date": "2019-04-18",
+      "title": "私测版 MVP 首次上线",
+      "type": "product",
+      "gtmTag": "结构性差异化",
+      "description": "Linear 第一版以邀请制方式上线。Saarinen 在 Medium 发文阐述定位：观点鲜明的软件、键盘优先、反对过度可配置。「Build in Public」的 Twitter 姿态由此开始驱动等待名单。",
+      "externalUrl": "https://medium.com/linear-app/announcing-linear-e64e79581d01",
+      "articleSlug": "2019-11-founding-seed"
+    },
+    {
+      "date": "2019-06-01",
+      "title": "等待名单突破 1 万人",
+      "type": "product",
+      "description": "到 2019 年中，公开的 Request Access 入口已积累 1 万多个等待名单注册，全部由创始人的 Twitter 网络驱动。无任何付费获客。每次邀请 10 到 20 人入场。"
+    },
+    {
+      "date": "2019-11-22",
+      "title": "种子轮 420 万美元（Sequoia 领投）",
+      "type": "funding",
+      "gtmTag": "叙事飞轮启动",
+      "description": "宣布完成 420 万美元种子轮，由 Sequoia（Stephanie Zhan）领投，Index Ventures 和天使投资人参与。Stephanie Zhan 后来说：她不是把 Linear 卖给 Sequoia，而是把自己卖给 Linear——因为她信任的 Twitter 朋友在她接触公司之前就已经在为产品兴奋。宣布时产品仍在私测中。",
+      "externalUrl": "https://techcrunch.com/2019/11/21/linear-lines-up-4-2m-led-by-sequoia-to-build-a-better-platform-for-software-developer-collaboration/",
+      "articleSlug": "2019-11-founding-seed"
+    },
+    {
+      "date": "2020-06-30",
+      "title": "公开发布 / 退出邀请制",
+      "type": "product",
+      "gtmTag": "结构性差异化",
+      "description": "Linear 在 changelog 宣布全面开放，并同步上线 GitLab 集成。此前历经 14 个月有节制的私测、每次只放 10 到 20 人。Product Hunt 当日登顶第一，约 400 个 Upvote。Hero 区是产品本身的录屏，无任何旁白——B1「格式即可信度」的最纯粹形态。",
+      "externalUrl": "https://linear.app/changelog/2020-06-30",
+      "articleSlug": "2020-06-public-launch"
+    },
+    {
+      "date": "2020-12-01",
+      "title": "A 轮 1300 万美元（Sequoia 领投）",
+      "type": "funding",
+      "description": "1300 万美元 A 轮由 Sequoia（Stephanie Zhan 二度押注）领投。值得一提的天使阵容：Patrick Collison（Stripe）、Dick Costolo（前 Twitter CEO）、Adam Bain（前 Twitter COO）、Aston Motes（Dropbox 1 号工程师）、Lenny Rachitsky、Harry Stebbings。",
+      "externalUrl": "https://medium.com/linear-app/linear-raises-13m-in-series-a-funding-from-sequoia-capital-daa0f0c43758"
+    },
+    {
+      "date": "2021-06-15",
+      "title": "实现盈利",
+      "type": "product",
+      "gtmTag": "资本效率即定位",
+      "description": "Linear 大约在公开发布后 12 个月实现盈利。决定此后 30 个月以上不再融资。「负的累计烧钱」——银行现金高于种子轮 + A 轮累计融资额——为日后公开披露的叙事打下基础。",
+      "externalUrl": "https://x.com/karrisaarinen/status/1614396668849565698"
+    },
+    {
+      "date": "2022-01-01",
+      "title": "Linear Method 上线",
+      "type": "product",
+      "description": "linear.app/method 作为公开宣言上线：观点鲜明的软件、用 Cycles 而非 Sprints、不开 Roadmap 会、单 PM 团队、专注于工艺。与 Changelog 一起成为最核心的内容营销资产——卖的是世界观，而不是功能列表。",
+      "externalUrl": "https://linear.app/method/launching"
+    },
+    {
+      "date": "2023-01-13",
+      "title": "Saarinen 四周年 X 帖",
+      "type": "media",
+      "gtmTag": "资本效率即定位",
+      "description": "Karri Saarinen 在公司四周年当天明确披露：30 名员工、自 2021 年起持续盈利、负的累计烧钱（银行现金高于历史累计融资额）。披露本身就是营销动作——把「小型 B2B SaaS」转译为「刻意经营的高效运营者」。",
+      "externalUrl": "https://x.com/karrisaarinen/status/1614396668849565698"
+    },
+    {
+      "date": "2023-09-14",
+      "title": "B 轮 3500 万美元 / 估值约 4 亿美元（Accel 领投）",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "3500 万美元 B 轮由 Accel 的 Miles Clements 领投，Forbes 报道投后估值约 4 亿美元。Sequoia 和 01Advisors 跟投。客户兼投资人阵容：Guillermo Rauch（Vercel）、Stewart Butterfield + Cal Henderson（Slack）、Christina Cacioppo（Vanta）、Josh Miller（Browser Company）、Andrew Mason（Descript）、Ilkka Paananen（Supercell）。客户名单（Cohere、Runway、Ramp）成为新闻头条。",
+      "externalUrl": "https://linear.app/now/series-b",
+      "articleSlug": "2023-09-series-b"
+    },
+    {
+      "date": "2023-10-15",
+      "title": "Lenny's Podcast：Karri 谈品味、工艺与专注",
+      "type": "media",
+      "gtmTag": "创始人即 IP",
+      "description": "Karri Saarinen 登上 Lenny's Podcast：「Inside Linear: Building with taste, craft, and focus.」对 Linear Method 进行权威的长篇阐述——单 PM 组织模式、约每 30 个工程师配 1 个 PM、招聘看品味胜过看年限、不做季度 OKR。该集成为招聘磁石。",
+      "externalUrl": "https://www.lennysnewsletter.com/p/inside-linear-building-with-taste"
+    },
+    {
+      "date": "2023-10-20",
+      "title": "Pragmatic Engineer CTO 访谈",
+      "type": "media",
+      "description": "Tuomas Artman 登上 Gergely Orosz 的 Pragmatic Engineer 通讯：深度技术 / 运营拆解 Linear 的工程文化、同步架构和团队系统。与 Saarinen 的 Lenny 一集互补——一个覆盖设计思考侧、一个覆盖工程思考侧。"
+    },
+    {
+      "date": "2024-01-19",
+      "title": "Saarinen 五周年更新",
+      "type": "media",
+      "gtmTag": "资本效率即定位",
+      "description": "Karri Saarinen 在 LinkedIn / X 发布五周年更新：50 名员工（100% 远程，分布在 16 个国家）、14,000 家客户、Forbes Top 50 AI 公司中 66% 在用 Linear。继续公开维护「默认存活」叙事。年度披露节奏已经形成机制。",
+      "externalUrl": "https://www.linkedin.com/posts/karrisaarinen_linear-hit-5-years-this-month-starting-2024-activity-7155697275019689984-N-ge",
+      "articleSlug": "2024-customer-roster"
+    },
+    {
+      "date": "2024-06-15",
+      "title": "「客户群体本身就是力量」论点公开发表",
+      "type": "media",
+      "gtmTag": "受众边界突破",
+      "description": "Saarinen 在 Runtime News 接受采访时，第一次明确把客户名单（14,000 家中包括 OpenAI、Scale AI、Brex）定位为 Linear 的核心分发渠道。把「客户名单即营销」从一种现象表述为一种政策。",
+      "externalUrl": "https://www.runtime.news/linear-ceo-karri-saarinen-our-customer-base-is-quite-powerful/",
+      "articleSlug": "2024-customer-roster"
+    },
+    {
+      "date": "2025-05-20",
+      "title": "Linear for Agents 上线",
+      "type": "product",
+      "gtmTag": "技术叙事升级",
+      "description": "Linear for Agents 通过 changelog 公布。AI Agent 成为 Workspace 的一等用户——可以分配 Issue、加入 Team、被 @ 提及。Cursor 和 Linear 同周宣布集成。开始把产品从「Issue Tracker」重新定位为「Agentic 协作底座」。",
+      "externalUrl": "https://linear.app/changelog/2025-05-20-linear-for-agents"
+    },
+    {
+      "date": "2025-06-10",
+      "title": "C 轮 8200 万美元 / 估值 12.5 亿美元（Accel 领投）",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "8200 万美元 C 轮由 Accel 领投，投后估值 12.5 亿美元。Sequoia、01Advisors、Seven Seven Six、Designer Fund、Indie.vc 跟投。同步披露：15,000 多家客户（OpenAI、Scale AI、Perplexity 为头条名）、利润同比增长 280%、第三方追踪估算约 1 亿美元 ARR、约 100 名员工、累计付费营销约 35,000 美元。累计融资 1.342 亿美元。",
+      "externalUrl": "https://linear.app/now/building-our-way",
+      "articleSlug": "2025-06-series-c-1b"
+    },
+    {
+      "date": "2025-06-10",
+      "title": "媒体「Atlassian 挑战者」框架",
+      "type": "media",
+      "gtmTag": "对比演示",
+      "description": "TechCrunch、SiliconANGLE、Tech Startups 全部在「Atlassian 挑战者」的框架下报道 C 轮——把六年前就开始的反 Jira 定位推上新闻头条。B2 反向定位的打法在规模化阶段进入媒体默认叙事。",
+      "externalUrl": "https://techcrunch.com/2025/06/10/atlassian-rival-linear-raises-82m-at-1-25b-valuation/"
+    },
+    {
+      "date": "2025-07-30",
+      "title": "Agent 交互规范与 SDK",
+      "type": "product",
+      "description": "Linear 发布 Agent Interaction Guidelines 和 SDK 开发者预览。开发者可以结构化定义 Agent 的通信模式，Linear 自动渲染对应 UI。平台级转向的基础设施开始铺设。",
+      "externalUrl": "https://linear.app/changelog/2025-07-30-agent-interaction-guidelines-and-sdk"
+    },
+    {
+      "date": "2025-09-01",
+      "title": "客户群体进一步向企业扩展",
+      "type": "product",
+      "description": "客户页扩展到 AI 实验室之外，新增 Cash App、Monzo、Mercury、Cursor——表明 Linear 不再只是早期创业公司工具，而是越来越多被企业采用。为 C 轮「企业扩张」叙事提供素材。",
+      "externalUrl": "https://linear.app/customers"
+    },
+    {
+      "date": "2026-03-25",
+      "title": "「Issue tracking is dead」公告",
+      "type": "product",
+      "gtmTag": "技术叙事升级",
+      "description": "Linear 通过 linear.app/next 发布「Issue Tracking Is Dead」。从 Issue Tracker 重新定位为 Agent 管理平台。披露指标：75% 的企业 Linear Workspace 已安装 Agent、Agent 工作量三个月内增长 5 倍、25% 的新 Issue 由 Agent 创建。Linear Agent 跨 Web / 移动 / 桌面端发布，并以插件形式接入 Slack / Teams / Zendesk。",
+      "externalUrl": "https://linear.app/next",
+      "articleSlug": "2026-03-issue-tracking-is-dead"
+    },
+    {
+      "date": "2026-03-26",
+      "title": "Issue-tracking-is-dead 媒体潮",
+      "type": "media",
+      "description": "The Register、DevClass、Buttondown 等媒体跟进报道。框架是 Linear 的 D1「技术叙事升级」时刻——从应用层估值倍数升至平台层估值倍数。",
+      "externalUrl": "https://www.theregister.com/2026/03/26/linear_agent/"
+    },
+    {
+      "date": "2026-04-15",
+      "title": "HN 首页关于 Agentic 转向的辩论",
+      "type": "media",
+      "description": "Hacker News 讨论帖（item 47507253）围绕这次 Agentic 转向。评价两极——工程师在争辩这究竟是真实的产品变化，还是只是叙事重定位。和 Sacra 的「D1 必须由产品事件支撑」论调一致。",
+      "externalUrl": "https://news.ycombinator.com/item?id=47507253"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2025-06-10",
+      "value": 100000000,
+      "source": "Latka（估算）",
+      "confidence": "estimate"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2019-11-22",
+      "value": 30000000,
+      "round": "种子轮",
+      "source": "Crunchbase（估算）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2020-12-01",
+      "value": 75000000,
+      "round": "A 轮",
+      "source": "Crunchbase（估算）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2023-09-14",
+      "value": 400000000,
+      "round": "B 轮",
+      "source": "Forbes（Alex Konrad）",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-06-10",
+      "value": 1250000000,
+      "round": "C 轮",
+      "source": "TechCrunch / Linear",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X（Twitter）",
+      "score": 5,
+      "bestStage": "全阶段——承重渠道",
+      "effort": "持续投入（创始人之声）",
+      "role": "默认存活的披露界面",
+      "description": "Karri Saarinen 的 X 账号是 Linear 标志性叙事的承载地。四周年和五周年帖子（披露员工人数、盈利状态、负的累计烧钱）每一篇都成为接下来 18 个月里被引用最多的 Linear 资料。2019 年潜行期的「Build in Public」姿态，正是在任何融资到账之前撑起 1 万人等待名单的关键。",
+      "catalyst": "2023 年 1 月 13 日的四周年帖：30 名员工、自 2021 年起盈利、负的累计烧钱。该帖获得 200 万次以上浏览，成为之后每一份 Linear Pitch Deck 的基础素材——包括八个月后 Accel 完成 4 亿美元估值 B 轮所引用的内部材料。",
+      "catalystUrl": "https://x.com/karrisaarinen/status/1614396668849565698",
+      "accountUrl": "https://x.com/karrisaarinen",
+      "accountLabel": "X 上的 @karrisaarinen",
+      "whenItWorks": "当创始人本人愿意亲自撰写带具体数字（员工人数、盈利状态、客户数）的周年披露时。具体性是传播的根本——含糊的「我们在飞速发展」走不远",
+      "whenItDoesnt": "如果账号只发布产品上线和截图，就无法奏效。Linear 的 X 之所以承重，是因为 Saarinen 把账号当作纵向披露界面来用，而不是新闻 Feed"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 4,
+      "bestStage": "默认存活成形 + 反 Jira 规模化",
+      "effort": "分集制，单集投入高",
+      "role": "创始人即 IP 的长篇权威",
+      "description": "Linear 的 YouTube 存在感主要来自播客出镜，而不是公司自制内容。Saarinen 出镜 Lenny Rachitsky（2023 年 10 月）、Lex Fridman、First Round Review；Tuomas Artman 出镜 Pragmatic Engineer（2023 年 10 月）。这套组合把 Linear Method 从一份宣言操作化为可观察的实践，并把感兴趣的工程师转化为招聘候选人和客户。",
+      "catalyst": "Karri Saarinen 登上 Lenny's Podcast（2023 年 10 月 15 日）：「Inside Linear: Building with taste, craft, and focus.」九十分钟把 Linear Method 从一个 Manifesto 页面变成招聘磁石——六个月后，几乎每一个被 Saarinen 面试的设计师 / 工程师，都会在第一次对话里引用这一集。",
+      "catalystUrl": "https://www.lennysnewsletter.com/p/inside-linear-building-with-taste",
+      "accountUrl": "https://www.youtube.com/@linear",
+      "accountLabel": "Linear 的 YouTube 频道",
+      "whenItWorks": "当创始人有受众可以采纳的连贯世界观时。Saarinen 的设计思考者画像和 Artman 的工程思考者画像各覆盖一类买家——两侧都需要",
+      "whenItDoesnt": "如果创始人只有产品要点，长篇就是错的格式。九十分钟的对话必须值得九十分钟的注意力"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 3,
+      "bestStage": "反 Jira 规模化",
+      "effort": "创始人发帖 + 转发",
+      "role": "资本效率里程碑放大器",
+      "description": "LinkedIn 承担了那些必须打到投资人和资深工程领导层面前的里程碑披露。Saarinen 的五周年帖（2024 年 1 月：50 名员工、14,000 家客户、Forbes Top 50 AI 公司 66% 在用 Linear），以及 2024 年中「我们的客户群体本身就是力量」的提法，在这里的绝对覆盖比 X 更高效。",
+      "catalyst": "2024 年 1 月 19 日五周年帖：50 名员工、100% 远程分布在 16 个国家、14,000 家客户。该帖恰好出现在多家 VC 年度规划周——时机不是巧合。",
+      "catalystUrl": "https://www.linkedin.com/posts/karrisaarinen_linear-hit-5-years-this-month-starting-2024-activity-7155697275019689984-N-ge",
+      "accountUrl": "https://www.linkedin.com/in/karrisaarinen/",
+      "accountLabel": "Karri Saarinen 的 LinkedIn",
+      "whenItWorks": "当受众是非工程师领导层（创始人、CTO、工程 VP），并且内容把公司框定为反叙事——对抗资金充裕的现任者——时。LinkedIn 会奖励这种框架",
+      "whenItDoesnt": "纯 Changelog 转发。LinkedIn 会惩罚任何读起来像企业新闻稿、缺少个人观点的内容"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 4,
+      "bestStage": "潜行期 + 私测",
+      "effort": "集中在发布节点",
+      "role": "技术可信度验证器",
+      "description": "HN 在 2019 年（私测发布 + Karri 的 Medium 文章双双登上首页）和 2026 年（「Issue Tracking Is Dead」公告引爆 700+ 评论的讨论串）两次承重。对开发者工具公司而言，HN 是创始人型买家受众用来验证一项新动作究竟是真产品还是只是营销的地方。",
+      "catalyst": "2019 年 4 月私测发布的首页讨论，以及 2026 年「Issue tracking is dead」的辩论（HN item 47507253）——后者直接呼应 Sacra 的「D1 必须由产品事件支撑」框架。混合但活跃的 HN 辩论，是 Linear 团队真正当作权威的反馈回路。",
+      "catalystUrl": "https://news.ycombinator.com/item?id=47507253",
+      "accountUrl": "https://hn.algolia.com/?q=linear.app",
+      "accountLabel": "在 HN 搜索 Linear",
+      "whenItWorks": "当发布带有清晰的技术新意、且创始人愿意进入评论区参与讨论时。HN 奖励实质内容，惩罚回避",
+      "whenItDoesnt": "对增量 UX 更新不奏效。设计打磨类公告应该走 Changelog 和 Twitter，HN 是错的房间"
+    },
+    {
+      "slug": "podcast",
+      "name": "播客（Lenny / Pragmatic Engineer）",
+      "score": 5,
+      "bestStage": "默认存活成形 + 反 Jira 规模化",
+      "effort": "分集制，创始人主导",
+      "role": "Linear Method 的长篇阐述",
+      "description": "Lenny's Newsletter 和 Pragmatic Engineer 这两档播客构建了 Linear 的创始人即 IP 层。Saarinen 在 Lenny 的一集（2023 年 10 月）和 Artman 在 Pragmatic Engineer 的访谈（2023 年 10 月）出现在 B 轮公告之后五天内——把「设计驱动的反向定位」转化为一套清晰、可被招聘所引用的世界观。",
+      "catalyst": "B 轮 + Lenny + Pragmatic Engineer 全部捆绑在 2023 年 9 至 10 月的 30 天窗口内。同样的发声预算，换来三周的复合曝光，而不是三天。",
+      "catalystUrl": "https://www.lennysnewsletter.com/p/inside-linear-building-with-taste",
+      "accountUrl": "https://newsletter.pragmaticengineer.com/p/linear",
+      "accountLabel": "Pragmatic Engineer：Linear",
+      "whenItWorks": "当买家是有权直接采用工具的资深工程师或设计负责人时。长篇播客就是这类买家做尽职调查的方式",
+      "whenItDoesnt": "对 SMB 或自助式市场不奏效——那里的购买路径短于九十分钟。播客适合需要慎重考虑的 B2B 决策，不适合交易型消费"
+    },
+    {
+      "slug": "customer-base",
+      "name": "客户名单（B3 弥散型）",
+      "score": 5,
+      "bestStage": "反 Jira 规模化 + Linear for Agents 时代",
+      "effort": "靠产品赢得，不靠付费",
+      "role": "把分发本身做成产品特性",
+      "description": "Linear 的客户页就是它唯一的销售资产。OpenAI、Scale AI、Perplexity、Cursor、Vercel、Mercury、Ramp、Cash App、Loom、Substack、Browser Company、Raycast、Retool、Cohere、Runway、Monzo。多位客户 CEO 进而成为投资人（Guillermo Rauch / Vercel、Immad Akhund / Mercury、Stewart Butterfield + Cal Henderson / Slack）。这是公司层面而非个人层面的 B3 KOL 信用转移。",
+      "catalyst": "2023 年 9 月 14 日 B 轮公告，Forbes 的 Alex Konrad 把 Cohere、Runway、Ramp 列为头条客户——这一刻就足以把买家画像论点公开确立。到 2025 年 6 月 C 轮，头条名变成 OpenAI、Scale AI 和 Perplexity。",
+      "catalystUrl": "https://linear.app/customers",
+      "accountUrl": "https://linear.app/customers",
+      "accountLabel": "Linear 客户页",
+      "whenItWorks": "当你的客户里包含其余市场会跟随的「采购信号源」公司时。快速增长的科技公司创始人 CEO 有权直接采用工具——这是 Logo 飞轮成立的前提",
+      "whenItDoesnt": "如果你的买家是财富 500 强的 IT 总监，「客户即分发」这套不奏效——那个市场的买家信号是合规，不是创始人审美"
+    }
+  ]
+}

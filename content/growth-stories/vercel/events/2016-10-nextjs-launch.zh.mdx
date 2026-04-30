@@ -1,0 +1,72 @@
+---
+title: "Next.js v1 开源——承重底层决策（2016 年 10 月）"
+description: "2016 年 10 月 25 日，公司成立 11 个月，Zeit 把 Next.js v1 以 MIT 协议开源。这是支撑接下来整整十年复利的承重底层。"
+date: "2016-10-25"
+type: "product"
+gtmTag: "Structural differentiation"
+eventTitle: "Next.js v1 开源"
+externalUrl: "https://github.com/vercel/next.js"
+---
+
+<Catalyst>
+三个创始人用最宽松的协议把框架免费送出。八年后，每周约 450 万次下载就是 v0 的分发渠道。承重底层决策在它发生的那一刻是隐形的，回过头看是结构性的。
+</Catalyst>
+
+2016 年 10 月 25 日。Zeit Inc. 把 **Next.js v1** 以 MIT 协议开源在 GitHub 上。React 框架，自带文件路由、SSR 和零配置。团队当时只有三个人：Guillermo Rauch、Naoyuki Kanezawa、Tony Kovanen。
+
+那时候 Zeit 的商业产品是 Now——一行命令完成部署的工具。Next.js 没有明显的营收路径。它被免费送出去，能在任何托管平台上跑，也不强制任何关于使用 Now 托管的合约关系。
+
+## 三条路摆在桌面上，他们选了一条
+
+2016 年的小团队，把 React 框架推向市场，结构上有三条不同的路。
+
+| 路径 | 例子 | 为什么团队会选 |
+|---|---|---|
+| 闭源框架 + 绑定托管 | Heroku 模式 | 抓住每一笔使用美元 |
+| Source-available / copyleft 协议 | Elastic、MongoDB、HashiCorp | 开放到吸引开发者，封闭到挡住竞争对手托管 |
+| MIT 开源，零使用限制 | Next.js（Vercel 的选择） | 承重底层效应最大化；零租金控制 |
+
+MIT 这条路最难融资。你放任竞争对手托管你的框架。你在框架使用本身上不赚一分钱。**这个赌注是：一旦框架达到「默认工具」级别，足够多的开发者会自愿选择你的托管。**
+
+这是付出 5 年以上烧钱期才能等到底层复利的一条路。大多数选这条路的团队会在两个点失败：要么过度保护到阻止竞争对手托管（Elastic、MongoDB），要么撑不起底层期的运营成本。
+
+## 为什么 MIT 是不可让步的底线
+
+Source-available 协议会杀死框架的承重底层效应。生态系统不会去采用一个你不能在任何地方运行的框架。
+
+Elastic、MongoDB、HashiCorp 在 2010 年代后期到 2020 年代初都重新换了协议，目的是阻止 AWS 转售他们的软件。重新签协议解决了一个问题（云厂商竞争），却制造了一个更大的问题——社区信任崩塌、分叉压力（OpenSearch、Valkey）、生态增长停摆。**Next.js 13 + App Router 已经是一次有争议的发布；想象一下如果它同时还是一次重新签协议的发布。** 那个框架就活不下来了。
+
+Rauch 的赌注——只有事后才看得见——是「开发者关系才是护城河，协议不是」。Vercel 并不拥有 Next.js（任何人都能自托管）。他们拥有的是「第一个把 Next.js 新功能发出来的团队」这层身份。这是关系护城河，不是协议护城河。
+
+## 承重底层期的经济账
+
+Next.js v1 上线时间是 2016-10-25。第一次商业层面的拐点——以 Vercel 名义的 A 轮——是 2020-04-21。**整整三年六个月的更名前底层烧钱期，公司才在机构投资人眼里变得商业可读。**
+
+那段时间里，Zeit 在 2018 年 2 月拿了 750 万美元 A 轮（Accel 领投，金额不大），刚够维持开门，让 Next.js 自然复利。到 2019 年底 ARR 估算约 100 万美元。
+
+到 Vercel 完成 2100 万美元 A 轮（2020-04 更名后），承重底层已经在为这一轮提供需要的杠杆：Next.js 已被一线公司（Hulu、Twitch、TikTok）使用，框架在 React 生态里是已知数量，Git-to-deploy 流程具体到能在销售场合演示。
+
+来自 Accel 的耐心资本（Zeit 时期 750 万美元 A 轮）是承重底层烧钱期得以发生的根本原因。**今天的开源副项目拿不到这种跑道**——风险投资在 2024 年对营收前期的开发者工具框架打法，比 2018 年要不耐心得多。
+
+## 为什么这是知识库里最干净的 A1
+
+A1（承重底层）出现在大多数知识库案例里。Manus 有 Monica.im 全球用户。Cursor 有 VS Code 分叉。Oura 有七年传感器研发。ElevenLabs 有语音 AI 研究。
+
+**Vercel 是唯一一个有意把承重底层免费送出，作为付费产品的 GTM 机制的案例。** 其他所有案例的承重底层要么是另一款产品要么是分叉；Vercel 把承重底层做成框架本身、免费送出、靠部署关系赚钱。
+
+在结构上更接近 Red Hat，而不像任何 AI 时代的同侪。和 Red Hat 一样，「承重底层到底是护城河还是税」这个问题永远没有定论。到目前为止，Vercel 跑在侵蚀之前。
+
+<Conclusion title="可以复用的东西">
+
+- **想要承重底层效应，请用 MIT，不是 source-available。** Copyleft 与 source-available 协议会杀死生态采用。放弃云租金控制权，是拿到承重底层身份的入场费。
+- **为框架反哺付费产品规划 5 年以上的烧钱期。** Vercel 等到了 A 轮到 D 轮（共 3.13 亿美元）才接上 AI 的第二条复利曲线。大多数团队烧不起。
+- **护城河是关系，不是协议。** 第一个发新功能的团队会拥有承重底层的引力。Vercel 在 Cloudflare 和 AWS 的 Next.js 兼容性追赶上领先了多年；他们落后的那一天，护城河就开始变薄。
+
+</Conclusion>
+
+## 来源
+
+- [Next.js GitHub 仓库（2016 年 10 月 25 日发布）](https://github.com/vercel/next.js)
+- [Wikipedia：Next.js](https://en.wikipedia.org/wiki/Next.js)
+- [Alex Savelyev：Vercel 历史 2015–2020（Medium）](https://medium.com/history-of-vercel/history-of-vercel-2015-2020-6-7-zeit-and-next-js-dc480a88e0b8)
+- [Snyk：nextjs npm 包健康度（2024 年 2 月）](https://snyk.io/advisor/npm-package/nextjs)

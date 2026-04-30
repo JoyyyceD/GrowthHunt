@@ -1,0 +1,77 @@
+---
+title: "Replit 创立 — 从 JSRepl 到三人浏览器 IDE 押注（2016 年 1 月）"
+description: "2016 年 1 月。Amjad Masad 离开 Facebook 的 JS 基础设施团队，与妻子 Haya Odeh 和弟弟 Faris Masad 共同创立 Replit。架构信念——浏览器就是 IDE——早已酝酿五年，扎根于 Codecademy 时代的 JSRepl 开源项目。"
+date: "2016-01-01"
+type: "product"
+gtmTag: "Structural differentiation"
+eventTitle: "Replit 公司成立"
+externalUrl: "https://review.firstround.com/replits-path-to-product-market-fit/"
+---
+
+<Catalyst>
+九年后才兑现的架构决策，在 Replit 作为公司存在之前就已经做好了。JSRepl（2011）是概念原型。等 Amjad 在 2016 年 1 月公司化 Replit 时，浏览器就是 IDE 这一信念已是后续每一项产品选择的脊柱。
+</Catalyst>
+
+2016 年 1 月。Amjad Masad 离开 Facebook，自 2013 年起他一直在那里的 JavaScript 基础设施团队。他与妻子 Haya Odeh（设计师）和弟弟 Faris Masad 共同创立 Replit。2015 年的副业项目正式公司化。
+
+创立序列不是干净的起源故事。信念比公司更老。
+
+## 五年前传
+
+Amjad 在 Replit 之前的路径，是承重的上下文。
+
+| 年份 | 角色 | 建立了什么 |
+|---|---|---|
+| 2011（4–11 月） | Yahoo 工程师 | 第一份湾区工作；JSRepl 副业起步 |
+| 2011（11 月）–2013 | Codecademy 员工 1 号 | 浏览器内代码执行的生产规模实践 |
+| 2013–2016 | Facebook，JS 基础设施 | 地球上最大 JS 代码库的工具链 |
+| 2016 | Replit | 浏览器即 IDE 的论点公司化 |
+
+**JSRepl，2011 年开源**——是 Replit 后续一切的概念原型。一个浏览器内 JavaScript REPL——输入代码，看它执行，无需安装。Replit 公司化前五年，架构信念已经固定。
+
+Codecademy 这几年在规模上验证了这个信念。Codecademy 当时正在浏览器里教一百万学生编程；如何安全地在沙箱环境里运行任意用户代码，是日常工程问题。Replit 是把那套工程拿过来，再追问一句：*如果这就是 IDE，而不只是课程，会怎样？*
+
+## 为什么是三人团队，而不是双联创
+
+大多数符合 YC 形态的初创公司是双联创。Replit 是三人——而且不是偶然。
+
+**Amjad** 是技术联创。带着信念、JSRepl 历史、Codecademy 与 Facebook 的背景。
+
+**Haya Odeh** 是设计师，也是 Amjad 的妻子。Replit 最早的设计语言——字体、文件树、Multiplayer 光标——都来自她。九年来产品在不断添加新功能时仍保持的视觉一致性，是一道从外面看不见的竞争护城河。
+
+**Faris Masad** 是 Amjad 的弟弟，也是工程师。早期产品的第三只手。
+
+三人结构让 Replit 在 2016 年就能在没有融机构资本的情况下交付一个完整的产品表面（编辑器 + 设计系统 + 运行时）。等 Bloomberg Beta 写下种子前支票时，产品已经能被认出来就是它最终的样子。
+
+## 那个复利了九年的决策
+
+创立序列里结构上有趣的选择，不是「浏览器 IDE」。很多产品都试过这个。有趣的选择是**完全自建底座**，而不是把现有 IDE 的托管版包一层皮。
+
+GitHub Codespaces 后来选了 wrapper 路径：拿 VS Code，托管在微软基础设施上，售卖访问。Replit 选了更难的路：自建编辑器、运行时、文件系统、部署、AI 层、Multiplayer 协议——全部自己做。**每一块都是数年的投资，单独看都不直接变现。**
+
+2020 年 Multiplayer 重构需要编辑器和运行时是原生的。2023 年 Replit Deployments 需要运行时从第一天起就懂托管。2024 年 Replit Agent 需要它下方的每一层都端到端可控。**包别人 IDE 的 wrapper，发不出 Agent。**
+
+2016 年自建对比 wrapper 这个选择的代价，是头八年的缓慢。回报是 2024 年 9 月的产品表面成了一个其他人十二个月内复制不出的东西。
+
+## 创立文件里被说对的部分
+
+在 First Round Review 关于 Replit 实现产品市场契合的报道中，Amjad 描述原始论点是：*编程应该像在纸上写字一样简单。* 这句话听起来很软。但它背后的架构承诺一点都不软。
+
+如果编程要这么简单，那么编辑器、编译器、运行时、包管理器、部署和协作模型必须全部消失进浏览器。每一项都是难的工程问题。**Replit 在公司化时就承诺了所有这些。**
+
+大多数捡起类似论点的团队，会挑其中一两个问题做，其余靠合作伙伴。Replit 没有。2016–2018 期间花在自建所有这些上的代价，正是它后来的成本。2024 年的 Agent，正是当催化剂到来时所获得的回报。
+
+<Conclusion title="可以复用的东西">
+
+- **架构决策在公司之上游。** Amjad 在融机构资本之前已有五年信念。如果你的论点没作为副业被检验过至少一年，公司还没准备好成立。
+- **三人创始团队（工程师 + 设计师 + 工程师）能交付比双联创更完整的 v0。** 代价是更难的稀释和股权对话。收益是产品在第一天就能被认出来是它最终的样子。
+- **完全自建底座只在转折时才回报。** 不要选这条路，除非你能资助 5 年以上的无营收底座工作，并熬过 wrapper 看起来比你聪明的那段时期。
+
+</Conclusion>
+
+## 来源
+
+- [First Round Review — Replit 实现产品市场契合的路径](https://review.firstround.com/replits-path-to-product-market-fit/)
+- [维基百科 — Replit](https://en.wikipedia.org/wiki/Replit)
+- [维基百科 — Amjad Masad](https://en.wikipedia.org/wiki/Amjad_Masad)
+- [JSRepl on GitHub（已归档）](https://github.com/replit/jsrepl)

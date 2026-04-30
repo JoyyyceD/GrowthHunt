@@ -1,0 +1,91 @@
+---
+title: "Issue Tracking Is Dead — Customer Behavior Preceded the Narrative (Mar 25, 2026)"
+description: "Ten months after Linear for Agents quietly shipped, Karri Saarinen publishes the keynote framing: issue tracking is dead. Disclosed metrics are stark — 75% of enterprise workspaces have agents, 25% of new issues come from agents, agent volume up 5x in three months."
+date: "2026-03-25"
+type: "product"
+gtmTag: "Tech narrative upgrade"
+eventTitle: "Issue tracking is dead"
+externalUrl: "https://linear.app/next"
+---
+
+<Catalyst>
+Linear's D1 was timed not to product capability but to customer behavior. By March 2026 the agents were already there, doing 25% of issue creation, and Linear was making the architectural acknowledgment of what its customers were already doing. The product event preceded the narrative event by ten months.
+</Catalyst>
+
+March 25, 2026. Linear publishes "Issue Tracking Is Dead" via linear.app/next. The framing repositions Linear from "a better Jira" to "the substrate where humans and agents collaborate on product development." Linear Agent ships across web, mobile, and desktop, and as a plugin for Slack, Microsoft Teams, and Zendesk.
+
+The disclosed metrics are stark:
+
+| Metric | Value | Source |
+|---|---|---|
+| Enterprise workspaces with agents installed | 75% | Linear-disclosed (linear.app/next) |
+| New issues created by agents | 25% | Linear-disclosed (linear.app/next) |
+| Agent work volume growth in 3 months | 5x | Linear-disclosed (linear.app/next) |
+
+The Register, DevClass, and Buttondown cover the announcement the next day under "Linear's D1 moment" framing. By April 15, 2026, the Hacker News thread (item 47507253) has accumulated 700+ comments debating whether the agentic framing is real product change or narrative-only.
+
+## D1 done atypically
+
+Most "tech-narrative-upgrade" plays in our 14-case set move from app to platform to infrastructure on the back of new product capabilities ready at announcement. Cursor's D1 (Composer + own model launched simultaneously with the platform-tier narrative). Manus's D1 (the multi-agent architecture demo and the platform claim ship together).
+
+Linear's D1 inverts the order. The product event was Linear for Agents on May 20, 2025 — quietly launched as a changelog item, with a single Cursor integration announcement and no press tour. The narrative event was the "Issue Tracking Is Dead" framing ten months later, after the metrics were already real.
+
+| Phase | Date | Move |
+|---|---|---|
+| Product ships | May 20, 2025 | Linear for Agents (quiet) |
+| SDK developer preview | Jul 30, 2025 | Agent Interaction Guidelines + SDK |
+| Customer-base saturation | Late 2025 | Agents become observed default in enterprise workspaces |
+| Narrative shipped | Mar 25, 2026 | "Issue tracking is dead" + 75% / 25% / 5x metrics |
+
+This is closer to Oura's D1 (the Dexcom integration moved Oura from health-tracker to upstream-health-stack — but only after Dexcom users were already pulling Oura data) than to Cursor's. **The narrative landed because the customer behavior was already there to ground it.** Linear made the architectural acknowledgment of what its customers were already doing, instead of trying to convince customers to do something new.
+
+## The mixed HN reception
+
+The Hacker News debate (item 47507253) split engineers into two camps. The first camp read the announcement as legitimate platform expansion: 25% of new issues from agents is a real statistic, the SDK is genuine infrastructure, and the "agents as first-class users" architecture is a structural change. The second camp read it as narrative repositioning: the underlying product had not changed enough to justify the "issue tracking is dead" framing, and the metrics could be inflated by classifying any automated issue creation as "agent" issue creation.
+
+Both readings are partially correct — and the ambiguity is itself diagnostic. **Linear's D1 is the first move in six years that risks the original positioning.** The Linear Method emphasized restraint, opinion, and the rejection of feature accretion. "Agents as first-class users" inevitably grows the surface area of the workspace.
+
+The next 12-18 months will reveal whether the D1 is the natural extension of the Linear Method or the moment the Method gets diluted into accommodating LLM-native workflows it was not designed for. Sacra's framing of "D1 must be product-event-backed" is the lens the HN audience is implicitly applying — and Linear's evidence is concrete but not overwhelming.
+
+## Why the timing was deliberate
+
+Through 2024, Linear had explicitly avoided the AI-feature gold rush. Karri Saarinen's First Round Review interview included a line that became widely quoted in design Twitter: Linear was not adding AI for the sake of having AI in marketing copy. Cycle by cycle, Linear shipped no AI-generation features while every comparable B2B SaaS did.
+
+The patience had a structural payoff. By the time Linear shipped Linear for Agents in May 2025, the AI-feature gold rush had cooled. Every AI-generation feature competitors had shipped in 2023 was now perceived as table stakes — and a quarter of those features had been deprecated for usage being too low to justify maintenance. Linear's late entry was no longer a position to defend; it was a position to convert.
+
+The Series C closed three weeks after Linear for Agents launched. The "Issue Tracking Is Dead" framing came ten months after that, when:
+
+- 75% of enterprise workspaces had agents installed (organic adoption)
+- 25% of new issues came from agents (real workload, not vanity metric)
+- The agent volume was up 5x in three months (compounding curve, not flat)
+
+**Each of those numbers was a precondition for the narrative, not a consequence of it.** Linear's D1 was timed to land after the metrics were already legitimate.
+
+## The agentic positioning vs the Linear Method
+
+The unresolved tension is how the agentic platform reconciles with the Linear Method's restraint thesis. The Method explicitly argues for opinionated software, single-PM organizing, no per-project workflow customization. "Agents as first-class users" introduces a class of user that the Method did not anticipate.
+
+Three readings are possible:
+
+1. **The Method scales naturally.** Agents are constrained to the same Backlog → Todo → In Progress → Done workflow as humans. The opinionated frame holds; agents are just users with different latency profiles.
+2. **The Method needs a v2.** Agents introduce categories of work (autonomous PR opening, autonomous issue triage, scheduled bulk operations) that the human-centered Method did not optimize for. Linear will need to publish a Method v2 that articulates how the worldview applies to mixed human-agent workspaces.
+3. **The Method gets diluted.** Each agentic feature requires accommodating LLM-native workflows that erode the original opinion. Three years from now, Linear's documentation contains the same fragmentation Linear was originally built to escape.
+
+Reading 1 is what Linear is publicly arguing. Reading 2 is what the Pragmatic Engineer audience seems to be expecting. Reading 3 is what the HN skeptics are warning about. The next anniversary disclosure (January 2027) will be the first hard data point.
+
+<Conclusion title="What to copy">
+
+- **Ground D1 in customer behavior, not marketing pre-positioning.** Linear shipped the agentic substrate ten months before the narrative. By the time "issue tracking is dead" hit press, the 25% agent-issue figure was already real. If your D1 is forward-looking, the press will read it as marketing; if it is backward-looking, it reads as an architectural acknowledgment.
+- **Quiet launches accumulate proof.** Linear for Agents shipped as a changelog item in May 2025, with no press tour. That gave the team ten months of customer-behavior evidence before the narrative. If you front-load the press, you have to defend the claim before the data exists.
+- **The bundle for the agentic narrative is the Series C plus the SDK plus the customer roster, not the announcement itself.** "Issue tracking is dead" lands because OpenAI, Scale AI, and Perplexity were already public Linear customers in workspaces with agents installed. The narrative is the last step in a six-year sequence; treating it as a standalone announcement misses the structural point.
+
+</Conclusion>
+
+## Sources
+
+- [Issue Tracking Is Dead — Linear](https://linear.app/next)
+- [Linear for Agents — Linear changelog](https://linear.app/changelog/2025-05-20-linear-for-agents)
+- [Agent Interaction Guidelines and SDK — Linear changelog](https://linear.app/changelog/2025-07-30-agent-interaction-guidelines-and-sdk)
+- [The Register coverage](https://www.theregister.com/2026/03/26/linear_agent/)
+- [HN discussion: Issue Tracking Is Dead](https://news.ycombinator.com/item?id=47507253)
+- [Building Our Way: Series C announcement — Linear](https://linear.app/now/building-our-way)

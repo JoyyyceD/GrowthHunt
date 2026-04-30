@@ -1,0 +1,346 @@
+{
+  "company": {
+    "slug": "linear",
+    "name": "Linear",
+    "legalName": "Linear Orbit, Inc.",
+    "tagline": "$134M raised against an estimated $100M ARR — the cleanest anti-Jira reverse-positioning + capital-efficiency stack in modern B2B SaaS",
+    "summary": "Linear is the case where the product was the entire pitch and restraint was the strategy. Three senior practitioners from Airbnb, Uber, and Coinbase founded the company in 2019 with a deliberately small Sequoia seed, kept it in invite-only beta for fourteen months, reached profitability twelve months after public launch, and disclosed negative lifetime burn as offensive positioning. By Series C in June 2025, Linear had raised $134.2M total against a media-estimated $100M ARR, ~100 employees, 15,000+ customers, and roughly $35,000 in lifetime paid marketing spend. The wedge was design taste used as counter-position against Jira's twenty-year accreted complexity — and the durable advantage was capital efficiency converted into narrative.",
+    "founded": "2019-04",
+    "founders": [
+      "Karri Saarinen",
+      "Tuomas Artman",
+      "Jori Lallo"
+    ],
+    "seriesNumber": 14
+  },
+  "phases": [
+    {
+      "start": "2019-01",
+      "end": "2020-06",
+      "name": "Stealth + private beta",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2020-06",
+      "end": "2023-09",
+      "name": "Default-alive crystallizes",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2023-09",
+      "end": "2025-06",
+      "name": "Anti-Jira at scale",
+      "color": "#dcfce7"
+    },
+    {
+      "start": "2025-06",
+      "end": "2026-05",
+      "name": "Linear for Agents era",
+      "color": "#fce7f3"
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-01-15",
+      "title": "Three Finnish founders commit full-time",
+      "type": "product",
+      "description": "Karri Saarinen leaves Airbnb (Principal Designer); Tuomas Artman leaves Uber (senior staff engineer, 5 years on mobile platform); Jori Lallo leaves Coinbase (early engineer, post-Kippt YC W12 acquisition). All three previously founded Kippt together as YC W12 batchmates. Decision to bootstrap before raising."
+    },
+    {
+      "date": "2019-04-18",
+      "title": "Private-beta MVP first ship",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "First version of Linear ships under invite-only access. Saarinen Medium post explains the positioning: opinionated software, keyboard-first, anti-configurability. The 'building in public' Twitter posture begins driving the waitlist.",
+      "externalUrl": "https://medium.com/linear-app/announcing-linear-e64e79581d01",
+      "articleSlug": "2019-11-founding-seed"
+    },
+    {
+      "date": "2019-06-01",
+      "title": "Waitlist crosses 10,000",
+      "type": "product",
+      "description": "By mid-2019 the public Request Access CTA accumulates 10,000+ waitlist signups, driven entirely by the founders' Twitter network. No paid acquisition. Cohorts of 10-20 invited at a time."
+    },
+    {
+      "date": "2019-11-22",
+      "title": "Seed $4.2M led by Sequoia",
+      "type": "funding",
+      "gtmTag": "Narrative flywheel starts",
+      "description": "$4.2M seed announced, led by Sequoia (Stephanie Zhan), with Index Ventures + angels participating. Stephanie Zhan's investment thesis: people she trusted on Twitter were already hyped about Linear before she pitched herself to the company. Product still in private beta at announcement.",
+      "externalUrl": "https://techcrunch.com/2019/11/21/linear-lines-up-4-2m-led-by-sequoia-to-build-a-better-platform-for-software-developer-collaboration/",
+      "articleSlug": "2019-11-founding-seed"
+    },
+    {
+      "date": "2020-06-30",
+      "title": "Public launch / exit invite-only",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "Linear changelog announces general availability + GitLab integration after 14 months of methodical private beta. Product Hunt launch reaches #1 with ~400 upvotes. Hero section is the product running with no narration — B1 format-as-credibility in its purest form.",
+      "externalUrl": "https://linear.app/changelog/2020-06-30",
+      "articleSlug": "2020-06-public-launch"
+    },
+    {
+      "date": "2020-12-01",
+      "title": "Series A $13M led by Sequoia",
+      "type": "funding",
+      "description": "$13M Series A led by Sequoia (Stephanie Zhan returning). Notable angels: Patrick Collison (Stripe), Dick Costolo (ex-Twitter CEO), Adam Bain (ex-Twitter COO), Aston Motes (Dropbox engineer #1), Lenny Rachitsky, Harry Stebbings.",
+      "externalUrl": "https://medium.com/linear-app/linear-raises-13m-in-series-a-funding-from-sequoia-capital-daa0f0c43758"
+    },
+    {
+      "date": "2021-06-15",
+      "title": "Profitability achieved",
+      "type": "product",
+      "gtmTag": "Capital efficiency as positioning",
+      "description": "Linear becomes profitable approximately 12 months after public launch. Decision to not raise again for 30+ months. Negative lifetime burn — cash in bank exceeds total raised through Seed + Series A — sets up the eventual disclosure pattern.",
+      "externalUrl": "https://x.com/karrisaarinen/status/1614396668849565698"
+    },
+    {
+      "date": "2022-01-01",
+      "title": "The Linear Method published",
+      "type": "product",
+      "description": "linear.app/method goes live as a public manifesto: opinionated software, cycles instead of sprints, no roadmap meetings, single-PM teams, focus on craft. Becomes the primary content-marketing asset alongside the changelog — selling a worldview, not a feature list.",
+      "externalUrl": "https://linear.app/method/launching"
+    },
+    {
+      "date": "2023-01-13",
+      "title": "Saarinen 4-year update X post",
+      "type": "media",
+      "gtmTag": "Capital efficiency as positioning",
+      "description": "Karri Saarinen X post on the four-year anniversary explicitly discloses 30 employees, profitable since 2021, and negative lifetime burn (cash in bank greater than total raised). The disclosure itself is the marketing move — converting 'small B2B SaaS' into 'deliberately efficient operator.'",
+      "externalUrl": "https://x.com/karrisaarinen/status/1614396668849565698"
+    },
+    {
+      "date": "2023-09-14",
+      "title": "Series B $35M @ $400M led by Accel",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "$35M Series B led by Miles Clements at Accel; ~$400M valuation per Forbes. Sequoia + 01Advisors participate. Customer-investor list includes Guillermo Rauch (Vercel), Stewart Butterfield + Cal Henderson (Slack), Christina Cacioppo (Vanta), Josh Miller (Browser Company), Andrew Mason (Descript), Ilkka Paananen (Supercell). Customer roster (Cohere, Runway, Ramp) becomes the headline.",
+      "externalUrl": "https://linear.app/now/series-b",
+      "articleSlug": "2023-09-series-b"
+    },
+    {
+      "date": "2023-10-15",
+      "title": "Lenny's Podcast: Karri on taste, craft, focus",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "Karri Saarinen on Lenny's Podcast: 'Inside Linear: Building with taste, craft, and focus.' Canonical long-form articulation of the Linear Method — single-PM organizing, roughly one PM per 30 engineers, hiring for taste over experience, no quarterly OKRs. The episode becomes a recruiting magnet.",
+      "externalUrl": "https://www.lennysnewsletter.com/p/inside-linear-building-with-taste"
+    },
+    {
+      "date": "2023-10-20",
+      "title": "Pragmatic Engineer CTO interview",
+      "type": "media",
+      "description": "Tuomas Artman on Gergely Orosz's Pragmatic Engineer newsletter: deep technical/operational walkthrough of Linear's engineering culture, sync architecture, and team systems. Pairs with the Saarinen Lenny episode to cover both design-thinker and engineer-thinker IP surfaces."
+    },
+    {
+      "date": "2024-01-19",
+      "title": "Saarinen 5-year update post",
+      "type": "media",
+      "gtmTag": "Capital efficiency as positioning",
+      "description": "Karri Saarinen LinkedIn / X post on five-year anniversary: 50 employees (100% remote across 16 countries), 14,000 customers, 66% of Forbes top-50 AI companies use Linear. Continued public discipline on the default-alive narrative. The annual disclosure cadence is now an institution.",
+      "externalUrl": "https://www.linkedin.com/posts/karrisaarinen_linear-hit-5-years-this-month-starting-2024-activity-7155697275019689984-N-ge",
+      "articleSlug": "2024-customer-roster"
+    },
+    {
+      "date": "2024-06-15",
+      "title": "Customer-base-as-power thesis published",
+      "type": "media",
+      "gtmTag": "Audience boundary push",
+      "description": "Saarinen interview in Runtime News explicitly frames the customer roster (OpenAI, Scale AI, Brex among 14,000) as Linear's primary distribution channel. The customer logos as marketing thesis articulated for the first time as policy, not happenstance.",
+      "externalUrl": "https://www.runtime.news/linear-ceo-karri-saarinen-our-customer-base-is-quite-powerful/",
+      "articleSlug": "2024-customer-roster"
+    },
+    {
+      "date": "2025-05-20",
+      "title": "Linear for Agents launches",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Linear for Agents announced via changelog. Agents become first-class users in workspaces — assignable to issues, addable to teams, @mentionable in comments. Cursor and Linear announce integration the same week. Begins repositioning from issue tracker toward agentic substrate.",
+      "externalUrl": "https://linear.app/changelog/2025-05-20-linear-for-agents"
+    },
+    {
+      "date": "2025-06-10",
+      "title": "Series C $82M @ $1.25B led by Accel",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "$82M Series C led by Accel; $1.25B post-money. Sequoia, 01Advisors, Seven Seven Six, Designer Fund, Indie.vc participate. Disclosed bundle: 15,000+ customers (OpenAI, Scale AI, Perplexity headline), 280% YoY profit growth, ~$100M revenue per third-party trackers, ~100 employees, ~$35K total lifetime paid marketing. Total raised: $134.2M.",
+      "externalUrl": "https://linear.app/now/building-our-way",
+      "articleSlug": "2025-06-series-c-1b"
+    },
+    {
+      "date": "2025-06-10",
+      "title": "Atlassian-rival framing in press",
+      "type": "media",
+      "gtmTag": "Comparative demo",
+      "description": "TechCrunch, SiliconANGLE, and Tech Startups all run the Series-C story under 'Atlassian rival' framing — making the six-year-old anti-Jira positioning the headline narrative at scale. The B2 reverse-positioning play matures into the press default.",
+      "externalUrl": "https://techcrunch.com/2025/06/10/atlassian-rival-linear-raises-82m-at-1-25b-valuation/"
+    },
+    {
+      "date": "2025-07-30",
+      "title": "Agent Interaction Guidelines and SDK",
+      "type": "product",
+      "description": "Linear publishes the Agent Interaction Guidelines and SDK as a developer preview. Structured way for developers to define agent communication patterns; Linear renders the appropriate UI automatically. Foundation for the platform pivot.",
+      "externalUrl": "https://linear.app/changelog/2025-07-30-agent-interaction-guidelines-and-sdk"
+    },
+    {
+      "date": "2025-09-01",
+      "title": "Customer base diversifies into enterprise",
+      "type": "product",
+      "description": "Customer-page disclosures expand beyond AI labs to include Cash App, Monzo, Mercury, Cursor — emphasizing that Linear is no longer an early-startup-only tool but increasingly enterprise-adopted. Substrate for the C-round 'enterprise expansion' framing.",
+      "externalUrl": "https://linear.app/customers"
+    },
+    {
+      "date": "2026-03-25",
+      "title": "Issue tracking is dead announcement",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Linear announces 'Issue Tracking is Dead' via linear.app/next. Repositioning from issue tracker to agent-management platform. Disclosed metrics: 75% of enterprise Linear workspaces have agents installed, agent work volume grew 5x in three months, 25% of new issues created by agents. Linear Agent ships across web/mobile/desktop and as a plugin for Slack/Teams/Zendesk.",
+      "externalUrl": "https://linear.app/next",
+      "articleSlug": "2026-03-issue-tracking-is-dead"
+    },
+    {
+      "date": "2026-03-26",
+      "title": "Issue-tracking-is-dead media wave",
+      "type": "media",
+      "description": "The Register, DevClass, Buttondown, and other outlets cover the agentic-pivot announcement. Frames it as Linear's D1 tech-narrative-upgrade moment — moving from app-tier valuation multiple to platform-tier.",
+      "externalUrl": "https://www.theregister.com/2026/03/26/linear_agent/"
+    },
+    {
+      "date": "2026-04-15",
+      "title": "HN front page debate on agentic pivot",
+      "type": "media",
+      "description": "Hacker News discussion thread (item 47507253) on the agentic pivot. Mixed reception — engineers debate whether the agentic framing is real product change or narrative-only. Mirrors Sacra's framing of 'D1 must be product-event-backed.'",
+      "externalUrl": "https://news.ycombinator.com/item?id=47507253"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2025-06-10",
+      "value": 100000000,
+      "source": "Latka (estimate)",
+      "confidence": "estimate"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2019-11-22",
+      "value": 30000000,
+      "round": "Seed",
+      "source": "Crunchbase (estimate)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2020-12-01",
+      "value": 75000000,
+      "round": "Series A",
+      "source": "Crunchbase (estimate)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2023-09-14",
+      "value": 400000000,
+      "round": "Series B",
+      "source": "Forbes (Alex Konrad)",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-06-10",
+      "value": 1250000000,
+      "round": "Series C",
+      "source": "TechCrunch / Linear",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 5,
+      "bestStage": "All stages — load-bearing",
+      "effort": "Always-on (founder voice)",
+      "role": "Default-alive disclosure surface",
+      "description": "Karri Saarinen's X account is where the canonical Linear artifacts live. The 4-year and 5-year anniversary posts disclosing employee count, profitability, and negative lifetime burn each became the most-cited Linear references for the next 18 months. The 'build in public' posture during the 2019 stealth period is what filled the 10,000-person waitlist before any funding hit.",
+      "catalyst": "January 13, 2023 anniversary post: 30 employees, profitable since 2021, negative lifetime burn. The post got 2M+ views and became the foundational artifact for every Linear pitch deck — including, eight months later, the Series B at $400M.",
+      "catalystUrl": "https://x.com/karrisaarinen/status/1614396668849565698",
+      "accountUrl": "https://x.com/karrisaarinen",
+      "accountLabel": "@karrisaarinen on X",
+      "whenItWorks": "When the founder personally writes anniversary disclosures with concrete numbers (headcount, profitability, customer count). Specificity is what travels — vague 'we're crushing it' posts go nowhere",
+      "whenItDoesnt": "If the account posts only product launches and screenshots. Linear's X works because Saarinen treats the account as a longitudinal disclosure surface, not a press feed"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 4,
+      "bestStage": "Default-alive crystallizes + Anti-Jira at scale",
+      "effort": "Episodic, per-episode high",
+      "role": "Founder-as-IP long-form authority",
+      "description": "Linear's YouTube footprint is podcast appearances, not company-produced content. Saarinen on Lenny Rachitsky (Oct 2023), Lex Fridman, First Round Review; Tuomas Artman on Pragmatic Engineer (Oct 2023). The combination operationalizes the Linear Method into observable practices and converts curious engineers into recruiting candidates and customers.",
+      "catalyst": "Karri Saarinen on Lenny's Podcast (October 15, 2023): 'Inside Linear: Building with taste, craft, and focus.' Ninety minutes that turned the Linear Method from a manifesto page into a recruiting magnet — six months later, every Linear-bound designer or engineer cited the episode in their first interview.",
+      "catalystUrl": "https://www.lennysnewsletter.com/p/inside-linear-building-with-taste",
+      "accountUrl": "https://www.youtube.com/@linear",
+      "accountLabel": "Linear on YouTube",
+      "whenItWorks": "When the founder has a coherent worldview the audience can adopt. Saarinen's design-thinker frame and Artman's engineering-thinker frame each cover a different buyer side — both are needed",
+      "whenItDoesnt": "If the founder has only product talking points, long-form is the wrong format. The 90-minute conversation has to reward 90 minutes of attention"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 3,
+      "bestStage": "Anti-Jira at scale",
+      "effort": "Founder posts + reposts",
+      "role": "Capital-efficiency milestone amplifier",
+      "description": "LinkedIn carried the milestone disclosures that needed to land in front of investors and senior engineering leaders. Saarinen's five-year-anniversary post (Jan 2024: 50 employees, 14,000 customers, 66% of Forbes top-50 AI companies) and the 'our customer base is quite powerful' framing in mid-2024 traveled here more efficiently than on X for absolute reach.",
+      "catalyst": "January 19, 2024 five-year anniversary post: 50 employees, 100% remote in 16 countries, 14,000 customers. The post landed in the same week as several venture firms' annual planning offsites — the timing was not coincidence.",
+      "catalystUrl": "https://www.linkedin.com/posts/karrisaarinen_linear-hit-5-years-this-month-starting-2024-activity-7155697275019689984-N-ge",
+      "accountUrl": "https://www.linkedin.com/in/karrisaarinen/",
+      "accountLabel": "Karri Saarinen on LinkedIn",
+      "whenItWorks": "When the audience is non-developer leadership (founders, CTOs, VPs of Eng) and the content frames the company as a counter-narrative against the well-funded incumbent. LinkedIn rewards that frame",
+      "whenItDoesnt": "Pure changelog cross-posts. LinkedIn punishes anything that reads like a corporate press release without a personal point of view"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 4,
+      "bestStage": "Stealth + private beta",
+      "effort": "Punctuated by launches",
+      "role": "Technical credibility validator",
+      "description": "HN was load-bearing in 2019 (private-beta launch + Karri's Medium post both hit the front page) and again in 2026 (the 'Issue Tracking Is Dead' announcement triggered a 700+ comment thread). For a developer-tools company, HN is where the founder-buyer audience confirms whether new product moves are real or marketing-only.",
+      "catalyst": "April 2019 private-beta launch front-page thread, plus the 2026 'Issue tracking is dead' debate (HN item 47507253) that mirrored Sacra's 'D1 must be product-event-backed' framing. Mixed-but-engaged HN debate is the feedback loop the Linear team treats as authoritative.",
+      "catalystUrl": "https://news.ycombinator.com/item?id=47507253",
+      "accountUrl": "https://hn.algolia.com/?q=linear.app",
+      "accountLabel": "Search HN for Linear",
+      "whenItWorks": "When the launch has a clear technical novelty and the founder is willing to engage in the comment thread. HN rewards substance and punishes evasion",
+      "whenItDoesnt": "For incremental UX updates. HN is the wrong room for design polish announcements — those belong on the changelog and Twitter"
+    },
+    {
+      "slug": "podcast",
+      "name": "Podcasts (Lenny / Pragmatic Engineer)",
+      "score": 5,
+      "bestStage": "Default-alive crystallizes + Anti-Jira at scale",
+      "effort": "Episodic, founder-led",
+      "role": "Linear Method long-form articulation",
+      "description": "Lenny's Newsletter and the Pragmatic Engineer are the two podcasts that built Linear's founder-as-IP layer. The Saarinen Lenny episode (Oct 2023) and Artman Pragmatic Engineer interview (Oct 2023) shipped within five days of the Series B and turned 'design-led counter-positioning' into an articulated, hire-the-author-of-this worldview.",
+      "catalyst": "Series B + Lenny + Pragmatic Engineer all bundled into a 30-day window in September-October 2023. Same press budget, three weeks of compounding coverage instead of three days.",
+      "catalystUrl": "https://www.lennysnewsletter.com/p/inside-linear-building-with-taste",
+      "accountUrl": "https://newsletter.pragmaticengineer.com/p/linear",
+      "accountLabel": "Pragmatic Engineer: Linear",
+      "whenItWorks": "When the buyer is a senior engineer or design lead with the authority to adopt a tool without procurement. Long-form podcast is how those buyers do their due diligence",
+      "whenItDoesnt": "For SMB or self-serve markets where the buyer journey is shorter than 90 minutes. Podcasts are top-of-funnel for considered B2B purchases, not for transactional ones"
+    },
+    {
+      "slug": "customer-base",
+      "name": "Customer logos (B3 diffuse)",
+      "score": 5,
+      "bestStage": "Anti-Jira at scale + Linear for Agents era",
+      "effort": "Earned, not bought",
+      "role": "Distribution as a product feature",
+      "description": "Linear's customer page is its only sales asset. OpenAI, Scale AI, Perplexity, Cursor, Vercel, Mercury, Ramp, Cash App, Loom, Substack, Browser Company, Raycast, Retool, Cohere, Runway, Monzo. Several customer-CEOs became investors (Guillermo Rauch / Vercel, Immad Akhund / Mercury, Stewart Butterfield + Cal Henderson / Slack). This is B3 KOL-credit-transfer at the level of companies, not individuals.",
+      "catalyst": "September 14, 2023 Series B announcement, where Forbes (Alex Konrad) named Cohere, Runway, and Ramp as the headline customers — already enough to establish the buyer-archetype thesis publicly. By Series C in June 2025, the headline names were OpenAI, Scale AI, and Perplexity.",
+      "catalystUrl": "https://linear.app/customers",
+      "accountUrl": "https://linear.app/customers",
+      "accountLabel": "Linear customers",
+      "whenItWorks": "When your customer base contains the companies whose adoption choices the rest of the market watches. Founder-CEOs at fast-growing tech companies have authority to adopt without procurement, which is what makes the logo flywheel possible",
+      "whenItDoesnt": "If your buyers are IT directors at Fortune 500 companies, customer-as-distribution does not work — the buyer signal in that market is procurement compliance, not founder taste"
+    }
+  ]
+}

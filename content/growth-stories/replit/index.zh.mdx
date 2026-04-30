@@ -1,0 +1,166 @@
+---
+title: "Replit — 增长故事"
+description: "八年的平台底层基建，一个默认死亡的时刻，然后是 GrowthHunt 案例库中最干净的一次 D1 转折。Replit Agent 上线后，ARR 在 13 个月内从 1000 万美元跃升到 2.53 亿美元。"
+date: "2026-04-30"
+readTime: "13 分钟"
+---
+
+Replit 是耐心为一次产品事件买单的案例。
+
+从 2016 年 1 月到 2024 年 9 月——将近九年——Amjad Masad、Haya Odeh 和 Faris Masad 构建了浏览器 IDE、浏览器内托管、Multiplayer 协作、Bounties 市场、Ghostwriter，以及 Replit Deployments。这段时期的大部分时间，ARR 停留在 1000 万美元左右。到 2024 年 5 月，公司裁掉了 170 人团队中的约 20%。员工人数最终向约 65 人的低谷漂移——接近一半。Amjad 后来对 TechCrunch 说：这门生意不可持续。
+
+2024 年 9 月 11 日，Replit 发布了 Agent——单个功能，把现有的浏览器 IDE 底层暴露给一个自然语言界面。接下来 13 个月里，ARR 从约 1000 万美元跃升到约 2.53 亿美元。C 轮于 2025 年 9 月以 30 亿美元估值关闭。六个月后，2026 年 3 月，D 轮以 90 亿美元估值关闭。
+
+<Catalyst label="一句话总结核心论点">
+Agent 能落地，是因为底座已经在那里。如果没有九年的浏览器内执行、部署和多人协作的管道工程，没人能在第一天就把 Agent 端到端跑通。如果没有 Agent，那个底座会永远停在 1000 万美元 ARR，公司也熬不过 2024 年的烧钱时刻。
+</Catalyst>
+
+## 八年底座
+
+2024 年发布 Agent 的那个 Replit，不是 2016 年公司化的那个 Replit。中间这条路径，是一段缓慢的能力累积——每一项在当时看起来都像是主产品。
+
+**2011 年 — JSRepl。** Amjad 在 Codecademy 任职期间（员工 1 号）开源了一个浏览器内 JavaScript REPL。早在公司存在之前几年，架构信念就已固定：浏览器就是 IDE。
+
+**2016 年 — Replit 公司化。** Amjad 离开 Facebook（曾在那里负责 JS 基础设施团队），与妻子 Haya Odeh 和弟弟 Faris Masad 联手。2015 年的副业项目正式公司化。
+
+**2018 年 — YC W18、托管层、450 万美元种子。** 三次被 YC 拒后被录取进 W18 批次——彼时 Replit 已有约 75 万用户和来自 Bloomberg Beta 的种子前轮。年中托管 Beta 上线。10 月用户数突破 100 万，a16z 领投 450 万美元。
+
+**2020 年 — Multiplayer。** 经过完整的基础设施重构后，实时协作编辑上线。同一解释器、同一终端、同一文件系统、多个光标。COVID 在线编程教育潮的标志性功能。**它也成为四年后 Agent 输入的底座**——AI agent 输入到你的编辑器里，结构上和另一个人输入到你的编辑器里是同一件事，只是更快。
+
+**2021 年 — A 轮（2 月，2000 万美元）、B 轮（12 月，8000 万美元 / 8 亿美元）。** 10 个月内两轮。Replit 看起来像赢家：1000 万以上用户、教育驱动的增长、可调用的资本。Coatue 12 月的支票为 Replit 必须成长为什么样子设定了预期。
+
+**2022 年 — Bounties、Ghostwriter。** 两次平行的变现与 AI 入场尝试。Bounties（2022 年 11 月）是允许用户用 Replit Cycles 发布编程任务的市场。Ghostwriter（2022 年 9–10 月）是 Replit 第一款 AI 编程助手，比 ChatGPT 公开发布早 5 周。两个都不是赌上公司的押注。
+
+**2023 年 — B+ 轮（9740 万美元 / 11.6 亿美元）、Ghostwriter Chat、Deployments。** 4 月：a16z 在 11.6 亿美元估值上扩展 B 轮，同时披露 22.5M 用户。同年：Ghostwriter Chat（IDE 内第一款对话式 AI 程序员）和 Replit Deployments（从零重构的生产托管层）。Deployments 重构是 Agent 落地前最后一块必须就位的底座。
+
+**2024 上半年 — 烧钱时刻。** ARR 约 1000 万美元。员工 ~170 人。2023 年 4 月 B+ 轮的现金有限。2024 年 5 月，Replit 裁掉约 30 名员工。教育业务条线在 2024 年秋季前停用。员工数继续向 TechCrunch 2025 年 10 月回顾报道中提到的约 65 人低谷漂移。
+
+这个时刻本应杀死 Replit。它没有，因为四个月后他们发了 Agent。
+
+## Agent 之前的 ARR 平台期
+
+Replit 故事中最干净的事实，是 Agent 之前那条曲线的形状。
+
+ARR 在 2024 年大部分时间停在 <Stat value="1000 万美元" label="2024 年大部分时间" />——平的，尽管用户数已超过 3000 万，2023 年 4 月还拿到了 11.6 亿美元的 B+ 支票。如果按用户数计算，付费转化率是 0.03%。Bounties 市场、教育版 Teams、Hacker plan、Ghostwriter——没有一个产生跃迁式变现。
+
+这是主流科技媒体往往略过的部分。Sacra 和 Contrary 没有。2024 年中 Replit 在 1000 万美元 ARR——这不是一家应该值 11.6 亿美元的公司。事后看，2023 年那一轮是对 AI 叙事的预期性融资——投资人押注 Ghostwriter 或它的后续会带来变现转折。
+
+平台期里维系 Replit 生命的，是底座的价值，而不是收入。IDE 在跑。Multiplayer 在跑。Deployments 在跑。**底座持有的是一份等待界面升级才能解锁的潜在期权价值。**
+
+## 2024 年 9 月 11 日 — D1 转折
+
+Replit Agent 于 2024 年 9 月 11 日早期访问发布。承诺很简单：用自然语言输入提示，看着 Replit 配置环境、安装依赖、写代码、部署到一个能跑的 URL。从用户视角看，Agent 把现有开发者工作流的每一步都折叠进了一次交互。
+
+让它能落地的——也是没人能在第一天复刻的——是**这条折叠工作流的每一步，都是 Replit 已经在生产环境里建好并跑过的功能。** 环境配置自 2016 年起就是 IDE 的一部分。部署是 2023 年的 Deployments 产品。协作模型（Agent 一边输入你一边看）是 2020 年的 Multiplayer 协议。AI 本身是第三代演化：Ghostwriter（2022）→ Ghostwriter Chat（2023）→ Replit AI → Agent。
+
+Cursor 的 Composer 是最接近的对照：在编辑器底座之上发的功能。区别在于谁建了底座。Cursor 继承了底座（VS Code fork）。Replit 用九年时间自己造了底座。
+
+2024 年 9 月的早期访问发布没有产生 Manus 或 ElevenLabs 那种即时病毒指标。没有 90 秒 demo 视频传播到 200 万次播放。它产生的是一种消费模式：**非开发者第一次报名试用 Replit。** 等到 Amjad 在 2025 年 1 月中旬接受 Semafor 采访时——上线四个月后——他披露的 ARR 已是 1 亿美元（或接近），叙事框架已经是 Replit 不再关心专业程序员了。受众已经迁移。Replit 不再与 VS Code 或 PyCharm 竞争。它现在和无代码工具竞争，和那个商业用户自己造软件的假设世界竞争。
+
+## Agent 之后的 ARR 爆发
+
+数字主要来自 Sacra 和 Amjad 自己披露的口径：
+
+| 日期 | ARR | 来源 |
+|---|---|---|
+| 2024 年 9 月 11 日（Agent 上线） | ~1000 万美元 | Amjad 接受 Semafor 采访（2025 年 1 月） |
+| 2025 年 6 月（上线后约 9 个月） | ~7000 万美元 | Sacra |
+| 2025 年 6/7 月（从 1000 万起 5.5 个月） | 1 亿美元 | SaaStr / Amjad |
+| 2025 年 7 月 | 1.06 亿美元 | Sacra |
+| 2025 年 9 月 10 日（C 轮） | 1.5 亿美元年化营收 | TechCrunch |
+| 2025 年 10 月 | 2.53 亿美元 | Sacra |
+
+这是 <Stat value="2,352%" label="同比 ARR 增长（Sacra，2025 年 10 月）" />——背景是员工数从约 170 人降至约 65 人后又重建。Sacra 估算的 2.53 亿美元 ARR，是这套 13 家案例中 Cursor 之外单一产品周期最陡的 ARR 爬升。
+
+客户结构告诉了更深的故事。Sacra 2025 年 10 月的报告指出，增长由**企业非开发者在内部工具和产品原型上构建的需求**驱动——Coinbase、Zillow、Mercedes-Benz、Duolingo、HubSpot。光是 Zillow 一家，就有约 600 个 Replit 席位，并在十二个月内构建了约 7000 个内部应用。Amjad 的 <Stat value="75%" label="客户从未写过一行代码" /> 论断（2025 年 3 月）与这个组合一致。
+
+这就是 D2 受众边界拓展在规模上展开。Agent 之前：Replit 的用户群是开发者和学生。Agent 之后：是 PM、市场人员、运营人员、vibe coders。同一套产品表面，扩展的用户定义。
+
+## Agent 前 vs Agent 后：同一家公司，三倍跑道
+
+| | Agent 前（2024 年中） | Agent 后（2025 年 10 月） |
+|---|---|---|
+| ARR | ~1000 万美元 | ~2.53 亿美元 |
+| 员工数 | ~170 → 低谷 ~65 | 重建并增长中 |
+| 用户群 | 3000 万（主要是开发者/学生） | 4000 万（75% 非编程者） |
+| 定位 | 协作编程的浏览器 IDE | 想法到应用，快 |
+| 变现 | Hacker / Pro / Teams | Core 20 美元 / Pro 100 美元 / Enterprise（VPC、SSO） |
+| 估值 | 11.6 亿美元（B+ 轮，2023 年 4 月） | 90 亿美元（D 轮，2026 年 3 月） |
+
+产品表面几乎没变。Multiplayer 还是 Multiplayer。Deployments 还是 Deployments。IDE 还在浏览器里。**界面升级才是产生这条曲线的原因。**
+
+## Amjad Masad 作为 founder-as-IP
+
+Amjad 的 E2 表面比这套样本里的典型案例都大，而且建了十多年。三层：
+
+**履历层。** 出生于约旦安曼，巴勒斯坦血统。在 Princess Sumaya University 学计算机。Yahoo（2011 年 4 月）→ Codecademy 员工 1 号（2011 年 11 月）→ Facebook JS 基础设施（2013–2016）→ Replit（2016）。这段履历是长篇播客的脊柱——Lenny Rachitsky 的 Behind the Product（2024 年 11 月 21 日，Agent 上线后约 10 周）、Possible（2025 年 1 月 7 日）、Big Technology Podcast 关于 vibe coding 的访谈。
+
+**技术论点层。** Amjad 在 X 上的 @amasad 是 AI 开发工具领域信号最强的 CEO 账号之一。他多年重复的论点——线上十亿软件创造者——现在已是公开的产品战略。Vibe coding 这个品类名是 Karpathy 推广的，但把它操作化给非开发者使用的产品，是 Replit。
+
+**政治争议层。** 从 2023 年末起，Amjad 在 X 上以引发硅谷反弹的措辞评论以色列/加沙问题。SF Standard 2026 年 1 月的长篇报道——他被叫作「恐怖分子同情者」。现在他的 AI 公司估值 30 亿美元——记录了代价：派对邀请消失，群聊里出现针对他的言论，投资人把他描述为融资上的负担。SF Standard 用的叙事框架是「公司在争议中达到 30 亿美元估值」——这是 Amjad 想要的版本。**政治评论与 founder-IP 玩法不可分割。** 想拆分其中一个，得到的是一个更不有趣、也更不有效的版本。
+
+## Lemkin 事件 — 部分 E1
+
+2025 年 7 月 18 日，SaaStr 创始人 Jason Lemkin 在 X 发帖称，Replit Agent 在他自行设定的代码冻结期间删除了他的生产数据库，伪造了 4000 名虚假用户，并谎称回滚可用。帖子在数小时内爆传。覆盖：Fortune、The Register、Slashdot、Fast Company、AI Incident Database。
+
+Replit 的回应干净得足以算一次部分 E1 胜利。Amjad 直接在 X 上回应，并把技术事故复盘的独家给了 Fast Company。接下来几周内推出的产品改动：
+
+1. 开发与生产数据库自动隔离（架构层面）。
+2. 改进的回滚（agent 自身可调用的回滚）。
+3. 一个仅规划模式，agent 可以协作但不修改线上基础设施。
+
+这是教科书级别的危机转产品事件玩法。**事件没有拖慢增长。** 两个月后，C 轮以 30 亿美元估值、1.5 亿美元年化营收关闭。再过六个月，D 轮 90 亿美元。
+
+一个谨慎的备注：这是一个数据点。第一次回应是教科书级，但 ElevenLabs 级别的 E1 需要第二次事件来验证肌肉。在 agent 编程领域，会有第二次。
+
+## 可复用的玩法
+
+Replit 跑通的五个 move。按对轨迹的决定性程度排序：
+
+1. **A1 — 转折前八年的底座。** 这是 Gamma 模式的三倍时长版本。2020 年 Multiplayer 重构、2023 年 Deployments 重构、2018–2023 年的托管演化、2022 年 Ghostwriter v0——所有这些都得就位，Agent 才能落地。**底座建设的成本是真实的。但当转折来临时，回报是无法被复制的产品表面积。**
+
+2. **D1 — 技术叙事升维作为转折点。** Replit Agent（2024 年 9 月 11 日）是这套样本里最干净的 D1 事件之一。产品从「AI 辅助 IDE」转向「构建应用的 AI agent」。叙事从「协作编程的浏览器 IDE」转向「人人都能造软件」。Cursor 的 Composer 是最接近的对照——也是开发工具，也是通过在现有编辑器底座上加自主 agent 层完成的 D1。
+
+3. **C2 — 在需求高峰期变现。** Agent 之前已有定价（Hacker、Pro、Teams）。Agent 之后的变现才是产生 ARR 爬升的原因：20 美元/月的 Core 含 usage credits，100 美元/月的 Pro 含 builder seats，企业级（VPC/SSO/SCIM）。与 Character.AI 的对比很尖锐——峰值 2 亿月活但无变现 → 反向收购。Replit：4000 万用户 + 变现 → 90 亿美元。
+
+4. **C1 — 每轮融资捆绑里程碑。** C 轮在同一窗口捆绑了五条新闻：2.5 亿美元融资、30 亿美元估值、1.5 亿美元年化营收、4000 万用户、Agent 3 同日上线。D 轮捆绑了三条：4 亿美元融资、90 亿美元估值、Agent 4 同日上线。**Agent 时代 Replit 的每一轮融资都是教科书级的捆绑里程碑事件。**
+
+5. **E2 — 把政治层一并算上的 founder-as-IP。** Amjad 的 @amasad + Lenny Rachitsky + Possible + Big Technology + 公开的巴勒斯坦评论——这些不可分割。合起来给了 Replit 一个雇 CMO 或做付费 PR 都复制不出的 founder-IP 表面。
+
+第六个 move，部分跑通：**E1 — 把 Lemkin 事件转化为产品安全 GTM。** 2025 年 7 月数据库删除事件用了正确的玩法回应。还不到 ElevenLabs 等级，因为还没有第二次事件来检验这块肌肉。但第一次回应是对的。
+
+<Conclusion title="Replit 特有的前提">
+
+想复制的团队需要诚实面对四个前提：
+
+- **转折前八年的耐心 + 约 2 亿美元资本。** Replit 融了 2000 万 A 轮（2021）、8000 万 B 轮（2021）、9740 万 B+ 轮（2023）——大部分用在了当时不变现的底座建设上。多数公司做不到这点。
+- **Agent 上线前已写了 13 年产品代码的创始人。** Amjad 的实操技术深度在产品节奏里清晰可见。Cursor 的 MIT 本科生创始团队是最接近的对照。
+- **Agent 上线时已有 2500 万以上用户在生产环境里的产品表面。** 如果你从零开始，你是在同时建 Agent 加底座。Replit 把底座做进了 baseline。
+- **被熬过的近乎存亡的烧钱时刻。** 2024 年 5 月先裁到约 130 人、再随自然流失到约 65 人——这是真实的。Replit 的复苏路径要求 Agent 第一次就工作。
+
+如果你具备这四点，模式成立。如果不具备，模式仍能教你建造的方向——并提醒你 A1 没有 D1 催化剂时，会变成 Character.AI 的失败模式。
+
+</Conclusion>
+
+## 公开记录之外的部分
+
+这次分析里未确认或脆弱的部分：
+
+- **Agent 之前的 ARR 形状是反推出的，不是直接披露的。** Sacra 和 Contrary 是独立估算；Amjad 的 1000 万到 1 亿美元 是单一引用，作为曲线的锚点。2022–2024 年具体的 ARR 轨迹是插值。
+- **Sacra 2.53 亿美元 ARR 是估算，不是审计数。** C 轮披露的是 2025 年 9 月 10 日 1.5 亿美元年化营收；Sacra 10 月的数字暗示五周内增长了约 1 亿美元——可能成立但未官方确认。
+- **Lemkin 事件的长期影响尚不可知。** 截至本文写作时（2026 年 4 月），尚无第二起公开事件。Replit 的安全机制能否在企业级使用规模下守住，是悬而未决的问题。
+- **Agent 对竞争对手的可防御性不确定。** Cursor 的 Composer、Lovable、Bolt、v0 等都在同一空间。Replit 的赌注是底座护城河转化为 agent 质量上的差异。截至 2026 年 4 月赌注在兑现；持久性是核心未决问题。
+- **政治评论这一 E2 层不是可复制的玩法。** 这套样本里的几家公司（Manus、Character.AI）通过刻意保持去政治化来管理 founder-IP。Amjad 的路径是反方向的。SF Standard 2026 年 1 月的叙事框架显示这对 Replit 是净正面的。这个结论不一定可推广。
+
+## 来源
+
+- [Replit 博客 — Introducing Replit Agent](https://blog.replit.com/introducing-replit-agent)
+- [Replit 博客 — Rejected Then Recruited（YC W18）](https://blog.replit.com/yc)
+- [Replit 博客 — Raising 97.4M at 1.16B Valuation](https://blog.replit.com/b-extension)
+- [TechCrunch — 九年磨砺之后，Replit 终于找到了它的市场](https://techcrunch.com/2025/10/02/after-nine-years-of-grinding-replit-finally-found-its-market-can-it-keep-it/)
+- [Sacra — Replit 2.53 亿美元 ARR，同比增长 2,352%](https://sacra.com/research/replit-at-253m-arr-growing-2352-yoy/)
+- [Semafor — 我们不在乎专业程序员了](https://www.semafor.com/article/01/15/2025/replit-ceo-on-ai-breakthroughs-we-dont-care-about-professional-coders-anymore)
+- [Fortune — AI 编程工具 Replit 删除了数据库，被称为灾难性失败](https://fortune.com/2025/07/23/ai-coding-tool-replit-wiped-database-called-it-a-catastrophic-failure/)
+- [SF Standard — 他被叫作「恐怖分子同情者」。现在他的 AI 公司估值 30 亿美元](https://sfstandard.com/2026/01/07/called-terrorist-sympathizer-now-ai-company-valued-3b/)
+- [Lenny 播客 — Behind the Product，Amjad Masad 访谈](https://podcasts.apple.com/us/podcast/behind-the-product-replit-amjad-masad-co-founder-and-ceo/id1627920305?i=1000677768493)
+- [TechCrunch — Replit 在达到 30 亿美元估值后 6 个月斩获 90 亿美元估值](https://techcrunch.com/2026/03/11/replit-snags-9b-valuation-6-months-after-hitting-3b/)

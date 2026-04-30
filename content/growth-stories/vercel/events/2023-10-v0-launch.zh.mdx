@@ -1,0 +1,84 @@
+---
+title: "v0 私测发布——AI Cloud 时代开始（2023 年 10 月）"
+description: "2023 年 10 月 11 日，Vercel 发布 v0——从自然语言提示词生成 React + Tailwind + shadcn/ui 代码。三周注册超 10 万。这是把 Vercel 从「前端托管」重新定位为「AI Cloud」的产品。"
+date: "2023-10-11"
+type: "product"
+gtmTag: "Audience boundary push"
+eventTitle: "v0 公布（私测）"
+externalUrl: "https://vercel.com/blog/announcing-v0-generative-ui"
+---
+
+<Catalyst>
+v0 默认输出 Next.js + Tailwind + shadcn/ui。每个 v0 用户都会变成 Next.js 用户，进而变成 Vercel 部署用户。AI Cloud 这个叙事并不是离开框架的转向，而是同一个复利循环上多加一层。
+</Catalyst>
+
+2023 年 10 月 11 日。Vercel 公布 **v0 私测**——一款生成式 UI 工具，把自然语言提示词转换成 React、Tailwind 和 shadcn/ui 代码。前三周注册数超过 10 万。
+
+这次发布有清晰节奏。2023 年 6 月 15 日：Vercel AI SDK 以开源 TypeScript 工具包形式发布。2023 年 10 月 11 日：v0（私测）。两款产品是配对发布——SDK 给已经在 Next.js 生态里的开发者受众，v0 用来突破受众边界。
+
+## 受众边界突破
+
+Vercel 截至 2023 年的客户基础是开发者。v0 一举把可触达市场扩张了一个量级。
+
+| 受众 | v0 之前的 Vercel | v0 之后的触达 |
+|---|---|---|
+| 资深前端工程师 | 是 | 是 |
+| 在学前端的后端工程师 | 大体上不是 | 是 |
+| 写第一版 UI 代码的设计师 | 否 | 是 |
+| 搭建内部工具的非程序员 | 否 | 是 |
+| 在工程评审前做想法原型的 PM | 否 | 是 |
+
+这是经典的 D2（受众边界突破）。机制是单一产品把可触达市场的描述边界从「开发者」扩张到「能写提示词的任何人」。和 Cursor 那个「8 岁小孩用 Cursor」的 Cloudflare 视频时刻是同样的模式，不同的载体。
+
+到 2025 年 2 月，Sacra 估算 v0 单产品贡献约 4200 万美元 ARR——约占 Vercel 总营收的 21%。到 2025 年底，根据 Vercel 披露，v0 营收从约 1 亿美元增长到 1.8 亿美元以上。不到一年生成应用 1 亿+ 个。**350 万+ 独立 v0 用户。**
+
+## 为什么 v0 能跑通，而类似产品没能跑通
+
+2023–2024 年的 AI 代码生成市场拥挤。GitHub Copilot、Cursor 和数十个一次性的「提示词转代码」实验都在公开市场。
+
+三个结构性优势让 v0 比任何同侪都更快变现：
+
+1. **承重底层早就在那里。** v0 的输出技术栈（Next.js + Tailwind + shadcn/ui）正是 Vercel 受众已经在用的栈。不存在「迁移到你自己的栈」这种摩擦。点一下部署，v0 输出就跑在 Vercel 上。
+
+2. **定价基础设施从一开始就在。** Vercel 从早期 Zeit 时期就有付费 Pro/Team/Enterprise 套餐。v0 是发到一套已存在的定价基础设施上的。对比 Character.AI 在 C2 上的失败——病毒峰值时零变现层，ARR 永远没追上。Vercel 在 v0 上线之前 ARR 已经做到 8600 万美元。
+
+3. **AI 栈的默认输出偏向。** LLM 训练数据里 React、Next.js、Tailwind、shadcn/ui 占比偏高。v0 默认输出这套技术栈。每个 v0 用户都会变成 Next.js 用户，进而变成 Vercel 部署用户。**这一部分是 Vercel 生态效应赚到的，另一部分是运气。** 如果 Solid.js 或 Svelte 当时成了 LLM 默认输出，v0 → Vercel 部署循环就跑不通。
+
+## E 轮的叙事载荷
+
+v0 的商业势能成为 Vercel E 轮（2024 年 5 月 16 日）——2.5 亿美元、32.5 亿美元估值——的主线故事。这一轮的公告捆绑了三件事：
+
+- ARR 突破 1 亿美元（Vercel 此前从未公开过的第一个 GA 级数字）
+- v0 势能
+- 重磅企业客户（OpenAI、Under Armour、Perplexity）
+
+到 F 轮关账（2025 年 9 月 30 日）时 93 亿美元估值，v0 已经从测试期走到 1.8 亿美元以上 ARR 的产品线。「Towards the AI Cloud」是这一轮的主题陈述；v0 是它的概念证明。
+
+> v0 是知识库里最干净的 D1（技术叙事升维）案例。大多数 D1 玩法只是把叙事拨过去；v0 既把叙事拨过去，又同时引入一条全新营收线来支撑这个新叙事。五年内三次清晰的重新定调（部署平台 → 边缘平台 → AI Cloud），每一次都有商业实证支撑。
+
+## 模型层竞争风险
+
+v0 跑在 Vercel 不拥有的 LLM 之上。OpenAI、Anthropic、Google 都在出原生代码生成工具。v0 之下的模型层正在商品化。
+
+**v0 的护城河不是模型——而是「默认部署在 Vercel」。** 如果未来某个 GPT 或 Claude 版本附带原生部署目标，护城河就会变薄。到目前为止 Vercel 通过以下方式保持领先：
+
+- 拥有框架默认（Next.js、AI SDK）
+- 拥有定价基础设施（Pro/Team/Enterprise 套餐）
+- 拥有开发者关系（每周 450 万+ Next.js 下载量）
+
+但这是关系护城河，不是协议护城河。关系护城河是慢慢侵蚀的。接下来 18 个月会测试当基础模型继续推出更强的原生代码生成功能时，v0 还能不能保持领先。
+
+<Conclusion title="可以复用的东西">
+
+- **受众边界突破需要承重底层在背后支撑。** v0 把受众从开发者扩展到设计师 / 非程序员能跑通，是因为输出落在 Vercel 已经拥有的栈上。没有承重底层，v0 就只是一个不变现的演示。
+- **定价基础设施必须在 AI 产品发布前就存在。** Vercel 多年前就有付费层。Character.AI 没有。同一类产品，相反的营收轨迹。在你需要变现轨道之前就把它建好。
+- **把新产品线和下一轮融资捆绑。** v0 成为 E 轮（2024 年 5 月）的主线故事。如果没有 v0 这个叙事载荷，这一轮估值会更低。用产品发布给估值搭支架，不只是用来关 ARR。
+
+</Conclusion>
+
+## 来源
+
+- [Vercel 博客：发布 v0 — 生成式 UI（2023 年 10 月）](https://vercel.com/blog/announcing-v0-generative-ui)
+- [SiliconANGLE：Vercel 公布 v0 测试版（2023 年 10 月 11 日）](https://siliconangle.com/2023/10/11/vercel-announces-beta-v0-ai-powered-tool-front-end-web-dev/)
+- [Sacra：v0 研究页](https://sacra.com/c/vercel/)
+- [Vercel 博客：Vercel AI SDK 发布（2023 年 6 月 15 日）](https://vercel.com/blog/introducing-the-vercel-ai-sdk)

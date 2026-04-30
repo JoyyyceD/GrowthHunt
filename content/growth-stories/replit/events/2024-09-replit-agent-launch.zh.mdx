@@ -1,0 +1,132 @@
+---
+title: "Replit Agent — 弯曲了曲线的 D1 转折（2024 年 9 月 11 日）"
+description: "2024 年 9 月 11 日。Replit Agent 早期访问发布。八年的底座——IDE、托管、部署、Multiplayer、Ghostwriter——折叠进一个自然语言界面。接下来 13 个月里 ARR 从约 1000 万美元跃升至约 2.53 亿美元。GrowthHunt 样本里 Cursor Composer 之外最干净的 D1 事件。"
+date: "2024-09-11"
+type: "product"
+gtmTag: "Tech narrative upgrade"
+eventTitle: "Replit Agent 上线"
+externalUrl: "https://blog.replit.com/introducing-replit-agent"
+---
+
+<Catalyst>
+Agent 折叠进一个提示的每一步，都是 Replit 已经在生产环境里建好并跑过的功能。环境配置自 2016 年起。部署自 2023 年起。Multiplayer 协议自 2020 年起——AI 输入到你的编辑器里，结构上和另一个人输入是同一件事。Agent 不是一个功能。它是对九年底座的一次界面升级。
+</Catalyst>
+
+2024 年 9 月 11 日。Replit 早期访问发布 Agent。
+
+承诺很简单：用自然语言输入提示，Replit 配置环境、安装依赖、写代码、部署到一个能跑的 URL。从用户视角看，现有开发者工作流的每一步都折叠进了一次交互。
+
+按 Amjad 在公告里的框架：*目标是消除想法和应用之间的间隙。*
+
+## 这次 AI 上线的不同之处
+
+2023–2024 年间发了几十款 AI 编程产品：Cursor 的 Composer、GitHub Copilot Workspace、Claude Code、Aider、Bolt、v0、Lovable。多数是编辑器内的功能，或对一个 LLM 的封装。Replit Agent 在一个特定方向上不同：
+
+**它拥有从提示到部署 URL 的整条链路。** 其他 agent 能写代码。Replit 的能创建环境、安装依赖、运行程序、调试失败、并把它发布到一个公网 URL。**第一天没有竞争对手做到端到端覆盖。**
+
+这不是架构野心。它是 Replit 已经建好的底座的副产品：
+
+| Agent 步骤 | Replit 的底座建在哪一年 |
+|---|---|
+| 环境配置 | IDE 本身，2016 年起 |
+| 依赖安装 | 包管理器/运行时，2017–2023 演化 |
+| 代码生成 | Ghostwriter（2022）→ Ghostwriter Chat（2023）→ Replit AI |
+| 实时执行反馈 | Multiplayer 协议（2020）——同一机制 |
+| 公网部署 | Replit Deployments（2023 重构） |
+
+一个 2024 年从零做 Agent 的团队，必须先建五个不同系统才能交付第一个提示。Replit 五个都在生产里跑。**第一天的 Agent 能工作，是因为它继承了底座。**
+
+## 上线机制
+
+9 月 11 日的上线不像典型的 AI 产品首发。当天没有 90 秒病毒 demo 视频。没有 Lex Fridman 那一集。没有 Karpathy 推文。
+
+Replit 做了什么：
+
+**当天：**
+- Replit 博客的公告帖。
+- Amjad 的 @amasad 在 X 上发了简短的 demo thread。
+- 早期访问候补名单（而非开放的公网访问）。
+
+**第 1–2 周：**
+- 公告登上 Hacker News 头条。
+- 媒体跟进：TechCrunch、VentureBeat、AI substack（Latent Space 等）。
+- 给在 X 上有影响力的工程师和产品构建者选择性访问——自然内容的种子。
+
+**第 1–2 个月：**
+- Lenny Rachitsky 的 Behind the Product（2024 年 11 月 21 日）。Amjad 在节目中用 Agent 现场构建一个功能跟踪工具。**这是 Replit 故事里经典的 founder-IP 亮相。**
+- 10–11 月间逐步开放访问。
+
+模式是克制，不是炒作。病毒时刻来自 2024 年 10–12 月间第三方构建者在 X 上发的自己的 Agent demo，不是来自公司自己的营销。**Replit 早期访问策略选对了**——因为 Agent 的价值最适合由用户演示，而不是公司演示。
+
+## 受众迁移，已被仪表化
+
+发布后期最被低估的指标是客户结构迁移。Agent 之前，Replit 用户群约：
+
+- 40% 学生
+- 30% 专业开发者
+- 20% 爱好者
+- 10% 教育工作者
+
+Agent 之后，按 Amjad 2025 年 3 月的框架：**75% 客户从未写过一行代码。** 新的受众是产品经理、市场人员、运营人员、构建 MVP 的创始人，以及 Coinbase、Zillow、Mercedes-Benz、Duolingo、HubSpot 的企业非开发用户。
+
+这不是营销层面的重新定位。是一次输入提示到 Replit 的人群的真实迁移。底座没变。界面变了，界面变化打开了可寻址的用户定义。
+
+## Semafor 时刻 — 把受众转向公开化
+
+2025 年 1 月 15 日。Amjad 接受 Semafor 采访，这次访谈成为 Agent 之后的经典定位声明：**我们不再关心专业程序员了。**
+
+那一句话做了三件事：
+
+1. **重新框架了 Replit 的竞争集合。** 不再与 VS Code 或 PyCharm 竞争。现在与 Webflow、Retool、Glide，以及商业用户自己造软件的世界竞争。
+2. **把公司从开发者工具的估值天花板里释放出来。** 开发者工具有一定 ARR 倍数上限。给非开发者的软件创作平台没有。
+3. **让战略变成公开承诺级的。** Amjad 不能在不正式撤回的情况下走回去。董事会、投资人、团队现在都朝同一方向。
+
+Semafor 是这件事的对路媒体——资本级、被 The Information 和 Bloomberg 下游跟进、由会给下一轮定价的人首读。
+
+## ARR 爬升
+
+发布后的 ARR 曲线，主要源自 Sacra 和 Amjad 自己披露的数据：
+
+| 日期 | ARR | 来源 |
+|---|---|---|
+| 2024 年 9 月 11 日（Agent 上线） | ~1000 万美元 | Amjad / Semafor |
+| 2025 年 6 月 | ~7000 万美元 | Sacra |
+| 2025 年 6/7 月（5.5 个月） | 1 亿美元 | SaaStr / Amjad |
+| 2025 年 7 月 | 1.06 亿美元 | Sacra |
+| 2025 年 9 月 10 日（C 轮） | 1.5 亿美元年化 | TechCrunch / Replit |
+| 2025 年 10 月 | 2.53 亿美元 | Sacra |
+
+这是 <Stat value="2,352%" label="同比增长（Sacra，2025 年 10 月）" />，对应约 1000 万美元基线。这套样本里 Cursor 之外最陡的单产品周期 ARR 爬升。
+
+三股力量推动了曲线：
+
+1. **底座积压需求。** 3000 万现有 Replit 用户，现在他们能用提示而不是输入，于是有了升级理由。
+2. **受众扩展。** 从未试过 Replit 的非开发者，因提示界面降低了前置条件而注册。
+3. **企业非开发者采用。** Zillow 的 600 席位和 12 个月内 7000 个内部应用是经典案例。底座以企业级跑，是因为部署层早已生产硬化。
+
+## Agent 可能在哪里失败
+
+Agent 第一天就工作。默认的反向叙事——Agent 发布了，但在真实负载上崩——并非不可能。失败模式包括：
+
+- **环境配置超时。** 一个非平凡应用需要一个非平凡环境。Agent 必须在秒级而非分钟级处理。
+- **依赖地狱。** 人类都纠结的 npm/pip/cargo 冲突。Agent 必须自主导航。
+- **规模化的生成质量。** 在简单聊天机器人 demo 上是一回事。在真实企业内部工具上是另一回事。
+- **部署失败。** 即使有 Replit Deployments，agent 驱动的部署也有人类不会产生的失败面。
+
+所有这些在第一天都能被管理到能交付可用应用，是底座论点的验证。**每一个失败模式背后都有数年的底座工作来缓解它。**
+
+<Conclusion title="可以复用的东西">
+
+- **AI 功能的好坏，等同于其下方的底座。** Replit Agent 在第一天就「端到端工作」，是因为它工作流的每一步都已在生产里。如果你从零开始，你是同时在建 Agent 加底座，demo 会撞上有底座的公司不会撞的墙。
+- **发布时的克制胜过炒作。** Replit 没发病毒 demo 视频。它发了一个能工作、选择性访问的产品，第三方 demo 自然地涌现。病毒时刻在「产品工作」之下游，不是上游。
+- **当数据支持时再把受众转向公开化，不要在之前。** Amjad 2025 年 1 月的 Semafor 引语之所以成立，是因为发布后四个月的数据验证了那次转向。在 2024 年 9 月就说，会是愿景式定位。时机就是动作本身。
+
+</Conclusion>
+
+## 来源
+
+- [Replit 博客 — Introducing Replit Agent](https://blog.replit.com/introducing-replit-agent)
+- [Semafor — Replit CEO 谈 AI 突破：我们不再关心专业程序员了](https://www.semafor.com/article/01/15/2025/replit-ceo-on-ai-breakthroughs-we-dont-care-about-professional-coders-anymore)
+- [Lenny 播客 — Behind the Product，Amjad Masad 访谈](https://podcasts.apple.com/us/podcast/behind-the-product-replit-amjad-masad-co-founder-and-ceo/id1627920305?i=1000677768493)
+- [Sacra — Replit 在 2.53 亿美元 ARR，同比增长 2,352%](https://sacra.com/research/replit-at-253m-arr-growing-2352-yoy/)
+- [Craft Ventures — 走进 Replit 的爆发式增长](https://www.craftventures.com/articles/inside-replit-breakout-growth)

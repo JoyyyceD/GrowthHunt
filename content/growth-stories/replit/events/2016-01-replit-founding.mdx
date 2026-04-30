@@ -1,0 +1,77 @@
+---
+title: "Replit Founding — JSRepl to a Three-Person Browser-IDE Bet (Jan 2016)"
+description: "January 2016. Amjad Masad quits Facebook's JS infrastructure team to incorporate Replit with his wife Haya Odeh and brother Faris Masad. The architectural conviction — the browser is the IDE — was already five years old, anchored to the JSRepl open-source project from Codecademy days."
+date: "2016-01-01"
+type: "product"
+gtmTag: "Structural differentiation"
+eventTitle: "Replit incorporated"
+externalUrl: "https://review.firstround.com/replits-path-to-product-market-fit/"
+---
+
+<Catalyst>
+The architectural decision that paid off nine years later was made before Replit existed as a company. JSRepl (2011) was the conceptual ancestor. By the time Amjad incorporated Replit in January 2016, the conviction — that the browser is the right place for the IDE — was the spine of every product choice that followed.
+</Catalyst>
+
+January 2016. Amjad Masad leaves Facebook, where he had been on the JavaScript infrastructure team since 2013. He incorporates Replit with his wife Haya Odeh (designer) and brother Faris Masad. The side project from 2015 becomes a company.
+
+The founding sequence is not a clean origin story. The conviction is older than the company.
+
+## The five-year prequel
+
+Amjad's pre-Replit path is the load-bearing context.
+
+| Year | Role | What it built |
+|---|---|---|
+| 2011 (Apr–Nov) | Yahoo (engineer) | First Bay Area job; JSRepl side project starts |
+| 2011 (Nov)–2013 | Codecademy, employee #1 | In-browser code execution at production scale |
+| 2013–2016 | Facebook, JS infrastructure | Tooling for the largest JS codebase on earth |
+| 2016 | Replit | The browser-as-IDE thesis becomes a company |
+
+**JSRepl, open-sourced in 2011**, is the conceptual ancestor of everything Replit becomes. An in-browser JavaScript REPL — type code, see it execute, no install. Five years before Replit incorporates, the architectural conviction is fixed.
+
+The Codecademy years validate the conviction at scale. Codecademy was teaching a million students to code in the browser; the engineering problem of running arbitrary user code safely in a sandboxed environment was the daily work. Replit is what happens when you take that engineering and ask: *what if this is the IDE, not just the lesson?*
+
+## Why a three-person team, not a co-founder pair
+
+Most YC-shaped startups incorporate as a co-founder pair. Replit is a trio, and not by accident.
+
+**Amjad** is the technical founder. Has the conviction, the JSRepl history, the Codecademy and Facebook background.
+
+**Haya Odeh** is the designer and Amjad's wife. The earliest design language of Replit — the typography, the file tree, the multiplayer cursors — comes from her. The visual coherence of the product across nine years of additions is a competitive moat that's invisible from the outside.
+
+**Faris Masad** is Amjad's brother and an engineer. The third hand on the early product.
+
+The trio structure is what lets Replit ship a complete product surface (editor + design system + runtime) in 2016 without raising any institutional capital. By the time Bloomberg Beta writes the pre-seed check, the product is recognizable as what it eventually becomes.
+
+## The decision that compounded for nine years
+
+The structurally interesting choice in the founding sequence is not 'browser IDE.' Plenty of products tried that. The interesting choice is **building the entire substrate in-house** rather than wrapping a hosted version of an existing IDE.
+
+GitHub Codespaces would later take the wrapper path: take VS Code, host it on Microsoft infrastructure, sell access. Replit took the harder path: build the editor, the runtime, the file system, the deployment, the AI layer, the multiplayer protocol, all in-house. **Each piece was a multi-year investment that didn't pay off independently.**
+
+The Multiplayer rebuild in 2020 needed the editor and runtime to be native. Replit Deployments in 2023 needed the runtime to know about hosting from day one. Replit Agent in 2024 needed every layer below it to be controllable end-to-end. **A wrapper around someone else's IDE could not have shipped Agent.**
+
+The cost of the wrapper-versus-build decision in 2016 was the slow first eight years. The reward was that the product surface in September 2024 was a thing nobody else could clone in twelve months.
+
+## What the founding documents got right
+
+In the First Round Review piece on Replit's path to product-market fit, Amjad describes the original thesis: *programming should be as easy as writing on a piece of paper.* That sentence sounds soft. The architectural commitments behind it are not.
+
+If programming is going to be that easy, the editor, the compiler, the runtime, the package manager, the deployment, and the collaboration model all have to disappear into the browser. Each one is a hard engineering problem. **Replit committed to all of them at incorporation.**
+
+Most teams that pick up a similar thesis pick one or two of those problems and partner for the rest. Replit didn't. The 2016–2018 period is what it costs to build all of them yourself. The 2024 Agent is what it pays for when the catalyst arrives.
+
+<Conclusion title="What to copy">
+
+- **The architectural decision is upstream of the company.** Amjad had five years of conviction before he raised institutional capital. If your thesis hasn't been tested as a side project for at least a year, the company isn't ready to incorporate.
+- **A three-person founding team with separate competencies (engineer + designer + engineer) ships a more complete v0 than a two-person team.** The cost is harder dilution and equity conversations. The benefit is a product that's recognizable as the eventual product on day one.
+- **Building the whole substrate in-house only pays off at the inflection.** Don't pick this path unless you can fund 5+ years of pre-revenue substrate work and survive the period where wrappers look smarter than you do.
+
+</Conclusion>
+
+## Sources
+
+- [First Round Review — Replit's Path to Product-Market Fit](https://review.firstround.com/replits-path-to-product-market-fit/)
+- [Replit on Wikipedia](https://en.wikipedia.org/wiki/Replit)
+- [Amjad Masad on Wikipedia](https://en.wikipedia.org/wiki/Amjad_Masad)
+- [JSRepl on GitHub (archived)](https://github.com/replit/jsrepl)
