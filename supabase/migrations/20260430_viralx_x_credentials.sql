@@ -38,3 +38,4 @@ create trigger viralx_creds_updated_at
   for each row execute function public.set_updated_at();
 
 grant all privileges on table public.viralx_x_credentials to service_role, postgres;
+grant select, insert, update, delete on public.viralx_x_credentials to authenticated;
