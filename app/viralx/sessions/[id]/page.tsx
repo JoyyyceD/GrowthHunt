@@ -35,7 +35,7 @@ export default async function ViralxSessionPage({ params }: PageProps) {
 
   const { data: dayRows } = await sb
     .from('viralx_calendar_days')
-    .select('day_number, archetype, content_text, scheduled_at, posted_at, x_post_id')
+    .select('day_number, archetype, content_text, scheduled_at, posted_at, x_post_id, failed_at, failure_reason')
     .eq('session_id', id)
   type StoredDay = NonNullable<typeof dayRows>[number]
   const dayMap = new Map<number, StoredDay>()

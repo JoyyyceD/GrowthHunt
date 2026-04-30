@@ -3,6 +3,10 @@
     {
       "path": "/api/viralx/cron/ingest",
       "schedule": "0 4 * * *"
+    },
+    {
+      "path": "/api/viralx/cron/publish",
+      "schedule": "*/5 * * * *"
     }
   ]
 }
