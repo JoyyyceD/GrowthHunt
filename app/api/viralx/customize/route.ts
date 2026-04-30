@@ -46,26 +46,71 @@ export async function POST(req: NextRequest) {
 
   const systemMsg =
     `You are a tweet copywriter for early-stage AI startup founders with no marketing background. ` +
-    `Write a single Twitter post (max 280 chars, plain text, no markdown) in the founder's voice, ` +
-    `matching the archetype "${archetype}". Today is "${dayPlan.title}" — ${dayPlan.hint}\n\n` +
+    `Write ONE single Twitter post in the founder's voice, matching the archetype "${archetype}". ` +
+    `Today is "${dayPlan.title}" — ${dayPlan.hint}\n\n` +
+    `HARD CONSTRAINTS — non-negotiable:\n` +
+    `- Total output MUST be ≤ 240 characters. Count as you write. Twitter caps at 280, so 240 is your safe budget.\n` +
+    `- Plain text only. No markdown, no asterisks, no quote marks wrapping the tweet, no labels like "Tweet:".\n` +
+    `- One single tweet. Not a thread, not a list, not multiple drafts.\n` +
+    `- Output ONLY the tweet body. No commentary, no explanation, no preamble.\n\n` +
     `Below are real high-engagement tweets from comparable AI startups${category ? ` in the ${category} space` : ''}. ` +
     `Study their hooks, structure, specificity, and tone — but DO NOT copy them:\n\n${exemplarBlock}`
 
   const userMsg =
     `My X handle is @${session.handle} and I'm building: ${session.startup_blurb}\n\n` +
-    `Today is day ${dayNumber} of my launch — write the tweet matching the "${archetype}" archetype. ` +
-    `Keep it under 280 characters. Output ONLY the tweet text — no quotes, no commentary, no explanation.`
+    `Day ${dayNumber} of my launch — give me ONE tweet matching the "${archetype}" archetype, ≤ 240 characters.`
+
+  async function callOnce(extraInstruction?: string): Promise<string> {
+    const messages = [
+      { role: 'system' as const, content: systemMsg },
+      { role: 'user' as const, content: userMsg },
+    ]
+    if (extraInstruction) {
+      messages.push({ role: 'user' as const, content: extraInstruction })
+    }
+    return await minimaxChat({ messages, maxTokens: 400, temperature: 0.85 })
+  }
+
+  // Strip stray quotes/labels the model sometimes adds
+  function cleanText(s: string): string {
+    return s
+      .trim()
+      .replace(/^(?:tweet|post|draft)\s*[:\-–]\s*/i, '')   // "Tweet: ..."
+      .replace(/^["'""''「」`]+|["'""''「」`]+$/g, '')        // wrapping quotes
+      .trim()
+  }
+
+  // Smart-truncate: prefer breaking at sentence end / newline / space within last 40 chars
+  function smartTruncate(text: string, max = 280): string {
+    if (text.length <= max) return text
+    const cut = text.slice(0, max)
+    const tail = cut.slice(-40)
+    const offset = cut.length - tail.length
+    const sentenceEnd = Math.max(
+      tail.lastIndexOf('.'), tail.lastIndexOf('!'), tail.lastIndexOf('?'),
+      tail.lastIndexOf('。'), tail.lastIndexOf('！'), tail.lastIndexOf('？'),
+      tail.lastIndexOf('\n'),
+    )
+    if (sentenceEnd >= 0) return cut.slice(0, offset + sentenceEnd + 1).trim()
+    const space = tail.lastIndexOf(' ')
+    if (space > 10) return (cut.slice(0, offset + space).trim() + '…')
+    return cut.trim()
+  }
 
   let generated: string
   try {
-    generated = await minimaxChat({
-      messages: [
-        { role: 'system', content: systemMsg },
-        { role: 'user', content: userMsg },
-      ],
-      maxTokens: 400,
-      temperature: 0.85,
-    })
+    generated = await callOnce()
+    let candidate = cleanText(generated)
+    // If model overshot, retry once with explicit feedback before resorting to truncation
+    if (candidate.length > 280) {
+      const retry = await callOnce(
+        `Your previous draft was ${candidate.length} characters — too long. ` +
+        `Rewrite the SAME tweet at ≤ 240 characters. Keep the hook, cut everything inessential. Output the tweet only.`
+      )
+      const retryCleaned = cleanText(retry)
+      if (retryCleaned.length < candidate.length) candidate = retryCleaned
+    }
+    generated = smartTruncate(candidate, 280)
   } catch (e) {
     return NextResponse.json(
       { error: e instanceof Error ? e.message : 'minimax failed' },
@@ -73,8 +118,7 @@ export async function POST(req: NextRequest) {
     )
   }
 
-  // Strip stray quotes the model sometimes wraps responses in
-  const cleaned = generated.replace(/^["']|["']$/g, '').trim().slice(0, 280)
+  const cleaned = generated
 
   const { data: row, error: upErr } = await sb
     .from('viralx_calendar_days')
