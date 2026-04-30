@@ -7,6 +7,13 @@ const nextConfig: NextConfig = {
       { source: '/OPChampion', destination: '/opchampion', permanent: true },
     ]
   },
+  async rewrites() {
+    return [
+      // OPChampion is served from the static HTML in public/
+      { source: '/opchampion', destination: '/OPChampion/index.html' },
+      { source: '/opchampion/:path*', destination: '/OPChampion/index.html' },
+    ]
+  },
 }
 
 export default nextConfig
