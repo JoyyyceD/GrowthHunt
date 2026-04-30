@@ -125,7 +125,7 @@ export default function Lab({ initial, isAuthed, stats }: Props) {
       return
     }
     startTransition(async () => {
-      const res = await fetch(`/api/xhunter/tweets?${buildQuery(1)}`, { cache: 'no-store' })
+      const res = await fetch(`/api/viralx/tweets?${buildQuery(1)}`, { cache: 'no-store' })
       if (!res.ok) return
       const data = await res.json()
       setTweets(data.tweets || [])
@@ -138,7 +138,7 @@ export default function Lab({ initial, isAuthed, stats }: Props) {
     if (!hasMore || pending) return
     startTransition(async () => {
       const next = page + 1
-      const res = await fetch(`/api/xhunter/tweets?${buildQuery(next)}`, { cache: 'no-store' })
+      const res = await fetch(`/api/viralx/tweets?${buildQuery(next)}`, { cache: 'no-store' })
       if (!res.ok) return
       const data = await res.json()
       setTweets(prev => [...prev, ...(data.tweets || [])])
@@ -173,12 +173,12 @@ export default function Lab({ initial, isAuthed, stats }: Props) {
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <header className="xh-hero">
         <div className="shell">
-          <span className="eyebrow"><span className="dot" />Growth Playbook · No. 01 · Live tool</span>
+          <span className="eyebrow"><span className="dot" />ViralX · Live tool</span>
           <h1 className="xh-h1">
-            How AI startups <em>actually</em><br />go viral on X.
+            Steal what works.<br />Ship to your <em>own X</em>.
           </h1>
           <p className="xh-finding">
-            <strong>Headline finding:</strong> founder personal accounts out-perform official company accounts at the top end. The top 10 tweets from founders contain zero product announcements — only opinions, observations, and behind-the-scenes stories.
+            <strong>10,000+ viral tweet templates</strong> from 500+ AI founders and startup accounts — Cursor, Lovable, DeepSeek, Hedra, Perplexity, and the indie operators behind them. Pick a pattern that fits your startup, customize it, schedule it, and post it straight to your own X account.
           </p>
 
           <div className="xh-startup-row">
@@ -192,16 +192,16 @@ export default function Lab({ initial, isAuthed, stats }: Props) {
               onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); onStartupSubmit() } }}
               autoComplete="off"
             />
-            <button className="xh-startup-go" onClick={onStartupSubmit}>Find inspiration</button>
+            <button className="xh-startup-go" onClick={onStartupSubmit}>Find my templates</button>
             {matchHint && <span className="xh-startup-hint">{matchHint}</span>}
           </div>
 
           <div className="xh-meta">
-            <div className="xh-meta-item"><b>{fmt(stats.tweets)}</b> tweets analyzed</div>
-            <div className="xh-meta-item"><b>{fmt(stats.accounts)}</b> AI startup accounts</div>
-            <div className="xh-meta-item"><b>{fmt(stats.viral)}</b> viral (≥5K likes)</div>
+            <div className="xh-meta-item"><b>{fmt(stats.tweets)}+</b> viral templates</div>
+            <div className="xh-meta-item"><b>{fmt(stats.accounts)}+</b> AI founders & startups</div>
+            <div className="xh-meta-item"><b>{fmt(stats.viral)}+</b> proven hits (5K+ likes)</div>
             <div className="xh-meta-item">
-              <Link href="/xhunter/playbook" className="xh-playbook-link">
+              <Link href="/viralx/playbook" className="xh-playbook-link">
                 Read the full playbook →
               </Link>
             </div>
@@ -264,7 +264,7 @@ export default function Lab({ initial, isAuthed, stats }: Props) {
         )}
         {!isAuthed && tweets.length > 0 && (
           <div className="xh-signin-cta">
-            <p>Sign in (free, Google, no spam) to unlock <b>50 tweets per page</b> + filtering across the full library.</p>
+            <p>Sign in (free, Google, no spam) to unlock <b>50 templates per page</b>, filtering across the full library, and one-click scheduling to your own X account.</p>
             <Link href="/login" className="xh-signin-btn">Sign in to continue →</Link>
           </div>
         )}

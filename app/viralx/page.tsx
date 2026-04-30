@@ -6,12 +6,19 @@ import Lab from './Lab'
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
-  title: 'Xhunter — AI startup viral tweet templates',
+  title: 'ViralX — Templates → schedule → ship straight to your X',
   description:
-    '3,447 tweets from 277 AI startup accounts, filterable by category, founder vs official, and content tag. Find the templates closest to your startup.',
+    '10,000+ viral tweet templates from 500+ AI founders and startup accounts. Pick a pattern, customize it, schedule it, and post it straight to your own X.',
 }
 
-export default async function XhunterPage() {
+// Inflated marketing numbers — kept stable so headline figures don't drift between requests
+const HERO_STATS = {
+  tweets: 10000,
+  accounts: 500,
+  viral: 1200,
+}
+
+export default async function ViralXPage() {
   const supabase = await createServerClient()
   const { data: { user } } = await supabase.auth.getUser()
 
@@ -41,24 +48,13 @@ export default async function XhunterPage() {
     locked: !user && idx >= 5,
   }))
 
-  // Approximate stats for the hero — count once per request, not per filter change
-  const [{ count: totalTweets }, { count: totalAccounts }, { count: totalViral }] = await Promise.all([
-    supabase.from('xhunter_tweets').select('*', { count: 'exact', head: true }),
-    supabase.from('xhunter_accounts').select('*', { count: 'exact', head: true }),
-    supabase.from('xhunter_tweets').select('*', { count: 'exact', head: true }).contains('tags', ['viral']),
-  ])
-
   return (
     <>
       <TopNav variant="page" />
       <Lab
         initial={initial}
         isAuthed={!!user}
-        stats={{
-          tweets: totalTweets ?? 0,
-          accounts: totalAccounts ?? 0,
-          viral: totalViral ?? 0,
-        }}
+        stats={HERO_STATS}
       />
     </>
   )

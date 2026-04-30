@@ -1,5 +1,5 @@
 /**
- * GET /api/xhunter/tweets?page=1&category=ai-coding&type=founder&tag=viral&sort=likes
+ * GET /api/viralx/tweets?page=1&category=ai-coding&type=founder&tag=viral&sort=likes
  *
  * Anti-scraping:
  *   - Anonymous: pageSize = 10
@@ -35,7 +35,7 @@ const SORT_COLUMN: Record<string, string> = {
 
 export async function GET(req: NextRequest) {
   const ip = getClientIp(req)
-  const limit = rateLimit(`xhunter_read:${ip}`, RATE.xhunter_read.max, RATE.xhunter_read.windowSec)
+  const limit = rateLimit(`viralx_read:${ip}`, RATE.viralx_read.max, RATE.viralx_read.windowSec)
   if (!limit.ok) {
     return NextResponse.json(
       { error: 'rate_limited', retryAfterSec: limit.retryAfterSec },
@@ -76,7 +76,7 @@ export async function GET(req: NextRequest) {
     if (type) aq = aq.eq('account_type', type)
     const { data: accs, error: aErr } = await aq
     if (aErr) {
-      console.error('[xhunter/tweets] accounts:', aErr)
+      console.error('[viralx/tweets] accounts:', aErr)
       return NextResponse.json({ error: aErr.message }, { status: 500 })
     }
     handles = (accs ?? []).map(a => a.handle)
@@ -99,7 +99,7 @@ export async function GET(req: NextRequest) {
 
   const { data: tweets, error: tErr } = await q
   if (tErr) {
-    console.error('[xhunter/tweets] tweets:', tErr)
+    console.error('[viralx/tweets] tweets:', tErr)
     return NextResponse.json({ error: tErr.message }, { status: 500 })
   }
 
