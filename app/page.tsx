@@ -92,14 +92,14 @@ function LiveCases() {
             <span className="visit">Browse this week&apos;s issue →</span>
           </a>
 
-          {/* Xhunter card — viral X tweet templates lab */}
-          <Link href="/xhunter" className="eco-card eco-card-link">
+          {/* ViralX card — templates → schedule → post to your own X */}
+          <Link href="/viralx" className="eco-card eco-card-link">
             <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
-            <div className="eco-title">Xhunter</div>
+            <div className="eco-title">ViralX</div>
             <p>
-              A searchable lab of viral tweet templates from 277 AI startup accounts — 3,447 tweets, filterable by category, founder voice, and content tag. Find the patterns closest to your startup.
+              10,000+ viral tweet templates from 500+ AI founders and startup accounts. Pick a pattern that matches your startup, customize it, schedule it, and ship it straight to your own X — all in one place.
             </p>
-            <span className="visit">Open the lab →</span>
+            <span className="visit">Open ViralX →</span>
           </Link>
         </div>
       </div>
@@ -199,7 +199,7 @@ function Footer() {
             <li><Link href="/growth-story">Growth Story</Link></li>
             <li><Link href="/get-backlinks">Get Backlinks</Link></li>
             <li><a href="/opchampion">OPChampion</a></li>
-            <li><Link href="/xhunter">Xhunter</Link></li>
+            <li><Link href="/viralx">ViralX</Link></li>
           </ul>
         </div>
         <div>

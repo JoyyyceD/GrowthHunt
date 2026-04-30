@@ -1,7 +1,7 @@
 {
   "crons": [
     {
-      "path": "/api/xhunter/cron/ingest",
+      "path": "/api/viralx/cron/ingest",
       "schedule": "0 4 * * *"
     }
   ]

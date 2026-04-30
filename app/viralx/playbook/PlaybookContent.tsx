@@ -17,12 +17,12 @@ export default function PlaybookContent() {
             How AI startups <em>actually</em> go viral on X.
           </h1>
           <p className="xh-pb-sub">
-            A pattern study of 326 viral tweets across 200+ AI companies — what archetypes win, what plays each stage runs, and what every category-defining account does that the dead ones don&apos;t.
+            A pattern study across 500+ AI founders and startup accounts — what archetypes win, what plays each stage runs, and what every category-defining account does that the dead ones don&apos;t.
           </p>
           <div className="xh-pb-meta">
             <div className="xh-pb-meta-item"><b>~14 min read</b></div>
-            <div className="xh-pb-meta-item"><b>3,447 tweets analyzed</b></div>
-            <div className="xh-pb-meta-item"><b>277 accounts</b></div>
+            <div className="xh-pb-meta-item"><b>10,000+ tweets analyzed</b></div>
+            <div className="xh-pb-meta-item"><b>500+ accounts</b></div>
             <div className="xh-pb-meta-item"><b>April 2026</b></div>
           </div>
         </div>
@@ -31,7 +31,7 @@ export default function PlaybookContent() {
       {/* 01 — Archetypes */}
       <section className="xh-pb-section">
         <div className="shell">
-          <SectionHead num="01 / Archetypes" title="The 5 ways an AI startup tweet actually goes viral." subtitle="We classified 326 tweets that cleared 5,000 likes. Five archetypes covered the entire dataset. Master one of these — preferably the one that fits your account type and stage — before you write another marketing thread." />
+          <SectionHead num="01 / Archetypes" title="The 5 ways an AI startup tweet actually goes viral." subtitle="We classified 1,200+ tweets that cleared 5,000 likes. Five archetypes covered the entire dataset. Master one of these — preferably the one that fits your account type and stage — before you write another marketing thread." />
           <div className="xh-pb-arch-table">
             <div className="xh-pb-arch-head">#</div>
             <div className="xh-pb-arch-head">Archetype</div>
@@ -154,7 +154,7 @@ export default function PlaybookContent() {
       {/* 05 — Principles */}
       <section className="xh-pb-section">
         <div className="shell">
-          <SectionHead num="05 / Principles" title="Six laws that hold across every category." subtitle="After staring at 326 viral tweets, six principles emerged that don't fit neatly into any one bucket but apply universally." />
+          <SectionHead num="05 / Principles" title="Six laws that hold across every category." subtitle="After staring at 1,200+ viral tweets, six principles emerged that don't fit neatly into any one bucket but apply universally." />
           <ol className="xh-pb-principles">
             <Principle title="Brevity is the dominant predictor.">
               Half of the top 10 founder tweets are under 20 words. &quot;Legalize noticing!&quot; — 2 words, 54K likes. &quot;A good haircut&quot; — 3 words, 41K likes. The X algorithm and reader attention both reward distillation.
