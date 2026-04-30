@@ -8,14 +8,12 @@ const nextConfig: NextConfig = {
     ]
   },
   async rewrites() {
-    return {
-      // beforeFiles runs before the App Router, so it takes priority over
-      // app/opchampion/page.tsx and serves the static HTML directly.
-      beforeFiles: [
-        { source: '/opchampion', destination: '/OPChampion/index.html' },
-        { source: '/opchampion/:path*', destination: '/OPChampion/index.html' },
-      ],
-    }
+    // Flat array = afterFiles: runs after App Router pages.
+    // /opchampion has no page.tsx, so the rewrite serves the static SPA.
+    // /opchampion/[slug] has a page.tsx and is NOT rewritten — App Router handles it.
+    return [
+      { source: '/opchampion', destination: '/OPChampion/index.html' },
+    ]
   },
 }
 
