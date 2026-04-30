@@ -6,6 +6,7 @@ import {
   getEventArticle,
   type EventArticle,
 } from '@/lib/growth-story'
+import { getAllPosts } from '@/lib/blog'
 import { mdxComponents } from '@/lib/growth-story-mdx'
 import CaseStudyTimeline from '@/components/CaseStudyTimeline'
 import PlatformMix from '@/components/PlatformMix'
@@ -132,9 +133,19 @@ interface Props {
   locale: Locale
 }
 
+const MODULE_COLORS: Record<string, string> = {
+  research: 'var(--accent)',
+  discovery: '#7c4dff',
+  outreach: '#0097a7',
+  manage: '#388e3c',
+  distribution: 'var(--warn)',
+}
+
 export default async function GrowthStoryPage({ company, locale }: Props) {
   const story = getStory(company, locale)
   if (!story) return null
+
+  const blogPosts = getAllPosts()
 
   const { timeline } = story
   const t = UI[locale]
@@ -401,6 +412,50 @@ export default async function GrowthStoryPage({ company, locale }: Props) {
           )
         })()}
       </GatedContent>
+
+      {/* Related Reading */}
+      {blogPosts.length > 0 && (
+        <section style={{ padding: '72px 0', borderTop: '1px solid var(--rule)' }}>
+          <div className="shell">
+            <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 36, flexWrap: 'wrap', gap: 12 }}>
+              <div>
+                <div className="eyebrow" style={{ marginBottom: 10 }}><span className="dot" />{locale === 'zh' ? '延伸阅读' : 'Related Reading'}</div>
+                <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.5vw, 44px)', lineHeight: 1.05, letterSpacing: '-0.025em', fontWeight: 400, margin: 0 }}>
+                  {locale === 'zh'
+                    ? <>GTM 实操 <em style={{ fontStyle: 'italic', color: 'var(--accent)' }}>手册。</em></>
+                    : <>GTM tactics you can <em style={{ fontStyle: 'italic', color: 'var(--accent)' }}>use today.</em></>}
+                </h2>
+              </div>
+              <Link href="/blog" style={{ fontFamily: 'var(--mono)', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--ink-dim)', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+                {locale === 'zh' ? '查看全部 →' : 'View all →'}
+              </Link>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 1, background: 'var(--rule)', border: '1px solid var(--rule)' }}>
+              {blogPosts.map(post => (
+                <Link key={post.slug} href={`/blog/${post.slug}`} className="blog-card" style={{ textDecoration: 'none', display: 'block' }}>
+                  <article style={{ padding: '28px 32px', minHeight: 180, display: 'flex', flexDirection: 'column', gap: 12 }}>
+                    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                      {post.module && (
+                        <span className="tag" style={{ color: MODULE_COLORS[post.module] ?? 'var(--ink-dim)', borderColor: 'transparent', background: 'var(--bg-card)' }}>
+                          {post.module}
+                        </span>
+                      )}
+                      <span className="tag">{post.readTime} read</span>
+                    </div>
+                    <h3 style={{ fontFamily: 'var(--serif)', fontSize: 22, lineHeight: 1.2, letterSpacing: '-0.018em', fontWeight: 400, margin: 0, flex: 1 }}>
+                      {post.title}
+                    </h3>
+                    <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                      Read →
+                    </div>
+                  </article>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Footer */}
       <footer style={{ borderTop: '1px solid var(--rule)', padding: '32px 0', background: 'var(--bg-card)' }}>

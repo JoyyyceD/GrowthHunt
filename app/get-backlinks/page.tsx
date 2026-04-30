@@ -1,10 +1,29 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { fetchDirectories } from '@/lib/directories'
 import { TopNav } from '@/lib/site/TopNav'
 import InteractiveSection from './InteractiveSection'
 import DirectoriesScore from './DirectoriesScore'
 
 export const dynamic = 'force-dynamic'
+
+export const metadata: Metadata = {
+  title: 'Submit to 200+ Startup Directories — Get Backlinks',
+  description: 'Automated startup directory submissions across 200+ hand-picked sites. We handle every form, every captcha, every follow-up — and report what got accepted. DR 15+ guaranteed for new sites.',
+  keywords: ['startup directories', 'get backlinks', 'directory submission', 'SaaS backlinks', 'startup SEO', 'product hunt submission', 'startup listing'],
+  alternates: { canonical: 'https://growthhunt.ai/get-backlinks' },
+  openGraph: {
+    type: 'website',
+    url: 'https://growthhunt.ai/get-backlinks',
+    title: 'Submit to 200+ Startup Directories — GrowthHunt',
+    description: 'Automated directory submissions across 200+ hand-picked sites. DR 15+ guaranteed for new sites.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Submit to 200+ Startup Directories — GrowthHunt',
+    description: 'Automated directory submissions. DR 15+ guaranteed for new sites.',
+  },
+}
 
 const DISPLAY_DIR_COUNT = '200+'
 

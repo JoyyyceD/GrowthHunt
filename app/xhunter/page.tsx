@@ -6,9 +6,22 @@ import Lab from './Lab'
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
-  title: 'Xhunter — AI startup viral tweet templates',
+  title: 'Xhunter — AI Startup Viral Tweet Templates',
   description:
     '3,447 tweets from 277 AI startup accounts, filterable by category, founder vs official, and content tag. Find the templates closest to your startup.',
+  keywords: ['startup tweet templates', 'AI startup twitter', 'viral tweet', 'founder tweets', 'startup marketing twitter', 'X growth'],
+  alternates: { canonical: 'https://growthhunt.ai/xhunter' },
+  openGraph: {
+    type: 'website',
+    url: 'https://growthhunt.ai/xhunter',
+    title: 'Xhunter — AI Startup Viral Tweet Templates',
+    description: '3,447 tweets from 277 AI startup accounts. Filter by category, tag, and account type.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Xhunter — AI Startup Viral Tweet Templates',
+    description: '3,447 tweets from 277 AI startup accounts. Find the templates closest to your startup.',
+  },
 }
 
 export default async function XhunterPage() {

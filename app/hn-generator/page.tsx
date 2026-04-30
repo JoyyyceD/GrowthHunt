@@ -5,9 +5,22 @@ import { TopNav } from '@/lib/site/TopNav'
 import HNGeneratorClient from './HNGeneratorClient'
 
 export const metadata = {
-  title: 'HN Post Generator — GrowthHunt',
+  title: 'HN Post Generator — Write Posts That Hit the Front Page',
   description:
     'Write Hacker News posts that hit the front page. Choose from 25+ proven patterns, fill in your details, and generate with AI.',
+  keywords: ['hacker news', 'HN post', 'show HN', 'ask HN', 'hacker news marketing', 'HN front page', 'startup launch'],
+  alternates: { canonical: 'https://growthhunt.ai/hn-generator' },
+  openGraph: {
+    type: 'website',
+    url: 'https://growthhunt.ai/hn-generator',
+    title: 'HN Post Generator — Write Posts That Hit the Front Page',
+    description: '25+ proven HN post patterns. Fill in your details, generate with AI, launch on Hacker News.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'HN Post Generator — GrowthHunt',
+    description: '25+ proven patterns to write Hacker News posts that hit the front page.',
+  },
 }
 
 export default function HNGeneratorPage() {
