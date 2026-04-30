@@ -76,6 +76,18 @@ const updates = {
     title: 'Vercel 增长故事：93 亿美金估值背后的 8 年增长复盘',
     description: '8 年免费框架、6 轮融资、93 亿美金估值。Vercel 是 A1（承重底层）+ D1（技术叙事升维）十年叠加打法最干净的案例。',
   },
+  clay: {
+    title: 'Clay 增长故事：转型 42 个月做到 1 亿美金 ARR',
+    description: '从 8 年缓慢增长到 2022 年 1 月转型后 42 个月做到 1 亿美金 ARR。最干净的 compound stacking 案例：可复用模板 + 创作者生态 + 双创始人每日在场。',
+  },
+  lemlist: {
+    title: 'Lemlist 增长故事：零 VC 自举 7 年做到 4500 万美金 ARR',
+    description: '七年欧洲自举、零 VC、在饱和冷邮件赛道做到 4500 万美金 ARR。一位创始人的日更内容做成 GTM 引擎——现代 B2B SaaS 最响亮的 B2 + C3 叠加打法。',
+  },
+  posthog: {
+    title: 'PostHog 增长故事：开源 + 公开 Handbook 做到 14 亿估值',
+    description: 'YC W20 期间 6 个月转向 5 次，4 周写完 MIT 协议 MVP，6 年公开整个公司内部。Handbook 就是 demo，透明就是护城河——5000 万 ARR、14 亿估值。',
+  },
 }
 
 let changed = 0

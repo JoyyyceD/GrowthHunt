@@ -75,6 +75,18 @@ const updates = {
     title: 'How Vercel Grew to $9.3B Valuation: An 8-Year Growth Story',
     description: 'Eight years of free framework, six rounds, a $9.3B valuation. The cleanest case of substrate plus tech narrative upgrade stacked over a decade.',
   },
+  clay: {
+    title: 'How Clay Hit $100M ARR in 42 Months: Growth Teardown',
+    description: 'From slow growth to $100M ARR in 42 months after a 2022 pivot. The cleanest compound-stacking case: forkable templates, creator ecosystem, two-founder GTM.',
+  },
+  lemlist: {
+    title: 'How Lemlist Bootstrapped to $45M ARR (Zero VC, 7 Years)',
+    description: '7 years bootstrapped, $0 VC, $45M ARR in saturated cold email. One founder\'s daily content cadence as the GTM engine — the loudest B2 + C3 stack in B2B SaaS.',
+  },
+  posthog: {
+    title: 'How PostHog Got to $50M ARR With Radical Transparency',
+    description: 'From 5 pivots in 6 months at YC W20 to $50M ARR and a $1.4B valuation. The handbook is the demo, transparency is the moat — proactive transparency as GTM.',
+  },
 }
 
 let changed = 0
