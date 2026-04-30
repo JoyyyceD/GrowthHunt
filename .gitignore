@@ -12,3 +12,6 @@ tsconfig.tsbuildinfo
 
 # Vercel CLI link metadata
 .vercel
+
+# Local script logs (per-machine)
+scripts/logs/

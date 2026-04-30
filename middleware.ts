@@ -2,7 +2,7 @@ import { createServerClient } from '@supabase/ssr'
 import { NextRequest, NextResponse } from 'next/server'
 
 // Add protected routes here when dashboard is ready
-const PROTECTED_PAGE_ROUTES: string[] = ['/dashboard']
+const PROTECTED_PAGE_ROUTES: string[] = ['/dashboard', '/viralx']
 // Deep-link prefixes — middleware-level gate (server-side redirect).
 // /growth-story/* is intentionally NOT here: those pages render publicly
 // (so bots can index the synthesis + deep-dives) and use a client-side
