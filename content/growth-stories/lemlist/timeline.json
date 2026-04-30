@@ -1,0 +1,360 @@
+{
+  "company": {
+    "slug": "lemlist",
+    "name": "Lemlist",
+    "legalName": "lempire",
+    "tagline": "European bootstrap that raised $0 in primary VC, crossed $45M ARR in a saturated cold-email category, and turned anti-incumbent + anti-VC + default-alive into a daily content machine",
+    "summary": "Lemlist is the case where a saturated B2B SaaS category — cold-email outbound, where Outreach and Salesloft were already $1B+ funded by 2018 — was entered from a Paris flat with about $1,000 of starting capital and held against those incumbents for seven straight years on the strength of one founder's daily content cadence. By the end of 2025, the holding company (lempire) was at a Guillaume-disclosed ~$45M ARR with claimed ~30% EBITDA, ~10,000 paying customers, and zero primary venture capital ever raised. The only outside-money event was Expedition Growth Capital's December 2021 secondary transaction (~$30M for ~20% at $150M post-money) — proceeds went to founders and early holders, no primary capital entered the company, and the bootstrap operating claim survived intact. The pattern is B2 + C3 maximalist: anti-Outreach/Salesloft positioning layered with anti-VC positioning, both sustained for six-plus years, both converted into a daily LinkedIn + X content engine that replaces a venture-funded sales-development organization.",
+    "founded": "2018-01",
+    "founders": [
+      "Guillaume Moubeche",
+      "Vianney Lecroart",
+      "François Lecroart"
+    ],
+    "seriesNumber": 19
+  },
+  "phases": [
+    {
+      "start": "2018-01",
+      "end": "2020-12",
+      "name": "Cold-email bootstrap (early)",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2020-12",
+      "end": "2022-12",
+      "name": "Series alternative + secondary + book",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2022-12",
+      "end": "2025-09",
+      "name": "lempire multi-product expansion",
+      "color": "#dcfce7"
+    },
+    {
+      "start": "2025-09",
+      "end": "2026-04",
+      "name": "Acquisitions + AI agents",
+      "color": "#fce7f3"
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-01-15",
+      "title": "Lemlist founded with $1,000 in a Paris flat",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "Guillaume Moubeche, Vianney Lecroart, and François Lecroart found Lemlist with about $1,000 (€1,024) of starting capital in a Paris flat. The product is a narrow wedge: cold-email outbound personalization with variable images, dynamic fields, and custom landing pages. lempire is the holding entity from day one.",
+      "externalUrl": "https://www.stacksync.com/blog/one-thousand-dollars-in-a-paris-flat-the-origin-story-of-lemlist",
+      "articleSlug": "2018-paris-founding"
+    },
+    {
+      "date": "2018-04-01",
+      "title": "Product Hunt #1 of the day (free beta)",
+      "type": "product",
+      "description": "Lemlist launches publicly on Product Hunt and finishes #1 product of the day. Critically, the beta is kept free intentionally — paying customers do not start until the AppSumo deal four months later. The free window builds the early user base without burning runway.",
+      "externalUrl": "https://saasmarketer.io/saas-marketing-plan/"
+    },
+    {
+      "date": "2018-09-01",
+      "title": "AppSumo deal: $160K gross / ~$50K net in two weeks",
+      "type": "product",
+      "gtmTag": "Bundled milestone",
+      "description": "AppSumo lifetime-deal campaign generates ~$160,000 gross in two weeks. AppSumo's ~70% commission leaves ~$50K net to Lemlist. The campaign drops a few thousand paying users into the system, installs the customer-feedback flywheel, and gives the team a runway-extending capital event with no equity dilution.",
+      "externalUrl": "https://saasclub.io/podcast/saas-startup-appsumo/",
+      "articleSlug": "2020-app-sumo-bootstrap"
+    },
+    {
+      "date": "2018-11-01",
+      "title": "Lempod launched as side project",
+      "type": "product",
+      "description": "The team launches Lempod, a LinkedIn engagement-pod tool, as a side project alongside Lemlist. Will be sold ~18 months later to focus on the core product."
+    },
+    {
+      "date": "2019-01-01",
+      "title": "$250K ARR — first 12 months of paid product",
+      "type": "media",
+      "description": "Lemlist hits $250K ARR roughly twelve months after AppSumo paid launch. Documented in Guillaume's canonical Medium post '365 days of growth — from 0 to $250k ARR without funding,' which is itself the early manifestation of build-in-public as GTM channel.",
+      "externalUrl": "https://medium.com/@guillaume.moubeche/365-days-of-growth-from-0-to-250k-arr-2014d0c54671"
+    },
+    {
+      "date": "2020-03-01",
+      "title": "Crosses $250K MRR ($3M ARR run-rate)",
+      "type": "media",
+      "description": "Lemlist crosses $250K MRR (~$3M ARR run-rate) by March 2020 — accelerated by the COVID-era surge in remote-sales tooling demand. The first inflection where the bootstrap path looks not just survivable but structurally compounding.",
+      "externalUrl": "https://www.growthunhinged.com/p/lessons-from-bootstrapping-lemlist"
+    },
+    {
+      "date": "2020-09-01",
+      "title": "Lempod sold (~$600K ARR exit via FE International)",
+      "type": "acquisition",
+      "description": "Lempod sold via FE International to focus on Lemlist. Lempod was at ~$600K ARR at exit. Whole sale process took six months. First concrete artifact of the bootstrap-with-discipline story; reusable case study Guillaume carries into the book and podcast circuit.",
+      "externalUrl": "https://www.feinternational.com/blog/lempod-founder-on-his-recent-exit"
+    },
+    {
+      "date": "2021-03-12",
+      "title": "Tech.eu — 'Saying no to $30M in funding'",
+      "type": "media",
+      "gtmTag": "Audience boundary push",
+      "description": "Tech.eu publishes 'Saying no to $30 million in funding — is hyper-growth without external funding possible?' First major English-language piece framing Lemlist's anti-VC narrative. Signal that the story is starting to circulate beyond bootstrap-niche audiences.",
+      "externalUrl": "https://tech.eu/2021/03/12/saying-no-to-30-million-in-funding-is-hyper-growth-without-external-funding-possible/"
+    },
+    {
+      "date": "2021-12-01",
+      "title": "Crosses $10M ARR",
+      "type": "media",
+      "gtmTag": "Capital efficiency as positioning",
+      "description": "Lemlist crosses $10M ARR — Guillaume's canonical '3.5 years from $1,000 to $10M ARR' milestone. Becomes the durable narrative anchor for every subsequent podcast and book reference.",
+      "externalUrl": "https://blog.lempire.com/0-to-20m-arr-in-5-years-bootstrapped-how-to-achieve-the-impossible/"
+    },
+    {
+      "date": "2021-12-15",
+      "title": "Expedition Growth Capital secondary — $30M @ $150M valuation",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Expedition Growth Capital invests ~$30M in a secondary transaction taking ~20% of lempire at a $150M post-money valuation. Critically, this is a SECONDARY — founders and early investors cash out, no primary capital enters the company. Lemlist remains operationally bootstrapped. The transaction produces the $150M valuation that anchors Guillaume's book title.",
+      "externalUrl": "https://expedition.capital/news/expeditions-30m-secondary-investment-in-lempire/",
+      "articleSlug": "2021-12-expedition-secondary"
+    },
+    {
+      "date": "2022-05-01",
+      "title": "lempire acquires Tweet Hunter (~$2M + earnouts)",
+      "type": "acquisition",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "lempire acquires Tweet Hunter (Twitter/X content scheduling tool) from Tibo Louis-Lucas's Pony Express Studio. Initial cash ~$2M plus earnouts; total reported by founders ~$8-15M over the earnout period. First step in lempire-as-multi-product holding company. Funded entirely from operating cash.",
+      "externalUrl": "https://theygotacquired.com/saas/pony-express-acquired-by-lempire/"
+    },
+    {
+      "date": "2022-06-15",
+      "title": "lempire acquires Taplio",
+      "type": "acquisition",
+      "description": "lempire acquires Taplio (LinkedIn personal-brand tool) from the same Pony Express Studio team. Combined Tweet Hunter + Taplio deal frequently quoted as ~$10M+ over the earnout period. Strategic logic: Lemlist's core GTM machine is team LinkedIn distribution, so acquiring tools that explicitly serve LinkedIn growth gives lempire vertical stack across cold-email and personal-brand channels.",
+      "externalUrl": "https://theygotacquired.com/saas/pony-express-acquired-by-lempire/"
+    },
+    {
+      "date": "2022-07-01",
+      "title": "'The $150M Secret' book published",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "Guillaume Moubeche publishes 'The $150M Secret: Turning $1000 into a $150,000,000 company in 3.5 years.' Self-published via Amazon Kindle + paperback. Becomes the durable persona artifact — referenced in essentially every podcast appearance afterward and converts the bootstrap story into portable IP. The book sits exactly on the seam where the secondary valuation generates the title.",
+      "externalUrl": "https://www.amazon.com/150M-secret-Turning-company-years/dp/B0B37KWX3N",
+      "articleSlug": "2022-the-150m-secret-book"
+    },
+    {
+      "date": "2022-09-01",
+      "title": "Lemwarm spun out as standalone product",
+      "type": "product",
+      "description": "Lemwarm — email warmup / deliverability — formally positioned as a standalone product within lempire (alongside Lemlist core). Begins the multi-product re-articulation that becomes the lempire rebrand.",
+      "externalUrl": "https://www.lemwarm.com/"
+    },
+    {
+      "date": "2023-01-01",
+      "title": "Lemcal launched (Calendly alternative)",
+      "type": "product",
+      "description": "Lemcal launches as a Calendly alternative inside the lempire suite. Native integration with Lemlist. Confirms the multi-product holding-co thesis. Adds incremental ARR through the existing Lemlist customer base."
+    },
+    {
+      "date": "2023-06-01",
+      "title": "Crosses $20M ARR",
+      "type": "media",
+      "gtmTag": "Capital efficiency as positioning",
+      "description": "Lemlist crosses $20M ARR — communicated through Guillaume's LinkedIn / X / podcast circuit. '0 to $20M ARR in 5 years bootstrapped' becomes the new canonical line and the next durable narrative anchor.",
+      "externalUrl": "https://blog.lempire.com/0-to-20m-arr-in-5-years-bootstrapped-how-to-achieve-the-impossible/"
+    },
+    {
+      "date": "2024-02-15",
+      "title": "GTM Strategist Podcast — 'Founder-Led Sales and Venture Building'",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "Guillaume on GTM Strategist Podcast. Part of the persistent 2024 podcast circuit alongside Kickoff Sessions #205 and LITTLE BIG THINGS. Episodic E2 layered on top of the daily LinkedIn + X cadence. By 2024 the founder-as-IP layer is institutional — Guillaume appears on dozens of shows per year.",
+      "externalUrl": "https://podcasts.apple.com/si/podcast/guillaume-moubeche-founder-led-sales-and-venture-building/id1709602612?i=1000645401887",
+      "articleSlug": "2024-lempire-rebrand"
+    },
+    {
+      "date": "2024-12-01",
+      "title": "$29M ARR + ~$10M EBITDA close-out",
+      "type": "media",
+      "gtmTag": "Capital efficiency as positioning",
+      "description": "Lemlist closes 2024 at ~$29M ARR with claimed ~$10M EBITDA (~30-35% margin). 10,000 customers. Numbers are Guillaume-disclosed; consistent across Latka tracker and podcast appearances. The disclosure cadence is now an annual content product — EBITDA margins disclosed as offensive positioning, not defensive PR.",
+      "externalUrl": "https://getlatka.com/companies/lemlist/funding"
+    },
+    {
+      "date": "2025-06-01",
+      "title": "20VC appearance — '20Growth: $30M ARR Bootstrapped through Content and Brand'",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "Guillaume on Harry Stebbings' 20VC / 20Growth — the most prominent US-business-press-tier slot in his appearance set. Discusses content engine, why most founders are bad at sales, and the overpaying-staff philosophy. Key US-side amplification of the bootstrap narrative.",
+      "externalUrl": "https://open.spotify.com/episode/6abCCKNfGCX8ehuBySMKfF"
+    },
+    {
+      "date": "2025-09-01",
+      "title": "$40M ARR / Off Market podcast launch",
+      "type": "media",
+      "description": "By September 2025 Latka reports $40M revenue for Lemlist core. Guillaume launches the Off Market podcast as host. E2 footprint deepens from guest to host — owning the format rather than just appearing in others'.",
+      "externalUrl": "https://podcasts.apple.com/us/podcast/off-market/id1858942201"
+    },
+    {
+      "date": "2025-10-20",
+      "title": "lempire acquires Claap for $25M",
+      "type": "acquisition",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "lempire acquires Claap (Paris-based AI sales-conversation-intelligence platform; founded 2021 by Robin Bonduelle, Pierre Touzeau, Thomas Hernandez) for $25M. Cash + earnout — exact split not disclosed. Funded entirely from operating profit, preserving the bootstrap profile. Claap was at ~$2M ARR pre-acquisition; lempire projects $10M ARR within a year. Joint launch of 'smartbound' sales motion. First move that re-positions lempire from sales-engagement suite to AI-native sales platform.",
+      "externalUrl": "https://www.eu-startups.com/2025/10/sales-engagement-platform-lemlist-acquires-fellow-french-ai-platform-claap-to-transform-sales-with-ai-technology/",
+      "articleSlug": "2025-10-claap-acquisition"
+    },
+    {
+      "date": "2025-12-01",
+      "title": "$45M ARR holding-co disclosure",
+      "type": "media",
+      "gtmTag": "Capital efficiency as positioning",
+      "description": "Guillaume publicly cites $45M ARR for the lempire holding company by end of 2025 — Lemlist core ~$40M + suite (Lemwarm / Lemcal / Tweet Hunter / Taplio) ~$4-5M + early Claap integration. Bootstrap narrative compounds: '$1,000 → $45M ARR with $0 primary VC capital.'",
+      "externalUrl": "https://www.scalewise.com/guillaume-moubeche/"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2019-01-01",
+      "value": 250000,
+      "source": "Guillaume Medium post (founder-disclosed)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2019-12-31",
+      "value": 600000,
+      "source": "Growth Unhinged (founder-disclosed)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2021-12-31",
+      "value": 10000000,
+      "source": "lempire blog (founder-disclosed)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2023-06-01",
+      "value": 20000000,
+      "source": "lempire blog (founder-disclosed)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2024-12-31",
+      "value": 29000000,
+      "source": "Latka / Founderpath (founder-disclosed)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-09-01",
+      "value": 40000000,
+      "source": "Founderpath interview (founder-disclosed, Lemlist core)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-12-31",
+      "value": 45000000,
+      "source": "Scalewise (founder-disclosed, lempire holding combined)",
+      "confidence": "estimate"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2021-12-15",
+      "value": 150000000,
+      "round": "Secondary (Expedition Growth Capital)",
+      "source": "Expedition / lempire press",
+      "confidence": "media"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 5,
+      "bestStage": "Series alternative + lempire expansion",
+      "effort": "Always-on (founder voice, daily)",
+      "role": "Anti-VC + bootstrap-disclosure surface",
+      "description": "Guillaume Moubeche's X account is where the daily anti-VC + pro-bootstrap content lives. The cadence is the move: posts about ARR milestones, EBITDA margins, employee equity grants, and head-to-head VC-vs-bootstrap framings appear multiple times a week. Critically, this is Guillaume's personal account, not a Lemlist company account — the founder-as-IP layer is on the personal handle, with the Lemlist (lempire) brand handles serving as product channels.",
+      "catalyst": "December 2021 — when Lemlist crosses $10M ARR and the Expedition secondary closes, Guillaume's X output shifts from product-tactics threads to anti-VC + bootstrap-economics threads at scale. Posts framing '3.5 years from $1,000 to $10M ARR' become the most-referenced artifacts in his appearance set; the book title 'The $150M Secret' (2022) is born from this content rotation.",
+      "catalystUrl": "https://x.com/GuillaumeMbh",
+      "accountUrl": "https://x.com/GuillaumeMbh",
+      "accountLabel": "@GuillaumeMbh on X",
+      "whenItWorks": "When the founder treats the account as a longitudinal disclosure surface and posts under their own name daily. Specific numbers (ARR, EBITDA, employee equity) travel; vague 'we're crushing it' posts do not",
+      "whenItDoesnt": "If the account posts only product launches and screenshots. Guillaume's X works because he treats it as an economic-stance commentary surface — a worldview the audience can adopt"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 5,
+      "bestStage": "All stages — load-bearing",
+      "effort": "Always-on (founder + team)",
+      "role": "Daily content engine + team distribution",
+      "description": "LinkedIn is the structural distribution channel for Lemlist. Guillaume posts daily; every Lemlist employee posts regularly under their own name on cold-outbound and sales-engagement topics. By the time Lemlist hit $10M ARR, the team-wide cadence was reaching ~20 million people per month combined — the venture-funded sales-development organization replaced by an organic content engine. This is the durable asset that survives the founder.",
+      "catalyst": "The institutional decision to make every Lemlist employee post regularly on LinkedIn under their own name (2019-2020). The compounding network effect made LinkedIn into the GTM machine itself rather than one of several channels.",
+      "catalystUrl": "https://www.linkedin.com/in/guillaumemoubeche/",
+      "accountUrl": "https://www.linkedin.com/in/guillaumemoubeche/",
+      "accountLabel": "Guillaume Moubeche on LinkedIn",
+      "whenItWorks": "When the CEO models the behavior daily and the culture rewards employees for posting under their own names. The team cadence is what turns LinkedIn from a marketing channel into infrastructure",
+      "whenItDoesnt": "If only the CEO posts and employees stay silent. Single-account LinkedIn is a marketing channel; team-wide LinkedIn is GTM infrastructure"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 3,
+      "bestStage": "lempire expansion + acquisitions era",
+      "effort": "Episodic (founder + product team)",
+      "role": "Long-form authority + product walkthrough",
+      "description": "YouTube footprint is mixed: a Lemlist company channel for product walkthroughs and customer stories, plus Guillaume's appearances as a podcast guest that get cross-posted as long-form video. Less load-bearing than X / LinkedIn for the bootstrap narrative, but the long-form Saastock / MicroConf / 20VC video clips travel inside the founder ecosystem.",
+      "catalyst": "2025 20VC appearance video clip, plus Guillaume's recurring conference-talk uploads (Saastock, MicroConf). The long-form authority layer that pairs with the daily X / LinkedIn cadence.",
+      "catalystUrl": "https://www.youtube.com/@lemlist",
+      "accountUrl": "https://www.youtube.com/@lemlist",
+      "accountLabel": "Lemlist on YouTube",
+      "whenItWorks": "When the founder has a coherent worldview that rewards 60+ minutes of attention. Long-form is where the bootstrap economics get articulated in detail",
+      "whenItDoesnt": "If the channel is product-tutorial-only with no founder voice. YouTube without an authored worldview is feature documentation, not GTM"
+    },
+    {
+      "slug": "lennys-newsletter",
+      "name": "Lenny's Newsletter (third-party)",
+      "score": 4,
+      "bestStage": "lempire expansion era",
+      "effort": "Earned amplification",
+      "role": "B2B founder-audience credibility transfer",
+      "description": "Lemlist appears repeatedly as a case study in Lenny Rachitsky's newsletter and adjacent founder-audience newsletters (Aakash Gupta, Growth Unhinged, Pavilion's content arms) covering bootstrapped-SaaS economics. Guillaume's appearances in the same shows that cover Linear / Anthropic / Plaude give the bootstrap narrative cross-cohort durability.",
+      "catalyst": "Growth Unhinged 'Lessons from bootstrapping Lemlist' deep-dive (2023). One of the canonical analyst-tier writeups that turns Guillaume's self-disclosure into third-party-validated narrative.",
+      "catalystUrl": "https://www.growthunhinged.com/p/lessons-from-bootstrapping-lemlist",
+      "accountUrl": "https://www.growthunhinged.com/p/lessons-from-bootstrapping-lemlist",
+      "accountLabel": "Growth Unhinged: Lemlist deep-dive",
+      "whenItWorks": "When third-party analysts can independently triangulate the founder-disclosed numbers. Lemlist has enough corroboration across Latka, Founderpath, Tech.eu to make the analyst writeups credible",
+      "whenItDoesnt": "When the only source is the founder. Single-source narratives don't get picked up by the analyst tier — two independent angles minimum"
+    },
+    {
+      "slug": "podcast-guest",
+      "name": "Podcasts (20VC / Founderpath / SaaS Club)",
+      "score": 5,
+      "bestStage": "All stages — load-bearing",
+      "effort": "Episodic, founder-led",
+      "role": "Long-form authority + bootstrap-narrative amplifier",
+      "description": "Podcast guest spots are the long-form pillar. Guillaume has appeared on 20VC (Harry Stebbings), SaaS Club, GTM Strategist, Kickoff Sessions, Value Inspiration, SaaS Unbound, and multiple long-form French shows including LITTLE BIG THINGS and Débrouillard. The appearance cadence is approximately monthly, with each episode operationalizing the bootstrap economics into observable practices.",
+      "catalyst": "June 2025 — 20VC / 20Growth appearance with Harry Stebbings: '$30M ARR Bootstrapped through Content and Brand.' Most prominent US-business-press-tier slot. Discusses the content engine, why most founders are bad at sales, and the overpaying-staff philosophy.",
+      "catalystUrl": "https://open.spotify.com/episode/6abCCKNfGCX8ehuBySMKfF",
+      "accountUrl": "https://open.spotify.com/episode/6abCCKNfGCX8ehuBySMKfF",
+      "accountLabel": "20VC / 20Growth: Guillaume Moubeche",
+      "whenItWorks": "When the buyer audience is founders / SDRs / sales-engagement-tool decision-makers who personally use podcasts for due diligence. Long-form is the right format for considered B2B purchases",
+      "whenItDoesnt": "For SMB or transactional buyers where the journey is shorter than 60 minutes. Podcasts are top-of-funnel for considered purchases, not impulse"
+    },
+    {
+      "slug": "off-market-podcast",
+      "name": "Off Market podcast (founder-owned)",
+      "score": 3,
+      "bestStage": "Acquisitions + AI agents era",
+      "effort": "Episodic, host-owned",
+      "role": "Format-ownership move (E2 deepening)",
+      "description": "Off Market is Guillaume's own podcast as host (launched 2025, Apple Podcasts ID 1858942201). The shift from guest to host is structurally significant — owning the format gives Guillaume editorial control over which guests, which questions, and which framings travel. Less reach than 20VC at launch, but compounds over time as the host's network of guests becomes the show's audience pull.",
+      "catalyst": "September 2025 — Off Market podcast launches as Guillaume's own format. The E2 footprint deepens from 'guest in others' shows' to 'host of his own.' Distinguishes lempire's founder-as-IP layer from purely guest-driven competitors.",
+      "catalystUrl": "https://podcasts.apple.com/us/podcast/off-market/id1858942201",
+      "accountUrl": "https://podcasts.apple.com/us/podcast/off-market/id1858942201",
+      "accountLabel": "Off Market on Apple Podcasts",
+      "whenItWorks": "When the founder already has a network of guests and an established personal-brand pull. Host-owned podcasts work as compounding assets, not as launch tactics",
+      "whenItDoesnt": "Before the founder has the audience to fill the guest pipeline. Hosting too early produces empty episodes that signal weakness"
+    }
+  ]
+}

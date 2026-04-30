@@ -1,0 +1,91 @@
+---
+title: "Series A $9M Led by GV — When Alphabet's VC Made Open-Source Product Analytics a Category (Dec 17, 2020)"
+description: "PostHog's Series A closed in July 2020 and was announced December 17, 2020. The headline number was $9M from GV. The deeper signal was that open-source product analytics had become a recognizable venture category — ten months after a four-week MVP."
+date: "2020-12-17"
+type: "funding"
+gtmTag: "Bundled milestone"
+eventTitle: "Series A $9M — GV-led"
+externalUrl: "https://posthog.com/blog/posthog-announces-9-million-dollar-series-A"
+---
+
+<Catalyst>
+Most Series A rounds at this stage signal that an investor likes the team. PostHog's Series A signaled that GV — Alphabet's venture arm — had decided open-source product analytics was a category worth funding at infrastructure-tier multiples. Ten months after a four-week MVP went live on Hacker News.
+</Catalyst>
+
+December 17, 2020. PostHog announces the Series A: $9M led by GV (Alphabet's venture capital arm), with Y Combinator Continuity participating. The round had actually closed in July 2020, but the announcement was timed for December.
+
+Total raised at this point: $12M (seed + Series A). ARR was small — sub-$1M by triangulation, not officially disclosed at the time. The valuation was not officially disclosed either, but post-money in the rough vicinity of $25–35M was implied by the round size.
+
+## Why GV mattered as the lead, not the size of the check
+
+The $9M check is not the headline. The headline is which fund cut it.
+
+GV (formerly Google Ventures) is Alphabet's institutional venture arm. Its investment thesis at the time was explicitly about open-source developer infrastructure — they had been investing in open-source-with-paid-cloud companies for several years (Cockroach Labs, GitLab, Confluent in earlier rounds at adjacent funds, then GV directly into newer waves).
+
+The signal in the lead was that open-source product analytics had become legible to top-tier institutional capital as its own category. Ten months after PostHog's HN launch.
+
+For comparison: Hugging Face's $15M Series A in December 2019 (also led by Lux Capital) came roughly 14 months after the PyTorch BERT port shipped. PostHog's substrate-to-Series-A latency was *shorter* than Hugging Face's — about ten months from HN launch to GV lead.
+
+That speed signal mattered for two follow-on reasons. First, it accelerated PostHog's hiring plan — the Series B was raised "ahead of schedule" six months later because the open-source funnel was outrunning the headcount. Second, it told other open-source dev-tool founders that the category was investable, which contributed to the broader open-source-dev-tool funding wave of 2021.
+
+## Why the December announcement was timed five months after close
+
+The Series A closed in July 2020 and was announced December 17, 2020. A five-month delay between close and announcement is unusual.
+
+PostHog's stated reason in the handbook was that they wanted the announcement to land alongside enough operating progress that it could carry a substantive narrative. Specifically, by December 2020:
+
+- PostHog Cloud had been live for six months
+- ~3,000 self-hosted deployments existed in the wild
+- The handbook had begun publishing publicly, including the compensation philosophy
+- The team had grown from 2 to roughly 12 people
+
+The bundled-milestone framing (C1 in the playbook) was explicit. PostHog disclosed the round, the customer adoption, the team size, the open-source instance count, and the public handbook all at once. A single news cycle carried five stories.
+
+The mechanism is the same as ElevenLabs's January 2023 pre-seed bundle (funding + public beta + free tier opening) and Hugging Face's later Series C (funding + 100K models + 10K customers + team grew 4x). PostHog ran it earlier in the company timeline than either of those — at Series A rather than at substrate-validation rounds.
+
+## What the round bought
+
+The $9M was used for two things, by published claim. First, hiring — the team grew from ~12 at the announcement to ~38 by end-2022. Second, the ClickHouse rebuild that would take most of 2022 to ship.
+
+The ClickHouse rebuild is the consequential capital allocation. It was the answer to the technical critique Heap engineers had filed on the February 2020 HN launch thread — and it was funded directly by the GV Series A capital, in the sense that PostHog's runway during 2021–2022 came mostly from this round and the subsequent Series B.
+
+PostHog has been explicit in retrospect that the ClickHouse rebuild was the highest-risk multi-month engineering effort the company has ever undertaken. Several false starts. The migration shipped in early 2022 with the framing "PostHog Open Source 1000x more scalable" — a substantively true claim that resolved the architecture limit publicly stated on the launch thread two years earlier.
+
+| Question on Feb 2020 HN launch thread | PostHog's answer in early 2022 |
+|---|---|
+| Will Postgres survive past 100M events per customer per month? | No. ClickHouse migration shipped. |
+| Will the open-source motion sustain at scale? | Yes. ~3K self-hosted deployments by Dec 2020, ~50K by 2022. |
+| Will PostHog Cloud have credible economics? | TBD at scale. 2023 profitability disclosure was the first hard signal. |
+
+The Series A capital was what bought PostHog the time to answer the first question on the Heap engineers' terms.
+
+## What the round did not signal
+
+The Series A did not signal that PostHog had product-market fit at enterprise scale. The customer base in December 2020 was overwhelmingly indie developers, small-to-medium SaaS teams, and startups in the YC pipeline. Enterprise traction would not arrive for several years.
+
+The Series A also did not signal that the multi-product platform thesis was viable. At the time of the announcement, PostHog had one product — analytics — with feature flags and heatmaps in alpha. The Series B six months later would underwrite the multi-product expansion, but the Series A was specifically funded on the open-source-substrate thesis.
+
+The Series A did not solve the long-term operational question of whether transparency-as-moat could compound across funding rounds. That question would not have a public answer until the Series D in 2025, when Stripe led on the strength of a relationship sourced via Patrick Collison's tweet — a chain of events that was downstream of PostHog publishing the handbook on the open web for years.
+
+## What the round set up
+
+What the Series A set up, more than anything else, was *time*. Capital that bought 18 months of operating runway during 2021–2022, during which the substrate compounded, the handbook accumulated public commit history, and the ClickHouse migration shipped.
+
+PostHog's pattern across all six funding rounds is that capital was used to extend operating runway, not to spike growth. The Series A was the first instance of this pattern. The Series B (June 2021) extended it. The 2022–2023 silence period during which PostHog disclosed profitability extended it further. The Series D (June 2025) ended the silence with a tweet-sourced relationship that had been built over 18 months.
+
+GV's role across these rounds is consistent. GV led the Series A, participated in the Series B (with YC Continuity leading), and re-participated in both the Series D and Series E in 2025. Five-round continuity from a single institutional investor is rare and signals a long-term thesis bet rather than a momentum trade.
+
+<Conclusion title="What to copy">
+
+- **Time the announcement five months after the close, with bundled milestones.** PostHog used the lag to accumulate substantive operating progress that could anchor a single news cycle to five stories. Most early-stage companies announce on close, which wastes the press window.
+- **Take the lead investor's category thesis seriously.** GV's open-source-developer-infrastructure thesis was the reason this Series A happened at all. PostHog's job for the next five years was to prove the category, not to prove the team.
+- **Use Series A capital to buy time for substrate compounding, not to spike growth.** PostHog spent 2021–2022 on the ClickHouse rebuild and the multi-product expansion, not on aggressive paid acquisition. The substrate compounded; the rounds got progressively easier.
+
+</Conclusion>
+
+## Sources
+
+- [PostHog blog — $9M Series A announcement (Dec 2020)](https://posthog.com/blog/posthog-announces-9-million-dollar-series-A)
+- [PostHog blog — ClickHouse 1000x more scalable (2022)](https://posthog.com/blog/clickhouse-announcement)
+- [PostHog handbook — How we got here](https://posthog.com/handbook/story)
+- [GV portfolio — PostHog](https://www.gv.com/portfolio/)

@@ -1,0 +1,96 @@
+---
+title: "六个月内五次转向——PostHog 为何在 2020 年 1 月 23 日杀掉一个能跑的产品开始写代码"
+description: "Y Combinator W20 三周后，James Hawkins 与 Tim Glaser 已经在一个无法解决底层问题的工具上拿到 600 个付费用户。他们把它砍了。PostHog 是他们的第六个想法——能跑通的那一个，因为他们每次都在重新实现分析。"
+date: "2020-01-23"
+type: "product"
+gtmTag: "结构性差异化"
+eventTitle: "PostHog 代码起步（YC W20 中段）"
+externalUrl: "https://posthog.com/handbook/story"
+---
+
+<Catalyst>
+大多数创始人转向一次。PostHog 在六个月里转向了六次，每一次都注意到同一件事：他们尝试的每个产品都需要分析，他们伸手去抓的每个分析工具都从工程师那里收获同一组抱怨。第六个想法，是答案本身就是产品的那一个。
+</Catalyst>
+
+2020 年 1 月 23 日。James Hawkins 与 Tim Glaser 开始写 PostHog 的代码。他们在 Y Combinator Winter 2020 批次的中段。HN 发布日定在四周后：2020 年 2 月 20 日。
+
+这是第六个想法。前面五个里面包括一款帮助工程师管理技术债的工具——最初的 W20 主题——批次开始三周后已经有 <Stat value="600 用户" label="50% 问卷回答率" />，并且在收钱。
+
+他们还是把它砍了。
+
+## 让转向速度成为可能的 Arachnys 背景
+
+Hawkins 与 Glaser 在 Arachnys——一家伦敦监管科技创业公司——结识。Hawkins 用 4 年从 IC 做到 VP of Sales。Glaser 以 PM 与工程师身份负责数据基础设施。
+
+互补的直觉很关键。Hawkins 在 GTM——定价、定位、销售动作。Glaser 在架构问题上——什么存储层、什么查询模型、什么自托管故事。两人都没创过业。
+
+两人都拥有的不寻常品质，是「在弱信号上转向」的不寻常坚定。大多数创始人会把「我们有 600 用户和营收」合理化为「我们有 PMF」。Hawkins 与 Glaser 跑了定性访谈，从每位客户那里听到同一个回答：工具不错，没解决底层问题。
+
+## 五次转向教会他们什么
+
+在 YC 的钟下六个月转六次，残酷。六个月的无薪跑道烧钱，看着其他批次的创业公司融到种子轮。大多数团队挺不过来；少数挺过来的，结尾通常也没拿到有用的洞察。
+
+Hawkins 与 Glaser 在每次转向中注意到的事情是结构性的。**他们每次都在重新实现分析。** 每个尝试的产品都需要事件追踪、漏斗、留存图。每次他们伸手抓的分析工具——Mixpanel、Amplitude、Heap——都从工程师那里收获同一组抱怨。
+
+| 抱怨 | 为什么对工程师重要 |
+|---|---|
+| 数据流向第三方 | EU 隐私法规、内部数据驻留政策、客户信任 |
+| 出口费昂贵 | 拿不出原始事件给下游数据仓库 / ML 用 |
+| 惩罚增长的定价 | 按事件计费让成功的产品变得更贵 |
+| 自托管不可能 | 强制云部署，无视约束条件 |
+
+Arachnys 的监管科技背景是隐私框架能落地的原因。两位创始人花了多年为「不能把数据传给第三方 SaaS」的受监管买家做软件。这种挫折感不是理论性的——他们直接感受过。
+
+## 1 月 23 日：第一次提交
+
+PostHog 在他们开始写代码那天注册成立。MVP 计划很简单——开源 MIT 协议的产品分析，可在一个容器加 Postgres 上自托管，JavaScript SDK 模仿 Mixpanel 的 API 足够近，让迁移变得几乎不要钱。
+
+选 MIT（而不是 AGPL 或私有 copyleft）有后果。MIT 让项目对任何想把它嵌进自己产品的开发者都干净匹配。AGPL 会带来企业 license 反弹，会拖慢底层。六年后，承载企业版代码的 `ee/` 目录（用单独的私有 license）会变成 PostHog Cloud 付费层的楔子。
+
+选 Postgres 是为了更快上线而对规模做的有意识妥协。这个架构在每客户每月约 1 亿事件以上撑不住。PostHog 的赌注是：四周交付的截止时间比规模天花板更重要，因为如果底层复利他们之后可以重构到 ClickHouse。
+
+这个赌赢了两次。第一次是 2020 年 2 月 20 日——HN 发布的 MVP 跑在 Postgres 上。第二次是 2022 年，ClickHouse 迁移上线，解决了两年前 Heap 工程师在发布线程里提的规模批评。
+
+## 「我们四周后发布」实际意味着什么
+
+把 2 月 20 日定为发布日——空仓到 Hacker News 首页 4 周——看起来鲁莽。实际上它强制了一个 PostHog 从未撤销的决定：表面积要小、要 opinionated、要自我说明。
+
+发布时上线的：
+
+- 一容器 + Postgres 自托管部署
+- 带 `posthog.capture(eventName, properties)` API 的 JavaScript SDK
+- 事件之上的漏斗 + 留存 + 队列分析
+- 自托管的 web UI
+
+发布时*没*上线的：
+
+- 托管云（PostHog Cloud 在 2020 年 5 月才上）
+- Feature flags（2021 年 3 月）
+- Session replay（2021 年中 beta，2022 年 6 月 GA）
+- Experiments + Surveys（2022 年 9 月）
+- 数据仓库（2023 年 3 月 beta，2024 年 7 月 GA）
+
+四周 MVP 把所有非承重的东西都推迟了，只保留事件捕获和可视化层。每个后续产品在底层撑得起的时候才加进来——从来不作为发布功能。
+
+## 回头看最重要的选择
+
+MIT 协议、第一天就用 Postgres 的架构、四周发布日——这些都是其他团队可复制的。
+
+更难复制的是创始人对，愿意在 YC 的钟下六个月里六次杀掉一个能跑的产品。转向速度是这个案例不能干净迁移到 2026 年某位创始人那里的东西。大多数团队会读发布故事，复制「开源 MIT MVP 上 HN」的模式，然后在定性反馈说底层问题没被解决时拒绝把它砍掉。
+
+PostHog 在拿到能跑的版本之前砍了五次。
+
+<Conclusion title="可以复用的东西">
+
+- **如果你的产品需要追踪使用，那分析工具就是你栈和买家栈的一部分。** PostHog 的楔子是买家已经对现存方案不满。一个 2026 年的创始人需要在另一个现存方案被广泛讨厌的品类里有同等观察。
+- **第 0 天用 MIT，不是 AGPL。** 选 license 决定开发者是否能自由嵌入你的项目。PostHog 的 MIT 核心是承重的分发决策——copyleft 会限制底层。
+- **设一个紧到强制小表面积的发布期限。** 4 周从空仓到 HN 给了 PostHog 一个产品、opinionated、自我说明。每个后续产品在同一底层之上添加，且在底层复利之后——从不作为发布功能。
+
+</Conclusion>
+
+## 来源
+
+- [PostHog handbook — How we got here](https://posthog.com/handbook/story)
+- [PostHog 博客 — Pivot to PostHog](https://posthog.com/blog/pivot-to-posthog)
+- [PostHog founders — Story about pivots](https://posthog.com/founders/story-about-pivots)
+- [Hacker News — Launch HN: PostHog（YC W20）（2020 年 2 月）](https://news.ycombinator.com/item?id=22376732)

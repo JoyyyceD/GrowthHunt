@@ -1,0 +1,96 @@
+---
+title: "Launch HN: PostHog (YC W20) — 282 Upvotes, 83 Comments, and the Heap Engineers Who Wrote PostHog's 2022 Roadmap (Feb 2020)"
+description: "PostHog's HN launch was four weeks of code on the front page. The product worked. The discussion thread from competing engineers wrote the next two years of architecture decisions in real time."
+date: "2020-02-20"
+type: "media"
+gtmTag: "Structural differentiation"
+eventTitle: "Launch HN: PostHog (YC W20)"
+externalUrl: "https://news.ycombinator.com/item?id=22376732"
+---
+
+<Catalyst>
+A Launch HN post that hits the front page is a traction signal. A Launch HN post where engineers from the incumbent show up in the comments and identify the architecture limit is a roadmap. PostHog got both on the same day, and spent the next two years executing against the second one.
+</Catalyst>
+
+February 20, 2020. James Hawkins posts to Hacker News under the handle `james_impliu`: "Launch HN: PostHog (YC W20) – open-source product analytics." The MVP is four weeks old. The post tags co-founders "Tim and Aaron" — Aaron Hyland was an early team member, not a third equity co-founder, a detail that gets routinely garbled in retrospective coverage.
+
+The post hits <Stat value="282" label="upvotes / 83 comments" />. PostHog later frames it as "the most successful B2B software launch on Hacker News since 2012." Their own framing, not independently audited — but the post is verifiable directly at item 22376732.
+
+## What four weeks of MVP shipped
+
+The launch product was deliberately small. The pitch was three sentences: open-source product analytics, self-hostable on one container plus Postgres, MIT-licensed. That was the entire surface area.
+
+What that meant for an engineer reading the post on February 20:
+
+- Clone the repo
+- `docker-compose up`
+- Add `posthog.capture('event', {props})` to a webapp
+- See funnels and retention in a self-hosted UI within fifteen minutes
+
+The frame the launch hit was: "Mixpanel, but you control the data." Every word of that frame had been pre-loaded by years of engineer frustration with Mixpanel, Amplitude, and Heap pricing rules and data-egress fees.
+
+## The Heap engineers in the comment thread
+
+The most consequential thing that happened on launch day was not the upvote count. It was the comment thread.
+
+Engineers from Heap — PostHog's most direct architectural competitor — showed up early and asked technical questions about query performance at scale. The exchange was substantive: Postgres would not survive past roughly 100M events per customer per month, they argued, and PostHog's chosen architecture would force a rebuild on a columnar database.
+
+PostHog did not argue back. They acknowledged the limit, pointed at ClickHouse as the eventual answer, and continued the thread by asking Heap engineers what specific failure modes they had seen at scale.
+
+The exchange shaped the next two years of PostHog's roadmap. The ClickHouse migration that took most of 2022 to ship was directly downstream of the technical critique filed on February 20, 2020.
+
+Founders of Metabase, RudderStack, and Rakam also showed up to discuss how PostHog fit into an emerging open-source analytics stack. The privacy and self-hosting frames landed exactly as planned. The thread was credibility-validating in a way that no marketing campaign could replicate — because it was not a marketing campaign.
+
+## Why the launch worked structurally, not tactically
+
+Most "launch on HN" advice focuses on tactics: post timing, headline format, founder presence in the comments. PostHog's launch did all of those things competently — but the load-bearing reason it worked is structural.
+
+| Structural condition | PostHog's situation |
+|---|---|
+| Genuine technical novelty | Open-source product analytics with self-hosting was not yet a clean category — Plausible, Snowplow, and Rudderstack existed but none combined event-capture + funnels + retention + self-hosting in one container |
+| Buyer pre-loaded with frustration | Mixpanel/Amplitude/Heap pricing and privacy frustrations had been simmering in dev-tool Twitter and HN comment sections for years |
+| Substantive demo accessible in under 15 minutes | `docker-compose up` and add the SDK — no signup, no waitlist, no enterprise sales call |
+| Founder willing to engage technical critique | PostHog responded to the Heap engineers' query-performance critique with the actual architectural plan, not with PR-deflecting non-answers |
+| Timing — pre-COVID-lockdown but already remote-friendly | Six weeks before March 2020 lockdown; PostHog was already a remote team, which became a launch tailwind when buyers' purchasing motion went online |
+
+A 2026 founder reading this and asking "can I launch on HN" should answer those five structural conditions first. Tactical posting advice is downstream of having those conditions in place.
+
+## The lockdown tailwind that came six weeks later
+
+PostHog launched on February 20, 2020. COVID lockdowns hit San Francisco and London simultaneously six weeks later. Most companies' Q1 plans collapsed. PostHog's did not.
+
+Specifically, two things happened during the lockdown that PostHog could not have engineered:
+
+1. **Dev-tool buying went online.** Sales calls became impossible; self-serve became the only viable acquisition channel. PostHog's open-source-MIT-self-hosted motion was already that.
+2. **Remote-first companies started caring about analytics they could host on their own infrastructure.** The privacy frame moved from "nice to have" to "we cannot ship to legal review without it."
+
+By <Stat value="May 2020" label="1,000 users milestone" />, PostHog had crossed 1,000 users and PostHog Cloud had launched. The seed round closed around the same time.
+
+The lockdown is the part of the story that is not reproducible. PostHog cannot claim the early traction was purely earned by the launch — it was the launch plus a one-time category-wide tailwind. A 2026 founder cannot generate a global lockdown to amplify their own HN launch.
+
+What is reproducible is the substrate the launch put in place. Every grad student, indie hacker, and dev-tool engineer who installed PostHog in 2020 became a long-tail B3 push for the next five years. Each one wrote a blog post, talked to a coworker, or migrated their company onto the platform.
+
+## What the launch did not do
+
+The HN launch did not produce a Series A. PostHog's Series A was announced ten months later (December 2020), led by GV, on the strength of compounding open-source adoption — not the launch buzz.
+
+The HN launch did not produce a defensible moat. The substrate took years to compound. By 2024 there were credible open-source product-analytics alternatives (Plausible, Posthog forks, self-hosted Mixpanel competitors) — none had PostHog's six-year handbook artifact that became the actual moat.
+
+The HN launch did not solve the technical-debt problem they had spent the previous five pivots on. It also did not solve the underlying B2B SaaS retention problem. It just put a working open-source product analytics tool in front of every developer who read HN that day.
+
+That, plus six years of follow-through, was enough.
+
+<Conclusion title="What to copy">
+
+- **Engage technical critique substantively in the comment thread.** When competitors' engineers identify your architectural limit, your job is to acknowledge it and state the actual plan. Argue back and you destroy your credibility. Hide and you destroy the thread.
+- **Don't gate the demo.** PostHog's `docker-compose up` was the demo. No signup, no waitlist, no email capture before the product worked. Most launches violate this.
+- **Set the architecture limit explicitly and publicly.** PostHog said Postgres would not survive past ~100M events per customer per month, and that ClickHouse was the eventual answer. The honesty bought them two years to ship the migration without losing developer trust.
+
+</Conclusion>
+
+## Sources
+
+- [Hacker News — Launch HN: PostHog (YC W20) (Feb 2020)](https://news.ycombinator.com/item?id=22376732)
+- [PostHog blog — After the HN launch](https://posthog.com/blog/after-the-hn-launch)
+- [PostHog blog — ClickHouse announcement (2022)](https://posthog.com/blog/clickhouse-announcement)
+- [PostHog founders — First 1,000 users (May 2020)](https://posthog.com/founders/first-1000-users)

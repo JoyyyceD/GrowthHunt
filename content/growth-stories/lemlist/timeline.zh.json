@@ -1,0 +1,360 @@
+{
+  "company": {
+    "slug": "lemlist",
+    "name": "Lemlist",
+    "legalName": "lempire",
+    "tagline": "欧洲自举：零一级 VC 融资，在饱和的冷邮件赛道跨过 4500 万美元 ARR，把反在位者 + 反 VC + 默认存活做成了日更内容机器",
+    "summary": "Lemlist 是这样一个案例：饱和的 B2B SaaS 赛道——冷邮件外联，2018 年时 Outreach 和 Salesloft 已经各自融资超过 10 亿美元——被一支创始团队从巴黎的一间公寓、约 1000 美元的启动资金切入，并在七年中以一位创始人的日更内容节奏稳稳压制住这两家在位者。到 2025 年底，控股公司 lempire 的 ARR 据 Guillaume 自述达到约 4500 万美元，宣称 EBITDA 利润率约 30%，付费客户约 10000 家，且从未拿过任何一级 VC 融资。唯一的外部资金事件，是 2021 年 12 月 Expedition Growth Capital 的二级交易（约 3000 万美元换约 20% 股权，估值 1.5 亿美元 post-money）——资金流向了创始人和早期股东，并未进入公司账户，运营层面的自举叙事完整保留。整个模式是 B2 + C3 的极致打法：反 Outreach / Salesloft 定位叠加反 VC 定位，两层都持续了六年以上，并都被转化为日更 LinkedIn + X 的内容引擎，替代了一个本应靠 VC 资本撑起的销售拓展组织。",
+    "founded": "2018-01",
+    "founders": [
+      "Guillaume Moubeche",
+      "Vianney Lecroart",
+      "François Lecroart"
+    ],
+    "seriesNumber": 19
+  },
+  "phases": [
+    {
+      "start": "2018-01",
+      "end": "2020-12",
+      "name": "冷邮件自举（早期）",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2020-12",
+      "end": "2022-12",
+      "name": "替代 Series 路径 + 二级交易 + 出书",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2022-12",
+      "end": "2025-09",
+      "name": "lempire 多产品扩展",
+      "color": "#dcfce7"
+    },
+    {
+      "start": "2025-09",
+      "end": "2026-04",
+      "name": "并购 + AI Agents",
+      "color": "#fce7f3"
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-01-15",
+      "title": "Lemlist 在巴黎一间公寓以 1000 美元创立",
+      "type": "product",
+      "gtmTag": "结构性差异化",
+      "description": "Guillaume Moubeche、Vianney Lecroart 和 François Lecroart 在巴黎一间公寓里以约 1000 美元（€1024）启动资金创办 Lemlist。产品定位是一个狭窄的切入点：冷邮件外联个性化，可在外发邮件中嵌入变量图片、动态字段、自定义着陆页。lempire 从第一天起就是控股实体。",
+      "externalUrl": "https://www.stacksync.com/blog/one-thousand-dollars-in-a-paris-flat-the-origin-story-of-lemlist",
+      "articleSlug": "2018-paris-founding"
+    },
+    {
+      "date": "2018-04-01",
+      "title": "Product Hunt 当日第一（免费内测）",
+      "type": "product",
+      "description": "Lemlist 在 Product Hunt 公开发布，当日产品排名第一。关键决定是内测刻意保持免费——付费客户要等四个月后的 AppSumo 活动才正式开始。免费窗口在不烧 runway 的前提下建立起早期用户基础。",
+      "externalUrl": "https://saasmarketer.io/saas-marketing-plan/"
+    },
+    {
+      "date": "2018-09-01",
+      "title": "AppSumo 活动：两周内 16 万美元毛收入 / 净 5 万美元",
+      "type": "product",
+      "gtmTag": "捆绑里程碑",
+      "description": "AppSumo 终身会员活动两周内带来约 16 万美元毛收入。AppSumo 抽走约 70% 后，Lemlist 净到手约 5 万美元。活动一次性把数千付费用户灌入系统、装上了客户反馈飞轮，并在不出让股权的前提下完成了一次延长 runway 的资本事件。",
+      "externalUrl": "https://saasclub.io/podcast/saas-startup-appsumo/",
+      "articleSlug": "2020-app-sumo-bootstrap"
+    },
+    {
+      "date": "2018-11-01",
+      "title": "Lempod 作为副项目上线",
+      "type": "product",
+      "description": "团队上线 Lempod——一款 LinkedIn 互动 Pod 工具——作为 Lemlist 之外的副项目。约 18 个月后被卖掉，以聚焦核心产品。"
+    },
+    {
+      "date": "2019-01-01",
+      "title": "25 万美元 ARR——付费产品的第一个 12 个月",
+      "type": "media",
+      "description": "AppSumo 付费上线约 12 个月后 Lemlist 跑到 25 万美元 ARR。Guillaume 在 Medium 上发表了那篇标志性的「365 天增长——从 0 到 25 万美元 ARR 无融资」文章，本身就是 Build-in-public 作为 GTM 渠道的早期表现。",
+      "externalUrl": "https://medium.com/@guillaume.moubeche/365-days-of-growth-from-0-to-250k-arr-2014d0c54671"
+    },
+    {
+      "date": "2020-03-01",
+      "title": "跨过 25 万美元 MRR（300 万美元 ARR run-rate）",
+      "type": "media",
+      "description": "到 2020 年 3 月，Lemlist 跨过 25 万美元 MRR（约 300 万美元 ARR run-rate），COVID 期间远程销售工具需求激增起到加速作用。这是自举路径第一次显出不仅可生存、而且可结构性复利的拐点。",
+      "externalUrl": "https://www.growthunhinged.com/p/lessons-from-bootstrapping-lemlist"
+    },
+    {
+      "date": "2020-09-01",
+      "title": "Lempod 被卖掉（约 60 万美元 ARR 退出，FE International）",
+      "type": "acquisition",
+      "description": "Lempod 通过 FE International 出售，以聚焦 Lemlist 主线。Lempod 退出时 ARR 约 60 万美元，整个出售流程耗时六个月。这是「自举 + 自律」叙事的第一个具体凭证；Guillaume 此后在书和播客巡回中反复引用这次退出的数字逻辑。",
+      "externalUrl": "https://www.feinternational.com/blog/lempod-founder-on-his-recent-exit"
+    },
+    {
+      "date": "2021-03-12",
+      "title": "Tech.eu —— 「拒绝 3000 万美元融资」",
+      "type": "media",
+      "gtmTag": "拓展受众边界",
+      "description": "Tech.eu 发表「Saying no to $30 million in funding——is hyper-growth without external funding possible?」，是首篇主流英文媒体围绕 Lemlist 反 VC 叙事展开的报道。信号意味着这个故事开始溢出自举圈层、进入更广受众视野。",
+      "externalUrl": "https://tech.eu/2021/03/12/saying-no-to-30-million-in-funding-is-hyper-growth-without-external-funding-possible/"
+    },
+    {
+      "date": "2021-12-01",
+      "title": "跨过 1000 万美元 ARR",
+      "type": "media",
+      "gtmTag": "资本效率即定位",
+      "description": "Lemlist 跨过 1000 万美元 ARR——Guillaume 标志性的「3.5 年从 1000 美元到 1000 万美元 ARR」里程碑。成为之后每一次播客和书籍引用的耐久叙事锚点。",
+      "externalUrl": "https://blog.lempire.com/0-to-20m-arr-in-5-years-bootstrapped-how-to-achieve-the-impossible/"
+    },
+    {
+      "date": "2021-12-15",
+      "title": "Expedition Growth Capital 二级交易——3000 万美元 / 1.5 亿美元估值",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "Expedition Growth Capital 以二级交易方式投入约 3000 万美元、获得 lempire 约 20% 股权，估值 1.5 亿美元 post-money。关键点：这是一次「二级交易」——创始人和早期投资人套现退出，没有任何一级资本进入公司。Lemlist 在运营层面仍然完全自举。这次交易催生了 Guillaume 那本书命名所依赖的 1.5 亿美元数字。",
+      "externalUrl": "https://expedition.capital/news/expeditions-30m-secondary-investment-in-lempire/",
+      "articleSlug": "2021-12-expedition-secondary"
+    },
+    {
+      "date": "2022-05-01",
+      "title": "lempire 收购 Tweet Hunter（约 200 万美元 + Earnout）",
+      "type": "acquisition",
+      "gtmTag": "技术叙事升级",
+      "description": "lempire 收购 Tweet Hunter（Twitter / X 内容排程工具），来自 Tibo Louis-Lucas 的 Pony Express Studio。首付现金约 200 万美元，附加 Earnout，创始人公开表述的总额最终在 800 万至 1500 万美元区间。这是 lempire 走向多产品控股集团的第一步，全部由经营性现金流支付。",
+      "externalUrl": "https://theygotacquired.com/saas/pony-express-acquired-by-lempire/"
+    },
+    {
+      "date": "2022-06-15",
+      "title": "lempire 收购 Taplio",
+      "type": "acquisition",
+      "description": "lempire 从同一支 Pony Express Studio 团队手中收购 Taplio（LinkedIn 个人品牌工具）。Tweet Hunter + Taplio 合并交易常被引用为 1000 万美元以上、跨 Earnout 周期支付。战略逻辑：Lemlist 的核心 GTM 机器是团队 LinkedIn 分发，所以收购明确服务于 LinkedIn 增长的工具，可在冷邮件和个人品牌两条渠道之间打通垂直栈。",
+      "externalUrl": "https://theygotacquired.com/saas/pony-express-acquired-by-lempire/"
+    },
+    {
+      "date": "2022-07-01",
+      "title": "《The $150M Secret》出版",
+      "type": "media",
+      "gtmTag": "创始人即 IP",
+      "description": "Guillaume Moubeche 出版《The $150M Secret: Turning $1000 into a $150,000,000 company in 3.5 years》。亚马逊 Kindle + 平装本自出版。成为耐久的人格化 IP 凭证——之后几乎每一次播客出场都会被引用，把自举故事转译成可携带的 IP。这本书的标题数字正是建立在二级交易估值的接缝上。",
+      "externalUrl": "https://www.amazon.com/150M-secret-Turning-company-years/dp/B0B37KWX3N",
+      "articleSlug": "2022-the-150m-secret-book"
+    },
+    {
+      "date": "2022-09-01",
+      "title": "Lemwarm 拆分为独立产品",
+      "type": "product",
+      "description": "Lemwarm——邮件预热 / 投递率服务——正式被作为 lempire 内的独立产品定位（与 Lemlist 主产品并列）。开启了之后 lempire 多产品再阐释的进程。",
+      "externalUrl": "https://www.lemwarm.com/"
+    },
+    {
+      "date": "2023-01-01",
+      "title": "Lemcal 上线（Calendly 替代品）",
+      "type": "product",
+      "description": "Lemcal 作为 lempire 套件中的 Calendly 替代品上线，原生集成 Lemlist。验证了多产品控股公司论点。通过既有 Lemlist 客户基础带来增量 ARR。"
+    },
+    {
+      "date": "2023-06-01",
+      "title": "跨过 2000 万美元 ARR",
+      "type": "media",
+      "gtmTag": "资本效率即定位",
+      "description": "Lemlist 跨过 2000 万美元 ARR——通过 Guillaume 在 LinkedIn / X / 播客圈的发声传播。「5 年自举从 0 到 2000 万美元 ARR」成为下一个标志性句子和耐久叙事锚点。",
+      "externalUrl": "https://blog.lempire.com/0-to-20m-arr-in-5-years-bootstrapped-how-to-achieve-the-impossible/"
+    },
+    {
+      "date": "2024-02-15",
+      "title": "GTM Strategist 播客——「创始人主导销售与 Venture Building」",
+      "type": "media",
+      "gtmTag": "创始人即 IP",
+      "description": "Guillaume 登上 GTM Strategist 播客。这是 2024 年贯穿性播客巡回的一部分（同期还有 Kickoff Sessions 第 205 期、LITTLE BIG THINGS 等）。这一阶段，episodic E2 已经叠加在日更 LinkedIn + X 节奏之上——按年算 Guillaume 在数十档节目上出场。",
+      "externalUrl": "https://podcasts.apple.com/si/podcast/guillaume-moubeche-founder-led-sales-and-venture-building/id1709602612?i=1000645401887",
+      "articleSlug": "2024-lempire-rebrand"
+    },
+    {
+      "date": "2024-12-01",
+      "title": "2900 万美元 ARR + 约 1000 万美元 EBITDA 收尾",
+      "type": "media",
+      "gtmTag": "资本效率即定位",
+      "description": "Lemlist 以约 2900 万美元 ARR 收 2024 年，对应宣称约 1000 万美元 EBITDA（约 30-35% 利润率），1 万家客户。数字均为 Guillaume 自述，与 Latka tracker 和多档播客交叉吻合。披露节奏已经制度化为年度内容产品——EBITDA 利润率被当作进攻型定位披露，而不是防御式 PR。",
+      "externalUrl": "https://getlatka.com/companies/lemlist/funding"
+    },
+    {
+      "date": "2025-06-01",
+      "title": "20VC 出场——「20Growth：靠内容和品牌自举到 3000 万美元 ARR」",
+      "type": "media",
+      "gtmTag": "创始人即 IP",
+      "description": "Guillaume 登上 Harry Stebbings 的 20VC / 20Growth——他在美国主流商业媒体级播客中最重要的一次出场。讨论了内容引擎、为什么大多数创始人不擅长销售、以及「给员工高于市场水平的薪酬」的运营哲学。是自举叙事在美国侧的关键放大节点。",
+      "externalUrl": "https://open.spotify.com/episode/6abCCKNfGCX8ehuBySMKfF"
+    },
+    {
+      "date": "2025-09-01",
+      "title": "Lemlist 主产品 4000 万美元 ARR / Off Market 播客上线",
+      "type": "media",
+      "description": "到 2025 年 9 月，Latka 报告 Lemlist 主产品营收 4000 万美元。Guillaume 上线 Off Market 播客并担任主持。E2 footprint 从「客串嘉宾」深化为「自有节目主持人」——掌握格式本身，而不只是出现在别人的格式里。",
+      "externalUrl": "https://podcasts.apple.com/us/podcast/off-market/id1858942201"
+    },
+    {
+      "date": "2025-10-20",
+      "title": "lempire 以 2500 万美元收购 Claap",
+      "type": "acquisition",
+      "gtmTag": "技术叙事升级",
+      "description": "lempire 以 2500 万美元收购 Claap（巴黎 AI 销售对话智能平台，2021 年由 Robin Bonduelle、Pierre Touzeau、Thomas Hernandez 创立）。现金 + Earnout 结构，具体拆分未披露。完全由经营性利润支付，保留自举画像。Claap 收购前 ARR 约 200 万美元，lempire 预测一年内增长到 1000 万美元。同时联合发布「smartbound」销售动作。这是 lempire 第一次把定位从「销售互动套件」推升到「AI 原生销售平台」。",
+      "externalUrl": "https://www.eu-startups.com/2025/10/sales-engagement-platform-lemlist-acquires-fellow-french-ai-platform-claap-to-transform-sales-with-ai-technology/",
+      "articleSlug": "2025-10-claap-acquisition"
+    },
+    {
+      "date": "2025-12-01",
+      "title": "lempire 控股集团 4500 万美元 ARR 公开披露",
+      "type": "media",
+      "gtmTag": "资本效率即定位",
+      "description": "Guillaume 公开把 2025 年底 lempire 控股集团 ARR 标为 4500 万美元——Lemlist 主产品约 4000 万 + 套件（Lemwarm / Lemcal / Tweet Hunter / Taplio）400-500 万 + Claap 早期整合贡献。自举叙事再上一层：「1000 美元 → 4500 万美元 ARR，零一级 VC 融资。」",
+      "externalUrl": "https://www.scalewise.com/guillaume-moubeche/"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2019-01-01",
+      "value": 250000,
+      "source": "Guillaume Medium 文章（创始人自述）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2019-12-31",
+      "value": 600000,
+      "source": "Growth Unhinged（创始人自述）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2021-12-31",
+      "value": 10000000,
+      "source": "lempire 博客（创始人自述）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2023-06-01",
+      "value": 20000000,
+      "source": "lempire 博客（创始人自述）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2024-12-31",
+      "value": 29000000,
+      "source": "Latka / Founderpath（创始人自述）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-09-01",
+      "value": 40000000,
+      "source": "Founderpath 访谈（创始人自述，Lemlist 主产品口径）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-12-31",
+      "value": 45000000,
+      "source": "Scalewise（创始人自述，lempire 控股合并口径）",
+      "confidence": "estimate"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2021-12-15",
+      "value": 150000000,
+      "round": "二级交易（Expedition Growth Capital）",
+      "source": "Expedition / lempire 公开稿",
+      "confidence": "media"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X（Twitter）",
+      "score": 5,
+      "bestStage": "替代 Series 路径 + lempire 扩展期",
+      "effort": "常驻（创始人本人，日更）",
+      "role": "反 VC + 自举披露阵地",
+      "description": "Guillaume Moubeche 的 X 账号是日更反 VC + 挺自举内容的载体。节奏本身就是动作：每周多次发布有关 ARR 里程碑、EBITDA 利润率、员工股权分配、VC 与自举正面对决等内容。关键区别：这是 Guillaume 的个人账号，不是 Lemlist 公司账号——「创始人即 IP」这一层在个人 handle 上，而 Lemlist（lempire）品牌账号承担产品渠道功能。",
+      "catalyst": "2021 年 12 月——Lemlist 跨过 1000 万美元 ARR 同时 Expedition 二级交易完成，Guillaume 的 X 输出从「产品战术帖」转为大规模的「反 VC + 自举经济学」帖。「3.5 年从 1000 美元到 1000 万美元 ARR」这条线成为他出场资料中被引用最多的内容；2022 年那本《The $150M Secret》的书名也是从这一波内容轮转中孕育而来。",
+      "catalystUrl": "https://x.com/GuillaumeMbh",
+      "accountUrl": "https://x.com/GuillaumeMbh",
+      "accountLabel": "@GuillaumeMbh on X",
+      "whenItWorks": "当创始人把账号当作长时段披露阵地、并以本人名义日更。具体数字（ARR / EBITDA / 员工股权）才能在外部传播；模糊的「我们在飞速增长」式帖子无法承担信号功能",
+      "whenItDoesnt": "如果账号只发产品上新和截图。Guillaume 的 X 之所以有效，是因为他把它当作经济立场评论阵地——一种受众可以采纳的世界观"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 5,
+      "bestStage": "全阶段——结构性载荷",
+      "effort": "常驻（创始人 + 全员）",
+      "role": "日更内容引擎 + 团队分发",
+      "description": "LinkedIn 是 Lemlist 的结构性分发渠道。Guillaume 日更；Lemlist 每位员工以自己名义发布关于冷邮件外联和销售互动话题的内容。到 Lemlist 跨过 1000 万美元 ARR 时，全员节奏每月触达约 2000 万人——免费——直接替代了一支本应靠 VC 资本撑起的销售拓展组织。这是能比创始人活得更久的耐久资产。",
+      "catalyst": "把全员 LinkedIn 以本人名义日更作为制度化决策（2019-2020）。复利的网络效应让 LinkedIn 不再只是渠道，而是 GTM 基础设施本身。",
+      "catalystUrl": "https://www.linkedin.com/in/guillaumemoubeche/",
+      "accountUrl": "https://www.linkedin.com/in/guillaumemoubeche/",
+      "accountLabel": "Guillaume Moubeche on LinkedIn",
+      "whenItWorks": "当 CEO 每天身体力行、并且文化奖励员工以本人名义发声。团队节奏才是把 LinkedIn 从一个营销渠道升级为基础设施的关键",
+      "whenItDoesnt": "如果只有 CEO 发声、员工沉默。单账号 LinkedIn 是营销渠道；全员 LinkedIn 才是 GTM 基础设施"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 3,
+      "bestStage": "lempire 扩展 + 并购阶段",
+      "effort": "Episodic（创始人 + 产品团队）",
+      "role": "长内容权威 + 产品讲解",
+      "description": "YouTube footprint 是混合的：Lemlist 公司频道发布产品讲解和客户故事，加上 Guillaume 作为播客嘉宾的视频被交叉发布为长内容。在自举叙事的承重上，重要性低于 X / LinkedIn，但 Saastock / MicroConf / 20VC 的长视频片段在创始人生态中能传播。",
+      "catalyst": "2025 年 20VC 出场视频片段，加上 Guillaume 在 Saastock 和 MicroConf 的会议演讲上传。和日更 X / LinkedIn 节奏配套的长内容权威层。",
+      "catalystUrl": "https://www.youtube.com/@lemlist",
+      "accountUrl": "https://www.youtube.com/@lemlist",
+      "accountLabel": "Lemlist on YouTube",
+      "whenItWorks": "当创始人有一套连贯世界观、值得 60 分钟以上的注意力。长内容是把自举经济学讲清楚的格式",
+      "whenItDoesnt": "如果频道只发产品教程、没有创始人声音。没有作者化世界观的 YouTube 是产品文档，不是 GTM"
+    },
+    {
+      "slug": "lennys-newsletter",
+      "name": "Lenny's Newsletter（第三方）",
+      "score": 4,
+      "bestStage": "lempire 扩展期",
+      "effort": "靠口碑赢得放大",
+      "role": "B2B 创始人受众的可信度迁移",
+      "description": "Lemlist 反复出现在 Lenny Rachitsky 的 Newsletter 以及邻接的创始人受众 Newsletter（Aakash Gupta、Growth Unhinged、Pavilion 内容矩阵）有关自举型 SaaS 经济学的案例研究中。Guillaume 出现在和 Linear / Anthropic / Plaude 共享的节目里，给自举叙事带来跨案例集的耐久性。",
+      "catalyst": "Growth Unhinged 的「Lessons from bootstrapping Lemlist」深度长文（2023）。这是把 Guillaume 自述数字转化为第三方验证叙事的关键分析师级写作之一。",
+      "catalystUrl": "https://www.growthunhinged.com/p/lessons-from-bootstrapping-lemlist",
+      "accountUrl": "https://www.growthunhinged.com/p/lessons-from-bootstrapping-lemlist",
+      "accountLabel": "Growth Unhinged：Lemlist 深度长文",
+      "whenItWorks": "当第三方分析师能独立交叉印证创始人自述的数字。Lemlist 在 Latka、Founderpath、Tech.eu 之间已有足够交叉印证，让分析师级写作具备公信力",
+      "whenItDoesnt": "当唯一来源是创始人本人。单一来源叙事很难被分析师层抬上去——至少需要两个独立角度的印证"
+    },
+    {
+      "slug": "podcast-guest",
+      "name": "播客（20VC / Founderpath / SaaS Club）",
+      "score": 5,
+      "bestStage": "全阶段——结构性载荷",
+      "effort": "Episodic，创始人主导",
+      "role": "长内容权威 + 自举叙事放大器",
+      "description": "做播客嘉宾是长内容那一层的支柱。Guillaume 出现在 20VC（Harry Stebbings）、SaaS Club、GTM Strategist、Kickoff Sessions、Value Inspiration、SaaS Unbound 以及多个法语长访谈节目上（包括 LITTLE BIG THINGS 和 Débrouillard）。出场节奏大约每月一次，每一集都把自举经济学操作化为可观察实践。",
+      "catalyst": "2025 年 6 月——20VC / 20Growth 上和 Harry Stebbings 的对谈：「靠内容和品牌自举到 3000 万美元 ARR」。是他在美国商业媒体级别播客中最重要的一次出场，谈到了内容引擎、为什么大多数创始人不擅长销售，以及「给员工高于市场水平薪酬」的哲学。",
+      "catalystUrl": "https://open.spotify.com/episode/6abCCKNfGCX8ehuBySMKfF",
+      "accountUrl": "https://open.spotify.com/episode/6abCCKNfGCX8ehuBySMKfF",
+      "accountLabel": "20VC / 20Growth：Guillaume Moubeche",
+      "whenItWorks": "当买家受众是创始人 / SDR / 销售互动工具决策者，而他们用播客做严肃尽调。长内容是面向「考虑型」B2B 采购的正确格式",
+      "whenItDoesnt": "面向 SMB 或交易型买家、决策路径短于 60 分钟的场景。播客是面向考虑型采购的漏斗顶端，不适合冲动型采购"
+    },
+    {
+      "slug": "off-market-podcast",
+      "name": "Off Market 播客（创始人自有）",
+      "score": 3,
+      "bestStage": "并购 + AI Agents 阶段",
+      "effort": "Episodic，主持人自有",
+      "role": "格式自有动作（E2 深化）",
+      "description": "Off Market 是 Guillaume 自己主持的播客（2025 年上线，Apple Podcasts ID 1858942201）。从「嘉宾」转到「主持人」结构上意义重大——拥有格式本身意味着掌握选择嘉宾、提问角度、叙事方向的编辑权。上线初期触达不及 20VC，但随着主持人嘉宾网络滚动，会复利成节目自身的受众拉力。",
+      "catalyst": "2025 年 9 月——Off Market 播客作为 Guillaume 自有格式上线。E2 footprint 从「在别人节目里做嘉宾」深化为「主持自己的节目」，把 lempire 的「创始人即 IP」一层与纯嘉宾驱动型同行区分开来。",
+      "catalystUrl": "https://podcasts.apple.com/us/podcast/off-market/id1858942201",
+      "accountUrl": "https://podcasts.apple.com/us/podcast/off-market/id1858942201",
+      "accountLabel": "Off Market on Apple Podcasts",
+      "whenItWorks": "当创始人已经有嘉宾网络和稳固的个人品牌拉力。自有播客是复利型资产，不是上线型策略",
+      "whenItDoesnt": "在创始人还没有撑起嘉宾管道的受众体量之前。过早做主持人会产生空洞期，反而是弱信号"
+    }
+  ]
+}

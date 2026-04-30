@@ -1,0 +1,96 @@
+---
+title: "Launch HN: PostHog（YC W20）——282 个 upvote、83 条评论，以及为 PostHog 写下 2022 年路线图的那群 Heap 工程师（2020 年 2 月）"
+description: "PostHog 的 HN 发布是 4 周代码上首页。产品能跑。来自竞争对手工程师的讨论线程，实时为接下来两年写下了架构决策。"
+date: "2020-02-20"
+type: "media"
+gtmTag: "结构性差异化"
+eventTitle: "Launch HN: PostHog（YC W20）"
+externalUrl: "https://news.ycombinator.com/item?id=22376732"
+---
+
+<Catalyst>
+一个 Launch HN 帖登首页是牵引信号。一个 Launch HN 帖里现存方案的工程师在评论中识别出架构限制——是路线图。PostHog 在同一天拿到了两件事，并花了之后两年执行第二件。
+</Catalyst>
+
+2020 年 2 月 20 日。James Hawkins 在 Hacker News 上以 `james_impliu` 身份发帖：「Launch HN: PostHog (YC W20) – open-source product analytics」。MVP 4 周大。帖子提到联合创始人「Tim 和 Aaron」——Aaron Hyland 是早期员工，不是第三位股权联合创始人，这个细节在事后报道里被反复弄混。
+
+帖子拿到 <Stat value="282" label="upvotes / 83 评论" />。PostHog 后来把它框成「自 2012 年以来 Hacker News 上最成功的 B2B 软件发布」。是他们自己的提法，没经独立审计——但帖子可在第 22376732 条直接验证。
+
+## 4 周 MVP 上线了什么
+
+发布产品有意做小。pitch 是三句话：开源产品分析、可在一容器加 Postgres 上自托管、MIT 协议。这就是全部表面积。
+
+这对 2 月 20 日读到帖子的工程师意味着：
+
+- 克隆仓库
+- `docker-compose up`
+- 在一个 webapp 里加 `posthog.capture('event', {props})`
+- 在 15 分钟内于自托管 UI 看到漏斗和留存
+
+发布命中的框架是：「Mixpanel，但你控制数据。」这个框架里每个字都被多年开发者对 Mixpanel、Amplitude、Heap 定价规则与数据出口费的不满预先加载好了。
+
+## 评论线程里的 Heap 工程师
+
+发布日发生的最有后果的事不是 upvote 数。是评论线程。
+
+来自 Heap——PostHog 在架构上最直接的竞争对手——的工程师们早早现身，问了规模下查询性能的技术问题。交流是实质性的：他们认为 Postgres 撑不过每客户每月约 1 亿事件，PostHog 选择的架构会强制重构到列式数据库。
+
+PostHog 没有反驳。他们承认了限制，指出 ClickHouse 是最终答案，并在线程里继续问 Heap 工程师在规模下见过什么具体失败模式。
+
+这次交流塑造了 PostHog 接下来两年的路线图。2022 年大部分时间用在的 ClickHouse 迁移，直接下游于 2020 年 2 月 20 日发布线程里那次技术批评。
+
+Metabase、RudderStack、Rakam 的创始人也现身讨论 PostHog 在新兴开源分析栈里怎么放进去。隐私与自托管框架完全按计划落地。线程是公信力验证级别的——任何营销活动复制不出，因为它本身不是营销活动。
+
+## 发布为什么结构性而非战术性地起作用
+
+大多数「上 HN」建议聚焦战术：发帖时间、标题格式、创始人在评论里在场。PostHog 的发布把这些战术都做得很到位——但承重原因是结构性的。
+
+| 结构条件 | PostHog 的情况 |
+|---|---|
+| 真实的技术新意 | 带自托管的开源产品分析当时不是干净品类——Plausible、Snowplow、Rudderstack 都存在但没一家把事件捕获 + 漏斗 + 留存 + 自托管放进一个容器 |
+| 买家被预先加载了不满 | Mixpanel/Amplitude/Heap 的定价与隐私不满已经在开发者 Twitter 与 HN 评论区里酝酿多年 |
+| 15 分钟内可上手的实质性 demo | `docker-compose up` 加 SDK——不要注册、不要候补、不要企业销售电话 |
+| 创始人愿意接技术批评 | 对 Heap 工程师查询性能的批评，PostHog 给的是真实架构计划，不是公关式回避 |
+| 时机——COVID 封锁前但已经远程友好 | 2020 年 3 月封锁前 6 周；PostHog 已经是远程团队，当买家采购动作转线上时，这变成发布顺风 |
+
+一位 2026 年的创始人读到这里问「我能不能上 HN」，应该先回答这五个结构条件。战术发帖建议是这些条件落地之后的下游。
+
+## 6 周后到来的封锁顺风
+
+PostHog 在 2020 年 2 月 20 日发布。6 周后，COVID 封锁同时降临旧金山与伦敦。大多数公司的 Q1 计划崩盘。PostHog 的没有。
+
+具体来说，封锁期间发生了 PostHog 没法自己制造的两件事：
+
+1. **开发者工具采购转到线上。** 销售电话变得不可能；自助变成唯一可行的获客渠道。PostHog 的开源 MIT 自托管动作本来就是这个。
+2. **远程优先公司开始关心可以自托管在自己基础设施上的分析。** 隐私框架从「nice to have」变成「过不了法务审查」。
+
+到 <Stat value="2020 年 5 月" label="1,000 用户里程碑" />，PostHog 已经过了 1,000 用户，PostHog Cloud 也已上线。种子轮也在大约同一时间关闭。
+
+封锁是这个故事不可复现的部分。PostHog 没法宣称早期牵引完全是发布赚来的——是发布加上一次性品类层面的顺风。一位 2026 年的创始人没法生成一次全球封锁来放大自己的 HN 发布。
+
+可复现的是发布安放下去的底层。每位 2020 年装了 PostHog 的研究生、独立黑客、开发者工具工程师，都成了之后 5 年长尾的 B3 推动。每位都写过博客、跟同事聊过、把自己公司迁到平台上来。
+
+## 发布没做到什么
+
+HN 发布没产生 A 轮。PostHog 的 A 轮在 10 个月后宣布（2020 年 12 月），由 GV 领投，靠的是开源采用的复利——不是发布热度。
+
+HN 发布没产生可防御的护城河。底层用了多年才复利。到 2024 年已经有可信的开源产品分析替代品（Plausible、PostHog 分叉、自托管 Mixpanel 竞品）——没有一家有 PostHog 后来真正成为护城河的六年 handbook 物。
+
+HN 发布没解决他们前五次转向想解决的技术债问题。也没解决底层 B2B SaaS 留存问题。它只是把一个能跑的开源产品分析工具，放到当天读 HN 的每位开发者面前。
+
+那一点，加上之后六年的跟进，就够了。
+
+<Conclusion title="可以复用的东西">
+
+- **在评论线程里实质性地接技术批评。** 当对手工程师识别出你的架构限制时，你的工作是承认它并陈述真实计划。反驳就毁了公信力。躲避就毁了线程。
+- **不要给 demo 设门。** PostHog 的 `docker-compose up` 就是 demo。不要注册、不要候补、不要 email 捕获放在产品能跑之前。大多数发布违反这条。
+- **明确公开陈述架构限制。** PostHog 说 Postgres 撑不过每客户每月约 1 亿事件，ClickHouse 是最终答案。这种诚实买来了 2 年发迁移的时间，没丢开发者信任。
+
+</Conclusion>
+
+## 来源
+
+- [Hacker News — Launch HN: PostHog（YC W20）（2020 年 2 月）](https://news.ycombinator.com/item?id=22376732)
+- [PostHog 博客 — After the HN launch](https://posthog.com/blog/after-the-hn-launch)
+- [PostHog 博客 — ClickHouse announcement（2022）](https://posthog.com/blog/clickhouse-announcement)
+- [PostHog founders — First 1,000 users（2020 年 5 月）](https://posthog.com/founders/first-1000-users)

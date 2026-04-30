@@ -1,0 +1,290 @@
+{
+  "company": {
+    "slug": "posthog",
+    "name": "PostHog",
+    "legalName": "PostHog, Inc.",
+    "tagline": "开源产品分析 + 六年公开 handbook = 危机即 GTM 的第三个子模式（主动透明）",
+    "summary": "两位前 Arachnys 同事在 YC W20 期间六个月里转向了五次，2020 年 1 月 23 日开始写 PostHog 的代码，四周后在 Hacker News 上线了一个 MIT 开源协议下的产品分析 MVP。接下来六年，他们在公开网页上把公司内部公布出来——handbook、薪酬、OKR、跑道、战略——以任何人都可以提交 pull request 修改的 Markdown 形式。到 2026 年 4 月，平台已被 108,000+ 家公司使用过；2025 年 10 月 ARR 约 5000 万美元，对照 PostHog 公开声明的「2026 年底 1 亿美元 ARR」目标尚未达成。六轮共融资约 1.94 亿美元。2025 年 9 月 E 轮投后估值 14 亿美元。2023 年 11 月 Patrick Collison 的一条推文，撬动了 2025 年 6 月 Stripe 领投的 D 轮（投后 9.2 亿美元）；2025 年 9 月 Peak XV 领投的 E 轮把估值推到 14 亿美元独角兽门槛。可复用的教训：当买家必须信任技术基础设施时，把公司内部公开会创造一种信任梯度，VC 支持的对手在不放弃定价权、招聘保密、战略定位的前提下没法跨越这个梯度。",
+    "founded": "2020-01",
+    "founders": [
+      "James Hawkins",
+      "Tim Glaser"
+    ],
+    "seriesNumber": 20
+  },
+  "phases": [
+    {"start": "2020-01", "end": "2020-12", "name": "英国创立 + YC W20 + HN 发布", "color": "#fef3c7"},
+    {"start": "2020-12", "end": "2023-08", "name": "A/B 轮 + 多产品扩张", "color": "#dbeafe"},
+    {"start": "2023-08", "end": "2025-06", "name": "盈利 + AI 工程师转向", "color": "#fce7f3"},
+    {"start": "2025-06", "end": "2026-04", "name": "D/E 轮 + Act 2 时代", "color": "#dcfce7"}
+  ],
+  "events": [
+    {
+      "date": "2020-01-23",
+      "title": "PostHog 代码起步（YC W20 中段）",
+      "type": "product",
+      "description": "James Hawkins（CEO）与 Tim Glaser（CTO），两位 ex-Arachnys（伦敦监管科技公司）同事，在 Y Combinator W20 批次中段开始写 PostHog 的代码。PostHog 是他们六个月里月均一次转向后的第六个想法。最初的 W20 主题是一款帮助工程师管理技术债的工具。",
+      "externalUrl": "https://posthog.com/handbook/story",
+      "articleSlug": "2020-02-uk-founding"
+    },
+    {
+      "date": "2020-02-20",
+      "title": "Launch HN: PostHog（YC W20）——开源产品分析",
+      "type": "media",
+      "gtmTag": "结构性差异化",
+      "description": "MVP 在第一次提交后 4 周登上 Hacker News。282 个 upvote，83 条评论。james_impliu 发帖，「与联合创始人 Tim 和 Aaron」（Aaron Hyland 是早期员工，不是股权联合创始人）。PostHog 的口径是「自 2012 年以来 Hacker News 上最成功的 B2B 软件发布」。Heap 的工程师在评论里提出查询性能在规模下的疑问；这条评论后来直接塑造了 PostHog 2022 年的 ClickHouse 迁移。",
+      "externalUrl": "https://news.ycombinator.com/item?id=22376732",
+      "articleSlug": "2020-04-hn-launch-yc-w20"
+    },
+    {
+      "date": "2020-04-26",
+      "title": "种子轮关闭——302.5 万美元",
+      "type": "funding",
+      "description": "302.5 万美元种子轮，由 Y Combinator Continuity、1984 Ventures，加上天使 Solomon Hykes（Docker）与 David Cramer（Sentry）参投。两位天使都是信号意义重大：Hykes 做出了上一个十年「容器即分发」的标志性打法；Cramer 做出了 Sentry——结构上最接近 PostHog 的「开源 + 付费云」开发者工具公司。HN 发布六周后，COVID 封锁同时降临伦敦与旧金山。",
+      "externalUrl": "https://posthog.com/blog/raising-3m-for-os"
+    },
+    {
+      "date": "2020-05-01",
+      "title": "1,000 用户里程碑",
+      "type": "product",
+      "description": "PostHog Cloud 上线后几周内突破 1,000 用户。封锁把开发者工具采购搬到了线上，远程优先公司开始关心可以自托管在自己基础设施上的分析工具。",
+      "externalUrl": "https://posthog.com/founders/first-1000-users"
+    },
+    {
+      "date": "2020-12-17",
+      "title": "A 轮 900 万美元——GV 领投",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "A 轮于 2020 年 12 月 17 日宣布，2020 年 7 月关闭。900 万美元由 GV（Alphabet 的 VC 部门）领投，Y Combinator Continuity 跟投。累计融资 1200 万美元。GV 当时的投资论点明确是把开源产品分析当作一个品类——这一信号说明开源打法已经被一线机构资本识别成可投赛道。",
+      "externalUrl": "https://posthog.com/blog/posthog-announces-9-million-dollar-series-A",
+      "articleSlug": "2020-12-series-a-gv"
+    },
+    {
+      "date": "2021-03-01",
+      "title": "Feature flags + 热力图 + 录屏 GA",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "Feature flags + 热力图 + 早期 session replay 上线，是核心分析之外的第一次多产品扩张。叙事开始从「开源产品分析」转向「开发者平台」。",
+      "externalUrl": "https://posthog.com/changelog"
+    },
+    {
+      "date": "2021-06-10",
+      "title": "B 轮 1500 万美元——YC Continuity 领投",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "1500 万美元 B 轮由 Y Combinator Continuity 领投，GV 跟投。Ali Rowghani（YC Continuity 管理合伙人，前 Twitter COO，前 Pixar CFO）加入董事会。累计融资 2700 万美元。PostHog 的口径是「提前融资」，因为开源漏斗跑得比招聘计划快。",
+      "externalUrl": "https://posthog.com/blog/15-million-series-b"
+    },
+    {
+      "date": "2022-01-01",
+      "title": "ClickHouse 重构上线",
+      "type": "product",
+      "description": "PostHog 把事件库从 Postgres 迁移到 ClickHouse。对自托管用户的口径是「scale 提升 1000 倍」。多月迁移过程中有数次推倒重来。这次迁移直接回应了 2020 年 2 月 HN 发布评论里 Heap 工程师指出的架构限制。",
+      "externalUrl": "https://posthog.com/blog/clickhouse-announcement"
+    },
+    {
+      "date": "2022-06-01",
+      "title": "Session replay GA",
+      "type": "product",
+      "description": "Session replay 产品正式 GA。继分析、feature flags 之后的第二个主要产品。直接对位 FullStory 与 LogRocket——多产品平台主张的第一次正面对战。"
+    },
+    {
+      "date": "2022-09-01",
+      "title": "Experiments + Surveys 上线",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "A/B 测试（Experiments）与 Surveys 作为平台扩张的新增产品上线。PostHog 此时同一栈下有 5 个产品。每个产品由 2–4 人团队负责。"
+    },
+    {
+      "date": "2023-03-01",
+      "title": "数据仓库决策（私有 beta）",
+      "type": "product",
+      "description": "PostHog 在最大客户因为 BigQuery 导出而流失之后决定自建数据仓库。两人工程团队启动。被定位为防御性动作，但很快变成新产品线的楔子。",
+      "externalUrl": "https://dlthub.com/case-studies/posthog"
+    },
+    {
+      "date": "2023-08-01",
+      "title": "盈利 + 仓库 beta 同时披露",
+      "type": "media",
+      "gtmTag": "默认存活即进攻",
+      "description": "PostHog 在同一个新闻周期内公开披露三件事：营收同比翻倍 +「实现盈利目标」+ 数据仓库私有 beta。盈利声明是创始人口径，非财务审计级别。但 2023 年人头从 38 增至 41（同期营收约翻 4 倍）的纪律性，与该声明相一致。",
+      "externalUrl": "https://posthog.com/handbook/story",
+      "articleSlug": "2023-08-profitability-disclosure"
+    },
+    {
+      "date": "2023-11-01",
+      "title": "Patrick Collison 推文",
+      "type": "media",
+      "gtmTag": "KOL 信用转移",
+      "description": "Stripe CEO Patrick Collison 发推说 PostHog 的网站「very well done」并 @ 了两位创始人。PostHog 把这条推文当作和 Stripe 合作的暖介绍。接下来 18 个月对话不断，最终在 2025 年 6 月 D 轮关闭——知识库里「单一关系即投资人管道」的标志性故事。",
+      "externalUrl": "https://news.crunchbase.com/ai/startup-posthog-tweet-funding-round-stripe/",
+      "articleSlug": "2023-11-collison-tweet"
+    },
+    {
+      "date": "2024-07-01",
+      "title": "数据仓库 GA",
+      "type": "product",
+      "gtmTag": "受众边界突破",
+      "description": "数据仓库结束 beta 进入 GA。2 人团队建造，按公司公开口径。2024 年第三次主要产品扩张——把 PostHog 的受众从工程师/PM 推向数据团队。",
+      "externalUrl": "https://posthog.com/handbook/story"
+    },
+    {
+      "date": "2024-09-01",
+      "title": "Max AI 助手上线",
+      "type": "product",
+      "description": "首版 AI 产品助手以「Max」（刺猬吉祥物代号）发布。日后变成 PostHog AI 的第一个版本。"
+    },
+    {
+      "date": "2024-11-01",
+      "title": "PostHog AI 重新发布",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "Max 改名重发为「PostHog AI」——产品内嵌的 agent，能编辑过滤器、创建 dashboard、写 SQL，并对 PostHog 的开发者工具采取动作。为 E 轮的「AI 产品工程师」叙事铺垫。",
+      "externalUrl": "https://posthog.com/docs/posthog-ai"
+    },
+    {
+      "date": "2024-12-31",
+      "title": "2024 年底 ARR 950 万美元（138% 同比）",
+      "type": "media",
+      "description": "PostHog 2024 年底 ARR 达到 950 万美元，同比 138%。每名员工 ARR 在 4–9.5 万美元区间。CAC 回收 5 天，按公司口径。",
+      "externalUrl": "https://research.contrary.com/company/posthog"
+    },
+    {
+      "date": "2025-06-09",
+      "title": "D 轮 7000 万美元 / 9.2 亿美元——Stripe 领投（同时披露小 C 轮）",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "7000 万美元 D 轮由 Stripe 领投，投后 9.2 亿美元。Y Combinator + GV + Formus 跟投。同时披露 2024 年小 C 轮员工股权流动性轮（金额未披露）。来源：可追溯到 2023 年 11 月 Patrick Collison 的那条推文，中间 18 个月的关系建设。",
+      "externalUrl": "https://posthog.com/blog/series-d",
+      "articleSlug": "2025-06-series-d-stripe"
+    },
+    {
+      "date": "2025-09-29",
+      "title": "E 轮 7500 万美元 / 14 亿美元——Peak XV 领投（独角兽）",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "7500 万美元 E 轮由 Peak XV Partners 领投，投后 14 亿美元。Stripe + GV + YC + 天使（包括 Jason Warner（前 GitHub CTO）与 Solomon Hykes（种子轮回归）跟投。独角兽门槛被跨过。六轮累计融资约 1.94 亿美元。",
+      "externalUrl": "https://posthog.com/blog/series-e"
+    },
+    {
+      "date": "2025-10-15",
+      "title": "ARR 约 5000 万美元 + Act 2 框架",
+      "type": "media",
+      "gtmTag": "技术叙事升维",
+      "description": "E 轮报道引用 ARR 约 5000 万美元（约 5 倍同比）。PostHog 宣布「Act 2」——扩张到自动化开发者工具，从客户支持工单和用户反馈生成 PR。14 产品 all-in-one 平台框架在报道中铺开。",
+      "externalUrl": "https://news.crunchbase.com/ai/startup-posthog-tweet-funding-round-stripe/"
+    },
+    {
+      "date": "2026-04-01",
+      "title": "平台达到 14 个产品",
+      "type": "product",
+      "description": "PostHog GitHub README 确认 14 产品 all-in-one 开发者平台：产品分析、网站分析、session replay、错误追踪、feature flags、experiments、surveys、LLM 分析、日志、workflows、endpoints、数据仓库、CDP、AI 产品助手。Contrary 数据：平台上有 108,000+ 家公司。",
+      "externalUrl": "https://github.com/PostHog/posthog"
+    }
+  ],
+  "arr": [
+    {"date": "2021-12-31", "value": 1000000, "source": "三角化估算", "confidence": "estimate"},
+    {"date": "2023-10-01", "value": 2200000, "source": "Latka", "confidence": "media"},
+    {"date": "2024-12-31", "value": 9500000, "source": "Contrary Research", "confidence": "official"},
+    {"date": "2025-10-15", "value": 50000000, "source": "Crunchbase News", "confidence": "media"},
+    {"date": "2026-12-31", "value": 100000000, "source": "PostHog handbook（目标）", "confidence": "official"}
+  ],
+  "valuation": [
+    {"date": "2020-04-26", "value": 3000000, "round": "种子轮", "source": "PostHog blog", "confidence": "estimate"},
+    {"date": "2020-12-17", "value": 9000000, "round": "A 轮", "source": "PostHog blog", "confidence": "estimate"},
+    {"date": "2021-06-10", "value": 15000000, "round": "B 轮", "source": "PostHog blog", "confidence": "estimate"},
+    {"date": "2025-06-09", "value": 920000000, "round": "D 轮", "source": "PostHog blog", "confidence": "official"},
+    {"date": "2025-09-29", "value": 1400000000, "round": "E 轮", "source": "PostHog blog", "confidence": "official"}
+  ],
+  "platforms": [
+    {
+      "slug": "posthog-com-handbook",
+      "name": "posthog.com/handbook",
+      "score": 5,
+      "bestStage": "全阶段——承重",
+      "effort": "持续，全员参与撰写",
+      "role": "公开 handbook 表面同时担任 demo grammar",
+      "description": "PostHog 的 handbook 以 Markdown 形式发布在公共仓库——任何人都可以提交 pull request。薪酬哲学、薪资计算器、跑道、OKR、招聘决策、战略辩论都在这里。到 2025 年达到几百页规模、6 年公开提交历史。handbook 是 PostHog 跑「主动透明」E1 的方式——演示就是公司内部本身，任何 12 个月的复制项目只能跑出公关式透明，那是比「无透明」更糟的信号。",
+      "catalyst": "没有单一上线日期。Handbook 在 2020–2022 年间从运营文档逐步生长出来。提交历史里第一次出现公开薪酬计算器，是最接近经典「正式启动」的时刻。之后 6 年的提交历史让这个 format 不可伪造。",
+      "catalystUrl": "https://posthog.com/handbook",
+      "accountUrl": "https://posthog.com/handbook",
+      "accountLabel": "posthog.com/handbook",
+      "whenItWorks": "买家是技术人员、品类里有被广泛认为不透明的现存方案（定价规则、数据出口、留存合同）时。透明把买家本来就在抱怨的信息不对称合上。",
+      "whenItDoesnt": "当透明被作为营销项目临时上马时。任何 12 个月的尝试都会产出对冲性陈述，被立刻识别为公关而非运营现实。"
+    },
+    {
+      "slug": "x",
+      "name": "X（推特）",
+      "score": 4,
+      "bestStage": "全阶段",
+      "effort": "每日，创始人主导",
+      "role": "创始人声音 + PostHog 官方声音",
+      "description": "James Hawkins（@james406）每日在 X 上活跃——跑道数字、招聘决策、错误反思、多产品发布、频繁的开发者工具播客转贴。「诚实运营者」的语气与 handbook 叙事干净配合。Tim Glaser 是更安静的技术那一脚。",
+      "catalyst": "2023 年 11 月：Stripe CEO Patrick Collison 发推说 PostHog 的网站「very well done」并 @ 两位创始人。PostHog 把这条推文转化为 Stripe 合作对话，最终落到 2025 年 6 月的 D 轮——18 个月后，7000 万美元 / 9.2 亿美元。",
+      "catalystUrl": "https://news.crunchbase.com/ai/startup-posthog-tweet-funding-round-stripe/",
+      "accountUrl": "https://x.com/james406",
+      "accountLabel": "X 上的 @james406",
+      "whenItWorks": "当创始人能撑住技术深度、且公司已经赢得在公开场合谈论自家跑道的资格时。",
+      "whenItDoesnt": "底下没有运营实质时，创始人每日发推会退化成思想领袖式内容，反而扣信任分。"
+    },
+    {
+      "slug": "github",
+      "name": "GitHub",
+      "score": 5,
+      "bestStage": "全阶段——承重底层",
+      "effort": "底层级别",
+      "role": "MIT 协议核心本身",
+      "description": "PostHog 主仓库为 MIT 协议。ee/（企业版）目录另带专有协议。posthog-foss 仓库剥离专有代码，提供完全 FOSS 部署。仓库是 PostHog Cloud 付费层的漏斗——到 2025 年，108,000+ 家公司从这个表面用过或自托管过。",
+      "catalyst": "2020 年 2 月 20 日——HN 发布把公开 GitHub 仓库链接为标志性产物。仓库当时只有 4 周历史；开源动作从这里开始复利。",
+      "catalystUrl": "https://github.com/PostHog/posthog",
+      "accountUrl": "https://github.com/PostHog",
+      "accountLabel": "GitHub 上的 PostHog",
+      "whenItWorks": "当一个开发者能在不到一小时内技术上完成自托管，且品类有被认为不透明的现存方案时。",
+      "whenItDoesnt": "代码复杂到必须有专门的基础设施投入才能自托管时。AGPL 或宽松 copyleft 协议也会损害传播效应——MIT 是有意识的选择。"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 5,
+      "bestStage": "上线 + 重要产品扩展",
+      "effort": "脉冲式——里程碑自然登榜",
+      "role": "底层验证表面",
+      "description": "2020 年 2 月 20 日的 Launch HN 帖（282 upvotes，83 评论）是 PostHog 的标志性底层事件。后续重要发布（ClickHouse 迁移、session replay、数据仓库 GA、PostHog AI）都自然登上 HN 首页。HN 评论文化也对声明做压力测试——Heap 工程师在发布日的查询性能批评，2 年后塑造了 ClickHouse 迁移。",
+      "catalyst": "2020 年 2 月 20 日——Launch HN: PostHog（YC W20）——开源产品分析。PostHog 的口径是「自 2012 年以来 HN 上最成功的 B2B 软件发布」。",
+      "catalystUrl": "https://news.ycombinator.com/item?id=22376732",
+      "accountUrl": "https://news.ycombinator.com/from?site=posthog.com",
+      "accountLabel": "在 HN 搜 posthog.com",
+      "whenItWorks": "当上线有真技术新意，且创始人能在提交当日实质性参与评论线程时。",
+      "whenItDoesnt": "当帖子是公关或营销腔调时。HN 会迅速惩罚推广性内容，评论线程从牵引信号倒转为信誉风险。"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit（r/devops、r/webdev）",
+      "score": 3,
+      "bestStage": "底层之后的社区运营",
+      "effort": "持续——社区主导，团队参与",
+      "role": "长尾开发者讨论 + 工具对比对话",
+      "description": "PostHog 在 r/devops、r/webdev、r/SaaS、r/selfhosted 上自然出现，每当开发者讨论 Mixpanel/Amplitude 替代品或可自托管分析。团队以与 PostHog 身份绑定的用户名参与。流量低于 HN/X，但对比帖（PostHog vs Mixpanel、PostHog vs Plausible）是耐久的 SEO + 销售物料，跨年复利。",
+      "catalyst": "没有单一帖。自 2020 年以来在自托管和开发者工具子版块里持续低频在场。对比型帖子是开发者研究替代方案时的标志性长尾发现表面。",
+      "accountUrl": "https://www.reddit.com/r/PostHog/",
+      "accountLabel": "r/PostHog",
+      "whenItWorks": "你品类里的开发者会在公开帖子里主动对比工具，且团队能不带公关回避地回答技术问题。",
+      "whenItDoesnt": "营销团队规模化的 Reddit 在场会在数周内被识破。没有真正工程师参与时，渠道反向变成负信号。"
+    },
+    {
+      "slug": "y-combinator",
+      "name": "Y Combinator（网络 + Continuity）",
+      "score": 5,
+      "bestStage": "创立 + A/B 轮 + 持续客户基础",
+      "effort": "网络级——跨批次撬动",
+      "role": "创立加速器 + 反复出资人 + 持续客户管道",
+      "description": "PostHog 是 YC W20。Y Combinator Continuity 领投了种子轮（与 1984 Ventures）和 B 轮，并参与了 A 轮、D 轮、E 轮。光 W23 批次到 2024 年底就有 54% 公司在用 PostHog，按 Contrary 的统计。YC 管道既是资本来源也是持续客户获取渠道——每批次 200+ 新开发者工具买家，PostHog 的开源默认让采用无摩擦。",
+      "catalyst": "2020 年 Winter 批——转向开源产品分析发生在批次中段（约 2020 年 1 月中）；4 周后的 HN 发布开启底层。Continuity 领投种子轮和 B 轮。",
+      "catalystUrl": "https://www.ycombinator.com/companies/posthog",
+      "accountUrl": "https://www.ycombinator.com/companies/posthog",
+      "accountLabel": "YC 上的 PostHog",
+      "whenItWorks": "当 YC 网络同时是你的客户基础时。PostHog 的开发者工具品类让每批次稳定百分比进入漏斗。",
+      "whenItDoesnt": "买家是纯企业或非技术时，YC 网络的客户管道价值大幅下降。资本关系仍有用，但永久管道效应不可迁移。"
+    }
+  ]
+}

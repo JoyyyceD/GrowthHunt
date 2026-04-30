@@ -1,0 +1,283 @@
+{
+  "company": {
+    "slug": "clay",
+    "name": "Clay",
+    "legalName": "Clay Labs, Inc.",
+    "tagline": "A GTM platform that won by being the cleanest example of what its product does — eight years from founding, 42 months from the pivot that mattered",
+    "summary": "Clay is the case where the product, the marketing, and the recruiting funnel are the same surface. Five years of horizontal-spreadsheet wandering produced a substrate no 2022-founded competitor could match. Then a January 2022 pivot to GTM, a 24-month-held-back Series A bundled into the June 2024 Series B, and a creator-plus-template flywheel where every Clay table a customer builds is a candidate viral artifact. The result: $1M to $100M ARR in three years, $204M raised, $3.1B valuation by August 2025.",
+    "founded": "2017-06",
+    "founders": ["Kareem Amin", "Nicolae Rusan", "Varun Anand"],
+    "seriesNumber": 18
+  },
+  "phases": [
+    {"start": "2017-06", "end": "2022-01", "name": "Spreadsheet wandering", "color": "#fef3c7"},
+    {"start": "2022-01", "end": "2024-06", "name": "GTM pivot + data enrichment", "color": "#dbeafe"},
+    {"start": "2024-06", "end": "2025-08", "name": "Compound stacking", "color": "#fce7f3"},
+    {"start": "2025-08", "end": "2026-06", "name": "AI agents + GTM Engineer category", "color": "#dcfce7"}
+  ],
+  "events": [
+    {
+      "date": "2017-06-01",
+      "title": "Clay founded",
+      "type": "product",
+      "description": "Kareem Amin (ex-Sailthru, ex-Dow Jones VP Product) and Nicolae Rusan (ex-Microsoft, ex-Dow Jones) found Clay in New York. Original mission: a spreadsheet-like data automation platform — not GTM-specific.",
+      "articleSlug": "2017-clay-founding"
+    },
+    {
+      "date": "2017-09-01",
+      "title": "BoxGroup pre-seed",
+      "type": "funding",
+      "description": "BoxGroup plus angel Andy Sack back Clay before the founders have finalized the product. Phin Barnes at First Round partners with the team at the earliest stages."
+    },
+    {
+      "date": "2020-06-01",
+      "title": "Varun Anand joins as advisor",
+      "type": "product",
+      "description": "Varun Anand (ex-Hillary Clinton communications, ex-Jigsaw / Google, ex-Candid + Newfront GTM) begins advising Clay. Will become formal co-founder and Head of Operations in September 2021."
+    },
+    {
+      "date": "2021-08-30",
+      "title": "Seed $2.5M led by First Round",
+      "type": "funding",
+      "description": "First Round Capital leads $2.5M seed (Phin Barnes lead). BoxGroup and Forerunner Ventures participate. At this point Clay still has roughly 20 paying customers at $30 to $200 per month — not yet vertical-focused."
+    },
+    {
+      "date": "2021-09-01",
+      "title": "Anand becomes co-founder + Head of Operations",
+      "type": "product",
+      "description": "Anand transitions from advisor to formal co-founder. Begins customer-discovery sprint inside the Modern Sales Pros community to understand what cold-email agencies and outbound teams need. The research drives the January 2022 pivot."
+    },
+    {
+      "date": "2022-01-15",
+      "title": "Pivot to GTM-only",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "After five years of pre-PMF wandering Clay narrows the product to a single vertical: outbound sales and GTM teams. Product capabilities barely change. Positioning does. The structurally important moment in Clay's history.",
+      "articleSlug": "2022-01-gtm-pivot"
+    },
+    {
+      "date": "2022-02-15",
+      "title": "Refocused platform launches on Product Hunt",
+      "type": "product",
+      "description": "Clay's GTM-team-focused platform launches on Product Hunt with the new positioning. ARR begins to accelerate immediately — the year ends with revenue 10x its January starting point."
+    },
+    {
+      "date": "2022-06-01",
+      "title": "Series A $13.5M led by Sequoia (closed; held back)",
+      "type": "funding",
+      "description": "Sequoia (Pat Grady) leads $13.5M Series A. Round closes mid-2022 but is not publicly announced. Clay deliberately holds the round quiet, preferring product and community signal over fundraise PR. Disclosed 24 months later bundled with the June 2024 Series B."
+    },
+    {
+      "date": "2022-12-01",
+      "title": "ARR 10x by year-end (~$1M run-rate)",
+      "type": "media",
+      "description": "By end of 2022 Clay's ARR is roughly 10x its early-2022 number. Sacra and Starter Story triangulate ~$1M ARR end-of-year as the working figure."
+    },
+    {
+      "date": "2023-06-01",
+      "title": "Claygent AI agent launches",
+      "type": "product",
+      "description": "Claygent — Clay's AI research agent — launches integrated with GPT-4. By mid-2024, 30 percent of Clay customers use Claygent daily, generating around 500K research and outreach tasks per day."
+    },
+    {
+      "date": "2023-12-01",
+      "title": "ARR 10x again, 1,000+ customers",
+      "type": "media",
+      "description": "Clay's second 10x year. Customer count crosses 1,000. Slack community grows from ~200 (Jan 2022 pivot) to 5K+ members. Creator ecosystem on LinkedIn begins compounding."
+    },
+    {
+      "date": "2024-06-27",
+      "title": "Series B $46M @ $500M led by Meritech",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Meritech leads $46M Series B at $500M post-money. Sequoia, First Round, BoxGroup, Boldstart participate. Clay simultaneously discloses the previously-unannounced $13.5M Series A and $2.5M seed. Customer roster (Anthropic, Notion, Vanta, Verkada, Intercom), 100K users, 2,500 customers all in one news cycle.",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2024-06-27/sequoia-meritech-invest-in-ai-sales-and-marketing-startup-clay",
+      "articleSlug": "2024-06-series-a-b-compound-announcement"
+    },
+    {
+      "date": "2024-09-01",
+      "title": "Creator ecosystem reaches LinkedIn-scale",
+      "type": "media",
+      "gtmTag": "Narrative flywheel starts",
+      "description": "Cold-email agency operators (Eric Nowoslawski / Growth Engine X is the canonical archetype) build Clay tutorials as their primary LinkedIn content output. Clay formalizes the motion through Clay Creator / Clay Playbooks / Clay Expert programs. Affiliate revenue is added late, after the organic motion is running.",
+      "articleSlug": "2024-creator-ecosystem-flywheel"
+    },
+    {
+      "date": "2024-11-15",
+      "title": "Sequoia Training Data podcast",
+      "type": "media",
+      "description": "Alfred Lin hosts Kareem Amin on Sequoia's Training Data podcast. Frame: Clay as the system of action for sales — the layer that turns AI-generated insight into outbound action. Becomes a canonical founder-as-IP long-form artifact for the GTM-tools category.",
+      "externalUrl": "https://sequoiacap.com/podcast/training-data-kareem-amin/"
+    },
+    {
+      "date": "2024-12-31",
+      "title": "ARR 6x year-end (~$30M run-rate)",
+      "type": "media",
+      "description": "Third growth year shows 6x — slower multiplier on a far larger base. Sacra estimates ~$30M ARR end of 2024. Customer count crosses 5,000+. Slack community now 10,000+."
+    },
+    {
+      "date": "2025-01-21",
+      "title": "Clay acquires Avenue",
+      "type": "acquisition",
+      "description": "Clay acquires Avenue, an alerting and workflow-automation tool for ops teams. Entire Avenue team joins Clay to build out an intent-signal product. Clay had targeting (data) and messaging (AI) but lacked timing — Avenue provides the third leg. First acquisition in Clay's history."
+    },
+    {
+      "date": "2025-01-24",
+      "title": "Series B extension $40M @ $1.25B",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Meritech leads $40M Series B expansion at $1.25B post-money — 2.5x markup six months after the $500M Series B. Sequoia, First Round, BoxGroup, Boldstart all double down. Bundled with the Avenue acquisition (3 days earlier) and 6x growth disclosure. The unicorn moment.",
+      "externalUrl": "https://www.builtinnyc.com/articles/clay-hits-1b-valuation-with-40m-funding-raise-20250124",
+      "articleSlug": "2025-01-series-b-extension"
+    },
+    {
+      "date": "2025-05-08",
+      "title": "$1.5B tender offer led by Sequoia",
+      "type": "funding",
+      "description": "Sequoia leads a $1.5B-valuation employee secondary tender offer. Not a primary fundraise — existing employees and early investors get partial liquidity. Clay frames this as a checkpoint between the January 2025 Series B+ and the imminent Series C.",
+      "externalUrl": "https://techcrunch.com/2025/05/08/clay-authorizes-employee-tender-at-a-1-5b-valuation-led-by-sequoia/"
+    },
+    {
+      "date": "2025-06-15",
+      "title": "Claygent crosses 1B cumulative runs",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Clay discloses that Claygent has crossed 1 billion cumulative research and outreach runs since launch. Used by OpenAI, Anthropic, Notion, Rippling, and Verkada to scale prospecting research. Claygent transitions from a feature to the centerpiece narrative.",
+      "externalUrl": "https://openai.com/index/clay/"
+    },
+    {
+      "date": "2025-08-05",
+      "title": "Series C $100M @ $3.1B led by CapitalG",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "CapitalG leads $100M Series C at $3.1B post-money — 2.07x markup four months after the $1.5B tender. Sequoia, Meritech, First Round, BoxGroup, Boldstart all participate; Sapphire Ventures joins as new investor. Total raised: $204M. Bundled with $100M ARR trajectory, expanded customer roster, and the GTM-Engineer category framing.",
+      "externalUrl": "https://techcrunch.com/2025/08/05/clay-confirms-it-closed-100m-round-at-3-1b-valuation/",
+      "articleSlug": "2025-08-series-c-3b"
+    },
+    {
+      "date": "2025-08-05",
+      "title": "GTM Engineer category push",
+      "type": "media",
+      "gtmTag": "Audience boundary push",
+      "description": "Clay's Series C blog and BusinessWire press release center the GTM Engineer category — the role Clay claims to have coined. Around 100 GTM-engineer listings per month live in 2025, plus 205% YoY growth. The round is framed as fueling GTM engineering roles industrywide, not as a fundraise.",
+      "externalUrl": "https://www.businesswire.com/news/home/20250805719448/en/AI-GTM-Leader-Clay-Raises-$100M-Series-C-to-Fuel-GTM-Engineering-Roles-Industrywide"
+    },
+    {
+      "date": "2025-11-15",
+      "title": "$100M ARR essay published",
+      "type": "media",
+      "description": "Clay publishes Clay reaches $100M ARR: an eight-year overnight success on the company blog. Founder-narrated arc: 2017 founding, five years of wandering, January 2022 GTM pivot, 10x / 10x / 6x ARR years. Becomes the canonical Clay-history artifact and a category-defining piece of content marketing for GTM-tooling startups.",
+      "externalUrl": "https://www.clay.com/blog/100m-arr"
+    },
+    {
+      "date": "2026-03-15",
+      "title": "Pricing overhaul: Launch / Growth tiers",
+      "type": "product",
+      "description": "Clay consolidates pricing: legacy Starter ($149) / Explorer ($349) / Pro ($800) replaced for new customers by Launch ($185 with 2,500 Data Credits and 15K Actions) / Growth ($495 with unlimited credits) / Enterprise ($30K+/yr). Existing customers grandfathered. Reflects scaled ICP shift toward larger teams."
+    }
+  ],
+  "arr": [
+    {"date": "2022-12-31", "value": 1000000, "source": "Clay multiplier + Sacra", "confidence": "estimate"},
+    {"date": "2023-12-31", "value": 10000000, "source": "Clay multiplier + Sacra", "confidence": "estimate"},
+    {"date": "2024-12-31", "value": 30000000, "source": "Sacra", "confidence": "estimate"},
+    {"date": "2025-11-15", "value": 100000000, "source": "Clay 100m-arr essay", "confidence": "official"}
+  ],
+  "valuation": [
+    {"date": "2024-06-27", "value": 500000000, "round": "Series B", "source": "Bloomberg", "confidence": "official"},
+    {"date": "2025-01-24", "value": 1250000000, "round": "Series B extension", "source": "Built In NYC", "confidence": "official"},
+    {"date": "2025-05-08", "value": 1500000000, "round": "Tender offer", "source": "TechCrunch", "confidence": "official"},
+    {"date": "2025-08-05", "value": 3100000000, "round": "Series C", "source": "TechCrunch", "confidence": "official"}
+  ],
+  "platforms": [
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 5,
+      "bestStage": "GTM pivot onward — load-bearing",
+      "effort": "Daily for Anand; continuous creator ecosystem",
+      "role": "The creator ecosystem substrate",
+      "description": "LinkedIn is where Clay's compound actually lives. Cold-email agency operators build Clay tutorials as their primary content output. Each tutorial is simultaneously an endorsement, a lead magnet for the operator's agency, and a forkable template for the audience. Clay does not pay for tutorials — the motivation is operator self-promotion, which keeps the trust signal clean.",
+      "catalyst": "No single moment. Eric Nowoslawski (Growth Engine X) is the canonical archetype — built an agency on Clay tutorials. Dozens of operators followed. Clay formalized the motion through Clay Creator / Playbooks / Expert programs in 2024, after the organic flywheel was already running.",
+      "catalystUrl": "https://www.linkedin.com/in/outboundphd/",
+      "accountUrl": "https://www.linkedin.com/in/vaanand",
+      "accountLabel": "Varun Anand on LinkedIn",
+      "whenItWorks": "When your buyer-population takes LinkedIn content as a signal of operator competence — cold-email operators absolutely do",
+      "whenItDoesnt": "When buyers are CFOs, SREs, or hospital administrators. Most B2B audiences will not generate this flywheel"
+    },
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 4,
+      "bestStage": "GTM pivot onward — daily",
+      "effort": "Daily continuous presence",
+      "role": "Founder tactical channel",
+      "description": "Kareem Amin runs daily on X — tactical Clay use cases, GTM observations, single-workflow customer builds, numbers. Narrower than typical founder X (less product strategy, less category commentary) and the narrowness fits the audience. Combined with Anand on LinkedIn this is a two-channel daily presence that makes the system robust to either founder slipping.",
+      "catalyst": "No single tweet. Continuous presence across 2022–2025 without visible interruption. Layered on top: long-form podcast appearances (First Round Review, Sequoia Training Data, SaaStr CRO Confidential, Unusual Ventures) that the daily X cadence pre-validates for the audience.",
+      "catalystUrl": "https://x.com/kareemamin",
+      "accountUrl": "https://x.com/kareemamin",
+      "accountLabel": "@kareemamin on X",
+      "whenItWorks": "When the founder can post in real voice — single workflows, customer-built tables, GTM takes — without slipping for years",
+      "whenItDoesnt": "If treated as a corporate megaphone or restarted episodically. The signal value is in the daily-without-gap pattern"
+    },
+    {
+      "slug": "slack",
+      "name": "Slack community",
+      "score": 5,
+      "bestStage": "All stages — substrate",
+      "effort": "Light-touch moderation; user-driven",
+      "role": "Community + tutorial substrate",
+      "description": "Clay's Slack started as a cost-saving move (replacing Intercom support) at the January 2022 pivot — about 200 members. By the June 2024 Series B it had crossed 10,000+ members. Originally a support channel, it became Clay's primary user-tutorial substrate where customers post the workflows they built and other customers fork them. The cost-saving origin story is worth flagging: this was not strategy, then it became strategy.",
+      "catalyst": "No single moment. The 50x growth from 200 to 10,000+ between Jan 2022 and Jun 2024 is the catalyst — and Clay actively surfaces community-built workflows in the official templates library, which closes the loop between community content and product.",
+      "catalystUrl": "https://www.clay.com/slack-community",
+      "accountUrl": "https://www.clay.com/slack-community",
+      "accountLabel": "Join Clay Slack",
+      "whenItWorks": "When the product produces forkable artifacts that are interesting to share, and when the community manager surfaces user content into product surfaces",
+      "whenItDoesnt": "When the product does not generate shareable artifacts — a Slack community for a CRM dashboard becomes a complaint inbox"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 4,
+      "bestStage": "Pre-inflection onward",
+      "effort": "Episodic; high per-episode investment",
+      "role": "Long-form founder-as-IP",
+      "description": "Long-form podcasts and video appearances anchor the founder narrative. Sequoia Training Data with Alfred Lin (Nov 2024), First Round Review's Path to PMF, SaaStr CRO Confidential, Unusual Ventures Startup Field Guide. The episodes become long-tail content assets — sliced into clips, threads, and quote-cards that distribute through X and LinkedIn for months.",
+      "catalyst": "Sequoia Training Data with Alfred Lin (November 2024). Frame: Clay as the system of action for sales — the layer that turns AI-generated insight into outbound action. Becomes the canonical founder-as-IP long-form artifact for the GTM-tools category.",
+      "catalystUrl": "https://sequoiacap.com/podcast/training-data-kareem-amin/",
+      "accountUrl": "https://www.youtube.com/@clay-com",
+      "accountLabel": "Clay on YouTube",
+      "whenItWorks": "When the founder can sustain 60+ minutes of substance about category, product, and customer use cases without filler",
+      "whenItDoesnt": "When the product is thin or the category framing is borrowed. Long-form will expose both"
+    },
+    {
+      "slug": "lennys",
+      "name": "Lenny's Newsletter",
+      "score": 3,
+      "bestStage": "Hypergrowth (Series B onward)",
+      "effort": "One-off founder essay or guest post",
+      "role": "PM and operator credibility transfer",
+      "description": "Lenny Rachitsky's audience (PMs, operators, growth leads) is exactly the buyer-population for Clay. A founder essay or interview on Lenny's stack does what a Series B press release cannot — it puts the GTM Engineer category framing into the daily reading list of the people who will hire for the role. Clay used this surface modestly but precisely.",
+      "catalyst": "Founder appearances and category commentary picked up across the operator-newsletter ecosystem (Lenny's, Pavilion Topline, SaaStr) act as endorsements for the GTM Engineer category. The Series C framing then lands into a primed audience.",
+      "catalystUrl": "https://www.joinpavilion.com/blog/topline-recap-67",
+      "accountUrl": "https://www.lennysnewsletter.com/",
+      "accountLabel": "Lenny's Newsletter",
+      "whenItWorks": "When you have a category to establish, not a product feature to launch — the audience reads for category, not feature",
+      "whenItDoesnt": "When the founder essay reads as ad copy. The audience punishes promotional framing"
+    },
+    {
+      "slug": "podcasts",
+      "name": "Long-form podcasts",
+      "score": 4,
+      "bestStage": "Pivot onward — episodic",
+      "effort": "Per-episode preparation",
+      "role": "Investor + operator credibility",
+      "description": "First Round Review, Sequoia Training Data, SaaStr CRO Confidential, Unusual Ventures Startup Field Guide, How We Built It, Topline Pavilion, Rippling Customer Stories. The podcast circuit covers the audience the daily X / LinkedIn cadence cannot reach — investors at the Series C valuation table, operators outside Clay's existing community, GTM leaders evaluating tools.",
+      "catalyst": "First Round Review's Path to Product-Market Fit (the seven-year overnight success piece) is the canonical pre-pivot artifact. Sequoia Training Data with Alfred Lin (Nov 2024) is the post-pivot canonical artifact. Together they bracket the founder narrative across Clay's two eras.",
+      "catalystUrl": "https://review.firstround.com/clays-path-to-product-market-fit/",
+      "accountUrl": "https://review.firstround.com/podcast/clays-path-to-product-market-fit-building-vertical-creating-power-users-and-understanding-founder-psychology-kareem-amin-co-founder-and-ceo/",
+      "accountLabel": "First Round Review podcast",
+      "whenItWorks": "When the founder has a clear category thesis and the podcast host is in that category's gravity well",
+      "whenItDoesnt": "When the podcast is a general-business show with no category alignment. The audience composition does not transfer"
+    }
+  ]
+}

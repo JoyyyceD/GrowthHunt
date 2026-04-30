@@ -1,0 +1,290 @@
+{
+  "company": {
+    "slug": "posthog",
+    "name": "PostHog",
+    "legalName": "PostHog, Inc.",
+    "tagline": "Open-source product analytics + six years of public handbook = the third sub-pattern of crisis-as-GTM (proactive transparency)",
+    "summary": "Two former Arachnys colleagues pivoted five times in six months inside YC W20, started writing PostHog code on January 23, 2020, and shipped an MIT-licensed open-source product-analytics MVP four weeks later on Hacker News. They then spent the next six years publishing the inside of the company — handbook, salaries, OKRs, runway, strategy — under public Markdown that anyone could send a pull request against. By April 2026 the platform had been touched by 108,000+ companies and reached ~$50M ARR (October 2025) against a publicly-stated $100M target by end of 2026. A single November 2023 Patrick Collison tweet sourced the June 2025 Series D from Stripe at $920M post-money; the September 2025 Series E added unicorn status at $1.4B. The reusable lesson: when buyers must trust technical infrastructure, publishing the inside of the company creates a trust gradient VC-backed competitors cannot close without giving up their pricing power, hiring secrecy, or strategic positioning.",
+    "founded": "2020-01",
+    "founders": [
+      "James Hawkins",
+      "Tim Glaser"
+    ],
+    "seriesNumber": 20
+  },
+  "phases": [
+    {"start": "2020-01", "end": "2020-12", "name": "UK founding + YC W20 + HN launch", "color": "#fef3c7"},
+    {"start": "2020-12", "end": "2023-08", "name": "Series A/B + multi-product expansion", "color": "#dbeafe"},
+    {"start": "2023-08", "end": "2025-06", "name": "Profitability + AI-engineer pivot", "color": "#fce7f3"},
+    {"start": "2025-06", "end": "2026-04", "name": "Series D/E + Act 2 era", "color": "#dcfce7"}
+  ],
+  "events": [
+    {
+      "date": "2020-01-23",
+      "title": "PostHog code start (mid YC W20)",
+      "type": "product",
+      "description": "James Hawkins (CEO) and Tim Glaser (CTO), both ex-Arachnys (London regtech), start writing PostHog code mid-way through Y Combinator's Winter 2020 batch. PostHog is their sixth idea after roughly one pivot per month for six months. Original W20 pitch was a tool for engineers to manage technical debt.",
+      "externalUrl": "https://posthog.com/handbook/story",
+      "articleSlug": "2020-02-uk-founding"
+    },
+    {
+      "date": "2020-02-20",
+      "title": "Launch HN: PostHog (YC W20) — open-source product analytics",
+      "type": "media",
+      "gtmTag": "Structural differentiation",
+      "description": "MVP launches on Hacker News four weeks after first commit. 282 upvotes, 83 comments. Posted by james_impliu with co-founders Tim and Aaron (Aaron Hyland — early team, not equity co-founder). PostHog's framing: 'most successful B2B software launch on Hacker News since 2012.' Heap engineers raised query-performance questions in the thread; PostHog later spent most of 2022 on the ClickHouse migration as a result.",
+      "externalUrl": "https://news.ycombinator.com/item?id=22376732",
+      "articleSlug": "2020-04-hn-launch-yc-w20"
+    },
+    {
+      "date": "2020-04-26",
+      "title": "Seed round closed — $3.025M",
+      "type": "funding",
+      "description": "$3.025M seed from Y Combinator Continuity, 1984 Ventures, plus angels Solomon Hykes (Docker) and David Cramer (Sentry). Both angels matter signally: Hykes built the canonical container-as-distribution play, Cramer built the canonical open-source-with-paid-cloud dev-tool company. Six weeks after the HN launch, COVID lockdowns hit London and SF.",
+      "externalUrl": "https://posthog.com/blog/raising-3m-for-os"
+    },
+    {
+      "date": "2020-05-01",
+      "title": "1,000 users milestone",
+      "type": "product",
+      "description": "PostHog passes 1,000 users a few weeks after PostHog Cloud launches. The lockdown pushed dev-tool buying online and remote-first companies started caring about analytics they could host on their own infrastructure.",
+      "externalUrl": "https://posthog.com/founders/first-1000-users"
+    },
+    {
+      "date": "2020-12-17",
+      "title": "Series A $9M — GV-led",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Series A announced December 17, 2020, closed July 2020. $9M led by GV (Alphabet's VC arm), with Y Combinator Continuity. Total raised: $12M. GV's investment thesis at the time was explicitly about open-source product analytics as a category — a framing that signaled the open-source play had become legible to top-tier institutional capital.",
+      "externalUrl": "https://posthog.com/blog/posthog-announces-9-million-dollar-series-A",
+      "articleSlug": "2020-12-series-a-gv"
+    },
+    {
+      "date": "2021-03-01",
+      "title": "Feature flags + heatmaps + replay GA",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Feature flags + heatmaps + early session-replay capabilities ship as the first multi-product expansion beyond core analytics. The narrative starts to shift from 'open-source product analytics' to 'developer platform.'",
+      "externalUrl": "https://posthog.com/changelog"
+    },
+    {
+      "date": "2021-06-10",
+      "title": "Series B $15M — YC Continuity-led",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "$15M Series B led by Y Combinator Continuity, with GV. Ali Rowghani (YC Continuity managing partner, ex-Twitter COO, ex-Pixar CFO) joins board. Total raised: $27M. PostHog's framing: raised 'ahead of schedule' because the open-source funnel was outrunning the hiring plan.",
+      "externalUrl": "https://posthog.com/blog/15-million-series-b"
+    },
+    {
+      "date": "2022-01-01",
+      "title": "ClickHouse rebuild ships",
+      "type": "product",
+      "description": "PostHog migrates the events database from Postgres to ClickHouse. Framed as '1000x more scalable' for self-hosted users. Multi-month migration with several false starts. Vindicates the Heap engineers who flagged the limit on the Feb 2020 HN launch thread.",
+      "externalUrl": "https://posthog.com/blog/clickhouse-announcement"
+    },
+    {
+      "date": "2022-06-01",
+      "title": "Session replay GA",
+      "type": "product",
+      "description": "Session replay product becomes generally available. Second major product after analytics + feature flags. Direct competitor to FullStory and LogRocket — first explicit head-to-head bet on the multi-product platform thesis."
+    },
+    {
+      "date": "2022-09-01",
+      "title": "Experiments + Surveys ship",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "A/B testing (Experiments) and Surveys ship as additional products in the platform expansion. PostHog now has 5 products in one stack. Each product runs with a 2–4-person team."
+    },
+    {
+      "date": "2023-03-01",
+      "title": "Data warehouse decision (private beta)",
+      "type": "product",
+      "description": "PostHog decides to build a data warehouse after losing the largest customer to BigQuery export. Two-engineer team starts work. Framed as a defensive move that became a wedge into a new product line.",
+      "externalUrl": "https://dlthub.com/case-studies/posthog"
+    },
+    {
+      "date": "2023-08-01",
+      "title": "Profitability + warehouse beta disclosed",
+      "type": "media",
+      "gtmTag": "Default-alive as offense",
+      "description": "PostHog publicly discloses doubled revenue + 'achieved profitability goals' + introduces data warehouse in private beta in the same news cycle. Profitability claim is founder-disclosed, not financial-audit-grade. Headcount discipline of 38 → 41 in 2023 (while revenue ~quadrupled) is consistent with the claim.",
+      "externalUrl": "https://posthog.com/handbook/story",
+      "articleSlug": "2023-08-profitability-disclosure"
+    },
+    {
+      "date": "2023-11-01",
+      "title": "Patrick Collison tweet",
+      "type": "media",
+      "gtmTag": "KOL credit transfer",
+      "description": "Stripe CEO Patrick Collison tweets that PostHog's site is 'very well done' and tags both founders. PostHog uses this as warm intro to a Stripe partnership conversation. Eighteen months of dialogue follow before the Series D closes in June 2025 — the canonical single-relationship-as-investor-pipeline story.",
+      "externalUrl": "https://news.crunchbase.com/ai/startup-posthog-tweet-funding-round-stripe/",
+      "articleSlug": "2023-11-collison-tweet"
+    },
+    {
+      "date": "2024-07-01",
+      "title": "Data warehouse GA",
+      "type": "product",
+      "gtmTag": "Audience boundary push",
+      "description": "Data warehouse leaves beta and goes generally available. Built by a 2-person team, by published claim. Third major product expansion of 2024 — pushes PostHog's audience from engineers / PMs into data teams.",
+      "externalUrl": "https://posthog.com/handbook/story"
+    },
+    {
+      "date": "2024-09-01",
+      "title": "Max AI assistant launches",
+      "type": "product",
+      "description": "Initial AI product assistant ships under the 'Max' hedgehog mascot codename. First version of what becomes PostHog AI."
+    },
+    {
+      "date": "2024-11-01",
+      "title": "PostHog AI relaunch",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Max rebranded and relaunched as 'PostHog AI' — agent embedded in product that can edit filters, create dashboards, write SQL, and act on PostHog dev tools. Sets up the Series E 'AI product engineer' framing.",
+      "externalUrl": "https://posthog.com/docs/posthog-ai"
+    },
+    {
+      "date": "2024-12-31",
+      "title": "$9.5M ARR end-2024 (138% YoY)",
+      "type": "media",
+      "description": "PostHog ends 2024 at $9.5M ARR with 138% YoY growth. ARR per employee in the $40–95K range. CAC payback: 5 days, by company-disclosed figure.",
+      "externalUrl": "https://research.contrary.com/company/posthog"
+    },
+    {
+      "date": "2025-06-09",
+      "title": "Series D $70M @ $920M — Stripe-led (and small Series C disclosed)",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "$70M Series D led by Stripe at $920M post-money. Y Combinator + GV + Formus participate. Small Series C disclosed alongside as 2024 employee-secondary liquidity round (size undisclosed). Origin story: traced back to Patrick Collison's November 2023 tweet, with eighteen months of relationship-building in between.",
+      "externalUrl": "https://posthog.com/blog/series-d",
+      "articleSlug": "2025-06-series-d-stripe"
+    },
+    {
+      "date": "2025-09-29",
+      "title": "Series E $75M @ $1.4B — Peak XV-led (unicorn)",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "$75M Series E led by Peak XV Partners at $1.4B post-money. Stripe + GV + YC + angels including Jason Warner (ex-GitHub CTO) and Solomon Hykes (returning from seed) participate. Unicorn threshold crossed. Cumulative raised across all six rounds: ~$194M.",
+      "externalUrl": "https://posthog.com/blog/series-e"
+    },
+    {
+      "date": "2025-10-15",
+      "title": "~$50M ARR + Act 2 framing",
+      "type": "media",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Series E coverage references ~$50M current ARR (~5x YoY). PostHog announces 'Act 2' — expansion into automated dev tools that generate PRs from support tickets and user feedback. The 14-product all-in-one platform framing lands across coverage.",
+      "externalUrl": "https://news.crunchbase.com/ai/startup-posthog-tweet-funding-round-stripe/"
+    },
+    {
+      "date": "2026-04-01",
+      "title": "Platform reaches 14 products",
+      "type": "product",
+      "description": "PostHog GitHub README confirms 14-product all-in-one developer platform: product analytics, web analytics, session replay, error tracking, feature flags, experiments, surveys, LLM analytics, logs, workflows, endpoints, data warehouse, CDP, AI product assistant. 108,000+ companies on the platform per Contrary.",
+      "externalUrl": "https://github.com/PostHog/posthog"
+    }
+  ],
+  "arr": [
+    {"date": "2021-12-31", "value": 1000000, "source": "Triangulated", "confidence": "estimate"},
+    {"date": "2023-10-01", "value": 2200000, "source": "Latka", "confidence": "media"},
+    {"date": "2024-12-31", "value": 9500000, "source": "Contrary Research", "confidence": "official"},
+    {"date": "2025-10-15", "value": 50000000, "source": "Crunchbase News", "confidence": "media"},
+    {"date": "2026-12-31", "value": 100000000, "source": "PostHog handbook (target)", "confidence": "official"}
+  ],
+  "valuation": [
+    {"date": "2020-04-26", "value": 3000000, "round": "Seed", "source": "PostHog blog", "confidence": "estimate"},
+    {"date": "2020-12-17", "value": 9000000, "round": "Series A", "source": "PostHog blog", "confidence": "estimate"},
+    {"date": "2021-06-10", "value": 15000000, "round": "Series B", "source": "PostHog blog", "confidence": "estimate"},
+    {"date": "2025-06-09", "value": 920000000, "round": "Series D", "source": "PostHog blog", "confidence": "official"},
+    {"date": "2025-09-29", "value": 1400000000, "round": "Series E", "source": "PostHog blog", "confidence": "official"}
+  ],
+  "platforms": [
+    {
+      "slug": "posthog-com-handbook",
+      "name": "posthog.com/handbook",
+      "score": 5,
+      "bestStage": "All stages — load-bearing",
+      "effort": "Continuous, team-wide authoring",
+      "role": "The public-handbook surface that doubles as the demo grammar",
+      "description": "PostHog's handbook is published as Markdown in a public repository — anyone can submit a pull request against it. Compensation philosophy, salary calculator, runway, OKRs, hiring decisions, strategy debates all live here. By 2025 it ran to multiple hundreds of pages with six years of public commit history. The handbook is how PostHog ships proactive-transparency E1 — the demonstration is the inside of the company itself, and any 12-month copy attempt produces PR-ed transparency that is a worse signal than no transparency.",
+      "catalyst": "No single dated launch. The handbook grew throughout 2020–2022 from the operating documentation outward. The first public compensation-calculator entry in the commit history is the closest thing to a canonical kickoff. Six years of subsequent commits make the format un-fakeable.",
+      "catalystUrl": "https://posthog.com/handbook",
+      "accountUrl": "https://posthog.com/handbook",
+      "accountLabel": "posthog.com/handbook",
+      "whenItWorks": "When the buyer is technical and your category has incumbents that are widely seen as opaque (pricing rules, data egress, retention contracts). The transparency closes the asymmetry the buyer is already frustrated by.",
+      "whenItDoesnt": "When transparency is bolted on as a marketing project. Any 12-month attempt produces hedged statements that are immediately legible as PR rather than operating reality."
+    },
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 4,
+      "bestStage": "All stages",
+      "effort": "Daily, founder-led",
+      "role": "Founder voice + PostHog voice",
+      "description": "James Hawkins (@james406) runs daily X presence — runway numbers, hiring decisions, mistakes, multi-product launches, frequent dev-tool podcast appearances cross-posted. The honest-operator register pairs cleanly with the handbook narrative. Tim Glaser is the quieter technical leg.",
+      "catalyst": "November 2023: Stripe CEO Patrick Collison tweets PostHog's site is 'very well done' and tags both founders. PostHog converts the tweet into a Stripe partnership conversation that closes as the June 2025 Series D — eighteen months later, $70M @ $920M.",
+      "catalystUrl": "https://news.crunchbase.com/ai/startup-posthog-tweet-funding-round-stripe/",
+      "accountUrl": "https://x.com/james406",
+      "accountLabel": "@james406 on X",
+      "whenItWorks": "When the founder voice can sustain technical depth and the company has already earned the right to discuss its own runway in public.",
+      "whenItDoesnt": "Without operating substance underneath, daily X founder posting devolves into thought-leadership content that subtracts trust."
+    },
+    {
+      "slug": "github",
+      "name": "GitHub",
+      "score": 5,
+      "bestStage": "All stages — substrate",
+      "effort": "Substrate-level",
+      "role": "The MIT-licensed core itself",
+      "description": "PostHog's main repository is MIT-licensed. The ee/ (enterprise edition) directory carries a separate proprietary license. A posthog-foss repository strips proprietary code for fully-FOSS deployments. The repo is the funnel into PostHog Cloud paid tiers — by 2025, 108,000+ companies had used or self-hosted from this surface.",
+      "catalyst": "February 20, 2020 — the HN launch links to the public GitHub repo as the canonical artifact. The repository is four weeks old at launch; the open-source motion compounds from there.",
+      "catalystUrl": "https://github.com/PostHog/posthog",
+      "accountUrl": "https://github.com/PostHog",
+      "accountLabel": "PostHog on GitHub",
+      "whenItWorks": "When self-hosting is technically achievable for a developer in under an hour and the category has incumbents seen as opaque.",
+      "whenItDoesnt": "When the code is too complex to self-host without dedicated infra effort. Loose AGPL or copyleft licenses also damage the propagation effect — MIT was the deliberate choice."
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 5,
+      "bestStage": "Launch + major product expansions",
+      "effort": "Punctuated — milestones hit HN organically",
+      "role": "Substrate-validation surface",
+      "description": "The February 20, 2020 Launch HN post (282 upvotes, 83 comments) is the canonical PostHog substrate event. Subsequent major releases (ClickHouse migration, session replay, data warehouse GA, PostHog AI) surfaced organically on HN front-page. The HN comment culture also stress-tests claims — the Heap engineers' query-performance critique on the launch thread shaped the ClickHouse migration two years later.",
+      "catalyst": "February 20, 2020 — Launch HN: PostHog (YC W20) – open-source product analytics. PostHog's framing is 'most successful B2B software launch on HN since 2012.'",
+      "catalystUrl": "https://news.ycombinator.com/item?id=22376732",
+      "accountUrl": "https://news.ycombinator.com/from?site=posthog.com",
+      "accountLabel": "Search HN for posthog.com",
+      "whenItWorks": "When the launch has genuine technical novelty and the founders can engage substantively in the comment thread on the day of submission.",
+      "whenItDoesnt": "When the post is PR-ed or marketing-styled. HN punishes promotional content quickly, and the comment thread becomes a credibility risk rather than a traction signal."
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit (r/devops, r/webdev)",
+      "score": 3,
+      "bestStage": "Post-substrate community ops",
+      "effort": "Ongoing — community-led with team participation",
+      "role": "Long-tail developer discussion + comparative-tool conversations",
+      "description": "PostHog surfaces in r/devops, r/webdev, r/SaaS, and r/selfhosted whenever developers ask about Mixpanel/Amplitude alternatives or self-hostable analytics. The team participates with usernames bound to PostHog identity. Volume is lower than HN/X but comparison threads (PostHog vs Mixpanel, PostHog vs Plausible) are durable SEO + sales artifacts that compound over years.",
+      "catalyst": "No single thread. Continuous low-frequency presence in self-hosting and dev-tool subreddits since 2020. The comparative-tool threads are the canonical long-tail discovery surface for developers researching alternatives.",
+      "accountUrl": "https://www.reddit.com/r/PostHog/",
+      "accountLabel": "r/PostHog",
+      "whenItWorks": "When developers in your category actively compare tools in public threads and your team can answer technical questions without PR-deflecting.",
+      "whenItDoesnt": "Scaled-out marketing-team Reddit presence is detectable within weeks. Without authentic engineer participation, the channel inverts into negative signal."
+    },
+    {
+      "slug": "y-combinator",
+      "name": "Y Combinator (network + Continuity)",
+      "score": 5,
+      "bestStage": "Founding + Series A/B + ongoing customer base",
+      "effort": "Network-level — leveraged across batches",
+      "role": "Founding accelerator + repeat investor + ongoing customer pipeline",
+      "description": "PostHog is YC W20. Y Combinator Continuity led both the seed (with 1984 Ventures) and the Series B, and participated in the Series A, D, and E. The W23 batch alone produced 54% adoption of PostHog by year-end 2024, by Contrary's count. The YC pipeline is both a capital source and a perpetual customer-acquisition channel — every batch produces 200+ new dev-tool buyers, and PostHog's open-source default makes adoption frictionless.",
+      "catalyst": "Winter 2020 batch — the pivot into open-source product analytics happened mid-batch (around mid-January 2020); the HN launch four weeks later opened the substrate. Continuity led seed and Series B.",
+      "catalystUrl": "https://www.ycombinator.com/companies/posthog",
+      "accountUrl": "https://www.ycombinator.com/companies/posthog",
+      "accountLabel": "PostHog on YC",
+      "whenItWorks": "When the YC network is also your customer base. PostHog's developer-tool category puts a steady-state percentage of every batch into the funnel.",
+      "whenItDoesnt": "If your buyer is enterprise-only or non-technical, the YC network's customer-pipeline value is much weaker. The capital relationship is still useful but the perpetual-pipeline effect does not transfer."
+    }
+  ]
+}

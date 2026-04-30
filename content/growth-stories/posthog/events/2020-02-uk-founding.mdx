@@ -1,0 +1,96 @@
+---
+title: "Five Pivots in Six Months — Why PostHog Killed a Working Product to Start Writing Code on Jan 23, 2020"
+description: "Three weeks into Y Combinator W20, James Hawkins and Tim Glaser had 600 paying users on a tool that wasn't solving the underlying problem. They killed it. PostHog was their sixth idea — and the one that landed because they had been re-implementing analytics every single time."
+date: "2020-01-23"
+type: "product"
+gtmTag: "Structural differentiation"
+eventTitle: "PostHog code start (mid YC W20)"
+externalUrl: "https://posthog.com/handbook/story"
+---
+
+<Catalyst>
+Most founders pivot once. PostHog pivoted six times in six months and each time noticed the same thing: every product they tried needed analytics, and every analytics tool they reached for had the same set of complaints from engineers. The sixth idea was the one where the answer to the recurring complaint *was* the product.
+</Catalyst>
+
+January 23, 2020. James Hawkins and Tim Glaser start writing PostHog code. They are mid-way through Y Combinator's Winter 2020 batch. The HN launch is set for four weeks out: February 20, 2020.
+
+This is the sixth idea. The five before it included a tool to help engineers manage technical debt — the original W20 pitch — that already had <Stat value="600 users" label="with 50% survey response rate" /> and was collecting payment three weeks into the batch.
+
+They killed it anyway.
+
+## The Arachnys background that made the velocity possible
+
+Hawkins and Glaser met at Arachnys, a London regulatory-tech startup. Hawkins worked his way from individual contributor to VP of Sales over four years. Glaser ran data infrastructure as PM and engineer.
+
+The complementary instincts mattered. Hawkins on go-to-market — pricing, positioning, sales motion. Glaser on the architecture problem — what storage layer, what query model, what self-hosting story. Neither had founded a company before.
+
+What both had was unusual conviction that pivoting on weak signal was correct. Most founders rationalize "we have 600 users and revenue" into "we have product-market fit." Hawkins and Glaser ran the qualitative interviews and heard the same answer from every customer: nice tool, doesn't solve the underlying problem.
+
+## What the five pivots taught them
+
+Six pivots in six months on YC's clock is brutal. Six months of unpaid runway burn while co-founders watch other batches' startups raise seed rounds. Most teams cannot endure this; the few who can usually do not arrive at a useful insight at the end.
+
+What Hawkins and Glaser noticed across every pivot was structural. **They were re-implementing analytics every time.** Every product they tried needed an event tracker, a funnel, a retention chart. And every time, the analytics tools they reached for — Mixpanel, Amplitude, Heap — had the same set of complaints from engineers.
+
+| Frustration | Why it mattered for engineers |
+|---|---|
+| Data sent to third parties | EU privacy regulation, internal data-residency policies, customer trust |
+| Expensive egress fees | Couldn't get raw events out for downstream warehouse / ML use |
+| Pricing that punished growth | Per-event pricing made successful products more expensive |
+| Self-hosting impossible | Forced cloud-only deployment regardless of constraints |
+
+The Arachnys regtech background is what made the privacy frame land. Both founders had spent years building software for regulated buyers who could not send their data to a third-party SaaS. The frustration was not theoretical — they had felt it directly.
+
+## January 23: the first commit
+
+PostHog was incorporated on the day they started writing code. The MVP plan was simple — open-source MIT-licensed product analytics, self-hostable on one container plus Postgres, with a JavaScript SDK that mirrored Mixpanel's API close enough to make migration trivial.
+
+The choice of MIT (rather than AGPL or a proprietary copyleft) is consequential. MIT made the project a clean fit for any developer who wanted to embed it in their own product. AGPL would have produced enterprise-license pushback that would have slowed the substrate. Six years later the `ee/` directory carrying enterprise-only code under a separate proprietary license would be the wedge into PostHog Cloud paid tiers.
+
+The Postgres choice was a deliberate compromise on scale for a faster shipping deadline. The architecture would not survive past about 100M events per customer per month. PostHog's bet was that the four-week deadline mattered more than the scale ceiling, because they could rebuild on ClickHouse later if the substrate compounded.
+
+That bet paid off twice. First on February 20, 2020 — the HN launch with a Postgres-backed MVP. Second in 2022, when the ClickHouse migration shipped and resolved the scale critique that Heap engineers had filed in the launch thread two years earlier.
+
+## What "we'll launch in four weeks" really meant
+
+Setting February 20 as the launch deadline — four weeks from a blank repo to Hacker News front page — looks reckless. In practice it forced a single decision PostHog never undid: the surface area would be small, opinionated, and self-documenting.
+
+What shipped at launch:
+
+- One container + Postgres self-hosted deployment
+- JavaScript SDK with `posthog.capture(eventName, properties)` API
+- Funnel + retention + cohort analysis on the events
+- A web UI you could host yourself
+
+What did *not* ship at launch:
+
+- A hosted cloud (PostHog Cloud came in May 2020)
+- Feature flags (March 2021)
+- Session replay (mid-2021 beta, June 2022 GA)
+- Experiments + Surveys (September 2022)
+- Data warehouse (March 2023 beta, July 2024 GA)
+
+The four-week MVP deferred everything except the load-bearing event-capture and visualization layer. Each later product was added when the substrate could support it — never as a launch feature.
+
+## The choice that matters most in retrospect
+
+The MIT license, the Postgres-on-day-one architecture, the four-week launch deadline — all of these are reproducible by other teams.
+
+What is harder to reproduce is the founder pair willing to kill a working product six times in six months on the YC clock. The pivot velocity is the thing that does not transfer cleanly from this case study to a 2026 founder reading it. Most teams will read the launch story, copy the open-source-MIT-license-MVP-on-HN pattern, and then refuse to kill it when the qualitative feedback says the underlying problem is not being solved.
+
+PostHog killed it five times before they got to the version that worked.
+
+<Conclusion title="What to copy">
+
+- **If your product needs to track usage, the analytics tool is part of your stack — and your buyer's stack.** PostHog's wedge was that buyers were already frustrated with the incumbent. A 2026 founder needs the equivalent observation about a different category whose incumbents are widely hated.
+- **MIT, not AGPL, on Day 0.** The licensing choice determines whether developers can embed your project freely. PostHog's MIT core was the load-bearing distribution decision — copyleft would have constrained the substrate.
+- **Set a tight launch deadline that forces small surface area.** Four weeks from blank repo to HN gave PostHog one product, opinionated and self-documenting. Every subsequent product was added on the same substrate, after substrate compounded — never as a launch feature.
+
+</Conclusion>
+
+## Sources
+
+- [PostHog handbook — How we got here](https://posthog.com/handbook/story)
+- [PostHog blog — Pivot to PostHog](https://posthog.com/blog/pivot-to-posthog)
+- [PostHog founders — Story about pivots](https://posthog.com/founders/story-about-pivots)
+- [Hacker News — Launch HN: PostHog (YC W20) (Feb 2020)](https://news.ycombinator.com/item?id=22376732)

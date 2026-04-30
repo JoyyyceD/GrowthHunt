@@ -1,0 +1,283 @@
+{
+  "company": {
+    "slug": "clay",
+    "name": "Clay",
+    "legalName": "Clay Labs, Inc.",
+    "tagline": "一家凭借自身 GTM 范例赢得 GTM 平台之争的公司——从成立到 1 亿美元 ARR 历时八年，但从那次真正起作用的 pivot 算起只有 42 个月",
+    "summary": "Clay 是产品、营销和招聘漏斗共用同一个表面的案例。五年水平电子表格期的徘徊，构筑出一套任何 2022 年成立的竞争对手都无法匹敌的底层基础。然后是 2022 年 1 月的 GTM pivot，一笔被刻意按住 24 个月、最终捆绑进 2024 年 6 月 B 轮的 A 轮融资，以及一个「客户每搭建一张 Clay 表都是一个候选病毒素材」的创作者-模板飞轮。结果：三年内从 100 万美元 ARR 增长到 1 亿美元 ARR，累计融资 2.04 亿美元，2025 年 8 月估值达到 31 亿美元。",
+    "founded": "2017-06",
+    "founders": ["Kareem Amin", "Nicolae Rusan", "Varun Anand"],
+    "seriesNumber": 18
+  },
+  "phases": [
+    {"start": "2017-06", "end": "2022-01", "name": "电子表格徘徊期", "color": "#fef3c7"},
+    {"start": "2022-01", "end": "2024-06", "name": "GTM pivot + 数据增强期", "color": "#dbeafe"},
+    {"start": "2024-06", "end": "2025-08", "name": "Compound stacking 引爆期", "color": "#fce7f3"},
+    {"start": "2025-08", "end": "2026-06", "name": "AI Agents + GTM Engineer 品类化", "color": "#dcfce7"}
+  ],
+  "events": [
+    {
+      "date": "2017-06-01",
+      "title": "Clay 成立",
+      "type": "product",
+      "description": "Kareem Amin（前 Sailthru、前 Dow Jones 产品 VP）和 Nicolae Rusan（前 Microsoft、前 Dow Jones）于纽约联合创立 Clay。最初使命：一个面向非工程师的电子表格式数据自动化平台——并非 GTM 专用工具。",
+      "articleSlug": "2017-clay-founding"
+    },
+    {
+      "date": "2017-09-01",
+      "title": "BoxGroup 种子前轮",
+      "type": "funding",
+      "description": "BoxGroup 联合天使投资人 Andy Sack 在创始人尚未确定产品形态前就完成了种子前投资。First Round 的 Phin Barnes 在最早期就与团队建立了合作关系。"
+    },
+    {
+      "date": "2020-06-01",
+      "title": "Varun Anand 以顾问身份加入",
+      "type": "product",
+      "description": "Varun Anand（前 Hillary Clinton 团队通讯、前 Jigsaw / Google、前 Candid + Newfront GTM 岗位）开始为 Clay 做顾问。2021 年 9 月将正式成为联合创始人兼运营负责人。"
+    },
+    {
+      "date": "2021-08-30",
+      "title": "种子轮 250 万美元，由 First Round 领投",
+      "type": "funding",
+      "description": "First Round Capital 领投 250 万美元种子轮（Phin Barnes 主导），BoxGroup 和 Forerunner Ventures 参投。彼时 Clay 仍只有约 20 个付费客户，月费 30 至 200 美元——尚未确立垂直方向。"
+    },
+    {
+      "date": "2021-09-01",
+      "title": "Anand 转任联合创始人兼运营负责人",
+      "type": "product",
+      "description": "Anand 从顾问转为正式联合创始人。开始在 Modern Sales Pros 社区做客户调研冲刺，理解外呼销售代理和 outbound 团队真正需要什么。这项调研直接驱动了 2022 年 1 月的 pivot。"
+    },
+    {
+      "date": "2022-01-15",
+      "title": "Pivot 至 GTM 单一垂直",
+      "type": "product",
+      "gtmTag": "结构性差异化",
+      "description": "经过五年寻找 PMF 的徘徊后，Clay 将产品收窄到单一垂直：外呼销售和 GTM 团队。产品能力几乎未变，定位变了。这是 Clay 历史上结构性最重要的时刻。",
+      "articleSlug": "2022-01-gtm-pivot"
+    },
+    {
+      "date": "2022-02-15",
+      "title": "重定位平台在 Product Hunt 上线",
+      "type": "product",
+      "description": "Clay 面向 GTM 团队的新平台带着新定位在 Product Hunt 上线。ARR 立即开始加速——年底营收已是 1 月起点的 10 倍。"
+    },
+    {
+      "date": "2022-06-01",
+      "title": "A 轮 1350 万美元由 Sequoia 领投（已 close 但未公开）",
+      "type": "funding",
+      "description": "Sequoia（Pat Grady）领投 1350 万美元 A 轮。这一轮 close 于 2022 年中，但未公开宣布。Clay 刻意按住这笔融资，更愿意通过产品和社区信号而非融资 PR 传递信息。24 个月后才与 2024 年 6 月的 B 轮捆绑披露。"
+    },
+    {
+      "date": "2022-12-01",
+      "title": "ARR 全年 10 倍增长（约 100 万美元年化）",
+      "type": "media",
+      "description": "到 2022 年底 Clay 的 ARR 大约是年初的 10 倍。Sacra 和 Starter Story 三角验证全年约 100 万美元 ARR 这一工作数字。"
+    },
+    {
+      "date": "2023-06-01",
+      "title": "Claygent AI Agent 上线",
+      "type": "product",
+      "description": "Claygent——Clay 的 AI 调研代理——以 GPT-4 集成形式上线。到 2024 年中，30% 的 Clay 客户每天使用 Claygent，全平台每天产生约 50 万次调研和外呼任务。"
+    },
+    {
+      "date": "2023-12-01",
+      "title": "ARR 再次 10 倍增长，付费客户突破 1000 家",
+      "type": "media",
+      "description": "Clay 的第二个 10 倍年。客户数突破 1000 家。Slack 社区从 2022 年 1 月 pivot 时的约 200 人增长至 5000+ 人。LinkedIn 上的创作者生态开始复合增长。"
+    },
+    {
+      "date": "2024-06-27",
+      "title": "B 轮 4600 万美元 @ 5 亿美元，由 Meritech 领投",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "Meritech 领投 4600 万美元 B 轮，投后估值 5 亿美元。Sequoia、First Round、BoxGroup、Boldstart 全部参与。Clay 同时披露此前未公开的 1350 万美元 A 轮和 250 万美元种子轮。客户名单（Anthropic、Notion、Vanta、Verkada、Intercom）、10 万用户、2500 家付费客户——全部打包进同一个新闻周期。",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2024-06-27/sequoia-meritech-invest-in-ai-sales-and-marketing-startup-clay",
+      "articleSlug": "2024-06-series-a-b-compound-announcement"
+    },
+    {
+      "date": "2024-09-01",
+      "title": "创作者生态在 LinkedIn 形成规模",
+      "type": "media",
+      "gtmTag": "叙事飞轮启动",
+      "description": "外呼销售代理运营者（Eric Nowoslawski / Growth Engine X 是经典代表）将 Clay 教程作为他们 LinkedIn 内容的主要输出。Clay 通过 Clay Creator / Clay Playbooks / Clay Expert 项目将这一动作正式化。分润机制是后期才加入的——在自发动作已经跑起来之后。",
+      "articleSlug": "2024-creator-ecosystem-flywheel"
+    },
+    {
+      "date": "2024-11-15",
+      "title": "Sequoia Training Data 播客",
+      "type": "media",
+      "description": "Alfred Lin 在 Sequoia 的 Training Data 播客采访 Kareem Amin。框架：Clay 是销售的「行动系统」（system of action）——把 AI 生成的洞察转化为实际外呼动作的那一层。成为 GTM 工具品类中创始人即 IP 的经典长内容素材。",
+      "externalUrl": "https://sequoiacap.com/podcast/training-data-kareem-amin/"
+    },
+    {
+      "date": "2024-12-31",
+      "title": "ARR 全年 6 倍增长（约 3000 万美元年化）",
+      "type": "media",
+      "description": "第三个增长年呈现 6 倍——倍数下降但基数大得多。Sacra 估计 2024 年底 ARR 约 3000 万美元。客户数突破 5000 家。Slack 社区已达 10000+ 人。"
+    },
+    {
+      "date": "2025-01-21",
+      "title": "Clay 收购 Avenue",
+      "type": "acquisition",
+      "description": "Clay 收购 Avenue——一个面向运营团队的告警和工作流自动化工具。整个 Avenue 团队加入 Clay，构建意图信号产品。Clay 此前已经具备目标定位（数据）和消息内容（AI），但缺少时机这一环——Avenue 提供了第三条腿。这是 Clay 历史上的第一次收购。"
+    },
+    {
+      "date": "2025-01-24",
+      "title": "B 轮扩展 4000 万美元 @ 12.5 亿美元",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "Meritech 领投 4000 万美元 B 轮扩展，投后估值 12.5 亿美元——B 轮后六个月，估值翻 2.5 倍。Sequoia、First Round、BoxGroup、Boldstart 全部加注。与三天前的 Avenue 收购及 6 倍增长披露捆绑在一起。这是「独角兽时刻」。",
+      "externalUrl": "https://www.builtinnyc.com/articles/clay-hits-1b-valuation-with-40m-funding-raise-20250124",
+      "articleSlug": "2025-01-series-b-extension"
+    },
+    {
+      "date": "2025-05-08",
+      "title": "15 亿美元估值的 Tender Offer，由 Sequoia 领投",
+      "type": "funding",
+      "description": "Sequoia 领投 15 亿美元估值的员工二级要约收购。这并非一级融资——现有员工和早期投资人获得部分流动性。Clay 将其定位为 2025 年 1 月 B 轮扩展（12.5 亿美元）和即将到来的 C 轮之间的检查点。",
+      "externalUrl": "https://techcrunch.com/2025/05/08/clay-authorizes-employee-tender-at-a-1-5b-valuation-led-by-sequoia/"
+    },
+    {
+      "date": "2025-06-15",
+      "title": "Claygent 累计运行突破 10 亿次",
+      "type": "product",
+      "gtmTag": "技术叙事升级",
+      "description": "Clay 披露 Claygent 自上线以来累计运行已突破 10 亿次调研和外呼任务。OpenAI、Anthropic、Notion、Rippling、Verkada 都在使用 Claygent 来扩展前期调研能力。Claygent 从一个功能升级为整体叙事的中心。",
+      "externalUrl": "https://openai.com/index/clay/"
+    },
+    {
+      "date": "2025-08-05",
+      "title": "C 轮 1 亿美元 @ 31 亿美元，由 CapitalG 领投",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "CapitalG 领投 1 亿美元 C 轮，投后估值 31 亿美元——15 亿美元 Tender 后四个月，估值再翻 2.07 倍。Sequoia、Meritech、First Round、BoxGroup、Boldstart 全部参与；Sapphire Ventures 作为新投资人加入。累计融资 2.04 亿美元。与 1 亿美元 ARR 趋势披露、扩展后的客户名单、以及 GTM Engineer 品类框架捆绑发布。",
+      "externalUrl": "https://techcrunch.com/2025/08/05/clay-confirms-it-closed-100m-round-at-3-1b-valuation/",
+      "articleSlug": "2025-08-series-c-3b"
+    },
+    {
+      "date": "2025-08-05",
+      "title": "GTM Engineer 品类化推进",
+      "type": "media",
+      "gtmTag": "受众边界突破",
+      "description": "Clay 的 C 轮博客和 BusinessWire 新闻稿将「GTM Engineer」品类作为核心——Clay 声称由自己开创的新角色。2025 年每月约 100 个 GTM Engineer 岗位上线，同比增长 205%。这一轮被定位为「为整个行业的 GTM 工程师角色提供资金支持」，而不是单纯的融资。",
+      "externalUrl": "https://www.businesswire.com/news/home/20250805719448/en/AI-GTM-Leader-Clay-Raises-$100M-Series-C-to-Fuel-GTM-Engineering-Roles-Industrywide"
+    },
+    {
+      "date": "2025-11-15",
+      "title": "1 亿美元 ARR 长文发布",
+      "type": "media",
+      "description": "Clay 在公司博客发布《Clay 达成 1 亿美元 ARR：一次八年的「一夜成功」》。创始人叙述的弧线：2017 年成立，五年徘徊，2022 年 1 月 GTM pivot，10 倍 / 10 倍 / 6 倍三个 ARR 年份。成为 Clay 历史叙事的官方版本，也是 GTM 工具创业公司内容营销的品类标杆。",
+      "externalUrl": "https://www.clay.com/blog/100m-arr"
+    },
+    {
+      "date": "2026-03-15",
+      "title": "定价大改：Launch / Growth 套餐",
+      "type": "product",
+      "description": "Clay 重组定价：旧版 Starter（149 美元）/ Explorer（349 美元）/ Pro（800 美元）对新客户停售，替换为 Launch（185 美元，含 2500 数据信用 + 1.5 万 Actions）/ Growth（495 美元，无限信用）/ Enterprise（年费 3 万美元起）。老客户保留旧定价。反映 ICP 向更大团队转移的规模化趋势。"
+    }
+  ],
+  "arr": [
+    {"date": "2022-12-31", "value": 1000000, "source": "Clay 倍数披露 + Sacra", "confidence": "estimate"},
+    {"date": "2023-12-31", "value": 10000000, "source": "Clay 倍数披露 + Sacra", "confidence": "estimate"},
+    {"date": "2024-12-31", "value": 30000000, "source": "Sacra", "confidence": "estimate"},
+    {"date": "2025-11-15", "value": 100000000, "source": "Clay 100m-arr 博客", "confidence": "official"}
+  ],
+  "valuation": [
+    {"date": "2024-06-27", "value": 500000000, "round": "B 轮", "source": "Bloomberg", "confidence": "official"},
+    {"date": "2025-01-24", "value": 1250000000, "round": "B 轮扩展", "source": "Built In NYC", "confidence": "official"},
+    {"date": "2025-05-08", "value": 1500000000, "round": "Tender Offer", "source": "TechCrunch", "confidence": "official"},
+    {"date": "2025-08-05", "value": 3100000000, "round": "C 轮", "source": "TechCrunch", "confidence": "official"}
+  ],
+  "platforms": [
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 5,
+      "bestStage": "GTM pivot 之后——承重结构",
+      "effort": "Anand 每日活跃；创作者生态持续运转",
+      "role": "创作者生态的底层基础",
+      "description": "LinkedIn 是 Clay compound 真正发生的地方。外呼销售代理运营者将 Clay 教程作为他们的主要内容输出。每篇教程同时是一次 Clay 背书、是运营者本人代理业务的引流素材、也是受众可以一键复用的模板。Clay 不为教程付费——动机来自运营者的自我推广，这让信任信号始终保持干净。",
+      "catalyst": "没有单一引爆时刻。Eric Nowoslawski（Growth Engine X）是经典代表——靠 Clay 教程搭起了一家代理公司。数十名运营者跟进。Clay 在 2024 年通过 Clay Creator / Playbooks / Expert 项目将这一动作正式化，但那是在自发飞轮已经跑起来之后。",
+      "catalystUrl": "https://www.linkedin.com/in/outboundphd/",
+      "accountUrl": "https://www.linkedin.com/in/vaanand",
+      "accountLabel": "Varun Anand on LinkedIn",
+      "whenItWorks": "当你的买家群体把 LinkedIn 内容视为运营能力的信号时——外呼销售运营者就是这种群体",
+      "whenItDoesnt": "当买家是 CFO、SRE 或医院管理者时。大多数 B2B 受众不会产生这个飞轮"
+    },
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 4,
+      "bestStage": "GTM pivot 之后——每日",
+      "effort": "每日持续在场",
+      "role": "创始人战术频道",
+      "description": "Kareem Amin 在 X 上每日活跃——具体的 Clay 用例、GTM 观察、单工作流客户搭建、数据。比典型的创始人 X 账号更窄（产品战略和品类评论更少），但这种聚焦正适合受众。结合 Anand 在 LinkedIn 的活跃，形成了双频道双创始人每日在场的架构，对任一创始人的中断有结构性的鲁棒性。",
+      "catalyst": "没有单一推文。2022–2025 年持续在场，没有可见的中断。叠加在上层的：长形式播客出场（First Round Review、Sequoia Training Data、SaaStr CRO Confidential、Unusual Ventures）——每次播客出场都被每日 X 节奏预先验证给受众。",
+      "catalystUrl": "https://x.com/kareemamin",
+      "accountUrl": "https://x.com/kareemamin",
+      "accountLabel": "@kareemamin on X",
+      "whenItWorks": "当创始人能用真实声音持续输出——单个工作流、客户搭建的表、GTM 观点——多年不间断",
+      "whenItDoesnt": "如果被当作公司喇叭，或者断断续续地重启。信号价值在于「每日不中断」这一模式本身"
+    },
+    {
+      "slug": "slack",
+      "name": "Slack 社区",
+      "score": 5,
+      "bestStage": "全阶段——底层基础",
+      "effort": "轻度运营；用户驱动",
+      "role": "社区 + 教程底层基础",
+      "description": "Clay 的 Slack 始于一项省钱举措（替代 Intercom 客服），2022 年 1 月 pivot 时只有约 200 人。到 2024 年 6 月 B 轮时已经突破 10000+ 人。最初是支持频道，后来成为 Clay 的核心用户教程基础——客户在这里发布自己搭建的工作流，其他客户去复用。这个「省钱起源」值得说明：当时不是策略，后来才变成策略。",
+      "catalyst": "没有单一引爆时刻。从 2022 年 1 月到 2024 年 6 月，从 200 人增长到 10000+ 人的 50 倍增长本身就是引爆——同时 Clay 主动把社区搭建的工作流引入官方模板库，闭合了社区内容与产品之间的回路。",
+      "catalystUrl": "https://www.clay.com/slack-community",
+      "accountUrl": "https://www.clay.com/slack-community",
+      "accountLabel": "加入 Clay Slack",
+      "whenItWorks": "当产品产出可分享的、有趣的可复用素材，并且社区运营把用户内容引入产品表面",
+      "whenItDoesnt": "当产品不产生可分享素材时——一个 CRM Dashboard 的 Slack 社区会变成投诉收件箱"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 4,
+      "bestStage": "起飞前后——周期性",
+      "effort": "单期投入大",
+      "role": "长形式创始人即 IP",
+      "description": "长形式播客和视频出场是创始人叙事的锚点。Sequoia Training Data x Alfred Lin（2024 年 11 月）、First Round Review《Path to PMF》、SaaStr CRO Confidential、Unusual Ventures Startup Field Guide。这些节目成为长尾内容资产——被切成短片、串文和金句卡，通过 X 和 LinkedIn 持续分发数月。",
+      "catalyst": "Sequoia Training Data x Alfred Lin（2024 年 11 月）。框架：Clay 是销售的「行动系统」——把 AI 生成的洞察转化为实际外呼动作的那一层。成为 GTM 工具品类创始人即 IP 的经典长内容素材。",
+      "catalystUrl": "https://sequoiacap.com/podcast/training-data-kareem-amin/",
+      "accountUrl": "https://www.youtube.com/@clay-com",
+      "accountLabel": "Clay on YouTube",
+      "whenItWorks": "当创始人能就品类、产品和客户用例输出 60 分钟以上的实质内容而不掺水",
+      "whenItDoesnt": "当产品单薄或品类框架是借来的。长形式会同时暴露这两点"
+    },
+    {
+      "slug": "lennys",
+      "name": "Lenny's Newsletter",
+      "score": 3,
+      "bestStage": "Hypergrowth（B 轮之后）",
+      "effort": "一次性创始人长文或客座文章",
+      "role": "PM 与运营者群体的可信度迁移",
+      "description": "Lenny Rachitsky 的受众（PM、运营者、增长负责人）正是 Clay 的买家群体。一篇创始人长文或访谈在 Lenny 的栈上做的事，是 B 轮新闻稿无法做到的——把 GTM Engineer 的品类框架植入到那些将来会招聘这一岗位的人的日常阅读里。Clay 在这个表面上的使用克制但精准。",
+      "catalyst": "创始人在运营者新闻刊（Lenny's、Pavilion Topline、SaaStr）生态中的出现和品类评论，作为 GTM Engineer 品类的背书发挥作用。C 轮的框架因此落入一个已被预热的受众群中。",
+      "catalystUrl": "https://www.joinpavilion.com/blog/topline-recap-67",
+      "accountUrl": "https://www.lennysnewsletter.com/",
+      "accountLabel": "Lenny's Newsletter",
+      "whenItWorks": "当你需要建立的是一个品类，而不是发布一个产品功能时——受众读的是品类，不是功能",
+      "whenItDoesnt": "当创始人长文读起来像广告时。受众会惩罚推广式写作"
+    },
+    {
+      "slug": "podcasts",
+      "name": "长形式播客",
+      "score": 4,
+      "bestStage": "Pivot 之后——周期性",
+      "effort": "每期需准备",
+      "role": "投资人 + 运营者可信度",
+      "description": "First Round Review、Sequoia Training Data、SaaStr CRO Confidential、Unusual Ventures Startup Field Guide、How We Built It、Topline Pavilion、Rippling Customer Stories。播客圈覆盖了每日 X / LinkedIn 节奏触达不到的受众——C 轮估值桌前的投资人、Clay 现有社区之外的运营者、正在评估工具的 GTM 负责人。",
+      "catalyst": "First Round Review《Path to Product-Market Fit》（即「七年一夜成功」长文）是 pivot 前的经典素材。Sequoia Training Data x Alfred Lin（2024 年 11 月）是 pivot 后的经典素材。两者一起，框定了 Clay 横跨两个时代的创始人叙事。",
+      "catalystUrl": "https://review.firstround.com/clays-path-to-product-market-fit/",
+      "accountUrl": "https://review.firstround.com/podcast/clays-path-to-product-market-fit-building-vertical-creating-power-users-and-understanding-founder-psychology-kareem-amin-co-founder-and-ceo/",
+      "accountLabel": "First Round Review podcast",
+      "whenItWorks": "当创始人有清晰的品类论点，且播客主持人位于该品类的引力场内",
+      "whenItDoesnt": "当播客是没有品类对齐的泛商业节目时。受众构成不会迁移"
+    }
+  ]
+}
