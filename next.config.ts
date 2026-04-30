@@ -1,10 +1,10 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  async rewrites() {
+  async redirects() {
     return [
-      { source: '/OPChampion', destination: '/OPChampion/index.html' },
-      { source: '/opchampion', destination: '/OPChampion/index.html' },
+      // Redirect the legacy case-sensitive URL to the canonical lowercase path
+      { source: '/OPChampion', destination: '/opchampion', permanent: true },
     ]
   },
 }

@@ -9,6 +9,19 @@ export const metadata: Metadata = {
   title: 'ViralX — Templates → schedule → ship straight to your X',
   description:
     '10,000+ viral tweet templates from 500+ AI founders and startup accounts. Pick a pattern, customize it, schedule it, and post it straight to your own X.',
+  keywords: ['viral tweet templates', 'AI startup twitter', 'X growth', 'founder tweets', 'startup marketing twitter', 'tweet scheduler'],
+  alternates: { canonical: 'https://growthhunt.ai/viralx' },
+  openGraph: {
+    type: 'website',
+    url: 'https://growthhunt.ai/viralx',
+    title: 'ViralX — Viral Tweet Templates for AI Founders',
+    description: '10,000+ viral tweet templates from 500+ AI founders. Pick, customize, schedule, and post to X.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ViralX — Viral Tweet Templates for AI Founders',
+    description: '10,000+ viral tweet templates from 500+ AI founders and startup accounts.',
+  },
 }
 
 // Inflated marketing numbers — kept stable so headline figures don't drift between requests
