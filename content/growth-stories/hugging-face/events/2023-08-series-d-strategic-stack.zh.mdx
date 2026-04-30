@@ -1,0 +1,113 @@
+---
+title: "D 轮 2.35 亿美元 / 45 亿美元——单轮八家战略投资人（2023 年 8 月）"
+description: "2023 年 8 月 24 日，Salesforce Ventures 领投 2.35 亿美元，投后估值 45 亿美元。参投：Google、Amazon、Nvidia、AMD、Intel、IBM、Qualcomm。八家主流科技平台战略股东在同一轮，其中数家彼此直接竞争。这是 16 家案例库里最分散的战略投资人阵容。"
+date: "2023-08-24"
+type: "funding"
+gtmTag: "Bundled milestone"
+eventTitle: "D 轮 2.35 亿美元 / 45 亿美元"
+externalUrl: "https://techcrunch.com/2023/08/24/hugging-face-raises-235m-from-investors-including-salesforce-and-nvidia/"
+---
+
+<Catalyst>
+大多数战略投资人轮是连贯的。ElevenLabs 五家战略股东 C 轮（电信 + CRM + LG）读作联盟。Hugging Face 的 D 轮读作一次公投。八家主流科技平台战略股东、其中数家彼此直接竞争，在一个新闻周期里同时确认 Hugging Face 是他们都需要被公开关联的中立承重底层。
+</Catalyst>
+
+2023 年 8 月 24 日。Hugging Face 宣布 **2.35 亿美元 D 轮，投后估值 45 亿美元**，由 Salesforce Ventures 领投。
+
+投资人名单本身就是这一轮。
+
+| 投资人 | 类目 | 对 Hugging Face 的战略角色 |
+|---|---|---|
+| **Salesforce Ventures**（领投） | 云 / CRM | 已有的 AWS 级客户，CRM-AI 集成锚点 |
+| **Google** | 超大规模云 | BERT 谱系，GCP 合作，模型分发 |
+| **Amazon** | 超大规模云 | 半年前的 AWS 优选 ML 平台合作（2023 年 2 月） |
+| **Nvidia** | 硅 | GPU 承重底层；Llama 2 联合分发 |
+| **AMD** | 硅 | Nvidia + Intel 的直接竞争对手 |
+| **Intel** | 硅 | Nvidia + AMD 的直接竞争对手 |
+| **IBM** | 企业 / 云 | watsonx 锚点，企业渠道 |
+| **Qualcomm** | 硅（移动/边缘） | 端侧 AI，边缘推理 |
+
+<Stat value="8 家" label="主流科技平台战略股东在一轮" />。其中数家彼此直接竞争。Google 与 Amazon 是云对手。Nvidia、AMD、Intel 是硅对手。**这是 16 家案例库里最分散的战略投资人阵容。**
+
+## 为什么战略股东阵容就是这一轮
+
+典型的 D 轮按营收倍数加增长率定价。Hugging Face 的 D 轮是按**投资人名单向市场发出的信号**定价。
+
+D 轮时点 Hugging Face 营收约 5000-7000 万美元 ARR（Sacra 重构 2023 年全年 70M；2023 年 8 月 run-rate 应该更低）。在约 64 倍 trailing ARR 这个倍数上，45 亿美元估值在 2023 年中 AI 基础设施里并不离谱。**这一轮在倍数上不激进。它在「联盟」上无可替代。**
+
+每一家入局的战略股东都同时变成三件事：
+
+1. **高管层级客户**——每家战略股东内部团队现在有了「使用 Hugging Face」的最高层许可
+2. **集成伙伴**——在 SageMaker（AWS）、Vertex AI（Google）、watsonx（IBM）、Inferentia/Trainium（AWS）、CUDA（Nvidia）、ROCm（AMD）上联合工程
+3. **联合营销管道**——每一家超大规模云的 AI 新闻稿现在默认会引用 Hugging Face
+
+这是 C1（捆绑里程碑）+ D1（技术叙事升维）的复合。轮次公告里的捆绑里程碑包括 50 万模型、25 万数据集、1 万付费客户、6 个月前的 AWS 合作、1 个月前的 Llama 2 上线。叙事升维从「机器学习领域的 GitHub」（2022 年 5 月）变到「每个组织出的每个模型都跑在上面的承重底层」（2023 年 8 月）。
+
+## 中立性论点
+
+Hugging Face 在这一轮卖的论点是*中立性*。
+
+要做「每个组织出的每个模型都跑在上面」的开放承重底层，你必须在外观上不能向任何单一超大规模云倾斜。Salesforce 的领投角色可能会暗示倾向 Salesforce。但有 Google + Amazon + IBM 同时参投，没有任何单一客户能合理主张 Hugging Face 是其专属供应商。
+
+同样逻辑用在硅上。Nvidia + AMD + Intel + Qualcomm 在同一轮，意味着 Hugging Face 必须保持硬件无关。**通过 huggingface.co/meta-llama 分发的 Llama 2 权重可以跑在客户选择的任何 GPU 栈上。** 这与一家「与 Nvidia 紧密集成、AMD 入局会破坏这种集成」的供应商在结构上不同。
+
+| 模式 | 例子 | 风险 |
+|---|---|---|
+| 单一战略对齐 | 一家纯 NV 资助的 AI 基础设施公司 | AMD/Intel 入局时失去中立性 |
+| 盟友联盟 | ElevenLabs C 轮（电信 + CRM，全部不竞争） | 连贯但触达受限 |
+| 分散战略 | **Hugging Face D 轮** | 中立性由结构强制 |
+
+**「分散战略」模式要求一开始就有可信的中立位置。** Cursor 或 Replit 跑不出来这套打法，因为他们的产品嵌入了客户特定的算力决策。Hugging Face 的开放 Hub 在结构上中立——命名空间一开始就承诺承载来自任何组织的任何模型。
+
+## 战略股东商业转化（我们不知道的部分）
+
+新闻稿暗示有集成。营收处理方式没披露。
+
+8 家战略股东里，多大比例转成付费客户？合同体量多大？节奏如何？这些问题决定了「八家战略股东这一轮」是金融工程的胜利、还是真正的商业放大器。
+
+| 战略股东 | 到 2026 年 4 月公开的商业关系 |
+|---|---|
+| Salesforce | Einstein 平台集成；Tableau 中的 HF 模型 |
+| Google | Vertex AI 目录包含 HF 模型；TPU 支持 |
+| Amazon | SageMaker Hugging Face DLCs；Inferentia/Trainium 支持 |
+| Nvidia | DGX Cloud + HF 训练栈；Llama 分发 |
+| AMD | Optimum 中的 ROCm 支持 |
+| Intel | Optimum 中的 Habana Gaudi 支持；Xeon 优化推理 |
+| IBM | watsonx 模型目录包含 HF 模型 |
+| Qualcomm | 移动推理 SDK 合作（成熟度较低） |
+
+8 家全部有可见的产品集成。没有一家被披露为头部 N 营收合同。D 轮时点约 5000-7000 万美元 ARR 表明没有任何单一战略股东在承担实质营收权重——客户基础仍以自下而上为主。
+
+这是案例里最缺乏文档的部分。D 轮后两年半，8 家战略股东商业关系合理推测可能在 8 家累计 2000-4000 万美元 annual contract value——也可能是营收忽略不计的联合营销合作。案例研究系列应该期待未来 12-18 个月会有更多披露。
+
+## 这一轮对下一轮做了什么（或没做什么）
+
+**到 2026 年 4 月，没有公开 E 轮。**
+
+Hugging Face 自 2023 年 8 月 24 日起没有完成定价主轮。2024 年盈利声明暗示他们没有需要做。D 轮的结构设计是为之后 36 个月的承重底层扩张（LeRobot、XetHub、Pollen、ggml.ai、Reachy Mini 硬件）出钱，不需要后续资本。
+
+| 轮次 | 时间 | 累计融资 | 距下一次定价轮月份数 |
+|---|---|---|---|
+| A 轮 | 2019 年 12 月 17 日 | 2020 万 | 15 |
+| B 轮 | 2021 年 3 月 11 日 | 6020 万 | 14 |
+| C 轮 | 2022 年 5 月 9 日 | 1.602 亿 | 16 |
+| **D 轮** | **2023 年 8 月 24 日** | **3.952 亿** | **31+（无 E 轮）** |
+
+31+ 个月的间隔是结构性的。要么 Hugging Face 在没有中间定价轮的情况下定位 IPO（Vercel 的剧本可比较），要么在不披露 E 轮的情况下定位更高估值的二次出售。两条路都和运营业务画像一致。
+
+<Conclusion title="可以复用的东西">
+
+- **战略投资人阵容是 GTM 机制，不只是融资事件。** 每一家入局的战略股东同时变成客户、集成伙伴、联合营销管道。这一轮的价值在 GTM 行，不在稀释表上。
+- **「分散战略股东」要求结构性中立。** Hugging Face 的开放 Hub 在结构上中立。Cursor 与 Replit 跑不出来这套打法，因为他们的产品嵌入了算力决策。从创始架构决策起就为「分散战略股东」规划承重底层，而不是事后补救。
+- **商业转化问题比轮次价格更重要。** 8 家战略股东的营收贡献，是这个案例最缺文档的部分。一个考虑这套打法的创始人应该先问：哪些战略股东会转成实质合同、节奏如何。
+
+</Conclusion>
+
+## 来源
+
+- [TechCrunch：Hugging Face 完成 2.35 亿美元融资，Salesforce 与 Nvidia 等参投（2023 年 8 月 24 日）](https://techcrunch.com/2023/08/24/hugging-face-raises-235m-from-investors-including-salesforce-and-nvidia/)
+- [CNBC：Google、Amazon、Nvidia、AMD 等科技巨头投资 Hugging Face（2023 年 8 月 24 日）](https://www.cnbc.com/2023/08/24/google-amazon-nvidia-amd-other-tech-giants-invest-in-hugging-face.html)
+- [Hugging Face 博客：AWS 合作（2023 年 2 月 21 日）](https://huggingface.co/blog/aws-partnership)
+- [Hugging Face 博客：Llama 2 在 Hub 上线（2023 年 7 月 18 日）](https://huggingface.co/blog/llama2)
+- [Sacra：Hugging Face 研究页](https://sacra.com/c/hugging-face/)
+- [Contrary Research：Hugging Face 报告](https://research.contrary.com/company/hugging-face)

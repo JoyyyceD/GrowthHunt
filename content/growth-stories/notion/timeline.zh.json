@@ -1,0 +1,404 @@
+{
+  "company": {
+    "slug": "notion",
+    "name": "Notion",
+    "legalName": "Notion Labs, Inc.",
+    "tagline": "六年的前 PMF 漂流期建立在十三年稳定不变的论点之上，AI 作为功能而非转型——2025 年 5 月的定价调整揭示了这场赌注的边界",
+    "summary": "Notion 是「漫长前 PMF 底层 + 设计驱动产品打磨 + AI 作为功能而非转型」的典型案例。2013 年 8 月以「思考工具」论点成立，公司在潜伏期度过了六年——前三年烧光天使资金做开发者工具未果，2015 年的濒死时刻让联合创始人 Ivan Zhao 和 Simon Last 解雇团队、迁居京都，从零重写产品；2016 年 8 月发布的 1.0 版本登顶 Product Hunt 但收入微薄；2018 年 3 月的 2.0 版本（数据库）才真正把 Notion 变成「一站式工作区」。第一笔机构性融资到 2019 年 7 月才落地——成立六年时，1000 万美元、估值 8 亿美元，对标的是底层成熟度而非 ARR 倍数。COVID 压缩了曲线：2020 年 4 月 B 轮估值 20 亿美元（36 小时从通话到成交）、2021 年 10 月 C 轮估值 100 亿美元。2023 年 2 月 Notion AI 上线时被刻意定位为附加功能而非转型。到 2025 年 12 月二级市场出售时估值 110 亿美元，ARR 约 6 亿美元。2025 年 5 月的定价调整——取消独立的 10 美元/月 AI 档位，把 AI 接入捆绑进 Business 档（20 美元/月）——是整段历史中最具诊断价值的运营信号。",
+    "founded": "2013-08",
+    "founders": [
+      "Ivan Zhao",
+      "Simon Last",
+      "Toby Schachman",
+      "Chris Prucha",
+      "Jessica Lam"
+    ],
+    "seriesNumber": 17
+  },
+  "phases": [
+    {
+      "start": "2013-08",
+      "end": "2015-04",
+      "name": "漂流期与早期尝试",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2015-04",
+      "end": "2019-07",
+      "name": "京都重写与慢热期",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2019-07",
+      "end": "2022-11",
+      "name": "A、B、C 轮拐点期",
+      "color": "#dcfce7"
+    },
+    {
+      "start": "2022-11",
+      "end": "2026-05",
+      "name": "AI 作为附加功能时代",
+      "color": "#fce7f3"
+    }
+  ],
+  "events": [
+    {
+      "date": "2013-08-01",
+      "title": "Notion Labs 在旧金山注册成立",
+      "type": "product",
+      "gtmTag": "结构性差异化",
+      "description": "Ivan Zhao 与 Toby Schachman、Chris Prucha、Jessica Lam、Simon Last 共同创立 Notion Labs。最初的产品是一款受 Smalltalk 启发的开发者向「思考工具」底层——参考 Bret Victor、Alan Kay、Doug Engelbart——更接近无代码底层而非笔记应用。论点是：大多数软件把用户当作消费者，Notion 想把用户当作作者。",
+      "externalUrl": "https://en.wikipedia.org/wiki/Notion_(productivity_software)",
+      "articleSlug": "2013-founding"
+    },
+    {
+      "date": "2014-06-01",
+      "title": "多次完整重写；开发者工具定位失败",
+      "type": "product",
+      "description": "在 2013 至 2015 年间，Notion 经历了多次完整代码重写，试图打造一个让非程序员能组合自己的应用的 Smalltalk 风格环境。论点在每次重写中存活下来，实现却没能。亲友轮种子资金（约 200 万美元）逐渐烧光。"
+    },
+    {
+      "date": "2015-04-01",
+      "title": "钱烧光，团队被裁",
+      "type": "funding",
+      "description": "Ivan Zhao 与 Simon Last 解雇了四人团队，把旧金山办公室转租出去。联合创始人 Toby Schachman、Chris Prucha、Jessica Lam 不再是经营团队的一员。三年时间和数百万美元亲友资金，留下的是一款没人用的产品。",
+      "externalUrl": "https://www.thesoftwarereport.com/the-kyoto-reboot-how-ivan-zhao-rebuilt-notion/",
+      "articleSlug": "2015-kyoto-rewrite"
+    },
+    {
+      "date": "2015-06-01",
+      "title": "迁往京都，从零重写开始",
+      "type": "product",
+      "gtmTag": "结构性差异化",
+      "description": "Ivan 和 Simon 搬到日本京都——生活成本约为旧金山的一半。他们租下了一栋有纸墙、没有中央暖气的两层小屋，每天工作 18 小时，从零重建 Notion。日式工艺感——「职人」纪律、以克制达至设计——从此嵌入产品的视觉语言。",
+      "externalUrl": "https://x.com/ivanhzhao/status/1887548612441465208",
+      "articleSlug": "2015-kyoto-rewrite"
+    },
+    {
+      "date": "2016-08-01",
+      "title": "Notion 1.0 发布，登顶 Product Hunt 日/周/月",
+      "type": "product",
+      "gtmTag": "受众边界突破",
+      "description": "Notion 1.0 以文档与 wiki 产品的形态发布——Ivan 称之为「糖衣包裹的西兰花」，把激进的论点藏进熟悉的生产力外壳。它登顶 Product Hunt 日榜、周榜、月榜。收入微薄，但设计圈的共鸣从这里开始。",
+      "externalUrl": "https://www.notion.com/blog/first-block-with-ivan-zhao-simon-last"
+    },
+    {
+      "date": "2017-06-01",
+      "title": "小额天使轮（金额未披露）",
+      "type": "funding",
+      "description": "Notion 在 2017 年接受了一笔金额未披露的天使投资。Akshay Kothari（当时在 LinkedIn，Pulse 被收购后任职）作为早期天使投资人参与——三年后他将以 COO 的身份正式加入。"
+    },
+    {
+      "date": "2018-03-01",
+      "title": "Notion 2.0 上线（数据库），再次登顶 Product Hunt",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "Notion 2.0 在数据库之上加入了表格、看板、日历——把 Notion 从「笔记加 wiki」转变为今天我们认识的「一站式工作区」。再次登顶 Product Hunt 日/周/月。WSJ 称之为「一款罕见的文艺复兴式应用」。",
+      "externalUrl": "https://www.producthunt.com/products/notion"
+    },
+    {
+      "date": "2018-08-01",
+      "title": "Akshay Kothari 以第 10 号员工 / COO 身份加入",
+      "type": "product",
+      "description": "Akshay Kothari（Pulse 联合创始人，Pulse 被收购后任职 LinkedIn）以 COO 的身份全职加入，第 10 号员工。他成为运营和 GTM 端的对位力量，与 Ivan 的产品和设计聚焦形成互补，并在公司内部被视为联合创始人——尽管他的加入时间是 2018 年。",
+      "externalUrl": "https://www.linkedin.com/posts/akothari_back-when-i-joined-notion-in-2018-the-whole-activity-7368776123859562497-dl6_"
+    },
+    {
+      "date": "2019-07-01",
+      "title": "A 轮 1000 万美元 / 估值 8 亿美元",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "Notion 公布一笔由天使财团领投的 1000 万美元融资（Daniel Gross、Elad Gil、Felicis 的 Aydin Senkut、Sherpalo 的 Ram Shriram、First Round 的 Josh Kopelman、Lachy Groom）。投后估值 8 亿美元——按 Lemkin 估算的约 300 万美元 ARR 计算，倍数高达 267 倍。这是一轮「时序倒置」的融资：公司已经成立六年，估值对标的是一家成熟 SaaS 公司，因为底层在资本周期之外已经成熟。",
+      "externalUrl": "https://pitchbook.com/newsletter/notion-labs-reaches-800m-valuation",
+      "articleSlug": "2019-series-a"
+    },
+    {
+      "date": "2019-09-01",
+      "title": "用户突破 100 万",
+      "type": "media",
+      "description": "Notion 用户突破 100 万——成立六年、1.0 发布三年、2.0 发布 18 个月之后。增长几乎完全来自自然渠道：模板、YouTube 创作者（Thomas Frank、Marie Poulin、Easlo）、大学生群体在 Reddit 和 YouTube 上的病毒传播。付费获客几乎为零。"
+    },
+    {
+      "date": "2020-04-01",
+      "title": "B 轮 5000 万美元 / 估值 20 亿美元（Index 领投，36 小时成交）",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "COVID 来袭。Akshay Kothari 周三给 Index Ventures 的 Sarah Cannon 打电话，周五条款书签署——36 小时从通话到成交。5000 万美元，投后估值 20 亿美元。Notion 公开披露公司在过去 18 个月持续盈利。融资被定位为远程办公顺风车的战略加注，而非生存性资金。",
+      "externalUrl": "https://techcrunch.com/2020/04/01/notion-hits-2-billion-valuation-in-new-raise/"
+    },
+    {
+      "date": "2021-10-08",
+      "title": "C 轮 2.75 亿美元 / 估值 100 亿美元（Coatue + Sequoia 联合领投）",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "Coatue Management 和 Sequoia Capital 联合领投 2.75 亿美元 C 轮，Base10 跟投。估值较 2020 年 4 月跃升 5 倍至 100 亿美元投后。披露的企业客户包括 Pixar、Toyota、Uber、Figma、Match Group。报告用户数：2000 万。ARR 估算约 3100 万美元——倍数 322 倍，整段历史中 ZIRP 泡沫的峰值时刻。",
+      "externalUrl": "https://siliconangle.com/2021/10/08/productivity-startup-notion-valued-10b-latest-275m-funding-round/",
+      "articleSlug": "2021-series-c-10b"
+    },
+    {
+      "date": "2022-06-09",
+      "title": "Notion 收购 Cron（日历应用）",
+      "type": "acquisition",
+      "gtmTag": "收购竞争对手",
+      "description": "Notion 收购 Cron——一款 2020 年成立、由 Raphael Schaad 经营的日历应用。Cron 以独立产品形态继续运营 18 个月，期间内部完成整合。战略意图：把 Notion 的产品边界从文档延伸到时间管理。",
+      "externalUrl": "https://www.notion.com/blog/notion-acquires-cron"
+    },
+    {
+      "date": "2022-11-16",
+      "title": "Notion AI 内测启动",
+      "type": "product",
+      "description": "Notion AI 以闭门内测形式上线——一个嵌入任意 Notion 页面的内嵌写作助手。比 ChatGPT 11 月 30 日的公开发布早了两周，Notion 已经有了自己的 AI 表层——但定位是已有产品之上的功能，而非全新产品。",
+      "externalUrl": "https://www.notion.com/blog/behind-the-scenes-notion-ai"
+    },
+    {
+      "date": "2023-02-22",
+      "title": "Notion AI 正式公开发布",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "经过 10 周的内测反馈，Notion AI 于 2023 年 2 月 22 日面向所有用户上线，作为 10 美元/用户/月的附加功能在所有套餐（包括免费版）上可选。定位是刻意为之的：「Notion 现在有 AI」，而不是「Notion 就是 AI」。产品仍然以文档与数据库的身份示人。",
+      "externalUrl": "https://www.notion.com/releases/2023-02-22",
+      "articleSlug": "2023-02-notion-ai-launch"
+    },
+    {
+      "date": "2024-01-17",
+      "title": "Notion Calendar 上线（基于 Cron 重建）",
+      "type": "product",
+      "description": "在收购 Cron 19 个月后，Notion 推出 Notion Calendar——一款免费日历应用，把日程与 Notion 文档和工作区打通。独立的 Cron 品牌停运。分发逻辑：进入一个高频日常使用界面（日历），带动 Notion 的活跃度。",
+      "externalUrl": "https://techcrunch.com/2024/01/17/notion-launches-a-calendar-app/"
+    },
+    {
+      "date": "2024-02-09",
+      "title": "Notion 收购 Skiff（加密邮件/文档）",
+      "type": "acquisition",
+      "gtmTag": "收购竞争对手",
+      "description": "Notion 以未披露的金额收购 Skiff。Skiff 的产品被关停，给用户六个月的迁移窗口。真正的目标是 Skiff 团队和邮件基础设施——它们将成为 Notion Mail 的基础。",
+      "externalUrl": "https://techcrunch.com/2024/02/09/notion-acquires-privacy-focused-productivity-platform-skiff/"
+    },
+    {
+      "date": "2024-09-03",
+      "title": "用户突破 1 亿里程碑公开",
+      "type": "media",
+      "gtmTag": "受众边界突破",
+      "description": "Notion 公开宣布用户突破 1 亿。Ivan Zhao 撰写了一篇个人博客（「现在有 1 亿人使用 Notion」）。相比三年前 C 轮时的 2000 万，意味着 5 倍增长。约 80% 的用户在美国之外。",
+      "externalUrl": "https://www.notion.com/blog/100-million-of-you"
+    },
+    {
+      "date": "2025-03-01",
+      "title": "Lenny Rachitsky 播客——Ivan Zhao",
+      "type": "media",
+      "gtmTag": "创始人即 IP",
+      "description": "Lenny Rachitsky 与 Ivan Zhao 的访谈成为 Notion 的标志性长篇叙事——「Notion 失落的岁月、它在 Covid 期间的濒临崩溃、保持小规模以保持速度、横向构建的喜悦与痛苦」。这一集是 2025 年 Ivan「创始人即 IP」的封顶时刻。",
+      "externalUrl": "https://www.lennysnewsletter.com/p/inside-notion-ivan-zhao"
+    },
+    {
+      "date": "2025-04-15",
+      "title": "Notion Mail 上线（基于 Skiff 基础设施）",
+      "type": "product",
+      "description": "Notion Mail 发布——一款 AI 驱动的 Gmail 客户端。Jason Ginsberg（前 Skiff 联合创始人）主导这款产品。战略定位：把 Notion 的产品边界延伸到第三个高频日常使用入口——继文档和日历之后的邮件。",
+      "externalUrl": "https://techcrunch.com/2025/04/15/notion-releases-its-ai-driven-email-inbox/"
+    },
+    {
+      "date": "2025-05-01",
+      "title": "独立 AI 档位取消，AI 捆绑进 Business 档",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "Notion 对新订阅用户取消了独立的 10 美元/月 AI 附加费档位。完整的 AI 接入（AI Agents、Ask Notion）现在需要订阅 Business 档（20 美元/用户/月）。原有 AI 附加费用户被祖父条款保留。效果：抬高客单价、抬高 AI 收入归因，但限制了免费版与 Plus 档用户的 AI 接入——这是一个结构性的承认：独立 AI 档位的经济模型并没有按团队预期那样积累价值。",
+      "externalUrl": "https://www.notion.com/pricing",
+      "articleSlug": "2025-05-ai-pricing-change"
+    },
+    {
+      "date": "2025-09-15",
+      "title": "Sacra 估算 ARR 约 5 亿美元（2025 年 9 月）",
+      "type": "media",
+      "description": "Sacra 发布 ARR 估算：Notion 在 2025 年 9 月跨越 5 亿美元 ARR。盈利。约 80% 用户在美国之外。AI 产品在企业客户中带动 NRR 提升。"
+    },
+    {
+      "date": "2025-09-18",
+      "title": "Notion 3.0 Agents 发布",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "Notion 3.0 推出 AI Agents——能够在数百页文档之间进行最多 20 分钟自主工作的智能体。Notion 把 Notion AI 从底层重新构建为 Agents。它能从 Slack、Google Drive、GitHub 拉取上下文。自定义 Agents 已宣布「即将推出」。Sacra 后来估算到 2025 年 12 月时 AI 产品贡献 ARR 约 50%。",
+      "externalUrl": "https://www.notion.com/blog/introducing-notion-3-0"
+    },
+    {
+      "date": "2025-12-15",
+      "title": "二级市场出售估值 110 亿美元",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "Notion 完成一次二级市场出售（约 3 亿美元员工股权流动性）估值 110 亿美元。Sequoia Capital、Index Ventures 与新加坡的 GIC 作为买方参与。报告 ARR 约 6 亿美元，其中约 50% 来自 AI 产品（Tiger Brokers，上限估算）。Bloomberg 报道公司可能在 2026 年下半年 IPO。",
+      "externalUrl": "https://www.itiger.com/news/1136424118"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2019-12-31",
+      "value": 3000000,
+      "source": "SaaStr / Lemkin（估算）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2020-12-31",
+      "value": 13000000,
+      "source": "SaaStr / Lemkin（估算）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2021-12-31",
+      "value": 31000000,
+      "source": "SaaStr / Lemkin（估算）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2022-12-31",
+      "value": 67000000,
+      "source": "SaaStr / Lemkin（估算）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2023-12-31",
+      "value": 150000000,
+      "source": "Sacra（估算）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2024-12-31",
+      "value": 400000000,
+      "source": "Sacra（估算）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-09-30",
+      "value": 500000000,
+      "source": "Sacra（估算）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-12-15",
+      "value": 600000000,
+      "source": "Latka / Tiger Brokers（估算）",
+      "confidence": "estimate"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2019-07-01",
+      "value": 800000000,
+      "round": "A 轮",
+      "source": "The Information / PitchBook",
+      "confidence": "media"
+    },
+    {
+      "date": "2020-04-01",
+      "value": 2000000000,
+      "round": "B 轮",
+      "source": "TechCrunch",
+      "confidence": "media"
+    },
+    {
+      "date": "2021-10-08",
+      "value": 10000000000,
+      "round": "C 轮",
+      "source": "TechCrunch / SiliconANGLE",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-12-15",
+      "value": 11000000000,
+      "round": "二级市场",
+      "source": "Tiger Brokers / Bloomberg",
+      "confidence": "media"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X（推特）",
+      "score": 4,
+      "bestStage": "全阶段——间歇性",
+      "effort": "间歇性的创始人发声",
+      "role": "创始人 IP 与原点叙事载体",
+      "description": "Ivan Zhao 的 X 账号是 Notion 标志性内容的原始载体——其中最重要的是 2025 年 2 月 6 日那条关于 2015 年濒死与京都重启的帖子，它已经成为 Notion 原点叙事被引用最多的单一内容。这个账号低频且偏哲学，而不是日更与运营导向。",
+      "catalyst": "Ivan Zhao 2025 年 2 月 6 日的 X 帖子，承认 2015 年的濒死经历与京都重启。这条帖子让京都叙事固化为持久 IP，为之后 18 个月内每一位 Notion 相关创作者和记者提供了可以锚定的第一手原始引用。",
+      "catalystUrl": "https://x.com/ivanhzhao/status/1887548612441465208",
+      "accountUrl": "https://x.com/ivanhzhao",
+      "accountLabel": "@ivanhzhao on X",
+      "whenItWorks": "当创始人愿意持续讲述原点故事的粗糙边缘，而不是把它们打磨光滑时。具体的细节（京都、纸墙、没有暖气）才是让帖子传播的关键，而不是关于韧性的抽象描述",
+      "whenItDoesnt": "如果账号变成产品发布的新闻流。Notion 式的间歇性发帖之所以有效，是因为稀少的帖子内容浓度高；每天的产品更新只会稀释这种格式"
+    },
+    {
+      "slug": "podcast",
+      "name": "播客（Lenny / 20VC）",
+      "score": 5,
+      "bestStage": "A、B、C 轮拐点期 + AI 作为附加功能时代",
+      "effort": "间歇性，单期高投入",
+      "role": "长篇创始人权威",
+      "description": "Lenny Rachitsky 与 20VC 是 2024-2025 年间构建起 Notion 创始人 IP 层的两档播客。Lenny Rachitsky 的访谈（2025 年 3 月）成为 Ivan 的标志性长篇时刻；20VC 的访谈（2024 年 9 月）聚焦「创始人模式」，更早还有 Akshay Kothari + Sarah Cannon 关于 36 小时 B 轮成交的访谈，构成 Akshay 端的锚点。截至 2026 年 4 月，没有 Lex Fridman 访谈。",
+      "catalyst": "Ivan Zhao 登上 Lenny's Podcast（2025 年 3 月）：「Notion 失落的岁月、它在 Covid 期间的濒临崩溃、保持小规模以保持速度、横向构建的喜悦与痛苦。」这一集成为 Ivan 的创始人 IP 封顶时刻，也是 2025 年此后被引用最多的 Notion 长篇内容。",
+      "catalystUrl": "https://www.lennysnewsletter.com/p/inside-notion-ivan-zhao",
+      "accountUrl": "https://www.lennysnewsletter.com/p/inside-notion-ivan-zhao",
+      "accountLabel": "Lenny's Podcast — Ivan Zhao",
+      "whenItWorks": "当买方是有能力绕开采购流程独立做决策的资深 PM、设计师或创始人时。90 分钟的对话是这类买方做尽调的方式",
+      "whenItDoesnt": "对于买方决策周期短于 90 分钟的中小企业或自助式市场来说不适用。长篇播客是审慎型 B2B 购买决策的漏斗顶端，不是交易型购买的获客渠道"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube（生产力创作者）",
+      "score": 5,
+      "bestStage": "京都重写与慢热期到 C 轮拐点期",
+      "effort": "创作者驱动，公司几乎不需介入",
+      "role": "Notion 规模化背后的社区底层",
+      "description": "YouTube 是 Notion 分发能力复利时间最长的渠道。Thomas Frank、Marie Poulin、Easlo 通过围绕 Notion 模板做生产力教程频道，成为公认的代表。这种格式可复制——五分钟视频展示一个个人 CRM 或课程追踪器——它把 Notion 从 2019 年的 100 万用户带到了 2024 年的 1 亿用户，付费获客几乎为零。",
+      "catalyst": "没有单一时刻。是 2018-2024 年间，Notion 原生创作者经济缓慢崛起的过程：Thomas Frank 的 30 万美元/月模板生意、Easlo 的自由职业模板帝国，都证明了 Notion 原生创作者可以靠分发产品养活自己。",
+      "catalystUrl": "https://www.youtube.com/@ThomasFrankExplains",
+      "accountUrl": "https://www.youtube.com/@NotionHQ",
+      "accountLabel": "Notion on YouTube",
+      "whenItWorks": "当产品表层足够可组合，让每位创作者都能搭建自己版本的演示时。模板就是这种可复制单元；如果没有这个原语，B2B SaaS 周围就形成不了创作者经济",
+      "whenItDoesnt": "对于每次演示都一样的产品来说不适用。如果 YouTuber 在第 14 集找不到独特角度，频道就活不到第 50 集"
+    },
+    {
+      "slug": "newsletter",
+      "name": "Lenny's Newsletter",
+      "score": 4,
+      "bestStage": "AI 作为附加功能时代",
+      "effort": "单一标志性访谈",
+      "role": "产品负责人受众覆盖",
+      "description": "Lenny Rachitsky 的 newsletter（2025 年订阅数约 70 万）是 Notion 资深产品负责人受众阅读关于 Notion 内容的核心渠道。2025 年 3 月与 Ivan Zhao 的访谈构成 Notion「创始人即 IP」的 2025 年标志性长篇内容，并为之后九个月几乎每一篇关于这家公司的二次报道埋下了引用源。",
+      "catalyst": "2025 年 3 月 Lenny + Ivan 这一集与同步推出的「Inside Notion」深度 newsletter 帖子捆绑。同一周，同一受众——这是面向产品负责人受众的「融资新闻」当量。",
+      "catalystUrl": "https://www.lennysnewsletter.com/p/inside-notion-ivan-zhao",
+      "accountUrl": "https://www.lennysnewsletter.com",
+      "accountLabel": "Lenny's Newsletter",
+      "whenItWorks": "当受众是愿意为 substack 级别 newsletter 付费的资深 PM、创始人和产品负责人时。Lenny 的受众转化率高于一般科技媒体",
+      "whenItDoesnt": "如果创始人的叙事不足以撑起 90 分钟一集加一篇长帖。Lenny 的格式奖励深度，不是公告"
+    },
+    {
+      "slug": "tiktok",
+      "name": "TikTok",
+      "score": 3,
+      "bestStage": "京都重写与慢热期到 C 轮拐点期",
+      "effort": "创作者驱动，自然增长",
+      "role": "学生病毒传播加速器",
+      "description": "TikTok 在 2020-2022 年间承载了 Notion 在消费者/学生群体中扩散的浪潮。大学生用户发布带有 Notion 仪表盘的学习美学视频，把这款产品变成了 Z 世代的生产力身份象征。TikTok 浪潮是 Notion 用户群得以全球化、低龄化的关键——这是 Evernote 和 OneNote 始终未能做到的。",
+      "catalyst": "没有单一时刻。是 2020-2022 年间学生创作者持续发布美学化 Notion 模板演示的浪潮，最终把 Notion 沉淀为 25 岁以下生产力受众的品类默认选择。",
+      "catalystUrl": "https://www.tiktok.com/tag/notion",
+      "accountUrl": "https://www.tiktok.com/@notion",
+      "accountLabel": "@notion on TikTok",
+      "whenItWorks": "当产品的可视输出足够精致、能够作为学习/工作美学内容传播时。Notion 模板符合这一点，大多数 B2B SaaS 不符合",
+      "whenItDoesnt": "如果公司试图把它当作付费渠道运营。TikTok 的算法惩罚品牌账号努力，奖励创作者的自然内容"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit（r/Notion）",
+      "score": 3,
+      "bestStage": "全阶段",
+      "effort": "社区自驱动",
+      "role": "重度用户反馈与模板交换",
+      "description": "r/Notion 是一个超过 40 万成员的社区，承担模板交换、技术支持、功能请求三重角色。社区的存在感强到 Notion 产品团队多次把 Reddit 帖子作为产品决策的输入。它的角色是运营性而非获客性的：Reddit 留存用户，不获取用户。",
+      "catalyst": "没有单一时刻。是 2018-2024 年间 r/Notion 缓慢沉淀为重度用户排查问题、分享模板、上报缺陷的速度甚至超过支持团队的地方。",
+      "catalystUrl": "https://www.reddit.com/r/Notion/",
+      "accountUrl": "https://www.reddit.com/r/Notion/",
+      "accountLabel": "r/Notion",
+      "whenItWorks": "当产品有足够的可组合深度，让用户可以互相教学时。Reddit 社区会围绕奖励专业度的工具自然形成",
+      "whenItDoesnt": "如果公司试图主导叙事。社区会察觉，信任会崩塌——这个渠道只在它保持用户自有时才有效"
+    }
+  ]
+}

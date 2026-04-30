@@ -1,0 +1,88 @@
+---
+title: "库更名为 transformers——v2.0.0（2019 年 9 月）"
+description: "2019 年 9 月 26 日，pytorch-transformers 更名为 transformers（v2.0.0）——加入 TensorFlow 2.0 支持，去掉框架前缀。这一软件包成为学术界与工业界事实上的 NLP 工具集。11 天前，v1.0.0 那次更名已经加进了 XLNet 和 XLM。"
+date: "2019-09-26"
+type: "product"
+gtmTag: "Tech narrative upgrade"
+eventTitle: "库更名为 transformers"
+externalUrl: "https://github.com/huggingface/transformers/releases"
+---
+
+<Catalyst>
+库更名通常只是表面文章。这次是一次受众扩张。去掉 pytorch- 前缀向 TensorFlow 用户传达「你们也是被欢迎的」。加上 TF2 支持意味着这个库不再只是「PyTorch 移植」——它变成了两个生态共同的承重底层。
+</Catalyst>
+
+2019 年 9 月 26 日。Hugging Face 发布 **transformers v2.0.0**。包从 pytorch-transformers 更名为 transformers。同一版引入 TensorFlow 2.0 支持。
+
+这是 11 个月内的第二次更名。第一次——pytorch-pretrained-bert 改为 pytorch-transformers（v1.0.0，2019 年 7 月 16 日）——加入了 XLNet 和 XLM，预训练权重从 10 个扩展到 27 个。9 月这次更名加入了 TensorFlow。
+
+每一次更名都是 API 在吸收更多领域。
+
+## 命名序列就是承重底层的轨迹
+
+| 时间 | 名字 | 变化 | 受众信号 |
+|---|---|---|---|
+| 2018 年 10 月 11 日 | pytorch-pretrained-bert | 初版 PyTorch BERT 移植 | 「我们解决了 PyTorch 上 BERT 的问题」 |
+| 2019 年 7 月 16 日 | pytorch-transformers v1.0.0 | + XLNet、XLM（10 → 27 权重） | 「我们是基于 PyTorch 的 transformer 模型集中地」 |
+| 2019 年 9 月 26 日 | transformers v2.0.0 | + TF2 支持，去掉框架前缀 | 「我们就是 transformer 模型的集中地」 |
+
+命名进程直接映射到承重底层不断扩张的范围。2018 年 10 月那次发布是战术性的——一个模型在一个框架的移植。到 2019 年 9 月，库已经在主张拿下整个 transformer 架构生态。
+
+去掉 `pytorch-` 前缀的决定起承重作用。**它表态 TensorFlow 用户不是二等公民。** 学术研究者到 2019 年大都收敛到 PyTorch，但 Google 内部、大型企业以及 TPU 上的生产 ML 仍然跑在 TensorFlow 上。一个叫 pytorch-transformers 的库会被 TF 团队读作「不是给我们的」。去掉前缀打开了受众。
+
+## 为什么 TF2 支持对承重底层论点很重要
+
+2018-2019 年，PyTorch 与 TensorFlow 框架战是 ML 里最核心的架构性问题。多数分析把两者定位为零和竞争对手。Hugging Face 决定在一个库里同时支持两者，是结构性不同的选择。
+
+**承重底层论点要求 Hugging Face 站在框架战之上，而不是参与其中。** 用 PyTorch 的研究者和用 TensorFlow 的生产团队都需要访问 BERT、GPT-2、RoBERTa、XLNet。一个只服务一边的库会让另一边自己搭——而那个另搭的库就会成为竞争对手承重底层。
+
+通过让 transformers 框架无关，Hugging Face 消除了「TensorFlow 等价库可能成为竞争承重底层」的结构性风险。每一个 transformer 模型现在都有一个规范的 Python 接口，无论底层权重是在哪个框架里训练的。
+
+这在结构上类似于 LangChain 后来在 LLM 编排层的打法（Hugging Face 没有进入这一层）——通过在「业界假设是竞争性的」轴上保持中立，封堵了竞争对手成形。
+
+## 2019 年 10 月那篇论文作为学术锚点
+
+v2.0.0 发布两周后，2019 年 10 月 9 日，Wolf 等在 arXiv 发表 「HuggingFace's Transformers: State-of-the-art Natural Language Processing」（后来被 EMNLP 2020 demos 接收）。
+
+论文的角色不是引入新研究。库的贡献在论文落地之前就已经被研究界感知。论文的角色是**把承重底层的「学术公信力」支柱形式化**——给研究者一个可以放进自己论文 related work 部分的引用，并把 Hugging Face 定位为研究可信的行动方，而不是开源工具供应商。
+
+| 层 | 形式 | 作用 |
+|---|---|---|
+| 库 | GitHub repo | 承重底层分发 |
+| 论文 | arXiv 投稿 | 学术引用基础设施 |
+| 会议 | EMNLP 2020 demos | 同行评审验证 |
+| 文档 | huggingface.co model cards | 参考表面 |
+
+每一层都强化其他层。arXiv 论文成为了规范引用。EMNLP demos 接收给它加了同行评审分量。库继续在论文已经合法化的命名与命名空间下持续交付。
+
+这就是为什么一个 2026 年的创始人在 NLP 里复制不出来这套打法。承重底层复利的四层栈（库 + 论文 + 会议 + 文档）需要数年构建，一旦一个库占据了某个领域的这一栈，要替代它就需要这个领域发生范式迁移——而 Hugging Face 现在在押 LeRobot 在机器人里赌的就是这个。
+
+## 更名时刻的竞争态势
+
+2019 年 9 月，transformers 的替代品有：
+
+- **Google 官方 BERT repo**——只支持 TensorFlow、单模型、没有统一 API
+- **Facebook 的 XLM repo**——研究代码，难以投入生产
+- **Allen NLP**——学术库，范围更窄
+- **手写 PyTorch 实现**——每个研究实验室自己维护移植
+
+这些都没有跨架构的统一 API。都没有干净的文档表面。都没有「可以可信地把它当作规范实现引用的论文作者」。
+
+通过吸收 TensorFlow 2.0 支持并去掉框架前缀，transformers 让任何一个研究者使用这个库严格更容易于自己维护移植。**切换成本：零。节省时间：数周。引用足迹：庞大。**
+
+承重底层从这里开始复利。到 2022 年 5 月 C 轮，Hub 上托管 10 万模型，库支持大约 50 种架构，`from transformers import` 这条 import 语句已经是几乎每一个 NLP 论文代码发布的事实第一行。
+
+<Conclusion title="可以复用的东西">
+
+- **想扩张受众时就去掉框架前缀。** pytorch-transformers 是一个可守的细分；transformers 是一个品类。更名是被低估的受众扩张机制。
+- **站在框架战之上。** 一个只服务 PyTorch / TensorFlow 之一的库，会给「另一阵营出现竞争承重底层」留下结构性空间。框架无关的承重底层封堵了竞争成形。
+- **库发布要配上一篇 arXiv 论文。** 2019 年 10 月那篇论文形式化了学术引用基础设施。没有它，transformers 会是一款流行的软件，但不会是规范引用。论文是进入学术承重底层游戏的入场费。
+
+</Conclusion>
+
+## 来源
+
+- [GitHub：huggingface/transformers releases](https://github.com/huggingface/transformers/releases)
+- [pytorch-transformers v1.0.0 release notes（2019 年 7 月 16 日）](https://github.com/huggingface/transformers/releases/tag/v1.0.0)
+- [Wolf 等——HuggingFace's Transformers 论文 arXiv 版本（2019 年 10 月 9 日）](https://arxiv.org/abs/1910.03771)
+- [Contrary Research：Hugging Face 报告](https://research.contrary.com/company/hugging-face)

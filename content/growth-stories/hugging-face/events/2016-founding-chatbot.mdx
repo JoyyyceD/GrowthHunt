@@ -1,0 +1,69 @@
+---
+title: "Founding the Failed Chatbot — Three Frenchmen and a Teen BFF (2016–2017)"
+description: "Hugging Face Inc. incorporates in NYC in 2016 as an iOS chatbot for teenagers. MIT Tech Review (March 2017) reports a few thousand users — never the millions later retrospectives sometimes claim. The decision that mattered was not the product. It was hiring a research scientist with academic discipline."
+date: "2016-01-01"
+type: "product"
+gtmTag: "Founder-as-IP"
+eventTitle: "Hugging Face Inc. founded in NYC"
+---
+
+<Catalyst>
+The chatbot did not work. The hire that powered it did. Wolf was building NLP infrastructure for a consumer chatbot in PyTorch, with academic discipline, against the literature — eighteen months before there was a library to ship.
+</Catalyst>
+
+January 2016. Three French co-founders incorporate Hugging Face Inc. in New York City. The product is an "AI best friend" mobile chatbot for teenagers. The name is the U+1F917 emoji.
+
+Clément Delangue (CEO) had product/business experience. Julien Chaumond (CTO) was a computer engineer who had worked at France's economic ministry. Thomas Wolf (CSO) was a trained scientist turned patent lawyer who played in a band with Chaumond. The three had met through an online Stanford engineering class study group.
+
+## What the chatbot actually did
+
+iOS launch was March 9, 2017. TechCrunch coverage that day framed it as an "artificial BFF." The product used in-house NLP models — character animations, sentiment-aware responses, light personality customization.
+
+MIT Technology Review's three-week diary the same month is the primary contemporaneous source on user count. <Stat value="a few thousand" label="teenager users (MIT Tech Review, March 2017)" />.
+
+This number matters because it has been retroactively inflated in some coverage to "millions" or "tens of millions." That is wrong. Hugging Face never broke out as a consumer product. The chatbot was a struggling app when the founders raised a $4M seed in May 2018 from Ronny Conway / a_capital, with Betaworks, SV Angel, and Kevin Durant rolling over.
+
+## The funding that should not have happened
+
+| Round | Date | Amount | Lead | Thesis |
+|---|---|---|---|---|
+| Angel | Mar 5, 2017 | $1.2M | Betaworks | "AI for entertainment" |
+| Seed | May 23, 2018 | $4M | a_capital (Ronny Conway) | Chatbot for teens |
+
+Two pre-pivot rounds totaling $5.2M, both raised on a thesis no investor would later cite as the reason they invested. Read in 2026, these rounds look like patient-capital errors that paid off accidentally. Read in 2017–2018, they look like normal early-stage bets on a young consumer-AI category — Anthropic and OpenAI did not exist as commercial counterweights yet.
+
+What kept Hugging Face alive through this period was burn discipline. Three founders, small team, no paid acquisition, no expensive go-to-market. The chatbot did not produce revenue, but it also did not consume capital fast enough to force a wind-down before the substrate appeared.
+
+## The hire that turned out to be load-bearing
+
+The decision that mattered during the chatbot era was not a product feature. It was hiring Thomas Wolf as a research scientist, not a product engineer.
+
+Wolf was building NLP infrastructure to power the chatbot — sentiment models, dialogue routing, response generation. But he was building it in PyTorch, with academic discipline, against the literature. He read papers, wrote papers, treated the research community as the primary peer audience.
+
+When Google released BERT in October 2018 in TensorFlow, Wolf was already eighteen months deep into PyTorch infrastructure. The PyTorch BERT port that became `pytorch-pretrained-bert` was not a from-scratch sprint — it was the existing PyTorch tooling repurposed to a new model architecture in roughly a week.
+
+**The chatbot era's lasting contribution was building a research scientist into a consumer-product company.** Hiring a chief scientist three years later, after the substrate appeared, would not have produced the same outcome — Wolf needed to be on the cap table, in the founding team, with the institutional permission to publish under the Hugging Face affiliation from day one.
+
+## The pivot that was not yet a pivot
+
+The technical inflection happens October 2018. The marketing pivot does not happen until December 2019 — fourteen months later.
+
+In between, Hugging Face is a company with two products: a struggling consumer chatbot that journalists still cover, and an open-source NLP library that has begun showing up in arXiv references. The team does not formally pivot until the Series A press cycle ($15M led by Lux Capital) in December 2019, framed as "the definitive NLP library."
+
+The lag is consequential. A faster pivot would have been more obviously correct in retrospect, but it would have forced the team to retire the chatbot brand and rebuild the audience. Letting the substrate quietly compound under an unchanged company name meant that when the pivot finally happened, the library already had momentum the press release could amplify rather than create.
+
+<Conclusion title="What to copy">
+
+- **The hire matters more than the feature when the substrate is still hidden.** Wolf as a research scientist on the founding cap table was the load-bearing decision; the iOS chatbot was the disposable product around it. A 2024 founder building consumer AI should ask which non-obvious researcher hire to make in year one.
+- **Burn discipline during the hidden-substrate period buys you the right to let the substrate appear.** Hugging Face did not aggressively scale the chatbot. The $5.2M seed-and-angel runway lasted long enough for BERT to release.
+- **Do not formally pivot until the substrate is unambiguous.** Hugging Face waited fourteen months between the technical inflection (Oct 2018) and the formal Series A pivot announcement (Dec 2019). The pivot then compressed an entire year of organic library adoption into a single news cycle.
+
+</Conclusion>
+
+## Sources
+
+- [TechCrunch: Hugging Face wants to become your artificial BFF (March 9, 2017)](https://techcrunch.com/2017/03/09/hugging-face-wants-to-become-your-artificial-bff/)
+- [TechCrunch: Hugging Face raises $4M for its artificial BFF (May 23, 2018)](https://techcrunch.com/2018/05/23/hugging-face-raises-4-million-for-its-artificial-bff/)
+- [Crunchbase: Hugging Face angel round](https://www.crunchbase.com/funding_round/hugging-face-angel--dc675d37)
+- [Wikipedia: Hugging Face](https://en.wikipedia.org/wiki/Hugging_Face)
+- [Contrary Research: Hugging Face report](https://research.contrary.com/company/hugging-face)

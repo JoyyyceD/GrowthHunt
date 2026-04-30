@@ -1,0 +1,439 @@
+{
+  "company": {
+    "slug": "anthropic",
+    "name": "Anthropic",
+    "legalName": "Anthropic, PBC",
+    "tagline": "把安全作为反向定位，连续执行五年，叠成史上最高的私募 AI 估值",
+    "summary": "2020 年底，七位资深研究员从 OpenAI 集体离职，2021 年初将 Anthropic 注册为公益公司（PBC）。Constitutional AI、Responsible Scaling Policy，以及连续不断的捆绑式融资节奏，把一份研究论点变成了 OpenAI 在企业采购中的可信替代品。到 2026 年 4 月，Anthropic 的 ARR 约为 300 亿美元，财富 10 强中已有 8 家为客户，G 轮投后估值 3800 亿美元，二级市场报价据称已达 8000 亿美元。",
+    "founded": "2021-01",
+    "founders": [
+      "Dario Amodei",
+      "Daniela Amodei",
+      "Tom Brown",
+      "Sam McCandlish",
+      "Jared Kaplan",
+      "Jack Clark",
+      "Chris Olah"
+    ],
+    "seriesNumber": 15
+  },
+  "phases": [
+    {
+      "start": "2021-01",
+      "end": "2022-04",
+      "name": "成立 + 研究底盘期",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2022-04",
+      "end": "2023-09",
+      "name": "FTX 缠绕 + Constitutional AI + Claude",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2023-09",
+      "end": "2025-02",
+      "name": "超大云厂商技术栈 + Claude 产品矩阵",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2025-02",
+      "end": "2026-04",
+      "name": "Claude Code + AI 云时代",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-12-01",
+      "title": "OpenAI 出走潮开始",
+      "type": "media",
+      "description": "Dario Amodei（研究 VP）、Daniela Amodei（安全与政策 VP）、Tom Brown（GPT-3 第一作者）、Sam McCandlish、Jared Kaplan（Scaling Laws 论文）、Jack Clark（政策总监）、Chris Olah（可解释性负责人）等人因为对发布节奏的方向性分歧，从 OpenAI 集体离职。"
+    },
+    {
+      "date": "2021-01-15",
+      "title": "Anthropic 注册为特拉华州公益公司",
+      "type": "product",
+      "gtmTag": "结构性差异化",
+      "description": "作为 AI 安全实验室成立。PBC 结构是第一个具体信号，表明「安全优先」不是营销口号——而是法律意义上具有约束力的承诺，把 Anthropic 反向定位在 OpenAI 那种「非营利套着上限利润子公司」的结构对面。",
+      "articleSlug": "2021-01-anthropic-founding"
+    },
+    {
+      "date": "2021-05-28",
+      "title": "A 轮 1.24 亿美元，由 Jaan Tallinn 领投",
+      "type": "funding",
+      "description": "A 轮 1.24 亿美元，投后估值约 5.5 亿美元。Jaan Tallinn（Skype 联合创始人，长期 AI 安全资助者）领投。James McClave、Dustin Moskovitz、Eric Schmidt、Center for Emerging Risk Research 跟投。这是哲学资本，不是商业资本。",
+      "externalUrl": "https://www.anthropic.com/news/anthropic-raises-124-million-to-build-more-reliable-general-ai-systems"
+    },
+    {
+      "date": "2022-04-29",
+      "title": "B 轮 5.8 亿美元，由 SBF / Alameda Research 领投",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "B 轮 5.8 亿美元，投后估值约 40 亿美元。Alameda Research 出资其中约 5 亿美元。Caroline Ellison、Jim McClave、Nishad Singh、Jaan Tallinn 跟投。这笔资金支撑了 Constitutional AI 工作和 Claude 1 的训练——并在六个月后变得结构性地有后果。",
+      "externalUrl": "https://www.anthropic.com/news/anthropic-raises-series-b-to-build-safe-reliable-ai",
+      "articleSlug": "2022-04-series-b-ftx"
+    },
+    {
+      "date": "2022-11-11",
+      "title": "FTX 申请破产",
+      "type": "media",
+      "description": "FTX 崩盘。Alameda 持有的约 5 亿美元 Anthropic 股权变成了 FTX 破产清算财产的一部分。Anthropic 本身没有任何不当行为被指控。清算财产后来在 2024 年通过两次出售总计回收约 13 亿美元——对 FTX 债权人来说是一笔利润，但远远低于持有到 2026 年所能拿到的金额。"
+    },
+    {
+      "date": "2022-12-15",
+      "title": "Constitutional AI 论文发布",
+      "type": "product",
+      "gtmTag": "结构性差异化",
+      "description": "arXiv 2212.08073 介绍了 RLAIF（基于 AI 反馈的强化学习）。在 Claude 还不是公开产品之前发布。在接下来三年里成为相对 OpenAI 的标志性安全差异化点，也是企业采购团队在 Claude 与 GPT 之间做选择时援引的审计依据。",
+      "externalUrl": "https://arxiv.org/abs/2212.08073",
+      "articleSlug": "2022-12-constitutional-ai"
+    },
+    {
+      "date": "2023-03-14",
+      "title": "Claude 1 API 上线",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "首个商用 Claude API，仅向合作伙伴开放（Quora、Notion、DuckDuckGo）。定位为「有用、诚实、无害」——明确反向定位于 ChatGPT 的「速度优先」发布姿态（2022 年 11 月 30 日）。Constitutional AI 的产品化面孔。",
+      "externalUrl": "https://techcrunch.com/2023/03/14/anthropic-launches-claude-a-chatbot-to-rival-openais-chatgpt/"
+    },
+    {
+      "date": "2023-05-23",
+      "title": "C 轮 4.5 亿美元，估值 41 亿美元，Spark Capital 领投",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "C 轮 4.5 亿美元，投后估值 41 亿美元。Spark Capital 领投（Yasmin Razavi 加入董事会）。Google、Salesforce Ventures、Sound Ventures、Zoom Ventures 跟投。同一窗口公开了 Claude 的「Constitution」——融资和公开安全文件捆绑发布。",
+      "externalUrl": "https://www.anthropic.com/news/anthropic-series-c"
+    },
+    {
+      "date": "2023-07-11",
+      "title": "Claude 2 面向公众发布",
+      "type": "product",
+      "description": "Claude 2 通过 claude.ai 上线，第一次面向公众的 Claude 体验。10 万 token 上下文窗口，编程、数学和推理能力提升。从 API 走向消费端的第一次 D1 叙事跃迁。"
+    },
+    {
+      "date": "2023-07-25",
+      "title": "Dario Amodei 在参议院司法委员会作证",
+      "type": "media",
+      "gtmTag": "创始人即 IP",
+      "description": "与 Yoshua Bengio、Stuart Russell 一同就生物武器风险作证。把 Anthropic 确立为政策参与型实验室，与 OpenAI 的游说姿态区分开来。这是后续到 2026 年反复出现的公开记录中的第一个里程碑。",
+      "externalUrl": "https://www.judiciary.senate.gov/imo/media/doc/2023-07-26_-_testimony_-_amodei.pdf"
+    },
+    {
+      "date": "2023-09-25",
+      "title": "Amazon 承诺投资 40 亿美元（首期 12.5 亿美元）",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "Amazon 首期 12.5 亿美元，并附带 27.5 亿美元行权选项。AWS 成为 Anthropic 的主云，Trainium 与 Inferentia 芯片纳入交易，Amazon Bedrock 作为分发渠道。「超大云厂商既是客户又是投资人」的模式自此开始。",
+      "externalUrl": "https://www.aboutamazon.com/news/company-news/amazon-anthropic-ai-investment",
+      "articleSlug": "2023-09-amazon-google-hyperscaler-stack"
+    },
+    {
+      "date": "2023-10-27",
+      "title": "Google 20 亿美元可转换票据",
+      "type": "funding",
+      "description": "5 亿美元立即到账，外加 15 亿美元可转换为股权。Vertex AI 分发协议捆绑。三大超大云厂商中的两家就此锁定股东席位。三种 GTM 动作——买家、供应商、股东——被压缩进每朵云的一段关系之中。",
+      "externalUrl": "https://www.cnbc.com/2023/10/27/google-commits-to-invest-2-billion-in-openai-competitor-anthropic.html"
+    },
+    {
+      "date": "2024-01-11",
+      "title": "D 轮 7.5 亿美元，估值 184 亿美元，Menlo Ventures 领投",
+      "type": "funding",
+      "description": "D 轮 7.5 亿美元，投后估值 184 亿美元，通过名为「Anthology」的 SPV 结构。8 个月内估值是 C 轮的 4.5 倍。Menlo Ventures 领投。",
+      "externalUrl": "https://www.cnbc.com/2023/12/21/openai-rival-anthropic-in-talks-to-raise-750-million-funding-round.html"
+    },
+    {
+      "date": "2024-03-04",
+      "title": "Claude 3 系列（Opus / Sonnet / Haiku）发布",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "首个多档位模型矩阵。Claude 3 Opus 在关键基准上达到或超过 GPT-4。三档定价（Opus / Sonnet / Haiku）成为后来每家基础模型实验室都效仿的模板。",
+      "externalUrl": "https://www.anthropic.com/news/claude-3-family"
+    },
+    {
+      "date": "2024-03-25",
+      "title": "FTX 清算财产以 8.84 亿美元出售 Anthropic 股权给 Mubadala 联盟",
+      "type": "media",
+      "description": "FTX 破产清算财产将其约 8% 的 Anthropic 股权大部分以 8.84 亿美元出售给与 Mubadala 关联的 UAE 主权财富集团。叠加 6 月份约 4.5 亿美元的剩余出售，原始 5 亿美元成本最终回收约 13 亿美元——为 FTX 债权人带来约 8 亿美元利润。",
+      "externalUrl": "https://www.cnbc.com/2024/03/25/ftx-estate-sells-majority-stake-in-startup-anthropic-for-884-million.html"
+    },
+    {
+      "date": "2024-06-20",
+      "title": "Claude 3.5 Sonnet + Artifacts",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "Claude 3.5 Sonnet 在大多数基准上以 Sonnet 价位击败 Claude 3 Opus。Artifacts 把 Claude 重新框定为「协作工作环境」——D1 叙事从「AI 聊天机器人」转向「AI 工作空间」。",
+      "externalUrl": "https://www.anthropic.com/news/claude-3-5-sonnet"
+    },
+    {
+      "date": "2024-10-08",
+      "title": "「Machines of Loving Grace」长文发布",
+      "type": "media",
+      "gtmTag": "创始人即 IP",
+      "description": "Dario Amodei 发布约 14,000 字长文，勾勒 AI 在生物学、心理健康、治理、就业、经济发展等领域的积极未来。阶段性的创始人即 IP——这篇内容在企业采购材料中被实质性引用。",
+      "externalUrl": "https://www.darioamodei.com/essay/machines-of-loving-grace"
+    },
+    {
+      "date": "2024-10-22",
+      "title": "Claude Computer Use",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "首个「电脑使用」API 能力——Claude 能截屏、点击、打字。智能体能力作为新产品形态。这是让 Claude Code 在四个月后变得可行的架构性一步。",
+      "externalUrl": "https://www.anthropic.com/news/3-5-models-and-computer-use"
+    },
+    {
+      "date": "2024-11-11",
+      "title": "Dario Amodei 做客 Lex Fridman 5 小时 22 分钟",
+      "type": "media",
+      "gtmTag": "创始人即 IP",
+      "description": "Lex Fridman Podcast 第 452 期。Anthropic 历史上最长的单创始人播客出场。Amanda Askell 和 Chris Olah 各加入约一小时的补充对谈。这是有实质内容的论点声明，而非宣传性内容。",
+      "externalUrl": "https://lexfridman.com/dario-amodei/"
+    },
+    {
+      "date": "2024-11-22",
+      "title": "Amazon 追加 40 亿美元（总额 80 亿美元）",
+      "type": "funding",
+      "description": "Amazon 把总投资承诺从 40 亿美元翻倍到 80 亿美元。Anthropic 大规模使用 AWS Trainium 芯片。这在公告时是 Amazon 历史上最大单笔创投。",
+      "externalUrl": "https://www.cnbc.com/2024/11/22/amazon-to-invest-another-4-billion-in-anthropic-openais-biggest-rival.html"
+    },
+    {
+      "date": "2025-02-24",
+      "title": "Claude 3.7 Sonnet + Claude Code 研究预览",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "首个混合推理模型——同一个模型既能正常输出，也能进入扩展思考模式。Claude Code 作为终端原生编程智能体上线（研究预览）。这成为 Anthropic 历史上仅次于 Claude 本身的第二重要产品发布。",
+      "externalUrl": "https://www.anthropic.com/news/claude-3-7-sonnet",
+      "articleSlug": "2025-02-claude-code-launch"
+    },
+    {
+      "date": "2025-03-03",
+      "title": "E 轮 35 亿美元，估值 615 亿美元，Lightspeed 领投",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "E 轮 35 亿美元，投后估值 615 亿美元。Bessemer、Cisco、D1 Capital、Fidelity、General Catalyst、Jane Street、Menlo、Salesforce Ventures 跟投。披露 ARR 约 10 亿美元，月环比增长约 30%。与 Claude 3.7 Sonnet + Claude Code 预览捆绑。",
+      "externalUrl": "https://www.anthropic.com/news/anthropic-raises-series-e-at-usd61-5b-post-money-valuation"
+    },
+    {
+      "date": "2025-05-22",
+      "title": "Claude 4（Opus 4 + Sonnet 4）+ Claude Code 正式版",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "Claude Opus 4 以 SWE-bench 72.5% 的成绩夺得「世界最佳编程模型」定位。Sonnet 4 接替 3.7。Claude Code 进入正式可用阶段。这一波产品迭代驱动了 Claude Code 到 11 月达到约 10 亿美元 ARR 的曲线。",
+      "externalUrl": "https://www.anthropic.com/news/claude-4"
+    },
+    {
+      "date": "2025-09-01",
+      "title": "F 轮 130 亿美元，估值 1830 亿美元，ICONIQ 领投",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "F 轮 130 亿美元，投后估值 1830 亿美元。公告时 ARR 约 50 亿美元，按运行率推算约 70 亿美元。Goldman Sachs Asset Management 跟投。与 Sonnet 4.5 捆绑。",
+      "externalUrl": "https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation"
+    },
+    {
+      "date": "2025-11-24",
+      "title": "Claude Opus 4.5 + Claude Code 突破 10 亿美元 ARR",
+      "type": "product",
+      "description": "Opus 系列更新。约两个月后，Anthropic 披露 Claude Code 已达约 10 亿美元 ARR——距离 2 月份的研究预览约九个月。单一产品的爬升曲线把数十亿美元的营收前置了 18 个月。",
+      "externalUrl": "https://www.anthropic.com/news/claude-opus-4-5"
+    },
+    {
+      "date": "2026-02-12",
+      "title": "G 轮 300 亿美元，估值 3800 亿美元（GIC + Coatue 联合领投）",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "史上第二大创投单笔交易。公告时 ARR 约 140 亿美元。Microsoft 与 Nvidia 作为新进战略股东。财富 10 强中已有 8 家为客户；超过 1,000 家公司每年支出超过 100 万美元（公告后两个月内从 500 家翻倍）；总企业客户数超过 30 万家。",
+      "externalUrl": "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation",
+      "articleSlug": "2026-02-series-g-380b"
+    },
+    {
+      "date": "2026-04-17",
+      "title": "Claude Design 上线",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "由 Claude Opus 4.7 驱动。Anthropic Labs 出品，瞄准 Figma / Adobe / Canva 同一战场。这是迄今为止最激进的应用层扩张。",
+      "externalUrl": "https://techcrunch.com/2026/04/17/anthropic-launches-claude-design-a-new-product-for-creating-quick-visuals/"
+    },
+    {
+      "date": "2026-04-24",
+      "title": "Google 计划再投资至多 400 亿美元",
+      "type": "funding",
+      "description": "Bloomberg 报道 Google 计划再追加至多 400 亿美元投资。在 Anthropic ARR 突破 300 亿美元的时刻，把 Google 重新锚定为主要资金 + 分发合作伙伴。",
+      "externalUrl": "https://www.bloomberg.com/news/articles/2026-04-24/google-plans-to-invest-up-to-40-billion-in-anthropic"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2024-12-01",
+      "value": 1000000000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-06-01",
+      "value": 4000000000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-12-01",
+      "value": 9000000000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2026-02-12",
+      "value": 14000000000,
+      "source": "Anthropic Series G announcement",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-04-01",
+      "value": 30000000000,
+      "source": "TheNextWeb / Bloomberg",
+      "confidence": "media"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2021-05-28",
+      "value": 550000000,
+      "round": "Series A",
+      "source": "FinSMEs / Crunchbase",
+      "confidence": "media"
+    },
+    {
+      "date": "2022-04-29",
+      "value": 4000000000,
+      "round": "Series B",
+      "source": "SiliconAngle",
+      "confidence": "media"
+    },
+    {
+      "date": "2023-05-23",
+      "value": 4100000000,
+      "round": "Series C",
+      "source": "Axios",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-01-11",
+      "value": 18400000000,
+      "round": "Series D",
+      "source": "Bloomberg / CNBC",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-03-03",
+      "value": 61500000000,
+      "round": "Series E",
+      "source": "Anthropic",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-09-01",
+      "value": 183000000000,
+      "round": "Series F",
+      "source": "Anthropic",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-02-12",
+      "value": 380000000000,
+      "round": "Series G",
+      "source": "Anthropic",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X（推特）",
+      "score": 4,
+      "bestStage": "拐点前 + 超高速增长期",
+      "effort": "节点性，由发布驱动",
+      "role": "模型发布 + 产品公告渠道",
+      "description": "@AnthropicAI 与 Dario Amodei（@DarioAmodei）每次模型发布都用基准长推 + 演示视频开路。整体节奏比 OpenAI 那种「天天上场」的状态要更安静，更接近阶段性的里程碑广播。Claude Code、Computer Use、Sonnet 3.5 与 Claude 4 都以基准引领的 X 发布形式落地。",
+      "catalyst": "Claude 3.7 Sonnet + Claude Code 研究预览发布（2025 年 2 月 24 日）——这是第一个把 Claude Code 锚定为一个新品类的 X 长推，驱动了 11 月达到 10 亿美元 ARR 的爬升曲线。",
+      "catalystUrl": "https://x.com/AnthropicAI/status/1894092430560740879",
+      "accountUrl": "https://x.com/AnthropicAI",
+      "accountLabel": "@AnthropicAI on X",
+      "whenItWorks": "当发布带有可验证的基准或能力演示时。Anthropic 的受众期待第一条推文里有技术证据，而不是营销文案",
+      "whenItDoesnt": "日更式互动。Anthropic 刻意不刷屏。模仿 OpenAI 的节奏会稀释信任姿态"
+    },
+    {
+      "slug": "anthropic-blog",
+      "name": "Anthropic 官方博客",
+      "score": 5,
+      "bestStage": "全阶段——承重结构",
+      "effort": "持续长篇输出",
+      "role": "权威研究与安全发布平台",
+      "description": "anthropic.com/news 与 anthropic.com/research 是真正承重的内容所在。Constitutional AI、Responsible Scaling Policy、AI Safety Levels、模型卡、Claude 的「Constitution」全部锚在这里。企业采购团队在评估供应商时直接引用这些页面——博客不是营销物料，而是审计依据。",
+      "catalyst": "Constitutional AI 论文 + Claude Constitution 文章（2022 年 12 月 / 2023 年 5 月）——把安全论点变成可引用、有日期的公开资产。三年后它仍然是采购级证据。",
+      "catalystUrl": "https://www.anthropic.com/news/claudes-constitution",
+      "accountUrl": "https://www.anthropic.com/news",
+      "accountLabel": "Anthropic News",
+      "whenItWorks": "当你能持续产出有研究水准的内容时。这个博客之所以管用，是因为内部工作是真实的，而不是反过来",
+      "whenItDoesnt": "如果博客只是新闻稿存档。Anthropic 的博客读起来像研究实验室的内部站点——那是刻意的设计；纯抄结构的初创公司无法获得同样的采购可信度"
+    },
+    {
+      "slug": "arxiv",
+      "name": "arXiv",
+      "score": 4,
+      "bestStage": "隐身期 + 拐点前",
+      "effort": "持续研究输出",
+      "role": "把研究底盘当作定位",
+      "description": "Constitutional AI（2212.08073）、Scaling Laws 后续论文，以及 Olah 团队的可解释性研究，扮演了 Claude 可以挂靠的学术底盘。等到 Claude 成为公开产品时，Anthropic 已经积累了 18 个月的 arXiv 输出，把自己定位为「会发产品的研究组织」，而不是「会做研究的产品公司」。",
+      "catalyst": "Constitutional AI 论文（2022 年 12 月 15 日）——接下来三年里相对 OpenAI 的标志性安全差异化点。",
+      "catalystUrl": "https://arxiv.org/abs/2212.08073",
+      "accountUrl": "https://arxiv.org/a/anthropic",
+      "accountLabel": "Anthropic on arXiv",
+      "whenItWorks": "当你拥有真实研究底蕴时。arXiv 是可信度铸造的地方，不是借来的——创始团队的 GPT-3 + Scaling Laws + Distill.pub 履历，正是这条 arXiv 通道之所以可用的前提",
+      "whenItDoesnt": "对于应用层公司。没有能独立发表论文的研究人员，arXiv 通道在结构上就走不通"
+    },
+    {
+      "slug": "lex-fridman",
+      "name": "Lex Fridman Podcast",
+      "score": 4,
+      "bestStage": "拐点前 + 超高速增长期",
+      "effort": "阶段性，约每年 1 次",
+      "role": "创始人即 IP 长篇内容",
+      "description": "Dario Amodei 已多次出场，最重要的一次是 2024 年 11 月的第 452 期，5 小时 22 分钟，加上 Amanda Askell 与 Chris Olah 各约一小时的补充对谈。节奏是每年 1-2 次有实质内容的出场——更接近 Cursor 的 E2 模式，而不是 Vercel 那种日更状态。这种内容是财富 500 强的工程 VP 真的会看的论点声明。",
+      "catalyst": "Lex Fridman 第 452 期（2024 年 11 月 11 日）——Anthropic 历史上最长的单创始人播客出场。内容厚度足够被纳入企业供应商评估。",
+      "catalystUrl": "https://lexfridman.com/dario-amodei/",
+      "accountUrl": "https://lexfridman.com/podcast/",
+      "accountLabel": "Lex Fridman Podcast",
+      "whenItWorks": "当创始人能扛住 3-5 小时的实质性技术对话时。Anthropic 的出场之所以管用，是因为 Dario 是有真凭实据的研究员，而不是销售型创始人",
+      "whenItDoesnt": "对于没有真实技术深度的创始人。这个格式会用几小时的时长无情暴露稀薄的产品叙事"
+    },
+    {
+      "slug": "senate-testimony",
+      "name": "美国参议院作证",
+      "score": 4,
+      "bestStage": "拐点前 + 超高速增长期",
+      "effort": "阶段性，约每年 1-2 次",
+      "role": "把政策姿态当作企业销售物料",
+      "description": "Dario Amodei 在 2023 年 7 月 25 日就 AI 生物武器风险在参议院司法委员会作证（与 Yoshua Bengio、Stuart Russell 同台），并在 2025 年 11 月再度出席。Jack Clark 的政策总监履历是刻意搭建的底盘。参议院作证不是游说——它是企业合规团队在解释「为什么选 Claude 而不是 GPT」时引用的公开记录。",
+      "catalyst": "Dario Amodei 参议院司法委员会作证（2023 年 7 月 25 日）——把 Anthropic 正式定位为政策参与型实验室。三年的结构性投入构成了采购可信的审计链条。",
+      "catalystUrl": "https://www.judiciary.senate.gov/imo/media/doc/2023-07-26_-_testimony_-_amodei.pdf",
+      "accountUrl": "https://www.judiciary.senate.gov/",
+      "accountLabel": "Senate Judiciary Committee",
+      "whenItWorks": "当公司确实有研究证据支撑的安全 / 政策论点时。参议院作证只能放大已经真实存在的东西——它无法凭空制造可信度",
+      "whenItDoesnt": "对于没有政策部门的初创公司。Anthropic 在没有任何商业理由的情况下就雇了 Jack Clark 并搭建了政策团队。跳过这个底盘的模仿者根本不会被邀请去作证"
+    },
+    {
+      "slug": "hyperscaler-distribution",
+      "name": "AWS Bedrock + Google Vertex",
+      "score": 5,
+      "bestStage": "超高速增长期",
+      "effort": "战略合作 + 联合销售",
+      "role": "企业级分发层",
+      "description": "三大超大云厂商中的两家既是客户又是股东。Amazon（总承诺 80 亿美元）通过 Bedrock 转售 Claude 并提供 Trainium 算力。Google（20 亿美元可转换票据，加上据报道的至多 400 亿美元追加）通过 Vertex AI 转售 Claude。只有基础模型实验室在合适的规模下才可复制，但对 Anthropic 而言，它把三种 GTM 动作——买家、供应商、股东——压缩进了每朵云的一段关系。",
+      "catalyst": "Amazon 40 亿美元承诺（2023 年 9 月）+ Google 20 亿美元可转换（2023 年 10 月）——一个月内 Anthropic 同时把两家超大云锁定为战略股东兼分发渠道。",
+      "catalystUrl": "https://www.aboutamazon.com/news/company-news/amazon-anthropic-ai-investment",
+      "accountUrl": "https://aws.amazon.com/bedrock/",
+      "accountLabel": "AWS Bedrock for Claude",
+      "whenItWorks": "在超大云厂商急于寻找 OpenAI 替代品的窗口期内、达到超大云相关规模的基础模型实验室。同样的交易在今天已经拿不到同样的形态",
+      "whenItDoesnt": "应用层或工具层公司。超大云不会花数十亿美元收购初创公司当作分发渠道——它们这样做是为了锁定算力和 AI 技术栈定位"
+    }
+  ]
+}

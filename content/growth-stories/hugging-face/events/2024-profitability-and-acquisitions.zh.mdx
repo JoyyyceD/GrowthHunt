@@ -1,0 +1,122 @@
+---
+title: "在 1.3 亿美元营收上盈利 + 两年内四笔收购（2024–2026）"
+description: "2024 年 12 月 31 日，Clément Delangue 公开在 X 上声明 Hugging Face 在 2024 年于约 1.3 亿美元营收上盈利。同期，HF 完成三笔承重底层延伸收购：XetHub（2024 年 8 月）、Pollen Robotics（2025 年 4 月）、ggml.ai（2026 年 2 月）。「默认活着」加上「承重底层扩张」，在同一个新闻周期里。"
+date: "2024-12-31"
+type: "media"
+gtmTag: "Tech narrative upgrade"
+eventTitle: "宣布盈利"
+externalUrl: "https://research.contrary.com/company/hugging-face"
+---
+
+<Catalyst>
+盈利在 Hugging Face 不是新闻稿。是 Delangue 一条 X 帖。2024 年披露落地时没有 CFO 主导的媒体巡回，没有审计 P&L，没有引用过营收倍数对照公司。同一年，公司完成了三笔把承重底层从 NLP 延伸到存储、机器人、本地推理的收购。
+</Catalyst>
+
+2024 年 12 月 31 日。Clément Delangue 公开在 X 上声明 Hugging Face 在 2024 年盈利。报告营收约 <Stat value="1.3 亿美元" label="2024 年营收（Sacra / Latka / Contrary 三方交叉验证）" />。
+
+这是 Hugging Face 自 2021 年 B 轮「现金流转正」披露以来最有分量的财务披露。也是文档化最少的一次。
+
+## 限定条件下的盈利声明
+
+| 成分 | 披露方 | 置信度 |
+|---|---|---|
+| 2024 年盈利 | Delangue X 帖 | 官方声明 |
+| 2024 年营收约 1.3 亿美元 | Sacra / Latka / Contrary 三方交叉 | 估算 |
+| 2024 年客户数约 5 万（各层级） | Latka | 估算 |
+| 2024 Q4 ARR run-rate | 未披露 | — |
+| 审计 P&L | 未公开 | — |
+
+盈利声明是真的，但不是审计级。Sacra 与 Contrary 引用；没有公开 P&L。案例系列把它当作「官方声明，非财务审计级」处理。
+
+让声明在缺乏审计的前提下仍可信的，是结构。Hugging Face 自至少 2021 年初起就「默认活着」（B 轮披露）。开源分发产生低 CAC。与超大规模云战略股东的企业合同产生高毛利经常性收入。约 635 人的员工数（Latka 2024-2025 数据）对一家 1.3 亿美元营收的基础设施公司来说是有节制的。
+
+**盈利的合理驱动可能是：(a) 开源分发带来的低 CAC，(b) 没有在 D 轮资本上过度扩张的人员控制，(c) 高毛利的 Hub Enterprise + Inference Endpoints 承担经常性收入主载。** 这些都没有被单独确认；都是重构。
+
+## 收购序列作为承重底层延伸
+
+在同一段 18 个月窗口里，Hugging Face 完成了三笔承重底层延伸收购，外加一笔更早的（Gradio，2021 年 12 月——做上下文用）。
+
+| 收购 | 时间 | 加入人数 | 填补的承重底层缺口 |
+|---|---|---|---|
+| Gradio | 2021 年 12 月 16 日 | 5 | demo 语法层 |
+| **XetHub** | **2024 年 8 月 8 日** | **约 14** | **存储规模（TB 级模型文件）** |
+| **Pollen Robotics** | **2025 年 4 月 14 日** | **约 20** | **硬件物理化** |
+| **ggml.ai / llama.cpp** | **2026 年 2 月 20 日** | **小（Georgi Gerganov + 团队）** | **本地推理引擎** |
+
+每笔收购添加一层承重底层，不是营收线。**这与 Vercel（Turborepo / Splitbee / NuxtLabs）和 Oura（Proxy / Veri / Sparta Science）是同一种纪律。** 收购是 GTM 机制，不是金融交易。
+
+## XetHub 为什么重要
+
+XetHub 是西雅图的数据存储创业公司，由前 Apple 研究员创立。约 14 名员工加入 Hugging Face。条款未披露，但 XetHub 被描述为 HF 历史上最大一笔收购。
+
+收购解决了承重底层规模化瓶颈。到 2024 年 9 月，Hub 托管 100 万+ 公开模型（另行宣布）。在那个规模上，Git LFS——Hugging Face 从早期 Hub 设计继承下来的存储后端——开始造成带宽和成本问题。XetHub 的存储技术，最初为代码 repo 而建，被重新用作 Hub 的新存储后端。
+
+**没有 XetHub，从 100 万到 240 万+ 模型（2026 年 1 月）的路径会是一场存储成本危机。** 有了 XetHub，模型数可以继续复利而不会让单位经济崩盘。
+
+这是承重底层维护里不光鲜的部分。Pollen Robotics 与 ggml.ai 产生新闻周期。XetHub 没有。但 XetHub 对承重底层耐久性的贡献，至少和前两者一样大。
+
+## Pollen Robotics 为什么是更硬的承诺
+
+Pollen Robotics 在 2025 年 4 月 14 日被收购，是法国机器人创业公司，做 Reachy 2 人形机器人（7 万美元，部署在康奈尔与卡耐基梅隆）。约 20 名员工加入。**HF 第五笔收购；首次收购硬件产品公司。**
+
+收购 Pollen——而不是只做合作——把 Hugging Face 绑定到了实物产品分发。Reachy Mini（299/449 美元）在 2025 年 7 月 9 日上线，是 HF 首款自有硬件产品。
+
+战略逻辑映射原始的 Transformers 打法。2018 年，Hugging Face 构建开源库，因为没有现成占位。2025 年，Hugging Face 构建开源机器人平台（LeRobot + Pollen + Reachy Mini 硬件），因为「以小型机器人作为承重底层」这个类目里没有现成占位。**这是 D1（技术叙事升维）在另一个垂直里被同一家公司再跑一次。**
+
+商业上能不能跑通还未确定。Reachy Mini 到 2026 年 4 月没有公开单位销量披露。案例系列应该在未来 12-18 个月内期待一个硬销量数字、或者硬件线被悄悄退役。
+
+## ggml.ai 为什么是三笔里最具战略性的
+
+2026 年 2 月的 ggml.ai / llama.cpp 收购在三笔里报道最少，但可能是战略上最重要的。
+
+Georgi Gerganov 的 llama.cpp 是开源 LLM 的主流本地推理引擎。在 MacBook 上跑 7B 参数模型，意味着用 llama.cpp——直接用，或通过几十个 wrapper（Ollama、LM Studio、Jan 等）。repo 是 MIT 开源协议，收购后保持 MIT。
+
+战略逻辑：Hugging Face 是**模型分发层**。llama.cpp 是**本地推理层**。把它们整合到同一屋檐下，就把开源本地 AI 栈整合了。
+
+| 层 | 收购前 | 收购后 |
+|---|---|---|
+| 模型分发 | Hugging Face Hub | Hugging Face Hub（不变） |
+| 云端推理 | Inference Endpoints | Inference Endpoints（不变） |
+| 本地推理 | llama.cpp（独立组织） | **llama.cpp（现在归 HF）** |
+
+这是 HF 对 Modal、Replicate、Together 以及其他推理层竞争对手的定位反击。不在他们的毛利层级竞争（那里单位经济偏向专家），HF 把承重底层往本地推理移——对手在那里没有开源心智份额可以跟。**一个用 llama.cpp 在本地跑模型的用户根本不需要云推理供应商。**
+
+经济上的问题是：把用户迁向本地推理，是否会蚕食 Inference Endpoints 营收。答案取决于工作负载画像——交互式应用需要云延迟，批处理越来越不需要。这次押的是「本地推理可触达市场足够大、值得承担蚕食风险」。
+
+## D 轮之后的 C3
+
+2024 年盈利披露与收购节奏配在一起，是 Hugging Face 能保持「不上 E 轮跑步机」的原因。
+
+| 指标 | 2026 年 4 月状态 |
+|---|---|
+| 累计融资 | 约 3.95 亿美元 |
+| 上次定价轮 | D 轮（2023 年 8 月 24 日） |
+| 距上次定价轮月份数 | 31+ |
+| 营收（2024 年披露） | 约 1.3 亿美元 |
+| 盈利（2024 年披露） | 是 |
+| 模型托管数 | 240 万+ |
+| D 轮以来的收购 | 3 笔（XetHub、Pollen、ggml.ai） |
+
+一家典型的 1.3 亿美元营收基础设施公司到这个时点已经开了 E 轮去支撑继续扩张。Hugging Face 没有。**收购是从经营性现金流出钱，不是新股权出钱。**
+
+这是 C3（默认活着即进攻）打到极致。2021 年 B 轮披露把现金流为正确立为一次性信号。2024 年盈利披露把它运营化。收购节奏证明经营模型可以在没有新资本的情况下支撑承重底层延伸。**Hugging Face 现在是知识库里 C3 第二干净的案例，仅次于 Linear**——差距在于 Linear 持续把披露武器化，Hugging Face 阶段性部署。
+
+如果 Hugging Face 想把 C3 升级到 Linear 级别的进攻定位，动作会是 Karri Saarinen 风格的「年度披露累计烧钱与营收对比」。到 2026 年 4 月这种披露还没做——但地基已经清楚。
+
+<Conclusion title="可以复用的东西">
+
+- **以创始人 X 帖披露盈利，是不同于「CFO 主导新闻稿」的信号格式。** 两种都行。X 帖格式部署更快，对分析师的可辩护度更低，读起来是「自信」而不是「仪式感」。选择和公司声音匹配的格式。
+- **收购是 GTM 机制，不是金融交易。** HF 四笔收购每一笔都加了一层承重底层。没有一笔加了营收线。一个考虑收购的创始人应该问：它填的是哪一处承重底层缺口，而不是它产出哪一条营收。
+- **「默认活着」比「股权」更适合资助承重底层延伸。** XetHub + Pollen + ggml.ai 这一序列是经营性现金流资助的。股权资助的收购会创造稀释压力、约束未来轮次时机。经营性现金流资助的收购不会。
+
+</Conclusion>
+
+## 来源
+
+- [Contrary Research：Hugging Face 报告](https://research.contrary.com/company/hugging-face)
+- [Sacra：Hugging Face 研究页](https://sacra.com/c/hugging-face/)
+- [Hugging Face 博客：XetHub 加入 HF（2024 年 8 月）](https://huggingface.co/blog/xethub-joins-hf)
+- [TechCrunch：Hugging Face 收购人形机器人创业公司（2025 年 4 月 14 日）](https://techcrunch.com/2025/04/14/hugging-face-buys-a-humanoid-robotics-startup/)
+- [VentureBeat：Hugging Face 推出 299 美元机器人（2025 年 7 月 9 日）](https://venturebeat.com/ai/hugging-face-just-launched-a-299-robot-that-could-disrupt-the-entire-robotics-industry)
+- [Simon Willison：ggml.ai 加入 Hugging Face（2026 年 2 月 20 日）](https://simonwillison.net/2026/Feb/20/ggmlai-joins-hugging-face/)
+- [Latka：Hugging Face 公司数据](https://getlatka.com/companies/hugging-face)

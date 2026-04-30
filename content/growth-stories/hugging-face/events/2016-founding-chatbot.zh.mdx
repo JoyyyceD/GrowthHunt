@@ -1,0 +1,69 @@
+---
+title: "成立失败的聊天机器人——三个法国人和一个青少年 BFF（2016–2017）"
+description: "Hugging Face Inc. 2016 年在纽约成立，做面向青少年的 iOS 聊天机器人。MIT Tech Review（2017 年 3 月）报告用户基数仅几千个——不是某些事后追述里说的「数百万」。真正起作用的决策不是产品本身，是招了一个有学术规范的研究科学家。"
+date: "2016-01-01"
+type: "product"
+gtmTag: "Founder-as-IP"
+eventTitle: "Hugging Face Inc. 在纽约成立"
+---
+
+<Catalyst>
+聊天机器人没跑通。让它跑起来的招聘起作用了。Wolf 用 PyTorch、按学术规范、对着文献，为一个消费聊天机器人构建 NLP 基础设施——比有库可以交付还早 18 个月。
+</Catalyst>
+
+2016 年 1 月。三位法国联合创始人在纽约市注册成立 Hugging Face Inc.。产品是面向青少年的「AI best friend」移动聊天机器人。公司名取自 U+1F917 表情符号。
+
+Clément Delangue（CEO）有产品/商业经验。Julien Chaumond（CTO）是计算机工程师，曾在法国经济部工作过。Thomas Wolf（CSO）受过科学训练、当过专利律师，和 Chaumond 一起在乐队里玩过。三人是通过一个线上斯坦福工程课的学习小组结识的。
+
+## 聊天机器人到底是什么
+
+iOS 在 2017 年 3 月 9 日上线。当天 TechCrunch 的报道把它定位为「人工智能版 BFF」。产品跑在自研 NLP 模型上——人物动画、情感感知回复、轻度个性化定制。
+
+同月 MIT Technology Review 三周日记是关于用户量最权威的当代来源。<Stat value="几千个" label="青少年用户（MIT Tech Review，2017 年 3 月）" />。
+
+这个数字重要，因为某些事后报道把它追溯改写成「数百万」甚至「数千万」。这是错的。Hugging Face 从未作为消费产品跑出来。当创始人在 2018 年 5 月从 Ronny Conway / a_capital 拿到 400 万美元种子轮、Betaworks、SV Angel、Kevin Durant 跟投时，聊天机器人仍是一款挣扎中的应用。
+
+## 不该发生的融资
+
+| 轮次 | 时间 | 金额 | 领投 | 论点 |
+|---|---|---|---|---|
+| 天使 | 2017 年 3 月 5 日 | 120 万 | Betaworks | 「AI for entertainment」 |
+| 种子 | 2018 年 5 月 23 日 | 400 万 | a_capital（Ronny Conway） | 面向青少年的聊天机器人 |
+
+转向前两轮共 520 万美元，融资论点没有一家投资人后来还会说自己是因为这个论点投的。从 2026 年看回去，这两轮像是侥幸赚回来的耐心资本失误。从 2017–2018 年看，它们就像对一个年轻消费 AI 类目的常规早期下注——Anthropic 和 OpenAI 当时还不存在作为商业对照。
+
+让 Hugging Face 在这段时期活下来的，是烧钱纪律。三位创始人，小团队，没有付费获客，没有重型 GTM。聊天机器人没产生收入，但也没快到逼公司在承重底层出现之前清盘。
+
+## 后来证明承重的那次招聘
+
+聊天机器人时期真正起作用的决策不是某个产品功能。是把 Thomas Wolf 招进来时，让他做研究科学家、不是产品工程师。
+
+Wolf 在为聊天机器人构建 NLP 基础设施——情感模型、对话路由、回复生成。但他用 PyTorch、按学术规范、对着文献做。他读论文、写论文，把研究社区当作主要同行受众。
+
+2018 年 10 月 Google 在 TensorFlow 中发布 BERT 时，Wolf 已经在 PyTorch 基础设施上深耕了 18 个月。后来变成 pytorch-pretrained-bert 的 PyTorch BERT 移植版，并不是一次从零开始的冲刺——而是把已有的 PyTorch 工具重新指向一个新的模型架构，大约一周完成。
+
+**聊天机器人时期最持久的贡献，是把一位研究科学家植入到了一家消费产品公司里。** 三年之后再去招一位首席科学家、等承重底层出现之后再招——做不出同样的结果。Wolf 必须在 cap table 上、在创始团队里、第一天起就有以 Hugging Face 署名发表论文的机构许可。
+
+## 还不算转向的转向
+
+技术拐点发生在 2018 年 10 月。营销转向直到 14 个月后的 2019 年 12 月才发生。
+
+中间这段时间里，Hugging Face 是一家有两个产品的公司：一款记者还在报道的挣扎期消费聊天机器人，和一个开始出现在 arXiv 引用里的开源 NLP 库。团队直到 2019 年 12 月 A 轮（Lux Capital 领投 1500 万美元）才正式转向，定位为「权威 NLP 库」。
+
+延迟有后果。更快的转向事后看会更明显地正确，但会逼团队下架聊天机器人品牌、重建受众。让承重底层在公司名字未变的情况下安静复利，意味着真正转向的那一刻，库已经有了新闻稿可以放大、而不是从零创造的势能。
+
+<Conclusion title="可以复用的东西">
+
+- **承重底层还藏着的时候，招聘比功能重要。** Wolf 作为研究科学家进入创始 cap table，是承重决策；iOS 聊天机器人是围着它的可丢弃产品。一个 2024 年做消费 AI 的创始人应该问的是：第一年里要做哪一个不显眼的研究者招聘。
+- **承重底层隐身期的烧钱纪律，给你权利去等承重底层出现。** Hugging Face 没有激进扩张聊天机器人。520 万美元的种子加天使，跑得够长，跑到了 BERT 发布。
+- **承重底层不明确之前不要正式转向。** Hugging Face 在技术拐点（2018 年 10 月）和正式 A 轮转向公告（2019 年 12 月）之间等了 14 个月。延迟把整整一年的库自然采纳压缩进了一个新闻周期，而不是从零创造它。
+
+</Conclusion>
+
+## 来源
+
+- [TechCrunch：Hugging Face 想成为你的人工智能版 BFF（2017 年 3 月 9 日）](https://techcrunch.com/2017/03/09/hugging-face-wants-to-become-your-artificial-bff/)
+- [TechCrunch：Hugging Face 为人工智能版 BFF 融资 400 万美元（2018 年 5 月 23 日）](https://techcrunch.com/2018/05/23/hugging-face-raises-4-million-for-its-artificial-bff/)
+- [Crunchbase：Hugging Face 天使轮](https://www.crunchbase.com/funding_round/hugging-face-angel--dc675d37)
+- [Wikipedia：Hugging Face](https://en.wikipedia.org/wiki/Hugging_Face)
+- [Contrary Research：Hugging Face 报告](https://research.contrary.com/company/hugging-face)
