@@ -1,0 +1,306 @@
+{
+  "company": {
+    "slug": "meshy",
+    "name": "Meshy",
+    "legalName": "Meshy AI, Inc.",
+    "tagline": "A Tsinghua Yao-class to MIT graphics PhD built the GPU language behind 3D-AI, then quietly productized it — 60 percent Western share, 40 million ARR, and no canonical funding wire",
+    "summary": "Meshy is the cleanest current case for an academic-graphics-substrate playbook. Founder Yuanming (Ethan) Hu built Taichi Lang — a 27K-star differentiable GPU language for visual computing — across his MIT PhD years, then in April 2023 quietly pivoted his pre-existing Taichi.graphics company into Meshy, a productized text-to-3D pipeline. Three years later: 10 million users, 100 million generated assets, 40 million ARR (April 2026), 85 percent gross margin, roughly 60 percent Western 3D-generative market share — with no canonical TechCrunch funding announcement and a deliberately quiet GTM posture. Sequoia and GGV-backed, but it acts bootstrapped in PR. The unusual move is the inversion of the Manus playbook: same bicultural precondition, opposite operational choice.",
+    "founded": "2023-04",
+    "founders": [
+      "Yuanming Hu (Ethan Hu)"
+    ],
+    "seriesNumber": 22
+  },
+  "phases": [
+    {
+      "start": "2017-09",
+      "end": "2023-04",
+      "name": "Taichi.graphics substrate era",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2023-04",
+      "end": "2024-03",
+      "name": "Meshy 1-3 early product",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2024-03",
+      "end": "2025-11",
+      "name": "Series A and Meshy 4-5 platform",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2025-11",
+      "end": "2026-05",
+      "name": "Meshy Labs and Formlabs ecosystem",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2017-09-01",
+      "title": "Yuanming Hu starts MIT PhD",
+      "type": "product",
+      "description": "Yuanming (Ethan) Hu enrolls at MIT EECS / CSAIL under Frédo Durand and Bill Freeman, two of the most influential names in computer graphics. The substrate phase begins eight years before Meshy's operational launch."
+    },
+    {
+      "date": "2019-12-01",
+      "title": "Taichi Lang first ACM TOG paper",
+      "type": "product",
+      "description": "The Taichi GPU programming language for sparse and quantized visual computing publishes at ACM Transactions on Graphics. The academic substrate that becomes Meshy's technical foundation lands in the public record."
+    },
+    {
+      "date": "2021-08-01",
+      "title": "Hu defends MIT PhD thesis (Taichi)",
+      "type": "product",
+      "gtmTag": "Founder-as-IP",
+      "description": "MIT thesis on Taichi published. Earns honorable mention for SIGGRAPH 2022 outstanding doctoral dissertation. Taichi Lang itself crosses 27K GitHub stars across 300-plus institutional adopters.",
+      "externalUrl": "https://dspace.mit.edu/handle/1721.1/139327",
+      "articleSlug": "2021-taichi-graphics-legal"
+    },
+    {
+      "date": "2021-10-01",
+      "title": "Taichi.graphics legal entity",
+      "type": "product",
+      "description": "Crunchbase records Meshy LLC entity formation in 2021 — operating as Taichi.graphics, the predecessor company built around the open-source GPU language. The pivot to a productized 3D-gen company comes 18 months later."
+    },
+    {
+      "date": "2023-03-01",
+      "title": "Meshy Texturer launches",
+      "type": "product",
+      "description": "First public-facing Meshy-branded tool: a web utility for AI texture generation on existing 3D meshes. Pre-product probe of demand in the gamedev / 3D-asset community.",
+      "externalUrl": "https://www.meshy.ai/blog/"
+    },
+    {
+      "date": "2023-04-15",
+      "title": "Meshy company operational launch",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "Hu effectively starts Meshy as a product company in April 2023. Anchor: his August 22, 2024 X post — 'We started working on Meshy 16 months ago.' This is the operational founding, not the 2021 legal entity.",
+      "externalUrl": "https://x.com/YuanmingH/status/1826630353710449036",
+      "articleSlug": "2023-04-meshy-pivot"
+    },
+    {
+      "date": "2023-10-15",
+      "title": "Meshy-1 release",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "First full text-to-3D model generation product. Marketed as 30x faster than the prevailing AI methods. Launches on Product Hunt and lands on early gamedev community comparison sites.",
+      "externalUrl": "https://www.meshy.ai/blog/meshy-1-generate-3d-models-with-ai-in-just-a-minute"
+    },
+    {
+      "date": "2024-01-15",
+      "title": "Meshy 2 / 2.5 enhancements",
+      "type": "product",
+      "description": "Iteration cadence — quality and speed improvements to text-to-3D. Establishes the version-cadence-as-format pattern that becomes the GTM. Each Meshy N+1 must visibly outperform N or community comparison sites move on.",
+      "externalUrl": "https://www.meshy.ai/blog/meshy-2.5-text-to-3d-enhancements"
+    },
+    {
+      "date": "2024-03-15",
+      "title": "Series A reported (no canonical wire)",
+      "type": "funding",
+      "description": "Approximately 10-15 million Series A reported via aggregators (Tracxn, parsers.vc). Sequoia and GGV among investors per third-party data. No canonical TechCrunch / Bloomberg / Information piece exists. The PR posture starts here: quiet C, loud product.",
+      "externalUrl": "https://www.crunchbase.com/organization/meshy",
+      "articleSlug": "2024-03-series-a"
+    },
+    {
+      "date": "2024-04-10",
+      "title": "Meshy 3 launch",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Adds image-to-3D, sculptures, and PBR materials. Marks the first anniversary of operational founding. Image-to-3D is the boundary push — same SKU now serves designers without a text-prompting workflow.",
+      "externalUrl": "https://www.meshy.ai/blog/meshy3-sculptures-pbr-and-image-to-3d"
+    },
+    {
+      "date": "2024-08-22",
+      "title": "Meshy 4 launch",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Reworked architecture with separate Modeling and Texturing stages. Hu posts on X: 'Sooo proud of everyone on the Meshy team' — the 16-months-since-start framing that pins operational founding to April 2023.",
+      "externalUrl": "https://www.einpresswire.com/article/741828738/"
+    },
+    {
+      "date": "2024-12-01",
+      "title": "a16z Games top tools list",
+      "type": "media",
+      "gtmTag": "KOL credibility transfer",
+      "description": "Recognized as #1 in popularity among 3D AI tools by a16z Games' annual list. KOL-tier industry validation that does heavy lifting in the absence of canonical funding press.",
+      "externalUrl": "https://a16z.com/"
+    },
+    {
+      "date": "2025-07-28",
+      "title": "Meshy 5 Preview + animation library",
+      "type": "product",
+      "gtmTag": "Audience boundary push",
+      "description": "500+ character animations, smarter image-to-3D alignment, cleaner geometry. Public disclosure: 3 million users, 30 million assets generated. Animation library is the boundary push from static asset generation into rigged, ready-to-deploy game characters.",
+      "externalUrl": "https://www.prnewswire.com/news-releases/meshy-launches-meshy-5-preview-with-enhanced-ai-3d-generation-tools-and-animation-library-302514902.html",
+      "articleSlug": "2025-07-meshy-5-preview"
+    },
+    {
+      "date": "2025-10-15",
+      "title": "Meshy 6 Preview",
+      "type": "product",
+      "description": "Major mesh quality and geometric accuracy lift, especially for organic characters and anatomy. Sets up the November ARR disclosure window.",
+      "externalUrl": "https://www.fabbaloo.com/news/meshy-ai-launches-meshy-6-preview-with-major-advances-in-3d-model-quality"
+    },
+    {
+      "date": "2025-11-13",
+      "title": "$15M ARR + 30% MoM disclosure",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Self-reported via PR wire. 30 percent month-over-month growth. Top 2 percent fastest-growing AI in Silicon Valley. 85 percent gross margin. ~60 percent Western 3D-gen market share. Bundled with Meshy 6 Preview — the canonical Meshy milestone format: ARR + product, no funding round.",
+      "externalUrl": "https://www.prnewswire.com/apac/news-releases/meshy-hits-15m-arr-with-30-month-over-month-growth-unveils-meshy-6-preview-for-next-gen-3d-creation-302613937.html",
+      "articleSlug": "2025-11-15m-arr"
+    },
+    {
+      "date": "2026-03-10",
+      "title": "GDC 2026 — Meshy Labs + $30M ARR",
+      "type": "product",
+      "gtmTag": "Bundled milestone",
+      "description": "Meshy Labs experimental incubator launches with first AI-native game 'Black Box: Infinite Arsenal'. ARR doubles in three months ($15M to $30M). 10M+ users, 100M+ assets. The category-defining moment: gamedev now treats Meshy as a platform, not a tool.",
+      "externalUrl": "https://www.prnewswire.com/news-releases/meshy-unveils-meshy-labs-at-gdc-2026--breakthrough-ai-native-gameplay-and-30m-arr-milestone-302708046.html",
+      "articleSlug": "2026-03-meshy-labs-gdc"
+    },
+    {
+      "date": "2026-04-10",
+      "title": "36Kr feature: $40M ARR / 60% Western share",
+      "type": "media",
+      "description": "Chinese-language flagship coverage. ARR ≈ ¥300M RMB (~$40M USD; the '$300M' headline framing is a translation artifact). Monthly visits >5M per SimilarWeb. Frames Meshy as a Silicon Valley unicorn, not a Chinese-team-going-global story.",
+      "externalUrl": "https://eu.36kr.com/en/p/3783556211825920"
+    },
+    {
+      "date": "2026-04-14",
+      "title": "Formlabs partnership / RAPID + TCT 2026",
+      "type": "product",
+      "gtmTag": "Audience boundary push",
+      "description": "Audience boundary push from gamedev into pro 3D printing and manufacturing. Meshy debuts a Formlabs bridge at RAPID + TCT 2026 — same SKU, new buyer category. The TAM expands without the product expanding.",
+      "externalUrl": "https://www.morningstar.com/news/pr-newswire/20260414cn34016/",
+      "articleSlug": "2026-03-meshy-labs-gdc"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2025-07-28",
+      "value": 0,
+      "source": "Meshy 5 Preview disclosure (users only — no ARR)",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-11-13",
+      "value": 15000000,
+      "source": "PRNewswire / Meshy",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-03-10",
+      "value": 30000000,
+      "source": "GDC 2026 / PRNewswire",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-04-10",
+      "value": 40000000,
+      "source": "36Kr",
+      "confidence": "media"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2024-03-15",
+      "value": 75000000,
+      "round": "Series A (estimate; aggregator-derived, no canonical wire)",
+      "source": "Tracxn / parsers.vc",
+      "confidence": "estimate"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 3,
+      "bestStage": "Substrate signal + episodic releases",
+      "effort": "Founder-led, low cadence",
+      "role": "Substrate-coded credibility, not viral driver",
+      "description": "Yuanming Hu posts on X (~16K followers) primarily about Meshy releases and Taichi. Deliberately non-loud — closer to Linear's Karri Saarinen than to Replit's Amjad Masad. The thought-leadership weight is delegated to the technical artifacts (Taichi GitHub, MIT thesis, SIGGRAPH paper) rather than to daily X presence.",
+      "catalyst": "Hu's August 22, 2024 X post: 'We started working on Meshy 16 months ago.' One sentence on one timeline that pins the operational founding date and reframes the 2021 Crunchbase record. The substrate-coded launch post — no demo video, no fanfare, just the version number and a thank-you to the team.",
+      "catalystUrl": "https://x.com/YuanmingH/status/1826630353710449036",
+      "accountUrl": "https://x.com/YuanmingH",
+      "accountLabel": "@YuanmingH on X",
+      "whenItWorks": "When the founder substrate is already deep enough that X is a confirmation channel, not an acquisition channel. Taichi Lang's 27K stars do the heavy lifting — X just confirms which company is shipping next.",
+      "whenItDoesnt": "If you don't have a substrate, X presence alone won't manufacture one. Daily posting without underlying technical artifacts decays into noise."
+    },
+    {
+      "slug": "github",
+      "name": "GitHub",
+      "score": 5,
+      "bestStage": "Pre-launch through always-on",
+      "effort": "Years of accumulated open-source maintenance",
+      "role": "The substrate that makes Meshy permitted to exist",
+      "description": "Taichi Lang (taichi-dev/taichi) is a 27K-star differentiable GPU programming language for sparse and quantized visual computing. Hu created and maintained it across his MIT PhD. 300-plus institutions use it in production. None of Meshy's 3D-gen competitors have an equivalent substrate — and that asymmetry is the GTM.",
+      "catalyst": "Taichi Lang crossing 25K GitHub stars in 2022 — a year before Meshy's operational launch. The substrate was already deep before the productization began. By the time Meshy 1 shipped in October 2023, every technical evaluator in 3D-gen who had heard of Taichi already had a default-positive prior on the founder.",
+      "catalystUrl": "https://github.com/taichi-dev/taichi",
+      "accountUrl": "https://github.com/taichi-dev/taichi",
+      "accountLabel": "Taichi Lang on GitHub",
+      "whenItWorks": "When the open-source artifact is technically adjacent to the productized SaaS — Taichi's differentiable simulation maps onto diffusion-on-3D-meshes. Substrate that maps onto product is the rarest and most valuable kind.",
+      "whenItDoesnt": "If the open-source repo is a tangent (a side-project marketing tool), it does not buy substrate credit. The repo has to be the engine, not the brochure."
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 3,
+      "bestStage": "Mid-stage credibility",
+      "effort": "Episodic, founder-led",
+      "role": "Long-form technical proof for the skeptics",
+      "description": "Hu has done at least one founder-podcast (XR AI Spotlight) and one Chinese-language podcast (WhynotTV / Tairan He). Long-form YouTube is where the 'is this just another diffusion wrapper?' debate gets answered with an actual founder voice steeped in differential geometry.",
+      "catalyst": "XR AI Spotlight: The Future of 3D Generative AI with Meshy's CEO Ethan Hu. The first long-form English-language Meshy interview that lets a 3D-gen-curious audience hear Hu's MIT-graphics-substrate-meets-diffusion thesis directly.",
+      "catalystUrl": "https://www.xraispotlight.com/the-future-of-3d-generative-ai-with-meshys-ceo-ethan-hu/",
+      "accountUrl": "https://www.youtube.com/@MeshyAI",
+      "accountLabel": "Meshy on YouTube",
+      "whenItWorks": "When the founder can speak fluently to the technical depth behind the product. A 3D-AI founder with a graphics PhD has different long-form leverage than a wrapper-layer founder.",
+      "whenItDoesnt": "Long-form is unforgiving when the founder cannot defend the architectural claims. Skip it if the substrate is shallow."
+    },
+    {
+      "slug": "discord",
+      "name": "Discord",
+      "score": 4,
+      "bestStage": "Pre-inflection through scale",
+      "effort": "Community-led, low company touch",
+      "role": "Gamedev workflow community + power-user feedback loop",
+      "description": "Meshy's Discord is the gathering point for indie gamedevs, Blender / Unreal / Unity / Roblox / Godot bridge users, and 3D printing experimenters. Comparison content lives here — version-by-version side-by-sides between Meshy, Tripo, Luma's Genie, and Rodin. The community does the unpaid distribution.",
+      "catalyst": "Meshy 5 Preview animation library reveal (Jul 2025) — the 500+ character animations turned the Discord from a feedback channel into a content-creation flywheel. Users posted rigged-and-animated character demos within 48 hours of release.",
+      "accountUrl": "https://discord.gg/meshy",
+      "accountLabel": "Meshy Discord",
+      "whenItWorks": "When the product output is shareable and the user base has a strong community comparison instinct (gamedev, music, video). Discord rewards live demos and version comparisons.",
+      "whenItDoesnt": "Discord is wrong for B2B tools where the buyer is a procurement officer, not a power user."
+    },
+    {
+      "slug": "xiaohongshu",
+      "name": "小红书 (Xiaohongshu)",
+      "score": 2,
+      "bestStage": "Awareness in Chinese 3D-print / e-commerce communities",
+      "effort": "Community-driven, low company touch",
+      "role": "Chinese-language 3D-printing and e-commerce surface",
+      "description": "Chinese 3D-print and e-commerce communities post Meshy workflows on 小红书 — print-this-figurine, design-this-product-render content. The company does not market here directly, but the bicultural team's substrate (Taichi Lang's Chinese open-source community) seeds organic adoption.",
+      "catalyst": "No single moment. The slow-burn presence of Chinese gamedev, 3D-print, and animation creators sharing Meshy outputs. Cross-platform with 抖音 (Douyin) and Bilibili.",
+      "accountUrl": "https://www.xiaohongshu.com/",
+      "accountLabel": "Search 小红书 for Meshy",
+      "whenItWorks": "When a bicultural team has organic Chinese reach without needing to position the company as Chinese-origin. Substrate-coded distribution.",
+      "whenItDoesnt": "If the company brand is fully Western-positioned, leaning into 小红书 marketing risks resurfacing the geo-arbitrage frame Meshy chose to suppress."
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 3,
+      "bestStage": "Always-on, community-led",
+      "effort": "Community-driven, no company seeding",
+      "role": "Cross-tool comparison surface",
+      "description": "r/blender, r/Unity3D, r/UnrealEngine, r/3Dprinting are where the head-to-head comparisons against Tripo, Luma, Rodin, and Common Sense Machines play out. Reddit threads function as the unofficial benchmark archive for 3D-gen tools.",
+      "catalyst": "Recurring comparison threads after every Meshy version release. The community-comparison-as-distribution mechanism: users comparison-shop in public, Meshy keeps winning, the threads become the marketing without a marketing budget.",
+      "accountUrl": "https://www.reddit.com/r/blender/",
+      "accountLabel": "r/blender (and adjacent subs)",
+      "whenItWorks": "When the category has a single canonical comparison standard (mesh quality + topology + animation rigging + export support). Reddit rewards reproducible benchmarks.",
+      "whenItDoesnt": "If the company seeds threads, the community detects astroturfing inside a week. Stay community-led or stay off."
+    }
+  ]
+}

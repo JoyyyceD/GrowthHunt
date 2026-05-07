@@ -1,0 +1,274 @@
+{
+  "company": {
+    "slug": "artisan",
+    "name": "Artisan",
+    "legalName": "Artisan AI, Inc.",
+    "tagline": "The canonical paid-OOH provocation case in our 23-case set — and the first standout that ships with an explicit trust-debt warning attached",
+    "summary": "Artisan is the case where a single high-cost OOH advertising campaign substituted for product traction in a saturated category. Founded mid-2023 in San Francisco, Y Combinator W24, Ava (the AI BDR) launched January 2024. Eight months later, in October 2024, Artisan put STOP HIRING HUMANS on a Highway 101 billboard near SFO and ~50 SF bus shelters, deliberately overlapping TechCrunch Disrupt where the company rented the main booth. Two outrage cycles, thousands of death threats, an Inc. cover-style profile, and a $25M Series A led by Glade Brook Capital on April 9, 2025 followed. The B3 sub-pattern — paid + physical + polarizing — is real and reusable. The structural concerns are also real: third-party churn estimates of 75–90% over three months, a campaign-attributed ARR roughly equal to total ARR, a December 2025 LinkedIn ban, and a polarized G2 distribution with no middle. The billboard worked. What it bought is still being priced.",
+    "founded": "2023-07",
+    "founders": ["Jaspar Carmichael-Jack", "Sam Stallings", "Rupert Dodkins"],
+    "seriesNumber": 23
+  },
+  "phases": [
+    {"start": "2023-07", "end": "2024-01", "name": "YC W24 founding", "color": "#fef3c7"},
+    {"start": "2024-01", "end": "2024-10", "name": "Ava launch + seed extension", "color": "#dbeafe"},
+    {"start": "2024-10", "end": "2025-10", "name": "Stop Hiring Humans + Series A", "color": "#fce7f3"},
+    {"start": "2025-10", "end": "2026-04", "name": "Multi-region rollout + LinkedIn crisis", "color": "#dcfce7"}
+  ],
+  "events": [
+    {
+      "date": "2023-07-01",
+      "title": "Artisan founded in San Francisco",
+      "type": "product",
+      "description": "Three founders: Jaspar Carmichael-Jack (CEO, 22 at founding, ex-Burst Digital UK branding agency, ex-Assist London), Sam Stallings (Co-Founder + CPTO, ex-IBM Senior Product Manager, UCLA), and Rupert Dodkins (Co-Founder, Oxford astrophysics PhD, ex-ViQi ML engineer). Thesis: ship a category of AI agents called Artisans — start with an AI BDR.",
+      "articleSlug": "2023-yc-w24-founding"
+    },
+    {
+      "date": "2023-11-15",
+      "title": "Pre-seed $2.3M",
+      "type": "funding",
+      "description": "Y Combinator + Bayhouse Capital + Oliver Jung (early Revolut / Robinhood / Brex). Confirms YC W24 batch entry.",
+      "externalUrl": "https://www.thesaasnews.com/news/artisan-ai-raises-2-3-million-in-pre-seed-round"
+    },
+    {
+      "date": "2024-01-11",
+      "title": "Ava (AI BDR) launches on YC Launch",
+      "type": "product",
+      "description": "First public version. Autonomous AI agent prospects from a 250M-lead database, writes personalized cold emails, replies, and books meetings into human SDR / AE calendars. YC W24 cohort.",
+      "externalUrl": "https://www.linkedin.com/posts/y-combinator_artisan-ai-yc-w24-just-launched-ava-an-activity-7151315703189377024-cxmr"
+    },
+    {
+      "date": "2024-04-15",
+      "title": "Platform v2 — autonomous mode",
+      "type": "product",
+      "description": "Agents can send communications without human approval. Marketed as the first true autonomous AI BDR. Position differentiation against 11x.ai's Alice.",
+      "externalUrl": "https://en.wikipedia.org/wiki/Artisan_AI"
+    },
+    {
+      "date": "2024-05-16",
+      "title": "Seed round $7.3M",
+      "type": "funding",
+      "description": "BOND Capital + Soma Capital + Y Combinator + others. Funds Series A buildout.",
+      "externalUrl": "https://tech.eu/2024/05/16/artisan-ai-raises-73m-to-develop-autonomous-ai-employees/"
+    },
+    {
+      "date": "2024-09-01",
+      "title": "Seed extension to $11.5M total",
+      "type": "funding",
+      "description": "Led by Oliver Jung (angel). HubSpot, Y Combinator, Sequoia and others added. Total raised reaches ~$13.8M heading into the campaign.",
+      "externalUrl": "https://venturebeat.com/business/artisan-raises-11-5m-to-deploy-ai-employees-for-sales-teams"
+    },
+    {
+      "date": "2024-10-01",
+      "title": "Stop Hiring Humans SF billboard campaign launches",
+      "type": "media",
+      "gtmTag": "Provocative paid OOH",
+      "description": "Highway 101 billboard near SFO + ~50 SF bus shelters. Creative includes STOP HIRING HUMANS, Hire Ava the AI BDR, Artisans Won't Complain About Work-Life Balance. Hyperreal CGI portrait of Ava with laser eyes. Timed to coincide with TechCrunch Disrupt — Artisan rented the main booth and plastered the slogan beneath Ava's face.",
+      "externalUrl": "https://sfstandard.com/2025/04/07/the-real-person-behind-san-franciscos-hated-anti-human-ad-campaign/",
+      "articleSlug": "2024-10-stop-hiring-humans-billboard"
+    },
+    {
+      "date": "2024-10-31",
+      "title": "Campaign hits Reddit organically",
+      "type": "media",
+      "description": "Jaspar's LinkedIn post documents the campaign hitting r/sanfrancisco. Death threats begin. Brand-violence engine starts compounding.",
+      "externalUrl": "https://www.linkedin.com/posts/jaspar-carmichael-jack_we-memed-ourselves-on-reddit-last-night-activity-7257043892187852806-vll0"
+    },
+    {
+      "date": "2024-12-10",
+      "title": "First outrage cycle — national press",
+      "type": "media",
+      "gtmTag": "Provocative paid OOH",
+      "description": "Gizmodo, Futurism, SFGate, KRON4, NY Post pile on. Death threats reach the thousands per Jaspar. Billboard graffiti and a few removals reported. Artisan claims billboard generated $2M+ ARR uplift in the SF window — not third-party audited.",
+      "externalUrl": "https://gizmodo.com/ai-firms-stop-hiring-humans-billboard-campaign-sparks-outrage-2000536368"
+    },
+    {
+      "date": "2024-12-20",
+      "title": "Multi-agent product line teased",
+      "type": "product",
+      "description": "Aaron (inbound SDR) + Aria (meeting assistant) referenced as the next Artisans in the lineup."
+    },
+    {
+      "date": "2025-02-15",
+      "title": "Inc cover-style profile of Jaspar",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "Sam Blum, Inc.: This 23-Year-Old AI Entrepreneur Has a Brazen Plan to Eliminate Boring Jobs. Why It Might Work. Frames Jaspar as the founder-as-IP carrier of the campaign — a second earned-media cycle on the original creative.",
+      "externalUrl": "https://www.inc.com/sam-blum/this-23-year-old-ai-entrepreneur-has-a-brazen-plan-to-eliminate-boring-jobs-why-it-might-work/90982918"
+    },
+    {
+      "date": "2025-04-01",
+      "title": "April Fools AI-CEO stunt",
+      "type": "media",
+      "description": "Artisan announces Jaspar is being replaced by Jaspar 2.0 — an AI CEO. Three-week internal sprint. Earns a parallel viral cycle on top of the billboards. Jaspar's stepping-down post was the joke setup.",
+      "externalUrl": "https://www.artisan.co/blog/april-fools-campaign"
+    },
+    {
+      "date": "2025-04-09",
+      "title": "Series A $25M",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Led by Glade Brook Capital. HubSpot Ventures + Sequoia Scout + Y Combinator + Oliver Jung + Day One Ventures + Fellows Fund. Total raised ~$38.8M. ARR disclosed at ~$5M (early 2025) in TechCrunch coverage. Valuation undisclosed. Use of funds: Aaron + Aria product lines.",
+      "externalUrl": "https://techcrunch.com/2025/04/09/artisan-the-stop-hiring-humans-ai-agent-startup-raises-25m-and-is-still-hiring-humans/",
+      "articleSlug": "2025-04-series-a-25m"
+    },
+    {
+      "date": "2025-05-01",
+      "title": "SF Standard retrospective",
+      "type": "media",
+      "description": "Long retrospective on the campaign's reception and Jaspar's intent. Crystallizes the provocative-OOH-as-B3-catalyst pattern.",
+      "externalUrl": "https://sfstandard.com/2025/04/07/the-real-person-behind-san-franciscos-hated-anti-human-ad-campaign/"
+    },
+    {
+      "date": "2025-07-01",
+      "title": "Aaron + Aria expansion announced",
+      "type": "product",
+      "description": "Inbound-SDR Aaron + meeting-assistant Aria roll out to existing Artisan customers. Begins the multi-Artisan workforce narrative.",
+      "externalUrl": "https://justainews.com/companies/funding-news/artisan-secures-25m-series-a/"
+    },
+    {
+      "date": "2025-09-01",
+      "title": "London billboard rollout",
+      "type": "media",
+      "description": "Campaign expands to UK. Artisan-disclosed hundreds of millions of online impressions. Local-press cycle replays the SF outrage at a new market.",
+      "externalUrl": "https://www.ibtimes.co.uk/ai-job-cuts-artisan-campaign-san-francisco-1794414"
+    },
+    {
+      "date": "2025-10-15",
+      "title": "NYC + Times Square rollout",
+      "type": "media",
+      "gtmTag": "Provocative paid OOH",
+      "description": "Massive posters across Manhattan including Times Square and the High Line. Per Artisan, outperforms SF and London on impression count. Triggers second outrage cycle in NY tabloid press.",
+      "externalUrl": "https://thepostmillennial.com/stop-hiring-humans-ai-company-artisan-launches-times-square-billboard-campaign"
+    },
+    {
+      "date": "2025-11-15",
+      "title": "Cumulative campaign ARR uplift disclosed at $5M+",
+      "type": "media",
+      "description": "Company-disclosed figure across SF + London + NYC windows. Not third-party audited. Notably, ~$5M is also the approximate total ARR figure reported around the Series A — meaning campaign-attributed ARR ≈ total ARR.",
+      "externalUrl": "https://www.yahoo.com/news/stop-hiring-humans-viral-ai-122153058.html"
+    },
+    {
+      "date": "2025-12-20",
+      "title": "LinkedIn bans Artisan",
+      "type": "media",
+      "description": "LinkedIn removes the company page + employee profiles. Initial speculation: AI spam. Per TechCrunch follow-up: actual reason was Artisan's use of LinkedIn's name on its website + concerns about data brokers scraping LinkedIn data.",
+      "externalUrl": "https://techcrunch.com/2026/01/07/yes-linkedin-banned-ai-agent-startup-artisan-but-now-its-back/",
+      "articleSlug": "2025-12-linkedin-ban"
+    },
+    {
+      "date": "2026-01-07",
+      "title": "Artisan reinstated on LinkedIn",
+      "type": "media",
+      "description": "After two weeks of negotiation. LinkedIn rate-limits Ava-driven activity going forward — removing a core channel from the multichannel pitch.",
+      "externalUrl": "https://techcrunch.com/2026/01/07/yes-linkedin-banned-ai-agent-startup-artisan-but-now-its-back/"
+    },
+    {
+      "date": "2026-02-15",
+      "title": "Practitioner-review aggregations surface churn pattern",
+      "type": "media",
+      "description": "ColdReach / Salesrobot / MarketBetter independent reviews triangulate ~75–90% three-month churn estimate (not Artisan-disclosed). G2 split: 72% 5-star / 13% 1-star / 0% 3-star — classic narrow-fit polarization with no middle.",
+      "externalUrl": "https://coldreach.ai/blog/artisan-ai-review",
+      "articleSlug": "2026-02-churn-data-leaks"
+    }
+  ],
+  "arr": [
+    {"date": "2025-04-09", "value": 5000000, "source": "TechCrunch / Wikipedia", "confidence": "media"},
+    {"date": "2025-11-15", "value": 5000000, "source": "Artisan campaign disclosure", "confidence": "estimate"}
+  ],
+  "valuation": [
+    {"date": "2024-09-01", "value": 11500000, "round": "Seed extension", "source": "VentureBeat", "confidence": "media"}
+  ],
+  "platforms": [
+    {
+      "slug": "ooh",
+      "name": "Out-of-home advertising",
+      "score": 5,
+      "bestStage": "Pre-inflection — the load-bearing channel",
+      "effort": "Single-event paid placement + creative production",
+      "role": "B3 catalyst in a paid-physical-polarizing form",
+      "description": "OOH is where Artisan's B3 actually lives. Highway 101 billboard near SFO, ~50 SF bus shelters, TechCrunch Disrupt main booth. The creative was a hyperreal CGI Ava portrait beneath STOP HIRING HUMANS and adjacent slogans. Multi-region rollout (SF Oct 2024, London Sep 2025, NYC + Times Square Oct 2025) replayed the same creative in new markets to compound earned-media cycles. The order of magnitude per Artisan: $2M ARR uplift in SF, $5M+ cumulative across all three markets — which is roughly equal to total ARR, meaning the campaign was the majority of revenue origination.",
+      "catalyst": "October 2024 SF launch, deliberately overlapping TechCrunch Disrupt. Artisan rented Disrupt's main booth and plastered the slogan beneath Ava's face. The press attractor was already in front of the journalists who would write about the campaign before the bus-shelter installations were complete.",
+      "catalystUrl": "https://sfstandard.com/2025/04/07/the-real-person-behind-san-franciscos-hated-anti-human-ad-campaign/",
+      "accountUrl": "https://www.artisan.co/blog/stop-hiring-humans",
+      "accountLabel": "Artisan blog — Stop Hiring Humans",
+      "whenItWorks": "When the category is saturated, the cultural anxiety is live, and the founder can absorb thousands of death threats and durable reputation cost without flinching",
+      "whenItDoesnt": "When the cultural charge is absent, the founder cannot tolerate reputation damage, or the product cannot convert any of the manufactured attention into revenue"
+    },
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 4,
+      "bestStage": "Campaign window onward — daily",
+      "effort": "Daily continuous presence",
+      "role": "Founder-as-IP carrier between paid placements",
+      "description": "Jaspar Carmichael-Jack runs continuous daily presence on X — provocative, unapologetic, willing to feed each outrage cycle. The cadence is what keeps the campaign alive between paid placements. Without daily X, the billboards are a single news event; with it, they are a year-long ongoing story. This is E2 founder-as-IP in its provocative-daily variant — same shape as Lemlist's Guillaume Moubeche, pointed at anti-human framing instead of bootstrap-vs-VC.",
+      "catalyst": "October 2024 — the we memed ourselves on Reddit cycle. Jaspar's documentation of the campaign hitting r/sanfrancisco organically becomes the in-real-time chronicle of the brand-violence engine.",
+      "catalystUrl": "https://x.com/jasparcjack",
+      "accountUrl": "https://x.com/jasparcjack",
+      "accountLabel": "@jasparcjack on X",
+      "whenItWorks": "When the founder can sustain daily provocation without slipping or apologizing for years, and the brand voice and the founder voice are the same voice",
+      "whenItDoesnt": "When founder mistakes become brand mistakes — same exposure as Replit's Amjad. The cost is real even when the upside is bigger"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 2,
+      "bestStage": "Campaign window — broken in Dec 2025",
+      "effort": "Daily founder presence + outbound channel for Ava",
+      "role": "Distribution channel + founder amplifier — until the ban",
+      "description": "LinkedIn served two functions: Jaspar's daily founder content (similar register to X) and Ava's outbound LinkedIn channel as part of the multichannel pitch. December 2025 LinkedIn banned Artisan — initial speculation was AI spam, but TechCrunch's January 2026 follow-up clarified the actual reason was Artisan's use of LinkedIn's name on its website plus concerns about data brokers scraping LinkedIn. Reinstated January 7 2026 with rate limits on Ava-driven activity. A core channel was pulled from the multichannel product pitch.",
+      "catalyst": "December 2025 ban + January 2026 reinstatement. The platform-risk concentration that the multichannel pitch had been hiding became visible.",
+      "catalystUrl": "https://techcrunch.com/2026/01/07/yes-linkedin-banned-ai-agent-startup-artisan-but-now-its-back/",
+      "accountUrl": "https://www.linkedin.com/in/jaspar-carmichael-jack",
+      "accountLabel": "Jaspar on LinkedIn",
+      "whenItWorks": "When you treat LinkedIn as a complementary surface to X and the platform's rules are followed conservatively",
+      "whenItDoesnt": "When your product pumps automated outbound through LinkedIn or your data sourcing depends on scraping it. The platform will eventually push back"
+    },
+    {
+      "slug": "techcrunch",
+      "name": "TechCrunch + tier-one tech press",
+      "score": 4,
+      "bestStage": "Funding cycles + campaign-rollout cycles",
+      "effort": "Press relations on funding announcements",
+      "role": "Capital-tier earned media",
+      "description": "TechCrunch carried the Series A announcement (April 9, 2025) — the headline reused the campaign slogan: Artisan, the stop hiring humans AI agent startup, raises $25M and is still hiring humans. The headline is itself a third earned-media cycle for the campaign, layered on top of the December 2024 SF outrage and the February 2025 Inc profile. TechCrunch later carried the LinkedIn ban story too — this is the channel that picks up Artisan's structural events even when the framing is unflattering.",
+      "catalyst": "Series A coverage on April 9, 2025. The headline does the campaign promotion that Artisan would otherwise have to pay for — the slogan reused inside a capital-press headline lands the framing in front of the audience that priced the round.",
+      "catalystUrl": "https://techcrunch.com/2025/04/09/artisan-the-stop-hiring-humans-ai-agent-startup-raises-25m-and-is-still-hiring-humans/",
+      "accountUrl": "https://techcrunch.com/2025/04/09/artisan-the-stop-hiring-humans-ai-agent-startup-raises-25m-and-is-still-hiring-humans/",
+      "accountLabel": "TechCrunch — Series A coverage",
+      "whenItWorks": "When the slogan or framing is sticky enough that the journalist reuses it in the headline, and the funding event lands inside an active campaign cycle",
+      "whenItDoesnt": "When the campaign has cooled or the funding event is the entire story — the journalist writes their own framing then"
+    },
+    {
+      "slug": "inc-profile",
+      "name": "Inc + long-form business profile",
+      "score": 3,
+      "bestStage": "Mid-campaign — the second earned-media cycle",
+      "effort": "Single founder profile placement",
+      "role": "Founder-as-IP framing in the founder press",
+      "description": "Sam Blum's February 2025 Inc piece — This 23-Year-Old AI Entrepreneur Has a Brazen Plan to Eliminate Boring Jobs. Why It Might Work. — is the canonical second cycle on the campaign creative. The Inc framing locks in the founder-as-IP archetype: young, British, willing to be hated, building an AI workforce. The piece is the bridge between the December 2024 outrage cycle and the April 2025 Series A — keeps the campaign warm in the press attention window when there is no new paid placement to anchor it.",
+      "catalyst": "February 2025 Inc profile by Sam Blum. The framing — brazen plan, why it might work — gives capital-press readers a sympathetic version of the same story TechCrunch and Gizmodo had told from outrage angles. This balances the press portfolio.",
+      "catalystUrl": "https://www.inc.com/sam-blum/this-23-year-old-ai-entrepreneur-has-a-brazen-plan-to-eliminate-boring-jobs-why-it-might-work/90982918",
+      "accountUrl": "https://www.inc.com/sam-blum/this-23-year-old-ai-entrepreneur-has-a-brazen-plan-to-eliminate-boring-jobs-why-it-might-work/90982918",
+      "accountLabel": "Inc — Jaspar profile",
+      "whenItWorks": "When the founder profile fills a press window between paid placements and the framing is sympathetic enough to balance the outrage angles",
+      "whenItDoesnt": "When the profile reads as PR-driven. Long-form business journalism punishes that, and the second cycle dies on the page"
+    },
+    {
+      "slug": "g2",
+      "name": "G2 + practitioner reviews",
+      "score": 2,
+      "bestStage": "Late-stage — the trust-debt receipt",
+      "effort": "Reviewers organic",
+      "role": "Independent retention signal",
+      "description": "G2 shows 3.9/5 over 22 reviews with a 72% five-star / 13% one-star / 0% three-star split — bimodal narrow-fit polarization. ColdReach, Salesrobot, MarketBetter, Quotaengine, and Salesforge independent reviews aggregate to a 75–90% three-month churn estimate (not Artisan-disclosed). Recurring complaints: bland personalization, brand-damage risk, deliverability issues, requires substantial human oversight despite autonomous marketing. This is the trust-debt receipt that practitioner-review aggregators leave even when the company never publishes retention numbers.",
+      "catalyst": "February 2026 — practitioner-review aggregations surface the churn pattern. The G2 split + the third-party churn estimates jointly mark the structural concern: campaign-attributed acquisition + narrow-fit polarization + no retention disclosure.",
+      "catalystUrl": "https://coldreach.ai/blog/artisan-ai-review",
+      "accountUrl": "https://www.g2.com/products/artisan-sales/reviews",
+      "accountLabel": "G2 — Artisan Sales reviews",
+      "whenItWorks": "When the company can withstand third-party review aggregation. A clean ICP fit produces a balanced distribution; a narrow ICP produces the bimodal pattern Artisan shows",
+      "whenItDoesnt": "When the company suppresses review surfaces. The data leaks through practitioner aggregators anyway, and the suppression itself becomes a signal"
+    }
+  ]
+}

@@ -1,0 +1,275 @@
+{
+  "company": {
+    "slug": "apollo",
+    "name": "Apollo.io",
+    "legalName": "Apollo Software, Inc.",
+    "tagline": "The cleanest near-death-to-$150M ARR pivot in the 21-case set — sales-led to PLG in 90 days, freemium substrate to enterprise revenue line over five years",
+    "summary": "Apollo.io is the case where a sales-led mid-market SaaS company was 60 days from death in spring 2020, flipped to a $99/month freemium PLG motion, watched conversion lift 20x and retention 6x in twelve months, and spent the next five years quietly building an enterprise revenue line on top of a three-million-user free-tier substrate. End-2024 ARR was $134M; May 2025 ARR was $150M. The company has not raised since the August 2023 Series D at $1.6B valuation and shipped its agentic GTM platform in October 2025 with the AI features bundled into the existing tier ladder rather than spun out as a standalone SKU.",
+    "founded": "2015-11",
+    "founders": ["Tim Zheng", "Roy Chung", "Ray Li"],
+    "seriesNumber": 21
+  },
+  "phases": [
+    {"start": "2015-11", "end": "2018-06", "name": "ZenProspect era", "color": "#fef3c7"},
+    {"start": "2018-06", "end": "2020-09", "name": "Apollo.io rebrand + sales-led failure", "color": "#fee2e2"},
+    {"start": "2020-09", "end": "2023-08", "name": "Freemium pivot + substrate compounding", "color": "#dbeafe"},
+    {"start": "2023-08", "end": "2026-04", "name": "Enterprise revenue + agentic GTM", "color": "#dcfce7"}
+  ],
+  "events": [
+    {
+      "date": "2015-11-01",
+      "title": "ZenProspect incorporated",
+      "type": "product",
+      "description": "Tim Zheng (ex-Brainscape founder), Roy Chung (ex-Doblet/YC W14), and Ray Li (ex-Square engineer) incorporate ZenProspect in San Francisco. Sales prospecting and engagement automation aimed at outbound reps spending 60% of their time on manual data entry.",
+      "articleSlug": "2015-zenprospect-founding"
+    },
+    {
+      "date": "2016-01-15",
+      "title": "Y Combinator Winter 2016 batch",
+      "type": "funding",
+      "description": "ZenProspect joins YC W16. ~$120K standard YC investment. First product is sales-led; ACV ~$10K/year aimed at mid-market sales teams."
+    },
+    {
+      "date": "2018-06-26",
+      "title": "Series A $7M / Rebrand to Apollo.io",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Series A $7M led by Nexus Venture Partners. Same news cycle: rebrand from ZenProspect to Apollo.io. ~500 paying customers at the time. First identifiable C1 attempt — funding + new name + product framing in one window.",
+      "externalUrl": "https://techcrunch.com/2018/06/26/yc-grad-zenprospect-rebrands-as-apollo-lands-7-m-series-a/",
+      "articleSlug": "2018-06-apollo-rebrand-series-a"
+    },
+    {
+      "date": "2019-12-01",
+      "title": "~$5M ARR / sales-led model under stress",
+      "type": "media",
+      "description": "By end-2019 Apollo at ~$5M ARR with sales-led GTM. CAC > LTV — Tim Zheng later disclosed unit economics of $1 spent to acquire $0.80 of revenue. Mid-market ACV (~$10K) too small for sales-led economics, too large for SMB self-serve.",
+      "externalUrl": "https://www.notoriousplg.ai/p/notorious-how-apolloio-went-from"
+    },
+    {
+      "date": "2020-04-01",
+      "title": "Six months of runway / near-death moment",
+      "type": "media",
+      "description": "Apollo had burned through most of its $9M Series A. ~$1M cash remaining, 6 months runway. Best talent leaving. The trigger moment Tim Zheng later described in the SaaStr Annual 2024 keynote.",
+      "externalUrl": "https://www.saastr.com/transitioning-from-sales-led-to-product-led-growth-and-scaling-to-100m-arr-with-apollos-ceo/"
+    },
+    {
+      "date": "2020-09-01",
+      "title": "PLG pivot — freemium + self-serve launch",
+      "type": "product",
+      "gtmTag": "Monetize during peak",
+      "description": "Apollo cuts pricing from ~$10K ACV to $99/month and ships a meaningful free tier. Bottom-up GTM replaces top-down. A/B testing on landing pages reveals 20x conversion lift on the new pricing. Revenue dips short-term as existing customers downgrade; usage and signups explode. The C2 inverse-shape moment — monetize during a self-created demand peak.",
+      "externalUrl": "https://www.notoriousplg.ai/p/notorious-how-apolloio-went-from",
+      "articleSlug": "2020-freemium-pivot"
+    },
+    {
+      "date": "2021-06-01",
+      "title": "Retention 6x improvement",
+      "type": "media",
+      "description": "Within 12 months of the pivot Tim Zheng publicly cites a 6x retention improvement — by tightening existing features rather than shipping new ones. ARR climbs from ~$8M to ~$25M over 2020-2021.",
+      "externalUrl": "https://www.linkedin.com/posts/saastr_how-apollo-6xd-customer-retention-with-activity-7311118570854199297-vOll"
+    },
+    {
+      "date": "2021-11-09",
+      "title": "Series B $32M (Tribe Capital lead)",
+      "type": "funding",
+      "description": "Series B $32M led by Tribe Capital with Nexus Venture Partners and NewView Capital. ~9,000 paying customers disclosed at announcement. First clean C1 bundled milestone post-pivot.",
+      "externalUrl": "https://www.prnewswire.com/news-releases/apolloio-raises-32m-in-series-b-funding-to-make-b2b-sales-prospecting-more-intelligent-automated-and-accessible-301413143.html"
+    },
+    {
+      "date": "2022-03-03",
+      "title": "Series C $110M (Sequoia lead)",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Series C $110M led by Sequoia Capital with Tribe Capital and Nexus Venture Partners. PitchBook reports post-money $910M (Apollo did not disclose officially). 16,000+ paying customers — up 60% in 3 months from Series B. C1 textbook: funding + customer milestone + Sequoia brand.",
+      "externalUrl": "https://techcrunch.com/2022/03/03/apollo-io-raises-110m-as-its-crosses-16k-paying-users-of-its-sales-intelligence-platform/",
+      "articleSlug": "2022-03-series-c-110m"
+    },
+    {
+      "date": "2022-12-31",
+      "title": "~$48M ARR end-2022",
+      "type": "media",
+      "description": "Latka and Sacra triangulate Apollo at ~$48M ARR by end-2022. ~$25M (2021) to ~$48M (2022) — roughly 2x growth.",
+      "externalUrl": "https://getlatka.com/companies/apolloio"
+    },
+    {
+      "date": "2023-08-29",
+      "title": "Series D $100M @ $1.6B (Bain Capital Ventures lead)",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Series D $100M led by Bain Capital Ventures (Enrique Salem) with Sequoia, Tribe, Nexus reupping. Valuation $1.6B (~doubled from Series C). 9x revenue growth over 2 years, 3M+ users, 500K+ companies on platform. Headcount target: double to 1,000 by 2025. The textbook C1 in Apollo's history.",
+      "externalUrl": "https://techcrunch.com/2023/08/29/apollo-io-a-full-stack-sales-tech-platform-bags-100m-at-a-1-6b-valuation/",
+      "articleSlug": "2023-08-series-d-1-6b"
+    },
+    {
+      "date": "2023-12-01",
+      "title": "AI features integrated into core product",
+      "type": "product",
+      "description": "Throughout 2023 Apollo layers AI features (writing assistance, lead scoring, conversation intelligence) into the existing platform. Not framed as separate SKUs — incremental capability inside the freemium ladder.",
+      "externalUrl": "https://www.apollo.io/magazine/our-100-million-series-d-the-future-of-gtm-with-apolloio"
+    },
+    {
+      "date": "2023-12-31",
+      "title": "~$96M ARR end-2023",
+      "type": "media",
+      "description": "Sacra estimates ~$96M ARR by end-2023 (~2x 2022). 9x growth over 2 years matches Apollo's Series D claim against the early-2021 baseline.",
+      "externalUrl": "https://sacra.com/c/apollo/"
+    },
+    {
+      "date": "2024-09-15",
+      "title": "Tim Zheng SaaStr Annual 2024 keynote",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "Tim Zheng tells the near-death-to-$100M PLG-pivot story on the SaaStr Annual main stage. Becomes the canonical Apollo founder-IP artifact. Slide deck circulates widely; talk lands as one of the top five sessions of the conference.",
+      "externalUrl": "https://www.saastr.com/transitioning-from-sales-led-to-product-led-growth-and-scaling-to-100m-arr-with-apollos-ceo/"
+    },
+    {
+      "date": "2024-11-01",
+      "title": "Deloitte Tech Fast 500 #125 ranking",
+      "type": "media",
+      "description": "Apollo ranks #125 on Deloitte Technology Fast 500 — secondary credibility milestone, used in Q4 2024 marketing materials.",
+      "externalUrl": "https://www.prnewswire.com/news-releases/apolloio-ranked-number-125-fastest-growing-company-in-north-america-on-the-2024-deloitte-technology-fast-500-302312822.html"
+    },
+    {
+      "date": "2024-12-31",
+      "title": "$134M ARR end-2024",
+      "type": "media",
+      "description": "Sacra confirms Apollo end-2024 at $134M ARR — up 40% YoY from $96M. ~10K paying customers. Growth slowing in absolute % terms but compounding in absolute dollar adds.",
+      "externalUrl": "https://sacra.com/research/apollo-io-at-134m-arr/"
+    },
+    {
+      "date": "2025-05-15",
+      "title": "$150M ARR (Sacra estimate)",
+      "type": "media",
+      "description": "Sacra reports Apollo at $150M ARR by end of May 2025 — ~12% half-year growth on top of $134M base. Apollo amplifies the milestone in own magazine.",
+      "externalUrl": "https://www.apollo.io/magazine/apollo-reaches-150-million-arr-fueled-by-ai"
+    },
+    {
+      "date": "2025-09-01",
+      "title": "AI platform 500% YoY growth disclosure",
+      "type": "media",
+      "description": "Apollo discloses 500% YoY growth in AI platform usage; >50,000 weekly active users specifically on AI features. Headcount target raised — plans to add 300 team members.",
+      "externalUrl": "https://www.apollo.io/magazine/apollo-ai-platform-500-percent-growth-2025"
+    },
+    {
+      "date": "2025-10-09",
+      "title": "ApolloNEXT — Agentic GTM Platform launch",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Apollo announces the industry-first fully agentic end-to-end GTM Platform at the ApolloNEXT event. AI Assistant ships in beta — chat-driven account research, sequence building, campaign execution. D1 narrative upgrade: from sales engagement tool to AI-native GTM platform. AI bundled into existing Professional and Organization tiers, not spun out as standalone SKU.",
+      "externalUrl": "https://www.apollo.io/magazine/redefining-how-companies-drive-revenue-in-the-ai-era",
+      "articleSlug": "2025-10-apollonext-agentic"
+    },
+    {
+      "date": "2026-02-01",
+      "title": "Agentic outbound general availability",
+      "type": "product",
+      "description": "Following the October 2025 beta, Apollo moves the agentic AI features toward general availability. Pricing structure adjusted to bundle agent capabilities into Professional and Organization tiers rather than charge separately — explicit lesson learned from Notion's standalone-AI-pricing reversal.",
+      "externalUrl": "https://www.apollo.io/pricing"
+    }
+  ],
+  "arr": [
+    {"date": "2019-12-31", "value": 5000000, "source": "Latka", "confidence": "estimate"},
+    {"date": "2020-12-31", "value": 8000000, "source": "Latka", "confidence": "estimate"},
+    {"date": "2021-12-31", "value": 25000000, "source": "Latka", "confidence": "estimate"},
+    {"date": "2022-12-31", "value": 48000000, "source": "Latka / Sacra", "confidence": "estimate"},
+    {"date": "2023-12-31", "value": 96000000, "source": "Sacra", "confidence": "media"},
+    {"date": "2024-12-31", "value": 134000000, "source": "Sacra", "confidence": "media"},
+    {"date": "2025-05-31", "value": 150000000, "source": "Sacra / Apollo magazine", "confidence": "media"}
+  ],
+  "valuation": [
+    {"date": "2018-06-26", "value": 7000000, "round": "Series A (round size)", "source": "TechCrunch", "confidence": "official"},
+    {"date": "2022-03-03", "value": 910000000, "round": "Series C (post-money)", "source": "PitchBook estimate", "confidence": "estimate"},
+    {"date": "2023-08-29", "value": 1600000000, "round": "Series D", "source": "Apollo / TechCrunch", "confidence": "official"}
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 2,
+      "bestStage": "Episodic — Series D onwards",
+      "effort": "Light; not load-bearing",
+      "role": "Founder secondary channel",
+      "description": "Tim Zheng has an X presence but it is not where Apollo's narrative lives. The B2B sales operator audience reads X tactically (RevOps Twitter, Pavilion, GTM Partners) but does not buy through it. Apollo's distribution does not depend on daily X cadence the way Vercel or Lemlist does.",
+      "catalyst": "No single tweet or thread is load-bearing for Apollo. Tim Zheng surfaces around major announcements but X is not the channel that carries the SaaStr 2024 narrative.",
+      "accountUrl": "https://x.com/timzheng",
+      "accountLabel": "Tim Zheng on X",
+      "whenItWorks": "When the founder uses X to amplify conference appearances and milestones — not as the primary surface",
+      "whenItDoesnt": "When B2B audiences are operators who attend conferences and listen to podcasts but read X only intermittently"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 4,
+      "bestStage": "Series B onwards — substrate channel",
+      "effort": "Continuous; SaaStr / community amplification",
+      "role": "B2B operator credibility transfer",
+      "description": "LinkedIn is where Apollo's sales-operator audience actually lives. Tim Zheng's SaaStr 2024 keynote slide deck circulated on LinkedIn for months. RevOps leaders and SDRs share Apollo workflows; Apollo formal accounts share customer wins. The channel compounds slowly but durably for B2B SaaS targeting sales operators.",
+      "catalyst": "The SaaStr 2024 keynote slide deck — How Apollo 6x'd Customer Retention — circulated widely on LinkedIn through late 2024 and early 2025. Each Series announcement (B / C / D) produced a multi-week LinkedIn distribution wave through investor and operator networks.",
+      "catalystUrl": "https://www.linkedin.com/posts/saastr_how-apollo-6xd-customer-retention-with-activity-7311118570854199297-vOll",
+      "accountUrl": "https://www.linkedin.com/company/apolloio/",
+      "accountLabel": "Apollo.io on LinkedIn",
+      "whenItWorks": "When the buyer is a sales operator, RevOps lead, or founder-CEO who treats LinkedIn as a daily reading surface",
+      "whenItDoesnt": "When the buyer is an engineer or designer who treats LinkedIn as a recruiting channel only"
+    },
+    {
+      "slug": "saastr-podcast",
+      "name": "SaaStr (conference + podcast)",
+      "score": 5,
+      "bestStage": "Series D onwards — load-bearing artifact",
+      "effort": "One major appearance per year",
+      "role": "Canonical founder-IP artifact",
+      "description": "SaaStr Annual is the single conference where Apollo's audience all show up — sales operators, founder-CEOs of SMB-to-mid-market SaaS, RevOps leaders. The 2024 keynote where Tim Zheng told the near-death story is Apollo's canonical founder-IP artifact. One big appearance per year, deeply prepared, on the right stage. Cheaper to maintain than daily X presence and works for episodic-attention B2B audiences.",
+      "catalyst": "Tim Zheng SaaStr Annual 2024 keynote (Sep 2024). Top-five session of the conference. Slide deck circulated widely. Frame: PLG-pivot playbook for SaaS founders. The single largest founder-IP investment Apollo has made.",
+      "catalystUrl": "https://www.saastr.com/transitioning-from-sales-led-to-product-led-growth-and-scaling-to-100m-arr-with-apollos-ceo/",
+      "accountUrl": "https://www.saastr.com/transitioning-from-sales-led-to-product-led-growth-and-scaling-to-100m-arr-with-apollos-ceo/",
+      "accountLabel": "Tim Zheng SaaStr 2024 talk",
+      "whenItWorks": "When the buyer attends one major industry conference per year and reads the curated talks afterward",
+      "whenItDoesnt": "When the buyer attends developer or product conferences instead of operator conferences"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 3,
+      "bestStage": "Series C onwards",
+      "effort": "Episodic; high per-episode investment",
+      "role": "Long-form founder narrative",
+      "description": "Investor podcasts (Nexus Conversations, Slush founder talks) and SaaStr keynote video form the long-form Apollo narrative on YouTube. Episodic register, not daily. Each episode becomes a long-tail asset — sliced into clips, threads, and quote-cards that distribute through LinkedIn and X for weeks afterwards.",
+      "catalyst": "Nexus Venture Partners conversation: Moving from sales-led growth to PLG ft. Tim Zheng. The investor-podcast that grounds the SaaStr 2024 narrative in a longer-form conversational frame. Plus Slush founder talks that round out the European audience.",
+      "catalystUrl": "https://nexusvp.com/nexus-conversations/moving-from-sales-led-growth-to-plg-conversation-with-nexus-ft-tim-zheng-apollo-io/",
+      "accountUrl": "https://www.youtube.com/@apolloio",
+      "accountLabel": "Apollo.io on YouTube",
+      "whenItWorks": "When the founder can sustain 60+ minutes of substance about the company, the category, and the operator playbook",
+      "whenItDoesnt": "When the product narrative is thin or the founder has only one talk's worth of material"
+    },
+    {
+      "slug": "g2",
+      "name": "G2 / review sites",
+      "score": 4,
+      "bestStage": "Series C onwards — durable",
+      "effort": "Indirect; user-generated",
+      "role": "B2B procurement validation",
+      "description": "Apollo's PLG substrate produces continuous G2 review flow from the 3M+ user base. By Series D Apollo had thousands of G2 reviews and Leader / Momentum Leader badges across multiple categories. For B2B procurement, where buyers cross-check vendors against G2 before signing, this is structural rather than promotional.",
+      "catalyst": "G2 Insights coverage of Apollo unicorn status (Series D 2023). Apollo Leader and Momentum Leader badges across Sales Intelligence, Sales Engagement, and Lead Scoring categories. Each Series amplified the review velocity through customer marketing campaigns.",
+      "catalystUrl": "https://research.g2.com/insights/apollo.io-hits-unicorn-status-raises-100-million",
+      "accountUrl": "https://www.g2.com/products/apollo-io/reviews",
+      "accountLabel": "Apollo.io on G2",
+      "whenItWorks": "When the product has a large self-serve user base willing to leave reviews — PLG products win this surface by default",
+      "whenItDoesnt": "When the product is sales-led and customers are too few to produce review volume"
+    },
+    {
+      "slug": "apollo-magazine",
+      "name": "Apollo magazine (owned blog)",
+      "score": 4,
+      "bestStage": "All stages — substrate",
+      "effort": "Continuous; editorial team",
+      "role": "Owned distribution surface",
+      "description": "Apollo magazine is the owned editorial channel where every milestone lands first. Series C announcement, Series D announcement, $150M ARR milestone, ApolloNEXT launch — Apollo's own blog is the canonical primary source that downstream press picks up. This is the surface that converts the SaaStr keynote, the LinkedIn share, and the YouTube clip back into product signups.",
+      "catalyst": "The Series D announcement (Aug 2023) at apollo.io/magazine — Our $100M Series D: The Future of GTM. Frame: Apollo as the all-in-one platform making world-class GTM accessible to all. The press release that anchored the textbook C1 bundle.",
+      "catalystUrl": "https://www.apollo.io/magazine/our-100-million-series-d-the-future-of-gtm-with-apolloio",
+      "accountUrl": "https://www.apollo.io/magazine",
+      "accountLabel": "Apollo magazine",
+      "whenItWorks": "When the company has its own audience and uses owned media to land milestones before press picks them up",
+      "whenItDoesnt": "When the company has no audience and the blog reads as press-release SEO with no readers"
+    }
+  ]
+}

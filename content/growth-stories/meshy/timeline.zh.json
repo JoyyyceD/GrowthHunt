@@ -1,0 +1,306 @@
+{
+  "company": {
+    "slug": "meshy",
+    "name": "Meshy",
+    "legalName": "Meshy AI, Inc.",
+    "tagline": "一位清华姚班、MIT 图形学博士先建好了 3D-AI 时代要跑的 GPU 语言，再把它静悄悄产品化——西方 60% 市占率、4,000 万美元 ARR，且没有任何一家主流媒体的融资稿",
+    "summary": "Meshy 是「学术图形学基础设施作为 A1 底盘」打法最干净的当代样本。创始人胡渊鸣（Yuanming Hu / Ethan Hu）在 MIT 博士期间打造了 Taichi Lang——一门 GitHub 27K 星、面向稀疏与量化视觉计算的可微分 GPU 编程语言。2023 年 4 月，他把已存在的 Taichi.graphics 公司悄悄转向，做成产品化的文本到 3D 流水线 Meshy。三年后：1,000 万用户、1 亿生成资产、4,000 万美元 ARR（2026 年 4 月）、85% 毛利率、约 60% 西方 3D 生成市场份额——而没有任何一篇 TechCrunch 的融资稿，且 GTM 姿态刻意保持低调。Sequoia 与 GGV 投资，但在公关上像一家自举公司。这次的少见动作，是 Manus 打法的反向版本：相同的双文化前提条件，相反的运营选择。",
+    "founded": "2023-04",
+    "founders": [
+      "Yuanming Hu (Ethan Hu)"
+    ],
+    "seriesNumber": 22
+  },
+  "phases": [
+    {
+      "start": "2017-09",
+      "end": "2023-04",
+      "name": "Taichi.graphics 基础设施期",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2023-04",
+      "end": "2024-03",
+      "name": "Meshy 1-3 早期产品期",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2024-03",
+      "end": "2025-11",
+      "name": "A 轮与 Meshy 4-5 平台期",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2025-11",
+      "end": "2026-05",
+      "name": "Meshy Labs 与 Formlabs 生态期",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2017-09-01",
+      "title": "胡渊鸣进入 MIT 攻读博士",
+      "type": "product",
+      "description": "胡渊鸣（Ethan Hu）进入 MIT EECS / CSAIL，师从 Frédo Durand 与 Bill Freeman——计算机图形学领域两位最具影响力的导师。基础设施期就此开始，比 Meshy 的运营起点早整整八年。"
+    },
+    {
+      "date": "2019-12-01",
+      "title": "Taichi Lang 首篇 ACM TOG 论文",
+      "type": "product",
+      "description": "面向稀疏与量化视觉计算的 Taichi GPU 编程语言登上 ACM Transactions on Graphics。这块后来成为 Meshy 技术根基的学术底盘，正式进入公开记录。"
+    },
+    {
+      "date": "2021-08-01",
+      "title": "MIT 博士论文（Taichi）答辩",
+      "type": "product",
+      "gtmTag": "创始人即 IP",
+      "description": "MIT 博士论文（关于 Taichi）正式发表。SIGGRAPH 2022 评出杰出博士论文荣誉提名。Taichi Lang 本身在 300 多家机构使用，GitHub 星标突破 27K。",
+      "externalUrl": "https://dspace.mit.edu/handle/1721.1/139327",
+      "articleSlug": "2021-taichi-graphics-legal"
+    },
+    {
+      "date": "2021-10-01",
+      "title": "Taichi.graphics 法律实体成立",
+      "type": "product",
+      "description": "Crunchbase 记录的 Meshy LLC 实体成立于 2021 年——以 Taichi.graphics 之名运营，是围绕这门开源 GPU 语言搭建的前身公司。18 个月后才转型为产品化的 3D 生成公司。"
+    },
+    {
+      "date": "2023-03-01",
+      "title": "Meshy Texturer 上线",
+      "type": "product",
+      "description": "首个对外的 Meshy 品牌工具：一个用于在已有 3D 网格上做 AI 纹理生成的 Web 工具。在游戏开发与 3D 资产社区中做产品前的需求探针。",
+      "externalUrl": "https://www.meshy.ai/blog/"
+    },
+    {
+      "date": "2023-04-15",
+      "title": "Meshy 公司运营起点",
+      "type": "product",
+      "gtmTag": "结构性差异化",
+      "description": "胡渊鸣实质性地从 2023 年 4 月开始把 Meshy 当作产品公司来做。锚点是他 2024 年 8 月 22 日的 X 帖：「我们做 Meshy 已经 16 个月了。」这是运营层面的成立时间，而不是 2021 年的法律实体注册时间。",
+      "externalUrl": "https://x.com/YuanmingH/status/1826630353710449036",
+      "articleSlug": "2023-04-meshy-pivot"
+    },
+    {
+      "date": "2023-10-15",
+      "title": "Meshy-1 发布",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "首款完整的文本到 3D 模型生成产品，宣称比当时主流 AI 方法快 30 倍。在 Product Hunt 发布，并迅速进入早期游戏开发社区的横向对比榜单。",
+      "externalUrl": "https://www.meshy.ai/blog/meshy-1-generate-3d-models-with-ai-in-just-a-minute"
+    },
+    {
+      "date": "2024-01-15",
+      "title": "Meshy 2 / 2.5 增强",
+      "type": "product",
+      "description": "迭代节奏开启——文本到 3D 的质量与速度双线提升。确立「版本节奏即格式」的规律，这后来成为 Meshy 的实际 GTM。Meshy N+1 必须在公开对比中明显胜过 N，否则社区会换工具。",
+      "externalUrl": "https://www.meshy.ai/blog/meshy-2.5-text-to-3d-enhancements"
+    },
+    {
+      "date": "2024-03-15",
+      "title": "A 轮披露（无主流媒体稿件）",
+      "type": "funding",
+      "description": "据数据聚合方（Tracxn / parsers.vc）报道约 1,000 万至 1,500 万美元 A 轮融资。第三方资料显示 Sequoia 与 GGV 在投资人之列。但没有任何 TechCrunch / Bloomberg / Information 的主流稿件。「安静拿钱、热闹做产品」的公关姿态，从这里就开始了。",
+      "externalUrl": "https://www.crunchbase.com/organization/meshy",
+      "articleSlug": "2024-03-series-a"
+    },
+    {
+      "date": "2024-04-10",
+      "title": "Meshy 3 发布",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "新增图像到 3D、雕塑模式、PBR 材质。是公司运营满一周年的节点。图像到 3D 是受众边界的扩张——同一个 SKU 现在也能服务于不擅长写文本提示词的设计师。",
+      "externalUrl": "https://www.meshy.ai/blog/meshy3-sculptures-pbr-and-image-to-3d"
+    },
+    {
+      "date": "2024-08-22",
+      "title": "Meshy 4 发布",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "重构的架构，建模与纹理拆为独立阶段。胡渊鸣在 X 上发文：「Sooo proud of everyone on the Meshy team」——「16 个月以来」的措辞，把运营起点正式锁定在 2023 年 4 月。",
+      "externalUrl": "https://www.einpresswire.com/article/741828738/"
+    },
+    {
+      "date": "2024-12-01",
+      "title": "a16z Games 年度榜单",
+      "type": "media",
+      "gtmTag": "KOL 信用转移",
+      "description": "在 a16z Games 年度榜单中，被评为 3D AI 工具中人气第一。属于 KOL 级的行业背书——在主流融资稿缺位的情况下，承担了相当大一部分公关分量。",
+      "externalUrl": "https://a16z.com/"
+    },
+    {
+      "date": "2025-07-28",
+      "title": "Meshy 5 Preview + 动作库",
+      "type": "product",
+      "gtmTag": "受众边界扩张",
+      "description": "500+ 角色动作、更聪明的图像到 3D 对齐、更干净的几何结构。公开披露：300 万用户，3,000 万生成资产。动作库是边界扩张的关键——产品从静态资产生成器，跨进到「可即用」的角色管线。",
+      "externalUrl": "https://www.prnewswire.com/news-releases/meshy-launches-meshy-5-preview-with-enhanced-ai-3d-generation-tools-and-animation-library-302514902.html",
+      "articleSlug": "2025-07-meshy-5-preview"
+    },
+    {
+      "date": "2025-10-15",
+      "title": "Meshy 6 Preview",
+      "type": "product",
+      "description": "网格质量与几何精度的大幅跃升，对有机角色与解剖结构的处理尤为明显。为 11 月的 ARR 披露窗口做好铺垫。",
+      "externalUrl": "https://www.fabbaloo.com/news/meshy-ai-launches-meshy-6-preview-with-major-advances-in-3d-model-quality"
+    },
+    {
+      "date": "2025-11-13",
+      "title": "1,500 万美元 ARR + 30% 月环比披露",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "通过 PR Wire 自报。月环比增长 30%。位列硅谷增长最快 AI 公司前 2%。85% 毛利率。约 60% 西方 3D 生成市场份额。捆绑 Meshy 6 Preview 一起发布——这是 Meshy 标志性的里程碑格式：ARR 加产品，没有融资轮。",
+      "externalUrl": "https://www.prnewswire.com/apac/news-releases/meshy-hits-15m-arr-with-30-month-over-month-growth-unveils-meshy-6-preview-for-next-gen-3d-creation-302613937.html",
+      "articleSlug": "2025-11-15m-arr"
+    },
+    {
+      "date": "2026-03-10",
+      "title": "GDC 2026 — Meshy Labs + 3,000 万美元 ARR",
+      "type": "product",
+      "gtmTag": "捆绑里程碑",
+      "description": "Meshy Labs 实验性孵化器发布，首作 AI 原生游戏《Black Box: Infinite Arsenal》登场。ARR 三个月翻倍（1,500 万美元 → 3,000 万美元）。1,000 万+ 用户、1 亿+ 生成资产。这是品类定义性的时刻：游戏开发者从此把 Meshy 当作平台，而不只是工具。",
+      "externalUrl": "https://www.prnewswire.com/news-releases/meshy-unveils-meshy-labs-at-gdc-2026--breakthrough-ai-native-gameplay-and-30m-arr-milestone-302708046.html",
+      "articleSlug": "2026-03-meshy-labs-gdc"
+    },
+    {
+      "date": "2026-04-10",
+      "title": "36Kr 长文：4,000 万美元 ARR / 西方 60% 份额",
+      "type": "media",
+      "description": "中文媒体的旗舰报道。ARR 约 3 亿元人民币（约 4,000 万美元；标题里的「3 亿美元」是翻译误差）。SimilarWeb 月访问量 500 万+。把 Meshy 描述为一家硅谷独角兽，而不是「中国团队出海」的故事。",
+      "externalUrl": "https://eu.36kr.com/en/p/3783556211825920"
+    },
+    {
+      "date": "2026-04-14",
+      "title": "Formlabs 合作 / RAPID + TCT 2026",
+      "type": "product",
+      "gtmTag": "受众边界扩张",
+      "description": "受众边界从游戏开发扩张到专业 3D 打印与制造业。Meshy 在 RAPID + TCT 2026 推出 Formlabs 桥接——同一个 SKU，全新买家品类。TAM 在不动产品的前提下扩大了。",
+      "externalUrl": "https://www.morningstar.com/news/pr-newswire/20260414cn34016/",
+      "articleSlug": "2026-03-meshy-labs-gdc"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2025-07-28",
+      "value": 0,
+      "source": "Meshy 5 Preview 披露（仅用户数，未披露 ARR）",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-11-13",
+      "value": 15000000,
+      "source": "PRNewswire / Meshy",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-03-10",
+      "value": 30000000,
+      "source": "GDC 2026 / PRNewswire",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-04-10",
+      "value": 40000000,
+      "source": "36Kr",
+      "confidence": "media"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2024-03-15",
+      "value": 75000000,
+      "round": "A 轮（估算；数据聚合方推导，无主流稿件）",
+      "source": "Tracxn / parsers.vc",
+      "confidence": "estimate"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 3,
+      "bestStage": "底盘信号 + 间歇式发布",
+      "effort": "创始人主导，节奏低",
+      "role": "底盘编码的可信度，不是病毒驱动",
+      "description": "胡渊鸣在 X 上（约 16K 关注）主要发 Meshy 版本与 Taichi 相关动态。刻意保持低调——风格更接近 Linear 的 Karri Saarinen，而不是 Replit 的 Amjad Masad。思想领导权重交给技术成果（Taichi GitHub、MIT 博士论文、SIGGRAPH 论文）来承担，而不是日常的 X 输出。",
+      "catalyst": "胡渊鸣 2024 年 8 月 22 日的 X 帖：「我们做 Meshy 已经 16 个月了。」一句话锁定运营起点，重新框定 2021 年 Crunchbase 的实体注册记录。这条底盘编码型的发布——没有演示视频、没有大张旗鼓，只有版本号和对团队的感谢——本身就是一种姿态。",
+      "catalystUrl": "https://x.com/YuanmingH/status/1826630353710449036",
+      "accountUrl": "https://x.com/YuanmingH",
+      "accountLabel": "X 上的 @YuanmingH",
+      "whenItWorks": "当创始人底盘已经足够深，X 是确认渠道而不是获客渠道。Taichi Lang 的 27K 星承担主要载荷，X 只是确认下一家发版的是哪家公司。",
+      "whenItDoesnt": "如果你没有底盘，单靠 X 出镜不会凭空造一个出来。没有底层技术成果支撑的日更，会衰减为噪音。"
+    },
+    {
+      "slug": "github",
+      "name": "GitHub",
+      "score": 5,
+      "bestStage": "发布前到一直在用",
+      "effort": "数年累计的开源维护",
+      "role": "让 Meshy「有资格存在」的底盘",
+      "description": "Taichi Lang（taichi-dev/taichi）是一门 27K 星、面向稀疏与量化视觉计算的可微分 GPU 编程语言。胡渊鸣在 MIT 博士期间一直创建并维护它，目前 300 多家机构在生产中使用。Meshy 的 3D 生成竞品里，没有任何一家有同级别的底盘——这种不对称就是 GTM 本身。",
+      "catalyst": "Taichi Lang 在 2022 年突破 25K GitHub 星——比 Meshy 运营起点早一年。底盘在产品化之前就已经足够深。等到 Meshy 1 在 2023 年 10 月上线，3D 生成赛道里听过 Taichi 的技术评估者，对创始人都已默认带着正面预期。",
+      "catalystUrl": "https://github.com/taichi-dev/taichi",
+      "accountUrl": "https://github.com/taichi-dev/taichi",
+      "accountLabel": "GitHub 上的 Taichi Lang",
+      "whenItWorks": "当开源成果与产品化 SaaS 在技术上相邻时——Taichi 的可微分仿真直接映射到「3D 网格上的扩散模型」问题。能映射到产品的底盘，是最稀缺、最有价值的一种。",
+      "whenItDoesnt": "如果开源仓库只是一个边角项目（一个营销小工具），它不会换来底盘信用。这个仓库必须是发动机，而不是宣传册。"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 3,
+      "bestStage": "中期可信度",
+      "effort": "间歇式、创始人主导",
+      "role": "面向怀疑者的长内容技术证明",
+      "description": "胡渊鸣至少做过一档创始人播客（XR AI Spotlight）和一档中文播客（WhynotTV / Tairan He）。长视频是「这是不是又一个扩散模型套壳」这种讨论的回应场——一位深谙微分几何的创始人亲自上阵讲技术叙事。",
+      "catalyst": "XR AI Spotlight：The Future of 3D Generative AI with Meshy's CEO Ethan Hu。第一档面向英文受众的长内容，让对 3D 生成感兴趣的观众，直接听到胡渊鸣的「MIT 图形学底盘 × 扩散」论点。",
+      "catalystUrl": "https://www.xraispotlight.com/the-future-of-3d-generative-ai-with-meshys-ceo-ethan-hu/",
+      "accountUrl": "https://www.youtube.com/@MeshyAI",
+      "accountLabel": "YouTube 上的 Meshy",
+      "whenItWorks": "当创始人能把产品背后的技术深度讲透。带图形学博士背景的 3D-AI 创始人，在长内容里的杠杆和「套壳层」创始人完全不同。",
+      "whenItDoesnt": "如果创始人无法守住架构层面的主张，长内容会很无情。底盘浅就先别上。"
+    },
+    {
+      "slug": "discord",
+      "name": "Discord",
+      "score": 4,
+      "bestStage": "拐点前到规模化",
+      "effort": "社区主导，公司侧介入很少",
+      "role": "游戏开发工作流社区 + 重度用户反馈环",
+      "description": "Meshy 的 Discord 是独立游戏开发者、Blender / Unreal / Unity / Roblox / Godot 桥接用户、3D 打印实验者的聚集地。横向对比内容就在这里产生——Meshy、Tripo、Luma 的 Genie、Rodin 一版一版做并排比较。社区帮忙做免费的分发。",
+      "catalyst": "2025 年 7 月 Meshy 5 Preview 动作库发布——500+ 角色动作把这个 Discord 从反馈频道，变成了内容创作飞轮。发布 48 小时内，用户已经发出了带绑定与动作的角色 Demo。",
+      "accountUrl": "https://discord.gg/meshy",
+      "accountLabel": "Meshy Discord",
+      "whenItWorks": "当产品产出可以分享、用户群有强烈的横向对比本能时（游戏开发、音乐、视频）。Discord 奖励实时演示与版本对比。",
+      "whenItDoesnt": "Discord 不适合 B2B 工具——买家是采购，不是重度用户的场景就别用。"
+    },
+    {
+      "slug": "xiaohongshu",
+      "name": "小红书",
+      "score": 2,
+      "bestStage": "在中文 3D 打印 / 电商社区中做认知扩散",
+      "effort": "社区驱动，公司介入很少",
+      "role": "中文圈 3D 打印与电商的曝光面",
+      "description": "中文 3D 打印与电商社区在小红书上发 Meshy 的工作流——「打印这个手办」「渲染这件商品」类内容。公司不会直接做营销，但双文化团队的底盘（Taichi Lang 的中文开源社区）带来天然的有机采用。",
+      "catalyst": "没有单一时刻。中文圈游戏开发、3D 打印与动画创作者持续慢热地在分享 Meshy 产出。和抖音、B 站交叉传播。",
+      "accountUrl": "https://www.xiaohongshu.com/",
+      "accountLabel": "在小红书搜「Meshy」",
+      "whenItWorks": "当一个双文化团队拥有有机的中文触达，又不需要把公司定位为「中国出海」时——是底盘编码型的分发。",
+      "whenItDoesnt": "如果品牌是完全西方定位的，强推小红书反而会把 Meshy 刻意压住的「地域套利」叙事重新拉到水面。"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "score": 3,
+      "bestStage": "持续在用，社区主导",
+      "effort": "社区驱动，公司不种贴",
+      "role": "跨工具横向对比的曝光面",
+      "description": "r/blender、r/Unity3D、r/UnrealEngine、r/3Dprinting 是 Meshy 跟 Tripo、Luma、Rodin、Common Sense Machines 做正面对比的地方。Reddit 帖事实上承担了 3D 生成工具的非官方基准档案功能。",
+      "catalyst": "Meshy 每次版本发布后，社区都会出现新一轮的横向对比帖。社区横评本身就是分发机制：用户在公开比价，Meshy 一直赢，帖子就成了不花钱的市场推广。",
+      "accountUrl": "https://www.reddit.com/r/blender/",
+      "accountLabel": "r/blender 与相邻子版块",
+      "whenItWorks": "当品类有单一标准的横向对比维度时（网格质量 + 拓扑 + 动作绑定 + 导出格式支持），Reddit 奖励可复现的基准。",
+      "whenItDoesnt": "公司去种帖一周内就会被识破。要么社区主导，要么干脆别上。"
+    }
+  ]
+}

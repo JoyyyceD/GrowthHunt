@@ -1,0 +1,274 @@
+{
+  "company": {
+    "slug": "artisan",
+    "name": "Artisan",
+    "legalName": "Artisan AI, Inc.",
+    "tagline": "23 案例库中第一个被同时打上 B3 ✓✓ 标杆与 E1 ⚠ 警示的案例——付费户外广告挑衅式投放的范式样本，也是信任债结构性堆积的样本",
+    "summary": "Artisan 是这样一个案例：在一个早已饱和的品类里，一次高成本的户外广告活动替代了产品本身的获客牵引力——并且在融资定价的指标上奏效。2023 年中创立于旧金山，YC W24 批次，2024 年 1 月推出 AI BDR 产品 Ava。八个月后的 2024 年 10 月，Artisan 把「Stop Hiring Humans」（停止雇人）打上了 SFO 附近的 101 高速公路广告牌和约 50 个旧金山公交候车亭，并且刻意撞期 TechCrunch Disrupt——他们租下了 Disrupt 的主展位。两轮舆论怒火、数千封死亡威胁、一篇 Inc 杂志封面式的创始人特稿，以及 2025 年 4 月 9 日由 Glade Brook Capital 领投的 2500 万美元 A 轮融资接踵而至。B3 子模式（付费 + 实体 + 主动挑衅的单次事件式投放）是真实存在且可复用的。结构性隐忧也是真实存在的：第三方测算的三个月流失率为 75–90%，营销活动归因 ARR 约等于总 ARR，2025 年 12 月被 LinkedIn 封禁，G2 评分呈极化双峰分布、中间空缺。广告活动确实奏效。它换来的东西，目前还在被市场定价。",
+    "founded": "2023-07",
+    "founders": ["Jaspar Carmichael-Jack", "Sam Stallings", "Rupert Dodkins"],
+    "seriesNumber": 23
+  },
+  "phases": [
+    {"start": "2023-07", "end": "2024-01", "name": "YC W24 创立期", "color": "#fef3c7"},
+    {"start": "2024-01", "end": "2024-10", "name": "Ava 上线 + 种子轮加注", "color": "#dbeafe"},
+    {"start": "2024-10", "end": "2025-10", "name": "Stop Hiring Humans 引爆 + A 轮", "color": "#fce7f3"},
+    {"start": "2025-10", "end": "2026-04", "name": "多区域投放 + LinkedIn 危机", "color": "#dcfce7"}
+  ],
+  "events": [
+    {
+      "date": "2023-07-01",
+      "title": "Artisan 在旧金山成立",
+      "type": "product",
+      "description": "三位联合创始人：Jaspar Carmichael-Jack（CEO，创立时 22 岁，曾在英国创办 Burst Digital 品牌代理公司、伦敦按需服务平台 Assist）、Sam Stallings（联合创始人 + CPTO，前 IBM 高级产品经理，UCLA 出身）、Rupert Dodkins（联合创始人，牛津大学天体物理博士，前 ViQi 机器学习工程师）。立项思路：发布一整个被称为 Artisans 的 AI agent 品类——从 AI BDR 起步。",
+      "articleSlug": "2023-yc-w24-founding"
+    },
+    {
+      "date": "2023-11-15",
+      "title": "种子前轮 230 万美元",
+      "type": "funding",
+      "description": "Y Combinator + Bayhouse Capital + Oliver Jung（Revolut / Robinhood / Brex 早期天使）。确认进入 YC W24 批次。",
+      "externalUrl": "https://www.thesaasnews.com/news/artisan-ai-raises-2-3-million-in-pre-seed-round"
+    },
+    {
+      "date": "2024-01-11",
+      "title": "Ava（AI BDR）在 YC Launch 平台上线",
+      "type": "product",
+      "description": "首个公开版本。一个自主 AI agent，基于 2.5 亿条潜客数据库做潜客挖掘、撰写个性化冷邮件、自动回复，并将会议预约塞进人类 SDR / AE 的日历。属于 YC W24 批次。",
+      "externalUrl": "https://www.linkedin.com/posts/y-combinator_artisan-ai-yc-w24-just-launched-ava-an-activity-7151315703189377024-cxmr"
+    },
+    {
+      "date": "2024-04-15",
+      "title": "Platform v2——自主模式",
+      "type": "product",
+      "description": "AI agent 可以在没有人工审批的情况下发出沟通。市场定位为首个真正自主的 AI BDR。对位差异化对标 11x.ai 的 Alice。",
+      "externalUrl": "https://en.wikipedia.org/wiki/Artisan_AI"
+    },
+    {
+      "date": "2024-05-16",
+      "title": "种子轮 730 万美元",
+      "type": "funding",
+      "description": "BOND Capital + Soma Capital + Y Combinator + 其他。为 A 轮搭建基础。",
+      "externalUrl": "https://tech.eu/2024/05/16/artisan-ai-raises-73m-to-develop-autonomous-ai-employees/"
+    },
+    {
+      "date": "2024-09-01",
+      "title": "种子轮加注至 1150 万美元",
+      "type": "funding",
+      "description": "Oliver Jung（天使）领投。HubSpot、Y Combinator、Sequoia 等机构跟进。累计融资达约 1380 万美元，为广告投放做好资金准备。",
+      "externalUrl": "https://venturebeat.com/business/artisan-raises-11-5m-to-deploy-ai-employees-for-sales-teams"
+    },
+    {
+      "date": "2024-10-01",
+      "title": "Stop Hiring Humans 旧金山广告牌运动启动",
+      "type": "media",
+      "gtmTag": "挑衅式付费户外投放",
+      "description": "SFO 附近 101 高速公路广告牌 + 约 50 个旧金山公交候车亭。创意包括「STOP HIRING HUMANS」、「Hire Ava the AI BDR」、「Artisans Won't Complain About Work-Life Balance」等。视觉是 Ava 的超写实 CGI 肖像（有时带着激光眼）。刻意撞期 TechCrunch Disrupt——Artisan 租下了 Disrupt 主展位，并在 Ava 头像下方贴满了这条标语。",
+      "externalUrl": "https://sfstandard.com/2025/04/07/the-real-person-behind-san-franciscos-hated-anti-human-ad-campaign/",
+      "articleSlug": "2024-10-stop-hiring-humans-billboard"
+    },
+    {
+      "date": "2024-10-31",
+      "title": "广告活动在 Reddit 自然引爆",
+      "type": "media",
+      "description": "Jaspar 在 LinkedIn 上记录运动击中 r/sanfrancisco 的瞬间。死亡威胁开始出现。品牌冲击引擎开始复合。",
+      "externalUrl": "https://www.linkedin.com/posts/jaspar-carmichael-jack_we-memed-ourselves-on-reddit-last-night-activity-7257043892187852806-vll0"
+    },
+    {
+      "date": "2024-12-10",
+      "title": "首轮舆论怒火达到顶点——全国性媒体跟进",
+      "type": "media",
+      "gtmTag": "挑衅式付费户外投放",
+      "description": "Gizmodo、Futurism、SFGate、KRON4、NY Post 集中报道。据 Jaspar 自述，死亡威胁达到数千封。广告牌被涂鸦，少数被拆除。Artisan 自述广告活动在旧金山窗口期带来了 200 万美元以上的 ARR 增量——未经第三方审计。",
+      "externalUrl": "https://gizmodo.com/ai-firms-stop-hiring-humans-billboard-campaign-sparks-outrage-2000536368"
+    },
+    {
+      "date": "2024-12-20",
+      "title": "多 Agent 产品线披露",
+      "type": "product",
+      "description": "Aaron（入站 SDR）+ Aria（会议助理）作为下一批 Artisans 出现在产品线规划中。"
+    },
+    {
+      "date": "2025-02-15",
+      "title": "Inc 杂志封面式创始人特稿",
+      "type": "media",
+      "gtmTag": "创始人即 IP",
+      "description": "Sam Blum 撰文于 Inc 杂志：23 岁的 AI 创业者有一个胆大包天的计划，要消灭那些无聊的工作——为什么这件事可能成功。把 Jaspar 框定为这场广告运动的创始人即 IP 载体——成为原始创意之上的第二轮赢得式媒体周期。",
+      "externalUrl": "https://www.inc.com/sam-blum/this-23-year-old-ai-entrepreneur-has-a-brazen-plan-to-eliminate-boring-jobs-why-it-might-work/90982918"
+    },
+    {
+      "date": "2025-04-01",
+      "title": "愚人节 AI-CEO 营销策划",
+      "type": "media",
+      "description": "Artisan 宣布 Jaspar 将被「Jaspar 2.0」（一位 AI CEO）取代。三周内部冲刺完成。在广告牌运动之上叠加了一轮新的病毒传播周期。Jaspar 的卸任贴文是这场玩笑的铺垫。",
+      "externalUrl": "https://www.artisan.co/blog/april-fools-campaign"
+    },
+    {
+      "date": "2025-04-09",
+      "title": "A 轮 2500 万美元",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "Glade Brook Capital 领投。HubSpot Ventures + Sequoia Scout + Y Combinator + Oliver Jung + Day One Ventures + Fellows Fund 跟投。累计融资约 3880 万美元。TechCrunch 报道中披露的 ARR 约为 500 万美元（2025 年初）。估值未披露。资金用途：Aaron + Aria 产品线。",
+      "externalUrl": "https://techcrunch.com/2025/04/09/artisan-the-stop-hiring-humans-ai-agent-startup-raises-25m-and-is-still-hiring-humans/",
+      "articleSlug": "2025-04-series-a-25m"
+    },
+    {
+      "date": "2025-05-01",
+      "title": "SF Standard 长篇回顾",
+      "type": "media",
+      "description": "对广告活动反响和 Jaspar 意图的长篇回顾。把「挑衅式户外作为 B3 引爆点」这一模式定型。",
+      "externalUrl": "https://sfstandard.com/2025/04/07/the-real-person-behind-san-franciscos-hated-anti-human-ad-campaign/"
+    },
+    {
+      "date": "2025-07-01",
+      "title": "Aaron + Aria 产品线扩展发布",
+      "type": "product",
+      "description": "入站 SDR Aaron + 会议助理 Aria 向现有 Artisan 客户铺开。开启「多 Artisan 工作团队」叙事。",
+      "externalUrl": "https://justainews.com/companies/funding-news/artisan-secures-25m-series-a/"
+    },
+    {
+      "date": "2025-09-01",
+      "title": "伦敦广告牌投放",
+      "type": "media",
+      "description": "广告活动扩展至英国。Artisan 自述获得「数亿次在线曝光」。本地媒体周期复制旧金山的怒火节奏，目标市场是新的。",
+      "externalUrl": "https://www.ibtimes.co.uk/ai-job-cuts-artisan-campaign-san-francisco-1794414"
+    },
+    {
+      "date": "2025-10-15",
+      "title": "纽约 + 时代广场投放",
+      "type": "media",
+      "gtmTag": "挑衅式付费户外投放",
+      "description": "横跨曼哈顿的大型海报，包括时代广场和 High Line。据 Artisan 称，曝光量超过旧金山和伦敦。在纽约小报媒体中触发第二轮怒火周期。",
+      "externalUrl": "https://thepostmillennial.com/stop-hiring-humans-ai-company-artisan-launches-times-square-billboard-campaign"
+    },
+    {
+      "date": "2025-11-15",
+      "title": "广告活动累计 ARR 增量披露超 500 万美元",
+      "type": "media",
+      "description": "公司自述跨越旧金山 + 伦敦 + 纽约三个窗口的累计数字。未经第三方审计。值得注意的是：约 500 万美元也是 A 轮报道中披露的总 ARR 数量级——意味着广告活动归因 ARR 约等于总 ARR。",
+      "externalUrl": "https://www.yahoo.com/news/stop-hiring-humans-viral-ai-122153058.html"
+    },
+    {
+      "date": "2025-12-20",
+      "title": "LinkedIn 封禁 Artisan",
+      "type": "media",
+      "description": "LinkedIn 移除公司主页 + 员工档案。最初媒体猜测原因是 AI 垃圾信息。据 TechCrunch 后续报道：实际原因是 Artisan 在自己网站上使用 LinkedIn 名称，以及对其使用的数据经纪商可能未经授权抓取 LinkedIn 数据的担忧。",
+      "externalUrl": "https://techcrunch.com/2026/01/07/yes-linkedin-banned-ai-agent-startup-artisan-but-now-its-back/",
+      "articleSlug": "2025-12-linkedin-ban"
+    },
+    {
+      "date": "2026-01-07",
+      "title": "Artisan 在 LinkedIn 上恢复",
+      "type": "media",
+      "description": "经过两周谈判。LinkedIn 对 Ava 驱动的活动设置速率上限——使多渠道方案中失去了一个核心渠道。",
+      "externalUrl": "https://techcrunch.com/2026/01/07/yes-linkedin-banned-ai-agent-startup-artisan-but-now-its-back/"
+    },
+    {
+      "date": "2026-02-15",
+      "title": "实操评测聚合显现客户流失格局",
+      "type": "media",
+      "description": "ColdReach / Salesrobot / MarketBetter 等独立评测三角验证后得出三个月流失率约 75–90% 的估算（非 Artisan 公开披露）。G2 分布：72% 五星 / 13% 一星 / 0% 三星——典型的窄 ICP 适配两极分化，中间真空。",
+      "externalUrl": "https://coldreach.ai/blog/artisan-ai-review",
+      "articleSlug": "2026-02-churn-data-leaks"
+    }
+  ],
+  "arr": [
+    {"date": "2025-04-09", "value": 5000000, "source": "TechCrunch / Wikipedia", "confidence": "media"},
+    {"date": "2025-11-15", "value": 5000000, "source": "Artisan 广告活动披露", "confidence": "estimate"}
+  ],
+  "valuation": [
+    {"date": "2024-09-01", "value": 11500000, "round": "种子轮加注", "source": "VentureBeat", "confidence": "media"}
+  ],
+  "platforms": [
+    {
+      "slug": "ooh",
+      "name": "户外广告（OOH）",
+      "score": 5,
+      "bestStage": "引爆前——承重渠道",
+      "effort": "单次事件式付费投放 + 创意制作",
+      "role": "B3 引爆点的付费 + 实体 + 挑衅式形态",
+      "description": "户外广告是 Artisan 的 B3 真正承重的地方。SFO 附近 101 高速公路广告牌、约 50 个旧金山公交候车亭、TechCrunch Disrupt 主展位。创意是 Ava 的超写实 CGI 肖像，配合 STOP HIRING HUMANS 等系列标语。多区域投放（旧金山 2024.10、伦敦 2025.9、纽约 + 时代广场 2025.10）在新市场重播同一创意，叠加赢得式媒体周期。Artisan 自述的数量级：旧金山带来 200 万美元 ARR 增量，三个市场累计超过 500 万美元——这与总 ARR 数量级几乎相等，意味着广告活动是大部分营收的来源。",
+      "catalyst": "2024 年 10 月旧金山发布，刻意撞期 TechCrunch Disrupt。Artisan 租下 Disrupt 主展位，把标语贴在 Ava 头像之下。媒体引力源已经在记者面前到位——而那时候候车亭海报甚至还没贴完。",
+      "catalystUrl": "https://sfstandard.com/2025/04/07/the-real-person-behind-san-franciscos-hated-anti-human-ad-campaign/",
+      "accountUrl": "https://www.artisan.co/blog/stop-hiring-humans",
+      "accountLabel": "Artisan 博客 — Stop Hiring Humans",
+      "whenItWorks": "当品类已饱和、文化焦虑正鲜活、创始人能不动声色地承担数千封死亡威胁与持久声誉成本时",
+      "whenItDoesnt": "当文化触发点缺席、创始人无法承受声誉损伤、或产品无法把制造出来的注意力转化为任何营收时"
+    },
+    {
+      "slug": "x",
+      "name": "X（推特）",
+      "score": 4,
+      "bestStage": "广告活动期开始——日更",
+      "effort": "持续日更",
+      "role": "付费投放间隙的创始人即 IP 载体",
+      "description": "Jaspar Carmichael-Jack 在 X 上保持持续日更——挑衅、毫不退让、愿意为每一轮怒火喂料。这种节奏让广告活动在付费投放间隙仍然鲜活。没有日更的 X，广告牌就只是单次新闻事件；有了它，就是一年期的持续品牌叙事。这是 E2 创始人即 IP 的挑衅日更变体——形态接近 Lemlist 的 Guillaume Moubeche，只是把矛头对准了「反人类」语境而非自举对抗 VC。",
+      "catalyst": "2024 年 10 月——「我们在 Reddit 上自我 meme 了」周期。Jaspar 实时记录广告活动击中 r/sanfrancisco 的过程，成为品牌冲击引擎实时编年史。",
+      "catalystUrl": "https://x.com/jasparcjack",
+      "accountUrl": "https://x.com/jasparcjack",
+      "accountLabel": "@jasparcjack on X",
+      "whenItWorks": "当创始人能在多年间持续挑衅却不滑坡、不道歉，并且品牌声音和创始人声音是同一种声音时",
+      "whenItDoesnt": "当创始人犯错就是品牌犯错——同 Replit 的 Amjad 一样的暴露面。即便上行更大，成本也是真实存在的"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 2,
+      "bestStage": "广告活动期——2025 年 12 月被打断",
+      "effort": "创始人日更 + Ava 出站渠道",
+      "role": "分发渠道 + 创始人放大器——直到被封禁",
+      "description": "LinkedIn 承担两种功能：Jaspar 的日更内容（与 X 节奏接近）、Ava 出站 LinkedIn 通道作为多渠道方案一部分。2025 年 12 月 LinkedIn 封禁 Artisan——最初猜测是 AI 垃圾信息，但 TechCrunch 2026 年 1 月的后续披露：实际原因是 Artisan 在自己网站上使用 LinkedIn 名称，加上对数据经纪商可能未经授权抓取 LinkedIn 数据的担忧。2026 年 1 月 7 日恢复，对 Ava 驱动的活动施加速率上限。多渠道方案被抽走了一个核心渠道。",
+      "catalyst": "2025 年 12 月封禁 + 2026 年 1 月恢复。多渠道方案此前隐藏的平台风险集中度变得可见。",
+      "catalystUrl": "https://techcrunch.com/2026/01/07/yes-linkedin-banned-ai-agent-startup-artisan-but-now-its-back/",
+      "accountUrl": "https://www.linkedin.com/in/jaspar-carmichael-jack",
+      "accountLabel": "Jaspar on LinkedIn",
+      "whenItWorks": "当你把 LinkedIn 当作 X 的补充表面，并且严格遵守平台规则时",
+      "whenItDoesnt": "当产品在 LinkedIn 上跑大量自动出站，或数据来源依赖抓取 LinkedIn 时。平台终将反击"
+    },
+    {
+      "slug": "techcrunch",
+      "name": "TechCrunch + 头部科技媒体",
+      "score": 4,
+      "bestStage": "融资周期 + 广告投放周期",
+      "effort": "融资公告期的媒体公关",
+      "role": "资本层赢得式媒体",
+      "description": "TechCrunch 承载了 A 轮融资公告（2025 年 4 月 9 日）——标题复用了广告活动标语：Artisan 这家「停止雇人」的 AI agent 创业公司，融资 2500 万美元——而且仍然在雇人。这个标题本身就是广告活动的第三轮赢得式媒体周期，叠加在 2024 年 12 月旧金山怒火周期与 2025 年 2 月 Inc 特稿之上。TechCrunch 后来也报道了 LinkedIn 封禁——这就是即便框架不那么讨喜也会拿起 Artisan 结构性事件的渠道。",
+      "catalyst": "2025 年 4 月 9 日的 A 轮报道。标题完成了 Artisan 本来要花钱做的广告推广——把标语复用进资本媒体的标题里，等于把这条框架直接送到了为这一轮定价的受众面前。",
+      "catalystUrl": "https://techcrunch.com/2025/04/09/artisan-the-stop-hiring-humans-ai-agent-startup-raises-25m-and-is-still-hiring-humans/",
+      "accountUrl": "https://techcrunch.com/2025/04/09/artisan-the-stop-hiring-humans-ai-agent-startup-raises-25m-and-is-still-hiring-humans/",
+      "accountLabel": "TechCrunch — A 轮报道",
+      "whenItWorks": "当标语或框架黏性足够强，记者会复用进标题；融资事件落在仍然活跃的广告活动周期内时",
+      "whenItDoesnt": "当广告活动已冷却、或融资事件本身就是全部故事——这时记者会自己写框架"
+    },
+    {
+      "slug": "inc-profile",
+      "name": "Inc 杂志 + 长篇商业人物特稿",
+      "score": 3,
+      "bestStage": "广告活动中期——第二轮赢得式媒体周期",
+      "effort": "单次创始人特稿落地",
+      "role": "在创始人媒体中的创始人即 IP 框架",
+      "description": "Sam Blum 在 2025 年 2 月撰写的 Inc 文章：23 岁的 AI 创业者有一个胆大包天的计划，要消灭那些无聊的工作——为什么这件事可能成功。这是广告活动创意上第二轮赢得式媒体周期的范本。Inc 的框架锁定了创始人即 IP 的原型：年轻、英国人、愿意被讨厌、正在打造一支 AI 工作团队。这篇是 2024 年 12 月怒火周期与 2025 年 4 月 A 轮之间的桥梁——在没有新的付费投放可以锚定的窗口里，让广告活动在媒体注意力里保持热度。",
+      "catalyst": "2025 年 2 月 Sam Blum 撰写的 Inc 创始人特稿。其框架（胆大包天的计划，为什么可能成功）为资本媒体读者提供了一个比 TechCrunch 与 Gizmodo 的怒火视角更同情的版本。这平衡了媒体投资组合。",
+      "catalystUrl": "https://www.inc.com/sam-blum/this-23-year-old-ai-entrepreneur-has-a-brazen-plan-to-eliminate-boring-jobs-why-it-might-work/90982918",
+      "accountUrl": "https://www.inc.com/sam-blum/this-23-year-old-ai-entrepreneur-has-a-brazen-plan-to-eliminate-boring-jobs-why-it-might-work/90982918",
+      "accountLabel": "Inc — Jaspar 特稿",
+      "whenItWorks": "当创始人特稿能填补付费投放间隙、且框架足够同情以平衡怒火视角时",
+      "whenItDoesnt": "当特稿读起来像 PR 稿。长篇商业新闻会惩罚这件事，第二轮周期就死在版面上了"
+    },
+    {
+      "slug": "g2",
+      "name": "G2 + 实操评测",
+      "score": 2,
+      "bestStage": "晚期——信任债的票据",
+      "effort": "评测者自然产生",
+      "role": "独立留存信号",
+      "description": "G2 显示 22 条评分中得 3.9 分（满分 5），分布为 72% 五星 / 13% 一星 / 0% 三星——双峰分布、中间真空，典型的窄 ICP 极化。ColdReach、Salesrobot、MarketBetter、Quotaengine、Salesforge 等独立评测三角验证后得出三个月流失率约 75–90% 的估算（非 Artisan 公开披露）。反复出现的投诉：个性化平庸、品牌损害风险、尽管标榜「自主」但仍需大量人工监督、规模化时投递性问题。这就是即便公司从不发布留存数据，实操评测聚合系统也会留下的信任债票据。",
+      "catalyst": "2026 年 2 月——实操评测聚合显现流失格局。G2 分布 + 第三方流失估算共同标记结构性隐忧：广告活动归因获客 + 窄 ICP 极化 + 无留存披露。",
+      "catalystUrl": "https://coldreach.ai/blog/artisan-ai-review",
+      "accountUrl": "https://www.g2.com/products/artisan-sales/reviews",
+      "accountLabel": "G2 — Artisan Sales 评测",
+      "whenItWorks": "当公司能承受第三方评测聚合时。干净的 ICP 适配会产生均衡分布；窄 ICP 会产生 Artisan 这种双峰",
+      "whenItDoesnt": "当公司压制评测渠道。数据仍然会通过实操评测聚合泄漏出来，压制本身反而成为信号"
+    }
+  ]
+}

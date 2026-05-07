@@ -1,0 +1,73 @@
+---
+title: "LinkedIn bans Artisan — and reinstates with rate limits (Dec 2025 / Jan 2026)"
+description: "December 2025. LinkedIn removes Artisan's company page and employee profiles. Initial press speculation: AI spam. Per TechCrunch follow-up: actual reason was Artisan's use of LinkedIn's name on its website plus data-broker scraping concerns. Reinstated January 7 2026 with rate limits on Ava-driven activity."
+date: "2025-12-20"
+type: "media"
+eventTitle: "LinkedIn ban + reinstatement"
+externalUrl: "https://techcrunch.com/2026/01/07/yes-linkedin-banned-ai-agent-startup-artisan-but-now-its-back/"
+---
+
+<Catalyst>
+The LinkedIn ban exposed the platform-risk concentration that Artisan's multichannel pitch had been hiding. LinkedIn was not just a marketing channel for Jaspar — it was a core outbound channel for Ava and a data source for the prospect database. The reinstatement came with rate limits that pulled the channel from a primary surface to a constrained one. This is the structural-fragility receipt the trust-debt analysis predicted.
+</Catalyst>
+
+December 2025. LinkedIn removes Artisan's company page and employee profiles. The action covers the entire company surface on LinkedIn, not just Ava-driven outbound activity. Press speculation immediately points at AI spam — the obvious narrative given Artisan's product profile.
+
+January 7, 2026. TechCrunch's follow-up clarifies the actual reason. **LinkedIn's concerns were two-fold:**
+
+1. Artisan's use of LinkedIn's name on its own website without authorization.
+2. Concerns about Artisan's use of data brokers who may have scraped LinkedIn data without authorization.
+
+Reinstatement comes the same day. **LinkedIn applies rate limits to Ava-driven activity going forward.**
+
+## Why the actual reason matters
+
+The AI-spam framing would have made Artisan a generic case in the AI-outbound-tool category. The actual reason is more specific to Artisan's structure:
+
+| Concern | What it means | Structural exposure |
+|---|---|---|
+| Use of LinkedIn name on website | Attribution + brand-borrowing in the marketing surface | Easy to fix; Artisan can remove the references |
+| Data-broker scraping concerns | The 250M-lead prospect database that powers Ava is sourced via brokers; some of that data may have originated from LinkedIn scraping | Hard to fix; the data sourcing model is core to product |
+
+The first concern is cosmetic. The second concern is structural. Ava's prospect database was a key product capability — Artisan marketed it as the substrate for personalized outbound. If a portion of that database is data that LinkedIn would not authorize, the data sourcing model has platform risk that any subsequent enforcement action against the data brokers themselves could amplify.
+
+## What the rate limits cost
+
+LinkedIn was a documented channel in Artisan's multichannel pitch. The channel's role:
+
+- **Ava sends LinkedIn messages as part of multichannel outbound.** Email + LinkedIn + planned SMS.
+- **Personalization fragments come from LinkedIn profile scraping.** Job title, recent role change, posted content.
+- **Founder voice (Jaspar) on LinkedIn keeps the brand cycle warm.**
+
+Post-reinstatement rate limits hit the first two. The third (founder presence) remained intact because Jaspar's personal account was reinstated alongside the company page. But Ava's outbound LinkedIn capacity was constrained — a reduction in functional throughput for paying customers.
+
+## Why this is a structural concern, not a temporary setback
+
+The case study flags Artisan as E1 ⚠ — campaign-as-only-revenue-origination is structurally fragile. The LinkedIn ban exposes a second structural fragility: **platform risk concentrated in a single distribution channel that the product depends on**.
+
+The ban was not the result of an AI-policy crackdown. It was the result of LinkedIn protecting its own ecosystem from data-broker scraping and brand-name borrowing — both of which were features of Artisan's existing operations rather than new behaviors. The risk had been latent. The enforcement was the surfacing of an existing exposure, not the creation of a new one.
+
+The reinstatement is the optimistic read. The rate limits are the pessimistic read. The honest read is that the channel is still available but constrained, and Artisan's multichannel-pitch market positioning needs to absorb that constraint into how the product is sold from January 2026 forward. **Whether the ban materially altered new-logo acquisition is not public.**
+
+## The broader pattern
+
+Two things worth flagging beyond Artisan's specific case.
+
+**First**: AI-outbound tools sit on top of platform infrastructure that they do not control. LinkedIn, Gmail, Outlook, Twilio. Each platform has a tolerance threshold; each platform's enforcement action shapes what an AI-outbound product can offer. Artisan's exposure here is the same exposure 11x.ai, Salestools.io, and AISDR all carry — Artisan was visible enough to be enforced first.
+
+**Second**: data-broker sourcing is a load-bearing capability for AI-BDR products that none of them advertise prominently. Customers buy the prospect database as if it were a clean substrate; the actual sourcing chain runs through brokers whose own data sourcing is sometimes opaque. The LinkedIn enforcement action is a signal that the chain has visibility risk that the customers buying the product may not have priced.
+
+<Conclusion title="What to copy">
+
+- **Audit your platform-risk concentration before it becomes the regulator's problem.** Artisan's exposure was visible to anyone who read the data sourcing chain. The visible-but-unenforced state was load-bearing on Artisan's product capacity. When the enforcement came it cost throughput.
+- **The actual reason for a platform action matters more than the press framing.** AI-spam framing would have given Artisan a clean recovery narrative; data-broker-scraping framing requires structural changes to data sourcing. Read the actual reason rather than the speculation.
+- **Multichannel pitches hide single-channel dependencies.** LinkedIn was one of three channels in Artisan's pitch but functionally the highest-value one for personalization. Multichannel framing assumes channel substitutability; structural channel constraints reveal that the substitutability was rhetorical.
+- **Reinstatement with rate limits is a partial recovery, not a full one.** The ban-then-reinstatement narrative is favorable in press; the constrained throughput post-reinstatement is what customers actually experience. Internal metrics on post-reinstatement deliverability and meeting-rate are the read that matters.
+
+</Conclusion>
+
+## Sources
+
+- [TechCrunch — Yes, LinkedIn banned AI agent startup Artisan, but now it's back](https://techcrunch.com/2026/01/07/yes-linkedin-banned-ai-agent-startup-artisan-but-now-its-back/)
+- [ColdReach — Artisan AI Review 2026](https://coldreach.ai/blog/artisan-ai-review)
+- [Wikipedia — Artisan AI](https://en.wikipedia.org/wiki/Artisan_AI)

@@ -1,0 +1,275 @@
+{
+  "company": {
+    "slug": "apollo",
+    "name": "Apollo.io",
+    "legalName": "Apollo Software, Inc.",
+    "tagline": "21 家案例集里最干净的一例濒死翻盘——90 天内从销售驱动转为 PLG，五年间在 300 万用户的 freemium 底层基础上长出企业营收线",
+    "summary": "Apollo.io 是这样一家公司：2020 年春天距离破产仅 60 天，紧急把 1 万美元 ACV 销售驱动模式转成 99 美元/月的 freemium PLG，结果转化率提升 20 倍、留存提升 6 倍，随后用五年时间在 300 万用户的 freemium 底层基础上悄悄构建出企业营收线。2024 年底 ARR 1.34 亿美元，2025 年 5 月达到 1.5 亿。自 2023 年 8 月 D 轮 16 亿美元估值以来未再融资。2025 年 10 月发布 agentic GTM 平台时把 AI 能力打包进既有定价层级，而不是单独售卖一个 AI SKU。",
+    "founded": "2015-11",
+    "founders": ["Tim Zheng", "Roy Chung", "Ray Li"],
+    "seriesNumber": 21
+  },
+  "phases": [
+    {"start": "2015-11", "end": "2018-06", "name": "ZenProspect 时期", "color": "#fef3c7"},
+    {"start": "2018-06", "end": "2020-09", "name": "Apollo.io 改名 + 销售驱动失败", "color": "#fee2e2"},
+    {"start": "2020-09", "end": "2023-08", "name": "Freemium pivot + 底层基础复利", "color": "#dbeafe"},
+    {"start": "2023-08", "end": "2026-04", "name": "企业营收 + agentic GTM", "color": "#dcfce7"}
+  ],
+  "events": [
+    {
+      "date": "2015-11-01",
+      "title": "ZenProspect 成立",
+      "type": "product",
+      "description": "Tim Zheng（前 Brainscape 创始人）、Roy Chung（前 Doblet/YC W14）和 Ray Li（前 Square 工程师）在旧金山注册成立 ZenProspect。面向外呼销售代表的销售挖掘和触达自动化产品——这群代表 60% 的时间花在手动数据录入上。",
+      "articleSlug": "2015-zenprospect-founding"
+    },
+    {
+      "date": "2016-01-15",
+      "title": "Y Combinator W16 批次",
+      "type": "funding",
+      "description": "ZenProspect 进入 YC W16 批次。约 12 万美元的标准 YC 投资。第一版产品是销售驱动的；ACV 约 1 万美元/年，目标客户是中型市场销售团队。"
+    },
+    {
+      "date": "2018-06-26",
+      "title": "A 轮 700 万美元 / 改名 Apollo.io",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "A 轮 700 万美元由 Nexus Venture Partners 领投。同一新闻周期：从 ZenProspect 改名为 Apollo.io。当时约 500 家付费客户。Apollo 第一次可识别的 C1 尝试——融资 + 新名字 + 产品定位三件事一起发布。",
+      "externalUrl": "https://techcrunch.com/2018/06/26/yc-grad-zenprospect-rebrands-as-apollo-lands-7-m-series-a/",
+      "articleSlug": "2018-06-apollo-rebrand-series-a"
+    },
+    {
+      "date": "2019-12-01",
+      "title": "约 500 万美元 ARR / 销售驱动模式承压",
+      "type": "media",
+      "description": "2019 年底 Apollo 在销售驱动 GTM 下达到约 500 万美元 ARR。CAC 大于 LTV——Tim Zheng 后来披露的单位经济是「每花 1 美元拉新带回 0.80 美元营收」。中市场 ACV（约 1 万美元）对销售驱动来说太小，对 SMB 自助来说又太大。",
+      "externalUrl": "https://www.notoriousplg.ai/p/notorious-how-apolloio-went-from"
+    },
+    {
+      "date": "2020-04-01",
+      "title": "六个月跑道 / 濒死时刻",
+      "type": "media",
+      "description": "Apollo 已经烧掉了大部分 900 万美元 A 轮资金。剩约 100 万美元现金，6 个月跑道。最好的工程师正在离职。这是 Tim Zheng 后来在 SaaStr Annual 2024 主题演讲里描述的触发 PLG pivot 的那一刻。",
+      "externalUrl": "https://www.saastr.com/transitioning-from-sales-led-to-product-led-growth-and-scaling-to-100m-arr-with-apollos-ceo/"
+    },
+    {
+      "date": "2020-09-01",
+      "title": "PLG pivot——freemium + 自助上线",
+      "type": "product",
+      "gtmTag": "在峰值变现",
+      "description": "Apollo 把定价从约 1 万美元 ACV 降到 99 美元/月，开放真正的免费层。自下而上的 GTM 替代了自上而下。落地页 A/B 测试显示新定价转化率提升 20 倍。短期内既有客户降级使营收下滑；同时使用量和注册量爆发。这是 C2「在峰值变现」的反向版本——在自己制造出来的需求峰值上变现。",
+      "externalUrl": "https://www.notoriousplg.ai/p/notorious-how-apolloio-went-from",
+      "articleSlug": "2020-freemium-pivot"
+    },
+    {
+      "date": "2021-06-01",
+      "title": "留存提升 6 倍",
+      "type": "media",
+      "description": "Pivot 后约 12 个月内，Tim Zheng 公开提到留存提升 6 倍——做法是把既有功能打磨得更紧，而不是上新功能。ARR 从约 800 万美元爬升到约 2500 万美元（2020 至 2021 年）。",
+      "externalUrl": "https://www.linkedin.com/posts/saastr_how-apollo-6xd-customer-retention-with-activity-7311118570854199297-vOll"
+    },
+    {
+      "date": "2021-11-09",
+      "title": "B 轮 3200 万美元（Tribe Capital 领投）",
+      "type": "funding",
+      "description": "B 轮 3200 万美元由 Tribe Capital 领投，Nexus Venture Partners 和 NewView Capital 跟投。发布时披露约 9000 家付费客户。Pivot 后第一次干净的 C1 捆绑里程碑。",
+      "externalUrl": "https://www.prnewswire.com/news-releases/apolloio-raises-32m-in-series-b-funding-to-make-b2b-sales-prospecting-more-intelligent-automated-and-accessible-301413143.html"
+    },
+    {
+      "date": "2022-03-03",
+      "title": "C 轮 1.1 亿美元（Sequoia 领投）",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "C 轮 1.1 亿美元由 Sequoia Capital 领投，Tribe Capital 和 Nexus Venture Partners 跟投。PitchBook 披露投后估值 9.1 亿美元（Apollo 未官方确认）。1.6 万家付费客户——3 个月内从 B 轮的 9000 家增长 60%。教科书级 C1：融资 + 客户里程碑 + Sequoia 品牌。",
+      "externalUrl": "https://techcrunch.com/2022/03/03/apollo-io-raises-110m-as-its-crosses-16k-paying-users-of-its-sales-intelligence-platform/",
+      "articleSlug": "2022-03-series-c-110m"
+    },
+    {
+      "date": "2022-12-31",
+      "title": "约 4800 万美元 ARR（2022 年底）",
+      "type": "media",
+      "description": "Latka 和 Sacra 三角验证 Apollo 2022 年底约 4800 万美元 ARR。约 2500 万（2021）到约 4800 万（2022）——大约 2 倍增长。",
+      "externalUrl": "https://getlatka.com/companies/apolloio"
+    },
+    {
+      "date": "2023-08-29",
+      "title": "D 轮 1 亿美元 @ 16 亿美元估值（Bain Capital Ventures 领投）",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "D 轮 1 亿美元由 Bain Capital Ventures（Enrique Salem）领投，Sequoia、Tribe、Nexus 加注。估值 16 亿美元（约为 C 轮的两倍）。两年内营收增长 9 倍，300 万 + 用户，50 万 + 公司在平台上。员工目标：到 2025 年翻倍至 1000 人。Apollo 历史上的教科书级 C1。",
+      "externalUrl": "https://techcrunch.com/2023/08/29/apollo-io-a-full-stack-sales-tech-platform-bags-100m-at-a-1-6b-valuation/",
+      "articleSlug": "2023-08-series-d-1-6b"
+    },
+    {
+      "date": "2023-12-01",
+      "title": "AI 能力集成进核心产品",
+      "type": "product",
+      "description": "整个 2023 年 Apollo 把 AI 能力（撰写助手、线索打分、对话情报）逐步加进既有平台。不作为单独 SKU——是 freemium 阶梯里的渐进能力扩展。",
+      "externalUrl": "https://www.apollo.io/magazine/our-100-million-series-d-the-future-of-gtm-with-apolloio"
+    },
+    {
+      "date": "2023-12-31",
+      "title": "约 9600 万美元 ARR（2023 年底）",
+      "type": "media",
+      "description": "Sacra 估算 2023 年底 Apollo 约 9600 万美元 ARR（约为 2022 的 2 倍）。两年 9 倍增长，与 Apollo D 轮宣称的相对早 2021 基线的口径一致。",
+      "externalUrl": "https://sacra.com/c/apollo/"
+    },
+    {
+      "date": "2024-09-15",
+      "title": "Tim Zheng SaaStr Annual 2024 主题演讲",
+      "type": "media",
+      "gtmTag": "创始人即 IP",
+      "description": "Tim Zheng 在 SaaStr Annual 主舞台上讲述濒死到 1 亿美元 ARR 的 PLG pivot 故事。成为 Apollo 创始人 IP 的核心物料。幻灯片广泛流传；演讲跻身大会前五场。",
+      "externalUrl": "https://www.saastr.com/transitioning-from-sales-led-to-product-led-growth-and-scaling-to-100m-arr-with-apollos-ceo/"
+    },
+    {
+      "date": "2024-11-01",
+      "title": "Deloitte Tech Fast 500 排名第 125",
+      "type": "media",
+      "description": "Apollo 在 Deloitte Technology Fast 500 排名第 125——次级可信度里程碑，用于 2024 Q4 营销物料。",
+      "externalUrl": "https://www.prnewswire.com/news-releases/apolloio-ranked-number-125-fastest-growing-company-in-north-america-on-the-2024-deloitte-technology-fast-500-302312822.html"
+    },
+    {
+      "date": "2024-12-31",
+      "title": "1.34 亿美元 ARR（2024 年底）",
+      "type": "media",
+      "description": "Sacra 确认 Apollo 2024 年底 1.34 亿美元 ARR——较 9600 万美元同比增长 40%。约 1 万家付费客户。增长率在百分比上放缓，但绝对营收增量仍在复利。",
+      "externalUrl": "https://sacra.com/research/apollo-io-at-134m-arr/"
+    },
+    {
+      "date": "2025-05-15",
+      "title": "1.5 亿美元 ARR（Sacra 估算）",
+      "type": "media",
+      "description": "Sacra 报告 Apollo 在 2025 年 5 月底达到 1.5 亿美元 ARR——在 1.34 亿基线之上半年增长约 12%。Apollo 在自家 magazine 上放大了这个里程碑。",
+      "externalUrl": "https://www.apollo.io/magazine/apollo-reaches-150-million-arr-fueled-by-ai"
+    },
+    {
+      "date": "2025-09-01",
+      "title": "AI 平台同比增长 500% 披露",
+      "type": "media",
+      "description": "Apollo 披露 AI 平台使用量同比增长 500%；AI 功能上的周活用户超过 5 万。员工目标上调——计划再招 300 人。",
+      "externalUrl": "https://www.apollo.io/magazine/apollo-ai-platform-500-percent-growth-2025"
+    },
+    {
+      "date": "2025-10-09",
+      "title": "ApolloNEXT——Agentic GTM 平台发布",
+      "type": "product",
+      "gtmTag": "技术叙事升级",
+      "description": "Apollo 在 ApolloNEXT 大会上发布所谓「行业首个完全 agentic 的端到端 GTM 平台」。AI Assistant 进入 beta——以对话方式驱动客户研究、序列搭建、活动执行。这是 D1 叙事升级：从销售触达工具升级为 AI 原生 GTM 平台。AI 能力打包进既有 Professional 和 Organization 定价层级，而不是单独 SKU。",
+      "externalUrl": "https://www.apollo.io/magazine/redefining-how-companies-drive-revenue-in-the-ai-era",
+      "articleSlug": "2025-10-apollonext-agentic"
+    },
+    {
+      "date": "2026-02-01",
+      "title": "Agentic 外呼正式发布",
+      "type": "product",
+      "description": "继 2025 年 10 月 beta 之后，Apollo 把 agentic AI 能力推进到正式发布阶段。定价结构调整为把 agent 能力打包进 Professional 和 Organization 层级，而不是单独收费——这是从 Notion 标准 AI 定价反转中显式吸取的教训。",
+      "externalUrl": "https://www.apollo.io/pricing"
+    }
+  ],
+  "arr": [
+    {"date": "2019-12-31", "value": 5000000, "source": "Latka", "confidence": "estimate"},
+    {"date": "2020-12-31", "value": 8000000, "source": "Latka", "confidence": "estimate"},
+    {"date": "2021-12-31", "value": 25000000, "source": "Latka", "confidence": "estimate"},
+    {"date": "2022-12-31", "value": 48000000, "source": "Latka / Sacra", "confidence": "estimate"},
+    {"date": "2023-12-31", "value": 96000000, "source": "Sacra", "confidence": "media"},
+    {"date": "2024-12-31", "value": 134000000, "source": "Sacra", "confidence": "media"},
+    {"date": "2025-05-31", "value": 150000000, "source": "Sacra / Apollo magazine", "confidence": "media"}
+  ],
+  "valuation": [
+    {"date": "2018-06-26", "value": 7000000, "round": "A 轮（融资额）", "source": "TechCrunch", "confidence": "official"},
+    {"date": "2022-03-03", "value": 910000000, "round": "C 轮（投后估值）", "source": "PitchBook 估算", "confidence": "estimate"},
+    {"date": "2023-08-29", "value": 1600000000, "round": "D 轮", "source": "Apollo / TechCrunch", "confidence": "official"}
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 2,
+      "bestStage": "偶发——D 轮起",
+      "effort": "轻；非承重",
+      "role": "创始人辅助渠道",
+      "description": "Tim Zheng 在 X 上有曝光，但 Apollo 的叙事不在 X 上活。B2B 销售运营者受众战术性地读 X（RevOps Twitter、Pavilion、GTM Partners），但不在 X 上完成购买决策。Apollo 的分发不像 Vercel 或 Lemlist 那样依赖每日 X 在场。",
+      "catalyst": "没有任何单一推文或主题贴对 Apollo 起承重作用。Tim Zheng 在重要发布前后短暂出现，但 X 不是承载 SaaStr 2024 叙事的渠道。",
+      "accountUrl": "https://x.com/timzheng",
+      "accountLabel": "Tim Zheng on X",
+      "whenItWorks": "当创始人用 X 来放大大会出场和里程碑——而不是把它当主表面",
+      "whenItDoesnt": "当 B2B 受众是只在大会和播客之间消费内容、X 上只是间歇浏览的运营者"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 4,
+      "bestStage": "B 轮起——底层基础渠道",
+      "effort": "持续；SaaStr / 社区放大",
+      "role": "B2B 运营者可信度迁移",
+      "description": "LinkedIn 是 Apollo 销售运营者受众真正活跃的地方。Tim Zheng 的 SaaStr 2024 主题演讲幻灯片在 LinkedIn 上流传了好几个月。RevOps 负责人和 SDR 分享 Apollo 工作流；Apollo 官方账号分享客户故事。这个渠道增长慢，但对面向销售运营者的 B2B SaaS 来说复利效应稳。",
+      "catalyst": "SaaStr 2024 主题演讲幻灯片——Apollo 如何把客户留存提升 6 倍——在 2024 年底到 2025 年初的 LinkedIn 上广泛流传。每次 Series 发布（B / C / D）都通过投资人和运营者网络产生数周分发波。",
+      "catalystUrl": "https://www.linkedin.com/posts/saastr_how-apollo-6xd-customer-retention-with-activity-7311118570854199297-vOll",
+      "accountUrl": "https://www.linkedin.com/company/apolloio/",
+      "accountLabel": "Apollo.io on LinkedIn",
+      "whenItWorks": "当买家是把 LinkedIn 当日常阅读表面的销售运营者、RevOps 负责人或创始人 CEO",
+      "whenItDoesnt": "当买家是只把 LinkedIn 当招聘渠道的工程师或设计师"
+    },
+    {
+      "slug": "saastr-podcast",
+      "name": "SaaStr（大会 + 播客）",
+      "score": 5,
+      "bestStage": "D 轮起——承重物料",
+      "effort": "每年一次大型出场",
+      "role": "创始人 IP 的核心物料",
+      "description": "SaaStr Annual 是 Apollo 受众都会到场的那个大会——销售运营者、SMB 至中市场 SaaS 创始人 CEO、RevOps 负责人。2024 年 Tim Zheng 讲濒死故事的主题演讲是 Apollo 创始人 IP 的核心物料。一年一次大型出场，深度准备，在面向受众的正确舞台上。比每日 X 在场便宜，对偶发关注的 B2B 受众管用。",
+      "catalyst": "Tim Zheng SaaStr Annual 2024 主题演讲（2024 年 9 月）。大会前五场之一。幻灯片广泛流传。叙事框架：面向 SaaS 创始人的 PLG pivot 范式。这是 Apollo 在创始人 IP 上做过的最大单笔投入。",
+      "catalystUrl": "https://www.saastr.com/transitioning-from-sales-led-to-product-led-growth-and-scaling-to-100m-arr-with-apollos-ceo/",
+      "accountUrl": "https://www.saastr.com/transitioning-from-sales-led-to-product-led-growth-and-scaling-to-100m-arr-with-apollos-ceo/",
+      "accountLabel": "Tim Zheng SaaStr 2024 演讲",
+      "whenItWorks": "当买家每年参加一次行业大会、并在事后阅读精选演讲",
+      "whenItDoesnt": "当买家参加的是开发者或产品大会，而不是运营者大会"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 3,
+      "bestStage": "C 轮起",
+      "effort": "偶发；单集投入高",
+      "role": "长内容创始人叙事",
+      "description": "投资人播客（Nexus Conversations、Slush 创始人对谈）和 SaaStr 主题演讲视频，构成 Apollo 在 YouTube 上的长内容叙事。偶发节奏，不是每日。每集都成为长尾资产——切片、主题贴、引言卡片接下来通过 LinkedIn 和 X 分发数周。",
+      "catalyst": "Nexus Venture Partners 对谈：Tim Zheng 谈从销售驱动到 PLG。这次投资人播客把 SaaStr 2024 叙事放进一个更长的对话框架里。加上 Slush 创始人对谈，覆盖到欧洲受众。",
+      "catalystUrl": "https://nexusvp.com/nexus-conversations/moving-from-sales-led-growth-to-plg-conversation-with-nexus-ft-tim-zheng-apollo-io/",
+      "accountUrl": "https://www.youtube.com/@apolloio",
+      "accountLabel": "Apollo.io on YouTube",
+      "whenItWorks": "当创始人能就公司、品类、运营者范式撑满 60 分钟以上有内容的对话",
+      "whenItDoesnt": "当产品叙事单薄，或创始人手里只有一场演讲的料"
+    },
+    {
+      "slug": "g2",
+      "name": "G2 / 评测站",
+      "score": 4,
+      "bestStage": "C 轮起——稳定",
+      "effort": "间接；用户生成",
+      "role": "B2B 采购验证",
+      "description": "Apollo 的 PLG 底层基础持续从 300 万 + 用户中产出 G2 评测流量。到 D 轮 Apollo 已积累上千条 G2 评论，并在多个品类拿到 Leader / Momentum Leader 徽章。对 B2B 采购——买家在签约前会去 G2 交叉核对——这是结构性而非营销性的。",
+      "catalyst": "G2 Insights 报道 Apollo 独角兽身份（D 轮 2023）。Apollo 在销售情报、销售触达、线索打分多个品类拿到 Leader 和 Momentum Leader 徽章。每一轮都通过客户营销活动放大评论速度。",
+      "catalystUrl": "https://research.g2.com/insights/apollo.io-hits-unicorn-status-raises-100-million",
+      "accountUrl": "https://www.g2.com/products/apollo-io/reviews",
+      "accountLabel": "Apollo.io on G2",
+      "whenItWorks": "当产品有大规模愿意留评的自助用户群——PLG 产品默认占据这个表面",
+      "whenItDoesnt": "当产品是销售驱动的，客户量太少、无法产生评论体量"
+    },
+    {
+      "slug": "apollo-magazine",
+      "name": "Apollo magazine（自有博客）",
+      "score": 4,
+      "bestStage": "全阶段——底层基础",
+      "effort": "持续；编辑团队",
+      "role": "自有分发表面",
+      "description": "Apollo magazine 是每个里程碑首发落地的自有编辑渠道。C 轮、D 轮、1.5 亿 ARR、ApolloNEXT 发布——Apollo 的官方博客是下游媒体二次扩散的源头。这个表面把 SaaStr 演讲、LinkedIn 转发、YouTube 切片重新转化回产品注册。",
+      "catalyst": "2023 年 8 月 D 轮发布在 apollo.io/magazine——「我们的 1 亿美元 D 轮：GTM 的未来」。叙事框架：Apollo 是「让世界级 GTM 触手可及」的一体化平台。这就是承载教科书级 C1 捆绑的那篇通稿。",
+      "catalystUrl": "https://www.apollo.io/magazine/our-100-million-series-d-the-future-of-gtm-with-apolloio",
+      "accountUrl": "https://www.apollo.io/magazine",
+      "accountLabel": "Apollo magazine",
+      "whenItWorks": "当公司有自有受众、用自有媒体把里程碑落到媒体跟进之前",
+      "whenItDoesnt": "当公司没有受众，博客读起来像没有读者的 SEO 通稿"
+    }
+  ]
+}
