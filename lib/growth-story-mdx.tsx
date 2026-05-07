@@ -92,29 +92,29 @@ export const Conclusion = ({
 )
 
 export const Stat = ({ value, label }: { value: string; label: string }) => (
+  // v2 style (2026-05): lighter inline highlight instead of card.
+  // The previous card style (rounded box + border + background) made
+  // sequential Stats look like floating tiles disconnected from prose.
+  // New design: subtle accent underline on the value + small mono label
+  // alongside, all within normal text flow.
   <span
     style={{
       display: 'inline-flex',
-      flexDirection: 'column',
-      alignItems: 'flex-start',
-      gap: 2,
-      padding: '6px 14px',
-      margin: '0 4px',
-      borderRadius: 8,
-      background: 'var(--bg-card)',
-      border: '1px solid var(--rule)',
-      verticalAlign: 'middle',
+      alignItems: 'baseline',
+      gap: 6,
+      margin: '0 2px',
+      verticalAlign: 'baseline',
+      whiteSpace: 'nowrap',
     }}
   >
     <span
       style={{
         fontFamily: 'var(--serif)',
-        fontSize: 20,
-        fontWeight: 500,
+        fontWeight: 600,
         color: 'var(--ink)',
-        lineHeight: 1,
-        letterSpacing: '-0.01em',
         fontVariantNumeric: 'tabular-nums',
+        borderBottom: '2px solid var(--accent)',
+        paddingBottom: 1,
       }}
     >
       {value}
@@ -122,10 +122,11 @@ export const Stat = ({ value, label }: { value: string; label: string }) => (
     <span
       style={{
         fontFamily: 'var(--mono)',
-        fontSize: 9,
+        fontSize: '0.72em',
         textTransform: 'uppercase',
-        letterSpacing: '0.1em',
+        letterSpacing: '0.08em',
         color: 'var(--ink-faint)',
+        fontWeight: 500,
       }}
     >
       {label}
