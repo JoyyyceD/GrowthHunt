@@ -4,7 +4,7 @@
     "name": "Hugging Face",
     "legalName": "Hugging Face, Inc.",
     "tagline": "一款失败的青少年聊天机器人，一周内交付的 PyTorch 移植，知识库里最分散的战略投资人阵容",
-    "summary": "Hugging Face 头三年（2016–2019）作为一款只覆盖几千个青少年用户的消费聊天机器人步履蹒跚。2018 年 10 月 Google 发布 BERT，团队在大约一周内交付 PyTorch 移植版——pytorch-pretrained-bert，随后更名为 transformers。几个月之内，它就成了大多数 NLP 论文使用 BERT 时引用的实现。2019 年 A 轮把这次转向正式化。接下来四年，Transformers + Hub + Spaces 复合成为一种学术研究承重底层，是 16 家案例库里独一份。到 2023 年 8 月 D 轮，八家主流科技平台战略股东在同一轮联合参投。到 2024 年公司在约 1.3 亿美元营收上实现盈利，至今没有 E 轮。",
+    "summary": "Hugging Face 头三年（2016–2019）作为一款只覆盖几千个青少年用户的消费聊天机器人步履蹒跚。2018 年 10 月 Google 发布 BERT，团队在大约一周内交付 PyTorch 移植版——pytorch-pretrained-bert，随后更名为 transformers。几个月之内，它就成了大多数 NLP 论文使用 BERT 时引用的实现。2019 年 A 轮把这次转向正式化。接下来四年，Transformers + Hub + Spaces 复合成为一种学术研究承重底层，是 案例库里独一份。到 2023 年 8 月 D 轮，八家主流科技平台战略股东在同一轮联合参投。到 2024 年公司在约 1.3 亿美元营收上实现盈利，至今没有 E 轮。",
     "founded": "2016-01",
     "founders": [
       "Clément Delangue",
@@ -166,7 +166,7 @@
       "title": "D 轮 2.35 亿美元 / 45 亿美元——八家战略投资人",
       "type": "funding",
       "gtmTag": "Bundled milestone",
-      "description": "Salesforce Ventures 领投。参投：Google、Amazon、Nvidia、AMD、Intel、IBM、Qualcomm。八家主流科技平台战略股东在同一轮，其中数家彼此直接竞争。这是 16 家案例库里最分散的战略投资人阵容。",
+      "description": "Salesforce Ventures 领投。参投：Google、Amazon、Nvidia、AMD、Intel、IBM、Qualcomm。八家主流科技平台战略股东在同一轮，其中数家彼此直接竞争。这是 案例库里最分散的战略投资人阵容。",
       "externalUrl": "https://techcrunch.com/2023/08/24/hugging-face-raises-235m-from-investors-including-salesforce-and-nvidia/",
       "articleSlug": "2023-08-series-d-strategic-stack"
     },
