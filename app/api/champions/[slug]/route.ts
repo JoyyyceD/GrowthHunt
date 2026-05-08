@@ -82,6 +82,11 @@ export async function PATCH(req: NextRequest, { params }: Params) {
     update.hue = v
   }
   if ('founderType' in body) update.founder_type = body.founderType == null ? null : String(body.founderType)
+  if ('by' in body) {
+    const v = body.by == null ? null : String(body.by).trim()
+    if (v && v.length > 80) return NextResponse.json({ error: 'invalid_by' }, { status: 400 })
+    update.by_name = v
+  }
   if ('status' in body) {
     update.status = body.status === 'soon' ? 'soon' : 'live'
   }
