@@ -38,7 +38,7 @@ function Logo({ name, hue, size = 72 }: { name: string; hue: string | null; size
   const initials = name.split(/[\s.]+/).map(w => w[0]).slice(0, 2).join('').toUpperCase()
   return (
     <div
-      className="champion-logo"
+      className="logo-mark logo-fallback"
       style={{
         background: hue ?? 'var(--accent)',
         width: size, height: size,
