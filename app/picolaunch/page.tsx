@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 function Logo({ name, hue }: { name: string; hue: string | null }) {
   const initials = name.split(/[\s.]+/).map(w => w[0]).slice(0, 2).join('').toUpperCase()
   return (
-    <div className="champion-logo" style={{ background: hue ?? 'var(--accent)' }}>
+    <div className="logo-mark logo-fallback" style={{ background: hue ?? 'var(--accent)' }}>
       <span>{initials}</span>
     </div>
   )
