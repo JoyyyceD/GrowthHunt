@@ -7,12 +7,13 @@ import type { ChampionRow } from '@/lib/opc-types'
 
 export const dynamic = 'force-dynamic'
 
-// GET /api/champions?sort=hot|new|top&category=...&featured=true
+// GET /api/champions?sort=hot|new|top&category=...&featured=true&owner=me
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url)
   const sort = (searchParams.get('sort') ?? 'hot') as 'hot' | 'new' | 'top'
   const category = searchParams.get('category')
   const featured = searchParams.get('featured')
+  const owner = searchParams.get('owner')
   const limit = Math.min(Number(searchParams.get('limit') ?? 100), 500)
 
   const supabase = await createServerClient()
@@ -21,6 +22,12 @@ export async function GET(req: NextRequest) {
     .select('*')
     .is('deleted_at', null)
     .limit(limit)
+
+  if (owner === 'me') {
+    const { data: { user } } = await supabase.auth.getUser()
+    if (!user) return NextResponse.json({ error: 'unauthorized' }, { status: 401 })
+    q = q.eq('owner_id', user.id)
+  }
 
   if (category) q = q.eq('category', category)
   if (featured === 'true') q = q.eq('featured', true)
@@ -89,6 +96,7 @@ export async function POST(req: NextRequest) {
   const category = body.category ? String(body.category).trim() : null
   const hue = body.hue ? String(body.hue).trim() : null
   const founderType = body.founderType ? String(body.founderType).trim() : null
+  const by = body.by ? String(body.by).trim() : null
   const status = body.status === 'soon' ? 'soon' : 'live'
 
   // Validation
@@ -106,6 +114,9 @@ export async function POST(req: NextRequest) {
   }
   if (hue && !/^#[0-9a-f]{6}$/i.test(hue)) {
     return NextResponse.json({ error: 'invalid_hue' }, { status: 400 })
+  }
+  if (by && by.length > 80) {
+    return NextResponse.json({ error: 'invalid_by' }, { status: 400 })
   }
 
   // Slug = slugify(name) + 4-char random suffix.  Retry on conflict (rare).
@@ -127,7 +138,7 @@ export async function POST(req: NextRequest) {
         category,
         hue: hue?.toLowerCase() ?? null,
         founder_type: founderType,
-        by_name: null, // by_name comes from profile display_name; clients can set later
+        by_name: by,
         status,
         owner_id: user.id,
         source: 'user',

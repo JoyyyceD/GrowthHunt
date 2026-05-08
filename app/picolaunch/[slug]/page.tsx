@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { getChampionWithComments } from '../_lib/fetch'
+import { createServerClient } from '@/lib/supabase/server'
 import VoteButton from '../_client/VoteButton'
 import CommentBox from '../_client/CommentBox'
 
@@ -56,6 +57,10 @@ export default async function PicoLaunchDetail({ params }: Props) {
 
   const { champion, comments } = data
 
+  const supabase = await createServerClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  const isOwner = !!user && user.id === champion.ownerId
+
   // SEO — Product + Article hybrid markup, telling Google this is a real
   // listing AND providing dofollow attribution to the company's site.
   const jsonLd = {
@@ -101,6 +106,16 @@ export default async function PicoLaunchDetail({ params }: Props) {
               <div className="row-tagline">{champion.tagline}</div>
             </div>
             <div className="row-actions">
+              {isOwner && (
+                <Link
+                  href={`/picolaunch/${slug}/edit`}
+                  className="comment-btn"
+                  style={{ textDecoration: 'none' }}
+                  title="Edit this launch"
+                >
+                  Edit
+                </Link>
+              )}
               <VoteButton slug={champion.id} initialCount={champion.upvotes} />
               {champion.url && (
                 // Dofollow → real backlink benefit for the featured company

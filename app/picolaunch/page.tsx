@@ -109,15 +109,12 @@ export default async function PicoLaunchHome() {
           <p className="opc-sub" style={{ marginBottom: 24 }}>
             Auto-published. No review queue. Edit anytime. Sign in once with Google — your email is your identity.
           </p>
-          <a
-            href="mailto:hi@growthhunt.ai?subject=Submit%20my%20AI%20startup"
+          <Link
+            href="/picolaunch/submit"
             style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'var(--accent)', color: 'var(--accent-ink)', border: 'none', padding: '14px 24px', borderRadius: 999, fontSize: 14, fontWeight: 600, textDecoration: 'none' }}
           >
-            Email us to submit →
-          </a>
-          <p style={{ marginTop: 12, color: 'var(--ink-faint)', fontSize: 12 }}>
-            (Self-serve submit form coming soon — for now, send us your URL + tagline.)
-          </p>
+            Submit your AI startup →
+          </Link>
         </div>
       </section>
     </div>

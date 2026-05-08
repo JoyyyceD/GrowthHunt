@@ -6,6 +6,8 @@ import { NextRequest, NextResponse } from 'next/server'
 // Only the playbook sub-routes that write to viralx_* tables require real Supabase auth.
 const PROTECTED_PAGE_ROUTES: string[] = [
   '/dashboard',
+  '/account',
+  '/picolaunch/submit',
   '/viralx/start',
   '/viralx/sessions',
   '/viralx/credentials',
