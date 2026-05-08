@@ -4,7 +4,7 @@ import { TopNav } from '@/lib/site/TopNav'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy — GrowthHunt',
-  description: 'How GrowthHunt and OPChampion handle your data.',
+  description: 'How GrowthHunt and PicoLaunch handle your data.',
 }
 
 export default function PrivacyPage() {
@@ -20,16 +20,16 @@ export default function PrivacyPage() {
 
         <p style={{ fontSize: 18, lineHeight: 1.7, color: 'var(--ink-dim)', marginBottom: 32 }}>
           GrowthHunt (&ldquo;we,&rdquo; the &ldquo;Service&rdquo;) operates growthhunt.ai and the
-          OPChampion sub-product. We try to collect as little as possible. If you can read this and
-          submit a champion without ever logging in, we don&rsquo;t know who you are. This page tells
+          PicoLaunch sub-product. We try to collect as little as possible. If you can read this and
+          submit a launch without ever logging in, we don&rsquo;t know who you are. This page tells
           you what we collect when you do log in, and what we do with it.
         </p>
 
         <Section title="What we collect">
           <ul>
-            <li><b>Email + name + avatar URL</b> — when you sign in with Google. We store these in our database to display author names on your champions/comments.</li>
-            <li><b>Champions you submit</b> — the product info you publish (name, tagline, description, URL, logo, screenshots).</li>
-            <li><b>Comments and upvotes</b> — when you post comments or upvote champions, we store who did it and when.</li>
+            <li><b>Email + name + avatar URL</b> — when you sign in with Google. We store these in our database to display author names on your launches/comments.</li>
+            <li><b>Launches you submit</b> — the product info you publish (name, tagline, description, URL, logo, screenshots).</li>
+            <li><b>Comments and upvotes</b> — when you post comments or upvote launches, we store who did it and when.</li>
             <li><b>Hashed IP for anonymous voting</b> — if you upvote without signing in, we hash your IP (sha256) with a daily-rotating salt to enforce one-vote-per-IP-per-day. The raw IP is not stored. After 24 hours the hash is no longer linkable to your IP.</li>
             <li><b>Cookies</b> — a single Supabase auth session cookie when signed in (HttpOnly, SameSite=Lax). No tracking pixels, no third-party advertising cookies.</li>
           </ul>
@@ -40,7 +40,7 @@ export default function PrivacyPage() {
             <li>Your raw IP address (only the daily-rotating hash for vote dedupe).</li>
             <li>Your Google contacts, calendar, or anything outside basic profile.</li>
             <li>Browsing behavior across other websites.</li>
-            <li>Payment info (we don&rsquo;t charge for OPChampion).</li>
+            <li>Payment info (we don&rsquo;t charge for PicoLaunch).</li>
           </ul>
         </Section>
 
@@ -64,7 +64,7 @@ export default function PrivacyPage() {
         <Section title="Your rights">
           <p>
             Sign in and you can edit or delete anything you posted from your Account page. You can
-            also delete your account, which removes your profile, champions, comments, and upvotes.
+            also delete your account, which removes your profile, launches, comments, and upvotes.
             For data export or other GDPR/CCPA requests, email us (contact below).
           </p>
         </Section>
@@ -83,7 +83,7 @@ export default function PrivacyPage() {
         </Section>
 
         <p style={{ marginTop: 64, fontSize: 13, color: 'var(--ink-faint)' }}>
-          By using growthhunt.ai/OPChampion you agree to this policy. We may update it from time to
+          By using growthhunt.ai/picolaunch you agree to this policy. We may update it from time to
           time; the &ldquo;last updated&rdquo; date at the top reflects the most recent revision.
         </p>
       </main>

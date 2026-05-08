@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { FEATURES } from '@/lib/features'
 import { getAllPosts } from '@/lib/blog'
 import { getAllCompanies } from '@/lib/growth-story'
-import { getAllChampionSlugs } from '@/app/opchampion/_lib/fetch'
+import { getAllChampionSlugs } from '@/app/picolaunch/_lib/fetch'
 
 const BASE = 'https://growthhunt.ai'
 
@@ -21,11 +21,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
-  // OPChampion — every champion gets its own sitemap entry so Google can
+  // PicoLaunch — every launch gets its own sitemap entry so Google can
   // index each one (and pass dofollow link equity to the featured site).
   const championSlugs = await getAllChampionSlugs()
-  const opChampionDetails: MetadataRoute.Sitemap = championSlugs.map(slug => ({
-    url: `${BASE}/opchampion/${slug}`,
+  const picoLaunchDetails: MetadataRoute.Sitemap = championSlugs.map(slug => ({
+    url: `${BASE}/picolaunch/${slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly',
     priority: 0.7,
@@ -87,13 +87,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
-      url: `${BASE}/opchampion`,
+      url: `${BASE}/picolaunch`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     ...growthStoryCompanies,
-    ...opChampionDetails,
+    ...picoLaunchDetails,
     ...featurePages,
     ...blogPosts,
   ]

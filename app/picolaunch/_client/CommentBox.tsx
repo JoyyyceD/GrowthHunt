@@ -48,7 +48,7 @@ export default function CommentBox({ slug, initialComments }: Props) {
     if (!trimmed || posting) return
 
     if (authed === false) {
-      router.push(`/login?next=/opchampion/${encodeURIComponent(slug)}`)
+      router.push(`/login?next=/picolaunch/${encodeURIComponent(slug)}`)
       return
     }
 
@@ -84,7 +84,7 @@ export default function CommentBox({ slug, initialComments }: Props) {
       {authed === false ? (
         <div className="comment-locked">
           <p>Sign in to leave a comment. Reading is free for everyone.</p>
-          <a className="ghost-btn" href={`/login?next=/opchampion/${encodeURIComponent(slug)}`}>
+          <a className="ghost-btn" href={`/login?next=/picolaunch/${encodeURIComponent(slug)}`}>
             Sign in to comment
           </a>
         </div>

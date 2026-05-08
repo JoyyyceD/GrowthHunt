@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react'
 import { TopNav } from '@/lib/site/TopNav'
-import './opchampion.css'
+import './picolaunch.css'
 
-export default function OpChampionLayout({ children }: { children: ReactNode }) {
+export default function PicoLaunchLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <TopNav variant="page" />

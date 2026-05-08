@@ -8,8 +8,8 @@ export default async function Image({ params }: { params: Promise<{ slug: string
   const { slug } = await params
   const data = await getChampionWithComments(slug)
 
-  const name = data?.champion.name ?? 'OPChampion'
-  const tagline = data?.champion.tagline ?? 'A one-person company.'
+  const name = data?.champion.name ?? 'PicoLaunch'
+  const tagline = data?.champion.tagline ?? 'An AI startup.'
   const hue = data?.champion.hue ?? '#e84e1b'
 
   const initials = name
@@ -35,7 +35,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
       <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
         <span style={{ fontSize: 20, color: '#14110d', letterSpacing: '-0.02em' }}>GrowthHunt</span>
         <span style={{ fontSize: 11, fontFamily: 'monospace', color: 'rgba(20,17,13,0.4)', textTransform: 'uppercase', letterSpacing: '0.1em', background: '#f3f1ec', border: '1px solid rgba(20,17,13,0.1)', borderRadius: 999, padding: '4px 12px' }}>
-          OPChampion
+          PicoLaunch
         </span>
       </div>
 
@@ -63,7 +63,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
         <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#e84e1b' }} />
         <span style={{ fontSize: 14, fontFamily: 'monospace', color: 'rgba(20,17,13,0.35)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-          growthhunt.ai/opchampion
+          growthhunt.ai/picolaunch
         </span>
       </div>
     </div>,
