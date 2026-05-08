@@ -1,11 +1,12 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  async rewrites() {
-    // /opchampion has no page.tsx — this rewrite serves the static SPA.
-    // /opchampion/[slug] has a page.tsx, so App Router handles it (rewrite doesn't match).
+  async redirects() {
     return [
-      { source: '/opchampion', destination: '/OPChampion/index.html' },
+      { source: '/opchampion', destination: '/picolaunch', permanent: true },
+      { source: '/opchampion/:slug*', destination: '/picolaunch/:slug*', permanent: true },
+      { source: '/OPChampion', destination: '/picolaunch', permanent: true },
+      { source: '/OPChampion/:slug*', destination: '/picolaunch/:slug*', permanent: true },
     ]
   },
 }

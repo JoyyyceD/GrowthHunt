@@ -46,7 +46,7 @@ export default function VoteButton({ slug, initialCount }: Props) {
     } catch { /* env missing */ }
 
     if (!supabaseUser && !soft) {
-      router.push(`/login?next=/opchampion/${encodeURIComponent(slug)}`)
+      router.push(`/login?next=/picolaunch/${encodeURIComponent(slug)}`)
       return
     }
 

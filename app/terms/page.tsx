@@ -4,7 +4,7 @@ import { TopNav } from '@/lib/site/TopNav'
 
 export const metadata: Metadata = {
   title: 'Terms of Service — GrowthHunt',
-  description: 'The basic ground rules for using GrowthHunt and OPChampion.',
+  description: 'The basic ground rules for using GrowthHunt and PicoLaunch.',
 }
 
 export default function TermsPage() {
@@ -19,7 +19,7 @@ export default function TermsPage() {
         </h1>
 
         <p style={{ fontSize: 18, lineHeight: 1.7, color: 'var(--ink-dim)', marginBottom: 32 }}>
-          These are the rules for using GrowthHunt (&ldquo;the Service&rdquo;) and the OPChampion
+          These are the rules for using GrowthHunt (&ldquo;the Service&rdquo;) and the PicoLaunch
           sub-product. By using the Service you agree to them. They&rsquo;re short on purpose.
         </p>
 
@@ -30,8 +30,8 @@ export default function TermsPage() {
 
         <Section title="What you can do">
           <ul>
-            <li>Browse, upvote, and comment on champions.</li>
-            <li>Submit your own one-person company / project for inclusion.</li>
+            <li>Browse, upvote, and comment on launches.</li>
+            <li>Submit your own AI startup / project for inclusion.</li>
             <li>Edit or delete your own submissions, comments, and account at any time.</li>
           </ul>
         </Section>
@@ -50,7 +50,7 @@ export default function TermsPage() {
           <p>
             You keep ownership of everything you post. By posting, you grant us a non-exclusive,
             worldwide, royalty-free license to host, display, and reproduce that content as needed
-            to operate the Service (e.g. show your champion in feeds, archives, and search).
+            to operate the Service (e.g. show your launch in feeds, archives, and search).
           </p>
         </Section>
 
@@ -79,7 +79,7 @@ export default function TermsPage() {
           <p>
             To the extent permitted by law, our liability for any claim related to the Service is
             limited to the amount you&rsquo;ve paid us in the past 12 months — i.e. zero, since
-            OPChampion is currently free.
+            PicoLaunch is currently free.
           </p>
         </Section>
 

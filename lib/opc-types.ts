@@ -43,7 +43,7 @@ export type CommentRow = {
   created_at: string
 }
 
-// Frontend-facing shapes (matches the mock STORE.* shapes used in opchampion.jsx)
+// Frontend-facing shapes
 
 export type ChampionDTO = {
   id: string                  // slug — the LOGOS lookup key in JSX

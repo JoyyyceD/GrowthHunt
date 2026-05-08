@@ -26,20 +26,20 @@ export default function Image() {
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
         <div style={{ fontSize: 88, lineHeight: 1.0, letterSpacing: '-0.035em', color: '#14110d', fontWeight: 400 }}>
-          OPChampion
+          PicoLaunch
         </div>
         <div style={{ fontSize: 28, lineHeight: 1.35, letterSpacing: '-0.015em', color: '#e84e1b', fontStyle: 'italic' }}>
-          One-person companies, one issue a week.
+          AI startups, one issue a week.
         </div>
         <div style={{ fontSize: 20, lineHeight: 1.5, color: 'rgba(20,17,13,0.55)', fontFamily: 'Georgia, serif', maxWidth: 760, fontStyle: 'italic' }}>
-          Twelve indie hacker picks every Monday. Upvote, comment, follow.
+          Twelve AI-startup picks every Monday. Upvote, comment, follow.
         </div>
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
         <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#e84e1b' }} />
         <span style={{ fontSize: 14, fontFamily: 'monospace', color: 'rgba(20,17,13,0.35)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-          growthhunt.ai/opchampion
+          growthhunt.ai/picolaunch
         </span>
       </div>
     </div>,

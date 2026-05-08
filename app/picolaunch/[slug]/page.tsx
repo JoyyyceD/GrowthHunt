@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const data = await getChampionWithComments(slug)
   if (!data) return {}
   const { champion } = data
-  const url = `https://growthhunt.ai/opchampion/${slug}`
+  const url = `https://growthhunt.ai/picolaunch/${slug}`
   return {
     title: `${champion.name} — ${champion.tagline}`,
     description: champion.about ?? champion.tagline,
@@ -22,12 +22,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       type: 'article',
       url,
-      title: `${champion.name} — OPChampion`,
+      title: `${champion.name} — PicoLaunch`,
       description: champion.about ?? champion.tagline,
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${champion.name} — OPChampion`,
+      title: `${champion.name} — PicoLaunch`,
       description: champion.about ?? champion.tagline,
     },
   }
@@ -49,7 +49,7 @@ function Logo({ name, hue, size = 72 }: { name: string; hue: string | null; size
   )
 }
 
-export default async function OpChampionDetail({ params }: Props) {
+export default async function PicoLaunchDetail({ params }: Props) {
   const { slug } = await params
   const data = await getChampionWithComments(slug)
   if (!data) notFound()
@@ -64,13 +64,13 @@ export default async function OpChampionDetail({ params }: Props) {
     headline: `${champion.name} — ${champion.tagline}`,
     description: champion.about ?? champion.tagline,
     datePublished: new Date(champion.submittedAt).toISOString(),
-    author: { '@type': 'Person', name: champion.by ?? 'Solo founder' },
+    author: { '@type': 'Person', name: champion.by ?? 'Founder' },
     publisher: {
       '@type': 'Organization',
-      name: 'GrowthHunt — OPChampion',
-      url: 'https://growthhunt.ai/opchampion',
+      name: 'GrowthHunt — PicoLaunch',
+      url: 'https://growthhunt.ai/picolaunch',
     },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://growthhunt.ai/opchampion/${slug}` },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://growthhunt.ai/picolaunch/${slug}` },
     about: champion.url ? { '@type': 'WebSite', url: champion.url, name: champion.name } : undefined,
   }
 
@@ -80,8 +80,8 @@ export default async function OpChampionDetail({ params }: Props) {
 
       <section className="opc-section" style={{ padding: '64px 0 32px' }}>
         <div className="shell" style={{ maxWidth: 760 }}>
-          <Link href="/opchampion" style={{ display: 'inline-block', marginBottom: 32, fontSize: 13, color: 'var(--ink-faint)', textDecoration: 'none', fontFamily: 'var(--mono)', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
-            ← All champions
+          <Link href="/picolaunch" style={{ display: 'inline-block', marginBottom: 32, fontSize: 13, color: 'var(--ink-faint)', textDecoration: 'none', fontFamily: 'var(--mono)', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+            ← All launches
           </Link>
 
           {/* Hero */}
@@ -94,7 +94,7 @@ export default async function OpChampionDetail({ params }: Props) {
                 {champion.featured && <span className="row-pill featured">Editor&rsquo;s pick</span>}
               </div>
               <div className="row-by">
-                by {champion.by ?? 'Solo founder'}
+                by {champion.by ?? 'Founder'}
                 {champion.founderType && <> · <i style={{ color: 'var(--ink-faint)' }}>{champion.founderType}</i></>}
                 {champion.category && <> · {champion.category}</>}
               </div>

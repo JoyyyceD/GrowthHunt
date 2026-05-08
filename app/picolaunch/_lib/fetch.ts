@@ -17,7 +17,7 @@ export async function getAllChampions(sort: 'hot' | 'new' | 'top' = 'hot'): Prom
 
   const { data, error } = await q
   if (error) {
-    console.error('[opchampion/fetch] getAllChampions', error)
+    console.error('[picolaunch/fetch] getAllChampions', error)
     return []
   }
 
