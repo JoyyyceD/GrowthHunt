@@ -123,14 +123,18 @@ export default async function PicoLaunchHome() {
 
 function ChampionRow({ champion, rank }: { champion: Awaited<ReturnType<typeof getAllChampions>>[number]; rank?: number }) {
   return (
-    <div className="champion-row">
+    <div className="champion-row" style={{ position: 'relative' }}>
+      {/* Overlay link — entire card click area routes to detail page */}
+      <Link
+        href={`/picolaunch/${champion.id}`}
+        aria-label={`Open ${champion.name}`}
+        style={{ position: 'absolute', inset: 0, zIndex: 1 }}
+      />
       {rank && <div className="row-rank mono">{String(rank).padStart(2, '0')}</div>}
       <Logo name={champion.name} hue={champion.hue} />
       <div className="row-meta">
         <div className="row-head">
-          <Link href={`/picolaunch/${champion.id}`} style={{ color: 'inherit', textDecoration: 'none' }}>
-            <h3>{champion.name}</h3>
-          </Link>
+          <h3>{champion.name}</h3>
           {champion.status === 'Soon' && <span className="row-pill soon">Coming soon</span>}
           {champion.featured && <span className="row-pill featured">Editor&rsquo;s pick</span>}
         </div>
@@ -142,12 +146,12 @@ function ChampionRow({ champion, rank }: { champion: Awaited<ReturnType<typeof g
         </div>
         <div className="row-tagline">{champion.tagline}</div>
       </div>
-      <div className="row-actions">
+      <div className="row-actions" style={{ position: 'relative', zIndex: 2 }}>
         <VoteButton slug={champion.id} initialCount={champion.upvotes} />
-        <Link href={`/picolaunch/${champion.id}`} className="comment-btn">
+        <span className="comment-btn" style={{ cursor: 'default' }} aria-label={`${champion.comments} comments`}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
           <span>{champion.comments}</span>
-        </Link>
+        </span>
         {champion.url && (
           // dofollow external link → SEO benefit for the featured company
           <a href={champion.url} target="_blank" rel="noopener" className="visit-btn" aria-label={`Visit ${champion.name}`}>
