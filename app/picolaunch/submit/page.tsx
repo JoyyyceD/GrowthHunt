@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { TopNav } from '@/lib/site/TopNav'
 import { getGoogleUser } from '@/lib/picolaunch/auth-gate'
 import SubmitForm from './SubmitForm'
 
@@ -17,7 +16,6 @@ export default async function SubmitPage() {
 
   return (
     <div>
-      <TopNav variant="page" />
       <section className="opc-section" style={{ padding: '64px 0 32px' }}>
         <div className="shell" style={{ maxWidth: 720 }}>
           <Link

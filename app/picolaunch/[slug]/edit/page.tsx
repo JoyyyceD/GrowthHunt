@@ -1,7 +1,6 @@
 import { notFound, redirect } from 'next/navigation'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { TopNav } from '@/lib/site/TopNav'
 import { requireGoogleAuth } from '@/lib/picolaunch/auth-gate'
 import { createServerClient } from '@/lib/supabase/server'
 import { championToDTO } from '@/lib/opc-mappers'
@@ -40,7 +39,6 @@ export default async function EditPage({ params }: Props) {
 
   return (
     <div>
-      <TopNav variant="page" />
       <section className="opc-section" style={{ padding: '64px 0 32px' }}>
         <div className="shell" style={{ maxWidth: 720 }}>
           <Link
