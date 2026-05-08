@@ -104,16 +104,16 @@ export default async function MyLaunchesPage() {
 
       <div className="champion-list">
         {launches.map(c => (
-          <div key={c.uuid} className="champion-row">
+          <div key={c.uuid} className="champion-row" style={{ position: 'relative' }}>
+            <Link
+              href={`/picolaunch/${c.id}`}
+              aria-label={`Open ${c.name}`}
+              style={{ position: 'absolute', inset: 0, zIndex: 1 }}
+            />
             <Logo name={c.name} hue={c.hue} logoUrl={c.logoUrl} />
             <div className="row-meta">
               <div className="row-head">
-                <Link
-                  href={`/picolaunch/${c.id}`}
-                  style={{ color: 'inherit', textDecoration: 'none' }}
-                >
-                  <h3>{c.name}</h3>
-                </Link>
+                <h3>{c.name}</h3>
                 {c.status === 'Soon' && <span className="row-pill soon">Coming soon</span>}
                 {c.featured && <span className="row-pill featured">Editor&rsquo;s pick</span>}
               </div>
@@ -123,7 +123,7 @@ export default async function MyLaunchesPage() {
               </div>
               <div className="row-tagline">{c.tagline}</div>
             </div>
-            <div className="row-actions">
+            <div className="row-actions" style={{ position: 'relative', zIndex: 2 }}>
               <Link
                 href={`/picolaunch/${c.id}/edit`}
                 className="comment-btn"
