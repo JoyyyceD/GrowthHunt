@@ -12,16 +12,26 @@ export type GoogleUser = {
 
 // Returns the Google-authed user, null for soft-auth-only, or redirects to /login.
 // Pages that require real auth.uid() (writes) render the upgrade prompt when null.
+//
+// Name + avatar prefer profiles.display_name / profiles.avatar_url (user-editable
+// via /api/me PATCH) over the immutable Google OAuth metadata. This keeps the
+// dashboard header, submit-form "by" prefill, and any other display in sync with
+// what the user set in Settings.
 export async function getGoogleUser(nextPath: string): Promise<GoogleUser | null> {
   const supabase = await createServerClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (user) {
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('display_name, avatar_url')
+      .eq('id', user.id)
+      .maybeSingle()
     const meta = user.user_metadata as { full_name?: string; avatar_url?: string } | undefined
     return {
       id: user.id,
       email: user.email ?? null,
-      name: meta?.full_name ?? user.email?.split('@')[0] ?? null,
-      avatar: meta?.avatar_url ?? null,
+      name: profile?.display_name ?? meta?.full_name ?? user.email?.split('@')[0] ?? null,
+      avatar: profile?.avatar_url ?? meta?.avatar_url ?? null,
     }
   }
   const cookieStore = await cookies()
