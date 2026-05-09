@@ -99,16 +99,21 @@
   display: inline-flex; background: var(--bg-elev);
   border: 1px solid var(--rule-strong); border-radius: 999px; padding: 4px;
 }
-.filter-tabs button {
+.filter-tabs button,
+.filter-tabs a {
   background: transparent; border: none;
   font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em;
   padding: 8px 16px; border-radius: 999px; color: var(--ink-dim);
   display: flex; align-items: center; gap: 6px;
+  text-decoration: none; cursor: pointer;
 }
-.filter-tabs button:hover { color: var(--ink); }
-.filter-tabs button.on { background: var(--ink); color: var(--bg); }
+.filter-tabs button:hover,
+.filter-tabs a:hover { color: var(--ink); }
+.filter-tabs button.on,
+.filter-tabs a.on { background: var(--ink); color: var(--bg); }
 .filter-tabs .count { background: rgba(255,255,255,0.15); padding: 1px 6px; border-radius: 4px; font-size: 9.5px; }
-.filter-tabs button:not(.on) .count { background: var(--bg-card); color: var(--ink-faint); }
+.filter-tabs button:not(.on) .count,
+.filter-tabs a:not(.on) .count { background: var(--bg-card); color: var(--ink-faint); }
 .filter-meta .mono.small.dim { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.06em; }
 
 /* ── Section label ── */

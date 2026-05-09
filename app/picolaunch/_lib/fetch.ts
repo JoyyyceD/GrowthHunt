@@ -3,7 +3,55 @@ import { championToDTO, hotScore } from '@/lib/opc-mappers'
 import type { ChampionDTO } from '@/lib/opc-types'
 import type { ChampionRow } from '@/lib/opc-types'
 
-export async function getAllChampions(sort: 'hot' | 'new' | 'top' = 'hot'): Promise<ChampionDTO[]> {
+export type LeaderboardRange = 'all' | 'month' | 'week' | 'new'
+
+// ── Leaderboard ──────────────────────────────────────────────────────────────
+// Default ranking: upvote_count + comment_count (community engagement).
+// 'new' range short-circuits sorting and orders by created_at desc instead.
+// Time-window filters narrow the row set BEFORE sorting.
+export async function getLeaderboard(
+  range: LeaderboardRange = 'all',
+): Promise<ChampionDTO[]> {
+  const supabase = await createServerClient()
+  let q = supabase
+    .from('champions')
+    .select('*')
+    .is('deleted_at', null)
+    .limit(200)
+
+  if (range === 'month') {
+    const cutoff = new Date(Date.now() - 30 * 86400_000).toISOString()
+    q = q.gte('created_at', cutoff)
+  } else if (range === 'week') {
+    const cutoff = new Date(Date.now() - 7 * 86400_000).toISOString()
+    q = q.gte('created_at', cutoff)
+  }
+
+  // Stable secondary order: newest first on score ties.
+  q = q.order('created_at', { ascending: false })
+
+  const { data, error } = await q
+  if (error) {
+    console.error('[picolaunch/fetch] getLeaderboard', error)
+    return []
+  }
+
+  let rows = (data ?? []) as ChampionRow[]
+  if (range !== 'new') {
+    rows = rows
+      .slice()
+      .sort(
+        (a, b) =>
+          b.upvote_count + b.comment_count - (a.upvote_count + a.comment_count),
+      )
+  }
+  return rows.map(championToDTO)
+}
+
+// ── Legacy helper retained for non-listing callers (sitemap etc.) ────────────
+export async function getAllChampions(
+  sort: 'hot' | 'new' | 'top' = 'hot',
+): Promise<ChampionDTO[]> {
   const supabase = await createServerClient()
   let q = supabase
     .from('champions')
@@ -13,7 +61,7 @@ export async function getAllChampions(sort: 'hot' | 'new' | 'top' = 'hot'): Prom
 
   if (sort === 'new') q = q.order('created_at', { ascending: false })
   else if (sort === 'top') q = q.order('upvote_count', { ascending: false })
-  else q = q.order('created_at', { ascending: false }) // hot — re-sort below
+  else q = q.order('created_at', { ascending: false })
 
   const { data, error } = await q
   if (error) {
@@ -24,7 +72,13 @@ export async function getAllChampions(sort: 'hot' | 'new' | 'top' = 'hot'): Prom
   let rows = (data ?? []) as ChampionRow[]
   if (sort === 'hot') {
     rows = rows
-      .map((r) => ({ r, score: hotScore(r.upvote_count, (Date.now() - Date.parse(r.created_at)) / 3_600_000) }))
+      .map((r) => ({
+        r,
+        score: hotScore(
+          r.upvote_count,
+          (Date.now() - Date.parse(r.created_at)) / 3_600_000,
+        ),
+      }))
       .sort((a, b) => b.score - a.score)
       .map((x) => x.r)
   }
