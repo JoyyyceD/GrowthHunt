@@ -121,7 +121,7 @@ export function TopNav({ variant = 'page' }: Props) {
     return () => sub.subscription.unsubscribe()
   }, [])
 
-  // Close menu on outside click
+  // Close menu on outside click or Escape key
   useEffect(() => {
     if (!open) return
     function onDocClick(e: MouseEvent) {
@@ -129,8 +129,15 @@ export function TopNav({ variant = 'page' }: Props) {
         setOpen(false)
       }
     }
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === 'Escape') setOpen(false)
+    }
     document.addEventListener('mousedown', onDocClick)
-    return () => document.removeEventListener('mousedown', onDocClick)
+    document.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.removeEventListener('mousedown', onDocClick)
+      document.removeEventListener('keydown', onKeyDown)
+    }
   }, [open])
 
   const handleSignOut = async () => {
@@ -221,10 +228,10 @@ export function TopNav({ variant = 'page' }: Props) {
                   )}
                 </div>
                 <hr style={{ border: 0, borderTop: '1px solid var(--rule)', margin: '6px 0' }} />
-                <MenuLink href="/account/launches" onClick={() => setOpen(false)}>My launches</MenuLink>
-                <MenuLink href="/account/upvotes" onClick={() => setOpen(false)}>Upvotes</MenuLink>
-                <MenuLink href="/account/comments" onClick={() => setOpen(false)}>Comments</MenuLink>
-                <MenuLink href="/account/settings" onClick={() => setOpen(false)}>Settings</MenuLink>
+                <MenuLink href="/picolaunch/account/launches" onClick={() => setOpen(false)}>My launches</MenuLink>
+                <MenuLink href="/picolaunch/account/upvotes" onClick={() => setOpen(false)}>Upvotes</MenuLink>
+                <MenuLink href="/picolaunch/account/comments" onClick={() => setOpen(false)}>Comments</MenuLink>
+                <MenuLink href="/picolaunch/account/settings" onClick={() => setOpen(false)}>Settings</MenuLink>
                 <hr style={{ border: 0, borderTop: '1px solid var(--rule)', margin: '6px 0' }} />
                 <button
                   type="button"

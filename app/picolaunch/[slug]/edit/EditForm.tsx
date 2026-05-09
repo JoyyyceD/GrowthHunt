@@ -111,7 +111,7 @@ export default function EditForm({ initial }: Props) {
         const j = await res.json().catch(() => ({}))
         throw new Error(j.error ?? 'Delete failed.')
       }
-      router.push('/account/launches')
+      router.push('/picolaunch/account/launches')
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Delete failed.')
       setDeleting(false)

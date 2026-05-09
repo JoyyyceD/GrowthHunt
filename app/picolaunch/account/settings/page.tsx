@@ -7,7 +7,7 @@ import SettingsForm from './SettingsForm'
 export const dynamic = 'force-dynamic'
 
 export default async function SettingsPage() {
-  const user = await requireGoogleAuth('/account/settings')
+  const user = await requireGoogleAuth('/picolaunch/account/settings')
   const supabase = await createServerClient()
 
   const { data } = await supabase
