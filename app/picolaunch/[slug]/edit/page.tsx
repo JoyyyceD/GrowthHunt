@@ -70,7 +70,7 @@ export default async function EditPage({ params }: Props) {
             Edit <em style={{ color: 'var(--accent)' }}>{champion.name}</em>
           </h1>
           <p className="opc-sub" style={{ marginBottom: 32 }}>
-            Changes save immediately. New images replace existing ones.
+            Click Save changes to apply. New images replace existing ones.
           </p>
 
           <EditForm initial={championToDTO(champion)} />

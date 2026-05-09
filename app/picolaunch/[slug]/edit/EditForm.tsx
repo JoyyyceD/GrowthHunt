@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import MediaUpload from '@/lib/picolaunch/MediaUpload'
 import type { ChampionDTO } from '@/lib/opc-types'
@@ -263,9 +264,19 @@ export default function EditForm({ initial }: Props) {
         )}
 
         <div className="submit-footer">
-          <span style={{ fontSize: 12, color: 'var(--ink-faint)', fontFamily: 'var(--mono)' }}>
-            Slug: {initial.id}
-          </span>
+          <Link
+            href={`/picolaunch/${initial.id}`}
+            style={{
+              fontSize: 13,
+              color: 'var(--ink-faint)',
+              textDecoration: 'none',
+              fontFamily: 'var(--mono)',
+              letterSpacing: '0.06em',
+              textTransform: 'uppercase',
+            }}
+          >
+            ← Back to launch
+          </Link>
           <button type="submit" className="primary-btn" disabled={pending}>
             {pending ? 'Saving…' : 'Save changes'}
           </button>
