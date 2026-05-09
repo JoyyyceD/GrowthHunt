@@ -308,8 +308,8 @@ export default function EditForm({ initial }: Props) {
           Delete this launch
         </h3>
         <p style={{ fontSize: 13, color: 'var(--ink-dim)', margin: '0 0 16px', lineHeight: 1.5 }}>
-          The launch is removed from the public listing. Comments and votes are kept (in case you
-          undo). This action returns 404 to visitors.
+          The launch is hidden from the public listing and returns 404 to visitors. This can&rsquo;t
+          be undone from the dashboard.
         </p>
         <button
           type="button"
