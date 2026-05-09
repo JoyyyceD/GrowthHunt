@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/admin'
 import { championToDTO, commentToDTO } from '@/lib/opc-mappers'
 import type { ChampionRow, CommentRow, ProfileRow } from '@/lib/opc-types'
 
@@ -119,16 +120,33 @@ export async function DELETE(_req: NextRequest, { params }: Params) {
   } = await supabase.auth.getUser()
   if (!user) return NextResponse.json({ error: 'unauthorized' }, { status: 401 })
 
-  const { error, data } = await supabase
+  // Step 1 — verify the row exists and is owned by the current user.
+  // Use the user-context client; RLS read policy excludes already-soft-deleted rows.
+  const { data: existing } = await supabase
     .from('champions')
-    .update({ deleted_at: new Date().toISOString() })
+    .select('id, owner_id')
     .eq('slug', slug)
-    .eq('owner_id', user.id)
-    .select('id')
+    .is('deleted_at', null)
     .single()
 
-  if (error || !data) {
-    return NextResponse.json({ error: 'not_found_or_forbidden' }, { status: 404 })
+  if (!existing) return NextResponse.json({ error: 'not_found' }, { status: 404 })
+  if (existing.owner_id !== user.id) {
+    return NextResponse.json({ error: 'forbidden' }, { status: 403 })
+  }
+
+  // Step 2 — soft-delete with the admin client. We can't use the user-context
+  // client + .select() here, because the RLS read policy `deleted_at IS NULL`
+  // would hide the row from RETURNING right after the update sets it to non-null.
+  // Bypass RLS on the write since we already verified ownership above.
+  const admin = createAdminClient()
+  const { error } = await admin
+    .from('champions')
+    .update({ deleted_at: new Date().toISOString() })
+    .eq('id', existing.id)
+
+  if (error) {
+    console.error('[DELETE /api/champions/[slug]]', error)
+    return NextResponse.json({ error: 'delete_failed' }, { status: 500 })
   }
   return NextResponse.json({ ok: true })
 }
