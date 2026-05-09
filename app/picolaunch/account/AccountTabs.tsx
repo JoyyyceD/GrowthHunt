@@ -4,10 +4,10 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const TABS = [
-  { href: '/account/launches', label: 'My launches' },
-  { href: '/account/upvotes', label: 'Upvotes' },
-  { href: '/account/comments', label: 'Comments' },
-  { href: '/account/settings', label: 'Settings' },
+  { href: '/picolaunch/account/launches', label: 'My launches' },
+  { href: '/picolaunch/account/upvotes', label: 'Upvotes' },
+  { href: '/picolaunch/account/comments', label: 'Comments' },
+  { href: '/picolaunch/account/settings', label: 'Settings' },
 ]
 
 export default function AccountTabs() {

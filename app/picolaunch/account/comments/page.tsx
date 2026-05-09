@@ -21,7 +21,7 @@ function relTime(ts: number): string {
 }
 
 export default async function MyCommentsPage() {
-  const user = await requireGoogleAuth('/account/comments')
+  const user = await requireGoogleAuth('/picolaunch/account/comments')
   const supabase = await createServerClient()
 
   const { data, error } = await supabase

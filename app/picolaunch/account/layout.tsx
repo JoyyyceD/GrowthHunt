@@ -1,12 +1,12 @@
 import { TopNav } from '@/lib/site/TopNav'
 import { requireGoogleAuth } from '@/lib/picolaunch/auth-gate'
 import AccountTabs from './AccountTabs'
-import '../picolaunch/picolaunch.css'
+import '../picolaunch.css'
 
 export const dynamic = 'force-dynamic'
 
 export default async function AccountLayout({ children }: { children: React.ReactNode }) {
-  const user = await requireGoogleAuth('/account')
+  const user = await requireGoogleAuth('/picolaunch/account')
 
   return (
     <div>

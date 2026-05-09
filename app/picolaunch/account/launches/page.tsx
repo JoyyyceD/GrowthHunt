@@ -8,7 +8,7 @@ import DeleteButton from './DeleteButton'
 export const dynamic = 'force-dynamic'
 
 export default async function MyLaunchesPage() {
-  const user = await requireGoogleAuth('/account/launches')
+  const user = await requireGoogleAuth('/picolaunch/account/launches')
   const supabase = await createServerClient()
 
   const { data, error } = await supabase

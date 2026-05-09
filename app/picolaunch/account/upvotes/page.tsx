@@ -7,7 +7,7 @@ import type { ChampionRow } from '@/lib/opc-types'
 export const dynamic = 'force-dynamic'
 
 export default async function UpvotesPage() {
-  const user = await requireGoogleAuth('/account/upvotes')
+  const user = await requireGoogleAuth('/picolaunch/account/upvotes')
   const supabase = await createServerClient()
 
   const { data, error } = await supabase
