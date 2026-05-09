@@ -1,4 +1,3 @@
-import { TopNav } from '@/lib/site/TopNav'
 import { requireGoogleAuth } from '@/lib/picolaunch/auth-gate'
 import AccountTabs from './AccountTabs'
 import '../picolaunch.css'
@@ -10,7 +9,6 @@ export default async function AccountLayout({ children }: { children: React.Reac
 
   return (
     <div>
-      <TopNav variant="page" />
       <section className="opc-section" style={{ padding: '56px 0 24px' }}>
         <div className="shell" style={{ maxWidth: 980 }}>
           <div style={{ marginBottom: 28 }}>
