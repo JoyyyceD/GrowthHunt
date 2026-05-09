@@ -18,7 +18,15 @@ export const metadata: Metadata = {
   },
 }
 
-function Logo({ name, hue }: { name: string; hue: string | null }) {
+function Logo({ name, hue, logoUrl }: { name: string; hue: string | null; logoUrl: string | null }) {
+  if (logoUrl) {
+    return (
+      <div className="logo-mark">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={logoUrl} alt={`${name} logo`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      </div>
+    )
+  }
   const initials = name.split(/[\s.]+/).map(w => w[0]).slice(0, 2).join('').toUpperCase()
   return (
     <div className="logo-mark logo-fallback" style={{ background: hue ?? 'var(--accent)' }}>
@@ -131,7 +139,7 @@ function ChampionRow({ champion, rank }: { champion: Awaited<ReturnType<typeof g
         style={{ position: 'absolute', inset: 0, zIndex: 1 }}
       />
       {rank && <div className="row-rank mono">{String(rank).padStart(2, '0')}</div>}
-      <Logo name={champion.name} hue={champion.hue} />
+      <Logo name={champion.name} hue={champion.hue} logoUrl={champion.logoUrl} />
       <div className="row-meta">
         <div className="row-head">
           <h3>{champion.name}</h3>
