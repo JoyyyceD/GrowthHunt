@@ -1,11 +1,14 @@
-import { requireGoogleAuth } from '@/lib/picolaunch/auth-gate'
+import { getGoogleUser } from '@/lib/picolaunch/auth-gate'
 import AccountTabs from './AccountTabs'
 import '../picolaunch.css'
 
 export const dynamic = 'force-dynamic'
 
 export default async function AccountLayout({ children }: { children: React.ReactNode }) {
-  const user = await requireGoogleAuth('/picolaunch/account')
+  // Don't redirect from the layout — each child page calls requireGoogleAuth with
+  // its own pathname so the post-login `next` param matches what the user actually
+  // tried to open. If we redirected here we'd truncate `next` to '/picolaunch/account'.
+  const user = await getGoogleUser('/picolaunch/account')
 
   return (
     <div>
@@ -34,7 +37,7 @@ export default async function AccountLayout({ children }: { children: React.Reac
                 margin: 0,
               }}
             >
-              {user.name ?? user.email ?? 'You'}
+              {user?.name ?? user?.email ?? 'You'}
             </h1>
             <div
               style={{
@@ -44,7 +47,7 @@ export default async function AccountLayout({ children }: { children: React.Reac
                 marginTop: 4,
               }}
             >
-              {user.email}
+              {user?.email ?? ''}
             </div>
           </div>
 
