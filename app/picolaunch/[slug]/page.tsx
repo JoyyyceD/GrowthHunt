@@ -34,7 +34,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-function Logo({ name, hue, size = 72 }: { name: string; hue: string | null; size?: number }) {
+function Logo({
+  name,
+  hue,
+  logoUrl,
+  size = 72,
+}: {
+  name: string
+  hue: string | null
+  logoUrl: string | null
+  size?: number
+}) {
+  if (logoUrl) {
+    return (
+      <div className="logo-mark" style={{ width: size, height: size }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={logoUrl} alt={`${name} logo`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      </div>
+    )
+  }
   const initials = name.split(/[\s.]+/).map(w => w[0]).slice(0, 2).join('').toUpperCase()
   return (
     <div
@@ -91,7 +109,7 @@ export default async function PicoLaunchDetail({ params }: Props) {
 
           {/* Hero */}
           <div className="champion-row detail">
-            <Logo name={champion.name} hue={champion.hue} size={72} />
+            <Logo name={champion.name} hue={champion.hue} logoUrl={champion.logoUrl} size={72} />
             <div className="row-meta">
               <div className="row-head">
                 <h3 style={{ fontFamily: 'var(--serif)', fontSize: 36, fontWeight: 400, letterSpacing: '-0.02em', margin: 0 }}>{champion.name}</h3>
@@ -136,6 +154,32 @@ export default async function PicoLaunchDetail({ params }: Props) {
               )}
             </div>
           </div>
+
+          {/* Screenshots — surface uploaded media right under the hero */}
+          {(champion.image1Url || champion.image2Url) && (
+            <div className="screenshot-grid" style={{ marginTop: 36 }}>
+              {champion.image1Url && (
+                <div className="screenshot-frame">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={champion.image1Url}
+                    alt={`${champion.name} screenshot 1`}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                </div>
+              )}
+              {champion.image2Url && (
+                <div className="screenshot-frame">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={champion.image2Url}
+                    alt={`${champion.name} screenshot 2`}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                </div>
+              )}
+            </div>
+          )}
 
           {/* About — also visible to bots = part of the page index */}
           {champion.about && (
