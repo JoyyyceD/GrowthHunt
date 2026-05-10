@@ -1,13 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
-  <style>
-    .ring { stroke: #14110d; fill: none; }
-    .dot  { fill: #e84e1b; }
-    @media (prefers-color-scheme: dark) {
-      .ring { stroke: #fafaf7; }
-    }
-  </style>
-  <!-- Background fill so the icon reads on dark surfaces too (Google SERP, Twitter, etc.) -->
-  <rect x="0" y="0" width="192" height="192" rx="32" fill="#fafaf7"/>
-  <circle class="ring" cx="96" cy="96" r="74" stroke-width="14"/>
-  <circle class="dot"  cx="96" cy="96" r="36"/>
+  <!--
+    GrowthHunt favicon. Direct fill/stroke attributes (no <style> block) —
+    Chrome's favicon renderer and many SERP/social previewers strip inline
+    CSS, which is why the ring went missing in browser tabs before.
+  -->
+  <rect width="192" height="192" rx="32" fill="#fafaf7"/>
+  <circle cx="96" cy="96" r="74" fill="none" stroke="#14110d" stroke-width="14"/>
+  <circle cx="96" cy="96" r="36" fill="#e84e1b"/>
 </svg>
