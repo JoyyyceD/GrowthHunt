@@ -32,6 +32,12 @@ const HERO_STATS = {
   viral: 1200,
 }
 
+// Toggle to surface the 14-day launch plan flow (Start page + StartForm).
+// Hidden until the end-to-end backend (X credentials linking, schedule
+// publishing, session storage) is fully wired and tested. Flip to true when
+// ready — all the underlying routes/components are still in place.
+const SHOW_START_CTA = false
+
 export default async function ViralXPage() {
   const supabase = await createServerClient()
   // Belt-and-suspenders auth detection for gating: getUser() validates the JWT
@@ -74,44 +80,46 @@ export default async function ViralXPage() {
   return (
     <>
       <TopNav variant="page" />
-      <div
-        style={{
-          background: 'var(--bg-elev)',
-          borderBottom: '1px solid var(--rule)',
-          padding: '14px 24px',
-          display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16,
-          flexWrap: 'wrap',
-        }}
-      >
-        <p
+      {SHOW_START_CTA && (
+        <div
           style={{
-            margin: 0, fontSize: 13, color: 'var(--ink-dim)',
-            display: 'flex', alignItems: 'center', gap: 8,
+            background: 'var(--bg-elev)',
+            borderBottom: '1px solid var(--rule)',
+            padding: '14px 24px',
+            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16,
+            flexWrap: 'wrap',
           }}
         >
-          <span
+          <p
             style={{
-              fontSize: 10, fontFamily: 'var(--mono)', color: 'var(--ink-faint)',
-              textTransform: 'uppercase', letterSpacing: '0.08em',
-              padding: '3px 8px', border: '1px solid var(--rule)', borderRadius: 999,
+              margin: 0, fontSize: 13, color: 'var(--ink-dim)',
+              display: 'flex', alignItems: 'center', gap: 8,
             }}
           >
-            New
-          </span>
-          Skip the browsing — get a personalized 14-day launch plan in 60 seconds.
-        </p>
-        <Link
-          href="/viralx/start"
-          style={{
-            fontSize: 13, fontWeight: 600,
-            padding: '8px 18px', borderRadius: 999,
-            background: 'var(--accent)', color: 'var(--accent-ink)',
-            textDecoration: 'none',
-          }}
-        >
-          Generate my 14-day plan →
-        </Link>
-      </div>
+            <span
+              style={{
+                fontSize: 10, fontFamily: 'var(--mono)', color: 'var(--ink-faint)',
+                textTransform: 'uppercase', letterSpacing: '0.08em',
+                padding: '3px 8px', border: '1px solid var(--rule)', borderRadius: 999,
+              }}
+            >
+              New
+            </span>
+            Skip the browsing — get a personalized 14-day launch plan in 60 seconds.
+          </p>
+          <Link
+            href="/viralx/start"
+            style={{
+              fontSize: 13, fontWeight: 600,
+              padding: '8px 18px', borderRadius: 999,
+              background: 'var(--accent)', color: 'var(--accent-ink)',
+              textDecoration: 'none',
+            }}
+          >
+            Generate my 14-day plan →
+          </Link>
+        </div>
+      )}
       <Lab
         initial={initial}
         isAuthed={!!user}
