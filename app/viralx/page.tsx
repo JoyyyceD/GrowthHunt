@@ -34,7 +34,16 @@ const HERO_STATS = {
 
 export default async function ViralXPage() {
   const supabase = await createServerClient()
-  const { data: { user } } = await supabase.auth.getUser()
+  // Belt-and-suspenders auth detection for gating: getUser() validates the JWT
+  // remotely and intermittently returns null even when the user is logged in
+  // (SSR cookie race, network blip to the Supabase auth server). Fall back to
+  // getSession() which reads the cookie locally. ANY signal → treat as authed.
+  // Gating doesn't need strict verification — TweetCard rendering is read-only.
+  const [{ data: userData }, { data: sessionData }] = await Promise.all([
+    supabase.auth.getUser().catch(() => ({ data: { user: null } })),
+    supabase.auth.getSession().catch(() => ({ data: { session: null } })),
+  ])
+  const user = userData.user ?? sessionData.session?.user ?? null
 
   const pageSize = user ? 50 : 10
 
