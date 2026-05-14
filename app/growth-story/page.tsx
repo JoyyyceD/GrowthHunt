@@ -115,6 +115,60 @@ export default function GrowthStoryIndex() {
 
       <hr className="rule" />
 
+      {/* Dig deeper — cross-cuts of the same dataset */}
+      <section style={{ padding: '80px 0' }}>
+        <div className="shell">
+          <div className="eyebrow" style={{ marginBottom: 16 }}><span className="dot" />Dig deeper</div>
+          <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(36px, 5vw, 56px)', lineHeight: 1.0, letterSpacing: '-0.03em', fontWeight: 400, margin: '0 0 16px' }}>
+            Cross-cut the same dataset.
+          </h2>
+          <p style={{ fontSize: 16, color: 'var(--ink-dim)', maxWidth: 720, lineHeight: 1.55, marginBottom: 40 }}>
+            Two more ways to slice these {stories.length} stories — by channel mix, or by single-launch breakdown.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: 1, background: 'var(--rule)', border: '1px solid var(--rule)' }}>
+            <Link
+              href="/growth-campaigns"
+              className="blog-card"
+              style={{ textDecoration: 'none', display: 'block' }}
+            >
+              <article style={{ padding: 40, minHeight: 260, display: 'flex', flexDirection: 'column', gap: 16, background: 'var(--bg)' }}>
+                <div className="eyebrow"><span className="dot" />Channel Playbooks</div>
+                <h3 style={{ fontFamily: 'var(--serif)', fontSize: 32, lineHeight: 1.1, letterSpacing: '-0.02em', fontWeight: 400, margin: 0 }}>
+                  The exact channel stack each startup used.
+                </h3>
+                <p style={{ fontSize: 14, color: 'var(--ink-dim)', margin: 0, lineHeight: 1.55, flex: 1 }}>
+                  X · YouTube · Hacker News · Reddit · IG · TikTok — which channels each company leaned on, what role each one played, and the catalyst event that lit it up. Filter by channel to compare across companies.
+                </p>
+                <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                  Browse channel playbooks →
+                </div>
+              </article>
+            </Link>
+            <Link
+              href="/growth-launches"
+              className="blog-card"
+              style={{ textDecoration: 'none', display: 'block' }}
+            >
+              <article style={{ padding: 40, minHeight: 260, display: 'flex', flexDirection: 'column', gap: 16, background: 'var(--bg)' }}>
+                <div className="eyebrow"><span className="dot" />Launch Playbooks</div>
+                <h3 style={{ fontFamily: 'var(--serif)', fontSize: 32, lineHeight: 1.1, letterSpacing: '-0.02em', fontWeight: 400, margin: 0 }}>
+                  One launch, move by move.
+                </h3>
+                <p style={{ fontSize: 14, color: 'var(--ink-dim)', margin: 0, lineHeight: 1.55, flex: 1 }}>
+                  150+ single-launch breakdowns — which channel fired first, the founder script week-1, which milestone got bundled, why this order worked. The script you can copy, not the recap.
+                </p>
+                <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                  Browse launch playbooks →
+                </div>
+              </article>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <hr className="rule" />
+
       {/* What's inside each story */}
       <section style={{ padding: '80px 0 120px' }}>
         <div className="shell">

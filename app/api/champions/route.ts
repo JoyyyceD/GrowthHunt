@@ -142,6 +142,10 @@ export async function POST(req: NextRequest) {
         status,
         owner_id: user.id,
         source: 'user',
+        // Cold-start policy: every real user submission auto-lands in Editor's
+        // Picks so the section stays lively while traffic is small. Revisit
+        // this default once we have a healthy stream of submissions.
+        featured: true,
       })
       .select('*')
       .single()
