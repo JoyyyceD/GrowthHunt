@@ -5,6 +5,12 @@
  * Cached at the Next.js fetch layer for 30 minutes — landing page traffic
  * shouldn't blow our twitterapi.io budget, and a stale-by-30-min hero number
  * is fine for storytelling.
+ *
+ * NOTE: Pricing model is now LemonSqueezy subscription. The previous
+ * `costPerReply` / `costPerPost` per-reply fields were removed when the
+ * pay-per-reply narrative was retired (Path Y). Pro pricing is currently a
+ * placeholder string `$PRO_PRICE` — Felix will fill the final monthly price
+ * before launch.
  */
 
 const TWITTERAPI_IO_KEY = process.env.TWITTERAPI_IO_KEY
@@ -17,8 +23,12 @@ export interface XGrowerStats {
   followers: number
   posts: number
   daysSinceStart: number
-  costPerReply: number
-  costPerPost: number
+  /** TODO: Felix to fill $PRO_PRICE — recommended $9/mo or $19/mo based on competitor pricing. */
+  proPriceMonthly: string
+  /** Free tier daily cap — informational only, kept in lib so copy can reference it. */
+  freeRepliesPerDay: number
+  /** Free tier monthly cap. */
+  freeRepliesPerMonth: number
   source: 'live' | 'fallback'
 }
 
@@ -26,8 +36,9 @@ const FALLBACK: XGrowerStats = {
   followers: 76,
   posts: 338,
   daysSinceStart: 4,
-  costPerReply: 0.015,
-  costPerPost: 0.015,
+  proPriceMonthly: '$PRO_PRICE',
+  freeRepliesPerDay: 10,
+  freeRepliesPerMonth: 100,
   source: 'fallback',
 }
 
@@ -80,8 +91,12 @@ export async function fetchXGrowerStats(): Promise<XGrowerStats> {
       followers,
       posts: posts !== null && posts >= 0 ? posts : FALLBACK.posts,
       daysSinceStart,
-      costPerReply: 0.015,
-      costPerPost: 0.015,
+      // deprecated — subscription model (LemonSqueezy) replaces pay-per-reply.
+      // Keep these informational fields so the landing page can render the
+      // free-tier quota copy without hardcoding numbers in JSX.
+      proPriceMonthly: '$PRO_PRICE',
+      freeRepliesPerDay: 10,
+      freeRepliesPerMonth: 100,
       source: 'live',
     }
   } catch {

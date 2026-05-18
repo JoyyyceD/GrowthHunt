@@ -7,10 +7,11 @@ import { AnimatedCounter } from './AnimatedCounter'
 
 export const revalidate = 1800 // 30 min — match the x-stats cache window
 
+// TODO: Felix to fill $PRO_PRICE — recommended $9/mo or $19/mo based on competitor pricing.
 export const metadata: Metadata = {
-  title: 'X Grower — 76 followers in 4 days, $0.015 per reply',
+  title: 'X Grower — 76 followers in 4 days. Pro $PRO_PRICE/mo or free tier.',
   description:
-    'The AI reply tool I built to grow my own X account. 0 → 76 followers in 4 days, $0.015 per reply, 50 free to try. No subscription, no credit card.',
+    'The AI reply tool I built to grow my own X account. 0 → 76 followers in 4 days. Pro: $PRO_PRICE/mo, unlimited replies. Free tier: 10 replies/day, 100/month.',
   keywords: [
     'x growth tool',
     'twitter follower growth',
@@ -25,13 +26,13 @@ export const metadata: Metadata = {
     url: 'https://growthhunt.ai/xgrower',
     title: 'X Grower — 76 followers in 4 days',
     description:
-      'AI reply tool I built to grow my own X account. 0 → 76 followers in 4 days, $0.015 per reply, 50 free.',
+      'AI reply tool I built to grow my own X account. 0 → 76 followers in 4 days. Pro: $PRO_PRICE/mo, unlimited replies. Free tier: 10/day, 100/month.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'X Grower — 76 followers in 4 days',
     description:
-      'AI reply tool I built to grow my own X account. 0 → 76 followers in 4 days, $0.015 per reply, 50 free.',
+      'AI reply tool I built to grow my own X account. 0 → 76 followers in 4 days. Pro: $PRO_PRICE/mo, unlimited replies. Free tier: 10/day, 100/month.',
   },
 }
 
@@ -42,7 +43,7 @@ const FAQS = [
   },
   {
     q: 'When and how do I pay?',
-    a: 'Never until you want to. Every new account starts with 50 free replies, no card needed. If you decide it is worth it, top up later — credit packs from $5, $0.015 per reply, no subscription, credits never expire.',
+    a: 'You don\'t have to. The free tier gives every new account 10 replies/day and up to 100/month — no card. If you want unlimited replies, Pro is $PRO_PRICE/mo (LemonSqueezy subscription), cancel any time. The first 100 founding-code holders get 30 days of Pro free (claimed via X reply on Felix\'s pinned tweet).',
   },
   {
     q: 'Do you store my X password?',
@@ -92,7 +93,7 @@ export default async function XGrowerLandingPage() {
               marginBottom: 28,
             }}
           >
-            v1 · sideload beta · 50 replies free
+            v1 · sideload beta · free tier: 10/day, 100/month
           </div>
 
           <h1
@@ -109,7 +110,9 @@ export default async function XGrowerLandingPage() {
             <span style={{ color: 'var(--accent)' }}>
               <AnimatedCounter to={stats.daysSinceStart} /> days.
             </span>{' '}
-            <span style={{ color: 'var(--ink-dim)' }}>$0.015 a reply.</span>
+            <span style={{ color: 'var(--ink-dim)' }}>
+              Pro {stats.proPriceMonthly}/mo.
+            </span>
           </h1>
 
           <p
@@ -145,10 +148,10 @@ export default async function XGrowerLandingPage() {
                 display: 'inline-block',
               }}
             >
-              Get 50 free replies →
+              Start free (10 replies/day) →
             </Link>
             <span style={{ fontSize: 14, color: 'var(--ink-dim)' }}>
-              No card. No subscription. Credits never expire.
+              No card. Upgrade to Pro ({stats.proPriceMonthly}/mo) any time.
             </span>
           </div>
 
@@ -174,15 +177,19 @@ export default async function XGrowerLandingPage() {
               }
             />
             <Stat
-              label="Posts shipped"
-              sublabel="$0.015 each"
+              label="Replies shipped"
+              sublabel="from Felix's account"
               value={
                 <>
                   +<AnimatedCounter to={stats.posts} />
                 </>
               }
             />
-            <Stat label="Per reply" sublabel="pay-as-you-go" value="$0.015" />
+            <Stat
+              label="Pro"
+              sublabel={`free: ${stats.freeRepliesPerDay}/day, ${stats.freeRepliesPerMonth}/mo`}
+              value={`${stats.proPriceMonthly}/mo`}
+            />
           </div>
 
           <p style={{ marginTop: 16, fontSize: 13, color: 'var(--ink-faint)' }}>
@@ -268,9 +275,12 @@ export default async function XGrowerLandingPage() {
             See if it works for you. <em style={{ color: 'var(--accent)' }}>First.</em>
           </h2>
           <p style={{ fontSize: 18, lineHeight: 1.6, color: 'var(--ink-dim)', maxWidth: 640, margin: '0 auto 32px' }}>
-            Every new account gets <b style={{ color: 'var(--ink)', fontWeight: 500 }}>50 replies on us</b>.
-            No credit card. No subscription. Run them on your own X account, watch your follower count, decide
-            whether the tool earns its keep before you ever pay anything.
+            Every new account starts on the{' '}
+            <b style={{ color: 'var(--ink)', fontWeight: 500 }}>
+              free tier — {stats.freeRepliesPerDay} replies/day, {stats.freeRepliesPerMonth}/month
+            </b>
+            . No credit card. Run them on your own X account, watch your follower count, decide
+            whether to upgrade to Pro before you pay anything.
           </p>
           <Link
             href="/login"
@@ -285,10 +295,10 @@ export default async function XGrowerLandingPage() {
               display: 'inline-block',
             }}
           >
-            Get my 50 free replies →
+            Start free ({stats.freeRepliesPerDay} replies/day) →
           </Link>
           <p style={{ marginTop: 24, fontSize: 13, color: 'var(--ink-faint)' }}>
-            Like it? Top up later — $0.015 per reply, credits never expire, no subscription.
+            Like it? Pro is {stats.proPriceMonthly}/mo — unlimited replies, cancel any time. First 100 founding-code holders get 30 days of Pro free.
           </p>
         </section>
 
@@ -367,7 +377,7 @@ export default async function XGrowerLandingPage() {
             you keep telling yourself you'll build.
           </h2>
           <p style={{ fontSize: 17, lineHeight: 1.5, color: 'var(--ink-dim)', maxWidth: 540, margin: '0 auto 32px' }}>
-            50 replies free. Five minutes a day. Decide later if it's worth paying for.
+            Free tier: {stats.freeRepliesPerDay} replies/day, {stats.freeRepliesPerMonth}/month. Five minutes a day. Upgrade to Pro ({stats.proPriceMonthly}/mo) when the follower count earns it.
           </p>
           <Link
             href="/login"
@@ -383,7 +393,7 @@ export default async function XGrowerLandingPage() {
               marginTop: 8,
             }}
           >
-            Get 50 free replies →
+            Start free →
           </Link>
           <p style={{ marginTop: 32, fontSize: 13, color: 'var(--ink-faint)' }}>
             <Link href="/terms" style={{ color: 'var(--ink-faint)' }}>Terms</Link>
