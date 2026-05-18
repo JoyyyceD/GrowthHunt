@@ -8,9 +8,9 @@ import { AnimatedCounter } from './AnimatedCounter'
 export const revalidate = 1800 // 30 min — match the x-stats cache window
 
 export const metadata: Metadata = {
-  title: 'X Grower — 0 → 1,000 X followers, $0.05 per reply',
+  title: 'X Grower — 76 followers in 4 days, $0.015 per reply',
   description:
-    'The AI reply tool I used to grow my own X account. 76 followers in 4 days. Built by an indie founder, for indie founders. $0.05 per reply, 50 free to try.',
+    'The AI reply tool I built to grow my own X account. 0 → 76 followers in 4 days, $0.015 per reply, 50 free to try. No subscription, no credit card.',
   keywords: [
     'x growth tool',
     'twitter follower growth',
@@ -23,26 +23,26 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://growthhunt.ai/xgrower',
-    title: 'X Grower — Your first 1,000 X followers',
+    title: 'X Grower — 76 followers in 4 days',
     description:
-      'AI reply tool that helped me grow from 0 to 76 followers in 4 days. $0.05 per reply, 50 free.',
+      'AI reply tool I built to grow my own X account. 0 → 76 followers in 4 days, $0.015 per reply, 50 free.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'X Grower — Your first 1,000 X followers',
+    title: 'X Grower — 76 followers in 4 days',
     description:
-      'AI reply tool that helped me grow from 0 to 76 followers in 4 days. $0.05 per reply, 50 free.',
+      'AI reply tool I built to grow my own X account. 0 → 76 followers in 4 days, $0.015 per reply, 50 free.',
   },
 }
 
 const FAQS = [
   {
     q: 'Will my X account get banned?',
-    a: 'X enforces automation rules and accounts can be limited or suspended. We add randomized human-like behavior (bezier mouse paths, character-by-character typing, scroll simulation, randomized delays) to reduce detection risk, but there is no zero-risk automation. Use a non-critical X account first. Read the full risk note in our Terms.',
+    a: 'X enforces automation rules and accounts can be limited or suspended. We add randomized human-like behavior (bezier mouse paths, character-by-character typing, scroll simulation, randomized delays) to reduce detection risk, but there is no zero-risk automation. Use a non-critical X account first.',
   },
   {
     q: 'When and how do I pay?',
-    a: 'Never until you want to. Every new account starts with 50 free replies, no card needed. If the tool earns its keep, you can top up later — credit packs from $5, $0.015 per reply, no subscription, credits never expire. Full pricing on the pricing page.',
+    a: 'Never until you want to. Every new account starts with 50 free replies, no card needed. If you decide it is worth it, top up later — credit packs from $5, $0.015 per reply, no subscription, credits never expire.',
   },
   {
     q: 'Do you store my X password?',
@@ -66,7 +66,7 @@ const FAQS = [
   },
   {
     q: 'What about refunds?',
-    a: 'If your X account gets banned, submit a screenshot via support and we refund your unused credit balance — once per user lifetime. See Refund Policy for details.',
+    a: 'If your X account gets banned, submit a screenshot via support and we refund your unused credit balance — once per user lifetime.',
   },
 ]
 
@@ -92,7 +92,7 @@ export default async function XGrowerLandingPage() {
               marginBottom: 28,
             }}
           >
-            New · Public Beta
+            v1 · sideload beta · 50 replies free
           </div>
 
           <h1
@@ -105,7 +105,11 @@ export default async function XGrowerLandingPage() {
               fontWeight: 400,
             }}
           >
-            0 → <span style={{ color: 'var(--accent)' }}>1,000 X followers</span>.
+            <AnimatedCounter to={stats.followers} /> X followers.{' '}
+            <span style={{ color: 'var(--accent)' }}>
+              <AnimatedCounter to={stats.daysSinceStart} /> days.
+            </span>{' '}
+            <span style={{ color: 'var(--ink-dim)' }}>$0.015 a reply.</span>
           </h1>
 
           <p
@@ -118,18 +122,18 @@ export default async function XGrowerLandingPage() {
               margin: '0 0 40px',
             }}
           >
-            The AI reply tool I used to grow my own X account.
+            I built this to grow my own X account. It worked, so I'm letting
+            other indie founders run it.
             <br />
-            <b style={{ color: 'var(--ink)', fontWeight: 500 }}>
-              <AnimatedCounter to={stats.followers} /> followers in{' '}
-              <AnimatedCounter to={stats.daysSinceStart} /> days
-            </b>
-            , built by an indie founder, for indie founders.
+            <span style={{ color: 'var(--ink-faint)', fontSize: '0.7em' }}>
+              The extension runs in your own Chrome — we never see your X
+              password or cookie.
+            </span>
           </p>
 
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center', marginBottom: 56 }}>
             <Link
-              href="/xgrower/install"
+              href="/login"
               style={{
                 fontSize: 16,
                 fontWeight: 600,
@@ -141,10 +145,10 @@ export default async function XGrowerLandingPage() {
                 display: 'inline-block',
               }}
             >
-              Try it free →
+              Get 50 free replies →
             </Link>
             <span style={{ fontSize: 14, color: 'var(--ink-dim)' }}>
-              50 replies on us · no credit card · see if it works for you first
+              No card. No subscription. Credits never expire.
             </span>
           </div>
 
@@ -232,8 +236,8 @@ export default async function XGrowerLandingPage() {
               />
               <Step
                 num="03"
-                title="Watch your follower count climb"
-                body="Sit back. The extension dispatches 30+ replies with human-like timing. Other active users see your reply — some follow back. Repeat tomorrow."
+                title="Walk away for 30 minutes"
+                body="The extension dispatches 30+ replies with human-like timing. People active in those threads see your reply. Some follow back. Repeat tomorrow."
               />
             </div>
           </div>
@@ -269,7 +273,7 @@ export default async function XGrowerLandingPage() {
             whether the tool earns its keep before you ever pay anything.
           </p>
           <Link
-            href="/xgrower/install"
+            href="/login"
             style={{
               fontSize: 16,
               fontWeight: 600,
@@ -284,11 +288,7 @@ export default async function XGrowerLandingPage() {
             Get my 50 free replies →
           </Link>
           <p style={{ marginTop: 24, fontSize: 13, color: 'var(--ink-faint)' }}>
-            Like it? Top up later — pay-as-you-go, credits never expire.
-            {' · '}
-            <Link href="/xgrower/pricing" style={{ color: 'var(--ink-dim)' }}>
-              See pricing
-            </Link>
+            Like it? Top up later — $0.015 per reply, credits never expire, no subscription.
           </p>
         </section>
 
@@ -370,7 +370,7 @@ export default async function XGrowerLandingPage() {
             50 replies free. Five minutes a day. Decide later if it's worth paying for.
           </p>
           <Link
-            href="/xgrower/install"
+            href="/login"
             style={{
               fontSize: 16,
               fontWeight: 600,
@@ -383,16 +383,16 @@ export default async function XGrowerLandingPage() {
               marginTop: 8,
             }}
           >
-            Try it free →
+            Get 50 free replies →
           </Link>
           <p style={{ marginTop: 32, fontSize: 13, color: 'var(--ink-faint)' }}>
-            <Link href="/xgrower/pricing" style={{ color: 'var(--ink-faint)' }}>Pricing</Link>
+            <Link href="/terms" style={{ color: 'var(--ink-faint)' }}>Terms</Link>
             {' · '}
-            <Link href="/xgrower/terms" style={{ color: 'var(--ink-faint)' }}>Terms</Link>
+            <Link href="/privacy" style={{ color: 'var(--ink-faint)' }}>Privacy</Link>
             {' · '}
-            <Link href="/xgrower/privacy" style={{ color: 'var(--ink-faint)' }}>Privacy</Link>
-            {' · '}
-            <Link href="/xgrower/refund" style={{ color: 'var(--ink-faint)' }}>Refund</Link>
+            <a href="https://x.com/Felixisbuilding" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ink-faint)' }}>
+              Built by @Felixisbuilding
+            </a>
           </p>
         </section>
       </main>

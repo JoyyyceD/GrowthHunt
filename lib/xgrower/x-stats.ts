@@ -26,7 +26,7 @@ const FALLBACK: XGrowerStats = {
   followers: 76,
   posts: 338,
   daysSinceStart: 4,
-  costPerReply: 0.05,
+  costPerReply: 0.015,
   costPerPost: 0.015,
   source: 'fallback',
 }
@@ -80,7 +80,7 @@ export async function fetchXGrowerStats(): Promise<XGrowerStats> {
       followers,
       posts: posts !== null && posts >= 0 ? posts : FALLBACK.posts,
       daysSinceStart,
-      costPerReply: 0.05,
+      costPerReply: 0.015,
       costPerPost: 0.015,
       source: 'live',
     }
