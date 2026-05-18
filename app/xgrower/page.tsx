@@ -7,11 +7,10 @@ import { AnimatedCounter } from './AnimatedCounter'
 
 export const revalidate = 1800 // 30 min — match the x-stats cache window
 
-// TODO: Felix to fill $PRO_PRICE — recommended $9/mo or $19/mo based on competitor pricing.
 export const metadata: Metadata = {
-  title: 'X Grower — 76 followers in 4 days. Pro $PRO_PRICE/mo or free tier.',
+  title: 'X Grower — 76 followers in 4 days. $9/mo Pro for first 500.',
   description:
-    'The AI reply tool I built to grow my own X account. 0 → 76 followers in 4 days. Pro: $PRO_PRICE/mo, unlimited replies. Free tier: 10 replies/day, 100/month.',
+    'The AI reply tool I built to grow my own X account. 0 → 76 followers in 4 days. Pro: $9/mo for the first 500 paid users (lifetime price lock), then $19/mo. Free tier: 10 replies/day, 100/month.',
   keywords: [
     'x growth tool',
     'twitter follower growth',
@@ -26,13 +25,13 @@ export const metadata: Metadata = {
     url: 'https://growthhunt.ai/xgrower',
     title: 'X Grower — 76 followers in 4 days',
     description:
-      'AI reply tool I built to grow my own X account. 0 → 76 followers in 4 days. Pro: $PRO_PRICE/mo, unlimited replies. Free tier: 10/day, 100/month.',
+      'AI reply tool I built to grow my own X account. 0 → 76 followers in 4 days. Pro: $9/mo (first 500 founders, lifetime locked) then $19/mo. Free tier: 10/day, 100/month.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'X Grower — 76 followers in 4 days',
     description:
-      'AI reply tool I built to grow my own X account. 0 → 76 followers in 4 days. Pro: $PRO_PRICE/mo, unlimited replies. Free tier: 10/day, 100/month.',
+      'AI reply tool I built to grow my own X account. 0 → 76 followers in 4 days. Pro: $9/mo (first 500 founders, lifetime locked) then $19/mo. Free tier: 10/day, 100/month.',
   },
 }
 
@@ -43,7 +42,7 @@ const FAQS = [
   },
   {
     q: 'When and how do I pay?',
-    a: 'You don\'t have to. The free tier gives every new account 10 replies/day and up to 100/month — no card. If you want unlimited replies, Pro is $PRO_PRICE/mo (LemonSqueezy subscription), cancel any time. The first 100 founding-code holders get 30 days of Pro free (claimed via X reply on Felix\'s pinned tweet).',
+    a: 'You don\'t have to. The free tier gives every new account 10 replies/day and up to 100/month — no card, forever. If you want unlimited replies, Pro is a LemonSqueezy subscription, cancel any time, with a dual-price tier: the first 500 paid users lock $9/mo for life (founding cohort), and from the 501st paid user onwards it\'s $19/mo standard. Separately, the first 100 X users to reply "I\'m in" on Felix\'s pinned tweet get an invite code that unlocks 30 days of Pro free. The 30-day trial is independent of the price lock — when the trial ends and a holder converts to paid, they get $9/mo lifetime if paid-user count is still under 500, otherwise $19/mo.',
   },
   {
     q: 'Do you store my X password?',
@@ -111,7 +110,7 @@ export default async function XGrowerLandingPage() {
               <AnimatedCounter to={stats.daysSinceStart} /> days.
             </span>{' '}
             <span style={{ color: 'var(--ink-dim)' }}>
-              Pro {stats.proPriceMonthly}/mo.
+              {stats.proPriceFoundingMonthly}/mo Pro for first 500.
             </span>
           </h1>
 
@@ -136,7 +135,7 @@ export default async function XGrowerLandingPage() {
 
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center', marginBottom: 56 }}>
             <Link
-              href="/login"
+              href="/xgrower/install"
               style={{
                 fontSize: 16,
                 fontWeight: 600,
@@ -151,7 +150,7 @@ export default async function XGrowerLandingPage() {
               Start free (10 replies/day) →
             </Link>
             <span style={{ fontSize: 14, color: 'var(--ink-dim)' }}>
-              No card. Upgrade to Pro ({stats.proPriceMonthly}/mo) any time.
+              No card. Upgrade to Pro any time — {stats.proPriceFoundingMonthly}/mo lifetime if you&apos;re in the first 500 paid users, {stats.proPriceStandardMonthly}/mo after.
             </span>
           </div>
 
@@ -187,8 +186,8 @@ export default async function XGrowerLandingPage() {
             />
             <Stat
               label="Pro"
-              sublabel={`free: ${stats.freeRepliesPerDay}/day, ${stats.freeRepliesPerMonth}/mo`}
-              value={`${stats.proPriceMonthly}/mo`}
+              sublabel={`first 500 paid users lifetime, then ${stats.proPriceStandardMonthly}/mo · free: ${stats.freeRepliesPerDay}/day, ${stats.freeRepliesPerMonth}/mo`}
+              value={`${stats.proPriceFoundingMonthly}/mo`}
             />
           </div>
 
@@ -283,7 +282,7 @@ export default async function XGrowerLandingPage() {
             whether to upgrade to Pro before you pay anything.
           </p>
           <Link
-            href="/login"
+            href="/xgrower/install"
             style={{
               fontSize: 16,
               fontWeight: 600,
@@ -298,7 +297,7 @@ export default async function XGrowerLandingPage() {
             Start free ({stats.freeRepliesPerDay} replies/day) →
           </Link>
           <p style={{ marginTop: 24, fontSize: 13, color: 'var(--ink-faint)' }}>
-            Like it? Pro is {stats.proPriceMonthly}/mo — unlimited replies, cancel any time. First 100 founding-code holders get 30 days of Pro free.
+            Like it? Pro is {stats.proPriceFoundingMonthly}/mo for the first 500 paid users (lifetime locked), then {stats.proPriceStandardMonthly}/mo. Cancel any time. First 100 to reply &quot;I&apos;m in&quot; on Felix&apos;s pinned tweet also get 30 days of Pro free.
           </p>
         </section>
 
@@ -377,10 +376,10 @@ export default async function XGrowerLandingPage() {
             you keep telling yourself you'll build.
           </h2>
           <p style={{ fontSize: 17, lineHeight: 1.5, color: 'var(--ink-dim)', maxWidth: 540, margin: '0 auto 32px' }}>
-            Free tier: {stats.freeRepliesPerDay} replies/day, {stats.freeRepliesPerMonth}/month. Five minutes a day. Upgrade to Pro ({stats.proPriceMonthly}/mo) when the follower count earns it.
+            Free tier: {stats.freeRepliesPerDay} replies/day, {stats.freeRepliesPerMonth}/month. Five minutes a day. Upgrade to Pro when the follower count earns it — {stats.proPriceFoundingMonthly}/mo lifetime for the first 500 paid users, {stats.proPriceStandardMonthly}/mo after.
           </p>
           <Link
-            href="/login"
+            href="/xgrower/install"
             style={{
               fontSize: 16,
               fontWeight: 600,
