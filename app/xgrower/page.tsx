@@ -159,6 +159,43 @@ export default async function XGrowerLandingPage() {
             </span>
           </div>
 
+          {/* Product demo video */}
+          <div style={{
+            marginTop: 8,
+            marginBottom: 56,
+            borderRadius: 12,
+            overflow: 'hidden',
+            border: '1px solid var(--rule)',
+            background: 'var(--bg-elev)',
+            maxWidth: 720,
+          }}>
+            <video
+              src="/xgrower-demo.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              style={{
+                width: '100%',
+                height: 'auto',
+                aspectRatio: '1594 / 1080',
+                display: 'block',
+              }}
+            />
+            <div style={{
+              padding: '12px 16px',
+              fontSize: 12,
+              fontFamily: 'var(--mono)',
+              color: 'var(--ink-faint)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              borderTop: '1px solid var(--rule)',
+            }}>
+              20s · pick keyword → start burst → replies dispatch
+            </div>
+          </div>
+
           {/* Social proof — Felix's account */}
           <div
             style={{
