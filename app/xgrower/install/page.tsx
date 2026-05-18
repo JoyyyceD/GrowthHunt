@@ -1,5 +1,6 @@
 import type React from 'react'
 import { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { TopNav } from '@/lib/site/TopNav'
 
@@ -23,7 +24,15 @@ export const metadata: Metadata = {
   },
 }
 
-const STEPS: { num: string; title: string; body: React.ReactNode; placeholder: string }[] = [
+const STEPS: {
+  num: string
+  title: string
+  body: React.ReactNode
+  placeholder: string
+  src?: string
+  srcW?: number
+  srcH?: number
+}[] = [
   {
     num: '01',
     title: "Open Chrome's extension page",
@@ -46,12 +55,18 @@ const STEPS: { num: string; title: string; body: React.ReactNode; placeholder: s
       </>
     ),
     placeholder: 'chrome://extensions page',
+    src: '/xgrower/install/step-01-chrome-extensions.png',
+    srcW: 931,
+    srcH: 661,
   },
   {
     num: '02',
     title: 'Turn on Developer mode',
     body: <>Top-right toggle. You&apos;ll see new buttons appear in the toolbar above the list.</>,
     placeholder: 'Developer mode toggle on',
+    src: '/xgrower/install/step-02-developer-mode.png',
+    srcW: 935,
+    srcH: 617,
   },
   {
     num: '03',
@@ -94,6 +109,9 @@ const STEPS: { num: string; title: string; body: React.ReactNode; placeholder: s
     title: 'Click "Load unpacked" → select the folder',
     body: <>Pick the unzipped folder (not the .zip). Chrome installs Xgrower into your browser.</>,
     placeholder: 'Load unpacked dialog',
+    src: '/xgrower/install/step-04-load-unpacked.png',
+    srcW: 930,
+    srcH: 658,
   },
   {
     num: '05',
@@ -105,6 +123,9 @@ const STEPS: { num: string; title: string; body: React.ReactNode; placeholder: s
       </>
     ),
     placeholder: 'pinned extension popup',
+    src: '/xgrower/install/step-05-pin-popover.png',
+    srcW: 935,
+    srcH: 656,
   },
 ]
 
@@ -134,16 +155,32 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
     q: 'I see an "Errors" tab in chrome://extensions?',
     a: (
       <>
-        Click Errors → screenshot → DM{' '}
-        <a
-          href="https://x.com/Felixisbuilding"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: 'var(--ink-dim)' }}
-        >
-          @Felixisbuilding
-        </a>
-        . Most launch-day errors are session/auth related and I&apos;ll fix them in &lt;1 hour.
+        <p style={{ margin: '0 0 14px' }}>
+          Click Errors → screenshot → DM{' '}
+          <a
+            href="https://x.com/Felixisbuilding"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'var(--ink-dim)' }}
+          >
+            @Felixisbuilding
+          </a>
+          . Most launch-day errors are session/auth related and I&apos;ll fix them in &lt;1 hour.
+        </p>
+        <Image
+          src="/xgrower/install/faq-errors.png"
+          alt="X Grower card showing a red Errors button next to Details / Remove"
+          width={937}
+          height={625}
+          sizes="(max-width: 768px) 100vw, 640px"
+          style={{
+            width: '100%',
+            height: 'auto',
+            borderRadius: 10,
+            border: '1px solid var(--rule)',
+            display: 'block',
+          }}
+        />
       </>
     ),
   },
@@ -304,6 +341,9 @@ export default function XGrowerInstallPage() {
                   title={s.title}
                   body={s.body}
                   placeholder={s.placeholder}
+                  src={s.src}
+                  srcW={s.srcW}
+                  srcH={s.srcH}
                 />
               ))}
             </div>
@@ -486,11 +526,17 @@ function InstallStep({
   title,
   body,
   placeholder,
+  src,
+  srcW,
+  srcH,
 }: {
   num: string
   title: string
   body: React.ReactNode
   placeholder: string
+  src?: string
+  srcW?: number
+  srcH?: number
 }) {
   return (
     <div
@@ -535,27 +581,48 @@ function InstallStep({
       >
         {body}
       </div>
-      <div
-        style={{
-          marginTop: 'auto',
-          background: 'var(--bg-elev)',
-          border: '1px dashed var(--rule-strong)',
-          borderRadius: 10,
-          aspectRatio: '16 / 9',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: 12,
-          fontFamily: 'var(--mono)',
-          color: 'var(--ink-faint)',
-          letterSpacing: '0.04em',
-          textAlign: 'center',
-          padding: 12,
-        }}
-        aria-label={`Screenshot placeholder: ${placeholder}`}
-      >
-        🖼️ {placeholder}
-      </div>
+      {src && srcW && srcH ? (
+        <div
+          style={{
+            marginTop: 'auto',
+            borderRadius: 10,
+            overflow: 'hidden',
+            border: '1px solid var(--rule)',
+            background: 'var(--bg-elev)',
+          }}
+        >
+          <Image
+            src={src}
+            alt={placeholder}
+            width={srcW}
+            height={srcH}
+            sizes="(max-width: 768px) 100vw, 33vw"
+            style={{ width: '100%', height: 'auto', display: 'block' }}
+          />
+        </div>
+      ) : (
+        <div
+          style={{
+            marginTop: 'auto',
+            background: 'var(--bg-elev)',
+            border: '1px dashed var(--rule-strong)',
+            borderRadius: 10,
+            aspectRatio: '16 / 9',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: 12,
+            fontFamily: 'var(--mono)',
+            color: 'var(--ink-faint)',
+            letterSpacing: '0.04em',
+            textAlign: 'center',
+            padding: 12,
+          }}
+          aria-label={`Screenshot placeholder: ${placeholder}`}
+        >
+          🖼️ {placeholder}
+        </div>
+      )}
     </div>
   )
 }
