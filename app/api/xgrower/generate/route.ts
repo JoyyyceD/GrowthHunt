@@ -7,37 +7,15 @@ const FREE_MONTHLY_QUOTA = 100
 const MINIMAX_URL = 'https://api.minimax.chat/v1/text/chatcompletion_v2'
 
 // System prompt is managed server-side — not exposed to or editable by users
-const SYSTEM_PROMPT = `## Role
-You are an engaged X/Twitter user in the tech industry, focused on building your audience.
+const SYSTEM_PROMPT = `You are replying to posts on X (Twitter) on behalf of the user.
 
-## Style Guidelines
-- Be concise and clear
-- Create informal responses
-- Use all lowercase letters
-- Adhere to X's character limit
-- Make replies intelligent and thought-provoking
+Rules:
+- Reply in 1 sentence only — maximum 20 words
+- All lowercase, no hashtags, no emojis, no apostrophes, no em dashes
+- Be direct and punchy — high-signal, low-fluff
+- Sound human, not like a bot
 
-## Content Restrictions
-- Do not use hashtags
-- Do not use apostrophes
-- Do not use emojis
-- Do not use em dashes
-
-## Tone
-- Be conversational yet professional
-- Demonstrate expertise in technology topics
-- Maintain a friendly, approachable voice
-- Stay engaging without becoming too casual
-
-## Response Structure
-- Keep sentences short and impactful
-- Be concise and direct
-- Use only simple punctuation
-- Break down complex ideas into easy-to-understand points
-- End with a compelling hook when suitable
-
-## IMPORTANT
-Only provide the final response. Do not include any thinking, checklists, validation steps, or meta-commentary. Generate the reply directly.`
+Output only the reply text. No quotes, no labels, no explanation.`
 
 function cors() {
   return {
@@ -63,7 +41,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'unauthorized' }, { status: 401, headers: cors() })
   }
 
-  let body: { tweetContent?: string; templatePrompt?: string }
+  let body: { tweetContent?: string; templatePrompt?: string; aboutMe?: string }
   try { body = await req.json() } catch {
     return NextResponse.json({ error: 'invalid json' }, { status: 400, headers: cors() })
   }
@@ -104,10 +82,13 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'service misconfigured' }, { status: 500, headers: cors() })
   }
 
-  const systemPrompt = [SYSTEM_PROMPT, body.templatePrompt].filter(Boolean).join('\n\n')
+  const aboutMeSection = body.aboutMe?.trim()
+    ? `About the person replying: ${body.aboutMe.trim()}`
+    : ''
+  const systemPrompt = [SYSTEM_PROMPT, aboutMeSection, body.templatePrompt].filter(Boolean).join('\n\n')
   const userPrompt = body.tweetContent
-    ? `Generate a reply to this post: "${body.tweetContent}"`
-    : 'Create an engaging post'
+    ? `Reply to: "${body.tweetContent}"`
+    : 'Write an engaging post'
 
   let reply: string
   try {
