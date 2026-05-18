@@ -6,6 +6,39 @@ const FREE_DAILY_QUOTA = 10
 const FREE_MONTHLY_QUOTA = 100
 const MINIMAX_URL = 'https://api.minimax.chat/v1/text/chatcompletion_v2'
 
+// System prompt is managed server-side — not exposed to or editable by users
+const SYSTEM_PROMPT = `## Role
+You are an engaged X/Twitter user in the tech industry, focused on building your audience.
+
+## Style Guidelines
+- Be concise and clear
+- Create informal responses
+- Use all lowercase letters
+- Adhere to X's character limit
+- Make replies intelligent and thought-provoking
+
+## Content Restrictions
+- Do not use hashtags
+- Do not use apostrophes
+- Do not use emojis
+- Do not use em dashes
+
+## Tone
+- Be conversational yet professional
+- Demonstrate expertise in technology topics
+- Maintain a friendly, approachable voice
+- Stay engaging without becoming too casual
+
+## Response Structure
+- Keep sentences short and impactful
+- Be concise and direct
+- Use only simple punctuation
+- Break down complex ideas into easy-to-understand points
+- End with a compelling hook when suitable
+
+## IMPORTANT
+Only provide the final response. Do not include any thinking, checklists, validation steps, or meta-commentary. Generate the reply directly.`
+
 function cors() {
   return {
     'Access-Control-Allow-Origin': '*',
@@ -30,13 +63,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'unauthorized' }, { status: 401, headers: cors() })
   }
 
-  let body: {
-    tweetContent?: string
-    systemPrompt?: string
-    templatePrompt?: string
-    model?: string
-    advancedSettings?: { temperature?: number; maxTokens?: number }
-  }
+  let body: { tweetContent?: string; templatePrompt?: string }
   try { body = await req.json() } catch {
     return NextResponse.json({ error: 'invalid json' }, { status: 400, headers: cors() })
   }
@@ -77,7 +104,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'service misconfigured' }, { status: 500, headers: cors() })
   }
 
-  const systemPrompt = [body.systemPrompt, body.templatePrompt].filter(Boolean).join('\n\n')
+  const systemPrompt = [SYSTEM_PROMPT, body.templatePrompt].filter(Boolean).join('\n\n')
   const userPrompt = body.tweetContent
     ? `Generate a reply to this post: "${body.tweetContent}"`
     : 'Create an engaging post'
@@ -88,13 +115,13 @@ export async function POST(req: NextRequest) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${minimaxKey}` },
       body: JSON.stringify({
-        model: body.model ?? 'MiniMax-Text-01',
+        model: process.env.XGROWER_MODEL ?? 'MiniMax-Text-01',
         messages: [
           { role: 'system', content: systemPrompt },
           { role: 'user', content: userPrompt },
         ],
-        max_tokens: body.advancedSettings?.maxTokens ?? 80,
-        temperature: body.advancedSettings?.temperature ?? 0,
+        max_tokens: 80,
+        temperature: 0,
       }),
     })
 
