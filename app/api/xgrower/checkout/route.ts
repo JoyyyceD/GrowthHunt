@@ -5,6 +5,12 @@ import { isUserPro } from '@/lib/xgrower/pro'
 const LS_API_BASE = 'https://api.lemonsqueezy.com/v1'
 const REDIRECT_URL = 'https://www.growthhunt.ai/xgrower/redeem?success=1'
 
+// First 500 paid users get $9/mo lifetime price lock.
+// User #501+ gets the $19/mo standard variant.
+// Race condition (2 users seeing count=499 simultaneously) is acceptable —
+// worst case is 501-502 also land in the founding tier.
+const FOUNDING_PRICE_CAP = 500
+
 function cors() {
   return {
     'Access-Control-Allow-Origin': '*',
@@ -39,19 +45,39 @@ export async function POST(req: NextRequest) {
 
   const apiKey = process.env.LEMONSQUEEZY_API_KEY
   const storeId = process.env.LEMONSQUEEZY_STORE_ID
-  const variantId = process.env.LEMONSQUEEZY_XGROWER_VARIANT_ID
+  const foundingVariantId = process.env.LEMONSQUEEZY_XGROWER_FOUNDING_VARIANT_ID
+  const standardVariantId = process.env.LEMONSQUEEZY_XGROWER_STANDARD_VARIANT_ID
 
-  if (!apiKey || !storeId || !variantId) {
+  if (!apiKey || !storeId || !foundingVariantId || !standardVariantId) {
     console.error('[xgrower/checkout] missing LS env vars', {
       hasApiKey: !!apiKey,
       hasStoreId: !!storeId,
-      hasVariantId: !!variantId,
+      hasFoundingVariantId: !!foundingVariantId,
+      hasStandardVariantId: !!standardVariantId,
     })
     return NextResponse.json(
       { error: 'Xgrower Pro pricing not yet configured. Please check back tomorrow.' },
       { status: 500, headers: cors() },
     )
   }
+
+  // Pick variant based on current paid-user count.
+  // Every row in xgrower_subscriptions represents someone who paid at least once —
+  // even cancelled/expired users consume a founding slot.
+  const { count: paidUserCount, error: countErr } = await admin
+    .from('xgrower_subscriptions')
+    .select('user_id', { count: 'exact', head: true })
+
+  if (countErr) {
+    console.error('[xgrower/checkout] failed to count paid users:', countErr)
+    return NextResponse.json(
+      { error: 'Checkout service unavailable. Please try again.' },
+      { status: 502, headers: cors() },
+    )
+  }
+
+  const isFounding = (paidUserCount ?? 0) < FOUNDING_PRICE_CAP
+  const variantId = isFounding ? foundingVariantId : standardVariantId
 
   const lsBody = {
     data: {
@@ -62,6 +88,7 @@ export async function POST(req: NextRequest) {
           custom: {
             user_id: user.id,
             product: 'xgrower',
+            tier: isFounding ? 'founding' : 'standard',
           },
         },
         checkout_options: {
@@ -123,5 +150,11 @@ export async function POST(req: NextRequest) {
     )
   }
 
-  return NextResponse.json({ checkoutUrl }, { headers: cors() })
+  return NextResponse.json({
+    checkoutUrl,
+    tier: isFounding ? 'founding' : 'standard',
+    foundingSlotsRemaining: isFounding
+      ? Math.max(0, FOUNDING_PRICE_CAP - (paidUserCount ?? 0))
+      : 0,
+  }, { headers: cors() })
 }
