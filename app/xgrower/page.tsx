@@ -8,9 +8,9 @@ import { AnimatedCounter } from './AnimatedCounter'
 export const revalidate = 1800 // 30 min — match the x-stats cache window
 
 export const metadata: Metadata = {
-  title: 'X Grower — 76 followers in 4 days. $9/mo Pro for first 500.',
+  title: 'X Grower — 0 → 1,000 followers for indie founders on X',
   description:
-    'The AI reply tool I built to grow my own X account. 0 → 76 followers in 4 days. Pro: $9/mo for the first 500 paid users (lifetime price lock), then $19/mo. Free tier: 10 replies/day, 100/month.',
+    '0 → 1,000 followers for indie founders on X. AI reply Chrome extension, built by an indie founder using it on his own account. Free tier: 10 replies/day, 100/month. Pro: $9/mo for the first 500 paid users (lifetime locked), then $19/mo.',
   keywords: [
     'x growth tool',
     'twitter follower growth',
@@ -23,22 +23,22 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://growthhunt.ai/xgrower',
-    title: 'X Grower — 76 followers in 4 days',
+    title: 'X Grower — 0 → 1,000 followers for indie founders on X',
     description:
-      'AI reply tool I built to grow my own X account. 0 → 76 followers in 4 days. Pro: $9/mo (first 500 founders, lifetime locked) then $19/mo. Free tier: 10/day, 100/month.',
+      '0 → 1,000 followers for indie founders on X. AI reply Chrome extension, built by an indie founder on his own account. Free tier: 10/day, 100/month. Pro: $9/mo (first 500 lifetime locked), then $19/mo.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'X Grower — 76 followers in 4 days',
+    title: 'X Grower — 0 → 1,000 followers for indie founders on X',
     description:
-      'AI reply tool I built to grow my own X account. 0 → 76 followers in 4 days. Pro: $9/mo (first 500 founders, lifetime locked) then $19/mo. Free tier: 10/day, 100/month.',
+      '0 → 1,000 followers for indie founders on X. AI reply Chrome extension, built by an indie founder on his own account. Free tier: 10/day, 100/month. Pro: $9/mo (first 500 lifetime locked), then $19/mo.',
   },
 }
 
 const FAQS = [
   {
     q: 'Will my X account get banned?',
-    a: 'X enforces automation rules and accounts can be limited or suspended. We add randomized human-like behavior (bezier mouse paths, character-by-character typing, scroll simulation, randomized delays) to reduce detection risk, but there is no zero-risk automation. Use a non-critical X account first.',
+    a: 'Honest answer: any automation carries some risk. The builder runs this exact loop on his own account every day and has not been flagged — but that\'s n=1, not a guarantee. We add randomized human-like behavior (bezier mouse paths, character-by-character typing, scroll simulation, randomized delays) to reduce detection risk, and if your account does get banned we refund your unused credit. If you\'re cautious, run it on a non-critical X account first.',
   },
   {
     q: 'When and how do I pay?',
@@ -66,7 +66,7 @@ const FAQS = [
   },
   {
     q: 'What about refunds?',
-    a: 'If your X account gets banned, submit a screenshot via support and we refund your unused credit balance — once per user lifetime.',
+    a: 'If your X account gets banned, submit a screenshot via support and we refund your unused credit balance.',
   },
 ]
 
@@ -105,12 +105,9 @@ export default async function XGrowerLandingPage() {
               fontWeight: 400,
             }}
           >
-            <AnimatedCounter to={stats.followers} /> X followers.{' '}
-            <span style={{ color: 'var(--accent)' }}>
-              <AnimatedCounter to={stats.daysSinceStart} /> days.
-            </span>{' '}
+            0 <span style={{ color: 'var(--accent)' }}>→</span> 1,000 followers{' '}
             <span style={{ color: 'var(--ink-dim)' }}>
-              {stats.proPriceFoundingMonthly}/mo Pro for first 500.
+              for indie founders on X.
             </span>
           </h1>
 
@@ -124,8 +121,12 @@ export default async function XGrowerLandingPage() {
               margin: '0 0 40px',
             }}
           >
-            I built this to grow my own X account. It worked, so I'm letting
-            other indie founders run it.
+            I built it to grow my own X account. I&apos;m at{' '}
+            <span style={{ color: 'var(--ink)' }}>
+              <AnimatedCounter to={stats.followers} /> followers in{' '}
+              <AnimatedCounter to={stats.daysSinceStart} /> days
+            </span>
+            , and I&apos;m letting other indie founders run the same loop.
             <br />
             <span style={{ color: 'var(--ink-faint)', fontSize: '0.7em' }}>
               The extension runs in your own Chrome — we never see your X
