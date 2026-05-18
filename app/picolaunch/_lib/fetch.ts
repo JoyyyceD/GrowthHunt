@@ -124,3 +124,19 @@ export async function getAllChampionSlugs(): Promise<string[]> {
     .limit(1000)
   return (data ?? []).map((r: { slug: string }) => r.slug)
 }
+
+// Sitemap-friendly variant — includes created_at so we can emit a real
+// lastmod instead of `new Date()` (Google starts ignoring lastmod when
+// every URL claims to have been updated today).
+export async function getAllChampionMeta(): Promise<{ slug: string; createdAt: string }[]> {
+  const supabase = await createServerClient()
+  const { data } = await supabase
+    .from('champions')
+    .select('slug, created_at')
+    .is('deleted_at', null)
+    .limit(1000)
+  return (data ?? []).map((r: { slug: string; created_at: string }) => ({
+    slug: r.slug,
+    createdAt: r.created_at,
+  }))
+}

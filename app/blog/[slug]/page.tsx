@@ -2,7 +2,8 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import { getAllSlugs, getPostBySlug } from '@/lib/blog'
+import { getAllPosts, getAllSlugs, getPostBySlug } from '@/lib/blog'
+import { getAllCompanies, getStory } from '@/lib/growth-story'
 import { TopNav } from '@/lib/site/TopNav'
 
 interface Props {
@@ -74,6 +75,24 @@ export default async function BlogPost({ params }: Props) {
   const post = getPostBySlug(slug)
   if (!post) notFound()
 
+  // Related: prefer same-module posts; fall back to most recent.
+  const related = getAllPosts()
+    .filter(p => p.slug !== slug)
+    .sort((a, b) => {
+      const sameA = a.module === post.module ? 0 : 1
+      const sameB = b.module === post.module ? 0 : 1
+      if (sameA !== sameB) return sameA - sameB
+      return a.date < b.date ? 1 : -1
+    })
+    .slice(0, 3)
+
+  // Surface a couple of growth-story case studies as cross-cuts —
+  // narrative complement to the how-to blog post.
+  const caseStudies = getAllCompanies()
+    .map(c => getStory(c, 'en'))
+    .filter((s): s is NonNullable<ReturnType<typeof getStory>> => s !== null)
+    .slice(0, 2)
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -85,9 +104,20 @@ export default async function BlogPost({ params }: Props) {
     mainEntityOfPage: { '@type': 'WebPage', '@id': `https://growthhunt.ai/blog/${slug}` },
   }
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'GrowthHunt', item: 'https://growthhunt.ai' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://growthhunt.ai/blog' },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `https://growthhunt.ai/blog/${slug}` },
+    ],
+  }
+
   return (
     <div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
       <TopNav variant="page" />
 
@@ -115,6 +145,68 @@ export default async function BlogPost({ params }: Props) {
           <MDXRemote source={post.content} components={mdxComponents} />
         </div>
       </section>
+
+      {/* Related — descriptive anchor text (post titles) gives Google
+          a clear topical signal on the link target. */}
+      {(related.length > 0 || caseStudies.length > 0) && (
+        <section style={{ padding: '64px 0', borderTop: '1px solid var(--rule)', background: 'var(--bg-card)' }}>
+          <div className="shell" style={{ maxWidth: 960 }}>
+            {related.length > 0 && (
+              <>
+                <div className="eyebrow" style={{ marginBottom: 18 }}><span className="dot" />Keep reading</div>
+                <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.4vw, 40px)', lineHeight: 1.1, letterSpacing: '-0.025em', fontWeight: 400, margin: '0 0 28px' }}>
+                  More from the {post.module || 'GrowthHunt'} playbook.
+                </h2>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 1, background: 'var(--rule)', border: '1px solid var(--rule)', marginBottom: caseStudies.length > 0 ? 48 : 0 }}>
+                  {related.map(r => (
+                    <Link key={r.slug} href={`/blog/${r.slug}`} className="blog-card" style={{ textDecoration: 'none', display: 'block', background: 'var(--bg)' }}>
+                      <article style={{ padding: '24px 28px', minHeight: 160, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                        <div style={{ display: 'flex', gap: 8 }}>
+                          {r.module && <span className="tag">{r.module}</span>}
+                          <span className="tag">{r.readTime} read</span>
+                        </div>
+                        <h3 style={{ fontFamily: 'var(--serif)', fontSize: 20, lineHeight: 1.22, letterSpacing: '-0.018em', fontWeight: 400, margin: 0, flex: 1 }}>
+                          {r.title}
+                        </h3>
+                        <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                          Read: {r.title.length > 38 ? `${r.title.slice(0, 36)}…` : r.title} →
+                        </div>
+                      </article>
+                    </Link>
+                  ))}
+                </div>
+              </>
+            )}
+
+            {caseStudies.length > 0 && (
+              <>
+                <div className="eyebrow" style={{ marginBottom: 18 }}><span className="dot" />Case studies</div>
+                <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.4vw, 40px)', lineHeight: 1.1, letterSpacing: '-0.025em', fontWeight: 400, margin: '0 0 28px' }}>
+                  See it run in the wild.
+                </h2>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 1, background: 'var(--rule)', border: '1px solid var(--rule)' }}>
+                  {caseStudies.map(s => (
+                    <Link key={s.slug} href={`/growth-story/${s.slug}`} className="blog-card" style={{ textDecoration: 'none', display: 'block', background: 'var(--bg)' }}>
+                      <article style={{ padding: '24px 28px', minHeight: 160, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                        <div style={{ display: 'flex', gap: 8 }}>
+                          <span className="tag">Growth Story</span>
+                          <span className="tag">{s.readTime}</span>
+                        </div>
+                        <h3 style={{ fontFamily: 'var(--serif)', fontSize: 20, lineHeight: 1.22, letterSpacing: '-0.018em', fontWeight: 400, margin: 0, flex: 1 }}>
+                          {s.title}
+                        </h3>
+                        <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                          Read the {s.slug} story →
+                        </div>
+                      </article>
+                    </Link>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="closing" style={{ padding: '80px 0' }}>

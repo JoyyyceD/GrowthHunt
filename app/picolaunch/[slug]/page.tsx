@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 import { getChampionWithComments } from '../_lib/fetch'
 import VoteButton from '../_client/VoteButton'
@@ -56,8 +57,14 @@ function Logo({
   if (logoUrl) {
     return (
       <div className="logo-mark" style={{ width: size, height: size }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={logoUrl} alt={`${name} logo`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <Image
+          src={logoUrl}
+          alt={`${name} logo`}
+          width={size}
+          height={size}
+          priority
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        />
       </div>
     )
   }
@@ -101,9 +108,20 @@ export default async function PicoLaunchDetail({ params }: Props) {
     about: champion.url ? { '@type': 'WebSite', url: champion.url, name: champion.name } : undefined,
   }
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'GrowthHunt', item: 'https://growthhunt.ai' },
+      { '@type': 'ListItem', position: 2, name: 'PicoLaunch', item: 'https://growthhunt.ai/picolaunch' },
+      { '@type': 'ListItem', position: 3, name: champion.name, item: `https://growthhunt.ai/picolaunch/${slug}` },
+    ],
+  }
+
   return (
     <div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
       <section className="opc-section" style={{ padding: '64px 0 32px' }}>
         <div className="shell" style={{ maxWidth: 760 }}>
@@ -155,21 +173,23 @@ export default async function PicoLaunchDetail({ params }: Props) {
             <div className="screenshot-grid" style={{ marginTop: 36 }}>
               {champion.image1Url && (
                 <div className="screenshot-frame">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={champion.image1Url}
                     alt={`${champion.name} screenshot 1`}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    fill
+                    sizes="(max-width: 760px) 100vw, 372px"
+                    style={{ objectFit: 'cover' }}
                   />
                 </div>
               )}
               {champion.image2Url && (
                 <div className="screenshot-frame">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={champion.image2Url}
                     alt={`${champion.name} screenshot 2`}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    fill
+                    sizes="(max-width: 760px) 100vw, 372px"
+                    style={{ objectFit: 'cover' }}
                   />
                 </div>
               )}

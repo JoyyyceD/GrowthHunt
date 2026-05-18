@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { createBrowserClient } from '@/lib/supabase/browser'
 import { readSoftUserEmail } from '@/lib/soft-auth'
@@ -36,10 +37,11 @@ function hueFromName(name: string): string {
 function Avatar({ url, name, size = 32 }: { url: string | null; name: string; size?: number }) {
   if (url) {
     return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
+      <Image
         src={url}
         alt=""
+        width={size}
+        height={size}
         style={{
           width: size,
           height: size,

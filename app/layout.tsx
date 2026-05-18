@@ -65,6 +65,22 @@ const jsonLd = {
   },
 }
 
+// Separate Organization entity — gives Google a clean signal for brand
+// searches (knowledge panel, sitelinks). SoftwareApplication describes
+// the product; this describes the company behind it.
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'GrowthHunt',
+  legalName: 'GrowthHunt Labs',
+  url: BASE,
+  logo: `${BASE}/icon.svg`,
+  description: DESCRIPTION,
+  sameAs: [
+    'https://x.com/growthhuntai',
+  ],
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -75,9 +91,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="GrowthHunt Blog"
+          href={`${BASE}/blog/rss.xml`}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
       </head>
       <body>

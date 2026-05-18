@@ -275,7 +275,7 @@
 
 /* ── Detail screenshots ── */
 .screenshot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
-.screenshot-frame { aspect-ratio: 3/2; border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; background: var(--bg-elev); }
+.screenshot-frame { aspect-ratio: 3/2; border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; background: var(--bg-elev); position: relative; }
 
 .about-block { padding: 24px; background: var(--bg-elev); border: 1px solid var(--rule); border-radius: 12px; margin-bottom: 24px; }
 .about-block h4 { font-family: var(--sans); font-size: 15px; font-weight: 600; margin: 0 0 12px; }

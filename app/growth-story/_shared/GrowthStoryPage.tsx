@@ -214,9 +214,23 @@ export default async function GrowthStoryPage({ company, locale }: Props) {
 
   const seriesNum = String(timeline.company.seriesNumber ?? 1).padStart(2, '0')
 
+  const breadcrumbBase = locale === 'zh'
+    ? `https://growthhunt.ai/growth-story/${company}/zh`
+    : `https://growthhunt.ai/growth-story/${company}`
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'GrowthHunt', item: 'https://growthhunt.ai' },
+      { '@type': 'ListItem', position: 2, name: locale === 'zh' ? '增长故事' : 'Growth Story', item: 'https://growthhunt.ai/growth-story' },
+      { '@type': 'ListItem', position: 3, name: timeline.company.name, item: breadcrumbBase },
+    ],
+  }
+
   return (
     <div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <TopNav variant="page" />
 
       {/* Hero */}
@@ -465,7 +479,7 @@ export default async function GrowthStoryPage({ company, locale }: Props) {
                       {post.title}
                     </h3>
                     <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                      Read →
+                      {locale === 'zh' ? '阅读：' : 'Read: '}{post.title.length > 36 ? `${post.title.slice(0, 34)}…` : post.title} →
                     </div>
                   </article>
                 </Link>
