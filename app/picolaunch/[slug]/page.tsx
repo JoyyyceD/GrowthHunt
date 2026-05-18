@@ -2,11 +2,13 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { getChampionWithComments } from '../_lib/fetch'
-import { createServerClient } from '@/lib/supabase/server'
 import VoteButton from '../_client/VoteButton'
 import CommentBox from '../_client/CommentBox'
+import OwnerEditButton from '../_client/OwnerEditButton'
 
-export const dynamic = 'force-dynamic'
+// ISR — cache rendered HTML for 5 min so bots (and most visitors) hit a
+// pre-rendered page instead of running a DB query per request.
+export const revalidate = 300
 
 interface Props { params: Promise<{ slug: string }> }
 
@@ -16,8 +18,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!data) return {}
   const { champion } = data
   const url = `https://growthhunt.ai/picolaunch/${slug}`
+  // Keep <title> under Google's ~60-char SERP cap so it doesn't get truncated mid-tagline.
+  const TITLE_MAX = 60
+  const fullTitle = `${champion.name} — ${champion.tagline}`
+  const title = fullTitle.length > TITLE_MAX
+    ? `${champion.name} — ${champion.tagline.slice(0, Math.max(20, TITLE_MAX - champion.name.length - 4)).trimEnd()}…`
+    : fullTitle
   return {
-    title: `${champion.name} — ${champion.tagline}`,
+    title,
     description: champion.about ?? champion.tagline,
     alternates: { canonical: url },
     openGraph: {
@@ -75,10 +83,6 @@ export default async function PicoLaunchDetail({ params }: Props) {
 
   const { champion, comments } = data
 
-  const supabase = await createServerClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  const isOwner = !!user && user.id === champion.ownerId
-
   // SEO — Product + Article hybrid markup, telling Google this is a real
   // listing AND providing dofollow attribution to the company's site.
   const jsonLd = {
@@ -124,16 +128,7 @@ export default async function PicoLaunchDetail({ params }: Props) {
               <div className="row-tagline">{champion.tagline}</div>
             </div>
             <div className="row-actions">
-              {isOwner && (
-                <Link
-                  href={`/picolaunch/${slug}/edit`}
-                  className="comment-btn"
-                  style={{ textDecoration: 'none' }}
-                  title="Edit this launch"
-                >
-                  Edit
-                </Link>
-              )}
+              <OwnerEditButton slug={slug} ownerId={champion.ownerId} />
               <VoteButton slug={champion.id} initialCount={champion.upvotes} />
               {champion.url && (
                 // Dofollow → real backlink benefit for the featured company

@@ -63,6 +63,10 @@ const mdxComponents = {
   a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
     <a style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: 3 }} {...props} />
   ),
+  img: ({ alt, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img alt={alt ?? ''} style={{ maxWidth: '100%', height: 'auto', borderRadius: 8, margin: '24px 0' }} {...props} />
+  ),
 }
 
 export default async function BlogPost({ params }: Props) {

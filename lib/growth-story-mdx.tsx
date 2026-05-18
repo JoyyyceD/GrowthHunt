@@ -252,6 +252,10 @@ export const mdxComponents = {
     />
   ),
   hr: () => <hr style={{ border: 0, borderTop: '1px solid var(--rule)', margin: '64px 0' }} />,
+  img: ({ alt, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img alt={alt ?? ''} style={{ maxWidth: '100%', height: 'auto', borderRadius: 8, margin: '28px 0' }} {...props} />
+  ),
   a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
     <a style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: 3 }} {...props} />
   ),

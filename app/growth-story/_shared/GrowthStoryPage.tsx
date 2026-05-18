@@ -238,11 +238,29 @@ export default async function GrowthStoryPage({ company, locale }: Props) {
           <p style={{ fontSize: 17.5, color: 'var(--ink-dim)', maxWidth: 720, lineHeight: 1.65, margin: '0 0 34px' }}>
             {timeline.company.summary}
           </p>
-          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' }}>
             <span className="tag">{story.readTime} {t.tags.read}</span>
             <span className="tag">{t.tags.founded} {timeline.company.founded}</span>
             <span className="tag">{timeline.events.length} {t.tags.eventsTracked}</span>
             <span className="tag">{deepDives.length} {t.tags.deepDives}</span>
+            <div role="group" aria-label="Language" style={{ display: 'inline-flex', marginLeft: 'auto', border: '1px solid var(--rule)', borderRadius: 999, padding: 2, fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              <Link
+                href={`/growth-story/${company}`}
+                hrefLang="en-US"
+                aria-current={locale === 'en' ? 'page' : undefined}
+                style={{ padding: '4px 12px', borderRadius: 999, textDecoration: 'none', color: locale === 'en' ? 'var(--accent-ink)' : 'var(--ink-dim)', background: locale === 'en' ? 'var(--accent)' : 'transparent' }}
+              >
+                EN
+              </Link>
+              <Link
+                href={`/growth-story/${company}/zh`}
+                hrefLang="zh-CN"
+                aria-current={locale === 'zh' ? 'page' : undefined}
+                style={{ padding: '4px 12px', borderRadius: 999, textDecoration: 'none', color: locale === 'zh' ? 'var(--accent-ink)' : 'var(--ink-dim)', background: locale === 'zh' ? 'var(--accent)' : 'transparent' }}
+              >
+                中文
+              </Link>
+            </div>
           </div>
         </div>
       </section>
