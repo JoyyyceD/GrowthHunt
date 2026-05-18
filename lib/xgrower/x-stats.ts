@@ -6,11 +6,12 @@
  * shouldn't blow our twitterapi.io budget, and a stale-by-30-min hero number
  * is fine for storytelling.
  *
- * NOTE: Pricing model is now LemonSqueezy subscription. The previous
- * `costPerReply` / `costPerPost` per-reply fields were removed when the
- * pay-per-reply narrative was retired (Path Y). Pro pricing is currently a
- * placeholder string `$PRO_PRICE` — Felix will fill the final monthly price
- * before launch.
+ * NOTE: Pricing model is now LemonSqueezy subscription with a dual-price tier:
+ * Founding cohort (first 500 paid users) lock $9/mo for life; from the 501st
+ * paid user onwards, Pro is $19/mo standard. The Free tier (10 replies/day,
+ * 100/month max) is permanent and unchanged. Separately, the first 100 X
+ * users to reply "I'm in" to Felix's pinned tweet get an invite code that
+ * unlocks 30 days of Pro free (unrelated to the price lock).
  */
 
 const TWITTERAPI_IO_KEY = process.env.TWITTERAPI_IO_KEY
@@ -23,8 +24,10 @@ export interface XGrowerStats {
   followers: number
   posts: number
   daysSinceStart: number
-  /** TODO: Felix to fill $PRO_PRICE — recommended $9/mo or $19/mo based on competitor pricing. */
-  proPriceMonthly: string
+  /** Founding-cohort Pro price — first 500 paid users, lifetime locked. */
+  proPriceFoundingMonthly: string
+  /** Standard Pro price — applies from the 501st paid user onwards. */
+  proPriceStandardMonthly: string
   /** Free tier daily cap — informational only, kept in lib so copy can reference it. */
   freeRepliesPerDay: number
   /** Free tier monthly cap. */
@@ -36,7 +39,8 @@ const FALLBACK: XGrowerStats = {
   followers: 76,
   posts: 338,
   daysSinceStart: 4,
-  proPriceMonthly: '$PRO_PRICE',
+  proPriceFoundingMonthly: '$9', // first 500 paid users, lifetime locked
+  proPriceStandardMonthly: '$19', // 501st paid user onwards
   freeRepliesPerDay: 10,
   freeRepliesPerMonth: 100,
   source: 'fallback',
@@ -91,10 +95,12 @@ export async function fetchXGrowerStats(): Promise<XGrowerStats> {
       followers,
       posts: posts !== null && posts >= 0 ? posts : FALLBACK.posts,
       daysSinceStart,
-      // deprecated — subscription model (LemonSqueezy) replaces pay-per-reply.
+      // Subscription model (LemonSqueezy) replaces pay-per-reply.
+      // Dual-price: first 500 paid users lock $9/mo for life; 501+ pay $19/mo.
       // Keep these informational fields so the landing page can render the
-      // free-tier quota copy without hardcoding numbers in JSX.
-      proPriceMonthly: '$PRO_PRICE',
+      // free-tier quota and dual-price copy without hardcoding numbers in JSX.
+      proPriceFoundingMonthly: '$9', // first 500 paid users, lifetime locked
+      proPriceStandardMonthly: '$19', // 501st paid user onwards
       freeRepliesPerDay: 10,
       freeRepliesPerMonth: 100,
       source: 'live',
