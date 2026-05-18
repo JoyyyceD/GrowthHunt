@@ -105,10 +105,8 @@ export default async function XGrowerLandingPage() {
               fontWeight: 400,
             }}
           >
-            0 <span style={{ color: 'var(--accent)' }}>→</span> 1,000 followers{' '}
-            <span style={{ color: 'var(--ink-dim)' }}>
-              for indie founders on X.
-            </span>
+            0 <span style={{ color: 'var(--accent)' }}>→ 1,000</span> followers
+            for indie founders on X.
           </h1>
 
           <p
@@ -116,19 +114,22 @@ export default async function XGrowerLandingPage() {
               fontFamily: 'var(--serif)',
               fontSize: 'clamp(22px, 3vw, 32px)',
               lineHeight: 1.3,
-              color: 'var(--ink-dim)',
+              color: 'var(--ink)',
               maxWidth: 820,
               margin: '0 0 40px',
             }}
           >
             I built it to grow my own X account. I&apos;m at{' '}
-            <span style={{ color: 'var(--ink)' }}>
-              <AnimatedCounter to={stats.followers} /> followers in{' '}
-              <AnimatedCounter to={stats.daysSinceStart} /> days
-            </span>
-            , and I&apos;m letting other indie founders run the same loop.
+            <span style={{ color: 'var(--accent)' }}>
+              <AnimatedCounter to={stats.followers} />
+            </span>{' '}
+            followers in{' '}
+            <span style={{ color: 'var(--accent)' }}>
+              <AnimatedCounter to={stats.daysSinceStart} />
+            </span>{' '}
+            days, and I&apos;m letting other indie founders run the same loop.
             <br />
-            <span style={{ color: 'var(--ink-faint)', fontSize: '0.7em' }}>
+            <span style={{ color: 'var(--ink-dim)', fontSize: '0.7em' }}>
               The extension runs in your own Chrome — we never see your X
               password or cookie.
             </span>
