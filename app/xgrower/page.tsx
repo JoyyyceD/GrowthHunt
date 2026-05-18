@@ -7,6 +7,9 @@ import { AnimatedCounter } from './AnimatedCounter'
 
 export const revalidate = 1800 // 30 min — match the x-stats cache window
 
+// Swap to the specific status URL once the pinned tweet is live.
+const PINNED_TWEET_URL = 'https://x.com/Felixisbuilding'
+
 export const metadata: Metadata = {
   title: 'X Grower — 0 → 1,000 followers for indie founders on X',
   description:
@@ -280,8 +283,7 @@ export default async function XGrowerLandingPage() {
             <b style={{ color: 'var(--ink)', fontWeight: 500 }}>
               free tier — {stats.freeRepliesPerDay} replies/day, {stats.freeRepliesPerMonth}/month
             </b>
-            . No credit card. Run them on your own X account, watch your follower count, decide
-            whether to upgrade to Pro before you pay anything.
+            , no card. Run a few bursts from your own X account, watch your follower count, then decide whether to upgrade.
           </p>
           <Link
             href="/xgrower/install"
@@ -299,8 +301,51 @@ export default async function XGrowerLandingPage() {
             Start free ({stats.freeRepliesPerDay} replies/day) →
           </Link>
           <p style={{ marginTop: 24, fontSize: 13, color: 'var(--ink-faint)' }}>
-            Like it? Pro is {stats.proPriceFoundingMonthly}/mo for the first 500 paid users (lifetime locked), then {stats.proPriceStandardMonthly}/mo. Cancel any time. First 100 to reply &quot;I&apos;m in&quot; on Felix&apos;s pinned tweet also get 30 days of Pro free.
+            Pro is <span style={{ color: 'var(--ink-dim)' }}>{stats.proPriceFoundingMonthly}/mo lifetime</span> for the first 500 paid users, then {stats.proPriceStandardMonthly}/mo. Cancel any time.
           </p>
+
+          <div
+            style={{
+              marginTop: 80,
+              marginBottom: 16,
+              fontSize: 11,
+              fontFamily: 'var(--mono)',
+              color: 'var(--accent)',
+              letterSpacing: '0.12em',
+            }}
+          >
+            OR / FOUNDING COHORT
+          </div>
+          <h3
+            style={{
+              fontFamily: 'var(--serif)',
+              fontSize: 'clamp(28px, 3.6vw, 40px)',
+              margin: '0 0 16px',
+              fontWeight: 400,
+              lineHeight: 1.15,
+            }}
+          >
+            Reply &ldquo;<em style={{ color: 'var(--accent)' }}>I&apos;m in</em>&rdquo; — get 30 days of Pro free.
+          </h3>
+          <p style={{ fontSize: 16, lineHeight: 1.5, color: 'var(--ink-dim)', maxWidth: 560, margin: '0 auto 28px' }}>
+            First 100 people to reply on the pinned tweet below unlock 30 days of Pro, stacked on top of the founding {stats.proPriceFoundingMonthly}/mo lifetime price.
+          </p>
+
+          <TweetCard
+            href={PINNED_TWEET_URL}
+            name="Felix"
+            handle="@Felixisbuilding"
+            avatarLetter="F"
+            body={
+              <>
+                Built X Grower — a Chrome extension that took my own X account from 0 → {stats.followers} followers in {stats.daysSinceStart} days as an indie founder.
+                <br />
+                <br />
+                First 100 people to reply <b style={{ color: 'var(--ink)' }}>&ldquo;I&apos;m in&rdquo;</b> get 30 days of Pro free. (After that: {stats.proPriceFoundingMonthly}/mo lifetime for the first 500 paid users, {stats.proPriceStandardMonthly}/mo standard.)
+              </>
+            }
+            cta="Reply on X →"
+          />
         </section>
 
         {/* FAQ */}
@@ -373,12 +418,14 @@ export default async function XGrowerLandingPage() {
               lineHeight: 1.1,
             }}
           >
-            Build the audience
+            Build the <em style={{ color: 'var(--accent)' }}>audience</em>
             <br />
-            you keep telling yourself you'll build.
+            you keep telling yourself
+            <br />
+            you&apos;ll build.
           </h2>
           <p style={{ fontSize: 17, lineHeight: 1.5, color: 'var(--ink-dim)', maxWidth: 540, margin: '0 auto 32px' }}>
-            Free tier: {stats.freeRepliesPerDay} replies/day, {stats.freeRepliesPerMonth}/month. Five minutes a day. Upgrade to Pro when the follower count earns it — {stats.proPriceFoundingMonthly}/mo lifetime for the first 500 paid users, {stats.proPriceStandardMonthly}/mo after.
+            {stats.freeRepliesPerDay} replies/day. No card. Five minutes.
           </p>
           <Link
             href="/xgrower/install"
@@ -459,6 +506,99 @@ function Stat({
         </div>
       )}
     </div>
+  )
+}
+
+function TweetCard({
+  href,
+  name,
+  handle,
+  avatarLetter,
+  body,
+  cta,
+}: {
+  href: string
+  name: string
+  handle: string
+  avatarLetter: string
+  body: React.ReactNode
+  cta: string
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        display: 'block',
+        textAlign: 'left',
+        maxWidth: 540,
+        margin: '0 auto',
+        padding: '24px 26px 20px',
+        background: 'var(--bg)',
+        border: '1px solid var(--rule)',
+        borderRadius: 18,
+        textDecoration: 'none',
+        color: 'inherit',
+      }}
+    >
+      <div style={{ display: 'flex', gap: 14, alignItems: 'center', marginBottom: 14 }}>
+        <div
+          style={{
+            width: 44,
+            height: 44,
+            borderRadius: '50%',
+            background: 'var(--accent)',
+            color: 'var(--accent-ink)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontFamily: 'var(--serif)',
+            fontSize: 22,
+            fontWeight: 500,
+            flexShrink: 0,
+          }}
+        >
+          {avatarLetter}
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.25 }}>
+          <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)' }}>{name}</span>
+          <span
+            style={{
+              fontSize: 13,
+              color: 'var(--ink-faint)',
+              fontFamily: 'var(--mono)',
+            }}
+          >
+            {handle} · pinned
+          </span>
+        </div>
+      </div>
+
+      <div
+        style={{
+          fontSize: 16,
+          lineHeight: 1.55,
+          color: 'var(--ink)',
+          marginBottom: 16,
+        }}
+      >
+        {body}
+      </div>
+
+      <div
+        style={{
+          borderTop: '1px solid var(--rule)',
+          paddingTop: 12,
+          fontSize: 13,
+          fontFamily: 'var(--mono)',
+          color: 'var(--accent)',
+          letterSpacing: '0.04em',
+        }}
+      >
+        {cta}
+      </div>
+    </a>
   )
 }
 
