@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import remarkGfm from 'remark-gfm'
 import { getAllPosts, getAllSlugs, getPostBySlug } from '@/lib/blog'
 import { getAllCompanies, getStory } from '@/lib/growth-story'
 import { TopNav } from '@/lib/site/TopNav'
@@ -67,6 +68,17 @@ const mdxComponents = {
   img: ({ alt, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => (
     // eslint-disable-next-line @next/next/no-img-element
     <img alt={alt ?? ''} style={{ maxWidth: '100%', height: 'auto', borderRadius: 8, margin: '24px 0' }} {...props} />
+  ),
+  table: (props: React.HTMLAttributes<HTMLTableElement>) => (
+    <div style={{ overflowX: 'auto', margin: '0 0 28px' }}>
+      <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14, fontFamily: 'var(--mono)' }} {...props} />
+    </div>
+  ),
+  th: (props: React.HTMLAttributes<HTMLTableCellElement>) => (
+    <th style={{ textAlign: 'left', padding: '12px 14px', borderBottom: '1px solid var(--rule-strong)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--ink)', background: 'var(--bg-card)' }} {...props} />
+  ),
+  td: (props: React.HTMLAttributes<HTMLTableCellElement>) => (
+    <td style={{ padding: '12px 14px', borderBottom: '1px solid var(--rule)', color: 'var(--ink-dim)', verticalAlign: 'top' }} {...props} />
   ),
 }
 
@@ -142,7 +154,7 @@ export default async function BlogPost({ params }: Props) {
       {/* Body */}
       <section style={{ padding: '64px 0 80px' }}>
         <div className="shell" style={{ maxWidth: 720 }}>
-          <MDXRemote source={post.content} components={mdxComponents} />
+          <MDXRemote source={post.content} components={mdxComponents} options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }} />
         </div>
       </section>
 
