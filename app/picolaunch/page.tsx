@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import type { Metadata } from 'next'
 import { getLeaderboard, type LeaderboardRange } from './_lib/fetch'
 import VoteButton from './_client/VoteButton'
@@ -39,11 +38,15 @@ function Logo({
   if (logoUrl) {
     return (
       <div className="logo-mark">
-        <Image
+        {/* Logo URLs come from arbitrary sources (seed data, user input, brand
+            CDNs) — keep as raw <img> so next/image's domain allowlist can't
+            block them. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={logoUrl}
           alt={`${name} logo`}
-          width={48}
-          height={48}
+          loading="lazy"
+          decoding="async"
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
       </div>

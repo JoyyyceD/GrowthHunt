@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { createBrowserClient } from '@/lib/supabase/browser'
 import { readSoftUserEmail } from '@/lib/soft-auth'
@@ -37,11 +36,13 @@ function hueFromName(name: string): string {
 function Avatar({ url, name, size = 32 }: { url: string | null; name: string; size?: number }) {
   if (url) {
     return (
-      <Image
+      // OAuth avatars can come from any provider (Google, GitHub, MS...) —
+      // raw <img> avoids needing to enumerate every provider's hostname.
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
         src={url}
         alt=""
-        width={size}
-        height={size}
+        loading="lazy"
         style={{
           width: size,
           height: size,

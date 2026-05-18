@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { createServerClient } from '@/lib/supabase/server'
 import { requireGoogleAuth } from '@/lib/picolaunch/auth-gate'
 import { championToDTO } from '@/lib/opc-mappers'
@@ -153,7 +152,8 @@ function Logo({
   if (logoUrl) {
     return (
       <div className="logo-mark">
-        <Image src={logoUrl} alt="" width={48} height={48} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={logoUrl} alt="" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
       </div>
     )
   }

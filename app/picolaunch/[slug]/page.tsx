@@ -57,12 +57,15 @@ function Logo({
   if (logoUrl) {
     return (
       <div className="logo-mark" style={{ width: size, height: size }}>
-        <Image
+        {/* Logo URLs come from arbitrary sources (seed data, user input, brand
+            CDNs) — keep as raw <img> so next/image's domain allowlist can't
+            block them. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={logoUrl}
           alt={`${name} logo`}
-          width={size}
-          height={size}
-          priority
+          loading="eager"
+          decoding="async"
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
       </div>
