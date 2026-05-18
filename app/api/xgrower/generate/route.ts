@@ -1,10 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createAdminClient } from '@/lib/supabase/admin'
+import { isUserPro } from '@/lib/xgrower/pro'
 
 const FREE_DAILY_QUOTA = 10
 const FREE_MONTHLY_QUOTA = 100
-const PAID_DAILY_QUOTA = 9999   // effectively unlimited per day
-const PAID_MONTHLY_QUOTA = 9999
 const MINIMAX_URL = 'https://api.minimax.chat/v1/text/chatcompletion_v2'
 
 function cors() {
@@ -42,36 +41,33 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'invalid json' }, { status: 400, headers: cors() })
   }
 
-  // Determine tier & quotas
-  const { data: profile } = await admin.from('profiles').select('tier').eq('id', user.id).single()
-  const tier = profile?.tier ?? 'free'
-  const dailyQuota = tier === 'paid' ? PAID_DAILY_QUOTA : FREE_DAILY_QUOTA
-  const monthlyQuota = tier === 'paid' ? PAID_MONTHLY_QUOTA : FREE_MONTHLY_QUOTA
+  const pro = await isUserPro(user.id)
 
-  const now = new Date()
-  const dayStr = now.toISOString().slice(0, 10)           // e.g. 2026-05-14
-  const monthStr = now.toISOString().slice(0, 7) + '-01'  // e.g. 2026-05-01
+  if (!pro) {
+    const now = new Date()
+    const dayStr = now.toISOString().slice(0, 10)
+    const monthStr = now.toISOString().slice(0, 7) + '-01'
 
-  // Check daily and monthly usage in parallel
-  const [{ data: dailyRow }, { data: monthlyRow }] = await Promise.all([
-    admin.from('xgrower_daily_usage').select('used').eq('user_id', user.id).eq('day', dayStr).single(),
-    admin.from('xgrower_usage').select('used').eq('user_id', user.id).eq('month', monthStr).single(),
-  ])
+    const [{ data: dailyRow }, { data: monthlyRow }] = await Promise.all([
+      admin.from('xgrower_daily_usage').select('used').eq('user_id', user.id).eq('day', dayStr).single(),
+      admin.from('xgrower_usage').select('used').eq('user_id', user.id).eq('month', monthStr).single(),
+    ])
 
-  const dailyUsed = dailyRow?.used ?? 0
-  const monthlyUsed = monthlyRow?.used ?? 0
+    const dailyUsed = dailyRow?.used ?? 0
+    const monthlyUsed = monthlyRow?.used ?? 0
 
-  if (dailyUsed >= dailyQuota) {
-    return NextResponse.json(
-      { error: `Daily limit of ${dailyQuota} replies reached. Come back tomorrow!` },
-      { status: 429, headers: cors() },
-    )
-  }
-  if (monthlyUsed >= monthlyQuota) {
-    return NextResponse.json(
-      { error: `Monthly quota of ${monthlyQuota} replies reached.${tier === 'free' ? ' Upgrade to Pro for more.' : ''}` },
-      { status: 429, headers: cors() },
-    )
+    if (dailyUsed >= FREE_DAILY_QUOTA) {
+      return NextResponse.json(
+        { error: `Daily limit of ${FREE_DAILY_QUOTA} replies reached. Come back tomorrow!` },
+        { status: 429, headers: cors() },
+      )
+    }
+    if (monthlyUsed >= FREE_MONTHLY_QUOTA) {
+      return NextResponse.json(
+        { error: `Monthly quota of ${FREE_MONTHLY_QUOTA} replies reached. Use an invite code to unlock Pro.` },
+        { status: 429, headers: cors() },
+      )
+    }
   }
 
   // Call MiniMax
@@ -119,11 +115,16 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'AI generation failed, please retry' }, { status: 502, headers: cors() })
   }
 
-  // Atomically increment both daily and monthly counters
-  await Promise.all([
-    admin.rpc('xgrower_increment_daily_usage', { p_user_id: user.id, p_day: dayStr }),
-    admin.rpc('xgrower_increment_usage', { p_user_id: user.id, p_month: monthStr }),
-  ])
+  // Only track usage for free users
+  if (!pro) {
+    const now = new Date()
+    const dayStr = now.toISOString().slice(0, 10)
+    const monthStr = now.toISOString().slice(0, 7) + '-01'
+    await Promise.all([
+      admin.rpc('xgrower_increment_daily_usage', { p_user_id: user.id, p_day: dayStr }),
+      admin.rpc('xgrower_increment_usage', { p_user_id: user.id, p_month: monthStr }),
+    ])
+  }
 
   return NextResponse.json({ reply }, { headers: cors() })
 }

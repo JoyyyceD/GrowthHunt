@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createAdminClient } from '@/lib/supabase/admin'
+import { isUserPro } from '@/lib/xgrower/pro'
 
 const FREE_DAILY_QUOTA = 10
 const FREE_MONTHLY_QUOTA = 100
@@ -28,8 +29,15 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: 'unauthorized' }, { status: 401, headers: cors() })
   }
 
-  const { data: profile } = await admin.from('profiles').select('tier').eq('id', user.id).single()
-  const tier = profile?.tier ?? 'free'
+  const pro = await isUserPro(user.id)
+
+  // Get pro grant expiry if applicable
+  const { data: grant } = await admin
+    .from('xgrower_pro_grants')
+    .select('expires_at')
+    .eq('user_id', user.id)
+    .gt('expires_at', new Date().toISOString())
+    .single()
 
   const now = new Date()
   const dayStr = now.toISOString().slice(0, 10)
@@ -45,12 +53,13 @@ export async function GET(req: NextRequest) {
 
   return NextResponse.json({
     email: user.email,
-    tier,
+    tier: pro ? 'paid' : 'free',
+    proExpiresAt: grant?.expires_at ?? null,
     dailyQuota: FREE_DAILY_QUOTA,
-    dailyUsed,
-    dailyRemaining: Math.max(0, FREE_DAILY_QUOTA - dailyUsed),
+    dailyUsed: pro ? 0 : dailyUsed,
+    dailyRemaining: pro ? 9999 : Math.max(0, FREE_DAILY_QUOTA - dailyUsed),
     monthlyQuota: FREE_MONTHLY_QUOTA,
-    monthlyUsed,
-    monthlyRemaining: Math.max(0, FREE_MONTHLY_QUOTA - monthlyUsed),
+    monthlyUsed: pro ? 0 : monthlyUsed,
+    monthlyRemaining: pro ? 9999 : Math.max(0, FREE_MONTHLY_QUOTA - monthlyUsed),
   }, { headers: cors() })
 }
