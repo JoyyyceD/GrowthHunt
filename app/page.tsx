@@ -56,10 +56,20 @@ function LiveCases() {
         <div className="section-head" style={{ borderBottom: 0, paddingBottom: 0, display: 'block' }}>
           <h2 style={{ margin: '0 0 12px' }}>Use it <em>today</em>.</h2>
           <p style={{ fontSize: 16, color: 'var(--ink-dim)', margin: 0, maxWidth: 540 }}>
-            Four products live right now. No waitlist, no setup — just click in and go.
+            Five products live right now. No waitlist, no setup — just click in and go.
           </p>
         </div>
         <div className="eco-grid">
+          {/* X Grower card — Chrome extension for indie founder X growth */}
+          <Link href="/xgrower" className="eco-card eco-card-link">
+            <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
+            <div className="eco-title">X Grower</div>
+            <p>
+              Chrome extension for indie founders going 0 → 1,000 followers on X. Pick a keyword, click Start, AI drafts personalized replies in your voice and dispatches 30+ per session with human-like timing. Free tier: 10 replies/day, 100/month.
+            </p>
+            <span className="visit">Open X Grower →</span>
+          </Link>
+
           {/* Growth Story card — links to landing page */}
           <Link href="/growth-story" className="eco-card eco-card-link">
             <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
@@ -196,6 +206,7 @@ function Footer() {
         <div>
           <h4>Live products</h4>
           <ul>
+            <li><Link href="/xgrower">X Grower</Link></li>
             <li><Link href="/growth-story">Growth Story</Link></li>
             <li><Link href="/get-backlinks">Get Backlinks</Link></li>
             <li><a href="/picolaunch">PicoLaunch</a></li>
