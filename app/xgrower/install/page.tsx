@@ -103,6 +103,9 @@ const STEPS: {
       </>
     ),
     placeholder: 'unzipped folder',
+    src: '/xgrower/install/step-03-unzipped-folder.png',
+    srcW: 407,
+    srcH: 255,
   },
   {
     num: '04',
