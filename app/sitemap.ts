@@ -100,6 +100,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    {
+      url: `${BASE}/velocity`,
+      lastModified: BUILD_DATE,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
     ...growthStoryCompanies,
     ...picoLaunchDetails,
     ...featurePages,

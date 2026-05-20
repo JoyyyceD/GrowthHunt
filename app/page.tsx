@@ -56,10 +56,22 @@ function LiveCases() {
         <div className="section-head" style={{ borderBottom: 0, paddingBottom: 0, display: 'block' }}>
           <h2 style={{ margin: '0 0 12px' }}>Use it <em>today</em>.</h2>
           <p style={{ fontSize: 16, color: 'var(--ink-dim)', margin: 0, maxWidth: 540 }}>
-            Five products live right now. No waitlist, no setup — just click in and go.
+            Six products live right now. No waitlist, no setup — just click in and go.
           </p>
         </div>
         <div className="eco-grid">
+          {/* Velocity card — public weekly AI velocity leaderboards */}
+          <Link href="/velocity" className="eco-card eco-card-link">
+            <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
+            <div className="eco-title">Velocity</div>
+            <p>
+              A weekly leaderboard of the fastest-moving things in AI — GitHub repos gaining stars
+              fastest, the AI founders growing fastest on X, and the most viral products. Free,
+              public, refreshed every Monday.
+            </p>
+            <span className="visit">Open Velocity →</span>
+          </Link>
+
           {/* X Grower card — Chrome extension for indie founder X growth */}
           <Link href="/xgrower" className="eco-card eco-card-link">
             <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
@@ -206,6 +218,7 @@ function Footer() {
         <div>
           <h4>Live products</h4>
           <ul>
+            <li><Link href="/velocity">Velocity</Link></li>
             <li><Link href="/xgrower">X Grower</Link></li>
             <li><Link href="/growth-story">Growth Story</Link></li>
             <li><Link href="/get-backlinks">Get Backlinks</Link></li>
