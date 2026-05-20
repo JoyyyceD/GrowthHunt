@@ -3,7 +3,9 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { TopNav } from '@/lib/site/TopNav'
 import { fetchXGrowerStats } from '@/lib/xgrower/x-stats'
+import { fetchGithubStars } from '@/lib/xgrower/github-stars'
 import { AnimatedCounter } from './AnimatedCounter'
+import { GitHubStarButton } from './GitHubStarButton'
 
 export const revalidate = 1800 // 30 min — match the x-stats cache window
 
@@ -74,7 +76,10 @@ const FAQS = [
 ]
 
 export default async function XGrowerLandingPage() {
-  const stats = await fetchXGrowerStats()
+  const [stats, github] = await Promise.all([
+    fetchXGrowerStats(),
+    fetchGithubStars(),
+  ])
   return (
     <>
       <TopNav variant="page" />
@@ -154,6 +159,7 @@ export default async function XGrowerLandingPage() {
             >
               Start free (10 replies/day) →
             </Link>
+            <GitHubStarButton stars={github.stars} url={github.url} />
             <span style={{ fontSize: 14, color: 'var(--ink-dim)' }}>
               No card. Upgrade to Pro any time — {stats.proPriceFoundingMonthly}/mo lifetime if you&apos;re in the first 500 paid users, {stats.proPriceStandardMonthly}/mo after.
             </span>
@@ -480,6 +486,28 @@ export default async function XGrowerLandingPage() {
           >
             Start free →
           </Link>
+          <div
+            style={{
+              marginTop: 28,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 12,
+            }}
+          >
+            <span
+              style={{
+                fontSize: 12,
+                color: 'var(--ink-faint)',
+                fontFamily: 'var(--mono)',
+                letterSpacing: '0.06em',
+                textTransform: 'uppercase',
+              }}
+            >
+              X Grower is open source — star it if it helps you
+            </span>
+            <GitHubStarButton stars={github.stars} url={github.url} />
+          </div>
           <p style={{ marginTop: 32, fontSize: 13, color: 'var(--ink-faint)' }}>
             <Link href="/terms" style={{ color: 'var(--ink-faint)' }}>Terms</Link>
             {' · '}
