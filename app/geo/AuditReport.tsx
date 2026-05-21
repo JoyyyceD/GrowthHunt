@@ -1,0 +1,246 @@
+'use client'
+
+import { useState } from 'react'
+import type { AuditResult } from '@/lib/audit'
+import { ResultRadar } from './ResultRadar'
+import { ResultChecklist } from './ResultChecklist'
+
+const SKILL_REPO = 'https://github.com/growthhunt/geo-skill'
+
+const SEVERITY: Record<string, { bg: string; fg: string }> = {
+  critical: { bg: '#fbe9e2', fg: '#c0392b' },
+  high: { bg: '#fbe9e2', fg: '#c0392b' },
+  medium: { bg: '#fcf5e3', fg: 'var(--warn)' },
+  low: { bg: 'var(--bg-card)', fg: 'var(--ink-faint)' },
+}
+
+const ENGINES: Array<{ key: keyof AuditResult['engine_compatibility']; label: string }> = [
+  { key: 'chatgpt', label: 'ChatGPT' },
+  { key: 'perplexity', label: 'Perplexity' },
+  { key: 'gemini', label: 'Gemini' },
+  { key: 'claude', label: 'Claude' },
+]
+const RATING: Record<string, { glyph: string; color: string }> = {
+  high: { glyph: '●', color: '#16a34a' },
+  medium: { glyph: '◐', color: 'var(--warn)' },
+  low: { glyph: '○', color: 'var(--ink-faint)' },
+}
+
+function scoreColor(s: number): string {
+  if (s >= 70) return '#16a34a'
+  if (s >= 45) return 'var(--warn)'
+  return '#c0392b'
+}
+
+function countChecks(result: AuditResult): number {
+  return result.dimensions.reduce((n, d) => n + d.checks.length, 0)
+}
+
+/** Read-only GEO audit report — used by the live form and by share pages. */
+export function AuditReport({
+  result,
+  cached = false,
+  shareable = false,
+}: {
+  result: AuditResult
+  cached?: boolean
+  shareable?: boolean
+}) {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
+      {result.status === 'limited' && (
+        <Notice tone="warn" text={result.notice || 'Limited analysis.'} />
+      )}
+      {result.status === 'error' && (
+        <Notice tone="error" text={result.notice || 'The page could not be analyzed.'} />
+      )}
+
+      {/* score header */}
+      <div
+        className="geo-score-card"
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'minmax(0,1fr) 340px',
+          gap: 32,
+          alignItems: 'center',
+          border: '1px solid var(--rule)',
+          borderRadius: 16,
+          padding: 32,
+          background: 'var(--bg-elev)',
+        }}
+      >
+        <div>
+          <div className="eyebrow" style={{ marginBottom: 14 }}>
+            <span className="dot" />GEO Score{cached ? ' · cached' : ''}
+          </div>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, flexWrap: 'wrap' }}>
+            <span style={{ fontFamily: 'var(--serif)', fontSize: 88, lineHeight: 0.9, color: scoreColor(result.overall_score) }}>
+              {result.overall_score}
+            </span>
+            <span style={{ fontFamily: 'var(--serif)', fontSize: 30, color: 'var(--ink-faint)' }}>/ 100</span>
+            <span
+              style={{
+                marginLeft: 6,
+                fontFamily: 'var(--mono)',
+                fontSize: 13,
+                fontWeight: 600,
+                color: '#fff',
+                background: scoreColor(result.overall_score),
+                borderRadius: 6,
+                padding: '4px 10px',
+              }}
+            >
+              {result.grade}
+            </span>
+          </div>
+          <p style={{ margin: '14px 0 0', fontSize: 13, color: 'var(--ink-dim)', wordBreak: 'break-all' }}>
+            {result.url}
+          </p>
+          <div style={{ display: 'flex', gap: 18, marginTop: 18, flexWrap: 'wrap' }}>
+            {ENGINES.map(({ key, label }) => {
+              const r = RATING[result.engine_compatibility[key]] ?? RATING.low
+              return (
+                <span key={key} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 12.5, color: 'var(--ink-dim)' }}>
+                  <span style={{ color: r.color, fontSize: 13 }}>{r.glyph}</span>
+                  {label}
+                </span>
+              )
+            })}
+          </div>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <ResultRadar dimensions={result.dimensions} />
+        </div>
+      </div>
+
+      {/* checklist */}
+      {result.dimensions.length > 0 && (
+        <div>
+          <div className="eyebrow" style={{ marginBottom: 12 }}>
+            <span className="dot" />{result.dimensions.length} dimensions · {countChecks(result)} checks
+          </div>
+          <ResultChecklist dimensions={result.dimensions} />
+        </div>
+      )}
+
+      {/* priority fixes */}
+      {result.issues.length > 0 && (
+        <div>
+          <div className="eyebrow" style={{ marginBottom: 12 }}><span className="dot" />Priority fixes</div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            {result.issues.map((issue, i) => {
+              const sev = SEVERITY[issue.severity] ?? SEVERITY.low
+              return (
+                <div key={i} style={{ border: '1px solid var(--rule)', borderRadius: 10, padding: '16px 18px', background: 'var(--bg-elev)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6, flexWrap: 'wrap' }}>
+                    <span style={{ fontFamily: 'var(--mono)', fontSize: 10, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', color: sev.fg, background: sev.bg, borderRadius: 4, padding: '3px 7px' }}>
+                      {issue.severity}
+                    </span>
+                    <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--ink)' }}>{issue.title}</span>
+                  </div>
+                  {issue.explanation && (
+                    <p style={{ margin: '0 0 6px', fontSize: 13, color: 'var(--ink-dim)', lineHeight: 1.55 }}>{issue.explanation}</p>
+                  )}
+                  {issue.fix_suggestion && (
+                    <p style={{ margin: 0, fontSize: 13, color: 'var(--accent)', lineHeight: 1.55 }}>→ {issue.fix_suggestion}</p>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
+      {shareable && <ShareBar url={result.url} />}
+
+      {/* skill CTA */}
+      <div style={{ border: '1px solid var(--accent-border)', background: 'var(--accent-soft)', borderRadius: 12, padding: '24px 26px' }}>
+        <h3 style={{ fontFamily: 'var(--serif)', fontSize: 24, fontWeight: 400, margin: '0 0 8px' }}>
+          Apply these fixes in Claude Code
+        </h3>
+        <p style={{ fontSize: 14, color: 'var(--ink-dim)', margin: '0 0 16px', lineHeight: 1.6, maxWidth: 540 }}>
+          The GrowthHunt GEO skill re-runs this audit inside Claude Code, finds the matching
+          files in your repo, and applies the fixes — metadata, JSON-LD, robots.txt, llms.txt — with a diff you approve.
+        </p>
+        <a href={SKILL_REPO} target="_blank" rel="noopener noreferrer" className="btn-line" style={{ background: 'var(--ink)', color: 'var(--bg)', borderColor: 'var(--ink)' }}>
+          Get the GEO skill <span className="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  )
+}
+
+function ShareBar({ url }: { url: string }) {
+  const [link, setLink] = useState('')
+  const [busy, setBusy] = useState(false)
+  const [copied, setCopied] = useState(false)
+  const [err, setErr] = useState('')
+
+  async function createLink() {
+    setBusy(true)
+    setErr('')
+    try {
+      const res = await fetch('/api/geo/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url }),
+      })
+      const data = await res.json()
+      if (!res.ok || !data.hash) {
+        setErr(data.error === 'expired' ? 'This audit expired — re-run it to share.' : 'Could not create a share link.')
+        return
+      }
+      setLink(`${window.location.origin}/geo/r/${data.hash}`)
+    } catch {
+      setErr('Could not create a share link.')
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(link)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      /* clipboard blocked — user can select manually */
+    }
+  }
+
+  if (link) {
+    return (
+      <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap', border: '1px solid var(--rule)', borderRadius: 10, padding: 12, background: 'var(--bg-elev)' }}>
+        <input
+          readOnly
+          value={link}
+          onFocus={(e) => e.currentTarget.select()}
+          style={{ flex: '1 1 240px', border: '1px solid var(--rule)', borderRadius: 8, padding: '8px 12px', fontSize: 13, fontFamily: 'var(--mono)', color: 'var(--ink-dim)', background: 'var(--bg-card)', minWidth: 0 }}
+        />
+        <button type="button" onClick={copy} className="btn-line" style={{ cursor: 'pointer' }}>
+          {copied ? 'Copied ✓' : 'Copy link'}
+        </button>
+      </div>
+    )
+  }
+
+  return (
+    <div>
+      <button type="button" onClick={createLink} disabled={busy} className="btn-line" style={{ cursor: busy ? 'not-allowed' : 'pointer' }}>
+        {busy ? 'Creating link…' : 'Share this report'}
+      </button>
+      {err && <span style={{ marginLeft: 12, fontSize: 13, color: '#c0392b' }}>{err}</span>}
+    </div>
+  )
+}
+
+function Notice({ tone, text }: { tone: 'warn' | 'error'; text: string }) {
+  const palette = tone === 'warn'
+    ? { bg: '#fcf5e3', border: 'rgba(176,122,0,0.3)', fg: 'var(--warn)' }
+    : { bg: '#fef2f2', border: '#fecaca', fg: '#c0392b' }
+  return (
+    <div style={{ background: palette.bg, border: `1px solid ${palette.border}`, borderRadius: 10, padding: '14px 18px', fontSize: 13.5, color: palette.fg, lineHeight: 1.55 }}>
+      {text}
+    </div>
+  )
+}

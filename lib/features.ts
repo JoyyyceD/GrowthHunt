@@ -40,6 +40,16 @@ export const FEATURES: Feature[] = [
     example: { input: 'https://yourapp.com', output: '93 / 104 directories submitted · 47 confirmed · 24 backlinks live' },
   },
   {
+    id: 'geo', name: 'GEO Audit', tag: 'Live', module: 'distribution',
+    pitch: 'Audit any page for AI search visibility — and get the fixes.',
+    hook: 'Get cited by ChatGPT, Perplexity & Claude.',
+    summary: 'A free Generative Engine Optimization audit. Drop a URL, get a 0–100 score across 8 dimensions, a prioritized fix list, and a Claude Code skill that applies the fixes for you.',
+    problem: 'AI search engines answer questions by citing sources. If your pages aren\'t structured for them, you\'re invisible — even when you rank #1 on Google.',
+    solution: 'Audit any URL in ~10 seconds: crawler access, structured data, factual density, first-answer copy and more. Then apply the fixes in Claude Code with the GEO skill.',
+    example: { input: 'https://yourapp.com', output: 'GEO score 61/100 · 8 dimensions · 9 prioritized fixes · ChatGPT ◐ Perplexity ● Claude ○' },
+    launchUrl: '/geo',
+  },
+  {
     id: 'microlaunch', name: 'MicroLaunch', tag: 'Soon', module: 'distribution',
     pitch: 'A launch platform that actually ships traffic.',
     hook: 'Product Hunt for builders who hate vote brigading.',
