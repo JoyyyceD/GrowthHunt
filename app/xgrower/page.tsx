@@ -3,14 +3,19 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { TopNav } from '@/lib/site/TopNav'
 import { fetchXGrowerStats } from '@/lib/xgrower/x-stats'
+import { fetchGithubStars } from '@/lib/xgrower/github-stars'
 import { AnimatedCounter } from './AnimatedCounter'
+import { GitHubStarButton } from './GitHubStarButton'
 
 export const revalidate = 1800 // 30 min — match the x-stats cache window
 
+// Swap to the specific status URL once the pinned tweet is live.
+const PINNED_TWEET_URL = 'https://x.com/Felixisbuilding'
+
 export const metadata: Metadata = {
-  title: 'X Grower — 0 → 1,000 X followers, $0.05 per reply',
+  title: 'X Grower — 0 → 1,000 followers for indie founders on X',
   description:
-    'The AI reply tool I used to grow my own X account. 76 followers in 4 days. Built by an indie founder, for indie founders. $0.05 per reply, 50 free to try.',
+    '0 → 1,000 followers for indie founders on X. AI reply Chrome extension, built by an indie founder using it on his own account. Free tier: 10 replies/day, 100/month. Pro: $9/mo for the first 500 paid users (lifetime locked), then $19/mo.',
   keywords: [
     'x growth tool',
     'twitter follower growth',
@@ -23,26 +28,26 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://growthhunt.ai/xgrower',
-    title: 'X Grower — Your first 1,000 X followers',
+    title: 'X Grower — 0 → 1,000 followers for indie founders on X',
     description:
-      'AI reply tool that helped me grow from 0 to 76 followers in 4 days. $0.05 per reply, 50 free.',
+      '0 → 1,000 followers for indie founders on X. AI reply Chrome extension, built by an indie founder on his own account. Free tier: 10/day, 100/month. Pro: $9/mo (first 500 lifetime locked), then $19/mo.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'X Grower — Your first 1,000 X followers',
+    title: 'X Grower — 0 → 1,000 followers for indie founders on X',
     description:
-      'AI reply tool that helped me grow from 0 to 76 followers in 4 days. $0.05 per reply, 50 free.',
+      '0 → 1,000 followers for indie founders on X. AI reply Chrome extension, built by an indie founder on his own account. Free tier: 10/day, 100/month. Pro: $9/mo (first 500 lifetime locked), then $19/mo.',
   },
 }
 
 const FAQS = [
   {
     q: 'Will my X account get banned?',
-    a: 'X enforces automation rules and accounts can be limited or suspended. We add randomized human-like behavior (bezier mouse paths, character-by-character typing, scroll simulation, randomized delays) to reduce detection risk, but there is no zero-risk automation. Use a non-critical X account first. Read the full risk note in our Terms.',
+    a: 'Honest answer: any automation carries some risk. The builder runs this exact loop on his own account every day and has not been flagged — but that\'s n=1, not a guarantee. We add randomized human-like behavior (bezier mouse paths, character-by-character typing, scroll simulation, randomized delays) to reduce detection risk, and if your account does get banned we refund your unused credit. If you\'re cautious, run it on a non-critical X account first.',
   },
   {
     q: 'When and how do I pay?',
-    a: 'Never until you want to. Every new account starts with 50 free replies, no card needed. If the tool earns its keep, you can top up later — credit packs from $5, $0.015 per reply, no subscription, credits never expire. Full pricing on the pricing page.',
+    a: 'You don\'t have to. The free tier gives every new account 10 replies/day and up to 100/month — no card, forever. If you want unlimited replies, Pro is a LemonSqueezy subscription, cancel any time, with a dual-price tier: the first 500 paid users lock $9/mo for life (founding cohort), and from the 501st paid user onwards it\'s $19/mo standard. Separately, the first 100 X users to reply "I\'m in" on Felix\'s pinned tweet get an invite code that unlocks 30 days of Pro free. The 30-day trial is independent of the price lock — when the trial ends and a holder converts to paid, they get $9/mo lifetime if paid-user count is still under 500, otherwise $19/mo.',
   },
   {
     q: 'Do you store my X password?',
@@ -66,12 +71,15 @@ const FAQS = [
   },
   {
     q: 'What about refunds?',
-    a: 'If your X account gets banned, submit a screenshot via support and we refund your unused credit balance — once per user lifetime. See Refund Policy for details.',
+    a: 'If your X account gets banned, submit a screenshot via support and we refund your unused credit balance.',
   },
 ]
 
 export default async function XGrowerLandingPage() {
-  const stats = await fetchXGrowerStats()
+  const [stats, github] = await Promise.all([
+    fetchXGrowerStats(),
+    fetchGithubStars(),
+  ])
   return (
     <>
       <TopNav variant="page" />
@@ -92,7 +100,7 @@ export default async function XGrowerLandingPage() {
               marginBottom: 28,
             }}
           >
-            New · Public Beta
+            v1 · sideload beta · free tier: 10/day, 100/month
           </div>
 
           <h1
@@ -105,7 +113,8 @@ export default async function XGrowerLandingPage() {
               fontWeight: 400,
             }}
           >
-            0 → <span style={{ color: 'var(--accent)' }}>1,000 X followers</span>.
+            0 <span style={{ color: 'var(--accent)' }}>→ 1,000</span> followers
+            for indie founders on X.
           </h1>
 
           <p
@@ -113,18 +122,25 @@ export default async function XGrowerLandingPage() {
               fontFamily: 'var(--serif)',
               fontSize: 'clamp(22px, 3vw, 32px)',
               lineHeight: 1.3,
-              color: 'var(--ink-dim)',
+              color: 'var(--ink)',
               maxWidth: 820,
               margin: '0 0 40px',
             }}
           >
-            The AI reply tool I used to grow my own X account.
+            I built it to grow my own X account. I&apos;m at{' '}
+            <span style={{ color: 'var(--accent)' }}>
+              <AnimatedCounter to={stats.followers} />
+            </span>{' '}
+            followers in{' '}
+            <span style={{ color: 'var(--accent)' }}>
+              <AnimatedCounter to={stats.daysSinceStart} />
+            </span>{' '}
+            days, and I&apos;m letting other indie founders run the same loop.
             <br />
-            <b style={{ color: 'var(--ink)', fontWeight: 500 }}>
-              <AnimatedCounter to={stats.followers} /> followers in{' '}
-              <AnimatedCounter to={stats.daysSinceStart} /> days
-            </b>
-            , built by an indie founder, for indie founders.
+            <span style={{ color: 'var(--ink-dim)', fontSize: '0.7em' }}>
+              The extension runs in your own Chrome — we never see your X
+              password or cookie.
+            </span>
           </p>
 
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center', marginBottom: 56 }}>
@@ -141,11 +157,49 @@ export default async function XGrowerLandingPage() {
                 display: 'inline-block',
               }}
             >
-              Try it free →
+              Start free (10 replies/day) →
             </Link>
+            <GitHubStarButton stars={github.stars} url={github.url} />
             <span style={{ fontSize: 14, color: 'var(--ink-dim)' }}>
-              50 replies on us · no credit card · see if it works for you first
+              No card. Upgrade to Pro any time — {stats.proPriceFoundingMonthly}/mo lifetime if you&apos;re in the first 500 paid users, {stats.proPriceStandardMonthly}/mo after.
             </span>
+          </div>
+
+          {/* Product demo video */}
+          <div style={{
+            marginTop: 8,
+            marginBottom: 56,
+            borderRadius: 12,
+            overflow: 'hidden',
+            border: '1px solid var(--rule)',
+            background: 'var(--bg-elev)',
+            maxWidth: 720,
+          }}>
+            <video
+              src="/xgrower-demo.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              style={{
+                width: '100%',
+                height: 'auto',
+                aspectRatio: '1594 / 1080',
+                display: 'block',
+              }}
+            />
+            <div style={{
+              padding: '12px 16px',
+              fontSize: 12,
+              fontFamily: 'var(--mono)',
+              color: 'var(--ink-faint)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              borderTop: '1px solid var(--rule)',
+            }}>
+              20s · pick keyword → start burst → replies dispatch
+            </div>
           </div>
 
           {/* Social proof — Felix's account */}
@@ -170,15 +224,19 @@ export default async function XGrowerLandingPage() {
               }
             />
             <Stat
-              label="Posts shipped"
-              sublabel="$0.015 each"
+              label="Replies shipped"
+              sublabel="from Felix's account"
               value={
                 <>
                   +<AnimatedCounter to={stats.posts} />
                 </>
               }
             />
-            <Stat label="Per reply" sublabel="pay-as-you-go" value="$0.015" />
+            <Stat
+              label="Pro"
+              sublabel={`first 500 paid users lifetime, then ${stats.proPriceStandardMonthly}/mo · free: ${stats.freeRepliesPerDay}/day, ${stats.freeRepliesPerMonth}/mo`}
+              value={`${stats.proPriceFoundingMonthly}/mo`}
+            />
           </div>
 
           <p style={{ marginTop: 16, fontSize: 13, color: 'var(--ink-faint)' }}>
@@ -232,8 +290,8 @@ export default async function XGrowerLandingPage() {
               />
               <Step
                 num="03"
-                title="Watch your follower count climb"
-                body="Sit back. The extension dispatches 30+ replies with human-like timing. Other active users see your reply — some follow back. Repeat tomorrow."
+                title="Walk away for 30 minutes"
+                body="The extension dispatches 30+ replies with human-like timing. People active in those threads see your reply. Some follow back. Repeat tomorrow."
               />
             </div>
           </div>
@@ -264,9 +322,11 @@ export default async function XGrowerLandingPage() {
             See if it works for you. <em style={{ color: 'var(--accent)' }}>First.</em>
           </h2>
           <p style={{ fontSize: 18, lineHeight: 1.6, color: 'var(--ink-dim)', maxWidth: 640, margin: '0 auto 32px' }}>
-            Every new account gets <b style={{ color: 'var(--ink)', fontWeight: 500 }}>50 replies on us</b>.
-            No credit card. No subscription. Run them on your own X account, watch your follower count, decide
-            whether the tool earns its keep before you ever pay anything.
+            Every new account starts on the{' '}
+            <b style={{ color: 'var(--ink)', fontWeight: 500 }}>
+              free tier — {stats.freeRepliesPerDay} replies/day, {stats.freeRepliesPerMonth}/month
+            </b>
+            , no card. Run a few bursts from your own X account, watch your follower count, then decide whether to upgrade.
           </p>
           <Link
             href="/xgrower/install"
@@ -281,15 +341,54 @@ export default async function XGrowerLandingPage() {
               display: 'inline-block',
             }}
           >
-            Get my 50 free replies →
+            Start free ({stats.freeRepliesPerDay} replies/day) →
           </Link>
           <p style={{ marginTop: 24, fontSize: 13, color: 'var(--ink-faint)' }}>
-            Like it? Top up later — pay-as-you-go, credits never expire.
-            {' · '}
-            <Link href="/xgrower/pricing" style={{ color: 'var(--ink-dim)' }}>
-              See pricing
-            </Link>
+            Pro is <span style={{ color: 'var(--ink-dim)' }}>{stats.proPriceFoundingMonthly}/mo lifetime</span> for the first 500 paid users, then {stats.proPriceStandardMonthly}/mo. Cancel any time.
           </p>
+
+          <div
+            style={{
+              marginTop: 80,
+              marginBottom: 16,
+              fontSize: 11,
+              fontFamily: 'var(--mono)',
+              color: 'var(--accent)',
+              letterSpacing: '0.12em',
+            }}
+          >
+            OR / FOUNDING COHORT
+          </div>
+          <h3
+            style={{
+              fontFamily: 'var(--serif)',
+              fontSize: 'clamp(28px, 3.6vw, 40px)',
+              margin: '0 0 16px',
+              fontWeight: 400,
+              lineHeight: 1.15,
+            }}
+          >
+            Reply &ldquo;<em style={{ color: 'var(--accent)' }}>I&apos;m in</em>&rdquo; — get 30 days of Pro free.
+          </h3>
+          <p style={{ fontSize: 16, lineHeight: 1.5, color: 'var(--ink-dim)', maxWidth: 560, margin: '0 auto 28px' }}>
+            First 100 people to reply on the pinned tweet below unlock 30 days of Pro, stacked on top of the founding {stats.proPriceFoundingMonthly}/mo lifetime price.
+          </p>
+
+          <TweetCard
+            href={PINNED_TWEET_URL}
+            name="Felix"
+            handle="@Felixisbuilding"
+            avatarLetter="F"
+            body={
+              <>
+                Built X Grower — a Chrome extension that took my own X account from 0 → {stats.followers} followers in {stats.daysSinceStart} days as an indie founder.
+                <br />
+                <br />
+                First 100 people to reply <b style={{ color: 'var(--ink)' }}>&ldquo;I&apos;m in&rdquo;</b> get 30 days of Pro free. (After that: {stats.proPriceFoundingMonthly}/mo lifetime for the first 500 paid users, {stats.proPriceStandardMonthly}/mo standard.)
+              </>
+            }
+            cta="Reply on X →"
+          />
         </section>
 
         {/* FAQ */}
@@ -362,12 +461,14 @@ export default async function XGrowerLandingPage() {
               lineHeight: 1.1,
             }}
           >
-            Build the audience
+            Build the <em style={{ color: 'var(--accent)' }}>audience</em>
             <br />
-            you keep telling yourself you'll build.
+            you keep telling yourself
+            <br />
+            you&apos;ll build.
           </h2>
           <p style={{ fontSize: 17, lineHeight: 1.5, color: 'var(--ink-dim)', maxWidth: 540, margin: '0 auto 32px' }}>
-            50 replies free. Five minutes a day. Decide later if it's worth paying for.
+            {stats.freeRepliesPerDay} replies/day. No card. Five minutes.
           </p>
           <Link
             href="/xgrower/install"
@@ -383,16 +484,38 @@ export default async function XGrowerLandingPage() {
               marginTop: 8,
             }}
           >
-            Try it free →
+            Start free →
           </Link>
+          <div
+            style={{
+              marginTop: 28,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 12,
+            }}
+          >
+            <span
+              style={{
+                fontSize: 12,
+                color: 'var(--ink-faint)',
+                fontFamily: 'var(--mono)',
+                letterSpacing: '0.06em',
+                textTransform: 'uppercase',
+              }}
+            >
+              X Grower is open source — star it if it helps you
+            </span>
+            <GitHubStarButton stars={github.stars} url={github.url} />
+          </div>
           <p style={{ marginTop: 32, fontSize: 13, color: 'var(--ink-faint)' }}>
-            <Link href="/xgrower/pricing" style={{ color: 'var(--ink-faint)' }}>Pricing</Link>
+            <Link href="/terms" style={{ color: 'var(--ink-faint)' }}>Terms</Link>
             {' · '}
-            <Link href="/xgrower/terms" style={{ color: 'var(--ink-faint)' }}>Terms</Link>
+            <Link href="/privacy" style={{ color: 'var(--ink-faint)' }}>Privacy</Link>
             {' · '}
-            <Link href="/xgrower/privacy" style={{ color: 'var(--ink-faint)' }}>Privacy</Link>
-            {' · '}
-            <Link href="/xgrower/refund" style={{ color: 'var(--ink-faint)' }}>Refund</Link>
+            <a href="https://x.com/Felixisbuilding" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ink-faint)' }}>
+              Built by @Felixisbuilding
+            </a>
           </p>
         </section>
       </main>
@@ -448,6 +571,99 @@ function Stat({
         </div>
       )}
     </div>
+  )
+}
+
+function TweetCard({
+  href,
+  name,
+  handle,
+  avatarLetter,
+  body,
+  cta,
+}: {
+  href: string
+  name: string
+  handle: string
+  avatarLetter: string
+  body: React.ReactNode
+  cta: string
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        display: 'block',
+        textAlign: 'left',
+        maxWidth: 540,
+        margin: '0 auto',
+        padding: '24px 26px 20px',
+        background: 'var(--bg)',
+        border: '1px solid var(--rule)',
+        borderRadius: 18,
+        textDecoration: 'none',
+        color: 'inherit',
+      }}
+    >
+      <div style={{ display: 'flex', gap: 14, alignItems: 'center', marginBottom: 14 }}>
+        <div
+          style={{
+            width: 44,
+            height: 44,
+            borderRadius: '50%',
+            background: 'var(--accent)',
+            color: 'var(--accent-ink)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontFamily: 'var(--serif)',
+            fontSize: 22,
+            fontWeight: 500,
+            flexShrink: 0,
+          }}
+        >
+          {avatarLetter}
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.25 }}>
+          <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)' }}>{name}</span>
+          <span
+            style={{
+              fontSize: 13,
+              color: 'var(--ink-faint)',
+              fontFamily: 'var(--mono)',
+            }}
+          >
+            {handle} · pinned
+          </span>
+        </div>
+      </div>
+
+      <div
+        style={{
+          fontSize: 16,
+          lineHeight: 1.55,
+          color: 'var(--ink)',
+          marginBottom: 16,
+        }}
+      >
+        {body}
+      </div>
+
+      <div
+        style={{
+          borderTop: '1px solid var(--rule)',
+          paddingTop: 12,
+          fontSize: 13,
+          fontFamily: 'var(--mono)',
+          color: 'var(--accent)',
+          letterSpacing: '0.04em',
+        }}
+      >
+        {cta}
+      </div>
+    </a>
   )
 }
 

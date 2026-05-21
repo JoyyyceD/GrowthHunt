@@ -16,6 +16,7 @@ const MODULE_COLORS: Record<string, string> = {
   outreach: '#0097a7',
   manage: '#388e3c',
   distribution: 'var(--warn)',
+  growth: '#0369a1',
 }
 
 export default function BlogIndex() {

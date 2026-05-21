@@ -15,3 +15,11 @@ tsconfig.tsbuildinfo
 
 # Local script logs (per-machine)
 scripts/logs/
+
+# Launch strategy + private operational artifacts (do NOT push internal narrative to public repo)
+.planning/
+.obsidian/
+content/xgrower/launch/
+research/
+*-private.csv
+*-private.json

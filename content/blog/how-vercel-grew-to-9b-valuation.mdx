@@ -1,0 +1,93 @@
+---
+title: "How Vercel Grew to a $9.3B Valuation in an 8-Year Substrate Play"
+description: "Vercel gave away Next.js free for eight years, then raised six rounds totaling $863M to a $9.3B valuation by bundling a product beat into every single funding announcement."
+date: "2026-05-21"
+readTime: "10 min"
+module: "growth"
+keywords: ["vercel arr", "guillermo rauch", "how vercel grew", "vercel case study", "vercel growth", "next.js", "open source substrate"]
+---
+
+## TL;DR
+
+- **Vercel reached a $9.3B valuation at its September 2025 Series F**, having raised about $863M cumulatively across six institutional rounds — and crossed roughly $200M ARR by May 2025, per Vercel and Sacra.
+- The foundation is a free giveaway. Vercel open-sourced **Next.js under an MIT license in October 2016** and let it run on competitors' clouds for eight years; by February 2024 it was at about 4.5M weekly npm downloads.
+- Every institutional round since the 2020 rebrand **bundled a product or customer beat into the same news cycle** — four rounds in 19 months, then the v0 generative-UI line that re-rated the company from frontend hosting to "AI cloud."
+
+## The Numbers
+
+| Date | ARR | Milestone |
+|---|---|---|
+| Dec 2020 | ~$5M | Series B: $40M, GV-led |
+| Dec 2021 | ~$21M | Series C ($102M at $1.1B) and Series D ($150M at $2.5B) closed that year |
+| Mar 2024 | ~$100M | First GA-tier ARR disclosure |
+| May 2024 | ~$100M+ | Series E: $250M at $3.25B |
+| May 2025 | ~$200M | ARR roughly doubles in 14 months |
+| Sep 2025 | — | Series F: $300M at $9.3B valuation |
+
+By February 2025, Sacra estimated v0 alone was generating about $42M ARR — roughly 21% of total revenue — and v0 revenue grew from about $100M to over $180M across 2024–2025 per company disclosures. v0 had 3.5M+ unique users and over 100M apps generated in under a year. Note: ARR figures are largely Sacra estimates; Vercel does not disclose net dollar retention.
+
+## What they did differently
+
+### Move 1: Give the substrate away for free, and never over-protect it
+
+On October 25, 2016, eleven months after founding, Zeit open-sourced [Next.js v1](https://github.com/vercel/next.js) under an MIT license. This is the decision the entire company rests on, and it looks small from the outside.
+
+A team of three could have kept Next.js proprietary and tied it to the hosting platform (the Heroku model), or open-sourced it under copyleft to stop competitors from hosting it (the Elastic and MongoDB model). Instead they MIT-licensed the whole framework and let it run on Netlify, AWS, Cloudflare, and self-hosted Node — competitors' clouds — for eight years. Vercel earned no rent on those downloads. By February 2024, Next.js was at about 4.5M weekly npm downloads and had become the most-used React meta-framework in the world.
+
+What they earned instead was a substrate. When a developer reaches for Next.js, Vercel is the path of least resistance for deployment — not because Vercel forces it, but because Vercel writes the framework, ships features there first, and the deploy-from-git flow is one click. As Vercel's growth story frames it, the substrate is a free option on the developer's deployment dollar, and the framework is the carrier of that option. Founder Guillermo Rauch, the original Next.js author, never stopped being a developer in public — he keynotes Next.js Conf annually, which functions as Vercel's own house podcast, and posts framework ship-its in real time to roughly 303K X followers.
+
+### Move 2: Use a rebrand to punctuate an investor narrative
+
+By 2020 the company had a name problem. "Zeit" — German for "time" — read as a curious open-source project, not a venture-scale infrastructure play. CRV's later commentary confirmed the framing: Zeit was not perceived as a startup.
+
+On April 21, 2020, the company shipped a single news cycle that compressed three things into one announcement: it [renamed to Vercel](https://vercel.com/blog/zeit-is-now-vercel), closed a $21M Series A led by Accel and CRV (with Naval Ravikant, Nat Friedman, and Jordan Walke as angels), and reframed itself from "deployment tool" to "frontend cloud."
+
+Notice the structure. The rename alone is not news. The funding alone is a small ripple. Bundled together, the rename becomes legible as a punctuation mark for an investor narrative — *we have grown out of being an open-source project, and here is institutional capital underwriting that.* It is the most economical version of the bundled-milestone play: a rebrand, a raise, and a category reframe extracted from a single $21M round.
+
+### Move 3: Bundle a product beat into every funding round
+
+Vercel never let a round fire alone. The pattern repeats across every cycle, and the funding cadence from April 2020 to November 2021 — four rounds in 19 months — is not normal.
+
+The [Series C in June 2021](https://techcrunch.com/2021/06/23/vercel-raises-102m-series-c-for-its-next-js-based-front-end-development-platform/) — $102M at a $1.1B valuation — was bundled with the Next.js 12 release and its Rust-based SWC compiler, plus enterprise name-drops including Hulu, Twitch, and Uber. The [Series E in May 2024](https://www.businesswire.com/news/home/20240516704768/en/) — $250M at $3.25B — paired the first GA-tier ARR disclosure Vercel had ever made ($100M+) with v0 momentum and named customers including OpenAI, Under Armour, and Perplexity. The [Series F in September 2025](https://vercel.com/blog/series-f) — $300M at $9.3B — carried the "Towards the AI Cloud" reframe alongside $200M ARR and a GIC sovereign-wealth signal.
+
+> Vercel notches $9.3 billion valuation in latest AI funding round.
+>
+> — Bloomberg, [September 2025](https://www.bloomberg.com/news/articles/2025-09-30/vercel-notches-9-3-billion-valuation-in-latest-ai-funding-round)
+
+The deepest version of this move is v0. The [AI SDK in June 2023](https://vercel.com/blog/introducing-the-vercel-ai-sdk) and [v0 in October 2023](https://vercel.com/blog/announcing-v0-generative-ui) — prompt to React, Tailwind, and shadcn/ui code, with over 100K signups in three weeks — re-rated Vercel from frontend hosting to "AI cloud." It worked because the substrate already existed: v0 generates Next.js code by default, so every v0 user becomes a Next.js user becomes a Vercel deployment user. That is the same compounding loop with one extra step on top — a tech-narrative upgrade with a new revenue line attached to justify it.
+
+## What you can copy
+
+1. **Give away the layer that creates the relationship, and resist over-protecting it.** Vercel MIT-licensed Next.js and let competitors host it for free. Source-available licenses killed the substrate effect for Elastic and MongoDB — the open license is what makes the framework propagate.
+2. **Ship features on your own substrate first.** Vercel does not own Next.js outright, but it is the team that ships Next.js features first. That relationship moat is what makes its deployment platform the path of least resistance.
+3. **Use a rebrand or rename to punctuate a stage change.** A name that reads "side project" caps your narrative. Vercel timed the Zeit-to-Vercel rename to a funding round so the rebrand read as a milestone, not cosmetics.
+4. **Bundle a concrete product into every funding round.** Vercel scaffolded each narrative reframe — deployment platform, edge platform, AI cloud — onto a real product, never a slide. Same announcement, several headlines across capital, developer, and business press.
+5. **Build new revenue lines that run on the substrate you already own.** v0 generates the exact stack Vercel hosts. The new product fed the old one. Stack new offerings onto the compounding loop instead of starting a fresh one.
+
+## What probably won't work for you
+
+Vercel's case is harder to clone than it looks. Its growth story names four hard preconditions.
+
+**The founder created the framework.** Rauch is the original Next.js author, and that authorship is what makes his daily X presence work as a substitute for one canonical podcast moment. A second-generation CEO trying to ship a competing framework today would be fighting the very pattern Vercel built. CEOs without an engineering background who attempt the daily-presence version of this usually burn out by month six of weekly hot takes.
+
+**Eight years of substrate burn were funded before AI existed.** Vercel raised about $313M between 2018 and 2021, much of it into Next.js infrastructure that did not directly produce revenue. A 2024-vintage company cannot raise that kind of patient capital for an open-source side project anymore.
+
+**The fork-the-framework window has closed.** SvelteKit, Remix, and Astro all exist as substrate-style competitors, and none reached Next.js's adoption tier. The window for becoming *the* React meta-framework closed around 2020.
+
+**AI happened to map cleanly onto the substrate.** LLM training data over-represents React, Next.js, Tailwind, and shadcn/ui, so v0 generates that stack by default and every v0 user is a candidate Vercel customer. Some of that is the ecosystem effect Vercel earned; some of it is luck. Had Svelte ended up as the LLM default, the v0-to-Vercel loop would not work. And the case has real unknowns — gross margin on v0 versus hosting is not public, customer concentration is undisclosed, and Vercel has never disclosed net dollar retention.
+
+## Sources & references
+
+- [Next.js on GitHub](https://github.com/vercel/next.js) — the MIT-licensed framework substrate
+- [ZEIT is now Vercel](https://vercel.com/blog/zeit-is-now-vercel) — the April 2020 rebrand and Series A
+- [Vercel Series B: $40M to build the next web](https://vercel.com/blog/series-b-40m-to-build-the-next-web) — GV-led, December 2020
+- [Vercel raises $102M Series C](https://techcrunch.com/2021/06/23/vercel-raises-102m-series-c-for-its-next-js-based-front-end-development-platform/) — TechCrunch
+- [Announcing v0 — Generative UI](https://vercel.com/blog/announcing-v0-generative-ui) — Vercel blog, October 2023
+- [Vercel Series E: $250M at $3.25B](https://www.businesswire.com/news/home/20240516704768/en/) — BusinessWire
+- [Towards the AI Cloud — Vercel's Series F](https://vercel.com/blog/series-f) — $300M at $9.3B
+- [Vercel notches $9.3B valuation](https://www.bloomberg.com/news/articles/2025-09-30/vercel-notches-9-3-billion-valuation-in-latest-ai-funding-round) — Bloomberg
+- **Full timeline:** [The Vercel Growth Story](/growth-story/vercel) — every round, launch, and reframe charted
+
+---
+
+*This case study is part of [GrowthHunt's](/) growth teardown series. Compare it with the [PostHog teardown](/blog/how-posthog-grew-to-50m-arr) for another open-source substrate play, or the [Cursor teardown](/blog/how-cursor-grew-to-1-billion-arr) for a faster curve — and track the fastest-growing AI repos and founders weekly on [GrowthHunt Velocity](/velocity).*
