@@ -40,7 +40,7 @@ export const FEATURES: Feature[] = [
     example: { input: 'https://yourapp.com', output: '93 / 104 directories submitted · 47 confirmed · 24 backlinks live' },
   },
   {
-    id: 'geo', name: 'GEO Audit', tag: 'Live', module: 'distribution',
+    id: 'geo', name: 'GEO Score', tag: 'Live', module: 'distribution',
     pitch: 'Audit any page for AI search visibility — and get the fixes.',
     hook: 'Get cited by ChatGPT, Perplexity & Claude.',
     summary: 'A free Generative Engine Optimization audit. Drop a URL, get a 0–100 score across 8 dimensions, a prioritized fix list, and a Claude Code skill that applies the fixes for you.',

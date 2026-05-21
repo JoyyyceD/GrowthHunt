@@ -56,10 +56,22 @@ function LiveCases() {
         <div className="section-head" style={{ borderBottom: 0, paddingBottom: 0, display: 'block' }}>
           <h2 style={{ margin: '0 0 12px' }}>Use it <em>today</em>.</h2>
           <p style={{ fontSize: 16, color: 'var(--ink-dim)', margin: 0, maxWidth: 540 }}>
-            Six products live right now. No waitlist, no setup — just click in and go.
+            Seven products live right now. No waitlist, no setup — just click in and go.
           </p>
         </div>
         <div className="eco-grid">
+          {/* GEO Score card — free GEO audit + Claude skill */}
+          <Link href="/geo" className="eco-card eco-card-link">
+            <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
+            <div className="eco-title">GEO Score</div>
+            <p>
+              A free Generative Engine Optimization audit. Drop a URL, get a 0–100 score across
+              8 dimensions, a prioritized fix list, and a Claude Code skill that applies the
+              fixes — so ChatGPT, Perplexity and Claude can cite your pages.
+            </p>
+            <span className="visit">Run a free audit →</span>
+          </Link>
+
           {/* Velocity card — public weekly AI velocity leaderboards */}
           <Link href="/velocity" className="eco-card eco-card-link">
             <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
@@ -218,6 +230,7 @@ function Footer() {
         <div>
           <h4>Live products</h4>
           <ul>
+            <li><Link href="/geo">GEO Score</Link></li>
             <li><Link href="/velocity">Velocity</Link></li>
             <li><Link href="/xgrower">X Grower</Link></li>
             <li><Link href="/growth-story">Growth Story</Link></li>
