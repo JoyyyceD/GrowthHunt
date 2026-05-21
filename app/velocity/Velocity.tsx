@@ -100,6 +100,9 @@ export function Velocity({ repos, builders, viral, builderRankMode, updatedAt }:
               Share on X →
             </a>
           </div>
+          <Link href="/velocity/badge" className="vel-badge-link">
+            ★ On the leaderboard? Grab your embeddable badge →
+          </Link>
         </div>
       </section>
 
@@ -491,6 +494,19 @@ const styles = `
   transition: background 0.15s;
 }
 .vel-share:hover { background: var(--accent); }
+.vel-badge-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--ink-dim);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-strong);
+  padding-bottom: 2px;
+  transition: color 0.13s, border-color 0.13s;
+}
+.vel-badge-link:hover { color: var(--accent); border-color: var(--accent); }
 
 /* tabs */
 .vel-tabbar {

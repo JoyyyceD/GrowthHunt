@@ -42,7 +42,7 @@ export default function Image() {
           borderRadius: 999,
           padding: '4px 12px',
         }}>
-          Private beta · Q3 2026
+          6 free tools · live now
         </span>
       </div>
 
