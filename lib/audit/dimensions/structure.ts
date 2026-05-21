@@ -12,7 +12,7 @@ function headingOrderCheck(ctx: AuditContext): Check {
     if (tag) levels.push(Number(tag[1]))
   })
   if (levels.length === 0) {
-    return mkCheck('heading-order', 'H 层级不跳级', 10, 'fail',
+    return mkCheck('heading-order', 'Heading levels not skipped', 10, 'fail',
       { detail: 'No headings on the page', fix: 'Add a clear H1→H2→H3 heading outline' })
   }
   let skips = 0
@@ -20,7 +20,7 @@ function headingOrderCheck(ctx: AuditContext): Check {
     if (levels[i]! - levels[i - 1]! > 1) skips++
   }
   const status = skips === 0 ? 'pass' : skips <= 2 ? 'partial' : 'fail'
-  return mkCheck('heading-order', 'H 层级不跳级', 10, status,
+  return mkCheck('heading-order', 'Heading levels not skipped', 10, status,
     status === 'pass'
       ? { detail: `${levels.length} headings, no skipped levels` }
       : { detail: `${skips} skipped heading level(s)`, fix: 'Do not jump heading levels (e.g. H2 straight to H4)' })
@@ -35,7 +35,7 @@ function faqCheck(ctx: AuditContext): Check {
   const hasDetails = ctx.$('details').length > 0
   const hasFaqContainer = ctx.$('[id*="faq" i], [class*="faq" i]').length > 0
   const ok = hasFaqSchema || questionHeading || hasDetails || hasFaqContainer
-  return mkCheck('faq-section', '有 FAQ section', 14, ok ? 'pass' : 'fail',
+  return mkCheck('faq-section', 'Has an FAQ section', 14, ok ? 'pass' : 'fail',
     ok
       ? { detail: hasFaqSchema ? 'FAQPage schema present' : 'Question-style section detected' }
       : { detail: 'No FAQ section found', fix: 'Add an FAQ section — question H2s with direct answers feed AI citations' })
@@ -47,7 +47,7 @@ export const structure: Dimension = {
     const checks: Check[] = []
 
     const h1Count = ctx.$('h1').length
-    checks.push(mkCheck('single-h1', '有且仅一个 H1', 14,
+    checks.push(mkCheck('single-h1', 'Exactly one H1', 14,
       h1Count === 1 ? 'pass' : h1Count === 0 ? 'fail' : 'partial',
       h1Count === 1
         ? { detail: 'Exactly one H1' }
@@ -58,7 +58,7 @@ export const structure: Dimension = {
 
     const lists = ctx.$('ul,ol').length
     const tables = ctx.$('table').length
-    checks.push(mkCheck('lists-tables', '使用列表 / 表格', 10,
+    checks.push(mkCheck('lists-tables', 'Uses lists / tables', 10,
       lists + tables > 0 ? 'pass' : 'fail',
       lists + tables > 0
         ? { detail: `${lists} list(s), ${tables} table(s)` }
@@ -68,13 +68,13 @@ export const structure: Dimension = {
     checks.push(faqCheck(ctx))
 
     const wc = ctx.wordCount
-    checks.push(mkCheck('content-depth', '正文不过薄', 12,
+    checks.push(mkCheck('content-depth', 'Content not too thin', 12,
       wc >= 300 ? 'pass' : wc >= 150 ? 'partial' : 'fail',
       { detail: `${wc} words`, fix: wc < 300 ? 'Add substantive content — thin pages rarely get cited' : undefined },
     ))
 
     const semantic = ctx.$('main,article,section,nav,aside,header,footer').length
-    checks.push(mkCheck('semantic-html', '语义化 HTML 标签', 8,
+    checks.push(mkCheck('semantic-html', 'Semantic HTML elements', 8,
       semantic >= 3 ? 'pass' : semantic >= 1 ? 'partial' : 'fail',
       semantic >= 3
         ? { detail: `${semantic} semantic landmark element(s)` }

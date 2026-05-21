@@ -32,7 +32,7 @@ export const crawlerAccess: Dimension = {
     const checks: Check[] = []
 
     checks.push(mkCheck(
-      'robots-exists', 'robots.txt 存在', 10,
+      'robots-exists', 'robots.txt present', 10,
       ctx.robotsTxt.found ? 'pass' : 'partial',
       ctx.robotsTxt.found
         ? { detail: 'robots.txt found' }
@@ -40,10 +40,10 @@ export const crawlerAccess: Dimension = {
     ))
 
     const bots: Array<{ id: string; label: string; bot: string; max: number }> = [
-      { id: 'chatgpt-bot', label: 'ChatGPT 爬虫 (OAI-SearchBot) 放行', bot: AI_BOTS.chatgpt, max: 15 },
-      { id: 'perplexity-bot', label: 'Perplexity 爬虫 (PerplexityBot) 放行', bot: AI_BOTS.perplexity, max: 15 },
-      { id: 'claude-bot', label: 'Claude 爬虫 (ClaudeBot) 放行', bot: AI_BOTS.claude, max: 15 },
-      { id: 'gemini-bot', label: 'Gemini 爬虫 (Google-Extended) 放行', bot: AI_BOTS.gemini, max: 10 },
+      { id: 'chatgpt-bot', label: 'ChatGPT crawler (OAI-SearchBot) allowed', bot: AI_BOTS.chatgpt, max: 15 },
+      { id: 'perplexity-bot', label: 'Perplexity crawler (PerplexityBot) allowed', bot: AI_BOTS.perplexity, max: 15 },
+      { id: 'claude-bot', label: 'Claude crawler (ClaudeBot) allowed', bot: AI_BOTS.claude, max: 15 },
+      { id: 'gemini-bot', label: 'Gemini crawler (Google-Extended) allowed', bot: AI_BOTS.gemini, max: 10 },
     ]
     for (const { id, label, bot, max } of bots) {
       const blocked = ctx.robotsTxt.found && isAgentBlocked(groups, bot)
@@ -55,26 +55,26 @@ export const crawlerAccess: Dimension = {
     }
 
     const noindex = hasMetaNoindex(ctx)
-    checks.push(mkCheck('meta-noindex', '无 meta robots noindex', 15, noindex ? 'fail' : 'pass',
+    checks.push(mkCheck('meta-noindex', 'No meta robots noindex', 15, noindex ? 'fail' : 'pass',
       noindex
         ? { detail: 'Page carries a noindex robots meta tag', fix: 'Remove <meta name="robots" content="noindex">' }
         : {},
     ))
 
     const xNoindex = (ctx.headers['x-robots-tag'] || '').toLowerCase().includes('noindex')
-    checks.push(mkCheck('x-robots-tag', '无 X-Robots-Tag noindex', 10, xNoindex ? 'fail' : 'pass',
+    checks.push(mkCheck('x-robots-tag', 'No X-Robots-Tag noindex', 10, xNoindex ? 'fail' : 'pass',
       xNoindex
         ? { detail: 'X-Robots-Tag response header sends noindex', fix: 'Remove noindex from the X-Robots-Tag header' }
         : {},
     ))
 
     const httpOk = ctx.status >= 200 && ctx.status < 300
-    checks.push(mkCheck('http-status', 'HTTP 状态正常', 15, httpOk ? 'pass' : 'fail',
+    checks.push(mkCheck('http-status', 'HTTP status OK', 15, httpOk ? 'pass' : 'fail',
       { detail: `HTTP ${ctx.status}` },
     ))
 
     const walled = looksBotWalled(ctx)
-    checks.push(mkCheck('bot-wall', '未被 bot 防火墙拦截', 12, walled ? 'fail' : 'pass',
+    checks.push(mkCheck('bot-wall', 'Not blocked by a bot firewall', 12, walled ? 'fail' : 'pass',
       walled
         ? { detail: 'Page appears to sit behind a bot challenge (Cloudflare etc.)', fix: 'Allowlist AI crawler user-agents in your WAF / bot protection' }
         : {},

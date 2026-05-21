@@ -29,7 +29,7 @@ export const freshness: Dimension = {
     const checks: Check[] = []
 
     const schemaDate = findStringValue(ld.nodes, ['dateModified', 'datePublished'])
-    checks.push(mkCheck('schema-dates', 'schema 含发布 / 修改日期', 10,
+    checks.push(mkCheck('schema-dates', 'Schema has publish / modified date', 10,
       schemaDate ? 'pass' : 'fail',
       schemaDate
         ? { detail: `Schema date: ${schemaDate}` }
@@ -40,7 +40,7 @@ export const freshness: Dimension = {
     const articleModified = ctx.$('meta[property="article:modified_time"]').attr('content')
     const articlePublished = ctx.$('meta[property="article:published_time"]').attr('content')
     const visibleDate = timeEl || articleModified || articlePublished
-    checks.push(mkCheck('visible-date', '页面有可见 / 标注日期', 8,
+    checks.push(mkCheck('visible-date', 'Page has a visible date', 8,
       visibleDate ? 'pass' : 'fail',
       visibleDate
         ? { detail: 'Dated via <time> or article meta' }
@@ -49,7 +49,7 @@ export const freshness: Dimension = {
 
     const currentYear = String(new Date().getFullYear())
     const hasCurrentYear = ctx.text.includes(currentYear)
-    checks.push(mkCheck('current-year', `正文出现当年年份 (${currentYear})`, 8,
+    checks.push(mkCheck('current-year', `Current year (${currentYear}) in copy`, 8,
       hasCurrentYear ? 'pass' : 'fail',
       hasCurrentYear
         ? { detail: `Mentions ${currentYear}` }
@@ -60,11 +60,11 @@ export const freshness: Dimension = {
       parseDate(schemaDate), parseDate(timeEl), parseDate(articleModified), parseDate(articlePublished),
     ])
     if (!recent) {
-      checks.push(mkCheck('not-stale', '内容未过期（<12 个月）', 14, 'na',
+      checks.push(mkCheck('not-stale', 'Content not stale (< 12 months)', 14, 'na',
         { detail: 'No machine-readable date found' }))
     } else {
       const ageDays = (now - recent.getTime()) / DAY_MS
-      checks.push(mkCheck('not-stale', '内容未过期（<12 个月）', 14,
+      checks.push(mkCheck('not-stale', 'Content not stale (< 12 months)', 14,
         ageDays <= 180 ? 'pass' : ageDays <= 365 ? 'partial' : 'fail',
         { detail: `Last dated ${Math.round(ageDays)} days ago`,
           fix: ageDays > 365 ? 'Refresh and re-date the content — stale pages lose citations' : undefined },
@@ -75,11 +75,11 @@ export const freshness: Dimension = {
       .map((m) => parseDate(m.replace(/<\/?lastmod>/gi, '')))
     const freshestSitemap = newest(lastmods)
     if (!ctx.sitemapXml.found || !freshestSitemap) {
-      checks.push(mkCheck('sitemap-freshness', '站点近期有更新（sitemap lastmod）', 10, 'na',
+      checks.push(mkCheck('sitemap-freshness', 'Site recently updated (sitemap lastmod)', 10, 'na',
         { detail: ctx.sitemapXml.found ? 'sitemap.xml has no <lastmod> dates' : 'No sitemap.xml' }))
     } else {
       const ageDays = (now - freshestSitemap.getTime()) / DAY_MS
-      checks.push(mkCheck('sitemap-freshness', '站点近期有更新（sitemap lastmod）', 10,
+      checks.push(mkCheck('sitemap-freshness', 'Site recently updated (sitemap lastmod)', 10,
         ageDays <= 90 ? 'pass' : ageDays <= 365 ? 'partial' : 'fail',
         { detail: `Newest sitemap entry ${Math.round(ageDays)} days old`,
           fix: ageDays > 90 ? 'Publish regularly — an actively-updated site is crawled more often' : undefined },

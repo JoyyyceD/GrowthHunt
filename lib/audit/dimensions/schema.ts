@@ -25,7 +25,7 @@ export const schema: Dimension = {
     const ld = extractJsonLd(ctx.$)
     const checks: Check[] = []
 
-    checks.push(mkCheck('jsonld-present', 'JSON-LD 存在', 14,
+    checks.push(mkCheck('jsonld-present', 'JSON-LD present', 14,
       ld.blocks > 0 ? 'pass' : 'fail',
       ld.blocks > 0
         ? { detail: `${ld.blocks} JSON-LD block(s)` }
@@ -33,9 +33,9 @@ export const schema: Dimension = {
     ))
 
     if (ld.blocks === 0) {
-      checks.push(mkCheck('jsonld-valid', 'JSON-LD 可解析', 8, 'na', { detail: 'No JSON-LD' }))
+      checks.push(mkCheck('jsonld-valid', 'JSON-LD parses cleanly', 8, 'na', { detail: 'No JSON-LD' }))
     } else {
-      checks.push(mkCheck('jsonld-valid', 'JSON-LD 可解析', 8,
+      checks.push(mkCheck('jsonld-valid', 'JSON-LD parses cleanly', 8,
         ld.parseErrors === 0 ? 'pass' : 'fail',
         ld.parseErrors === 0
           ? { detail: 'All JSON-LD blocks parse cleanly' }
@@ -52,7 +52,7 @@ export const schema: Dimension = {
     ))
 
     const pageType = ld.types.find((t) => PAGE_TYPES.includes(t))
-    checks.push(mkCheck('page-type-schema', '页面类型 schema', 12,
+    checks.push(mkCheck('page-type-schema', 'Page-type schema', 12,
       pageType ? 'pass' : 'fail',
       pageType
         ? { detail: `Page-type schema: ${pageType}` }
@@ -69,14 +69,14 @@ export const schema: Dimension = {
     const og = ['og:title', 'og:description', 'og:type'].filter(
       (p) => (ctx.$(`meta[property="${p}"]`).attr('content') || '').trim().length > 0,
     ).length
-    checks.push(mkCheck('og-tags', 'Open Graph 标签齐全', 8,
+    checks.push(mkCheck('og-tags', 'Open Graph tags complete', 8,
       og === 3 ? 'pass' : og >= 1 ? 'partial' : 'fail',
       og === 3
         ? { detail: 'og:title / og:description / og:type all set' }
         : { detail: `${og}/3 core Open Graph tags`, fix: 'Add og:title, og:description and og:type' },
     ))
 
-    checks.push(mkCheck('sameas', 'sameAs 实体链接', 6,
+    checks.push(mkCheck('sameas', 'sameAs entity links', 6,
       hasSameAs(ld.nodes) ? 'pass' : 'fail',
       hasSameAs(ld.nodes)
         ? { detail: 'sameAs links present' }

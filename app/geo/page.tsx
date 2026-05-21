@@ -72,7 +72,7 @@ const faqJsonLd = {
 }
 
 const STEPS: Array<{ n: string; title: string; body: string }> = [
-  { n: '01', title: 'Audit any URL', body: 'Paste a page. We fetch it, run 8 dimensions across ~42 checks, and score the opening copy with Claude — in about 10 seconds.' },
+  { n: '01', title: 'Audit any URL', body: 'Paste a page. We fetch it, run 8 dimensions across ~45 checks, and score the opening copy with AI — in about 10 seconds.' },
   { n: '02', title: 'Get prioritized fixes', body: 'A 0–100 score, an 8-axis breakdown, and a punch list of fixes ordered by impact on AI citation.' },
   { n: '03', title: 'Apply with the Claude skill', body: 'The GEO skill re-runs the audit inside Claude Code, locates the files in your repo, and applies the fixes with a diff you approve.' },
 ]

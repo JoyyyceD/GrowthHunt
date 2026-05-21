@@ -114,8 +114,8 @@ export function GeoAuditForm() {
         <div style={{ marginTop: 40, padding: '32px 24px', border: '1px solid var(--rule)', borderRadius: 12, background: 'var(--bg-elev)' }}>
           <div className="eyebrow" style={{ marginBottom: 10 }}><span className="dot" />Running audit</div>
           <p style={{ fontSize: 14, color: 'var(--ink-dim)', margin: 0, lineHeight: 1.6 }}>
-            Fetching the page, scoring 8 dimensions across ~42 checks, and reviewing the
-            opening copy with Claude. This usually takes about 10 seconds.
+            Fetching the page, scoring 8 dimensions across ~45 checks, and reviewing the
+            opening copy with AI. This usually takes about 10 seconds.
           </p>
         </div>
       )}

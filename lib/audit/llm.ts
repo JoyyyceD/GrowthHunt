@@ -1,42 +1,25 @@
 /**
- * LLM layer — Claude Haiku 4.5, temperature 0.
+ * LLM layer — MiniMax chat (temperature 0).
  *
  * Two calls per audit: (1) score the First Answer dimension, (2) synthesize
  * a prioritized issue list. Both degrade gracefully — a missing API key or a
  * failed call never breaks an audit, it just falls back to heuristics.
  */
-import Anthropic from '@anthropic-ai/sdk'
+import { minimaxChat } from '../viralx/minimax'
 import type { AuditContext, CheckStatus, Issue, Severity } from './types'
 
-const MODEL = 'claude-haiku-4-5-20251001'
-
-let client: Anthropic | null = null
-
-function getClient(): Anthropic | null {
-  const apiKey = process.env.ANTHROPIC_API_KEY
-  if (!apiKey) return null
-  if (!client) client = new Anthropic({ apiKey, maxRetries: 1, timeout: 20_000 })
-  return client
-}
-
-async function callHaiku(system: string, user: string, maxTokens: number): Promise<string | null> {
-  const c = getClient()
-  if (!c) return null
+async function callLLM(system: string, user: string, maxTokens: number): Promise<string | null> {
   try {
-    const msg = await c.messages.create({
-      model: MODEL,
-      max_tokens: maxTokens,
+    return await minimaxChat({
+      messages: [
+        { role: 'system', content: system },
+        { role: 'user', content: user },
+      ],
       temperature: 0,
-      system,
-      messages: [{ role: 'user', content: user }],
+      maxTokens,
     })
-    const parts: string[] = []
-    for (const block of msg.content) {
-      if (block.type === 'text') parts.push(block.text)
-    }
-    return parts.join('')
   } catch (err) {
-    console.error('[geo-audit] Haiku call failed:', (err as Error).message)
+    console.error('[geo-audit] MiniMax call failed:', (err as Error).message)
     return null
   }
 }
@@ -117,18 +100,18 @@ export async function scoreFirstAnswer(ctx: AuditContext): Promise<FirstAnswerRe
   const parsed = extractJson<{
     direct_answer?: { status?: string; reason?: string }
     title_is_query?: { status?: string; reason?: string }
-  }>(await callHaiku(system, user, 400))
+  }>(await callLLM(system, user, 400))
 
   if (!parsed) return heuristicFirstAnswer(ctx)
 
   return {
     directAnswer: {
       status: coerceStatus(parsed.direct_answer?.status),
-      reason: parsed.direct_answer?.reason || 'Scored by Claude Haiku.',
+      reason: parsed.direct_answer?.reason || 'Scored by MiniMax.',
     },
     titleIsQuery: {
       status: coerceStatus(parsed.title_is_query?.status),
-      reason: parsed.title_is_query?.reason || 'Scored by Claude Haiku.',
+      reason: parsed.title_is_query?.reason || 'Scored by MiniMax.',
     },
   }
 }
@@ -169,7 +152,7 @@ export async function synthesizeIssues(deterministic: Issue[], ctx: AuditContext
     '}]',
   ].join('\n')
 
-  const parsed = extractJson<Array<Record<string, unknown>>>(await callHaiku(system, user, 1600))
+  const parsed = extractJson<Array<Record<string, unknown>>>(await callLLM(system, user, 1600))
   if (!parsed || !Array.isArray(parsed) || parsed.length === 0) return deterministic
 
   return parsed.slice(0, 10).map((it) => ({

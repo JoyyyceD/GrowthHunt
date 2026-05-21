@@ -22,14 +22,14 @@ export const factualDensity: Dimension = {
 
     const numberCount = (text.match(/\d[\d,.]*/g) || []).length
     const perK = (numberCount / words) * 1000
-    checks.push(mkCheck('numbers-density', '数字 / 数据密度', 14,
+    checks.push(mkCheck('numbers-density', 'Number / data density', 14,
       perK >= 15 ? 'pass' : perK >= 5 ? 'partial' : 'fail',
       { detail: `${numberCount} numbers (${perK.toFixed(1)} per 1k words)`,
         fix: perK < 15 ? 'Add concrete numbers — counts, sizes, dates make a page more citable' : undefined },
     ))
 
     const pctCount = (text.match(/\d+(?:\.\d+)?\s?%/g) || []).length
-    checks.push(mkCheck('percentages', '包含百分比', 8,
+    checks.push(mkCheck('percentages', 'Includes percentages', 8,
       pctCount >= 2 ? 'pass' : pctCount === 1 ? 'partial' : 'fail',
       { detail: `${pctCount} percentage figure(s)`,
         fix: pctCount === 0 ? 'Quantify claims with percentages where possible' : undefined },
@@ -37,7 +37,7 @@ export const factualDensity: Dimension = {
 
     const hasYear = /\b(?:19|20)\d{2}\b/.test(text)
     const hasMonth = MONTHS.test(text)
-    checks.push(mkCheck('dates-years', '包含年份 / 日期', 8,
+    checks.push(mkCheck('dates-years', 'Includes years / dates', 8,
       hasYear && hasMonth ? 'pass' : hasYear || hasMonth ? 'partial' : 'fail',
       { detail: hasYear || hasMonth ? 'Dates/years present in copy' : 'No dates or years in copy',
         fix: !hasYear ? 'Reference specific years/dates to anchor facts in time' : undefined },
@@ -48,7 +48,7 @@ export const factualDensity: Dimension = {
       let idx = lower.indexOf(phrase)
       while (idx !== -1) { citationCount++; idx = lower.indexOf(phrase, idx + phrase.length) }
     }
-    checks.push(mkCheck('citation-phrases', '引用 / 来源句式', 12,
+    checks.push(mkCheck('citation-phrases', 'Sourcing phrases', 12,
       citationCount >= 2 ? 'pass' : citationCount === 1 ? 'partial' : 'fail',
       { detail: `${citationCount} sourcing phrase(s) (e.g. "according to")`,
         fix: citationCount < 2 ? 'Attribute facts to sources — AI engines favour sourced claims' : undefined },
@@ -57,7 +57,7 @@ export const factualDensity: Dimension = {
     const currency = (text.match(/[$€£¥]\s?\d/g) || []).length
     const units = (text.match(/\b\d+(?:\.\d+)?\s?(?:ms|kb|mb|gb|tb|km|kg|mph|hrs?|hours?|mins?|minutes?|days?|weeks?|months?|years?|x)\b/gi) || []).length
     const specifics = currency + units
-    checks.push(mkCheck('concrete-specifics', '具体数据点（货币 / 单位）', 8,
+    checks.push(mkCheck('concrete-specifics', 'Concrete data points (currency / units)', 8,
       specifics >= 3 ? 'pass' : specifics >= 1 ? 'partial' : 'fail',
       { detail: `${specifics} concrete data point(s)`,
         fix: specifics < 3 ? 'Use concrete units and amounts instead of vague descriptors' : undefined },

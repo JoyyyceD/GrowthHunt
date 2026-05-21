@@ -17,7 +17,7 @@ export function evaluateGating(ctx: AuditContext): GatingFlag[] {
     && isAgentBlocked(groups, AI_BOTS.claude)
   flags.push({
     id: 'ai-bots-blocked',
-    label: 'AI 爬虫被全屏蔽',
+    label: 'All AI crawlers blocked',
     triggered: allBotsBlocked,
     cap: 25,
     detail: allBotsBlocked
@@ -34,7 +34,7 @@ export function evaluateGating(ctx: AuditContext): GatingFlag[] {
   const noindex = metaNoindex || headerNoindex
   flags.push({
     id: 'noindex',
-    label: '整页 noindex',
+    label: 'Page-wide noindex',
     triggered: noindex,
     cap: 30,
     detail: noindex ? 'The page is marked noindex' : undefined,
@@ -45,7 +45,7 @@ export function evaluateGating(ctx: AuditContext): GatingFlag[] {
   const spa = ctx.isSPA
   flags.push({
     id: 'not-analyzable',
-    label: '页面无法完整分析（404 / SPA 空壳）',
+    label: 'Page not fully analyzable (404 / SPA shell)',
     triggered: unreachable || spa,
     cap: unreachable ? 0 : 60,
     detail: unreachable
