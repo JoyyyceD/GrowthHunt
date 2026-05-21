@@ -250,10 +250,35 @@ function TabButton({
   )
 }
 
+// ── Share button ─────────────────────────────────────────────────────────────
+// The self-referential flywheel: each row can be shared, and for people/products
+// the tweet @-mentions the subject so they get notified they made the list.
+function ShareButton({ text }: { text: string }) {
+  const href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+    text,
+  )}&url=${encodeURIComponent('https://growthhunt.ai/velocity')}`
+  return (
+    <a className="vel-share-btn" href={href} target="_blank" rel="noopener" aria-label="Share on X">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+      Share
+    </a>
+  )
+}
+
 // ── Repo row ─────────────────────────────────────────────────────────────────
 function RepoRow({ repo: r, display }: { repo: RepoCard; display: number }) {
+  const shareText = `${r.owner}/${r.name} is one of the fastest-growing AI repos on GitHub right now — around ${fmt(r.velocityPerDay)} new stars a day. Tracked weekly on GrowthHunt Velocity:`
   return (
-    <a className="vel-row" href={r.url} target="_blank" rel="noopener">
+    <div className="vel-row">
+      <a
+        className="vel-rowlink"
+        href={r.url}
+        target="_blank"
+        rel="noopener"
+        aria-label={`${r.fullName} on GitHub`}
+      />
       <div className={`vel-rank${display <= 3 ? ' top' : ''}`}>{display}</div>
       <div className="vel-main">
         {r.ownerAvatar ? (
@@ -295,20 +320,24 @@ function RepoRow({ repo: r, display }: { repo: RepoCard; display: number }) {
             <span className="up"> · +{fmt(r.weeklyDelta)} this wk</span>
           )}
         </div>
+        <ShareButton text={shareText} />
       </div>
-    </a>
+    </div>
   )
 }
 
 // ── Builder row ──────────────────────────────────────────────────────────────
 function BuilderRow({ builder: b, mode }: { builder: BuilderCard; mode: BuilderRankMode }) {
+  const shareText = `@${b.handle} is one of the fastest-growing AI builders on X right now — tracked weekly on GrowthHunt Velocity:`
   return (
-    <a
-      className="vel-row"
-      href={`https://x.com/${b.handle}`}
-      target="_blank"
-      rel="noopener"
-    >
+    <div className="vel-row">
+      <a
+        className="vel-rowlink"
+        href={`https://x.com/${b.handle}`}
+        target="_blank"
+        rel="noopener"
+        aria-label={`${b.name} on X`}
+      />
       <div className={`vel-rank${b.rank <= 3 ? ' top' : ''}`}>{b.rank}</div>
       <div className="vel-main">
         {b.avatar ? (
@@ -347,16 +376,27 @@ function BuilderRow({ builder: b, mode }: { builder: BuilderCard; mode: BuilderR
             </div>
           </>
         )}
+        <ShareButton text={shareText} />
       </div>
-    </a>
+    </div>
   )
 }
 
 // ── Viral row ────────────────────────────────────────────────────────────────
 function ViralRow({ viral: v }: { viral: ViralCard }) {
-  const href = v.topTweetUrl || (v.topHandle ? `https://x.com/${v.topHandle}` : '#')
+  const href =
+    v.topTweetUrl ||
+    (v.topHandle ? `https://x.com/${v.topHandle}` : 'https://growthhunt.ai/velocity')
+  const shareText = `${v.company} is one of the most viral AI products right now — tracked weekly on GrowthHunt Velocity:`
   return (
-    <a className="vel-row" href={href} target="_blank" rel="noopener">
+    <div className="vel-row">
+      <a
+        className="vel-rowlink"
+        href={href}
+        target="_blank"
+        rel="noopener"
+        aria-label={`${v.company} — top viral post`}
+      />
       <div className={`vel-rank${v.rank <= 3 ? ' top' : ''}`}>{v.rank}</div>
       <div className="vel-main">
         {v.topAuthorAvatar ? (
@@ -384,8 +424,9 @@ function ViralRow({ viral: v }: { viral: ViralCard }) {
         <div className="big accent">{fmt(v.engagement)}</div>
         <div className="unit">total engagement</div>
         <div className="sub2">{fmt(v.views)} views</div>
+        <ShareButton text={shareText} />
       </div>
-    </a>
+    </div>
   )
 }
 
@@ -530,18 +571,20 @@ const styles = `
 /* rows */
 .vel-list { display: flex; flex-direction: column; }
 .vel-row {
+  position: relative;
   display: grid;
   grid-template-columns: 54px 1fr auto;
   gap: 22px;
   align-items: center;
   padding: 22px 16px 22px 0;
   border-bottom: 1px solid var(--rule);
-  text-decoration: none;
   color: inherit;
   transition: background 0.13s;
 }
 .vel-row:first-child { border-top: 1px solid var(--rule); }
 .vel-row:hover { background: var(--bg-elev); }
+/* Overlay link covers the whole row; the share button sits above it (z-index 2). */
+.vel-rowlink { position: absolute; inset: 0; z-index: 1; }
 
 .vel-rank {
   font-family: var(--serif);
@@ -676,6 +719,32 @@ const styles = `
 }
 .vel-metric .sub2 .up { color: #1f7a3d; }
 
+.vel-share-btn {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 12px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  background: var(--bg-elev);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 5px 11px;
+  text-decoration: none;
+  transition: color 0.13s, border-color 0.13s, background 0.13s;
+}
+.vel-share-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent-border);
+  background: var(--accent-soft);
+}
+
 .vel-empty {
   text-align: center;
   padding: 80px 24px;
@@ -746,11 +815,12 @@ const styles = `
     grid-column: 1 / -1;
     text-align: left;
     display: flex;
-    align-items: baseline;
-    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 10px;
     padding-left: 52px;
   }
-  .vel-metric .unit, .vel-metric .sub2 { margin-top: 0; }
+  .vel-metric .unit, .vel-metric .sub2, .vel-share-btn { margin-top: 0; }
   .vel-av { width: 38px; height: 38px; }
   .vel-title { font-size: 19px; }
 }

@@ -11,7 +11,7 @@ function Hero() {
       <div className="shell">
         <div className="grid-2">
           <div>
-            <div className="eyebrow"><span className="dot" />An all-in-one go-to-market agent · in private beta</div>
+            <div className="eyebrow"><span className="dot" />An all-in-one go-to-market agent · 6 free tools live now</div>
             <h1>Your <em>all-in-one</em><br />go-to-market <em>agent</em>.</h1>
           </div>
           <div>

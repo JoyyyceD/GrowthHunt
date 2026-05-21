@@ -227,9 +227,9 @@ export default async function BlogPost({ params }: Props) {
           <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: 1.0, letterSpacing: '-0.03em', fontWeight: 400, margin: '0 0 16px' }}>
             GrowthHunt does this <em>for you</em>.
           </h2>
-          <p>Join 1,847 founders who have already reserved their seat.</p>
-          <Link href="/#hero" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'var(--accent)', color: 'var(--accent-ink)', border: 'none', padding: '12px 24px', borderRadius: 999, fontSize: 14, fontWeight: 600, textDecoration: 'none' }}>
-            Join the waitlist →
+          <p>Six free tools are live right now — no waitlist, no card, just click in.</p>
+          <Link href="/#live" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'var(--accent)', color: 'var(--accent-ink)', border: 'none', padding: '12px 24px', borderRadius: 999, fontSize: 14, fontWeight: 600, textDecoration: 'none' }}>
+            Explore the live tools →
           </Link>
         </div>
       </section>
