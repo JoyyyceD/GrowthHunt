@@ -4,36 +4,36 @@ import { TopNav } from '@/lib/site/TopNav'
 import { GeoAuditForm } from './GeoAuditForm'
 
 const PAGE_URL = 'https://growthhunt.ai/geo'
-const TITLE = 'GEO Audit — Get Your Product Cited by AI Search'
+const TITLE = 'GEO Audit — Get Your Product Cited in AI Answers'
 const DESCRIPTION =
-  'Free Generative Engine Optimization audit. Drop a URL and get a 0–100 score across 8 dimensions, a prioritized fix list, and a Claude Code skill that applies the fixes — so ChatGPT, Perplexity, Gemini and Claude can cite your pages.'
+  'Free Generative Engine Optimization audit. Drop a URL and get a 0–100 score across 8 dimensions, a prioritized fix list you can export as Markdown, and a skill that applies the fixes in your AI editor — so your pages get cited when AI answers questions.'
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   keywords: [
     'GEO', 'generative engine optimization', 'AI search optimization', 'AI SEO',
-    'get cited by ChatGPT', 'Perplexity optimization', 'llms.txt', 'AI crawler',
-    'indie hacker', 'answer engine optimization',
+    'get cited by AI', 'answer engine optimization', 'llms.txt', 'AI crawler',
+    'ChatGPT', 'Perplexity', 'indie hacker',
   ],
   alternates: { canonical: PAGE_URL },
   openGraph: {
     type: 'website',
     url: PAGE_URL,
-    title: 'GEO Audit — Get Cited by ChatGPT, Perplexity & Claude',
+    title: 'GEO Audit — Get Cited in AI Answers',
     description: DESCRIPTION,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'GEO Audit — Get Cited by ChatGPT, Perplexity & Claude',
-    description: 'Free GEO audit for indie products. 0–100 score, prioritized fixes, Claude Code skill.',
+    title: 'GEO Audit — Get Cited in AI Answers',
+    description: 'Free GEO audit for indie products. 0–100 score, prioritized fixes, a Markdown report, a skill.',
   },
 }
 
 const FAQ: Array<{ q: string; a: string }> = [
   {
     q: 'What is GEO (Generative Engine Optimization)?',
-    a: 'GEO is the practice of making your web pages legible and citable to AI answer engines — ChatGPT, Perplexity, Gemini and Claude. When those engines answer a question, they quote and link sources. GEO is the work that makes your page one of those sources.',
+    a: 'GEO is the practice of making your web pages legible and citable to AI answer engines like ChatGPT or Perplexity. When an AI answers a question, it quotes and links sources — GEO is the work that makes your page one of those sources.',
   },
   {
     q: 'How is GEO different from SEO?',
@@ -45,7 +45,7 @@ const FAQ: Array<{ q: string; a: string }> = [
   },
   {
     q: 'Is the audit free?',
-    a: 'Yes. You get 3 audits per day with no account, and 10 per day with an email. Results are shared in full — every dimension and every fix, nothing gated.',
+    a: 'Yes. You get 3 audits per day with no account, and 10 per day with an email. Results are shared in full — every dimension and every fix, nothing gated — and you can export the whole report as Markdown.',
   },
 ]
 
@@ -71,13 +71,15 @@ const faqJsonLd = {
   })),
 }
 
+// Technical signals an AI-readiness audit touches — a texture strip, not a brand list.
 const STRIP = [
   'OAI-SearchBot', 'GPTBot', 'PerplexityBot', 'ClaudeBot', 'Google-Extended',
-  'ChatGPT', 'Perplexity', 'Gemini', 'Claude', 'AI Overviews', 'llms.txt',
+  'Bingbot', 'Applebot-Extended', 'llms.txt', 'robots.txt', 'JSON-LD',
+  'schema.org', 'sitemap.xml',
 ]
 
 const DIMENSIONS: Array<{ w: number; name: string; blurb: string }> = [
-  { w: 13, name: 'Crawler Access', blurb: 'Can ChatGPT, Perplexity and Claude’s bots actually fetch the page?' },
+  { w: 13, name: 'Crawler Access', blurb: 'Can AI answer-engine crawlers actually fetch the page?' },
   { w: 12, name: 'Indexability & Discovery', blurb: 'sitemap, canonical and llms.txt — so engines can find every page.' },
   { w: 15, name: 'Structure', blurb: 'Headings, lists and an FAQ section an AI can parse and lift.' },
   { w: 12, name: 'Schema', blurb: 'JSON-LD structured data that tells engines what each page is.' },
@@ -89,8 +91,8 @@ const DIMENSIONS: Array<{ w: number; name: string; blurb: string }> = [
 
 const STEPS: Array<{ n: string; title: string; body: string }> = [
   { n: '01', title: 'Audit any URL', body: 'Paste a page. We fetch it, run 8 dimensions across ~45 checks, and score the opening copy with AI — in about 10 seconds.' },
-  { n: '02', title: 'Get prioritized fixes', body: 'A 0–100 score, an 8-axis breakdown, and a punch list of fixes ordered by impact on AI citation.' },
-  { n: '03', title: 'Apply with the Claude skill', body: 'The GEO skill re-runs the audit inside Claude Code, locates the files in your repo, and applies the fixes with a diff you approve.' },
+  { n: '02', title: 'Get prioritized fixes', body: 'A 0–100 score, an 8-axis breakdown, and a punch list of fixes ordered by impact on whether AI cites you.' },
+  { n: '03', title: 'Export & apply', body: 'Download the full report as Markdown and hand it to your AI editor — Claude Code, Cursor, Windsurf. Or run the GEO skill, which re-audits and applies the fixes for you.' },
 ]
 
 const MOCK_DIMS: Array<{ name: string; pct: number }> = [
@@ -134,18 +136,19 @@ export default function GeoPage() {
               <span className="dot" />Generative Engine Optimization · free audit
             </div>
             <h1 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(40px, 5.4vw, 74px)', fontWeight: 400, lineHeight: 1.0, letterSpacing: '-0.032em', margin: '0 0 20px', maxWidth: 900 }}>
-              Get your indie product cited by{' '}
-              <em style={{ fontStyle: 'italic', color: 'var(--accent)' }}>ChatGPT, Perplexity &amp; Claude</em>.
+              Get your indie product{' '}
+              <em style={{ fontStyle: 'italic', color: 'var(--accent)' }}>cited in AI answers</em>.
             </h1>
-            <p style={{ fontSize: 17, color: 'var(--ink-dim)', maxWidth: 560, lineHeight: 1.6, margin: '0 0 32px' }}>
+            <p style={{ fontSize: 17, color: 'var(--ink-dim)', maxWidth: 580, lineHeight: 1.6, margin: '0 0 32px' }}>
               A free GEO audit for the page you actually care about. A 0–100 score across 8
-              dimensions, a prioritized fix list, and a Claude Code skill that applies the fixes.
+              dimensions, a prioritized fix list you can export as Markdown, and a skill that
+              applies the fixes in your AI editor.
             </p>
             <GeoAuditForm />
           </div>
         </section>
 
-        {/* ── Crawler / engine marquee ── */}
+        {/* ── Signals marquee ── */}
         <div className="strip">
           <div className="strip-track">
             <span>{STRIP.join('     ·     ')}</span>
@@ -163,7 +166,7 @@ export default function GeoPage() {
 
             <div style={{ border: '1px solid var(--rule)', borderRadius: 14, background: 'var(--bg-elev)', overflow: 'hidden' }}>
               <div style={{ padding: '12px 18px', borderBottom: '1px solid var(--rule)', background: 'var(--bg-card)', fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--ink-faint)' }}>
-                Perplexity · AI answer
+                An AI answer
               </div>
               <div style={{ padding: '22px 24px' }}>
                 <p style={{ margin: '0 0 14px', fontSize: 14, color: 'var(--ink-dim)' }}>
@@ -191,7 +194,7 @@ export default function GeoPage() {
               </div>
             </div>
             <p style={{ fontSize: 14.5, color: 'var(--ink-dim)', lineHeight: 1.65, margin: '20px 0 0' }}>
-              If your pages aren&apos;t readable to AI engines — blocked crawlers, no structured data,
+              If your pages aren&apos;t readable to AI — blocked crawlers, no structured data,
               no direct answer up top — this is you. The audit tells you exactly why, and how to fix it.
             </p>
           </div>
@@ -203,10 +206,11 @@ export default function GeoPage() {
             <div className="feature">
               <div className="copy">
                 <div className="eyebrow" style={{ marginBottom: 12 }}><span className="dot" />The report</div>
-                <h3>See exactly what an AI engine sees.</h3>
+                <h3>See exactly what an AI sees.</h3>
                 <p>
                   Every audit returns a 0–100 score, an 8-dimension breakdown, a high/medium/low
-                  rating per engine, and a fix list ordered by impact — plus a one-click Markdown export.
+                  rating per engine, and a fix list ordered by impact — and you can export the
+                  whole thing as a Markdown file.
                 </p>
                 <p style={{ marginBottom: 0 }}>
                   No gated categories, no &ldquo;upgrade to see more.&rdquo; The whole report, every time.
@@ -311,10 +315,10 @@ export default function GeoPage() {
         <section className="closing">
           <div className="shell">
             <div className="eyebrow" style={{ marginBottom: 22 }}><span className="dot" />Get cited</div>
-            <h2>Audit your page. <em>Fix it in Claude Code.</em></h2>
+            <h2>Audit your page. <em>Fix it in your AI editor.</em></h2>
             <p>
-              Run a free GEO audit, then let the Claude skill apply the fixes in your own repo —
-              and continuous monitoring is coming next.
+              Run a free GEO audit, export the report, and let the skill apply the fixes in your
+              own repo — and continuous monitoring is coming next.
             </p>
             <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap', marginTop: 16 }}>
               <a href="#top" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'var(--accent)', color: 'var(--accent-ink)', border: 'none', padding: '14px 26px', borderRadius: 999, fontSize: 14, fontWeight: 600, textDecoration: 'none' }}>

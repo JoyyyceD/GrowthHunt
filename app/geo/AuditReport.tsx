@@ -212,34 +212,30 @@ export function AuditReport({
         </div>
       )}
 
-      {/* actions */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+      {/* next step — export the report, apply it in an AI editor */}
+      <div style={{ border: '1px solid var(--accent-border)', background: 'var(--accent-soft)', borderRadius: 12, padding: '24px 26px' }}>
+        <h3 style={{ fontFamily: 'var(--serif)', fontSize: 24, fontWeight: 400, margin: '0 0 8px' }}>
+          Apply these fixes — in your AI editor
+        </h3>
+        <p style={{ fontSize: 14, color: 'var(--ink-dim)', margin: '0 0 18px', lineHeight: 1.6, maxWidth: 560 }}>
+          Download the full report as Markdown and hand it to Claude Code, Cursor or any AI
+          editor — it has everything needed to apply the fixes. Or install the GEO skill,
+          which re-audits and applies the generation-type fixes for you.
+        </p>
+        <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
           <button
             type="button"
             onClick={() => downloadReport(result)}
-            className="btn-line"
-            style={{ cursor: 'pointer' }}
+            style={{ background: 'var(--accent)', color: 'var(--accent-ink)', border: 'none', borderRadius: 999, padding: '12px 22px', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit' }}
           >
-            Export report (.md)
+            ↓ Download .md report
           </button>
+          <a href={SKILL_REPO} target="_blank" rel="noopener noreferrer" className="btn-line" style={{ background: 'var(--ink)', color: 'var(--bg)', borderColor: 'var(--ink)' }}>
+            Get the GEO skill <span className="arrow">→</span>
+          </a>
         </div>
-        {shareable && <ShareBar url={result.url} />}
       </div>
-
-      {/* skill CTA */}
-      <div style={{ border: '1px solid var(--accent-border)', background: 'var(--accent-soft)', borderRadius: 12, padding: '24px 26px' }}>
-        <h3 style={{ fontFamily: 'var(--serif)', fontSize: 24, fontWeight: 400, margin: '0 0 8px' }}>
-          Apply these fixes in Claude Code
-        </h3>
-        <p style={{ fontSize: 14, color: 'var(--ink-dim)', margin: '0 0 16px', lineHeight: 1.6, maxWidth: 540 }}>
-          The GrowthHunt GEO skill re-runs this audit inside Claude Code, finds the matching
-          files in your repo, and applies the fixes — metadata, JSON-LD, robots.txt, llms.txt — with a diff you approve.
-        </p>
-        <a href={SKILL_REPO} target="_blank" rel="noopener noreferrer" className="btn-line" style={{ background: 'var(--ink)', color: 'var(--bg)', borderColor: 'var(--ink)' }}>
-          Get the GEO skill <span className="arrow">→</span>
-        </a>
-      </div>
+      {shareable && <ShareBar url={result.url} />}
     </div>
   )
 }
