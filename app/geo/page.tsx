@@ -41,7 +41,7 @@ const FAQ: Array<{ q: string; a: string }> = [
   },
   {
     q: 'What does the GrowthHunt GEO audit check?',
-    a: 'Eight weighted dimensions across roughly 42 checks: crawler access, indexability & discovery, page structure, schema markup, factual density, entity clarity, content freshness, and whether the opening copy directly answers the page topic.',
+    a: 'Eight weighted dimensions across roughly 45 checks: crawler access, indexability & discovery, page structure, schema markup, factual density, entity clarity, content freshness, and whether the opening copy directly answers the page topic.',
   },
   {
     q: 'Is the audit free?',
@@ -71,11 +71,42 @@ const faqJsonLd = {
   })),
 }
 
+const STRIP = [
+  'OAI-SearchBot', 'GPTBot', 'PerplexityBot', 'ClaudeBot', 'Google-Extended',
+  'ChatGPT', 'Perplexity', 'Gemini', 'Claude', 'AI Overviews', 'llms.txt',
+]
+
+const DIMENSIONS: Array<{ w: number; name: string; blurb: string }> = [
+  { w: 13, name: 'Crawler Access', blurb: 'Can ChatGPT, Perplexity and Claude’s bots actually fetch the page?' },
+  { w: 12, name: 'Indexability & Discovery', blurb: 'sitemap, canonical and llms.txt — so engines can find every page.' },
+  { w: 15, name: 'Structure', blurb: 'Headings, lists and an FAQ section an AI can parse and lift.' },
+  { w: 12, name: 'Schema', blurb: 'JSON-LD structured data that tells engines what each page is.' },
+  { w: 13, name: 'Factual Density', blurb: 'Numbers, dates and sourced claims — the stuff AI loves to cite.' },
+  { w: 10, name: 'Entity Clarity', blurb: 'Your brand named consistently across title, H1 and copy.' },
+  { w: 10, name: 'Freshness', blurb: 'Dated, recently-updated content beats stale pages.' },
+  { w: 15, name: 'First Answer', blurb: 'Do the first 80 words directly answer the page’s question?' },
+]
+
 const STEPS: Array<{ n: string; title: string; body: string }> = [
   { n: '01', title: 'Audit any URL', body: 'Paste a page. We fetch it, run 8 dimensions across ~45 checks, and score the opening copy with AI — in about 10 seconds.' },
   { n: '02', title: 'Get prioritized fixes', body: 'A 0–100 score, an 8-axis breakdown, and a punch list of fixes ordered by impact on AI citation.' },
   { n: '03', title: 'Apply with the Claude skill', body: 'The GEO skill re-runs the audit inside Claude Code, locates the files in your repo, and applies the fixes with a diff you approve.' },
 ]
+
+const MOCK_DIMS: Array<{ name: string; pct: number }> = [
+  { name: 'Crawler Access', pct: 92 },
+  { name: 'Discovery', pct: 70 },
+  { name: 'Structure', pct: 64 },
+  { name: 'Schema', pct: 80 },
+  { name: 'Factual Density', pct: 38 },
+  { name: 'First Answer', pct: 45 },
+]
+
+function barColor(pct: number): string {
+  if (pct >= 70) return '#16a34a'
+  if (pct >= 45) return 'var(--warn)'
+  return '#c0392b'
+}
 
 export default function GeoPage() {
   return (
@@ -86,14 +117,23 @@ export default function GeoPage() {
       <TopNav variant="page" />
 
       <main>
-        {/* Hero */}
-        <section style={{ padding: '64px 0 56px', borderBottom: '1px solid var(--rule)' }}>
-          <div className="shell">
-            <div style={{ display: 'flex', gap: 8, marginBottom: 22 }}>
-              <span className="tag live">● Live now</span>
-              <span className="tag">Generative Engine Optimization</span>
+        {/* ── Hero ── */}
+        <section id="top" style={{ position: 'relative', overflow: 'hidden', padding: '72px 0 60px', borderBottom: '1px solid var(--rule)' }}>
+          <div
+            aria-hidden
+            style={{
+              position: 'absolute', fontFamily: 'var(--serif)', fontStyle: 'italic',
+              fontSize: '40vw', lineHeight: 0.8, color: 'rgba(232,78,27,0.05)',
+              top: '-12vw', right: '-6vw', pointerEvents: 'none', userSelect: 'none',
+            }}
+          >
+            GEO
+          </div>
+          <div className="shell" style={{ position: 'relative' }}>
+            <div className="eyebrow" style={{ marginBottom: 20 }}>
+              <span className="dot" />Generative Engine Optimization · free audit
             </div>
-            <h1 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(40px, 5.6vw, 76px)', fontWeight: 400, lineHeight: 0.98, letterSpacing: '-0.032em', margin: '0 0 20px', maxWidth: 900 }}>
+            <h1 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(40px, 5.4vw, 74px)', fontWeight: 400, lineHeight: 1.0, letterSpacing: '-0.032em', margin: '0 0 20px', maxWidth: 900 }}>
               Get your indie product cited by{' '}
               <em style={{ fontStyle: 'italic', color: 'var(--accent)' }}>ChatGPT, Perplexity &amp; Claude</em>.
             </h1>
@@ -105,8 +145,131 @@ export default function GeoPage() {
           </div>
         </section>
 
-        {/* How it works */}
-        <section style={{ padding: '64px 0', borderBottom: '1px solid var(--rule)' }}>
+        {/* ── Crawler / engine marquee ── */}
+        <div className="strip">
+          <div className="strip-track">
+            <span>{STRIP.join('     ·     ')}</span>
+            <span>{STRIP.join('     ·     ')}</span>
+          </div>
+        </div>
+
+        {/* ── Why it matters ── */}
+        <section style={{ padding: '80px 0', borderBottom: '1px solid var(--rule)' }}>
+          <div className="shell" style={{ maxWidth: 720 }}>
+            <div className="eyebrow" style={{ marginBottom: 16 }}><span className="dot" />Why it matters</div>
+            <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.6vw, 42px)', fontWeight: 400, letterSpacing: '-0.022em', lineHeight: 1.08, margin: '0 0 28px' }}>
+              AI answers cite sources. <em style={{ fontStyle: 'italic', color: 'var(--accent)' }}>Right now it isn’t you.</em>
+            </h2>
+
+            <div style={{ border: '1px solid var(--rule)', borderRadius: 14, background: 'var(--bg-elev)', overflow: 'hidden' }}>
+              <div style={{ padding: '12px 18px', borderBottom: '1px solid var(--rule)', background: 'var(--bg-card)', fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--ink-faint)' }}>
+                Perplexity · AI answer
+              </div>
+              <div style={{ padding: '22px 24px' }}>
+                <p style={{ margin: '0 0 14px', fontSize: 14, color: 'var(--ink-dim)' }}>
+                  <span style={{ fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--ink-faint)' }}>Q&nbsp;&nbsp;</span>
+                  &ldquo;What&apos;s the best AI writing tool for solo founders?&rdquo;
+                </p>
+                <p style={{ margin: '0 0 16px', fontSize: 15.5, color: 'var(--ink)', lineHeight: 1.65 }}>
+                  Based on current sources, the strongest options are{' '}
+                  <strong>Competitor&nbsp;A</strong>, <strong>Competitor&nbsp;B</strong> and{' '}
+                  <strong>Competitor&nbsp;C</strong> — each cited from their docs and comparison pages.
+                </p>
+                <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
+                  {['competitor-a.com', 'competitor-b.com', 'competitor-c.com'].map((c) => (
+                    <span key={c} style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--accent)', background: 'var(--accent-soft)', border: '1px solid var(--accent-border)', borderRadius: 4, padding: '3px 8px' }}>
+                      {c}
+                    </span>
+                  ))}
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, borderTop: '1px dashed var(--rule-strong)', paddingTop: 14 }}>
+                  <span style={{ fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--ink-faint)', textDecoration: 'line-through' }}>
+                    yourproduct.com
+                  </span>
+                  <span style={{ fontSize: 12, color: '#c0392b', fontWeight: 600 }}>not cited</span>
+                </div>
+              </div>
+            </div>
+            <p style={{ fontSize: 14.5, color: 'var(--ink-dim)', lineHeight: 1.65, margin: '20px 0 0' }}>
+              If your pages aren&apos;t readable to AI engines — blocked crawlers, no structured data,
+              no direct answer up top — this is you. The audit tells you exactly why, and how to fix it.
+            </p>
+          </div>
+        </section>
+
+        {/* ── Sample report ── */}
+        <section style={{ borderBottom: '1px solid var(--rule)' }}>
+          <div className="shell">
+            <div className="feature">
+              <div className="copy">
+                <div className="eyebrow" style={{ marginBottom: 12 }}><span className="dot" />The report</div>
+                <h3>See exactly what an AI engine sees.</h3>
+                <p>
+                  Every audit returns a 0–100 score, an 8-dimension breakdown, a high/medium/low
+                  rating per engine, and a fix list ordered by impact — plus a one-click Markdown export.
+                </p>
+                <p style={{ marginBottom: 0 }}>
+                  No gated categories, no &ldquo;upgrade to see more.&rdquo; The whole report, every time.
+                </p>
+              </div>
+              <div className="mock">
+                <div className="mock-header">
+                  <span className="dot" /><span className="dot" /><span className="dot" />
+                  <span className="url">growthhunt.ai/geo</span>
+                </div>
+                <div className="mock-body">
+                  <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 16 }}>
+                    <span style={{ fontFamily: 'var(--mono)', fontSize: 10, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--ink-faint)' }}>
+                      GEO Score
+                    </span>
+                    <span style={{ fontFamily: 'var(--serif)', fontSize: 40, lineHeight: 1, color: 'var(--warn)', marginLeft: 'auto' }}>73</span>
+                    <span style={{ fontFamily: 'var(--serif)', fontSize: 18, color: 'var(--ink-faint)' }}>/100</span>
+                    <span style={{ fontFamily: 'var(--mono)', fontSize: 11, fontWeight: 600, color: '#fff', background: 'var(--warn)', borderRadius: 4, padding: '2px 7px' }}>B</span>
+                  </div>
+                  {MOCK_DIMS.map((d) => (
+                    <div key={d.name} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '4px 0', fontSize: 11 }}>
+                      <span style={{ width: 110, color: 'var(--ink-dim)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{d.name}</span>
+                      <span style={{ flex: 1, height: 5, borderRadius: 3, background: 'var(--bg-card)', overflow: 'hidden' }}>
+                        <span style={{ display: 'block', height: '100%', width: `${d.pct}%`, background: barColor(d.pct) }} />
+                      </span>
+                      <span style={{ fontFamily: 'var(--mono)', color: 'var(--ink-faint)', width: 26, textAlign: 'right' }}>{d.pct}</span>
+                    </div>
+                  ))}
+                  <div style={{ display: 'flex', gap: 14, marginTop: 12, paddingTop: 12, borderTop: '1px solid var(--rule)', fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--ink-dim)' }}>
+                    <span><span style={{ color: '#16a34a' }}>●</span> ChatGPT</span>
+                    <span><span style={{ color: 'var(--warn)' }}>◐</span> Perplexity</span>
+                    <span><span style={{ color: 'var(--warn)' }}>◐</span> Gemini</span>
+                    <span><span style={{ color: '#16a34a' }}>●</span> Claude</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── What we audit ── */}
+        <section style={{ padding: '80px 0', borderBottom: '1px solid var(--rule)' }}>
+          <div className="shell">
+            <div className="eyebrow" style={{ marginBottom: 14 }}><span className="dot" />What we audit</div>
+            <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.6vw, 44px)', fontWeight: 400, letterSpacing: '-0.022em', margin: '0 0 36px', maxWidth: 640 }}>
+              8 dimensions. <em style={{ fontStyle: 'italic', color: 'var(--accent)' }}>~45 checks.</em>
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 1, background: 'var(--rule)', border: '1px solid var(--rule)' }}>
+              {DIMENSIONS.map((d) => (
+                <div key={d.name} style={{ background: 'var(--bg)', padding: '24px 22px', display: 'flex', flexDirection: 'column', gap: 8, minHeight: 150 }}>
+                  <span style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--accent)', letterSpacing: '0.04em' }}>
+                    {d.w}% weight
+                  </span>
+                  <span style={{ fontFamily: 'var(--serif)', fontSize: 22, letterSpacing: '-0.015em' }}>{d.name}</span>
+                  <span style={{ fontSize: 13, color: 'var(--ink-dim)', lineHeight: 1.55 }}>{d.blurb}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── How it works ── */}
+        <section style={{ padding: '80px 0', borderBottom: '1px solid var(--rule)' }}>
           <div className="shell">
             <div className="eyebrow" style={{ marginBottom: 28 }}><span className="dot" />How it works</div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 32 }}>
@@ -125,8 +288,8 @@ export default function GeoPage() {
           </div>
         </section>
 
-        {/* FAQ */}
-        <section style={{ padding: '64px 0', borderBottom: '1px solid var(--rule)' }}>
+        {/* ── FAQ ── */}
+        <section style={{ padding: '80px 0', borderBottom: '1px solid var(--rule)' }}>
           <div className="shell" style={{ maxWidth: 760 }}>
             <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 400, letterSpacing: '-0.022em', margin: '0 0 28px' }}>
               GEO questions, <em style={{ fontStyle: 'italic', color: 'var(--accent)' }}>answered</em>
@@ -144,30 +307,32 @@ export default function GeoPage() {
           </div>
         </section>
 
-        {/* Closing CTA */}
-        <section style={{ padding: '80px 0', textAlign: 'center', background: 'var(--bg-card)' }}>
-          <div className="shell" style={{ maxWidth: 680 }}>
-            <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: 400, letterSpacing: '-0.03em', lineHeight: 1.02, margin: '0 0 16px' }}>
-              Audit once. <em style={{ fontStyle: 'italic', color: 'var(--accent)' }}>Fix in Claude Code.</em>
-            </h2>
-            <p style={{ fontSize: 16, color: 'var(--ink-dim)', lineHeight: 1.6, margin: '0 auto 28px', maxWidth: 480 }}>
-              The GEO skill turns this report into applied fixes inside your own repo — and
-              continuous monitoring is coming next.
+        {/* ── Closing CTA ── */}
+        <section className="closing">
+          <div className="shell">
+            <div className="eyebrow" style={{ marginBottom: 22 }}><span className="dot" />Get cited</div>
+            <h2>Audit your page. <em>Fix it in Claude Code.</em></h2>
+            <p>
+              Run a free GEO audit, then let the Claude skill apply the fixes in your own repo —
+              and continuous monitoring is coming next.
             </p>
-            <a
-              href="https://github.com/growthhunt/geo-skill"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-line"
-              style={{ background: 'var(--ink)', color: 'var(--bg)', borderColor: 'var(--ink)' }}
-            >
-              Get the GEO skill <span className="arrow">→</span>
-            </a>
+            <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap', marginTop: 16 }}>
+              <a href="#top" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'var(--accent)', color: 'var(--accent-ink)', border: 'none', padding: '14px 26px', borderRadius: 999, fontSize: 14, fontWeight: 600, textDecoration: 'none' }}>
+                Run a free audit ↑
+              </a>
+              <a
+                href="https://github.com/JoyyyceD/geo-skill"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'transparent', color: 'var(--ink)', border: '1px solid var(--rule-strong)', padding: '14px 26px', borderRadius: 999, fontSize: 14, fontWeight: 600, textDecoration: 'none' }}
+              >
+                Get the GEO skill →
+              </a>
+            </div>
           </div>
         </section>
       </main>
 
-      {/* Footer */}
       <footer style={{ borderTop: '1px solid var(--rule)', padding: '24px 0', background: 'var(--bg-card)' }}>
         <div className="shell" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Link href="/" style={{ fontSize: 13, color: 'var(--ink-dim)', textDecoration: 'none' }}>← All tools</Link>

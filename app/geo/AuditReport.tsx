@@ -5,7 +5,7 @@ import type { AuditResult } from '@/lib/audit'
 import { ResultRadar } from './ResultRadar'
 import { ResultChecklist } from './ResultChecklist'
 
-const SKILL_REPO = 'https://github.com/growthhunt/geo-skill'
+const SKILL_REPO = 'https://github.com/JoyyyceD/geo-skill'
 
 const SEVERITY: Record<string, { bg: string; fg: string }> = {
   critical: { bg: '#fbe9e2', fg: '#c0392b' },
