@@ -145,6 +145,14 @@ export default function GeoPage() {
               applies the fixes in your AI editor.
             </p>
             <GeoAuditForm />
+            <div style={{ marginTop: 24, display: 'flex', gap: 18, flexWrap: 'wrap', fontSize: 13.5 }}>
+              <Link href="/geo/compete" style={{ color: 'var(--ink-dim)', textDecoration: 'none' }}>
+                → Side-by-side <strong style={{ color: 'var(--ink)' }}>vs competitors</strong>
+              </Link>
+              <Link href="/geo/site" style={{ color: 'var(--ink-dim)', textDecoration: 'none' }}>
+                → Audit <strong style={{ color: 'var(--ink)' }}>your whole site</strong>
+              </Link>
+            </div>
           </div>
         </section>
 

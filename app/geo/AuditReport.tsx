@@ -4,6 +4,9 @@ import { useState } from 'react'
 import type { AuditResult } from '@/lib/audit'
 import { ResultRadar } from './ResultRadar'
 import { ResultChecklist } from './ResultChecklist'
+import { CitationsBlock } from './CitationsBlock'
+import { TrackBlock } from './TrackBlock'
+import { ApplyFixesBlock } from './ApplyFixesBlock'
 
 const SKILL_REPO = 'https://github.com/JoyyyceD/geo-skill'
 
@@ -235,6 +238,9 @@ export function AuditReport({
           </a>
         </div>
       </div>
+      {shareable && <CitationsBlock url={result.url} />}
+      {shareable && <TrackBlock url={result.url} initialScore={result.overall_score} />}
+      {shareable && <ApplyFixesBlock url={result.url} />}
       {shareable && <ShareBar url={result.url} />}
     </div>
   )

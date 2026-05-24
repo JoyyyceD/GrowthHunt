@@ -5,8 +5,16 @@
       "schedule": "0 4 * * *"
     },
     {
+      "path": "/api/viralx/cron/discover",
+      "schedule": "0 6 * * *"
+    },
+    {
       "path": "/api/velocity/cron",
       "schedule": "0 9 * * 1"
+    },
+    {
+      "path": "/api/geo/cron/re-audit",
+      "schedule": "0 10 * * 1"
     }
   ]
 }

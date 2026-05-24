@@ -1,7 +1,13 @@
 /** Captured email leads (geo_subscribers). Degrades silently on failure. */
 import { createAdminClient } from '@/lib/supabase/admin'
 
-export type SubscriberSource = 'web_form' | 'unlock' | 'pro_waitlist'
+export type SubscriberSource =
+  | 'web_form'
+  | 'unlock'
+  | 'pro_waitlist'
+  | 'geo-track'
+  | 'geo-compete'
+  | 'geo-site'
 
 export async function saveSubscriber(email: string, source: SubscriberSource): Promise<void> {
   try {
