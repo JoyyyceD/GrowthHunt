@@ -464,8 +464,8 @@ footer.bottom {
   padding: 80px 0 48px;
   border-top: 1px solid var(--rule);
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
   background: var(--bg-card);
 }
 footer.bottom h3 {

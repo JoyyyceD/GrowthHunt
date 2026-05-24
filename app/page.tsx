@@ -11,7 +11,7 @@ function Hero() {
       <div className="shell">
         <div className="grid-2">
           <div>
-            <div className="eyebrow"><span className="dot" />An all-in-one go-to-market agent · 6 free tools live now</div>
+            <div className="eyebrow"><span className="dot" />An all-in-one go-to-market agent · 6 agents + 7 free tools live now</div>
             <h1><em>GrowthHunt</em> is your all-in-one<br />go-to-market <em>agent</em>.</h1>
           </div>
           <div>
@@ -57,10 +57,82 @@ function LiveCases() {
         <div className="section-head" style={{ borderBottom: 0, paddingBottom: 0, display: 'block' }}>
           <h2 style={{ margin: '0 0 12px' }}>Use it <em>today</em>.</h2>
           <p style={{ fontSize: 16, color: 'var(--ink-dim)', margin: 0, maxWidth: 540 }}>
-            Seven products live right now. No waitlist, no setup — just click in and go.
+            One workspace, five agents, plus the original tool set — every agent shares the same product context.
           </p>
         </div>
         <div className="eco-grid">
+          {/* Workspace — the shared brain */}
+          <Link href="/workspace" className="eco-card eco-card-link">
+            <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
+            <div className="eco-title">GTM Workspace</div>
+            <p>
+              Configure your product once — name, URL, ICP, positioning, voice, competitors. Every
+              agent below reads from the same workspace, so you never re-enter context. Required
+              foundation for the agent suite.
+            </p>
+            <span className="visit">Set up your workspace →</span>
+          </Link>
+
+          {/* ICP / Positioning Agent */}
+          <Link href="/agents/icp" className="eco-card eco-card-link">
+            <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
+            <div className="eco-title">ICP Agent</div>
+            <p>
+              Drafts your ICP, positioning statement, key messages and likely competitors from your
+              homepage + a one-paragraph brief. Saves back to the workspace; everything downstream
+              picks it up automatically.
+            </p>
+            <span className="visit">Run the ICP agent →</span>
+          </Link>
+
+          {/* Voice Trainer */}
+          <Link href="/agents/voice" className="eco-card eco-card-link">
+            <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
+            <div className="eco-title">Voice Trainer</div>
+            <p>
+              Pulls up to 40 of your recent original tweets from the Xhunter dataset, distills a
+              voice profile (tone, vocab, cadence, emoji rate). Every other agent then writes in
+              your voice instead of generic AI-marketer.
+            </p>
+            <span className="visit">Train your voice →</span>
+          </Link>
+
+          {/* Landing Page Doctor */}
+          <Link href="/agents/landing" className="eco-card eco-card-link">
+            <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
+            <div className="eco-title">Landing Doctor</div>
+            <p>
+              Conversion audit, not citation audit. 6 dimensions — clarity, CTA, value prop, social
+              proof, friction, specificity — scored 0–100, each with a paste-ready rewrite in your
+              voice. Plus a full hero rewrite (H1 + subhead + CTA) at the top.
+            </p>
+            <span className="visit">Diagnose a landing page →</span>
+          </Link>
+
+          {/* Creator Outreach Agent */}
+          <Link href="/agents/creator" className="eco-card eco-card-link">
+            <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
+            <div className="eco-title">Creator Outreach</div>
+            <p>
+              Scans the Xhunter dataset for creators ≤10k followers whose audience matches your
+              ICP, scores each for buyer-trust signal, drafts a personalized X DM in your voice.
+              Review &amp; one-click send — opens X with the message pre-filled.
+            </p>
+            <span className="visit">Find creators to pitch →</span>
+          </Link>
+
+          {/* Community Radar */}
+          <Link href="/agents/radar" className="eco-card eco-card-link">
+            <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
+            <div className="eco-title">Community Radar</div>
+            <p>
+              Listens to Reddit + HackerNews for posts your ICP is writing right now. Scores each
+              for relevance, classifies intent (asking / complaining / comparing), drafts a helpful
+              reply in your voice. You click through and post.
+            </p>
+            <span className="visit">Open the lead inbox →</span>
+          </Link>
+
           {/* GEO Score card — free GEO audit + Claude skill */}
           <Link href="/geo" className="eco-card eco-card-link">
             <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
@@ -304,7 +376,18 @@ function Footer() {
           </ul>
         </div>
         <div>
-          <h3>Live products</h3>
+          <h3>Agents</h3>
+          <ul>
+            <li><Link href="/workspace">Workspace</Link></li>
+            <li><Link href="/agents/icp">ICP Agent</Link></li>
+            <li><Link href="/agents/voice">Voice Trainer</Link></li>
+            <li><Link href="/agents/landing">Landing Doctor</Link></li>
+            <li><Link href="/agents/creator">Creator Outreach</Link></li>
+            <li><Link href="/agents/radar">Community Radar</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tools</h3>
           <ul>
             <li><Link href="/geo">GEO Score</Link></li>
             <li><Link href="/velocity">Velocity</Link></li>

@@ -164,6 +164,7 @@ export function TopNav({ variant = 'page' }: Props) {
               ? <a href="#live">Live tools</a>
               : <Link href="/#live">Live tools</Link>}
           </li>
+          <li><Link href="/workspace">Workspace</Link></li>
           <li><Link href="/coming-soon">Coming soon</Link></li>
           <li><Link href="/blog">Blog</Link></li>
         </ul>
