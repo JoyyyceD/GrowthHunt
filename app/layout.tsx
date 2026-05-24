@@ -4,8 +4,10 @@ import FollowFelixWidget from '@/components/FollowFelixWidget'
 import './globals.css'
 
 const BASE = 'https://growthhunt.ai'
-const TITLE = 'GrowthHunt — Your all-in-one go-to-market agent'
-const DESCRIPTION = 'Find the creators your buyers already trust, write the pitch, send it, track the reply, and learn which pattern actually converts. One agent. Every channel.'
+const TITLE = 'GrowthHunt — How one AI agent runs your full go-to-market'
+const DESCRIPTION = 'GrowthHunt is the all-in-one AI go-to-market agent for indie founders: finds creators, writes pitches, tracks replies across X, Reddit & YouTube. 6 free tools, $0 to start.'
+const DATE_PUBLISHED = '2025-09-01'
+const DATE_MODIFIED = '2026-05-24'
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),
@@ -53,6 +55,8 @@ const jsonLd = {
   description: DESCRIPTION,
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web',
+  datePublished: DATE_PUBLISHED,
+  dateModified: DATE_MODIFIED,
   offers: {
     '@type': 'Offer',
     price: '0',

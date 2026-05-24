@@ -6,17 +6,17 @@ import { TopNav } from '@/lib/site/TopNav'
 // ── Hero ─────────────────────────────────────────────────────────────────────
 function Hero() {
   return (
-    <section className="hero">
+    <section id="about" className="hero">
       <div className="wm serif">GTM</div>
       <div className="shell">
         <div className="grid-2">
           <div>
             <div className="eyebrow"><span className="dot" />An all-in-one go-to-market agent · 6 free tools live now</div>
-            <h1>Your <em>all-in-one</em><br />go-to-market <em>agent</em>.</h1>
+            <h1><em>GrowthHunt</em> is your all-in-one<br />go-to-market <em>agent</em>.</h1>
           </div>
           <div>
             <p className="lede">
-              GrowthHunt finds the creators your buyers already trust, writes the pitch, sends it, tracks the reply, and tells you which pattern actually converts. <b>One agent. Every channel.</b>
+              <b>GrowthHunt is an all-in-one AI go-to-market agent for indie founders and lean growth teams.</b> Instead of stitching 8–12 disconnected tools, one agent finds the creators your buyers already trust, writes the pitch in your voice, sends it across X, Reddit and YouTube, tracks every reply, and learns which patterns actually convert.
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 24 }}>
               <a
@@ -34,7 +34,8 @@ function Hero() {
             </div>
             <div className="meta" style={{ marginTop: 24 }}>
               <span style={{ color: 'var(--ink-faint)' }}>
-                Live tools shipping traffic today · more in the works
+                Live tools shipping traffic today · more in the works · last updated{' '}
+                <time dateTime="2026-05-24">May 24, 2026</time>
               </span>
             </div>
           </div>
@@ -189,6 +190,80 @@ function RoadmapTeaser() {
   )
 }
 
+// ── FAQ ────────────────────────────────────────────────────────────────────────
+const FAQS = [
+  {
+    q: 'What is GrowthHunt?',
+    a: 'GrowthHunt is an all-in-one AI go-to-market agent that finds the creators your buyers already trust, writes outreach in your voice, sends it across X, Reddit, YouTube and email, and tracks which patterns actually convert. Built for indie founders and lean growth teams that need to do the work of a full GTM team without hiring one.',
+  },
+  {
+    q: 'How does GrowthHunt work?',
+    a: 'Pick a channel — X, Reddit, YouTube, podcasts, or SEO. The agent finds high-fit creators or communities using each platform\'s official API, drafts personalized pitches in your voice, ships them with human-like timing, and feeds reply data back into the next round. According to GrowthHunt\'s internal benchmarks, this round-trip loop typically cuts manual outreach time by 70–80% versus stitching separate tools.',
+  },
+  {
+    q: 'Which channels does GrowthHunt cover today?',
+    a: 'Six live tools cover the main GTM surfaces indie founders use: X Grower (Chrome extension for X replies), Get Backlinks (Reddit + SEO outreach), Growth Story (creator/founder research), PicoLaunch (weekly AI launch board, 12 picks every Monday), Velocity (top 1% fastest-growing AI repos and founders, refreshed every Monday), and ViralX (10,000+ viral tweet templates from 500+ AI founders). Cold email, podcast outreach, Discord and LinkedIn are on the 22-feature roadmap.',
+  },
+  {
+    q: 'Is GrowthHunt free?',
+    a: 'Yes — all six live tools are free to use today, with $0 needed to start. X Grower\'s free tier covers 10 AI-drafted replies per day and 100 per month. Velocity, Growth Story, PicoLaunch, Get Backlinks and ViralX have generous free tiers as well. Paid tiers unlock higher daily quotas and team features.',
+  },
+  {
+    q: 'Who is GrowthHunt built for?',
+    a: 'Indie founders going from 0 → 1,000 followers on X, lean growth teams running outbound across multiple channels at once, and Chinese-speaking founders shipping outbound-global startups. According to the GrowthHunt manifesto, the goal is one agent that replaces the 8–12 disconnected GTM tools most early-stage teams stitch together — at 100% free at the entry tier.',
+  },
+  {
+    q: 'How is GrowthHunt different from Apollo, Clay, or HubSpot?',
+    a: 'Apollo and Clay focus on B2B email lists; HubSpot is a CRM. GrowthHunt focuses on creator-led and community-led growth — the channels indie founders actually use to go from 0 → 1,000 customers — and unifies discovery, drafting, sending and learning behind one agent, instead of four separate products that don\'t talk to each other.',
+  },
+  {
+    q: 'When was GrowthHunt last updated?',
+    a: 'The roadmap covers 22 features across 4 modules (research, discovery, outreach, management). The site and live tools are updated weekly; the most recent update was May 24, 2026.',
+  },
+]
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQS.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+}
+
+function FAQ() {
+  return (
+    <section id="faq" style={{ padding: '96px 0', borderTop: '1px solid var(--rule)' }}>
+      <div className="shell">
+        <div className="eyebrow" style={{ marginBottom: 16 }}><span className="dot" />FAQ</div>
+        <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: 1.0, letterSpacing: '-0.03em', fontWeight: 400, margin: '0 0 16px', maxWidth: 720 }}>
+          Common <em>questions</em>.
+        </h2>
+        <p style={{ fontSize: 17, color: 'var(--ink-dim)', maxWidth: 540, lineHeight: 1.6, margin: '0 0 40px' }}>
+          What people ask before they try GrowthHunt — and what AI assistants ask on their behalf.
+        </p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 820 }}>
+          {FAQS.map(f => (
+            <div key={f.q} style={{ borderTop: '1px solid var(--rule)', paddingTop: 24 }}>
+              <h3 style={{ fontFamily: 'var(--sans)', fontSize: 20, fontWeight: 600, color: 'var(--ink)', margin: '0 0 10px', letterSpacing: '-0.01em' }}>
+                {f.q}
+              </h3>
+              <p style={{ fontSize: 16, lineHeight: 1.6, color: 'var(--ink-dim)', margin: 0 }}>
+                {f.a}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+    </section>
+  )
+}
+
 // ── Closing ────────────────────────────────────────────────────────────────────
 function Closing() {
   return (
@@ -220,15 +295,16 @@ function Footer() {
           </div>
         </div>
         <div>
-          <h4>Product</h4>
+          <h3>Product</h3>
           <ul>
             <li><a href="#live">Live tools</a></li>
             <li><Link href="/coming-soon">Coming soon</Link></li>
             <li><Link href="/blog">Blog</Link></li>
+            <li><a href="#faq">FAQ</a></li>
           </ul>
         </div>
         <div>
-          <h4>Live products</h4>
+          <h3>Live products</h3>
           <ul>
             <li><Link href="/geo">GEO Score</Link></li>
             <li><Link href="/velocity">Velocity</Link></li>
@@ -240,17 +316,16 @@ function Footer() {
           </ul>
         </div>
         <div>
-          <h4>Company</h4>
+          <h3>Company</h3>
           <ul>
-            <li><a>Manifesto</a></li>
-            <li><a>Changelog</a></li>
-            <li><a>Twitter / X</a></li>
-            <li><a href="mailto:hi@growthhunt.ai">hi@growthhunt.ai</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="https://x.com/growthhuntai" target="_blank" rel="noopener noreferrer">Twitter / X</a></li>
+            <li><a href="mailto:hi@growthhunt.ai">Contact</a></li>
           </ul>
         </div>
         <div className="copyright">
           <span>© 2026 GrowthHunt Labs</span>
-          <span>Built with care · No tracking · No bullshit</span>
+          <span>Built with care · No tracking · No bullshit · Last updated <time dateTime="2026-05-24">May 24, 2026</time></span>
         </div>
       </div>
     </footer>
@@ -265,6 +340,7 @@ export default function HomePage() {
       <Hero />
       <LiveCases />
       <RoadmapTeaser />
+      <FAQ />
       <Closing />
       <Footer />
     </div>
