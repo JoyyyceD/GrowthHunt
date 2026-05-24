@@ -11,7 +11,7 @@ function Hero() {
       <div className="shell">
         <div className="grid-2">
           <div>
-            <div className="eyebrow"><span className="dot" />An all-in-one go-to-market agent · 6 agents + 7 free tools live now</div>
+            <div className="eyebrow"><span className="dot" />An all-in-one go-to-market agent · 10 agents + 7 free tools live now</div>
             <h1><em>GrowthHunt</em> is your all-in-one<br />go-to-market <em>agent</em>.</h1>
           </div>
           <div>
@@ -131,6 +131,54 @@ function LiveCases() {
               reply in your voice. You click through and post.
             </p>
             <span className="visit">Open the lead inbox →</span>
+          </Link>
+
+          {/* Cold Email */}
+          <Link href="/agents/cold-email" className="eco-card eco-card-link">
+            <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
+            <div className="eco-title">Cold Email</div>
+            <p>
+              Paste a B2B target list (name, email, company, role). Agent drafts a personalized
+              email per row in your voice; <strong>Send</strong> actually fires via Brevo. Indie
+              volume only (50/day cap) — no warming infra needed at this scale.
+            </p>
+            <span className="visit">Run a cold-email campaign →</span>
+          </Link>
+
+          {/* Distribution */}
+          <Link href="/agents/distribution" className="eco-card eco-card-link">
+            <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
+            <div className="eco-title">Distribution</div>
+            <p>
+              Type one canonical post → agent generates platform-native variants for X (thread),
+              LinkedIn, Reddit (with subreddit), HackerNews, IG, TikTok, Discord, plus a 48-72h
+              cadence plan. Copy + paste-and-go.
+            </p>
+            <span className="visit">Generate platform variants →</span>
+          </Link>
+
+          {/* A/B Lab */}
+          <Link href="/agents/ab" className="eco-card eco-card-link">
+            <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
+            <div className="eco-title">A/B Lab</div>
+            <p>
+              Paste 2-4 copy variants + a target URL → we mint a tracked short URL per variant.
+              Drop each in a different post, tweet, or DM; dashboard counts clicks and declares
+              a winner at p&lt;0.05.
+            </p>
+            <span className="visit">Spin up a test →</span>
+          </Link>
+
+          {/* Competitor Watch */}
+          <Link href="/agents/competitor" className="eco-card eco-card-link">
+            <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
+            <div className="eco-title">Competitor Watch</div>
+            <p>
+              Weekly cron snapshots each competitor URL from your workspace. AI surfaces meaningful
+              changes — pricing moves, copy rewrites, new sections. Honest signals only (no fake
+              ARR estimates).
+            </p>
+            <span className="visit">Watch the competition →</span>
           </Link>
 
           {/* GEO Score card — free GEO audit + Claude skill */}
@@ -384,6 +432,10 @@ function Footer() {
             <li><Link href="/agents/landing">Landing Doctor</Link></li>
             <li><Link href="/agents/creator">Creator Outreach</Link></li>
             <li><Link href="/agents/radar">Community Radar</Link></li>
+            <li><Link href="/agents/cold-email">Cold Email</Link></li>
+            <li><Link href="/agents/distribution">Distribution</Link></li>
+            <li><Link href="/agents/ab">A/B Lab</Link></li>
+            <li><Link href="/agents/competitor">Competitor Watch</Link></li>
           </ul>
         </div>
         <div>

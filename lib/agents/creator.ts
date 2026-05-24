@@ -116,6 +116,7 @@ export interface OutreachDraft {
   status?: string
   sent_at?: string | null
   reply_at?: string | null
+  scheduled_for?: string | null
 }
 
 export interface CreatorRunOutput {
@@ -268,7 +269,7 @@ export async function listDrafts(workspaceId: string): Promise<OutreachDraft[]> 
   const admin = createAdminClient()
   const { data, error } = await admin
     .from('outreach_drafts')
-    .select('id, target_handle, target_name, audience_score, reasoning, message_body, status, sent_at, reply_at')
+    .select('id, target_handle, target_name, audience_score, reasoning, message_body, status, sent_at, reply_at, scheduled_for')
     .eq('workspace_id', workspaceId)
     .eq('channel', 'x_dm')
     .order('audience_score', { ascending: false })
@@ -285,9 +286,9 @@ export async function listDrafts(workspaceId: string): Promise<OutreachDraft[]> 
     audience_score: d.audience_score as number,
     reasoning: d.reasoning as string,
     message_body: d.message_body as string,
-    // extra fields for UI
     status: d.status as string,
     sent_at: d.sent_at as string | null,
     reply_at: d.reply_at as string | null,
+    scheduled_for: d.scheduled_for as string | null,
   }))
 }

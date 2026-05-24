@@ -18,6 +18,50 @@ function scoreFg(s: number): string {
   return '#c0392b'
 }
 
+function ScheduleControl({ id, current, onSaved }: { id: string; current?: string | null; onSaved: (iso: string | null) => void }) {
+  const initialLocal = current ? toLocalDatetime(current) : ''
+  const [open, setOpen] = useState(false)
+  const [value, setValue] = useState(initialLocal)
+  const [busy, setBusy] = useState(false)
+  async function save(clear = false) {
+    setBusy(true)
+    try {
+      const iso = clear ? null : (value ? new Date(value).toISOString() : null)
+      const res = await fetch(`/api/agents/creator/${id}/schedule`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ scheduled_for: iso }),
+      })
+      if (res.ok) {
+        onSaved(iso)
+        setOpen(false)
+      }
+    } finally { setBusy(false) }
+  }
+  if (!open) {
+    return (
+      <button type="button" onClick={() => setOpen(true)} style={{ background: 'transparent', color: 'var(--ink-dim)', border: '1px solid var(--rule-strong)', borderRadius: 999, padding: '10px 16px', fontSize: 13, cursor: 'pointer' }}>
+        {current ? `Scheduled · ${new Date(current).toLocaleString()}` : 'Schedule'}
+      </button>
+    )
+  }
+  return (
+    <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
+      <input type="datetime-local" value={value} onChange={(e) => setValue(e.target.value)} style={{ background: 'var(--bg)', border: '1px solid var(--rule-strong)', borderRadius: 8, padding: '6px 10px', fontSize: 13 }} />
+      <button type="button" onClick={() => save(false)} disabled={busy || !value} style={{ background: 'var(--ink)', color: 'var(--bg)', border: 'none', borderRadius: 999, padding: '6px 12px', fontSize: 12, fontWeight: 600, cursor: busy ? 'not-allowed' : 'pointer' }}>{busy ? '…' : 'Save'}</button>
+      {current && <button type="button" onClick={() => save(true)} disabled={busy} style={{ background: 'transparent', color: 'var(--ink-dim)', border: '1px solid var(--rule-strong)', borderRadius: 999, padding: '6px 12px', fontSize: 12, cursor: 'pointer' }}>Clear</button>}
+      <button type="button" onClick={() => setOpen(false)} style={{ background: 'transparent', color: 'var(--ink-faint)', border: 'none', padding: '6px 8px', fontSize: 12, cursor: 'pointer' }}>×</button>
+    </div>
+  )
+}
+
+function toLocalDatetime(iso: string): string {
+  // Convert ISO to value compatible with <input type="datetime-local">
+  const d = new Date(iso)
+  const off = d.getTimezoneOffset()
+  return new Date(d.getTime() - off * 60_000).toISOString().slice(0, 16)
+}
+
 export function CreatorRunner({ workspace, allWorkspaces, initialDrafts }: { workspace: Workspace; allWorkspaces: Workspace[]; initialDrafts: OutreachDraft[] }) {
   const [drafts, setDrafts] = useState<OutreachDraft[]>(initialDrafts)
   const [phase, setPhase] = useState<Phase>('idle')
@@ -117,10 +161,11 @@ export function CreatorRunner({ workspace, allWorkspaces, initialDrafts }: { wor
               <p style={{ margin: '0 0 10px', fontSize: 13, color: 'var(--ink-dim)', lineHeight: 1.5 }}>{d.reasoning}</p>
               <pre style={{ margin: '0 0 14px', padding: '12px 14px', background: 'var(--bg)', border: '1px solid var(--rule)', borderRadius: 10, fontSize: 13.5, lineHeight: 1.6, whiteSpace: 'pre-wrap', fontFamily: 'inherit', color: 'var(--ink)' }}>{d.message_body}</pre>
               {(!d.status || d.status === 'queued') && (
-                <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' }}>
                   <button type="button" onClick={() => openXDm(d)} style={{ background: 'var(--accent)', color: '#fff', border: 'none', borderRadius: 999, padding: '10px 18px', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
-                    Send on X →
+                    Send on X now →
                   </button>
+                  <ScheduleControl id={d.id} current={d.scheduled_for} onSaved={(iso) => setDrafts((prev) => prev.map((x) => x.id === d.id ? { ...x, scheduled_for: iso } : x))} />
                   <button type="button" onClick={() => updateStatus(d.id, 'skipped')} style={{ background: 'transparent', color: 'var(--ink-dim)', border: '1px solid var(--rule-strong)', borderRadius: 999, padding: '10px 16px', fontSize: 13, cursor: 'pointer' }}>
                     Skip
                   </button>
