@@ -432,6 +432,31 @@ const TOOL_VIDEO_COACH: OrchestratorTool = {
   },
 }
 
+const TOOL_START_WORKFLOW: OrchestratorTool = {
+  name: 'start_workflow',
+  description: 'Start a multi-step GTM workflow (real business process with human gates + tracked artifacts). Available workflow_id: daily_content_sprint, ship_a_feature, find_customers, defend_position.',
+  params: {
+    workflow_id: { type: 'string', required: true },
+    topic: { type: 'string', description: 'For ship_a_feature: what shipped' },
+    source_url: { type: 'string', description: 'For ship_a_feature: the URL' },
+  },
+  kind: 'playbook',
+  async run(p, ctx) {
+    const { startWorkflow } = await import('@/lib/workflows/runner')
+    const id = s(p.workflow_id); if (!id) return { summary: 'Specify workflow_id.' }
+    const inputs: Record<string, unknown> = {}
+    if (p.topic) inputs.topic = s(p.topic)
+    if (p.source_url) inputs.source_url = s(p.source_url)
+    const result = await startWorkflow(id, ctx.workspace, { triggeredBy: 'chat', inputs })
+    if ('error' in result) return { summary: `Workflow failed: ${result.error}` }
+    const link = `/gtm/workflows/${result.runId}`
+    if (result.status === 'awaiting_input') {
+      return { summary: `Workflow **${id}** paused — needs your input (${result.pauseReason}).\n\n[Open and resume →](${link})`, routeTo: link }
+    }
+    return { summary: `Workflow **${id}** ${result.status}.\n${result.outcome || ''}\n\n[See artifacts →](${link})`, routeTo: link }
+  },
+}
+
 const TOOL_ROUTE_POST_ROI: OrchestratorTool = {
   name: 'open_post_roi',
   description: 'Send the user to the Post ROI page.',
@@ -459,6 +484,7 @@ export const TOOLS: OrchestratorTool[] = [
   TOOL_LAUNCH_INIT,
   TOOL_VIDEO_COACH,
   TOOL_LIST_RUNS,
+  TOOL_START_WORKFLOW,
   TOOL_ROUTE_VOICE,
   TOOL_ROUTE_LANDING,
   TOOL_ROUTE_POST_ROI,
