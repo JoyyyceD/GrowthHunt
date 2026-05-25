@@ -30,6 +30,7 @@ import { callAgent, extractJson, workspaceContext, withVoice } from '@/lib/agent
 import type { Workspace } from '@/lib/workspace/types'
 import { findTool, toolsPromptCatalog, type OrchestratorTool, type ToolResult } from './tools'
 import { defaultCanUseTool, type CanUseToolFn } from './permissions'
+import { scrubToolNames } from './triage'
 import type { GtmMessage } from './types'
 
 const MAX_STEPS = 5
@@ -109,7 +110,13 @@ function buildSystem(ws: Workspace): string {
     + 'give a final answer. You can call up to ' + MAX_STEPS + ' tools in a row before '
     + 'you must produce a final answer. Use tools when they help; do NOT call a tool '
     + 'just to call one. After a tool returns, decide if you need another tool or can '
-    + 'now answer the user. Reply with ONLY a JSON object — no prose, no fences.',
+    + 'now answer the user. Reply with ONLY a JSON object — no prose, no fences.\n\n'
+    + 'LANGUAGE: final_answer.reply MUST be in the user\'s language (English/中文/etc).\n\n'
+    + 'TOOL-NAMING RULE: snake_case tool identifiers (radar_scan, quick_geo_audit, '
+    + 'train_voice, etc.) are PROGRAMMATIC — they belong in the `tool` field. NEVER '
+    + 'write them inside final_answer.reply. Describe what you did in natural language '
+    + '("I ran the AI-citation audit" / "我帮你跑了 Reddit + HN 雷达扫描"). Made-up '
+    + 'mixes like "雷达_audit" or "radar扫描工具" are forbidden.',
     ws.voice,
   )
 }
@@ -227,7 +234,7 @@ export async function runReactLoop(input: LoopInput): Promise<LoopOutput> {
       steps.push(trace)
       await persistStep(input, trace)
       return {
-        finalAnswer: String(action.reply ?? lastToolResult?.summary ?? 'Done.').slice(0, 4000),
+        finalAnswer: scrubToolNames(String(action.reply ?? lastToolResult?.summary ?? 'Done.').slice(0, 4000)),
         toolUsed: lastToolName || 'final_answer',
         routeTo: lastToolResult?.routeTo,
         followups: lastToolResult?.followups,
@@ -375,7 +382,7 @@ export async function runReactLoop(input: LoopInput): Promise<LoopOutput> {
   const cause = Date.now() - start >= WALL_CLOCK_MS ? 'timeout' : 'step_budget'
   const fallback = lastToolResult?.summary || `I hit my ${cause === 'timeout' ? 'time' : 'step'} budget before finishing. Try a more specific ask.`
   return {
-    finalAnswer: fallback,
+    finalAnswer: scrubToolNames(fallback),
     toolUsed: lastToolName || 'budget_exhausted',
     routeTo: lastToolResult?.routeTo,
     followups: lastToolResult?.followups,
