@@ -11,6 +11,9 @@ const PROTECTED_PAGE_ROUTES: string[] = [
   '/viralx/start',
   '/viralx/sessions',
   '/viralx/credentials',
+  '/gtm',
+  '/workspace',
+  '/agents',
 ]
 // Deep-link prefixes — middleware-level gate (server-side redirect).
 // /growth-story/* is intentionally NOT here: those pages render publicly

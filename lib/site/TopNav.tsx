@@ -159,6 +159,7 @@ export function TopNav({ variant = 'page' }: Props) {
           GrowthHunt.ai
         </Link>
         <ul>
+          <li><Link href="/gtm" style={{ color: 'var(--accent)' }}>GTM</Link></li>
           <li>
             {variant === 'home'
               ? <a href="#live">Live tools</a>

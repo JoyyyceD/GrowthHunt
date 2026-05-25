@@ -9,7 +9,7 @@ import { setSoftUser } from '@/lib/soft-auth'
 function LoginContent() {
   const searchParams = useSearchParams()
   const router = useRouter()
-  const next = searchParams.get('next') || '/'
+  const next = searchParams.get('next') || '/gtm'
   const [loading, setLoading] = useState<'google' | 'email' | null>(null)
   const [email, setEmail] = useState('')
   const [inviteCode, setInviteCode] = useState('')

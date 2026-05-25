@@ -85,7 +85,17 @@ export async function createWorkspace(ownerId: string, input: WorkspaceCreate): 
     console.error('[workspace] create failed:', error.message)
     return null
   }
-  return hydrate(data)
+  const ws = hydrate(data)
+  // Auto-fire the onboarding playbook (fire-and-forget; do not block the request)
+  void (async () => {
+    try {
+      const { runPlaybook } = await import('@/lib/playbooks/runner')
+      await runPlaybook('onboarding', ws, { triggeredBy: 'event' })
+    } catch (err) {
+      console.error('[workspace] onboarding playbook failed:', (err as Error).message)
+    }
+  })()
+  return ws
 }
 
 export async function patchWorkspace(id: string, patch: WorkspacePatch): Promise<Workspace | null> {

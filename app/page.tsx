@@ -11,7 +11,7 @@ function Hero() {
       <div className="shell">
         <div className="grid-2">
           <div>
-            <div className="eyebrow"><span className="dot" />An all-in-one go-to-market agent · 10 agents + 7 free tools live now</div>
+            <div className="eyebrow"><span className="dot" />An all-in-one go-to-market agent · chat orchestrator + 10 agents + 7 free tools live now</div>
             <h1><em>GrowthHunt</em> is your all-in-one<br />go-to-market <em>agent</em>.</h1>
           </div>
           <div>
@@ -61,6 +61,19 @@ function LiveCases() {
           </p>
         </div>
         <div className="eco-grid">
+          {/* GTM Orchestrator — chat-driven mission control */}
+          <Link href="/gtm" className="eco-card eco-card-link" style={{ borderColor: 'var(--accent)' }}>
+            <span className="tag live" style={{ alignSelf: 'flex-start', background: 'var(--accent)', color: '#fff' }}>● New</span>
+            <div className="eco-title">GTM Mission Control</div>
+            <p>
+              <strong>One chat box that runs all 10 agents.</strong> Ask in plain English — &ldquo;audit
+              my page&rdquo;, &ldquo;find 6 creators to DM&rdquo;, &ldquo;run weekly review&rdquo;. The orchestrator picks the
+              right tool, runs it, links you to the agent page for depth. Plus a floating chat
+              widget on every page and 5 ready-to-run playbooks.
+            </p>
+            <span className="visit">Open mission control →</span>
+          </Link>
+
           {/* Workspace — the shared brain */}
           <Link href="/workspace" className="eco-card eco-card-link">
             <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
@@ -426,6 +439,8 @@ function Footer() {
         <div>
           <h3>Agents</h3>
           <ul>
+            <li><Link href="/gtm">GTM Mission Control</Link></li>
+            <li><Link href="/gtm/playbooks">Playbooks</Link></li>
             <li><Link href="/workspace">Workspace</Link></li>
             <li><Link href="/agents/icp">ICP Agent</Link></li>
             <li><Link href="/agents/voice">Voice Trainer</Link></li>
