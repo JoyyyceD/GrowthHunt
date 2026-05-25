@@ -13,9 +13,18 @@ interface ApprovalRequest {
   reason: string
 }
 
-interface ChatTurnResponse {
+interface PreambleEvent {
+  conversation_id: string
+  message_id: string
+  content: string
+  needs_tools: boolean
+  created_at: string
+}
+
+interface FinalEvent {
   conversation_id: string
   assistant: GtmMessage
+  preamble: GtmMessage | null
   route_to?: string
   followups?: string[]
   task_id?: string
@@ -61,21 +70,23 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
   const [traces, setTraces] = useState<Record<string, StepTrace[]>>({})
   const [pendingApproval, setPendingApproval] = useState<PendingApproval | null>(null)
   const [input, setInput] = useState('')
-  const [phase, setPhase] = useState<'idle' | 'sending'>('idle')
+  const [phase, setPhase] = useState<'idle' | 'streaming' | 'working'>('idle')
+  const [stage, setStage] = useState<string>('')
   const [followups, setFollowups] = useState<string[]>([])
   const scrollRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight
-  }, [messages, phase, pendingApproval])
+  }, [messages, phase, pendingApproval, traces, stage])
 
   async function send(text: string) {
     const trimmed = text.trim()
-    if (!trimmed || phase === 'sending') return
+    if (!trimmed || phase !== 'idle') return
     setInput('')
-    setPhase('sending')
     setFollowups([])
     setPendingApproval(null)
+    setPhase('streaming')
+    setStage('thinking…')
     const tempUser: GtmMessage = {
       id: 'temp-' + Date.now(),
       conversation_id: conversationId ?? 'pending',
@@ -87,8 +98,11 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
     }
     setMessages((prev) => [...prev, tempUser])
 
+    let preambleId: string | null = null
+    let liveSteps: StepTrace[] = []
+
     try {
-      const res = await fetch('/api/gtm/chat', {
+      const res = await fetch('/api/gtm/chat/stream', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -97,45 +111,142 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
           message: trimmed,
         }),
       })
-      const data: ChatTurnResponse | { error?: string } = await res.json()
-      if (!res.ok || 'error' in data) {
-        const msg = ('error' in data && data.error) || `Chat failed (${res.status})`
-        toast.error(msg)
+      if (!res.ok || !res.body) {
+        const errText = await res.text().catch(() => '')
+        let errMsg = `Chat failed (${res.status})`
+        try { const j = JSON.parse(errText); if (j.error) errMsg = j.error } catch { /* noop */ }
+        toast.error(errMsg)
         setMessages((prev) => prev.filter((m) => m.id !== tempUser.id))
         return
       }
-      const ok = data as ChatTurnResponse
-      setConversationId(ok.conversation_id)
-      setMessages((prev) => {
-        const withoutTemp = prev.filter((m) => m.id !== tempUser.id)
-        const userPersisted: GtmMessage = { ...tempUser, conversation_id: ok.conversation_id }
-        return [...withoutTemp, userPersisted, ok.assistant]
-      })
-      if (ok.steps && ok.steps.length > 0) {
-        setTraces((prev) => ({ ...prev, [ok.assistant.id]: ok.steps! }))
+
+      const reader = res.body.getReader()
+      const decoder = new TextDecoder()
+      let buf = ''
+      let saw: 'preamble' | 'step' | 'final' | 'error' | null = null
+
+      while (true) {
+        const { value, done } = await reader.read()
+        if (done) break
+        buf += decoder.decode(value, { stream: true })
+
+        let sepIdx: number
+        while ((sepIdx = buf.indexOf('\n\n')) >= 0) {
+          const frame = buf.slice(0, sepIdx)
+          buf = buf.slice(sepIdx + 2)
+          let event = 'message'
+          const dataLines: string[] = []
+          for (const line of frame.split('\n')) {
+            if (line.startsWith('event: ')) event = line.slice(7).trim()
+            else if (line.startsWith('data: ')) dataLines.push(line.slice(6))
+          }
+          const data = dataLines.join('\n')
+          if (!data) continue
+          let parsed: unknown
+          try { parsed = JSON.parse(data) } catch { continue }
+
+          if (event === 'preamble') {
+            const p = parsed as PreambleEvent
+            saw = 'preamble'
+            setConversationId(p.conversation_id)
+            const preambleMsg: GtmMessage = {
+              id: p.message_id,
+              conversation_id: p.conversation_id,
+              role: 'assistant',
+              content: p.content,
+              tool_call: { name: p.needs_tools ? 'preamble' : 'chat' },
+              task_id: null,
+              created_at: p.created_at || new Date().toISOString(),
+            }
+            preambleId = preambleMsg.id
+            setMessages((prev) => {
+              const withoutTemp = prev.filter((m) => m.id !== tempUser.id)
+              const userPersisted: GtmMessage = { ...tempUser, conversation_id: p.conversation_id }
+              return [...withoutTemp, userPersisted, preambleMsg]
+            })
+            if (p.needs_tools) {
+              setStage('working…')
+              setPhase('working')
+            } else {
+              setStage('')
+            }
+          } else if (event === 'step') {
+            saw = 'step'
+            const step = parsed as StepTrace
+            liveSteps = [...liveSteps, step]
+            const targetId = preambleId
+            if (targetId) {
+              const snapshot = [...liveSteps]
+              setTraces((prev) => ({ ...prev, [targetId]: snapshot }))
+            }
+            // Stage label per step kind
+            if (step.action_kind === 'tool_call' && step.tool_name) {
+              setStage(`running ${step.tool_name}…`)
+            } else if (step.action_kind === 'approval_request') {
+              setStage('awaiting approval…')
+            } else if (step.action_kind === 'final_answer') {
+              setStage('wrapping up…')
+            }
+          } else if (event === 'final') {
+            saw = 'final'
+            const ok = parsed as FinalEvent
+            setConversationId(ok.conversation_id)
+            // Append synthesis only when it's a separate message from the preamble.
+            if (ok.assistant && ok.assistant.id !== preambleId) {
+              const finalMsg = ok.assistant
+              setMessages((prev) => {
+                // Slash path never had a preamble event; ensure tempUser is replaced.
+                const withoutTemp = prev.filter((m) => m.id !== tempUser.id)
+                if (!preambleId) {
+                  const userPersisted: GtmMessage = { ...tempUser, conversation_id: ok.conversation_id }
+                  return [...withoutTemp, userPersisted, finalMsg]
+                }
+                return [...withoutTemp, finalMsg]
+              })
+            }
+            // Trace lands on the preamble (the "work" bubble) when it exists,
+            // else on the assistant (slash path).
+            if (ok.steps && ok.steps.length > 0) {
+              const finalSteps = ok.steps
+              const traceTarget = preambleId || ok.assistant?.id
+              if (traceTarget) setTraces((prev) => ({ ...prev, [traceTarget]: finalSteps }))
+            }
+            if (ok.approval_request && ok.assistant) {
+              setPendingApproval({ ...ok.approval_request, messageId: ok.assistant.id })
+            }
+            setFollowups(ok.followups ?? [])
+            if (ok.tool_used && ok.tool_used !== 'approval_request' && ok.tool_used !== 'chat') {
+              toast.success(`Tool: ${ok.tool_used}`, { duration: 1800 })
+            }
+            if (ok.route_to) {
+              setTimeout(() => router.push(ok.route_to!), 700)
+            }
+          } else if (event === 'error') {
+            saw = 'error'
+            const e = parsed as { error?: string }
+            toast.error(e.error || 'Stream error')
+            setMessages((prev) => prev.filter((m) => m.id !== tempUser.id && m.id !== preambleId))
+          }
+        }
       }
-      if (ok.approval_request) {
-        setPendingApproval({ ...ok.approval_request, messageId: ok.assistant.id })
-      }
-      setFollowups(ok.followups ?? [])
-      if (ok.tool_used && ok.tool_used !== 'approval_request') {
-        toast.success(`Tool: ${ok.tool_used}`, { duration: 1800 })
-      }
-      if (ok.route_to) {
-        // Tiny delay so the assistant message renders before redirect
-        setTimeout(() => router.push(ok.route_to!), 700)
+
+      if (saw === null) {
+        toast.error('Empty response from chat stream')
+        setMessages((prev) => prev.filter((m) => m.id !== tempUser.id))
       }
     } catch (err) {
       toast.error((err as Error).message)
       setMessages((prev) => prev.filter((m) => m.id !== tempUser.id))
     } finally {
       setPhase('idle')
+      setStage('')
     }
   }
 
   async function decide(approved: boolean) {
-    if (!pendingApproval || !conversationId || phase === 'sending') return
-    setPhase('sending')
+    if (!pendingApproval || !conversationId || phase !== 'idle') return
+    setPhase('streaming')
+    setStage(approved ? 'running approved tool…' : 'denying…')
     try {
       const res = await fetch('/api/gtm/chat/approve', {
         method: 'POST',
@@ -155,7 +266,6 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
       }
       const a = data.assistant
       if (a) {
-        // Approve endpoint returns full GtmMessage; deny path returns partial { content }
         const hasId = typeof (a as GtmMessage).id === 'string' && (a as GtmMessage).id
         const assistantMsg: GtmMessage = hasId ? (a as GtmMessage) : {
           id: 'denied-' + Date.now(),
@@ -183,6 +293,7 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
       toast.error((err as Error).message)
     } finally {
       setPhase('idle')
+      setStage('')
     }
   }
 
@@ -190,6 +301,8 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
     e.preventDefault()
     send(input)
   }
+
+  const isBusy = phase !== 'idle'
 
   return (
     <div style={{
@@ -212,7 +325,7 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
         {messages.length === 0 && phase === 'idle' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, padding: 6 }}>
             <p style={{ margin: 0, fontSize: 14, color: 'var(--ink-dim)', lineHeight: 1.5 }}>
-              I can audit a URL, train your voice, draft creator DMs, run a playbook, or just answer questions about your workspace. Try:
+              I can audit a URL, train your voice, draft creator DMs, run a playbook, or just chat about your GTM strategy. Try:
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 4 }}>
               {SUGGESTIONS.map((s) => (
@@ -223,15 +336,15 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
             </div>
           </div>
         )}
-        {messages.map((m) => <Bubble key={m.id} message={m} compact={compact} steps={traces[m.id]} />)}
-        {phase === 'sending' && (
+        {messages.map((m) => <Bubble key={m.id} message={m} compact={compact} steps={traces[m.id]} live={isBusy && m.id === messages[messages.length - 1]?.id && m.role === 'assistant'} />)}
+        {isBusy && (
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, color: 'var(--ink-faint)', fontStyle: 'italic' }}>
             <span style={{ display: 'inline-flex', gap: 3 }}>
               <span style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--ink-faint)', animation: 'gtm-dot 1.2s infinite' }} />
               <span style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--ink-faint)', animation: 'gtm-dot 1.2s 0.2s infinite' }} />
               <span style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--ink-faint)', animation: 'gtm-dot 1.2s 0.4s infinite' }} />
             </span>
-            thinking…
+            {stage || 'thinking…'}
           </div>
         )}
       </div>
@@ -246,10 +359,10 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
             {pendingApproval.reason && <span style={{ color: 'var(--ink-dim)' }}> — {pendingApproval.reason}</span>}
           </div>
           <div style={{ display: 'flex', gap: 8 }}>
-            <button type="button" onClick={() => decide(true)} disabled={phase === 'sending'} style={{ background: 'var(--accent)', color: '#fff', border: 0, borderRadius: 999, padding: '7px 16px', fontSize: 12.5, fontWeight: 600, cursor: phase === 'sending' ? 'not-allowed' : 'pointer', opacity: phase === 'sending' ? 0.6 : 1 }}>
+            <button type="button" onClick={() => decide(true)} disabled={isBusy} style={{ background: 'var(--accent)', color: '#fff', border: 0, borderRadius: 999, padding: '7px 16px', fontSize: 12.5, fontWeight: 600, cursor: isBusy ? 'not-allowed' : 'pointer', opacity: isBusy ? 0.6 : 1 }}>
               Approve
             </button>
-            <button type="button" onClick={() => decide(false)} disabled={phase === 'sending'} style={{ background: 'transparent', border: '1px solid var(--rule-strong)', color: 'var(--ink-dim)', borderRadius: 999, padding: '7px 16px', fontSize: 12.5, cursor: phase === 'sending' ? 'not-allowed' : 'pointer' }}>
+            <button type="button" onClick={() => decide(false)} disabled={isBusy} style={{ background: 'transparent', border: '1px solid var(--rule-strong)', color: 'var(--ink-dim)', borderRadius: 999, padding: '7px 16px', fontSize: 12.5, cursor: isBusy ? 'not-allowed' : 'pointer' }}>
               Deny
             </button>
           </div>
@@ -274,7 +387,7 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
           autoComplete="off"
           style={{ flex: 1, background: 'var(--bg)', border: '1.5px solid var(--rule-strong)', borderRadius: 999, padding: '10px 16px', fontSize: 14, color: 'var(--ink)', outline: 'none' }}
         />
-        <button type="submit" disabled={phase === 'sending' || !input.trim()} style={{ background: phase === 'sending' || !input.trim() ? 'var(--ink-faint)' : 'var(--accent)', color: '#fff', border: 'none', borderRadius: 999, padding: '10px 18px', fontSize: 13, fontWeight: 600, cursor: phase === 'sending' || !input.trim() ? 'not-allowed' : 'pointer' }}>
+        <button type="submit" disabled={isBusy || !input.trim()} style={{ background: isBusy || !input.trim() ? 'var(--ink-faint)' : 'var(--accent)', color: '#fff', border: 'none', borderRadius: 999, padding: '10px 18px', fontSize: 13, fontWeight: 600, cursor: isBusy || !input.trim() ? 'not-allowed' : 'pointer' }}>
           Send
         </button>
       </form>
@@ -287,10 +400,11 @@ function truncate(s: string, n: number): string {
   return s.slice(0, n - 1).trimEnd() + '…'
 }
 
-function Bubble({ message, compact, steps }: { message: GtmMessage; compact?: boolean; steps?: StepTrace[] }) {
+function Bubble({ message, compact, steps, live }: { message: GtmMessage; compact?: boolean; steps?: StepTrace[]; live?: boolean }) {
   const isUser = message.role === 'user'
   // Show every non-final step in the trace (tool_call, approval_request, error).
   const traceSteps = (steps ?? []).filter((s) => s.action_kind !== 'final_answer')
+  const isPreamble = !isUser && (message.tool_call?.name === 'preamble' || message.tool_call?.name === 'chat')
   return (
     <div style={{ display: 'flex', justifyContent: isUser ? 'flex-end' : 'flex-start' }}>
       <div style={{
@@ -305,10 +419,11 @@ function Bubble({ message, compact, steps }: { message: GtmMessage; compact?: bo
         whiteSpace: 'pre-wrap',
         wordBreak: 'break-word',
       }}>
+        {message.content}
         {!isUser && traceSteps.length > 0 && (
-          <details style={{ marginBottom: 8 }}>
+          <details style={{ marginTop: 10 }} open={live}>
             <summary style={{ cursor: 'pointer', fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ink-faint)', textTransform: 'uppercase', letterSpacing: '0.06em', userSelect: 'none', listStyle: 'none' }}>
-              ▸ {traceSteps.length} step{traceSteps.length === 1 ? '' : 's'}
+              {live ? '◉' : '▸'} {traceSteps.length} step{traceSteps.length === 1 ? '' : 's'}
               {message.task_id && (
                 <a href={`/gtm/tasks/${message.task_id}/trace`} onClick={(e) => e.stopPropagation()} style={{ marginLeft: 10, color: 'var(--ink-faint)', textDecoration: 'underline' }}>full trace →</a>
               )}
@@ -332,8 +447,7 @@ function Bubble({ message, compact, steps }: { message: GtmMessage; compact?: bo
             </div>
           </details>
         )}
-        {message.content}
-        {message.tool_call?.name && !isUser && (
+        {!isPreamble && message.tool_call?.name && !isUser && (
           <div style={{ marginTop: 6, fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ink-faint)' }}>
             via <em>{message.tool_call.name}</em>
             {message.task_id && (

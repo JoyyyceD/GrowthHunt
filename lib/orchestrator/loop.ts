@@ -48,6 +48,10 @@ export interface LoopInput {
   turnTaskId: string
   /** Permission gate. Defaults to defaultCanUseTool. */
   canUseTool?: CanUseToolFn
+  /** Optional tool name suggested by the triage stage; threaded into prompt. */
+  toolHint?: string
+  /** Streaming hook — invoked each time a new StepTrace is persisted. */
+  onStep?: (step: StepTrace) => void
 }
 
 export interface StepTrace {
@@ -110,12 +114,13 @@ function buildSystem(ws: Workspace): string {
   )
 }
 
-function buildUserPrompt(ws: Workspace, history: GtmMessage[], userMessage: string, steps: StepTrace[], stepBudget: number): string {
+function buildUserPrompt(ws: Workspace, history: GtmMessage[], userMessage: string, steps: StepTrace[], stepBudget: number, toolHint?: string): string {
   return [
     `WORKSPACE CONTEXT:\n${workspaceContext(ws)}`,
     '',
     'TOOL CATALOG (param* = required, only tools eligible for this workspace are shown):',
     toolsPromptCatalog(ws),
+    toolHint ? `\nTRIAGE HINT — the upstream classifier suggested using \`${toolHint}\`. Use it unless you have a strong reason to pick differently.` : '',
     '',
     'CONVERSATION SO FAR:',
     historyToTranscript(history),
@@ -159,10 +164,10 @@ interface ClassifierResp {
   }
 }
 
-async function classifyStep(ws: Workspace, history: GtmMessage[], userMessage: string, steps: StepTrace[], stepBudget: number): Promise<ClassifierResp> {
+async function classifyStep(ws: Workspace, history: GtmMessage[], userMessage: string, steps: StepTrace[], stepBudget: number, toolHint?: string): Promise<ClassifierResp> {
   const raw = await callAgent({
     system: buildSystem(ws),
-    user: buildUserPrompt(ws, history, userMessage, steps, stepBudget),
+    user: buildUserPrompt(ws, history, userMessage, steps, stepBudget, toolHint),
     maxTokens: 800,
     temperature: 0.2,
   })
@@ -193,6 +198,9 @@ async function persistStep(input: LoopInput, step: StepTrace): Promise<void> {
   } catch (err) {
     console.error('[loop] persistStep failed:', (err as Error).message)
   }
+  // Fire streaming callback after persistence so SSE consumers see a fully
+  // recorded step.
+  try { input.onStep?.(step) } catch { /* noop */ }
 }
 
 // ── main loop ─────────────────────────────────────────────────────────────
@@ -208,7 +216,7 @@ export async function runReactLoop(input: LoopInput): Promise<LoopOutput> {
   while (steps.length < MAX_STEPS && Date.now() - start < WALL_CLOCK_MS) {
     const stepBudget = MAX_STEPS - steps.length
     const stepStart = Date.now()
-    const decision = await classifyStep(input.workspace, input.history, input.message, steps, stepBudget)
+    const decision = await classifyStep(input.workspace, input.history, input.message, steps, stepBudget, input.toolHint)
     const thought = String(decision.thought ?? '').slice(0, 800)
     const action = decision.action || { kind: 'final_answer', reply: 'Done.' }
     const kind = action.kind as StepTrace['action_kind']

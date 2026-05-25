@@ -1,15 +1,19 @@
 /**
- * Chat orchestrator turn — ReAct loop edition.
+ * Chat orchestrator turn — triage + ReAct + streaming hooks.
  *
- *   1. If the message is a `/slash` command, dispatch the tool directly
- *      (skip classifier) with permission check, persist a synthetic step.
- *   2. Otherwise: append user msg → wrap turn in `chat_turn` gtm_task →
- *      compact history → runReactLoop (up to 5 steps, each persisted to
- *      agent_steps) → append assistant message.
- *   3. Return { assistant, steps, routeTo, followups, approvalRequest? }.
+ *   1. Slash command → direct dispatch (bypass triage + loop), one synthetic
+ *      agent_steps row, done.
+ *   2. Triage stage — fast MiniMax call returns:
+ *        { reply: "<1-3 sentences>", needs_tools: boolean, tool_hint? }
+ *      The reply is ALWAYS surfaced as the "preamble" assistant message.
+ *   3. If !needs_tools: that preamble IS the final answer, no loop runs.
+ *      Solves the "agent jumps to tools" UX problem — every message gets a
+ *      conversational reply first.
+ *   4. If needs_tools: persist preamble, then runReactLoop with tool_hint.
+ *      Final synthesis becomes a second assistant message.
  *
- * No streaming — MiniMax is single-shot per step. UI shows a "thinking" bubble
- * during the loop; final response renders the trace as collapsible thoughts.
+ * Streaming: callers can pass {onPreamble, onStep} to receive events live;
+ * the SSE route uses these to flush events as they happen.
  */
 import type { Workspace } from '@/lib/workspace/types'
 import { appendMessage, listMessages, maybeAutoTitle } from './conversations'
@@ -19,6 +23,7 @@ import { TOOLS, findTool, type ToolCtx } from './tools'
 import { defaultCanUseTool } from './permissions'
 import { compactHistory } from './compact'
 import { parseSlashCommand } from './slash'
+import { triageMessage } from './triage'
 import type { GtmMessage } from './types'
 
 export interface ChatTurnInput {
@@ -28,8 +33,18 @@ export interface ChatTurnInput {
   message: string
 }
 
+export interface ChatTurnEvents {
+  /** Fired once with the immediate conversational reply, before any tool runs. */
+  onPreamble?: (msg: GtmMessage, needsTools: boolean) => void
+  /** Fired for each ReAct step as it lands in agent_steps. */
+  onStep?: (step: StepTrace) => void
+}
+
 export interface ChatTurnOutput {
+  /** Final synthesis assistant message (or the triage reply when chat-only). */
   assistant: GtmMessage
+  /** When the triage produced a separate conversational preamble. */
+  preamble?: GtmMessage
   toolUsed: string
   routeTo?: string
   followups?: string[]
@@ -38,30 +53,53 @@ export interface ChatTurnOutput {
   approvalRequest?: LoopOutput['approvalRequest']
 }
 
-export async function runChatTurn(input: ChatTurnInput): Promise<ChatTurnOutput> {
+export async function runChatTurn(input: ChatTurnInput, events: ChatTurnEvents = {}): Promise<ChatTurnOutput> {
   const { workspace, userId, conversationId, message } = input
 
-  // 1a. Slash command short-circuit.
+  // 1. Slash command short-circuit.
   const slash = parseSlashCommand(message, workspace)
   if (slash) {
-    return runSlashTurn(input, slash)
+    return runSlashTurn(input, slash, events)
   }
 
-  // 1b. Persist user turn + maybe-rename conversation.
+  // 2. Persist user turn + auto-title.
   const userMsg = await appendMessage({ conversation_id: conversationId, role: 'user', content: message })
   void maybeAutoTitle(conversationId, message)
 
-  // 2. Load + compact history (exclude the message we just inserted).
+  // 3. Load + compact history (exclude the message we just inserted).
   const history = await listMessages(conversationId, 20)
-  const historyForLoop = compactHistory(history.filter((m) => m.id !== userMsg?.id), { keepLast: 6, snippetLen: 100 })
+  const historyClean = history.filter((m) => m.id !== userMsg?.id)
+  const historyForLoop = compactHistory(historyClean, { keepLast: 6, snippetLen: 100 })
 
-  // 3. Wrap in a chat_turn task and run loop with task.id threaded in.
+  // 4. TRIAGE — always get a conversational reply first.
+  const triage = await triageMessage(workspace, historyClean, message)
+
+  // 5. Persist the preamble (always — it's what the user reads first).
+  const preamble = await appendMessage({
+    conversation_id: conversationId,
+    role: 'assistant',
+    content: triage.reply,
+    tool_call: { name: triage.needs_tools ? 'preamble' : 'chat' },
+  })
+  if (preamble) events.onPreamble?.(preamble, triage.needs_tools)
+
+  // 6. Chat-only branch: triage reply IS the final answer, no loop, no task.
+  if (!triage.needs_tools) {
+    return {
+      assistant: preamble!,
+      preamble: undefined, // the assistant IS the preamble in this branch
+      toolUsed: 'chat',
+      steps: [],
+    }
+  }
+
+  // 7. Tool branch — wrap in chat_turn task and run ReAct loop.
   const { task, result: loop } = await recordTask({
     kind: 'chat_turn',
     workspace_id: workspace.id,
     conversation_id: conversationId,
     triggered_by: 'chat',
-    input: { message },
+    input: { message, triage_reply: triage.reply, tool_hint: triage.tool_hint },
     summary: message.slice(0, 100),
   }, async (turnTask) => {
     return await runReactLoop({
@@ -69,13 +107,12 @@ export async function runChatTurn(input: ChatTurnInput): Promise<ChatTurnOutput>
       history: historyForLoop,
       message,
       turnTaskId: turnTask?.id ?? '',
+      toolHint: triage.tool_hint,
+      onStep: events.onStep,
     })
   })
 
-  // The loop already persisted each step with turn_task_id = task.id (passed
-  // in via runReactLoop). No backfill needed.
-
-  // 4. Persist the assistant turn.
+  // 8. Persist the final synthesis.
   const lastStep = loop.steps[loop.steps.length - 1]
   const tool_call = lastStep ? {
     name: loop.toolUsed,
@@ -92,6 +129,7 @@ export async function runChatTurn(input: ChatTurnInput): Promise<ChatTurnOutput>
 
   return {
     assistant: assistant!,
+    preamble: preamble ?? undefined,
     toolUsed: loop.toolUsed,
     routeTo: loop.routeTo,
     followups: loop.followups,
@@ -102,17 +140,19 @@ export async function runChatTurn(input: ChatTurnInput): Promise<ChatTurnOutput>
 }
 
 /**
- * Slash command path — bypass the ReAct classifier and run the resolved tool
- * directly. Still wraps in a chat_turn task and writes one synthetic step so
- * /gtm/tasks/[id]/trace renders sensibly.
+ * Slash command path — bypass triage + ReAct. Runs the resolved tool directly
+ * with the same permission check + agent_steps trace.
  */
-async function runSlashTurn(input: ChatTurnInput, slash: NonNullable<ReturnType<typeof parseSlashCommand>>): Promise<ChatTurnOutput> {
+async function runSlashTurn(
+  input: ChatTurnInput,
+  slash: NonNullable<ReturnType<typeof parseSlashCommand>>,
+  events: ChatTurnEvents,
+): Promise<ChatTurnOutput> {
   const { workspace, userId, conversationId, message } = input
 
   await appendMessage({ conversation_id: conversationId, role: 'user', content: message })
   void maybeAutoTitle(conversationId, message)
 
-  // Unresolved slash → reply with error inline, no task wrap.
   if ('error' in slash) {
     const assistant = await appendMessage({
       conversation_id: conversationId, role: 'assistant',
@@ -132,7 +172,6 @@ async function runSlashTurn(input: ChatTurnInput, slash: NonNullable<ReturnType<
     return { assistant: assistant!, toolUsed: 'slash_error', steps: [] }
   }
 
-  // Wrap in a chat_turn task so this slash run shows up in /gtm/tasks history.
   const turnTask = await createTask({
     kind: 'chat_turn',
     workspace_id: workspace.id,
@@ -145,7 +184,6 @@ async function runSlashTurn(input: ChatTurnInput, slash: NonNullable<ReturnType<
   const toolCtx: ToolCtx = { workspace, userId, conversationId, turnTaskId: turnTask?.id }
   const permission = defaultCanUseTool(tool, slash.params, toolCtx)
 
-  // Permission deny → final answer, no execute.
   if (permission.decision === 'deny') {
     if (turnTask) await finishTask(turnTask.id, { status: 'failed', error: permission.reason })
     const assistant = await appendMessage({
@@ -157,7 +195,6 @@ async function runSlashTurn(input: ChatTurnInput, slash: NonNullable<ReturnType<
     return { assistant: assistant!, toolUsed: slash.tool, steps: [], taskId: turnTask?.id }
   }
 
-  // Permission ask → surface as approval request, do NOT execute.
   if (permission.decision === 'ask') {
     if (turnTask) await finishTask(turnTask.id, { status: 'awaiting_user', summary: `awaiting approval: ${slash.tool}` })
     const step: StepTrace = {
@@ -169,6 +206,7 @@ async function runSlashTurn(input: ChatTurnInput, slash: NonNullable<ReturnType<
       observation: permission.reason,
       duration_ms: 0,
     }
+    events.onStep?.(step)
     const assistant = await appendMessage({
       conversation_id: conversationId, role: 'assistant',
       content: `Approval needed for **${slash.tool}** — ${permission.reason}`,
@@ -182,7 +220,7 @@ async function runSlashTurn(input: ChatTurnInput, slash: NonNullable<ReturnType<
     }
   }
 
-  // Permission allow → run the tool.
+  // Allow → execute.
   const start = Date.now()
   let toolResult
   try {
@@ -217,7 +255,7 @@ async function runSlashTurn(input: ChatTurnInput, slash: NonNullable<ReturnType<
     task_id: toolResult.taskId,
     duration_ms: Date.now() - start,
   }
-  // Persist the step row so /gtm/tasks/[id]/trace renders.
+  events.onStep?.(step)
   try {
     const { createAdminClient } = await import('@/lib/supabase/admin')
     const admin = createAdminClient()
@@ -258,7 +296,7 @@ async function runSlashTurn(input: ChatTurnInput, slash: NonNullable<ReturnType<
 export async function approveChatTurn(input: {
   workspace: Workspace; userId: string; conversationId: string;
   tool: string; params: Record<string, unknown>;
-}): Promise<ChatTurnOutput> {
+}, events: ChatTurnEvents = {}): Promise<ChatTurnOutput> {
   const history = await listMessages(input.conversationId, 20)
   const compacted = compactHistory(history, { keepLast: 6 })
 
@@ -273,6 +311,7 @@ export async function approveChatTurn(input: {
     workspace: input.workspace, userId: input.userId, conversationId: input.conversationId,
     history: compacted, message: `(approved ${input.tool})`, turnTaskId: turnTask?.id ?? '',
     approval: { tool: input.tool, params: input.params, approved: true },
+    onStep: events.onStep,
   }))
 
   const lastStep = loop.steps[loop.steps.length - 1]

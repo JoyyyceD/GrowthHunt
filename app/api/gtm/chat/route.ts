@@ -51,6 +51,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       conversation_id: conversationId,
       assistant: out.assistant,
+      preamble: out.preamble ?? null,
       route_to: out.routeTo,
       followups: out.followups,
       task_id: out.taskId,
