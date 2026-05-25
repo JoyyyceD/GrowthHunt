@@ -4,6 +4,7 @@ import { TopNav } from '@/lib/site/TopNav'
 import { createServerClient } from '@/lib/supabase/server'
 import { getWorkspace } from '@/lib/workspace/store'
 import { getTask, getChildTasks } from '@/lib/orchestrator/tasks'
+import { PageContextReadable } from '@/components/PageContextReadable'
 
 function statusColor(s: string): string {
   if (s === 'succeeded') return '#16a34a'
@@ -31,6 +32,22 @@ export default async function TaskDetailPage({ params }: { params: Promise<{ id:
 
   return (
     <div>
+      <PageContextReadable
+        id="current_task"
+        description="The gtm_tasks row the user is currently viewing on the task detail page. When the user says 'this task', 'this run', 'the audit', etc. — they mean this row."
+        value={{
+          id: task.id,
+          kind: task.kind,
+          status: task.status,
+          summary: task.summary,
+          error: task.error,
+          duration_ms: task.duration_ms,
+          input: task.input,
+          output_excerpt: typeof task.output === 'string' ? task.output.slice(0, 400) : task.output,
+          child_count: children.length,
+          created_at: task.created_at,
+        }}
+      />
       <TopNav variant="page" />
       <section style={{ padding: '32px 0 64px' }}>
         <div className="shell" style={{ maxWidth: 880 }}>

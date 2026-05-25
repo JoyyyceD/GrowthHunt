@@ -51,6 +51,8 @@ export interface LoopInput {
   canUseTool?: CanUseToolFn
   /** Optional tool name suggested by the triage stage; threaded into prompt. */
   toolHint?: string
+  /** Frontend-collected "what is the user looking at" snapshot (CopilotKit readables). */
+  pageContext?: string
   /** Streaming hook — invoked each time a new StepTrace is persisted. */
   onStep?: (step: StepTrace) => void
 }
@@ -121,10 +123,11 @@ function buildSystem(ws: Workspace): string {
   )
 }
 
-function buildUserPrompt(ws: Workspace, history: GtmMessage[], userMessage: string, steps: StepTrace[], stepBudget: number, toolHint?: string): string {
+function buildUserPrompt(ws: Workspace, history: GtmMessage[], userMessage: string, steps: StepTrace[], stepBudget: number, toolHint?: string, pageContext?: string): string {
   return [
     `WORKSPACE CONTEXT:\n${workspaceContext(ws)}`,
     '',
+    pageContext ? `PAGE CONTEXT — what the user is looking at RIGHT NOW (resolve pronouns like "this", "这个", "my page" against this):\n${pageContext.slice(0, 2500)}\n` : '',
     'TOOL CATALOG (param* = required, only tools eligible for this workspace are shown):',
     toolsPromptCatalog(ws),
     toolHint ? `\nTRIAGE HINT — the upstream classifier suggested using \`${toolHint}\`. Use it unless you have a strong reason to pick differently.` : '',
@@ -171,10 +174,10 @@ interface ClassifierResp {
   }
 }
 
-async function classifyStep(ws: Workspace, history: GtmMessage[], userMessage: string, steps: StepTrace[], stepBudget: number, toolHint?: string): Promise<ClassifierResp> {
+async function classifyStep(ws: Workspace, history: GtmMessage[], userMessage: string, steps: StepTrace[], stepBudget: number, toolHint?: string, pageContext?: string): Promise<ClassifierResp> {
   const raw = await callAgent({
     system: buildSystem(ws),
-    user: buildUserPrompt(ws, history, userMessage, steps, stepBudget, toolHint),
+    user: buildUserPrompt(ws, history, userMessage, steps, stepBudget, toolHint, pageContext),
     maxTokens: 800,
     temperature: 0.2,
   })
@@ -223,7 +226,7 @@ export async function runReactLoop(input: LoopInput): Promise<LoopOutput> {
   while (steps.length < MAX_STEPS && Date.now() - start < WALL_CLOCK_MS) {
     const stepBudget = MAX_STEPS - steps.length
     const stepStart = Date.now()
-    const decision = await classifyStep(input.workspace, input.history, input.message, steps, stepBudget, input.toolHint)
+    const decision = await classifyStep(input.workspace, input.history, input.message, steps, stepBudget, input.toolHint, input.pageContext)
     const thought = String(decision.thought ?? '').slice(0, 800)
     const action = decision.action || { kind: 'final_answer', reply: 'Done.' }
     const kind = action.kind as StepTrace['action_kind']

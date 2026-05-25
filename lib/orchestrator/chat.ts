@@ -31,6 +31,13 @@ export interface ChatTurnInput {
   userId: string
   conversationId: string
   message: string
+  /**
+   * Optional snapshot of "what the user is looking at right now" — collected
+   * on the frontend via useCopilotReadable hooks. Threaded into the triage
+   * + loop prompts so the agent can reason about page context without the
+   * user having to repeat themselves.
+   */
+  pageContext?: string
 }
 
 export interface ChatTurnEvents {
@@ -54,7 +61,7 @@ export interface ChatTurnOutput {
 }
 
 export async function runChatTurn(input: ChatTurnInput, events: ChatTurnEvents = {}): Promise<ChatTurnOutput> {
-  const { workspace, userId, conversationId, message } = input
+  const { workspace, userId, conversationId, message, pageContext } = input
 
   // 1. Slash command short-circuit.
   const slash = parseSlashCommand(message, workspace)
@@ -72,7 +79,7 @@ export async function runChatTurn(input: ChatTurnInput, events: ChatTurnEvents =
   const historyForLoop = compactHistory(historyClean, { keepLast: 6, snippetLen: 100 })
 
   // 4. TRIAGE — always get a conversational reply first.
-  const triage = await triageMessage(workspace, historyClean, message)
+  const triage = await triageMessage(workspace, historyClean, message, pageContext)
 
   // 5. Persist the preamble (always — it's what the user reads first).
   const preamble = await appendMessage({
@@ -99,7 +106,7 @@ export async function runChatTurn(input: ChatTurnInput, events: ChatTurnEvents =
     workspace_id: workspace.id,
     conversation_id: conversationId,
     triggered_by: 'chat',
-    input: { message, triage_reply: triage.reply, tool_hint: triage.tool_hint },
+    input: { message, triage_reply: triage.reply, tool_hint: triage.tool_hint, has_page_context: Boolean(pageContext) },
     summary: message.slice(0, 100),
   }, async (turnTask) => {
     return await runReactLoop({
@@ -108,6 +115,7 @@ export async function runChatTurn(input: ChatTurnInput, events: ChatTurnEvents =
       message,
       turnTaskId: turnTask?.id ?? '',
       toolHint: triage.tool_hint,
+      pageContext,
       onStep: events.onStep,
     })
   })

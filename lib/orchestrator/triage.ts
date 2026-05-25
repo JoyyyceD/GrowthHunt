@@ -99,7 +99,7 @@ function historyTranscript(history: GtmMessage[]): string {
   return slice.map((m) => `${m.role.toUpperCase()}: ${m.content.slice(0, 300)}`).join('\n')
 }
 
-export async function triageMessage(ws: Workspace, history: GtmMessage[], message: string): Promise<TriageResult> {
+export async function triageMessage(ws: Workspace, history: GtmMessage[], message: string, pageContext?: string): Promise<TriageResult> {
   const catalog = buildToolCatalog(ws)
   const synonyms = buildZhSynonymTable()
 
@@ -130,6 +130,7 @@ export async function triageMessage(ws: Workspace, history: GtmMessage[], messag
   const user = [
     `WORKSPACE:\n${workspaceContext(ws)}`,
     '',
+    pageContext ? `PAGE CONTEXT — what the user is looking at RIGHT NOW (use this to resolve pronouns like "this task", "这个", "my landing page"):\n${pageContext.slice(0, 2000)}\n` : '',
     'TOOL CATALOG (internal identifiers are for tool_hint field ONLY; reply uses display labels):',
     catalog,
     '',

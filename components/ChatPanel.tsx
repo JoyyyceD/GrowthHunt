@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import { snapshotReadables } from '@/lib/agent-context/store'
 import type { GtmMessage, GtmConversation } from '@/lib/orchestrator/types'
 import type { StepTrace } from '@/lib/orchestrator/loop'
 import type { Workspace } from '@/lib/workspace/types'
@@ -107,6 +108,11 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
     let preambleId: string | null = null
     let liveSteps: StepTrace[] = []
 
+    // Snapshot frontend-registered readables (what's on screen right now) so
+    // the backend can inject page context into the prompt. Backed by our own
+    // tiny store — see lib/agent-context/store.ts.
+    const pageContext = snapshotReadables()
+
     try {
       const res = await fetch('/api/gtm/chat/stream', {
         method: 'POST',
@@ -115,6 +121,7 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
           workspace_id: workspace.id,
           conversation_id: conversationId ?? undefined,
           message: trimmed,
+          page_context: pageContext || undefined,
         }),
       })
       if (!res.ok || !res.body) {

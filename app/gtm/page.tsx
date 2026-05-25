@@ -8,6 +8,7 @@ import { listRecentTasks } from '@/lib/orchestrator/tasks'
 import { listConversations } from '@/lib/orchestrator/conversations'
 import { listPlaybooks } from '@/lib/playbooks/registry'
 import { ChatPanel } from '@/components/ChatPanel'
+import { PageContextReadable } from '@/components/PageContextReadable'
 import { MissionControl } from './MissionControl'
 
 const PAGE_URL = 'https://growthhunt.ai/gtm'
@@ -42,6 +43,14 @@ export default async function GtmPage({ searchParams }: { searchParams: Promise<
 
   return (
     <div>
+      <PageContextReadable
+        id="recent_runs"
+        description="The 12 most recent gtm_tasks for this workspace, surfaced on the Mission Control sidebar. Use to answer 'what did I run today / yesterday' or to reference past results."
+        value={tasks.slice(0, 12).map((t) => ({
+          id: t.id, kind: t.kind, status: t.status, summary: t.summary?.slice(0, 80),
+          duration_ms: t.duration_ms, created_at: t.created_at,
+        }))}
+      />
       <TopNav variant="page" />
       <section style={{ padding: '36px 0 24px' }}>
         <div className="shell">

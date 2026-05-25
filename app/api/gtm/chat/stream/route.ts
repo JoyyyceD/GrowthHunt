@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
     return new Response(JSON.stringify({ error: 'unauthorized' }), { status: 401, headers: { 'Content-Type': 'application/json' } })
   }
 
-  let body: { workspace_id?: string; conversation_id?: string; message?: string }
+  let body: { workspace_id?: string; conversation_id?: string; message?: string; page_context?: string }
   try { body = await req.json() } catch {
     return new Response(JSON.stringify({ error: 'Invalid body' }), { status: 400, headers: { 'Content-Type': 'application/json' } })
   }
@@ -71,7 +71,7 @@ export async function POST(req: NextRequest) {
       send('ping', { conversation_id: conversationId, at: Date.now() })
       try {
         const out = await runChatTurn(
-          { workspace: ws, userId: user.id, conversationId: conversationId!, message },
+          { workspace: ws, userId: user.id, conversationId: conversationId!, message, pageContext: body.page_context?.trim() || undefined },
           {
             onPreamble: (msg: GtmMessage, needsTools: boolean) => {
               send('preamble', {

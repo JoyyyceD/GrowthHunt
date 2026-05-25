@@ -3,6 +3,7 @@ import Script from 'next/script'
 import { Toaster } from 'sonner'
 import FollowFelixWidget from '@/components/FollowFelixWidget'
 import { FloatingChatGate } from '@/components/FloatingChatGate'
+import { CopilotProvider } from '@/components/CopilotProvider'
 import './globals.css'
 
 const BASE = 'https://growthhunt.ai'
@@ -114,9 +115,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        {children}
-        <FollowFelixWidget />
-        <FloatingChatGate />
+        <CopilotProvider>
+          {children}
+          <FollowFelixWidget />
+          <FloatingChatGate />
+        </CopilotProvider>
         <Toaster position="bottom-left" richColors />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-MG4MDHT7RZ" strategy="afterInteractive" />
         <Script id="ga4" strategy="afterInteractive">{`
