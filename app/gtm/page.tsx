@@ -18,14 +18,18 @@ export const metadata: Metadata = {
   alternates: { canonical: PAGE_URL },
 }
 
-export default async function GtmPage({ searchParams }: { searchParams: Promise<{ ws?: string }> }) {
+export default async function GtmPage({ searchParams }: { searchParams: Promise<{ ws?: string; q?: string }> }) {
   const sp = await searchParams
+  // Preserve the q (initial chat message) across login + workspace setup so users
+  // who arrive via the home-page hero land in /gtm with their question auto-fired.
+  const nextWithQ = sp.q ? `/gtm?q=${encodeURIComponent(sp.q)}` : '/gtm'
+
   const supabase = await createServerClient()
   const { data: { user } } = await supabase.auth.getUser()
-  if (!user) redirect('/login?next=/gtm')
+  if (!user) redirect(`/login?next=${encodeURIComponent(nextWithQ)}`)
 
   const workspaces = await listWorkspacesForOwner(user.id)
-  if (workspaces.length === 0) redirect('/workspace')
+  if (workspaces.length === 0) redirect(`/workspace?next=${encodeURIComponent(nextWithQ)}`)
 
   const active = sp.ws ? await getWorkspace(sp.ws) : workspaces[0]
   if (!active || (active.owner_id && active.owner_id !== user.id)) redirect('/gtm')
@@ -62,7 +66,7 @@ export default async function GtmPage({ searchParams }: { searchParams: Promise<
 
       <section style={{ padding: '0 0 72px' }}>
         <div className="shell" style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) 320px', gap: 24, alignItems: 'start' }}>
-          <ChatPanel workspace={active} />
+          <ChatPanel workspace={active} autoSend={sp.q?.trim() || undefined} />
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             <MissionControl workspace={active} tasks={tasks} />
 

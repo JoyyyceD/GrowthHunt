@@ -54,6 +54,8 @@ interface ChatPanelProps {
   /** When true (used by FloatingChat) the panel is compact + collapsible. */
   compact?: boolean
   onClose?: () => void
+  /** When set, fire this message automatically on mount (home-page handoff). */
+  autoSend?: string
 }
 
 const SUGGESTIONS = [
@@ -63,7 +65,7 @@ const SUGGESTIONS = [
   'Run weekly review',
 ]
 
-export function ChatPanel({ workspace, initialConversation, initialMessages = [], compact, onClose }: ChatPanelProps) {
+export function ChatPanel({ workspace, initialConversation, initialMessages = [], compact, onClose, autoSend }: ChatPanelProps) {
   const router = useRouter()
   const [conversationId, setConversationId] = useState<string | null>(initialConversation?.id ?? null)
   const [messages, setMessages] = useState<GtmMessage[]>(initialMessages)
@@ -78,6 +80,8 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
   useEffect(() => {
     if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight
   }, [messages, phase, pendingApproval, traces, stage])
+
+  const autoSendRef = useRef(false)
 
   async function send(text: string) {
     const trimmed = text.trim()
@@ -301,6 +305,20 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
     e.preventDefault()
     send(input)
   }
+
+  // Auto-fire a handoff message from the home-page hero exactly once on mount.
+  useEffect(() => {
+    if (autoSendRef.current) return
+    if (!autoSend || !autoSend.trim()) return
+    autoSendRef.current = true
+    if (typeof window !== 'undefined' && window.history?.replaceState) {
+      const u = new URL(window.location.href)
+      u.searchParams.delete('q')
+      window.history.replaceState({}, '', u.toString())
+    }
+    void send(autoSend)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoSend])
 
   const isBusy = phase !== 'idle'
 

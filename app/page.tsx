@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { MODULES, FEATURES, getFeatureById } from '@/lib/features'
 import { getAllCompanies, getStory } from '@/lib/growth-story'
 import { TopNav } from '@/lib/site/TopNav'
+import { HomeChatHero } from '@/components/HomeChatHero'
 
 // ── Hero ─────────────────────────────────────────────────────────────────────
 function Hero() {
@@ -18,21 +19,24 @@ function Hero() {
             <p className="lede">
               <b>GrowthHunt is an all-in-one AI go-to-market agent for indie founders and lean growth teams.</b> Instead of stitching 8–12 disconnected tools, one agent finds the creators your buyers already trust, writes the pitch in your voice, sends it across X, Reddit and YouTube, tracks every reply, and learns which patterns actually convert.
             </p>
-            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 24 }}>
+
+            <HomeChatHero />
+
+            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 28 }}>
               <a
                 href="#live"
-                style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'var(--accent)', color: 'var(--accent-ink)', border: 'none', padding: '14px 24px', borderRadius: 999, fontSize: 14, fontWeight: 600, textDecoration: 'none' }}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'transparent', color: 'var(--ink)', border: '1px solid var(--rule-strong)', padding: '12px 22px', borderRadius: 999, fontSize: 13.5, fontWeight: 600, textDecoration: 'none' }}
               >
-                Explore live tools →
+                Or browse all 20+ live tools →
               </a>
               <Link
                 href="/coming-soon"
-                style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'transparent', color: 'var(--ink)', border: '1px solid var(--rule-strong)', padding: '14px 24px', borderRadius: 999, fontSize: 14, fontWeight: 600, textDecoration: 'none' }}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'transparent', color: 'var(--ink-dim)', border: 'none', padding: '12px 6px', fontSize: 13.5, fontWeight: 500, textDecoration: 'underline' }}
               >
-                See what&apos;s coming →
+                See the roadmap
               </Link>
             </div>
-            <div className="meta" style={{ marginTop: 24 }}>
+            <div className="meta" style={{ marginTop: 20 }}>
               <span style={{ color: 'var(--ink-faint)' }}>
                 Live tools shipping traffic today · more in the works · last updated{' '}
                 <time dateTime="2026-05-24">May 24, 2026</time>
