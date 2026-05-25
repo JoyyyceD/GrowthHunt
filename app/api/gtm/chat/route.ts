@@ -55,6 +55,8 @@ export async function POST(req: NextRequest) {
       followups: out.followups,
       task_id: out.taskId,
       tool_used: out.toolUsed,
+      steps: out.steps,
+      approval_request: out.approvalRequest,
     })
   } catch (err) {
     return NextResponse.json({ error: (err as Error).message }, { status: 500 })

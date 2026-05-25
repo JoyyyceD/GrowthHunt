@@ -1,24 +1,21 @@
 /**
- * Chat orchestrator turn.
+ * Chat orchestrator turn — ReAct loop edition.
  *
  *   1. Append user message to gtm_messages.
- *   2. Ask MiniMax to classify intent + pick a tool (JSON output).
- *   3. Dispatch tool through registry — execute / route / playbook / answer.
- *   4. Append assistant message with tool_call payload + tool summary.
- *   5. Return { assistant_message, route_to?, followups? } to the client.
+ *   2. Wrap the whole turn in a `chat_turn` gtm_task.
+ *   3. Run lib/orchestrator/loop.runReactLoop — up to 5 steps, each persisted
+ *      to agent_steps for UI trace.
+ *   4. Append assistant message (final_answer) with last tool_call payload.
+ *   5. Return { assistant, steps, routeTo, followups, approvalRequest? }.
  *
- * Single round-trip per turn (no streaming — MiniMax has no stream). The
- * UI shows an optimistic "running…" bubble until this resolves.
+ * No streaming — MiniMax is single-shot per step. UI shows a "thinking" bubble
+ * during the loop; final response renders the trace as collapsible thoughts.
  */
-import { workspaceContext, callAgent, extractJson, withVoice } from '@/lib/agents/llm'
 import type { Workspace } from '@/lib/workspace/types'
-import {
-  TOOLS, findTool, toolsPromptCatalog, type ToolResult, type OrchestratorTool,
-} from './tools'
-import {
-  appendMessage, listMessages, maybeAutoTitle,
-} from './conversations'
+import { appendMessage, listMessages, maybeAutoTitle } from './conversations'
 import { recordTask } from './tasks'
+import { runReactLoop, resumeAfterApproval, type StepTrace, type LoopOutput } from './loop'
+import { TOOLS } from './tools'
 import type { GtmMessage } from './types'
 
 export interface ChatTurnInput {
@@ -34,73 +31,22 @@ export interface ChatTurnOutput {
   routeTo?: string
   followups?: string[]
   taskId?: string
-}
-
-interface ClassifierResponse {
-  tool?: string
-  params?: Record<string, unknown>
-  thinking?: string
-}
-
-function buildClassifierPrompt(ws: Workspace, history: GtmMessage[], message: string): { system: string; user: string } {
-  const recent = history
-    .slice(-8)
-    .map((m) => `${m.role.toUpperCase()}: ${m.content.slice(0, 400)}${m.tool_call?.name ? ` [tool: ${m.tool_call.name}]` : ''}`)
-    .join('\n')
-
-  const system = withVoice(
-    'You are the GrowthHunt GTM orchestrator. You decide which tool to call '
-    + 'for each user turn. Reply with ONLY a JSON object — no prose, no '
-    + 'markdown fences. Pick the single most appropriate tool from the '
-    + 'catalog. If unsure, use the "answer" tool with a helpful plain reply. '
-    + 'Be terse. Prefer tools that actually do work over generic answers.',
-    ws.voice,
-  )
-
-  const user = [
-    `WORKSPACE CONTEXT:\n${workspaceContext(ws)}`,
-    '',
-    'TOOL CATALOG (param* = required):',
-    toolsPromptCatalog(),
-    '',
-    `RECENT TURNS:\n${recent || '(empty)'}`,
-    '',
-    `NEW USER MESSAGE:\n${message}`,
-    '',
-    'Return JSON exactly:',
-    '{',
-    '  "thinking": "<1 sentence — why this tool>",',
-    '  "tool": "<one of the tool names above>",',
-    '  "params": { ... per the tool\'s param schema ... }',
-    '}',
-  ].join('\n')
-  return { system, user }
-}
-
-async function classify(ws: Workspace, history: GtmMessage[], message: string): Promise<ClassifierResponse> {
-  const { system, user } = buildClassifierPrompt(ws, history, message)
-  const raw = await callAgent({ system, user, maxTokens: 600, temperature: 0.2 })
-  if (!raw) {
-    return { tool: 'answer', params: { reply: 'The orchestrator LLM is unreachable right now. Try again in a moment, or open any agent page directly.' } }
-  }
-  const parsed = extractJson<ClassifierResponse>(raw)
-  if (!parsed || !parsed.tool) {
-    return { tool: 'answer', params: { reply: "I couldn't pick a tool for that. Try rephrasing — e.g. 'audit my landing page' or 'find 5 creators to DM'." } }
-  }
-  return parsed
+  steps: StepTrace[]
+  approvalRequest?: LoopOutput['approvalRequest']
 }
 
 export async function runChatTurn(input: ChatTurnInput): Promise<ChatTurnOutput> {
   const { workspace, userId, conversationId, message } = input
 
-  // 1. persist the user turn
+  // 1. persist user turn + maybe-rename conversation
   const userMsg = await appendMessage({ conversation_id: conversationId, role: 'user', content: message })
   void maybeAutoTitle(conversationId, message)
 
-  // 2. load history for classifier (exclude the just-inserted message? no, include it for context-fidelity)
+  // 2. load history (exclude the message we just inserted)
   const history = await listMessages(conversationId, 20)
+  const historyForLoop = history.filter((m) => m.id !== userMsg?.id)
 
-  // 3. classify + dispatch
+  // 3. wrap in a chat_turn task so /gtm/tasks history is complete
   const { task, result } = await recordTask({
     kind: 'chat_turn',
     workspace_id: workspace.id,
@@ -109,49 +55,96 @@ export async function runChatTurn(input: ChatTurnInput): Promise<ChatTurnOutput>
     input: { message },
     summary: message.slice(0, 100),
   }, async () => {
-    const classification = await classify(workspace, history.filter((m) => m.id !== userMsg?.id), message)
-    const tool = findTool(classification.tool || 'answer') || findTool('answer')!
-    const toolResult = await dispatchTool(tool, classification.params || {}, {
+    return await runReactLoop({
       workspace, userId, conversationId,
+      history: historyForLoop,
+      message,
+      turnTaskId: '', // patched below — recordTask gives us task.id after wrapper finishes
     })
-    return { tool: tool.name, toolResult, classification }
   })
 
-  const toolResult: ToolResult = result.toolResult
-  const toolUsed: string = result.tool
+  // recordTask runs the fn before creating the row patch — so loop ran with empty turnTaskId.
+  // We persist each step to agent_steps inside the loop; backfill turn_task_id now.
+  if (task?.id) {
+    try {
+      const { createAdminClient } = await import('@/lib/supabase/admin')
+      const admin = createAdminClient()
+      await admin
+        .from('agent_steps')
+        .update({ turn_task_id: task.id })
+        .is('turn_task_id', null)
+        .eq('conversation_id', conversationId)
+    } catch { /* noop */ }
+  }
 
-  // 4. persist assistant turn
+  const loop = result
+
+  // 4. persist the assistant turn
+  const lastStep = loop.steps[loop.steps.length - 1]
+  const tool_call = lastStep ? {
+    name: loop.toolUsed,
+    params: lastStep.tool_params,
+    route_to: loop.routeTo,
+  } : { name: loop.toolUsed }
   const assistant = await appendMessage({
     conversation_id: conversationId,
     role: 'assistant',
-    content: toolResult.summary,
-    tool_call: {
-      name: toolUsed,
-      params: result.classification?.params,
-      route_to: toolResult.routeTo,
-    },
-    task_id: toolResult.taskId ?? task.id ?? null,
+    content: loop.finalAnswer,
+    tool_call,
+    task_id: loop.taskId ?? task?.id ?? null,
   })
 
   return {
     assistant: assistant!,
-    toolUsed,
-    routeTo: toolResult.routeTo,
-    followups: toolResult.followups,
-    taskId: toolResult.taskId,
+    toolUsed: loop.toolUsed,
+    routeTo: loop.routeTo,
+    followups: loop.followups,
+    taskId: loop.taskId,
+    steps: loop.steps,
+    approvalRequest: loop.approvalRequest,
   }
 }
 
-async function dispatchTool(tool: OrchestratorTool, params: Record<string, unknown>, ctx: { workspace: Workspace; userId: string; conversationId: string }): Promise<ToolResult> {
-  try {
-    return await tool.run(params, ctx)
-  } catch (err) {
-    console.error(`[chat] tool ${tool.name} threw:`, (err as Error).message)
-    return { summary: `Tool **${tool.name}** failed: ${(err as Error).message}` }
+/** After UI approval, replay the gated tool call. */
+export async function approveChatTurn(input: {
+  workspace: Workspace; userId: string; conversationId: string;
+  tool: string; params: Record<string, unknown>;
+}): Promise<ChatTurnOutput> {
+  const history = await listMessages(input.conversationId, 20)
+
+  const { task, result: loop } = await recordTask({
+    kind: 'chat_turn',
+    workspace_id: input.workspace.id,
+    conversation_id: input.conversationId,
+    triggered_by: 'chat',
+    input: { approved_tool: input.tool, params: input.params },
+    summary: `Approved: ${input.tool}`,
+  }, async () => resumeAfterApproval({
+    workspace: input.workspace, userId: input.userId, conversationId: input.conversationId,
+    history, message: `(approved ${input.tool})`, turnTaskId: '',
+    approval: { tool: input.tool, params: input.params, approved: true },
+  }))
+
+  const lastStep = loop.steps[loop.steps.length - 1]
+  const assistant = await appendMessage({
+    conversation_id: input.conversationId,
+    role: 'assistant',
+    content: loop.finalAnswer,
+    tool_call: { name: loop.toolUsed, params: lastStep?.tool_params, route_to: loop.routeTo },
+    task_id: loop.taskId ?? task?.id ?? null,
+  })
+
+  return {
+    assistant: assistant!,
+    toolUsed: loop.toolUsed,
+    routeTo: loop.routeTo,
+    followups: loop.followups,
+    taskId: loop.taskId,
+    steps: loop.steps,
   }
 }
 
-/** For the UI: returns the registered tool descriptions for an "available actions" panel. */
+/** For the UI: tool registry list for an "actions" panel. */
 export function publicToolList(): Array<{ name: string; description: string; kind: string }> {
   return TOOLS.map((t) => ({ name: t.name, description: t.description, kind: t.kind }))
 }
