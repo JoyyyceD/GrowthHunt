@@ -20,9 +20,9 @@ import { createAdminClient } from '@/lib/supabase/admin'
 import { callAgent, extractJson, workspaceContext, withVoice } from './llm'
 import type { Workspace } from '@/lib/workspace/types'
 
-export type PlatformId = 'x' | 'linkedin' | 'reddit' | 'hackernews' | 'instagram' | 'tiktok' | 'discord'
+export type PlatformId = 'x' | 'linkedin' | 'linkedin_long' | 'reddit' | 'hackernews' | 'instagram' | 'tiktok' | 'discord' | 'xiaohongshu'
 
-export const PLATFORM_ORDER: PlatformId[] = ['x', 'linkedin', 'reddit', 'hackernews', 'instagram', 'tiktok', 'discord']
+export const PLATFORM_ORDER: PlatformId[] = ['x', 'linkedin', 'linkedin_long', 'reddit', 'hackernews', 'instagram', 'tiktok', 'discord', 'xiaohongshu']
 
 export interface PlatformVariant {
   body: string
@@ -104,11 +104,17 @@ export async function runDistribution(input: DistributionRunInput): Promise<Dist
     + 'with hashtags swapped. Each platform has its own grammar:\n'
     + '  - X: single tweet ≤ 280 chars OR a thread (3-7 parts, each ≤ 270).\n'
     + '  - LinkedIn: 200-350 words, hook on line 1, no hashtag spam (≤ 3).\n'
+    + '  - LinkedIn long: 1200-1800 words narrative — open with a scene/hook, body '
+    + '    with 3 acts or sub-headings, end with one CTA question. No emoji spam.\n'
     + '  - Reddit: long-form post + suggested subreddit + scroll-stopping title.\n'
     + '  - HackerNews: just a great title; body optional (HN punishes promo).\n'
-    + '  - Instagram: caption with line breaks; emoji per voice; 5-10 hashtags ok.\n'
-    + '  - TikTok: script outline (Hook / Story / CTA) — 3 short paragraphs.\n'
+    + '  - Instagram: caption with line breaks + 10-image carousel script — for each '
+    + '    image, give an on-screen-text line + caption snippet; 5-10 hashtags.\n'
+    + '  - TikTok: 60s script outline — Hook (0-3s), Story (4-50s, every 10s a beat), '
+    + '    CTA (50-60s). Include suggested b-roll per beat.\n'
     + '  - Discord: chatty, ≤ 250 chars, no hard sell.\n'
+    + '  - 小红书 (Xiaohongshu): emoji 标题 (≤20 字) + 5-段式正文（痛点/转折/方法/'
+    + '    案例/收尾）+ 3-5 个 #话题标签. 简体中文，口语化，emoji 大量使用.\n'
     + 'Also suggest a cadence (platform + hours offset from T0). Reply ONLY a JSON object.',
     ws.voice,
   )
@@ -123,13 +129,15 @@ export async function runDistribution(input: DistributionRunInput): Promise<Dist
     'Return JSON exactly:',
     '{',
     '  "variants": {',
-    '    "x":          {"body": "<single tweet>", "threadParts": ["<part 1>", "<part 2>"]},',
-    '    "linkedin":   {"body": "<200-350 word post>", "hashtags": ["..."]},',
-    '    "reddit":     {"title": "<title>", "body": "<post>", "subreddit": "indiehackers", "notes": "<why this sub>"},',
-    '    "hackernews": {"title": "<Show HN: ... or Ask HN: ...>", "body": "<optional 2-3 sentences>"},',
-    '    "instagram":  {"body": "<caption>", "hashtags": ["..."]},',
-    '    "tiktok":     {"body": "Hook: ...\\nStory: ...\\nCTA: ..."},',
-    '    "discord":    {"body": "<chatty 1-3 sentence message>"}',
+    '    "x":             {"body": "<single tweet>", "threadParts": ["<part 1>", "<part 2>"]},',
+    '    "linkedin":      {"body": "<200-350 word post>", "hashtags": ["..."]},',
+    '    "linkedin_long": {"body": "<1200-1800 word LinkedIn article in narrative voice>", "title": "<article title>"},',
+    '    "reddit":        {"title": "<title>", "body": "<post>", "subreddit": "indiehackers", "notes": "<why this sub>"},',
+    '    "hackernews":    {"title": "<Show HN: ... or Ask HN: ...>", "body": "<optional 2-3 sentences>"},',
+    '    "instagram":     {"body": "<caption>", "threadParts": ["[Slide 1 text] caption snippet", "[Slide 2 text] ...", "..."], "hashtags": ["..."]},',
+    '    "tiktok":        {"body": "Hook (0-3s): ...\\nBeat 1 (4-15s): ...\\nBeat 2 (16-30s): ...\\nBeat 3 (31-50s): ...\\nCTA (50-60s): ...\\nB-roll: ..."},',
+    '    "discord":       {"body": "<chatty 1-3 sentence message>"},',
+    '    "xiaohongshu":   {"title": "<emoji 标题 ≤20 字>", "body": "<5-段式正文，emoji 多>", "hashtags": ["#标签1", "#标签2"]}',
     '  },',
     '  "cadence": [',
     '    {"platform": "x", "post_at_offset_hours": 0, "note": "best 9-11am ET"},',

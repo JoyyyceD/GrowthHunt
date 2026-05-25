@@ -27,6 +27,14 @@
     {
       "path": "/api/gtm/cron/weekly-review",
       "schedule": "0 14 * * 0"
+    },
+    {
+      "path": "/api/agents/post-roi/cron",
+      "schedule": "0 12 * * 0"
+    },
+    {
+      "path": "/api/agents/trend-digest/cron",
+      "schedule": "0 8 * * *"
     }
   ]
 }

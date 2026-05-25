@@ -11,7 +11,7 @@ function Hero() {
       <div className="shell">
         <div className="grid-2">
           <div>
-            <div className="eyebrow"><span className="dot" />An all-in-one go-to-market agent · chat orchestrator + 10 agents + 7 free tools live now</div>
+            <div className="eyebrow"><span className="dot" />An all-in-one go-to-market agent · chat orchestrator + 14 agents + 7 free tools live now</div>
             <h1><em>GrowthHunt</em> is your all-in-one<br />go-to-market <em>agent</em>.</h1>
           </div>
           <div>
@@ -192,6 +192,46 @@ function LiveCases() {
               ARR estimates).
             </p>
             <span className="visit">Watch the competition →</span>
+          </Link>
+
+          {/* Post ROI — wedge */}
+          <Link href="/agents/post-roi" className="eco-card eco-card-link" style={{ borderColor: 'var(--accent)' }}>
+            <span className="tag live" style={{ alignSelf: 'flex-start', background: 'var(--accent)', color: '#fff' }}>● Wedge</span>
+            <div className="eco-title">Post ROI</div>
+            <p>
+              <strong>Your own viral DNA.</strong> Pulls your last 90 days of X posts, groups by template, ranks TOP-3 vs BOTTOM-3. Everyone else sells <em>other people&apos;s</em> templates; we tell you which of <em>your</em> formats actually work.
+            </p>
+            <span className="visit">See your TOP templates →</span>
+          </Link>
+
+          {/* Trend Digest */}
+          <Link href="/agents/trend-digest" className="eco-card eco-card-link">
+            <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
+            <div className="eco-title">Daily Trend Digest</div>
+            <p>
+              Every morning 8am UTC: scans tracked X handles for the last 24h, drafts 3-8 tweets you could ride today using <strong>your TOP templates</strong> in <strong>your voice</strong>. One click → X compose.
+            </p>
+            <span className="visit">Today&apos;s tweets to ride →</span>
+          </Link>
+
+          {/* Launch Orchestrator */}
+          <Link href="/agents/launch-orchestrator" className="eco-card eco-card-link">
+            <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
+            <div className="eco-title">Launch Orchestrator</div>
+            <p>
+              Coordinate PH / HN / BetaList / IH / Reddit / Smol in one campaign. Per-platform checklist (PH hunter outreach, HN comment timing, Reddit subreddit picker), copy templates in your voice, timing engine.
+            </p>
+            <span className="visit">Plan your next launch →</span>
+          </Link>
+
+          {/* Video Coach */}
+          <Link href="/agents/video-coach" className="eco-card eco-card-link">
+            <span className="tag live" style={{ alignSelf: 'flex-start' }}>● Live now</span>
+            <div className="eco-title">Video Coach</div>
+            <p>
+              Not a generator — a director. Pick scenario → 30-60s shot list with per-second VO, B-roll cues, on-screen text + checklist + tool recs (Arcade / Submagic / CapCut) + 5-item pre-upload self-check.
+            </p>
+            <span className="visit">Get your shot list →</span>
           </Link>
 
           {/* GEO Score card — free GEO audit + Claude skill */}
@@ -451,6 +491,10 @@ function Footer() {
             <li><Link href="/agents/distribution">Distribution</Link></li>
             <li><Link href="/agents/ab">A/B Lab</Link></li>
             <li><Link href="/agents/competitor">Competitor Watch</Link></li>
+            <li><Link href="/agents/post-roi">Post ROI</Link></li>
+            <li><Link href="/agents/trend-digest">Trend Digest</Link></li>
+            <li><Link href="/agents/launch-orchestrator">Launch Orchestrator</Link></li>
+            <li><Link href="/agents/video-coach">Video Coach</Link></li>
           </ul>
         </div>
         <div>

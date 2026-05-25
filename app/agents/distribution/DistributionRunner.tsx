@@ -7,15 +7,17 @@ import type { DistributionPost, PlatformId, PlatformVariant } from '@/lib/agents
 type Phase = 'idle' | 'running' | 'done' | 'error'
 
 const PLATFORM_META: Record<PlatformId, { label: string; color: string; emoji: string }> = {
-  x:          { label: 'X',           color: '#000', emoji: '𝕏' },
-  linkedin:   { label: 'LinkedIn',    color: '#0a66c2', emoji: 'in' },
-  reddit:     { label: 'Reddit',      color: '#ff4500', emoji: 'r' },
-  hackernews: { label: 'HackerNews',  color: '#ff6600', emoji: 'Y' },
-  instagram:  { label: 'Instagram',   color: '#e4405f', emoji: 'IG' },
-  tiktok:     { label: 'TikTok',      color: '#000', emoji: 'TT' },
-  discord:    { label: 'Discord',     color: '#5865f2', emoji: 'd' },
+  x:             { label: 'X',              color: '#000', emoji: '𝕏' },
+  linkedin:      { label: 'LinkedIn',       color: '#0a66c2', emoji: 'in' },
+  linkedin_long: { label: 'LinkedIn (long)', color: '#0a66c2', emoji: 'in+' },
+  reddit:        { label: 'Reddit',         color: '#ff4500', emoji: 'r' },
+  hackernews:    { label: 'HackerNews',     color: '#ff6600', emoji: 'Y' },
+  instagram:     { label: 'Instagram',      color: '#e4405f', emoji: 'IG' },
+  tiktok:        { label: 'TikTok',         color: '#000', emoji: 'TT' },
+  discord:       { label: 'Discord',        color: '#5865f2', emoji: 'd' },
+  xiaohongshu:   { label: '小红书',          color: '#fe2c55', emoji: '🍠' },
 }
-const PLATFORM_ORDER: PlatformId[] = ['x', 'linkedin', 'reddit', 'hackernews', 'instagram', 'tiktok', 'discord']
+const PLATFORM_ORDER: PlatformId[] = ['x', 'linkedin', 'linkedin_long', 'reddit', 'hackernews', 'instagram', 'tiktok', 'discord', 'xiaohongshu']
 
 function variantToText(v: PlatformVariant): string {
   const out: string[] = []
@@ -36,12 +38,14 @@ function platformUrl(p: PlatformId, v: PlatformVariant): string | null {
       const text = encodeURIComponent(v.threadParts?.[0] || v.body)
       return `https://x.com/intent/tweet?text=${text}`
     }
-    case 'linkedin': return 'https://www.linkedin.com/feed/?shareActive=true'
-    case 'reddit':   return v.subreddit ? `https://www.reddit.com/r/${v.subreddit}/submit` : 'https://www.reddit.com/submit'
-    case 'hackernews': return 'https://news.ycombinator.com/submit'
-    case 'instagram':  return null
-    case 'tiktok':     return 'https://www.tiktok.com/upload'
-    case 'discord':    return null
+    case 'linkedin':      return 'https://www.linkedin.com/feed/?shareActive=true'
+    case 'linkedin_long': return 'https://www.linkedin.com/article/new/'
+    case 'reddit':        return v.subreddit ? `https://www.reddit.com/r/${v.subreddit}/submit` : 'https://www.reddit.com/submit'
+    case 'hackernews':    return 'https://news.ycombinator.com/submit'
+    case 'instagram':     return null
+    case 'tiktok':        return 'https://www.tiktok.com/upload'
+    case 'discord':       return null
+    case 'xiaohongshu':   return 'https://creator.xiaohongshu.com/publish/publish'
     default: return null
   }
 }

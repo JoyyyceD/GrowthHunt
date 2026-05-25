@@ -18,6 +18,10 @@ import {
 } from './agents'
 import { listRecentTasks } from './tasks'
 import { parseTargetCsv } from '@/lib/agents/cold-email'
+import { ingestSelfPosts, buildRoiDigest, persistDigest } from '@/lib/agents/post-roi'
+import { runTrendDigest } from '@/lib/agents/trend-digest'
+import { createCampaign, ALL_PLATFORMS as LAUNCH_PLATFORMS, type LaunchPlatform } from '@/lib/agents/launch-orchestrator'
+import { runVideoCoach, type VideoScenario } from '@/lib/agents/video-coach'
 
 export type ToolKind = 'execute' | 'route' | 'playbook' | 'answer'
 
@@ -336,6 +340,108 @@ const TOOL_START_PLAYBOOK: OrchestratorTool = {
   },
 }
 
+const TOOL_POST_ROI: OrchestratorTool = {
+  name: 'post_roi_digest',
+  description: 'Refresh the founder\'s own-post ROI loop: pull last 90 days of their X posts, group by template, return TOP-3 / BOTTOM-3 templates + angle recommendations.',
+  params: {},
+  kind: 'execute',
+  async run(_p, ctx) {
+    const ingest = await ingestSelfPosts(ctx.workspace)
+    if (ingest.errors.length > 0 && ingest.upserted === 0) {
+      return { summary: `Couldn't ingest posts: ${ingest.errors.join('; ')}`, routeTo: `/agents/post-roi?ws=${ctx.workspace.id}` }
+    }
+    const digest = await buildRoiDigest(ctx.workspace)
+    await persistDigest(digest)
+    const top = digest.top_templates.slice(0, 3).map((t, i) => `${i + 1}. avg ${Math.round(t.avg_engagement)} eng · ${t.posts_count} posts`).join('\n')
+    return {
+      summary: `Refreshed Post ROI digest (${digest.posts_count} posts analyzed).\n\n**Top templates:**\n${top || '_(need 4+ posts in 90 days)_'}\n\n[Open full digest →](/agents/post-roi?ws=${ctx.workspace.id})`,
+      followups: ['What angle should I try next?', 'Generate today\'s trend digest'],
+    }
+  },
+}
+
+const TOOL_TREND_DIGEST: OrchestratorTool = {
+  name: 'daily_trend_digest',
+  description: 'Build today\'s "tweets to ride" digest: scan tracked X handles + workspace context, draft 3-8 ready-to-send posts in founder voice using their TOP-performing templates.',
+  params: {},
+  kind: 'execute',
+  async run(_p, ctx) {
+    const r = await runTrendDigest(ctx.workspace)
+    return {
+      summary: `${r.inserted} drafts (scanned ${r.scanned}). ${r.notes}\n\n[Review + post →](/agents/trend-digest?ws=${ctx.workspace.id})`,
+      followups: ['Show today\'s top draft', 'Refresh again'],
+    }
+  },
+}
+
+const TOOL_LAUNCH_INIT: OrchestratorTool = {
+  name: 'launch_orchestrator_init',
+  description: 'Create a new multi-platform launch campaign — generates checklists + platform-native copy + timing for PH/HN/BetaList/IH/Reddit/Smol.',
+  params: {
+    name: { type: 'string', required: true },
+    product_url: { type: 'string', description: 'Defaults to workspace.url' },
+    tagline: { type: 'string' },
+    launch_at: { type: 'string', description: 'ISO date; defaults to next Tuesday 12:01am PT' },
+    platforms: { type: 'array', description: 'Subset of product_hunt, hacker_news, beta_list, indie_hackers, reddit, smol' },
+  },
+  kind: 'execute',
+  async run(p, ctx) {
+    const name = s(p.name); if (!name) return { summary: 'Need a launch name.' }
+    const productUrl = s(p.product_url) || ctx.workspace.url
+    const platforms = (Array.isArray(p.platforms) ? p.platforms : [])
+      .filter((x): x is LaunchPlatform => typeof x === 'string' && (LAUNCH_PLATFORMS as string[]).includes(x))
+    const chosen = platforms.length > 0 ? platforms : ['product_hunt', 'hacker_news', 'indie_hackers'] as LaunchPlatform[]
+    let launchAt = s(p.launch_at)
+    if (!launchAt) {
+      const d = new Date(); while (d.getUTCDay() !== 2) d.setUTCDate(d.getUTCDate() + 1); d.setUTCHours(7, 1, 0, 0)
+      launchAt = d.toISOString()
+    }
+    const out = await createCampaign({
+      workspace: ctx.workspace, name, productUrl,
+      tagline: s(p.tagline) || undefined, launchAt, platforms: chosen,
+    })
+    if ('error' in out) return { summary: `Campaign failed: ${out.error}` }
+    return {
+      summary: `Launch campaign **${out.name}** created for ${chosen.length} platform(s) on ${new Date(out.launch_at).toLocaleString()}.\n\n[Open war room →](/agents/launch-orchestrator/${out.id})`,
+      followups: ['Show me the PH copy', 'What time should I post on HN?'],
+    }
+  },
+}
+
+const TOOL_VIDEO_COACH: OrchestratorTool = {
+  name: 'video_coach_script',
+  description: 'Generate a 30-60s video script with shot list, VO, B-roll, on-screen text + checklist + tool recs. Scenarios: demo, founder_hook, tutorial, story.',
+  params: {
+    scenario: { type: 'string', required: true, description: 'demo | founder_hook | tutorial | story' },
+    topic: { type: 'string', required: true },
+    duration_sec: { type: 'number', description: '15-180, default 60' },
+  },
+  kind: 'execute',
+  async run(p, ctx) {
+    const scenario = s(p.scenario) as VideoScenario
+    const topic = s(p.topic)
+    if (!scenario || !topic) return { summary: 'Need scenario + topic.' }
+    const script = await runVideoCoach({
+      workspace: ctx.workspace, scenario,
+      durationSec: n(p.duration_sec, 60), topic,
+    })
+    return {
+      summary: `Generated **${script.title}** (${script.duration_sec}s, ${script.shot_list.length} shots).\n\n[Open shot list →](/agents/video-coach?ws=${ctx.workspace.id})`,
+      followups: ['Show me the first 3 shots', 'Make it shorter (30s)'],
+    }
+  },
+}
+
+const TOOL_ROUTE_POST_ROI: OrchestratorTool = {
+  name: 'open_post_roi',
+  description: 'Send the user to the Post ROI page.',
+  params: {},
+  kind: 'route',
+  async run(_p, ctx) {
+    return { summary: 'Opening Post ROI…', routeTo: `/agents/post-roi?ws=${ctx.workspace.id}` }
+  },
+}
+
 export const TOOLS: OrchestratorTool[] = [
   TOOL_GET_WORKSPACE,
   TOOL_QUICK_GEO_AUDIT,
@@ -348,9 +454,14 @@ export const TOOLS: OrchestratorTool[] = [
   TOOL_DRAFT_DISTRIBUTION,
   TOOL_DRAFT_CREATORS,
   TOOL_DRAFT_COLD_EMAIL,
+  TOOL_POST_ROI,
+  TOOL_TREND_DIGEST,
+  TOOL_LAUNCH_INIT,
+  TOOL_VIDEO_COACH,
   TOOL_LIST_RUNS,
   TOOL_ROUTE_VOICE,
   TOOL_ROUTE_LANDING,
+  TOOL_ROUTE_POST_ROI,
   TOOL_START_PLAYBOOK,
   TOOL_ANSWER_FALLBACK,
 ]
