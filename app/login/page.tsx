@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, Suspense } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { createBrowserClient } from '@/lib/supabase/browser'
 import { TopNav } from '@/lib/site/TopNav'
@@ -10,10 +10,42 @@ function LoginContent() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const next = searchParams.get('next') || '/gtm'
-  const [loading, setLoading] = useState<'google' | 'email' | null>(null)
+  const [loading, setLoading] = useState<'google' | 'email' | 'dev' | null>(null)
   const [email, setEmail] = useState('')
   const [inviteCode, setInviteCode] = useState('')
   const [error, setError] = useState('')
+  const [isLocalhost, setIsLocalhost] = useState(false)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const h = window.location.hostname
+    setIsLocalhost(h === 'localhost' || h === '127.0.0.1' || h === '0.0.0.0' || h.endsWith('.localhost'))
+  }, [])
+
+  const handleDevLogin = async () => {
+    if (!email.trim()) {
+      setError('Enter an email above first, then click Dev login.')
+      return
+    }
+    setLoading('dev')
+    setError('')
+    try {
+      const res = await fetch('/api/dev/auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email.trim().toLowerCase() }),
+      })
+      const data = await res.json()
+      if (!res.ok || data.error) {
+        throw new Error(data.error || `Dev login failed (${res.status})`)
+      }
+      router.push(next)
+      router.refresh()
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Dev login failed.')
+      setLoading(null)
+    }
+  }
 
   const handleGoogleLogin = async () => {
     setLoading('google')
@@ -233,6 +265,39 @@ function LoginContent() {
               Enter your code first, then sign in above. Works with either method.
             </p>
           </div>
+
+          {isLocalhost && (
+            <div style={{ marginTop: 28, paddingTop: 24, borderTop: '1px dashed var(--rule-strong)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
+                <span style={{ fontFamily: 'var(--mono)', fontSize: 10.5, color: 'var(--warn)', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700 }}>
+                  Dev only · localhost
+                </span>
+              </div>
+              <button
+                type="button"
+                onClick={handleDevLogin}
+                disabled={loading !== null || !email.trim()}
+                style={{
+                  width: '100%',
+                  height: 44,
+                  background: 'var(--bg-card)',
+                  border: '1px dashed var(--rule-strong)',
+                  borderRadius: 999,
+                  fontSize: 13,
+                  fontFamily: 'var(--mono)',
+                  fontWeight: 600,
+                  color: 'var(--ink)',
+                  cursor: loading || !email.trim() ? 'not-allowed' : 'pointer',
+                  opacity: loading && loading !== 'dev' ? 0.5 : 1,
+                }}
+              >
+                {loading === 'dev' ? 'Creating session…' : '🛠 Dev login (skip OAuth)'}
+              </button>
+              <p style={{ marginTop: 8, fontSize: 11, color: 'var(--ink-faint)', lineHeight: 1.5 }}>
+                Uses the email above to mint a real Supabase session via service-role. Bypasses Google OAuth allow list so localhost works without touching the dashboard.
+              </p>
+            </div>
+          )}
 
           {error && (
             <div style={{
