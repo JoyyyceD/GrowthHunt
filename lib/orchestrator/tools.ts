@@ -29,6 +29,11 @@ export interface ToolCtx {
   workspace: Workspace
   userId: string
   conversationId: string
+  /**
+   * The chat_turn task id wrapping the current loop. Tools that spawn vertical
+   * agents use this as their parent_task_id so /gtm/tasks/[id] shows the tree.
+   */
+  turnTaskId?: string
 }
 
 export interface ToolResult {
@@ -50,7 +55,28 @@ export interface OrchestratorTool {
   /** JSON-schema-lite for the params; MiniMax prompt teaches it. */
   params: Record<string, { type: 'string' | 'number' | 'array' | 'boolean'; required?: boolean; description?: string }>
   kind: ToolKind
+  /**
+   * Lazy registry gate. Tools whose preconditions aren't satisfied (e.g. need
+   * ICP filled in, need voice trained) are hidden from the prompt catalog so
+   * MiniMax doesn't waste a turn picking them. Always-callable by name via
+   * findTool() — predicate only filters the prompt, not dispatch.
+   */
+  enabledFor?: (ws: Workspace) => boolean
   run(params: Record<string, unknown>, ctx: ToolCtx): Promise<ToolResult>
+}
+
+/** True when the workspace has trained a voice profile (any signal). */
+function hasVoice(ws: Workspace): boolean {
+  return Boolean(ws.voice?.summary || ws.voice?.tone || ws.voice_handle)
+}
+function hasIcp(ws: Workspace): boolean {
+  return Boolean(ws.icp_summary && ws.icp_summary.trim().length > 0)
+}
+function hasPositioning(ws: Workspace): boolean {
+  return Boolean(ws.positioning && ws.positioning.trim().length > 0)
+}
+function hasCompetitors(ws: Workspace): boolean {
+  return Array.isArray(ws.competitors) && ws.competitors.length > 0
 }
 
 function s(v: unknown): string { return typeof v === 'string' ? v.trim() : '' }
@@ -158,6 +184,7 @@ const TOOL_RADAR_SCAN: OrchestratorTool = {
   description: 'Scan Reddit + HN for posts your ICP is writing right now. Returns new leads with reply drafts.',
   params: { notes: { type: 'string', description: 'Optional: steer the queries' } },
   kind: 'execute',
+  enabledFor: hasIcp,
   async run(p, ctx) {
     const { task, result } = await tracedRadar({ workspace: ctx.workspace, notes: s(p.notes) || undefined }, { workspace_id: ctx.workspace.id, conversation_id: ctx.conversationId, triggered_by: 'chat' })
     return {
@@ -173,6 +200,7 @@ const TOOL_COMPETITOR_SCAN: OrchestratorTool = {
   description: "Snapshot all competitor URLs in the workspace and report any meaningful changes (pricing, copy, new sections).",
   params: {},
   kind: 'execute',
+  enabledFor: hasCompetitors,
   async run(_p, ctx) {
     const { task, result } = await tracedCompetitor({ workspace: ctx.workspace, diff: true }, { workspace_id: ctx.workspace.id, conversation_id: ctx.conversationId, triggered_by: 'chat' })
     return {
@@ -215,6 +243,7 @@ const TOOL_DRAFT_DISTRIBUTION: OrchestratorTool = {
     platforms: { type: 'array', description: 'Subset; default all 7' },
   },
   kind: 'execute',
+  enabledFor: hasVoice,
   async run(p, ctx) {
     const topic = s(p.topic); if (!topic) return { summary: "Tell me what you want to post." }
     const platforms = Array.isArray(p.platforms) ? (p.platforms.map(String) as ('x' | 'linkedin' | 'reddit' | 'hackernews' | 'instagram' | 'tiktok' | 'discord')[]) : undefined
@@ -237,6 +266,7 @@ const TOOL_DRAFT_CREATORS: OrchestratorTool = {
     notes: { type: 'string', description: 'Optional steering note' },
   },
   kind: 'execute',
+  enabledFor: (ws) => hasIcp(ws) && hasVoice(ws),
   async run(p, ctx) {
     const picks = Math.min(12, Math.max(3, n(p.picks, 12)))
     const { task, result } = await tracedCreator({ workspace: ctx.workspace, picks, notes: s(p.notes) || undefined }, { workspace_id: ctx.workspace.id, conversation_id: ctx.conversationId, triggered_by: 'chat' })
@@ -256,6 +286,7 @@ const TOOL_DRAFT_COLD_EMAIL: OrchestratorTool = {
     campaign_note: { type: 'string', description: 'Optional angle' },
   },
   kind: 'execute',
+  enabledFor: (ws) => hasIcp(ws) && hasVoice(ws),
   async run(p, ctx) {
     const csv = s(p.targets_csv); if (!csv) return { summary: 'Paste your target list as name, email, company, role (one per line).', routeTo: `/agents/cold-email?ws=${ctx.workspace.id}` }
     const targets = parseTargetCsv(csv)
@@ -345,6 +376,7 @@ const TOOL_POST_ROI: OrchestratorTool = {
   description: 'Refresh the founder\'s own-post ROI loop: pull last 90 days of their X posts, group by template, return TOP-3 / BOTTOM-3 templates + angle recommendations.',
   params: {},
   kind: 'execute',
+  enabledFor: (ws) => Boolean(ws.voice_handle),
   async run(_p, ctx) {
     const ingest = await ingestSelfPosts(ctx.workspace)
     if (ingest.errors.length > 0 && ingest.upserted === 0) {
@@ -365,6 +397,7 @@ const TOOL_TREND_DIGEST: OrchestratorTool = {
   description: 'Build today\'s "tweets to ride" digest: scan tracked X handles + workspace context, draft 3-8 ready-to-send posts in founder voice using their TOP-performing templates.',
   params: {},
   kind: 'execute',
+  enabledFor: hasVoice,
   async run(_p, ctx) {
     const r = await runTrendDigest(ctx.workspace)
     return {
@@ -377,6 +410,7 @@ const TOOL_TREND_DIGEST: OrchestratorTool = {
 const TOOL_LAUNCH_INIT: OrchestratorTool = {
   name: 'launch_orchestrator_init',
   description: 'Create a new multi-platform launch campaign — generates checklists + platform-native copy + timing for PH/HN/BetaList/IH/Reddit/Smol.',
+  enabledFor: (ws) => hasPositioning(ws) && hasVoice(ws),
   params: {
     name: { type: 'string', required: true },
     product_url: { type: 'string', description: 'Defaults to workspace.url' },
@@ -457,11 +491,138 @@ const TOOL_START_WORKFLOW: OrchestratorTool = {
   },
 }
 
+// ───────────────── parallel sub-agent dispatcher ────────────────────────────
+
+type SpawnableAgent =
+  | 'icp' | 'voice' | 'landing' | 'creator_outreach' | 'cold_email'
+  | 'distribution' | 'radar' | 'competitor' | 'geo_audit'
+
+interface SpawnSpec {
+  agent: SpawnableAgent
+  params?: Record<string, unknown>
+}
+
+function isSpawnableAgent(s: unknown): s is SpawnableAgent {
+  return typeof s === 'string' && [
+    'icp', 'voice', 'landing', 'creator_outreach', 'cold_email',
+    'distribution', 'radar', 'competitor', 'geo_audit',
+  ].includes(s)
+}
+
+async function dispatchSpawn(spec: SpawnSpec, ctx: ToolCtx): Promise<{ agent: string; summary: string; taskId?: string; error?: string }> {
+  const traceCtx = {
+    workspace_id: ctx.workspace.id,
+    conversation_id: ctx.conversationId,
+    parent_task_id: ctx.turnTaskId,
+    triggered_by: 'chat' as const,
+  }
+  const p = spec.params ?? {}
+  try {
+    switch (spec.agent) {
+      case 'icp': {
+        const { task, result } = await tracedIcp({ workspace: ctx.workspace, brief: s(p.brief) || undefined }, traceCtx)
+        return { agent: 'icp', summary: result.positioning?.slice(0, 140) || result.icp_summary?.slice(0, 140) || 'ICP drafted', taskId: task.id }
+      }
+      case 'voice': {
+        const handle = s(p.handle).replace(/^@/, '')
+        if (!handle) return { agent: 'voice', summary: 'skipped (no handle)', error: 'handle required' }
+        const { task, result } = await tracedVoice({ handle, workspace: ctx.workspace }, traceCtx)
+        return { agent: 'voice', summary: result.voice.summary?.slice(0, 140) || `Trained on ${result.sourceCount} samples`, taskId: task.id }
+      }
+      case 'landing': {
+        const url = s(p.url) || ctx.workspace.url
+        const { task, result } = await tracedLanding({ workspace: ctx.workspace, url }, traceCtx)
+        return { agent: 'landing', summary: `${host(result.url)}: ${result.overall_score}/100 (${result.grade})`, taskId: task.id }
+      }
+      case 'creator_outreach': {
+        const picks = Math.min(8, Math.max(3, n(p.picks, 6)))
+        const { task, result } = await tracedCreator({ workspace: ctx.workspace, picks, notes: s(p.notes) || undefined }, traceCtx)
+        return { agent: 'creator_outreach', summary: `Drafted ${result.drafts.length} DMs (pool ${result.candidatePoolSize})`, taskId: task.id }
+      }
+      case 'cold_email': {
+        const csv = s(p.targets_csv)
+        if (!csv) return { agent: 'cold_email', summary: 'skipped (no target list)', error: 'targets_csv required' }
+        const targets = parseTargetCsv(csv)
+        if (targets.length === 0) return { agent: 'cold_email', summary: 'skipped (no valid emails)', error: 'no parseable targets' }
+        const { task, result } = await tracedColdEmail({ workspace: ctx.workspace, targets, campaignNote: s(p.campaign_note) || undefined }, traceCtx)
+        return { agent: 'cold_email', summary: `Drafted ${result.drafts.length} cold emails`, taskId: task.id }
+      }
+      case 'distribution': {
+        const topic = s(p.topic)
+        if (!topic) return { agent: 'distribution', summary: 'skipped (no topic)', error: 'topic required' }
+        const { task, result } = await tracedDistribution({ workspace: ctx.workspace, topic, sourceUrl: s(p.source_url) || undefined }, traceCtx)
+        return { agent: 'distribution', summary: result.post ? `${Object.keys(result.post.variants || {}).length} variants` : 'no variants', taskId: task.id }
+      }
+      case 'radar': {
+        const { task, result } = await tracedRadar({ workspace: ctx.workspace, notes: s(p.notes) || undefined }, traceCtx)
+        return { agent: 'radar', summary: `${result.inserted} new leads (scanned ${result.scanned})`, taskId: task.id }
+      }
+      case 'competitor': {
+        const { task, result } = await tracedCompetitor({ workspace: ctx.workspace, diff: true }, traceCtx)
+        return { agent: 'competitor', summary: `${result.snapshots} snapshots, ${result.diffs} changes`, taskId: task.id }
+      }
+      case 'geo_audit': {
+        const url = s(p.url) || ctx.workspace.url
+        const { task, result } = await tracedGeoAudit(url, traceCtx)
+        return { agent: 'geo_audit', summary: `${host(result.url)}: ${result.overall_score}/100 (${result.grade})`, taskId: task.id }
+      }
+    }
+  } catch (err) {
+    return { agent: spec.agent, summary: 'failed', error: (err as Error).message }
+  }
+}
+
+const TOOL_SPAWN_AGENTS: OrchestratorTool = {
+  name: 'spawn_agents',
+  description: 'Run 2-3 vertical agents IN PARALLEL when the user asked for multiple distinct outputs in one breath (e.g. "draft ICP and audit my landing", "scan radar AND competitors"). Each spawned agent gets its own sub-task linked under this chat turn. Prefer this over chaining 3 tool calls sequentially.',
+  params: {
+    agents: { type: 'array', required: true, description: 'Array of {agent, params}. agent ∈ icp | voice | landing | creator_outreach | cold_email | distribution | radar | competitor | geo_audit. Max 3.' },
+  },
+  kind: 'execute',
+  async run(p, ctx) {
+    const raw = Array.isArray(p.agents) ? p.agents : []
+    const specs: SpawnSpec[] = raw
+      .map((r): SpawnSpec | null => {
+        if (!r || typeof r !== 'object') return null
+        const obj = r as Record<string, unknown>
+        if (!isSpawnableAgent(obj.agent)) return null
+        const params = (obj.params && typeof obj.params === 'object') ? obj.params as Record<string, unknown> : {}
+        return { agent: obj.agent, params }
+      })
+      .filter((x): x is SpawnSpec => x !== null)
+      .slice(0, 3)
+    if (specs.length === 0) {
+      return { summary: 'spawn_agents got no valid agent specs — pick from icp/voice/landing/creator_outreach/cold_email/distribution/radar/competitor/geo_audit.' }
+    }
+    const settled = await Promise.allSettled(specs.map((spec) => dispatchSpawn(spec, ctx)))
+    const lines: string[] = [`Ran ${specs.length} sub-agents in parallel:`]
+    for (let i = 0; i < settled.length; i++) {
+      const s2 = settled[i]
+      if (s2.status === 'fulfilled') {
+        const r = s2.value
+        const link = r.taskId ? ` [→](/gtm/tasks/${r.taskId})` : ''
+        const err = r.error ? ` _(${r.error})_` : ''
+        lines.push(`- **${r.agent}** — ${r.summary}${link}${err}`)
+      } else {
+        lines.push(`- **${specs[i].agent}** — rejected: ${String(s2.reason).slice(0, 120)}`)
+      }
+    }
+    const firstWithTask = settled.find((s2) => s2.status === 'fulfilled' && (s2 as PromiseFulfilledResult<{ taskId?: string }>).value.taskId)
+    const lastTaskId = firstWithTask && firstWithTask.status === 'fulfilled' ? (firstWithTask.value as { taskId?: string }).taskId : undefined
+    return {
+      summary: lines.join('\n'),
+      taskId: lastTaskId,
+      followups: ['Show me each result', 'Run another batch'],
+    }
+  },
+}
+
 const TOOL_ROUTE_POST_ROI: OrchestratorTool = {
   name: 'open_post_roi',
   description: 'Send the user to the Post ROI page.',
   params: {},
   kind: 'route',
+  enabledFor: (ws) => Boolean(ws.voice_handle),
   async run(_p, ctx) {
     return { summary: 'Opening Post ROI…', routeTo: `/agents/post-roi?ws=${ctx.workspace.id}` }
   },
@@ -485,6 +646,7 @@ export const TOOLS: OrchestratorTool[] = [
   TOOL_VIDEO_COACH,
   TOOL_LIST_RUNS,
   TOOL_START_WORKFLOW,
+  TOOL_SPAWN_AGENTS,
   TOOL_ROUTE_VOICE,
   TOOL_ROUTE_LANDING,
   TOOL_ROUTE_POST_ROI,
@@ -496,9 +658,24 @@ export function findTool(name: string): OrchestratorTool | undefined {
   return TOOLS.find((t) => t.name === name)
 }
 
-/** Render the tool registry as a prompt section MiniMax can read. */
-export function toolsPromptCatalog(): string {
-  return TOOLS.map((t) => {
+/**
+ * Tools available to the prompt catalog for a given workspace. Anything with
+ * an unsatisfied `enabledFor` predicate is hidden so the classifier doesn't
+ * pick it. `findTool()` still resolves disabled tools by name, so cron jobs +
+ * slash commands aren't gated by this.
+ */
+export function enabledTools(ws: Workspace): OrchestratorTool[] {
+  return TOOLS.filter((t) => !t.enabledFor || t.enabledFor(ws))
+}
+
+/**
+ * Render the tool catalog as a prompt section MiniMax can read.
+ * Filters by workspace state when `ws` is supplied; otherwise emits all tools
+ * (backwards-compatible behaviour for callers that don't have a workspace).
+ */
+export function toolsPromptCatalog(ws?: Workspace): string {
+  const source = ws ? enabledTools(ws) : TOOLS
+  return source.map((t) => {
     const params = Object.entries(t.params)
       .map(([k, v]) => `${k}${v.required ? '*' : ''}: ${v.type}${v.description ? ` — ${v.description}` : ''}`)
       .join('; ')

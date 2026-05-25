@@ -105,15 +105,21 @@ export async function finishTask(
   }
 }
 
-/** Run fn() inside a task row. Soft-fails — if recording dies, fn still runs. */
+/**
+ * Run fn() inside a task row. Soft-fails — if recording dies, fn still runs.
+ *
+ * The task (or null when the insert failed) is passed into fn so callers that
+ * spawn sub-tasks can use `task.id` as parent_task_id without a second round
+ * trip. Existing callers using `() => runAgent(input)` still type-check.
+ */
 export async function recordTask<T>(
   opts: RecordTaskOpts<T>,
-  fn: () => Promise<T>,
+  fn: (task: GtmTask | null) => Promise<T>,
 ): Promise<RecordedTask<T>> {
   const startedAt = Date.now()
   const task = await createTask(opts)
   try {
-    const result = await fn()
+    const result = await fn(task)
     const summary = opts.summaryFromResult ? opts.summaryFromResult(result) : opts.summary
     if (task) {
       await finishTask(task.id, {

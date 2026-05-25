@@ -270,7 +270,7 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Type a command or question…"
+          placeholder="Ask anything, or try /audit /icp /voice /help…"
           autoComplete="off"
           style={{ flex: 1, background: 'var(--bg)', border: '1.5px solid var(--rule-strong)', borderRadius: 999, padding: '10px 16px', fontSize: 14, color: 'var(--ink)', outline: 'none' }}
         />

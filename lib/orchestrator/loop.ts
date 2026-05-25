@@ -28,18 +28,13 @@
 import { createAdminClient } from '@/lib/supabase/admin'
 import { callAgent, extractJson, workspaceContext, withVoice } from '@/lib/agents/llm'
 import type { Workspace } from '@/lib/workspace/types'
-import { TOOLS, findTool, toolsPromptCatalog, type OrchestratorTool, type ToolResult } from './tools'
+import { findTool, toolsPromptCatalog, type OrchestratorTool, type ToolResult } from './tools'
+import { defaultCanUseTool, type CanUseToolFn } from './permissions'
 import type { GtmMessage } from './types'
 
 const MAX_STEPS = 5
 const WALL_CLOCK_MS = 110_000   // < route maxDuration (120s)
 const MAX_REPEAT_FAILURES = 2
-
-// Tools that require an explicit approval gate before executing.
-// Surfaced as `action.kind='approval_request'` — user must click "Approve" to proceed.
-const APPROVAL_REQUIRED = new Set<string>([
-  'draft_cold_email',   // sends real email if user clicks Send
-])
 
 export interface LoopInput {
   workspace: Workspace
@@ -51,6 +46,8 @@ export interface LoopInput {
   message: string
   /** Parent gtm_tasks row (the chat_turn task wrapping this loop). */
   turnTaskId: string
+  /** Permission gate. Defaults to defaultCanUseTool. */
+  canUseTool?: CanUseToolFn
 }
 
 export interface StepTrace {
@@ -117,8 +114,8 @@ function buildUserPrompt(ws: Workspace, history: GtmMessage[], userMessage: stri
   return [
     `WORKSPACE CONTEXT:\n${workspaceContext(ws)}`,
     '',
-    'TOOL CATALOG (param* = required):',
-    toolsPromptCatalog(),
+    'TOOL CATALOG (param* = required, only tools eligible for this workspace are shown):',
+    toolsPromptCatalog(ws),
     '',
     'CONVERSATION SO FAR:',
     historyToTranscript(history),
@@ -204,6 +201,7 @@ export async function runReactLoop(input: LoopInput): Promise<LoopOutput> {
   const start = Date.now()
   const steps: StepTrace[] = []
   const failureCounts = new Map<string, number>()
+  const canUseTool = input.canUseTool ?? defaultCanUseTool
   let lastToolResult: ToolResult | null = null
   let lastToolName = ''
 
@@ -260,24 +258,45 @@ export async function runReactLoop(input: LoopInput): Promise<LoopOutput> {
         await persistStep(input, trace)
         continue   // give model another chance
       }
-      // Approval guard
-      if (APPROVAL_REQUIRED.has(toolName)) {
+      // Permission gate (replaces the old APPROVAL_REQUIRED set).
+      const toolParams = (action.params ?? {}) as Record<string, unknown>
+      const toolCtx = { workspace: input.workspace, userId: input.userId, conversationId: input.conversationId, turnTaskId: input.turnTaskId }
+      const permission = canUseTool(tool, toolParams, toolCtx)
+      if (permission.decision === 'deny') {
         const trace: StepTrace = {
           step_index: steps.length,
           thought,
-          action_kind: 'approval_request',
+          action_kind: 'error',
           tool_name: toolName,
-          tool_params: action.params ?? {},
-          observation: 'This tool may send real messages — pausing for approval.',
+          tool_params: toolParams,
+          observation: `Denied: ${permission.reason}`,
           duration_ms: Date.now() - stepStart,
         }
         steps.push(trace)
         await persistStep(input, trace)
         return {
-          finalAnswer: `Heads up — **${toolName}** can send real emails. Approve below to proceed.`,
+          finalAnswer: `I can't run **${toolName}** here — ${permission.reason}`,
+          toolUsed: toolName,
+          steps,
+        }
+      }
+      if (permission.decision === 'ask') {
+        const trace: StepTrace = {
+          step_index: steps.length,
+          thought,
+          action_kind: 'approval_request',
+          tool_name: toolName,
+          tool_params: toolParams,
+          observation: permission.reason || 'This tool requires user approval.',
+          duration_ms: Date.now() - stepStart,
+        }
+        steps.push(trace)
+        await persistStep(input, trace)
+        return {
+          finalAnswer: `Approval needed for **${toolName}** — ${permission.reason || 'sensitive action.'}`,
           toolUsed: 'approval_request',
           steps,
-          approvalRequest: { tool: toolName, params: action.params ?? {}, reason: 'real-send tool' },
+          approvalRequest: { tool: toolName, params: toolParams, reason: permission.reason },
         }
       }
 
@@ -358,7 +377,7 @@ export async function runReactLoop(input: LoopInput): Promise<LoopOutput> {
 }
 
 async function runTool(tool: OrchestratorTool, params: Record<string, unknown>, input: LoopInput): Promise<ToolResult> {
-  return tool.run(params, { workspace: input.workspace, userId: input.userId, conversationId: input.conversationId })
+  return tool.run(params, { workspace: input.workspace, userId: input.userId, conversationId: input.conversationId, turnTaskId: input.turnTaskId })
 }
 
 // ── resume after approval ─────────────────────────────────────────────────
@@ -382,7 +401,7 @@ export async function resumeAfterApproval(input: ApprovalResumeInput): Promise<L
   const start = Date.now()
   let toolResult: ToolResult
   try {
-    toolResult = await tool.run(input.approval.params, { workspace: input.workspace, userId: input.userId, conversationId: input.conversationId })
+    toolResult = await tool.run(input.approval.params, { workspace: input.workspace, userId: input.userId, conversationId: input.conversationId, turnTaskId: input.turnTaskId })
   } catch (err) {
     return { finalAnswer: `Approved tool ${input.approval.tool} threw: ${(err as Error).message}`, toolUsed: input.approval.tool, steps: [] }
   }
