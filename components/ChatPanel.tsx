@@ -4,7 +4,14 @@ import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 import type { GtmMessage, GtmConversation } from '@/lib/orchestrator/types'
+import type { StepTrace } from '@/lib/orchestrator/loop'
 import type { Workspace } from '@/lib/workspace/types'
+
+interface ApprovalRequest {
+  tool: string
+  params: unknown
+  reason: string
+}
 
 interface ChatTurnResponse {
   conversation_id: string
@@ -13,6 +20,22 @@ interface ChatTurnResponse {
   followups?: string[]
   task_id?: string
   tool_used?: string
+  steps?: StepTrace[]
+  approval_request?: ApprovalRequest
+}
+
+interface ApproveResponse {
+  conversation_id?: string
+  assistant?: GtmMessage | { content?: string }
+  route_to?: string
+  followups?: string[]
+  task_id?: string
+  tool_used?: string
+  steps?: StepTrace[]
+}
+
+interface PendingApproval extends ApprovalRequest {
+  messageId: string
 }
 
 interface ChatPanelProps {
@@ -35,6 +58,8 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
   const router = useRouter()
   const [conversationId, setConversationId] = useState<string | null>(initialConversation?.id ?? null)
   const [messages, setMessages] = useState<GtmMessage[]>(initialMessages)
+  const [traces, setTraces] = useState<Record<string, StepTrace[]>>({})
+  const [pendingApproval, setPendingApproval] = useState<PendingApproval | null>(null)
   const [input, setInput] = useState('')
   const [phase, setPhase] = useState<'idle' | 'sending'>('idle')
   const [followups, setFollowups] = useState<string[]>([])
@@ -42,7 +67,7 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
 
   useEffect(() => {
     if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight
-  }, [messages, phase])
+  }, [messages, phase, pendingApproval])
 
   async function send(text: string) {
     const trimmed = text.trim()
@@ -50,6 +75,7 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
     setInput('')
     setPhase('sending')
     setFollowups([])
+    setPendingApproval(null)
     const tempUser: GtmMessage = {
       id: 'temp-' + Date.now(),
       conversation_id: conversationId ?? 'pending',
@@ -85,8 +111,14 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
         const userPersisted: GtmMessage = { ...tempUser, conversation_id: ok.conversation_id }
         return [...withoutTemp, userPersisted, ok.assistant]
       })
+      if (ok.steps && ok.steps.length > 0) {
+        setTraces((prev) => ({ ...prev, [ok.assistant.id]: ok.steps! }))
+      }
+      if (ok.approval_request) {
+        setPendingApproval({ ...ok.approval_request, messageId: ok.assistant.id })
+      }
       setFollowups(ok.followups ?? [])
-      if (ok.tool_used) {
+      if (ok.tool_used && ok.tool_used !== 'approval_request') {
         toast.success(`Tool: ${ok.tool_used}`, { duration: 1800 })
       }
       if (ok.route_to) {
@@ -96,6 +128,59 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
     } catch (err) {
       toast.error((err as Error).message)
       setMessages((prev) => prev.filter((m) => m.id !== tempUser.id))
+    } finally {
+      setPhase('idle')
+    }
+  }
+
+  async function decide(approved: boolean) {
+    if (!pendingApproval || !conversationId || phase === 'sending') return
+    setPhase('sending')
+    try {
+      const res = await fetch('/api/gtm/chat/approve', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          workspace_id: workspace.id,
+          conversation_id: conversationId,
+          tool: pendingApproval.tool,
+          params: pendingApproval.params,
+          approved,
+        }),
+      })
+      const data: ApproveResponse & { error?: string } = await res.json()
+      if (!res.ok || data.error) {
+        toast.error(data.error || `Approval failed (${res.status})`)
+        return
+      }
+      const a = data.assistant
+      if (a) {
+        // Approve endpoint returns full GtmMessage; deny path returns partial { content }
+        const hasId = typeof (a as GtmMessage).id === 'string' && (a as GtmMessage).id
+        const assistantMsg: GtmMessage = hasId ? (a as GtmMessage) : {
+          id: 'denied-' + Date.now(),
+          conversation_id: conversationId,
+          role: 'assistant',
+          content: (a as { content?: string }).content ?? '',
+          tool_call: null,
+          task_id: null,
+          created_at: new Date().toISOString(),
+        }
+        setMessages((prev) => [...prev, assistantMsg])
+        if (data.steps && data.steps.length > 0) {
+          setTraces((prev) => ({ ...prev, [assistantMsg.id]: data.steps! }))
+        }
+      }
+      setPendingApproval(null)
+      setFollowups(data.followups ?? [])
+      if (approved && data.tool_used) {
+        toast.success(`Ran: ${data.tool_used}`, { duration: 1800 })
+      }
+      if (data.route_to) {
+        setTimeout(() => router.push(data.route_to!), 700)
+      }
+    } catch (err) {
+      toast.error((err as Error).message)
     } finally {
       setPhase('idle')
     }
@@ -138,7 +223,7 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
             </div>
           </div>
         )}
-        {messages.map((m) => <Bubble key={m.id} message={m} compact={compact} />)}
+        {messages.map((m) => <Bubble key={m.id} message={m} compact={compact} steps={traces[m.id]} />)}
         {phase === 'sending' && (
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, color: 'var(--ink-faint)', fontStyle: 'italic' }}>
             <span style={{ display: 'inline-flex', gap: 3 }}>
@@ -151,7 +236,27 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
         )}
       </div>
 
-      {followups.length > 0 && (
+      {pendingApproval && (
+        <div style={{ padding: '12px 16px', borderTop: '1px solid var(--accent-border)', background: 'var(--accent-soft)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+            <span style={{ fontFamily: 'var(--mono)', fontSize: 10.5, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>Approval needed</span>
+          </div>
+          <div style={{ fontSize: 13, color: 'var(--ink)', marginBottom: 10, lineHeight: 1.5 }}>
+            Run <strong style={{ fontFamily: 'var(--mono)' }}>{pendingApproval.tool}</strong>?
+            {pendingApproval.reason && <span style={{ color: 'var(--ink-dim)' }}> — {pendingApproval.reason}</span>}
+          </div>
+          <div style={{ display: 'flex', gap: 8 }}>
+            <button type="button" onClick={() => decide(true)} disabled={phase === 'sending'} style={{ background: 'var(--accent)', color: '#fff', border: 0, borderRadius: 999, padding: '7px 16px', fontSize: 12.5, fontWeight: 600, cursor: phase === 'sending' ? 'not-allowed' : 'pointer', opacity: phase === 'sending' ? 0.6 : 1 }}>
+              Approve
+            </button>
+            <button type="button" onClick={() => decide(false)} disabled={phase === 'sending'} style={{ background: 'transparent', border: '1px solid var(--rule-strong)', color: 'var(--ink-dim)', borderRadius: 999, padding: '7px 16px', fontSize: 12.5, cursor: phase === 'sending' ? 'not-allowed' : 'pointer' }}>
+              Deny
+            </button>
+          </div>
+        </div>
+      )}
+
+      {followups.length > 0 && !pendingApproval && (
         <div style={{ padding: '8px 14px', borderTop: '1px solid var(--rule)', display: 'flex', flexWrap: 'wrap', gap: 6 }}>
           {followups.map((f) => (
             <button key={f} type="button" onClick={() => send(f)} style={{ background: 'var(--bg-card)', border: '1px solid var(--rule)', borderRadius: 999, padding: '5px 11px', fontSize: 12, color: 'var(--ink-dim)', cursor: 'pointer' }}>
@@ -177,8 +282,15 @@ export function ChatPanel({ workspace, initialConversation, initialMessages = []
   )
 }
 
-function Bubble({ message, compact }: { message: GtmMessage; compact?: boolean }) {
+function truncate(s: string, n: number): string {
+  if (s.length <= n) return s
+  return s.slice(0, n - 1).trimEnd() + '…'
+}
+
+function Bubble({ message, compact, steps }: { message: GtmMessage; compact?: boolean; steps?: StepTrace[] }) {
   const isUser = message.role === 'user'
+  // Show every non-final step in the trace (tool_call, approval_request, error).
+  const traceSteps = (steps ?? []).filter((s) => s.action_kind !== 'final_answer')
   return (
     <div style={{ display: 'flex', justifyContent: isUser ? 'flex-end' : 'flex-start' }}>
       <div style={{
@@ -193,6 +305,33 @@ function Bubble({ message, compact }: { message: GtmMessage; compact?: boolean }
         whiteSpace: 'pre-wrap',
         wordBreak: 'break-word',
       }}>
+        {!isUser && traceSteps.length > 0 && (
+          <details style={{ marginBottom: 8 }}>
+            <summary style={{ cursor: 'pointer', fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ink-faint)', textTransform: 'uppercase', letterSpacing: '0.06em', userSelect: 'none', listStyle: 'none' }}>
+              ▸ {traceSteps.length} step{traceSteps.length === 1 ? '' : 's'}
+              {message.task_id && (
+                <a href={`/gtm/tasks/${message.task_id}/trace`} onClick={(e) => e.stopPropagation()} style={{ marginLeft: 10, color: 'var(--ink-faint)', textDecoration: 'underline' }}>full trace →</a>
+              )}
+            </summary>
+            <div style={{ marginTop: 8, display: 'flex', flexDirection: 'column', gap: 8, paddingLeft: 10, borderLeft: '2px solid var(--rule)' }}>
+              {traceSteps.map((s) => (
+                <div key={s.step_index} style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+                  {s.thought && (
+                    <div style={{ fontSize: 12, color: 'var(--ink-dim)', lineHeight: 1.45 }}>🧠 {s.thought}</div>
+                  )}
+                  <div style={{ fontSize: 11.5, fontFamily: 'var(--mono)', color: 'var(--ink-dim)', display: 'flex', flexWrap: 'wrap', gap: 4, alignItems: 'baseline' }}>
+                    <span>⚙</span>
+                    <span style={{ color: s.action_kind === 'error' ? '#c0392b' : 'var(--ink)' }}>{s.tool_name ?? s.action_kind}</span>
+                    {s.observation && <span style={{ color: 'var(--ink-faint)' }}>→ {truncate(s.observation, 140)}</span>}
+                    {s.task_id && (
+                      <a href={`/gtm/tasks/${s.task_id}`} style={{ marginLeft: 4, color: 'var(--accent)' }}>view task →</a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </details>
+        )}
         {message.content}
         {message.tool_call?.name && !isUser && (
           <div style={{ marginTop: 6, fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ink-faint)' }}>
