@@ -126,7 +126,8 @@ export async function runChatTurn(input: ChatTurnInput, events: ChatTurnEvents =
     name: loop.toolUsed,
     params: lastStep.tool_params,
     route_to: loop.routeTo,
-  } : { name: loop.toolUsed }
+    ui: loop.ui,
+  } : { name: loop.toolUsed, ui: loop.ui }
   const assistant = await appendMessage({
     conversation_id: conversationId,
     role: 'assistant',
@@ -286,7 +287,7 @@ async function runSlashTurn(
     conversation_id: conversationId,
     role: 'assistant',
     content: toolResult.summary,
-    tool_call: { name: slash.tool, params: slash.params, route_to: toolResult.routeTo },
+    tool_call: { name: slash.tool, params: slash.params, route_to: toolResult.routeTo, ui: toolResult.ui },
     task_id: toolResult.taskId ?? turnTask?.id ?? null,
   })
 
@@ -327,7 +328,7 @@ export async function approveChatTurn(input: {
     conversation_id: input.conversationId,
     role: 'assistant',
     content: loop.finalAnswer,
-    tool_call: { name: loop.toolUsed, params: lastStep?.tool_params, route_to: loop.routeTo },
+    tool_call: { name: loop.toolUsed, params: lastStep?.tool_params, route_to: loop.routeTo, ui: loop.ui },
     task_id: loop.taskId ?? task?.id ?? null,
   })
 

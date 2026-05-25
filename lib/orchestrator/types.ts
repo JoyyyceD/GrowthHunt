@@ -54,7 +54,7 @@ export interface GtmMessage {
   conversation_id: string
   role: 'user' | 'assistant' | 'tool'
   content: string
-  tool_call: { name?: string; params?: unknown; route_to?: string; prefill?: unknown } | null
+  tool_call: { name?: string; params?: unknown; route_to?: string; prefill?: unknown; ui?: { kind: string; props: Record<string, unknown> } } | null
   task_id: string | null
   created_at: string
 }

@@ -6,6 +6,7 @@ import { toast } from 'sonner'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { snapshotReadables } from '@/lib/agent-context/store'
+import { AgentCard, CARDS } from '@/components/agent-cards'
 import type { GtmMessage, GtmConversation } from '@/lib/orchestrator/types'
 import type { StepTrace } from '@/lib/orchestrator/loop'
 import type { Workspace } from '@/lib/workspace/types'
@@ -541,9 +542,15 @@ function Bubble({ message, compact, steps, live }: { message: GtmMessage; compac
         lineHeight: 1.55,
         wordBreak: 'break-word',
       }}>
-        {isUser
-          ? <span style={{ whiteSpace: 'pre-wrap' }}>{message.content}</span>
-          : <MarkdownBody content={message.content} />}
+        {isUser ? (
+          <span style={{ whiteSpace: 'pre-wrap' }}>{message.content}</span>
+        ) : (() => {
+            const ui = message.tool_call?.ui
+            if (ui && typeof ui.kind === 'string' && ui.kind in CARDS) {
+              return <AgentCard kind={ui.kind} props={ui.props || {}} taskId={message.task_id ?? undefined} />
+            }
+            return <MarkdownBody content={message.content} />
+          })()}
         {!isUser && traceSteps.length > 0 && (
           <details style={{ marginTop: 10 }} open={live}>
             <summary style={{ cursor: 'pointer', fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ink-faint)', textTransform: 'uppercase', letterSpacing: '0.06em', userSelect: 'none', listStyle: 'none' }}>

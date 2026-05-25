@@ -70,6 +70,8 @@ export interface StepTrace {
 
 export interface LoopOutput {
   finalAnswer: string
+  /** Generative UI hint surfaced from the last tool that produced one. */
+  ui?: { kind: string; props: Record<string, unknown> }
   toolUsed: string                  // last tool name or 'final_answer'
   routeTo?: string                  // honored from last tool result
   followups?: string[]
@@ -243,6 +245,7 @@ export async function runReactLoop(input: LoopInput): Promise<LoopOutput> {
         followups: lastToolResult?.followups,
         steps,
         taskId: lastToolResult?.taskId,
+        ui: lastToolResult?.ui,
       }
     }
 
@@ -368,6 +371,7 @@ export async function runReactLoop(input: LoopInput): Promise<LoopOutput> {
           followups: toolResult.followups,
           steps,
           taskId: toolResult.taskId,
+          ui: toolResult.ui,
         }
       }
       // Otherwise loop — model gets to react to the observation
@@ -389,6 +393,7 @@ export async function runReactLoop(input: LoopInput): Promise<LoopOutput> {
     toolUsed: lastToolName || 'budget_exhausted',
     routeTo: lastToolResult?.routeTo,
     followups: lastToolResult?.followups,
+    ui: lastToolResult?.ui,
     steps,
     taskId: lastToolResult?.taskId,
   }

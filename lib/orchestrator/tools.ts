@@ -41,6 +41,12 @@ export interface ToolResult {
   summary: string
   /** Optional richer payload for the UI (rendered as a structured card). */
   data?: unknown
+  /**
+   * Generative UI hint — when set, the chat bubble renders the matching card
+   * component INSTEAD of the markdown summary. See components/agent-cards/*.
+   * `kind` must be a key in the agent-card registry; `props` is JSON passed in.
+   */
+  ui?: { kind: string; props: Record<string, unknown> }
   /** When the user should be sent to a vertical agent page. */
   routeTo?: string
   /** Suggested follow-ups (chat-quick-reply buttons). */
@@ -106,7 +112,25 @@ const TOOL_GET_WORKSPACE: OrchestratorTool = {
     if (!ws.voice) missing.push('Voice')
     if (!ws.positioning) missing.push('Positioning')
     if (missing.length) lines.push(`\n_Missing: ${missing.join(', ')} — every downstream agent benefits from filling these in._`)
-    return { summary: lines.join('\n'), data: ws }
+    return {
+      summary: lines.join('\n'),
+      data: ws,
+      ui: {
+        kind: 'workspace',
+        props: {
+          name: ws.name,
+          url: ws.url,
+          one_liner: ws.one_liner,
+          positioning: ws.positioning,
+          icp_summary: ws.icp_summary,
+          segments: ws.icp_segments?.map((s) => s.name).filter(Boolean),
+          key_messages: ws.key_messages?.slice(0, 3),
+          competitors: ws.competitors?.map((c) => c.name).filter(Boolean),
+          voice_summary: ws.voice?.summary,
+          missing,
+        },
+      },
+    }
   },
 }
 
@@ -122,6 +146,16 @@ const TOOL_QUICK_GEO_AUDIT: OrchestratorTool = {
     return {
       summary: `**${host(result.url)}: ${result.overall_score}/100 (${result.grade})**\n\nTop fixes:\n${fixes || '_(no priority fixes)_'}\n\n[View full audit →](/geo?url=${encodeURIComponent(url)})`,
       data: { url: result.url, score: result.overall_score, grade: result.grade, issues: result.issues.length },
+      ui: {
+        kind: 'geo_score',
+        props: {
+          url: result.url,
+          score: result.overall_score,
+          grade: result.grade,
+          issues: result.issues.slice(0, 5).map((i) => ({ title: i.title, severity: i.severity, fix_suggestion: i.fix_suggestion })),
+          geo_url: `/geo?url=${encodeURIComponent(url)}`,
+        },
+      },
       taskId: task.id,
       followups: ['Apply fixes via PR', 'Run citation check on this URL', 'Audit my whole site'],
     }
