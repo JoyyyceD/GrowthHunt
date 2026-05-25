@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import type { GtmMessage, GtmConversation } from '@/lib/orchestrator/types'
 import type { StepTrace } from '@/lib/orchestrator/loop'
 import type { Workspace } from '@/lib/workspace/types'
@@ -418,6 +420,102 @@ function truncate(s: string, n: number): string {
   return s.slice(0, n - 1).trimEnd() + '…'
 }
 
+/**
+ * Markdown body for assistant bubbles. Trims default margins so it sits flush
+ * inside a chat bubble, opens links in a new tab, and keeps headings compact.
+ */
+function MarkdownBody({ content }: { content: string }) {
+  return (
+    <div className="gtm-md">
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        components={{
+          a: (props) => (
+            <a {...props} target={(props.href || '').startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" />
+          ),
+        }}
+      >
+        {content}
+      </ReactMarkdown>
+      <style jsx>{`
+        .gtm-md :global(p) { margin: 0 0 8px; }
+        .gtm-md :global(p:last-child) { margin-bottom: 0; }
+        .gtm-md :global(h1),
+        .gtm-md :global(h2),
+        .gtm-md :global(h3),
+        .gtm-md :global(h4) {
+          font-family: var(--sans);
+          font-weight: 700;
+          letter-spacing: -0.01em;
+          margin: 12px 0 6px;
+          line-height: 1.3;
+        }
+        .gtm-md :global(h1) { font-size: 17px; }
+        .gtm-md :global(h2) { font-size: 16px; }
+        .gtm-md :global(h3) { font-size: 14.5px; }
+        .gtm-md :global(h4) { font-size: 13.5px; color: var(--ink-dim); }
+        .gtm-md :global(h1:first-child),
+        .gtm-md :global(h2:first-child),
+        .gtm-md :global(h3:first-child) { margin-top: 0; }
+        .gtm-md :global(strong) { font-weight: 700; color: var(--ink); }
+        .gtm-md :global(em) { font-style: italic; }
+        .gtm-md :global(ul),
+        .gtm-md :global(ol) { margin: 0 0 8px; padding-left: 20px; }
+        .gtm-md :global(li) { margin: 2px 0; line-height: 1.5; }
+        .gtm-md :global(li > p) { margin: 0; }
+        .gtm-md :global(a) {
+          color: var(--accent);
+          text-decoration: underline;
+          text-underline-offset: 2px;
+          word-break: break-word;
+        }
+        .gtm-md :global(a:hover) { text-decoration-thickness: 2px; }
+        .gtm-md :global(code) {
+          font-family: var(--mono);
+          font-size: 0.88em;
+          background: var(--bg-card);
+          padding: 1px 5px;
+          border-radius: 4px;
+        }
+        .gtm-md :global(pre) {
+          background: var(--bg-card);
+          border: 1px solid var(--rule);
+          border-radius: 8px;
+          padding: 10px 12px;
+          overflow-x: auto;
+          margin: 8px 0;
+          font-size: 12.5px;
+        }
+        .gtm-md :global(pre code) { background: transparent; padding: 0; }
+        .gtm-md :global(blockquote) {
+          margin: 8px 0;
+          padding: 4px 12px;
+          border-left: 3px solid var(--rule-strong);
+          color: var(--ink-dim);
+        }
+        .gtm-md :global(hr) {
+          border: 0;
+          height: 1px;
+          background: var(--rule);
+          margin: 12px 0;
+        }
+        .gtm-md :global(table) {
+          border-collapse: collapse;
+          margin: 8px 0;
+          font-size: 13px;
+        }
+        .gtm-md :global(th),
+        .gtm-md :global(td) {
+          border: 1px solid var(--rule);
+          padding: 6px 10px;
+          text-align: left;
+        }
+        .gtm-md :global(th) { background: var(--bg-card); font-weight: 600; }
+      `}</style>
+    </div>
+  )
+}
+
 function Bubble({ message, compact, steps, live }: { message: GtmMessage; compact?: boolean; steps?: StepTrace[]; live?: boolean }) {
   const isUser = message.role === 'user'
   // Show every non-final step in the trace (tool_call, approval_request, error).
@@ -434,10 +532,11 @@ function Bubble({ message, compact, steps, live }: { message: GtmMessage; compac
         padding: '10px 14px',
         fontSize: 14,
         lineHeight: 1.55,
-        whiteSpace: 'pre-wrap',
         wordBreak: 'break-word',
       }}>
-        {message.content}
+        {isUser
+          ? <span style={{ whiteSpace: 'pre-wrap' }}>{message.content}</span>
+          : <MarkdownBody content={message.content} />}
         {!isUser && traceSteps.length > 0 && (
           <details style={{ marginTop: 10 }} open={live}>
             <summary style={{ cursor: 'pointer', fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ink-faint)', textTransform: 'uppercase', letterSpacing: '0.06em', userSelect: 'none', listStyle: 'none' }}>
