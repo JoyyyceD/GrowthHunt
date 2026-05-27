@@ -37,14 +37,16 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'name and url are required' }, { status: 400 })
   }
 
-  const workspace = await createWorkspace(user.id, {
-    name: body.name,
-    url: body.url,
-    one_liner: body.one_liner,
-    brand_color: body.brand_color,
-    emoji: body.emoji,
-  })
-  if (!workspace) return NextResponse.json({ error: 'Could not create workspace' }, { status: 500 })
-
-  return NextResponse.json({ workspace })
+  try {
+    const workspace = await createWorkspace(user.id, {
+      name: body.name,
+      url: body.url,
+      one_liner: body.one_liner,
+      brand_color: body.brand_color,
+      emoji: body.emoji,
+    })
+    return NextResponse.json({ workspace })
+  } catch (err) {
+    return NextResponse.json({ error: (err as Error).message }, { status: 500 })
+  }
 }

@@ -67,7 +67,7 @@ export async function getWorkspace(id: string): Promise<Workspace | null> {
   return hydrate(data)
 }
 
-export async function createWorkspace(ownerId: string, input: WorkspaceCreate): Promise<Workspace | null> {
+export async function createWorkspace(ownerId: string, input: WorkspaceCreate): Promise<Workspace> {
   const admin = createAdminClient()
   const { data, error } = await admin
     .from('gtm_workspaces')
@@ -83,7 +83,7 @@ export async function createWorkspace(ownerId: string, input: WorkspaceCreate): 
     .single()
   if (error) {
     console.error('[workspace] create failed:', error.message)
-    return null
+    throw new Error(error.message)
   }
   const ws = hydrate(data)
   // Auto-fire the onboarding playbook (fire-and-forget; do not block the request)
