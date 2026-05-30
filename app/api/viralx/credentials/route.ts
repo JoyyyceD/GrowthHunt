@@ -56,6 +56,23 @@ export async function POST(req: NextRequest) {
   return NextResponse.json({ ok: true, x_screen_name: verified.username })
 }
 
+export async function GET() {
+  const sb = await createServerClient()
+  const { data: { user }, error: authErr } = await sb.auth.getUser()
+  if (authErr || !user) {
+    return NextResponse.json({ connected: false }, { status: 200 })
+  }
+  const { data } = await sb
+    .from('viralx_x_credentials')
+    .select('x_screen_name')
+    .eq('user_id', user.id)
+    .maybeSingle()
+  return NextResponse.json({
+    connected: Boolean(data?.x_screen_name),
+    screen_name: data?.x_screen_name ?? null,
+  })
+}
+
 export async function DELETE() {
   const sb = await createServerClient()
   const { data: { user }, error: authErr } = await sb.auth.getUser()

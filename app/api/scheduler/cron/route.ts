@@ -16,6 +16,8 @@ import { createAdminClient } from '@/lib/supabase/admin'
 import { getAdapter, isSocialPlatform } from '@/lib/social/registry'
 import { getPlatformCreds } from '@/lib/social/types'
 import { findExpiring, updateTokens, markReconnectNeeded } from '@/lib/social/store'
+import { getXKeysForWorkspace } from '@/lib/social/x-byo'
+import { postTweet } from '@/lib/viralx/x-publish'
 import { markDueAsPosted } from '@/lib/postiz/store'
 
 export const dynamic = 'force-dynamic'
@@ -89,6 +91,37 @@ async function publishDueNative(): Promise<{ published: number; failed: number; 
       failed++
       continue
     }
+
+    // X uses BYO OAuth 1.0a — bypass the OAuth2 adapter path.
+    if (row.platform === 'x') {
+      const lookup = await getXKeysForWorkspace(row.workspace_id)
+      if (!lookup) {
+        await admin.from('gtm_scheduled_posts').update({ status: 'failed', error: 'no X API keys for this workspace' }).eq('id', row.id)
+        details.push({ id: row.id, status: 'failed', error: 'no X keys' })
+        failed++
+        continue
+      }
+      try {
+        const r = await postTweet(row.content, lookup.keys)
+        await admin.from('gtm_scheduled_posts').update({
+          status: 'posted', external_post_id: r.id, posted_at: new Date().toISOString(), error: null,
+        }).eq('id', row.id)
+        published++
+        details.push({ id: row.id, status: 'posted' })
+      } catch (e) {
+        const msg = (e as Error).message
+        if (retries + 1 >= MAX_RETRIES) {
+          await admin.from('gtm_scheduled_posts').update({ status: 'failed', error: msg.slice(0, 500), retry_count: retries + 1 }).eq('id', row.id)
+        } else {
+          await admin.from('gtm_scheduled_posts').update({ error: msg.slice(0, 500), retry_count: retries + 1 }).eq('id', row.id)
+        }
+        failed++
+        details.push({ id: row.id, status: 'failed', error: msg.slice(0, 200) })
+      }
+      if (GAP_MS > 0) await new Promise((r) => setTimeout(r, GAP_MS))
+      continue
+    }
+
     const adapter = getAdapter(row.platform)
     if (!adapter) continue
     const { data: conn } = await admin.from('social_connections').select('*').eq('id', row.integration_id).maybeSingle()

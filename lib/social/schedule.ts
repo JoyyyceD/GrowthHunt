@@ -7,6 +7,8 @@
 import { createAdminClient } from '@/lib/supabase/admin'
 import { getAdapter } from './registry'
 import { getFirstConnection } from './store'
+import { getXKeysForWorkspace } from './x-byo'
+import { postTweet } from '@/lib/viralx/x-publish'
 import { schedulePost as postizSchedule } from '@/lib/postiz/schedule'
 import type { ScheduledPost } from '@/lib/postiz/types'
 import type { SocialPlatform } from './types'
@@ -38,8 +40,19 @@ function isImmediate(when?: string | null): boolean {
   return !Number.isFinite(t) || t <= Date.now() + 30_000
 }
 
-/** Try to publish immediately via a native adapter (synchronous publish). */
+/** Try to publish immediately via the right path per platform (X = BYO OAuth 1.0a, others = native OAuth 2.0). */
 async function publishNow(workspaceId: string, platform: SocialPlatform, content: string): Promise<{ ok: true; externalId: string; url?: string } | { ok: false; error: string }> {
+  if (platform === 'x') {
+    const lookup = await getXKeysForWorkspace(workspaceId)
+    if (!lookup) return { ok: false, error: 'No X API keys for this workspace — paste them in the Scheduler.' }
+    try {
+      const r = await postTweet(content, lookup.keys)
+      const handle = lookup.screenName?.replace(/^@/, '') || ''
+      return { ok: true, externalId: r.id, url: handle ? `https://x.com/${handle}/status/${r.id}` : undefined }
+    } catch (e) {
+      return { ok: false, error: (e as Error).message }
+    }
+  }
   const adapter = getAdapter(platform)
   if (!adapter) return { ok: false, error: `no adapter for ${platform}` }
   const conn = await getFirstConnection(workspaceId, platform)
@@ -64,7 +77,12 @@ export async function unifiedSchedule(args: UnifiedScheduleArgs): Promise<Unifie
   const nativeReady: SocialPlatform[] = []
   const needsPostiz: string[] = []
   for (const p of targets) {
-    if (p === 'x' || p === 'linkedin' || p === 'reddit') {
+    if (p === 'x') {
+      // X uses BYO OAuth 1.0a keys stored per workspace owner in viralx_x_credentials.
+      const lookup = await getXKeysForWorkspace(args.workspaceId)
+      if (lookup) nativeReady.push('x')
+      else needsPostiz.push(p)
+    } else if (p === 'linkedin' || p === 'reddit') {
       const conn = await getFirstConnection(args.workspaceId, p)
       if (conn) nativeReady.push(p)
       else needsPostiz.push(p)
@@ -79,8 +97,19 @@ export async function unifiedSchedule(args: UnifiedScheduleArgs): Promise<Unifie
 
   // ── native branch ─────────────────────────────────────────────────────────
   for (const platform of nativeReady) {
-    const conn = await getFirstConnection(args.workspaceId, platform)
-    if (!conn) continue
+    // integration_id semantics:
+    //   - X: 'viralx_x_credentials:<owner_id>' sentinel (cron resolves via x-byo)
+    //   - LinkedIn/Reddit: social_connections.id (cron loads + dispatches adapter)
+    let integrationId = ''
+    if (platform === 'x') {
+      const lookup = await getXKeysForWorkspace(args.workspaceId)
+      if (!lookup) continue
+      integrationId = 'viralx_x_credentials'
+    } else {
+      const conn = await getFirstConnection(args.workspaceId, platform)
+      if (!conn) continue
+      integrationId = conn.id
+    }
     if (immediate) {
       const r = await publishNow(args.workspaceId, platform, args.content)
       const status = r.ok ? 'posted' : 'failed'
@@ -91,7 +120,7 @@ export async function unifiedSchedule(args: UnifiedScheduleArgs): Promise<Unifie
         .insert({
           workspace_id: args.workspaceId,
           provider: 'native',
-          integration_id: conn.id,
+          integration_id: integrationId,
           platform,
           content: args.content,
           type: 'now',
@@ -115,7 +144,7 @@ export async function unifiedSchedule(args: UnifiedScheduleArgs): Promise<Unifie
         .insert({
           workspace_id: args.workspaceId,
           provider: 'native',
-          integration_id: conn.id,
+          integration_id: integrationId,
           platform,
           content: args.content,
           type: 'schedule',

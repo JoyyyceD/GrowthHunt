@@ -23,11 +23,20 @@ export default async function SchedulerPage({ searchParams }: { searchParams: Pr
   const active = sp.ws ? await getWorkspace(sp.ws) : workspaces[0]
   if (!active || (active.owner_id && active.owner_id !== user.id)) redirect('/workspace')
 
-  const [conn, integrations, posts, nativeConns] = await Promise.all([
+  const [conn, integrations, posts, nativeConns, xByo] = await Promise.all([
     getConnection(active.id),
     listCachedIntegrations(active.id),
     listScheduledPosts(active.id),
     listNativeConnections(active.id),
+    (async () => {
+      // X is BYO: presence in viralx_x_credentials means connected for this user.
+      const { data } = await supabase
+        .from('viralx_x_credentials')
+        .select('x_screen_name')
+        .eq('user_id', user.id)
+        .maybeSingle()
+      return { connected: Boolean(data?.x_screen_name), screen_name: data?.x_screen_name ?? null }
+    })(),
   ])
   const safeNative = nativeConns.map((c) => ({
     id: c.id, platform: c.platform, account_handle: c.account_handle, account_id: c.account_id,
@@ -56,6 +65,7 @@ export default async function SchedulerPage({ searchParams }: { searchParams: Pr
             initialIntegrations={integrations}
             initialPosts={posts}
             initialNativeConnections={safeNative}
+            initialXByo={xByo}
           />
         </div>
       </section>

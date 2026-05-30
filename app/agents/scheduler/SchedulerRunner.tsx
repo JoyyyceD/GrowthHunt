@@ -18,6 +18,8 @@ interface NativeConn {
   reconnect_reason: string | null
 }
 
+interface XByoState { connected: boolean; screen_name: string | null }
+
 interface Props {
   workspace: { id: string; name: string; url: string }
   allWorkspaces: WsLite[]
@@ -26,6 +28,7 @@ interface Props {
   initialIntegrations: PostizIntegration[]
   initialPosts: ScheduledPost[]
   initialNativeConnections: NativeConn[]
+  initialXByo: XByoState
 }
 
 const PLATFORM_META: Record<string, { label: string; color: string }> = {
@@ -62,7 +65,7 @@ function fmt(iso: string | null): string {
   try { return new Date(iso).toLocaleString() } catch { return iso }
 }
 
-export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, initialApiUrl, initialIntegrations, initialPosts, initialNativeConnections }: Props) {
+export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, initialApiUrl, initialIntegrations, initialPosts, initialNativeConnections, initialXByo }: Props) {
   const router = useRouter()
   const search = useSearchParams()
 
@@ -76,6 +79,13 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
   // native state
   const [native, setNative] = useState<NativeConn[]>(initialNativeConnections)
   const [platformEnabled, setPlatformEnabled] = useState<Record<string, boolean>>({ x: true, linkedin: true, reddit: true })
+
+  // X BYO state
+  const [xByo, setXByo] = useState<XByoState>(initialXByo)
+  const [xModalOpen, setXModalOpen] = useState(false)
+  const [xCk, setXCk] = useState(''); const [xCs, setXCs] = useState('')
+  const [xAt, setXAt] = useState(''); const [xAts, setXAts] = useState('')
+  const [xSubmitting, setXSubmitting] = useState(false)
 
   // shared
   const [posts, setPosts] = useState<ScheduledPost[]>(initialPosts)
@@ -118,13 +128,14 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
     return m
   }, [native])
 
-  // Platforms available for compose = native-connected + postiz-enabled.
+  // Platforms available for compose = native-connected (incl X BYO) + postiz-enabled.
   const availablePlatforms = useMemo(() => {
     const set = new Set<string>()
+    if (xByo.connected) set.add('x')
     for (const c of native) if (!c.needs_reconnect) set.add(c.platform)
     for (const i of postizEnabled) set.add(i.platform)
     return Array.from(set).sort()
-  }, [native, postizEnabled])
+  }, [xByo.connected, native, postizEnabled])
 
   function togglePlatform(p: string) {
     setSelectedPlatforms((s) => (s.includes(p) ? s.filter((x) => x !== p) : [...s, p]))
@@ -141,6 +152,40 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
       const j = await res.json()
       if (res.ok) setNative(j.connections || [])
     } catch { /* noop */ }
+  }
+
+  async function submitXByo() {
+    if (!xCk.trim() || !xCs.trim() || !xAt.trim() || !xAts.trim()) {
+      toast.error('Fill all 4 keys')
+      return
+    }
+    setXSubmitting(true)
+    try {
+      const res = await fetch('/api/viralx/credentials', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          consumer_key: xCk.trim(), consumer_secret: xCs.trim(),
+          access_token: xAt.trim(), access_token_secret: xAts.trim(),
+        }),
+      })
+      const j = await res.json()
+      if (!res.ok) { toast.error(j.error || 'X verification failed'); return }
+      toast.success(`Connected as @${j.x_screen_name}`)
+      setXByo({ connected: true, screen_name: j.x_screen_name })
+      setXCk(''); setXCs(''); setXAt(''); setXAts('')
+      setXModalOpen(false)
+    } finally { setXSubmitting(false) }
+  }
+
+  async function disconnectXByo() {
+    if (!confirm('Disconnect your X account?')) return
+    setBusy(true)
+    try {
+      await fetch('/api/viralx/credentials', { method: 'DELETE' })
+      setXByo({ connected: false, screen_name: null })
+      toast.success('X disconnected')
+    } finally { setBusy(false) }
   }
 
   async function disconnectNative(connId: string) {
@@ -233,7 +278,7 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
     } finally { setComposing(false) }
   }
 
-  const hasAnyConnection = native.length > 0 || postizConnected
+  const hasAnyConnection = xByo.connected || native.length > 0 || postizConnected
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
@@ -257,6 +302,27 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 12 }}>
           {NATIVE_PLATFORMS.map((p) => {
             const m = meta(p)
+
+            // ─── X: BYO mode (paste 4 keys) ───
+            if (p === 'x') {
+              if (xByo.connected) {
+                return (
+                  <div key={p} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '7px 12px', borderRadius: 999, border: `1px solid ${m.color}`, background: 'var(--bg)' }}>
+                    <span style={{ width: 8, height: 8, borderRadius: '50%', background: m.color }} />
+                    <span style={{ fontSize: 12.5, fontWeight: 600 }}>{m.label}</span>
+                    {xByo.screen_name && <span style={{ fontSize: 12, color: 'var(--ink-dim)' }}>· @{xByo.screen_name}</span>}
+                    <button onClick={disconnectXByo} disabled={busy} style={{ ...BTN_GHOST, padding: '3px 8px', fontSize: 11 }}>×</button>
+                  </div>
+                )
+              }
+              return (
+                <button key={p} onClick={() => setXModalOpen(true)} style={{ ...BTN_GHOST, borderColor: m.color, color: m.color }}>
+                  Connect X (paste your API keys) →
+                </button>
+              )
+            }
+
+            // ─── LinkedIn / Reddit: shared OAuth ───
             const conn = nativeByPlatform[p]
             if (conn) {
               return (
@@ -294,9 +360,47 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
           })}
         </div>
         <div style={{ fontSize: 11.5, color: 'var(--ink-faint)' }}>
-          OAuth through GrowthHunt — tokens stay in your workspace, never on a third-party server.
+          X uses your own API keys (you pay X directly). LinkedIn / Reddit use OAuth through GrowthHunt — tokens stay in your workspace.
         </div>
       </div>
+
+      {/* ── X BYO modal ── */}
+      {xModalOpen && (
+        <div onClick={() => !xSubmitting && setXModalOpen(false)} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20, zIndex: 1000 }}>
+          <div onClick={(e) => e.stopPropagation()} style={{ background: 'var(--bg-elev)', borderRadius: 14, padding: 24, maxWidth: 560, width: '100%', border: '1px solid var(--rule)' }}>
+            <div style={{ ...LABEL, marginBottom: 6 }}>Connect X · BYO API keys</div>
+            <p style={{ fontSize: 13.5, color: 'var(--ink-dim)', lineHeight: 1.55, margin: '0 0 16px' }}>
+              Paste the 4 OAuth 1.0a keys from <strong>your own</strong> X developer app. Posts to X are signed with your keys —
+              X bills your account, not GrowthHunt. <a href="https://developer.x.com/en/portal/dashboard" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)' }}>How to get these →</a>
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {([
+                ['Consumer Key (API Key)', xCk, setXCk],
+                ['Consumer Secret (API Secret)', xCs, setXCs],
+                ['Access Token', xAt, setXAt],
+                ['Access Token Secret', xAts, setXAts],
+              ] as Array<[string, string, (v: string) => void]>).map(([label, val, set], i) => (
+                <div key={i}>
+                  <div style={{ fontSize: 11.5, color: 'var(--ink-faint)', marginBottom: 4 }}>{label}</div>
+                  <input
+                    type="password"
+                    value={val}
+                    onChange={(e) => set(e.target.value)}
+                    style={INPUT}
+                    autoComplete="off"
+                  />
+                </div>
+              ))}
+            </div>
+            <div style={{ display: 'flex', gap: 10, marginTop: 18, justifyContent: 'flex-end' }}>
+              <button onClick={() => setXModalOpen(false)} disabled={xSubmitting} style={BTN_GHOST}>Cancel</button>
+              <button onClick={submitXByo} disabled={xSubmitting} style={{ ...BTN, opacity: xSubmitting ? 0.6 : 1 }}>
+                {xSubmitting ? 'Verifying…' : 'Verify & save'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ── Compose ── */}
       {hasAnyConnection && (
