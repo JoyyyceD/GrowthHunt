@@ -31,6 +31,8 @@ import type { Workspace } from '@/lib/workspace/types'
 import { findTool, toolsPromptCatalog, type OrchestratorTool, type ToolResult } from './tools'
 import { defaultCanUseTool, type CanUseToolFn } from './permissions'
 import { scrubToolNames } from './triage'
+import { coreBlock } from './memory'
+import { routeCatalogForPrompt, scrubFakeUrls } from './routes'
 import type { GtmMessage } from './types'
 
 const MAX_STEPS = 5
@@ -109,27 +111,36 @@ function stepHistoryToTranscript(steps: StepTrace[]): string {
 
 function buildSystem(ws: Workspace): string {
   return withVoice(
-    'You are the GrowthHunt GTM orchestrator running a ReAct loop. Each turn you '
-    + 'pick ONE next action: call a tool, request approval for a sensitive tool, or '
-    + 'give a final answer. You can call up to ' + MAX_STEPS + ' tools in a row before '
-    + 'you must produce a final answer. Use tools when they help; do NOT call a tool '
-    + 'just to call one. After a tool returns, decide if you need another tool or can '
-    + 'now answer the user. Reply with ONLY a JSON object — no prose, no fences.\n\n'
-    + 'LANGUAGE: final_answer.reply MUST be in the user\'s language (English/中文/etc).\n\n'
-    + 'TOOL-NAMING RULE: snake_case tool identifiers (radar_scan, quick_geo_audit, '
-    + 'train_voice, etc.) are PROGRAMMATIC — they belong in the `tool` field. NEVER '
-    + 'write them inside final_answer.reply. Describe what you did in natural language '
-    + '("I ran the AI-citation audit" / "我帮你跑了 Reddit + HN 雷达扫描"). Made-up '
-    + 'mixes like "雷达_audit" or "radar扫描工具" are forbidden.',
+    [
+      'You are the GrowthHunt GTM mission-control agent running a ReAct loop. Each turn you pick ONE next action: call a tool, request approval for a sensitive tool, or give a final answer. Up to ' + MAX_STEPS + ' tools per turn before a final answer is forced.',
+      '',
+      'BIAS TO ACTION: prefer running a tool over asking the user for more info. If a tool has a sensible default (e.g. quick_geo_audit defaults to workspace.url; list_recent_runs needs no params; get_workspace shows what is missing), JUST RUN IT — the observation is more useful than another question.',
+      '',
+      'MEMORY: a CORE memory block is supplied in the workspace context — treat those entries as established workspace facts (do not re-ask them). For deeper recall, call `memory_search` with a focused query; when you learn a durable fact mid-conversation (founder told you about a customer, a decision was made, a constraint was named) write it with `memory_archival_insert`. Pin truly sticky facts with `memory_core_update`.',
+      '',
+      'FINAL ANSWERS: 3-6 sentences, concrete, with the artifact deep-links the tools returned. Always end with a forward-leaning CTA ("say \'send it\' to dispatch", "want me to also pull X?"). Never close with a passive "let me know if you need anything else".',
+      '',
+      'LANGUAGE: final_answer.reply MUST be in the user\'s language (English / 中文 / …). Never code-switch.',
+      '',
+      'TOOL-NAMING RULE: snake_case identifiers (radar_scan, quick_geo_audit, train_voice, …) are PROGRAMMATIC — they belong in the `tool` field. NEVER write them inside final_answer.reply. Describe naturally ("I ran the AI-citation audit" / "我帮你跑了 Reddit + HN 雷达扫描"). Mixes like "雷达_audit" or "radar扫描工具" are forbidden.',
+      '',
+      'URL DISCIPLINE — CRITICAL: every markdown link `[…](url)` you write inside final_answer.reply MUST come from the ROUTE CATALOG below (or be a real URL a tool returned in its observation — e.g. a Reddit thread, an X profile, a generated /geo or /gtm/tasks deep link). NEVER invent paths like /train-voice, /audit-results, /memory, /create-ab-test, /landing-doctor. When in doubt, write plain prose with NO link.',
+      '',
+      'Reply with ONLY a JSON object — no prose, no fences.',
+    ].join('\n'),
     ws.voice,
   )
 }
 
-function buildUserPrompt(ws: Workspace, history: GtmMessage[], userMessage: string, steps: StepTrace[], stepBudget: number, toolHint?: string, pageContext?: string): string {
+function buildUserPrompt(ws: Workspace, history: GtmMessage[], userMessage: string, steps: StepTrace[], stepBudget: number, toolHint?: string, pageContext?: string, core?: string): string {
   return [
     `WORKSPACE CONTEXT:\n${workspaceContext(ws)}`,
     '',
+    core ? `LONG-TERM MEMORY (workspace facts saved across sessions — treat as known truths):\n${core}\n` : '',
     pageContext ? `PAGE CONTEXT — what the user is looking at RIGHT NOW (resolve pronouns like "this", "这个", "my page" against this):\n${pageContext.slice(0, 2500)}\n` : '',
+    'ROUTE CATALOG — the ONLY URLs you may surface in markdown links inside final_answer.reply. Substitute the literal workspace id; never write placeholders like `<id>` to the user. If the page you want is not in this list, write plain prose with NO link:',
+    routeCatalogForPrompt(ws),
+    '',
     'TOOL CATALOG (param* = required, only tools eligible for this workspace are shown):',
     toolsPromptCatalog(ws),
     toolHint ? `\nTRIAGE HINT — the upstream classifier suggested using \`${toolHint}\`. Use it unless you have a strong reason to pick differently.` : '',
@@ -176,16 +187,28 @@ interface ClassifierResp {
   }
 }
 
-async function classifyStep(ws: Workspace, history: GtmMessage[], userMessage: string, steps: StepTrace[], stepBudget: number, toolHint?: string, pageContext?: string): Promise<ClassifierResp> {
+async function classifyStep(ws: Workspace, history: GtmMessage[], userMessage: string, steps: StepTrace[], stepBudget: number, toolHint?: string, pageContext?: string, core?: string): Promise<ClassifierResp> {
   const raw = await callAgent({
     system: buildSystem(ws),
-    user: buildUserPrompt(ws, history, userMessage, steps, stepBudget, toolHint, pageContext),
-    maxTokens: 800,
+    user: buildUserPrompt(ws, history, userMessage, steps, stepBudget, toolHint, pageContext, core),
+    maxTokens: 1200,
     temperature: 0.2,
   })
   if (!raw) return { action: { kind: 'final_answer', reply: 'The orchestrator LLM is unreachable right now. Try again in a moment.' } }
   const parsed = extractJson<ClassifierResp>(raw)
-  if (!parsed || !parsed.action) return { thought: 'parse-failed', action: { kind: 'final_answer', reply: "I couldn't form a plan. Try rephrasing — e.g. 'audit my landing page' or 'find 5 creators'." } }
+  if (!parsed || !parsed.action) {
+    // When parsing fails after a tool already ran, fall back to using the
+    // last observation as the answer instead of forcing the user to retry.
+    if (steps.length > 0) {
+      const last = steps[steps.length - 1]
+      if (last.observation) {
+        return { thought: 'parse-failed-using-observation', action: { kind: 'final_answer', reply: last.observation } }
+      }
+    }
+    // Otherwise default to a useful no-op: run get_workspace so the user
+    // sees something concrete instead of a "try rephrasing" dead-end.
+    return { thought: 'parse-failed-default-action', action: { kind: 'tool_call', tool: 'get_workspace', params: {} } }
+  }
   return parsed
 }
 
@@ -225,10 +248,15 @@ export async function runReactLoop(input: LoopInput): Promise<LoopOutput> {
   let lastToolResult: ToolResult | null = null
   let lastToolName = ''
 
+  // Load the workspace's CORE memory once per loop — small, always-on, like
+  // Letta's MemGPT system block. Archival lookups still happen on demand via
+  // the memory_search tool inside the loop.
+  const core = await coreBlock(input.workspace.id)
+
   while (steps.length < MAX_STEPS && Date.now() - start < WALL_CLOCK_MS) {
     const stepBudget = MAX_STEPS - steps.length
     const stepStart = Date.now()
-    const decision = await classifyStep(input.workspace, input.history, input.message, steps, stepBudget, input.toolHint, input.pageContext)
+    const decision = await classifyStep(input.workspace, input.history, input.message, steps, stepBudget, input.toolHint, input.pageContext, core)
     const thought = String(decision.thought ?? '').slice(0, 800)
     const action = decision.action || { kind: 'final_answer', reply: 'Done.' }
     const kind = action.kind as StepTrace['action_kind']
@@ -239,7 +267,7 @@ export async function runReactLoop(input: LoopInput): Promise<LoopOutput> {
       steps.push(trace)
       await persistStep(input, trace)
       return {
-        finalAnswer: scrubToolNames(String(action.reply ?? lastToolResult?.summary ?? 'Done.').slice(0, 4000)),
+        finalAnswer: scrubFakeUrls(scrubToolNames(String(action.reply ?? lastToolResult?.summary ?? 'Done.').slice(0, 4000))),
         toolUsed: lastToolName || 'final_answer',
         routeTo: lastToolResult?.routeTo,
         followups: lastToolResult?.followups,
@@ -389,7 +417,7 @@ export async function runReactLoop(input: LoopInput): Promise<LoopOutput> {
   const cause = Date.now() - start >= WALL_CLOCK_MS ? 'timeout' : 'step_budget'
   const fallback = lastToolResult?.summary || `I hit my ${cause === 'timeout' ? 'time' : 'step'} budget before finishing. Try a more specific ask.`
   return {
-    finalAnswer: scrubToolNames(fallback),
+    finalAnswer: scrubFakeUrls(scrubToolNames(fallback)),
     toolUsed: lastToolName || 'budget_exhausted',
     routeTo: lastToolResult?.routeTo,
     followups: lastToolResult?.followups,

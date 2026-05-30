@@ -51,6 +51,8 @@ function deriveActions(ws: Workspace, tasks: GtmTask[]): Array<{ text: string; h
   const lastRadar = tasks.find((t) => t.kind === 'radar' && t.status === 'succeeded')
   if (!lastRadar) out.push({ text: 'Scan Reddit + HN for ICP-match posts', href: `/agents/radar?ws=${ws.id}` })
 
+  out.push({ text: 'Connect Postiz & schedule a post', href: `/agents/scheduler?ws=${ws.id}` })
+
   return out.slice(0, 5)
 }
 
@@ -64,7 +66,7 @@ export function MissionControl({ workspace, tasks }: { workspace: Workspace; tas
           <ol style={{ margin: 0, paddingLeft: 20, display: 'flex', flexDirection: 'column', gap: 6 }}>
             {actions.map((a, i) => (
               <li key={i} style={{ fontSize: 13.5, lineHeight: 1.5 }}>
-                <Link href={a.href} style={{ color: 'var(--ink)', textDecoration: 'none' }}>{a.text} →</Link>
+                <Link href={a.href} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ink)', textDecoration: 'none' }}>{a.text} →</Link>
               </li>
             ))}
           </ol>
@@ -78,7 +80,7 @@ export function MissionControl({ workspace, tasks }: { workspace: Workspace; tas
         ) : (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
             {tasks.slice(0, 10).map((t) => (
-              <Link key={t.id} href={`/gtm/tasks/${t.id}`} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '6px 8px', borderRadius: 6, fontSize: 12.5, color: 'var(--ink-dim)', textDecoration: 'none' }}>
+              <Link key={t.id} href={`/gtm/tasks/${t.id}`} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '6px 8px', borderRadius: 6, fontSize: 12.5, color: 'var(--ink-dim)', textDecoration: 'none' }}>
                 <span style={{ fontFamily: 'var(--mono)', fontSize: 10, padding: '1px 5px', borderRadius: 3, background: KIND_COLOR[t.kind], color: '#fff', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{KIND_LABEL[t.kind] || t.kind}</span>
                 <span style={{ fontSize: 11, color: t.status === 'succeeded' ? '#16a34a' : t.status === 'failed' ? '#c0392b' : 'var(--ink-faint)' }}>{statusGlyph(t.status)}</span>
                 <span style={{ flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{t.summary || t.kind}</span>

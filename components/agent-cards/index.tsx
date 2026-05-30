@@ -73,7 +73,7 @@ function GeoScoreCard({ url, score, grade, issues, geo_url, taskId }: GeoScoreCa
           View full audit →
         </a>
         {taskId && (
-          <a href={`/gtm/tasks/${taskId}`} style={{ color: 'var(--ink-faint)', textDecoration: 'underline' }}>
+          <a href={`/gtm/tasks/${taskId}`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ink-faint)', textDecoration: 'underline' }}>
             view task
           </a>
         )}
@@ -138,12 +138,63 @@ function Field({ label, value }: { label: string; value: string | null | undefin
   )
 }
 
+// ── ScheduledPostCard ─────────────────────────────────────────────────────--
+
+interface ScheduledPostCardProps extends CommonProps {
+  summary: string
+  posts: Array<{ platform: string; content: string; scheduled_for: string | null; status: string }>
+  scheduler_url: string
+}
+
+const PLATFORM_DOT: Record<string, string> = {
+  x: '#000', linkedin: '#0a66c2', reddit: '#ff4500', mastodon: '#6364ff',
+  bluesky: '#0085ff', instagram: '#e4405f', tiktok: '#000', threads: '#000',
+  facebook: '#1877f2', youtube: '#ff0000', discord: '#5865f2', telegram: '#26a5e4',
+}
+
+function ScheduledPostCard({ summary, posts, scheduler_url }: ScheduledPostCardProps) {
+  return (
+    <div style={{ border: '1px solid var(--rule)', borderRadius: 12, padding: 16, background: 'var(--bg-elev)' }}>
+      <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ink-faint)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 10 }}>
+        Scheduler
+      </div>
+      <div style={{ fontSize: 14, color: 'var(--ink)', marginBottom: 12, lineHeight: 1.5 }}>{summary}</div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+        {posts.map((p, i) => {
+          const dot = PLATFORM_DOT[p.platform] || 'var(--ink-faint)'
+          const when = p.scheduled_for ? new Date(p.scheduled_for).toLocaleString() : 'now'
+          const statusColor = p.status === 'posted' ? '#16a34a' : p.status === 'failed' ? '#c0392b' : '#d97706'
+          return (
+            <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', padding: '8px 10px', border: '1px solid var(--rule)', borderRadius: 8 }}>
+              <span style={{ width: 8, height: 8, borderRadius: '50%', background: dot, marginTop: 5, flexShrink: 0 }} />
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ display: 'flex', gap: 8, alignItems: 'baseline', marginBottom: 2 }}>
+                  <span style={{ fontWeight: 600, fontSize: 12.5, textTransform: 'capitalize' }}>{p.platform}</span>
+                  <span style={{ fontSize: 11, color: 'var(--ink-faint)' }}>{when}</span>
+                  <span style={{ fontSize: 10.5, color: statusColor, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{p.status}</span>
+                </div>
+                <div style={{ fontSize: 12.5, color: 'var(--ink-dim)', lineHeight: 1.45, overflow: 'hidden', textOverflow: 'ellipsis' }}>{p.content}</div>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+      <div style={{ marginTop: 12, fontSize: 12.5 }}>
+        <a href={scheduler_url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>
+          Open Scheduler →
+        </a>
+      </div>
+    </div>
+  )
+}
+
 // ── registry ────────────────────────────────────────────────────────────────
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const CARDS: Record<string, ComponentType<any>> = {
   geo_score: GeoScoreCard,
   workspace: WorkspaceCard,
+  scheduled_post: ScheduledPostCard,
 }
 
 interface AgentCardProps {

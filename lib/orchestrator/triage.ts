@@ -17,6 +17,8 @@ import { callAgent, extractJson, workspaceContext, withVoice } from '@/lib/agent
 import type { Workspace } from '@/lib/workspace/types'
 import type { GtmMessage } from './types'
 import { enabledTools } from './tools'
+import { coreBlock } from './memory'
+import { routeCatalogForPrompt, scrubFakeUrls } from './routes'
 
 export interface TriageResult {
   reply: string
@@ -54,6 +56,12 @@ const DISPLAY: Record<string, { en: string; zh: string }> = {
   open_voice_trainer:        { en: 'voice trainer page',         zh: '语调训练页面' },
   open_landing_doctor:       { en: 'landing doctor page',        zh: '落地页诊所页面' },
   open_post_roi:             { en: 'post-ROI page',              zh: 'Post ROI 页面' },
+  memory_core_update:        { en: 'pin to core memory',         zh: '钉到核心记忆' },
+  memory_archival_insert:    { en: 'save to long-term memory',   zh: '存入长期记忆' },
+  memory_search:             { en: 'search saved memory',        zh: '搜索已存记忆' },
+  schedule_post:             { en: 'schedule / publish a post',  zh: '排期 / 发布帖子' },
+  list_scheduled_posts:      { en: 'scheduled-post queue',       zh: '已排期队列' },
+  open_scheduler:            { en: 'scheduler page',             zh: '排期发布页面' },
   answer:                    { en: 'plain answer',               zh: '直接回答' },
 }
 
@@ -79,6 +87,13 @@ const ZH_SYNONYMS: Array<{ keywords: string[]; tool: string }> = [
   { keywords: ['视频', '分镜', '脚本', 'video', 'shot'], tool: 'video_coach_script' },
   { keywords: ['历史', '近期', '跑过', 'recent'], tool: 'list_recent_runs' },
   { keywords: ['workspace', '我的设置', '我的资料'], tool: 'get_workspace' },
+  // Memory verbs — the agent should ACTUALLY call the tool, not just say it will.
+  { keywords: ['存到记忆', '存入记忆', '存到长期记忆', '长期记忆', '保存洞察', '记下来', '记一下', 'save to memory', 'remember this', 'archive this', 'note this'], tool: 'memory_archival_insert' },
+  { keywords: ['钉到记忆', '钉住', '核心记忆', '固定记忆', '记住我', '记得我', 'pin to memory', 'core memory', 'always remember', 'remember that I'], tool: 'memory_core_update' },
+  { keywords: ['查记忆', '搜记忆', '搜索记忆', '搜一下记忆', '搜一下我的记忆', '查我的记忆', '翻一下记忆', '我之前说过', '我记得我说过', '我以前说过', 'recall', 'search memory', 'what did I tell you', 'what did I say about'], tool: 'memory_search' },
+  // Scheduling / publishing via Postiz.
+  { keywords: ['排期', '定时发', '定时发布', '排一下', '排到', '安排发', '帮我发', '发布到', '发到', '发推', '发帖', 'schedule', 'schedule for', 'publish', 'post this', 'post to', 'queue this'], tool: 'schedule_post' },
+  { keywords: ['排了哪些', '我的队列', '排期队列', '查看排期', '看一下排期', "what's scheduled", 'my queue', 'scheduled posts', 'show queue'], tool: 'list_scheduled_posts' },
 ]
 
 function buildToolCatalog(ws: Workspace): string {
@@ -102,86 +117,112 @@ function historyTranscript(history: GtmMessage[]): string {
 export async function triageMessage(ws: Workspace, history: GtmMessage[], message: string, pageContext?: string): Promise<TriageResult> {
   const catalog = buildToolCatalog(ws)
   const synonyms = buildZhSynonymTable()
+  const core = await coreBlock(ws.id)
 
   const system = withVoice(
     [
-      'You are the GrowthHunt GTM assistant — a friendly senior growth advisor.',
+      'You are the GrowthHunt GTM mission-control agent — a senior growth operator who DOES things, not a chatbot that asks back.',
       '',
-      'CORE PRINCIPLE: Never auto-run tools when the user is asking for advice, opinion, clarification, or chit-chatting. Tools are ONLY for unambiguous task requests. When in doubt, DO NOT run a tool — chat back and ask one clarifying question instead.',
+      'PRIME DIRECTIVE: pick a tool and run it on the FIRST turn whenever possible. The user came here to get work done; bouncing the question back is a failure. Default = action. Only chat-only when there is literally no tool that could move the ball forward (pure greeting, pure thanks, pure opinion question with no actionable angle).',
       '',
-      'LANGUAGE: Match the user\'s language. If they wrote in Chinese (中文), reply in Chinese. If English, English. Don\'t code-switch unless they did.',
+      'WHEN THE USER ASKS "WHAT CAN YOU DO" / "HOW DO I USE X" / "你能干啥" / "怎么使用 xgrower":',
+      '  - This is NOT a chit-chat — it is a request for a guided demo. DO NOT just describe in 2 sentences.',
+      '  - PICK a concrete first move from the catalog (usually get_workspace, list_recent_runs, or routing to /xgrower) and run it now.',
+      '  - Your reply is 3-6 sentences: tell them what you ARE doing now, what the next 2 steps look like, and end with "I\'ll start with X — say the word for the next one."',
+      '',
+      'WHEN THE USER ASKS ABOUT XGROWER / X COMMUNITY OPS / X 社区运营:',
+      '  - tool_hint = "open_landing_doctor" is wrong. Use:',
+      '      * "install xgrower" / "怎么安装" → reply with the install link (/xgrower/install) and route there.',
+      '      * "how to use xgrower" / "xgrower 怎么用" → route /xgrower (set tool_hint=open_post_roi as a no-op? NO — use needs_tools=true with a clear plan). In doubt, route /xgrower in the reply text and run get_workspace so user sees state.',
+      '      * "scan community" / "扫一下 X / Reddit" → radar_scan.',
+      '      * "draft a tweet/post" / "帮我写帖子" → draft_distribution (needs voice; if not trained, run train_voice first).',
+      '  - Always link the relevant page in the reply ([install →](/xgrower/install), [open xgrower →](/xgrower)).',
+      '',
+      'LANGUAGE: Match the user\'s language exactly (中文/English/etc). Never code-switch.',
       '',
       'TOOL NAMING — STRICT:',
-      '- The `internal` tool identifiers (snake_case, e.g. radar_scan, quick_geo_audit) are PROGRAMMATIC. NEVER write them in your reply.',
-      '- When you mention what you\'ll do, use the `display` label matching the user\'s language, OR plain natural description.',
-      '- DO write: "I\'ll run an AI-citation audit" / "我帮你跑一下 Reddit + HN 雷达扫描"',
-      '- DO NOT write: "I\'ll use the quick_geo_audit tool" / "使用 radar_scan 工具" / "雷达_audit"',
+      '- Internal snake_case identifiers (radar_scan, quick_geo_audit, …) are PROGRAMMATIC; only put them in tool_hint. NEVER in the reply text.',
+      '- In the reply, use the display label or natural English/中文.',
       '',
-      'For each user message:',
-      '1. ALWAYS write 1-3 conversational sentences acknowledging what they want. Warm, tight, NO bullet lists, NO markdown headers, NO tool identifiers.',
-      '2. Decide whether the message needs a TOOL CALL (data lookup, agent run, audit, scan, draft) or whether your conversational reply is sufficient.',
-      '3. If a tool is needed, set tool_hint to the EXACT internal snake_case name from the catalog (this field is internal — never appears in reply).',
+      'REPLY SHAPE:',
+      '  - 3-6 sentences (not 1-2). Concrete. State exactly what you\'re about to do and what they\'ll see next.',
+      '  - Include relevant deep links as markdown ([open xgrower →](/xgrower)).',
+      '  - End with a forward-leaning CTA or the next handle ("say \'send it\' to dispatch", "want me to also pull competitors?").',
+      '  - No empty acknowledgements ("好的，我可以帮你"). No paraphrasing the user. No "请告诉我更多". Just move.',
       '',
-      'Reply with ONLY a JSON object — no fences, no prose around it:',
-      '{ "reply": "<your 1-3 sentence reply in user\'s language>", "needs_tools": true|false, "tool_hint": "<internal_tool_name | omit>" }',
+      'URL DISCIPLINE — CRITICAL:',
+      '  - You may ONLY link to URLs from the ROUTE CATALOG below. NEVER invent paths like /train-voice, /audit-results, /create-ab-test, /memory, /landing-doctor.',
+      '  - If the right page is not in the catalog, write plain prose with NO markdown link instead.',
+      '  - Always use the catalog\'s exact spelling, including `?ws=<id>` query strings where shown.',
+      '  - When uncertain, the safest deep link is `/gtm/tasks/<task_id>` (only valid AFTER a tool returns a task_id — never invent task ids).',
+      '',
+      'Return ONLY a JSON object — no fences, no prose around it:',
+      '{ "reply": "<your 3-6 sentence reply in user\'s language with the plan + links + CTA>", "needs_tools": true|false, "tool_hint": "<internal_tool_name | omit>" }',
     ].join('\n'),
     ws.voice,
   )
   const user = [
     `WORKSPACE:\n${workspaceContext(ws)}`,
     '',
+    core ? `LONG-TERM MEMORY (workspace facts the agent has saved across sessions — treat as known truths):\n${core}\n` : '',
     pageContext ? `PAGE CONTEXT — what the user is looking at RIGHT NOW (use this to resolve pronouns like "this task", "这个", "my landing page"):\n${pageContext.slice(0, 2000)}\n` : '',
-    'TOOL CATALOG (internal identifiers are for tool_hint field ONLY; reply uses display labels):',
+    'TOOL CATALOG (internal identifiers go in tool_hint ONLY; reply uses display labels or natural language):',
     catalog,
     '',
-    'CHINESE INTENT → INTERNAL TOOL (use this to set tool_hint when user writes Chinese):',
+    'CHINESE INTENT → INTERNAL TOOL (use to set tool_hint when user writes Chinese):',
     synonyms,
+    '',
+    'ROUTE CATALOG — the ONLY URLs you may write in markdown links. Substitute the literal workspace id where shown; do NOT write placeholders like `<id>` to the user:',
+    routeCatalogForPrompt(ws),
+    '',
+    'EXTRA INTENT ROUTING (X / xgrower / install / community ops):',
+    '  - "xgrower" / "X 社区" / "X community" / "X 运营" → tool_hint=get_workspace, mention /xgrower in reply',
+    '  - "怎么安装 xgrower" / "install xgrower" → tool_hint=get_workspace, link [install →](/xgrower/install) in reply',
+    '  - "怎么使用 xgrower" / "how to use xgrower" → tool_hint=get_workspace, link [open xgrower →](/xgrower) AND say you\'ll run a workspace summary first',
+    '  - "扫一下 X" / "scan twitter" / "find leads on X" → tool_hint=radar_scan',
+    '  - "起草帖子" / "draft a post" / "write me a tweet" → tool_hint=draft_distribution',
     '',
     'RECENT CONVERSATION:',
     historyTranscript(history),
     '',
     `NEW USER MESSAGE:\n${message}`,
     '',
-    'Decision rules for needs_tools:',
+    'Decision rules for needs_tools (STRONG BIAS TO TRUE — pick a tool unless it\'s genuinely impossible):',
     '',
-    'TRUE (run a tool) — only when ALL of these hold:',
-    '  - User used an imperative action verb in English (audit, draft, run, scan, find, create, snapshot, refresh, generate, train, build, post, send) or in Chinese (跑, 审, 扫, 抓, 找, 生成, 起草, 训练, 发, 发布, 启动).',
-    '  - The request is specific OR maps cleanly to a default (e.g. "scan reddit" → radar_scan, "audit my page" → quick_geo_audit defaulting to workspace.url).',
-    '  - You can confidently map it via the synonym table or English verbs above.',
+    'TRUE (run a tool) — when ANY of these hold:',
+    '  - User used an imperative verb: audit, draft, run, scan, find, create, snapshot, refresh, generate, train, build, post, send, save, remember, recall, archive / 跑, 审, 扫, 抓, 找, 生成, 起草, 训练, 发, 发布, 启动, 教, 演示, 存, 记, 保存, 钉, 搜.',
+    '  - User said "save/remember/记下" or "search memory/查记忆" — this is a memory operation, not a chat. Call the appropriate memory tool.',
+    '  - MEMORY HEURISTIC: if the user message contains the word "记忆" / "memory" AND any verb (search/搜/查/找/recall/回忆/翻 to read; save/存/记/保存/钉 to write), it is ALWAYS a memory tool call — never reply with `chat`. Pick memory_search for read intents, memory_archival_insert for write intents, memory_core_update only when the user says "钉" / "pin" / "always remember".',
+    '  - User asked "what can you do" / "你有什么功能" / "how do I use X" / "怎么使用" — pick get_workspace OR a representative tool to demo capability.',
+    '  - User named a product feature (xgrower, OPChampion, GEO audit, ICP, voice, radar, …) — pick the matching tool/route.',
+    '  - There is ANY tool whose default behavior would produce useful info — pick it.',
     '',
-    'FALSE (just chat back) — for any of these:',
-    '  - Greetings ("hi", "你好", "嗨"), thank-yous ("thanks", "谢谢"), good-byes.',
-    '  - Open-ended advice ("what should I do?", "我现在该做什么", "how do I grow?", "怎么涨粉", "help me grow", "give me ideas").',
-    '  - Opinion / explanation asks ("what do you think?", "why does X work?", "为什么", "解释一下").',
-    '  - Meta-questions about the assistant ("what can you do?", "你能干啥", "how does this work?").',
-    '  - Follow-up clarifications without a new task ("really?", "are you sure?", "wait what?").',
-    '  - Ambiguous / underspecified — missing the URL, the count, the target. ASK a clarifying question in your reply (in user\'s language, using display labels for any tools you mention).',
+    'FALSE (just chat back) — ONLY for:',
+    '  - Pure greetings ("hi", "你好"), pure thanks, pure goodbyes.',
+    '  - Pure philosophical / opinion asks with no actionable angle ("do you think AI will replace marketing?").',
+    '  - The user is mid-clarification of a previous answer ("wait, what did you mean by X?"). Even then prefer tool if a tool would clarify.',
     '',
-    'IMPORTANT — DO NOT call start_playbook, run_icp_agent, or any heavy workflow tool just because the user vaguely asked for help. Those require explicit asks.',
+    'STYLE GUARDRAILS:',
+    '  - DO mention the SPECIFIC tool you\'re kicking off and what the user will see next.',
+    '  - DO write fresh sentences each turn; do NOT repeat phrasing across turns.',
+    '  - DO NOT open with "好的，我可以帮你..." / "我理解你想..." / "I understand you want..." — filler.',
+    '  - DO NOT close with ANY question that asks the user to choose between options ("请告诉我您想了解哪个", "请告诉我更多细节", "您想先看哪个", "what would you like to focus on?", "which one interests you?"). End with a single concrete CTA OR a single yes/no question tied to a specific next action ("要我接着跑 ICP 吗？", "say \'send it\' to dispatch").',
+    '  - DO NOT leak snake_case tool names (radar_scan, quick_geo_audit, …).',
+    '  - DO use BARE paths in markdown links (e.g. `/agents/radar?ws=…`) — never prepend `https://growthhunt.ai`. The scrubber will rewrite absolute URLs, but bare paths are cleaner.',
     '',
-    'BAD REPLY EXAMPLES (do NOT produce these):',
-    '  ❌ "您可以使用雷达_audit 工具来扫描"   ← made-up name, leaks identifier',
-    '  ❌ "I\'ll call quick_geo_audit for you"  ← leaks identifier',
-    '  ❌ "Try the run_icp_agent tool"          ← leaks identifier',
-    '',
-    'GOOD REPLY EXAMPLES:',
-    '  ✓ "I\'ll run an AI-citation audit on growthhunt.ai — give me a few seconds."',
-    '  ✓ "好的，我帮你跑一下 Reddit + HN 雷达扫描，几秒就好。"',
-    '  ✓ "你是想我帮你写冷邮件，还是直接帮你跑一个 ICP 定位？"',
-    '',
-    'Return JSON only.',
+    'Return JSON only — no fences, no prose around it.',
   ].join('\n')
 
-  const raw = await callAgent({ system, user, maxTokens: 400, temperature: 0.4 })
+  const raw = await callAgent({ system, user, maxTokens: 600, temperature: 0.4 })
   if (!raw) {
-    return { reply: 'Got it. Let me work on that.', needs_tools: true }
+    return { reply: 'Got it — pulling your workspace summary so I can recommend the right next move. Stand by.', needs_tools: true, tool_hint: 'get_workspace' }
   }
   const parsed = extractJson<{ reply?: unknown; needs_tools?: unknown; tool_hint?: unknown }>(raw)
   if (!parsed || typeof parsed.reply !== 'string' || !parsed.reply.trim()) {
-    return { reply: 'Got it. Let me work on that.', needs_tools: true }
+    return { reply: 'Got it — pulling your workspace summary so I can recommend the right next move. Stand by.', needs_tools: true, tool_hint: 'get_workspace' }
   }
-  // Defensive: strip any leaked snake_case tool names from the reply.
-  const cleaned = scrubToolNames(parsed.reply.slice(0, 600))
+  // Defensive: strip leaked snake_case tool names AND hallucinated URLs.
+  const cleaned = scrubFakeUrls(scrubToolNames(parsed.reply.slice(0, 800)))
   return {
     reply: cleaned,
     needs_tools: Boolean(parsed.needs_tools),

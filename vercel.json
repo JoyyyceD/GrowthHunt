@@ -39,6 +39,14 @@
     {
       "path": "/api/gtm/workflows/cron",
       "schedule": "30 8 * * *"
+    },
+    {
+      "path": "/api/viralx/cron/publish",
+      "schedule": "*/5 * * * *"
+    },
+    {
+      "path": "/api/scheduler/cron",
+      "schedule": "*/5 * * * *"
     }
   ]
 }

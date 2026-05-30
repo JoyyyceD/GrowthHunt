@@ -22,6 +22,10 @@ import { ingestSelfPosts, buildRoiDigest, persistDigest } from '@/lib/agents/pos
 import { runTrendDigest } from '@/lib/agents/trend-digest'
 import { createCampaign, ALL_PLATFORMS as LAUNCH_PLATFORMS, type LaunchPlatform } from '@/lib/agents/launch-orchestrator'
 import { runVideoCoach, type VideoScenario } from '@/lib/agents/video-coach'
+import { upsertCore, deleteCore, insertArchival, searchArchival, listCore } from './memory'
+import { unifiedSchedule } from '@/lib/social/schedule'
+import { getConnection } from '@/lib/postiz/store'
+import { listConnections as listSocialConnections } from '@/lib/social/store'
 
 export type ToolKind = 'execute' | 'route' | 'playbook' | 'answer'
 
@@ -651,6 +655,180 @@ const TOOL_SPAWN_AGENTS: OrchestratorTool = {
   },
 }
 
+// ── memory tools ──────────────────────────────────────────────────────────
+
+const TOOL_MEMORY_CORE_UPDATE: OrchestratorTool = {
+  name: 'memory_core_update',
+  description: "Write or rewrite a small piece of CORE memory — a labelled fact that stays in every future prompt for this workspace. Use sparingly, for sticky facts about the founder / product / current goal / do-not-do rules. Pass action='delete' to remove a label. Labels: founder, current_goal, do_not_do, user_preferences, or custom snake_case.",
+  params: {
+    label: { type: 'string', required: true, description: "Section label, snake_case (e.g. 'founder', 'current_goal')" },
+    content: { type: 'string', description: 'New content for that section. Required unless action=delete.' },
+    action: { type: 'string', description: "'set' (default) or 'delete'" },
+  },
+  kind: 'execute',
+  async run(p, ctx) {
+    const label = s(p.label)
+    const action = (s(p.action) || 'set').toLowerCase()
+    if (!label) return { summary: 'Memory update needs a label.' }
+    if (action === 'delete') {
+      const ok = await deleteCore(ctx.workspace.id, label)
+      return { summary: ok ? `Forgot core memory [${label}].` : `Couldn't delete [${label}].` }
+    }
+    const content = s(p.content)
+    if (!content) return { summary: `Need content to set core memory [${label}].` }
+    const row = await upsertCore(ctx.workspace.id, label, content)
+    if (!row) return { summary: `Couldn't save core memory [${label}].` }
+    return { summary: `Updated core memory [**${row.label}**]: ${row.content.slice(0, 200)}` }
+  },
+}
+
+const TOOL_MEMORY_ARCHIVAL_INSERT: OrchestratorTool = {
+  name: 'memory_archival_insert',
+  description: "Save a longer fact, insight, or decision to ARCHIVAL memory — retrievable later by semantic search. Use when you want to remember something across sessions that doesn't belong in CORE (which is small and always-on). Examples: a customer interview takeaway, a campaign result, a founder anecdote, a specific product nuance.",
+  params: {
+    content: { type: 'string', required: true, description: 'Free-form fact (≤4000 chars). Self-contained — assume the reader will see it with no other context.' },
+    tags: { type: 'array', description: 'Optional string tags for filtering (e.g. ["icp","interview"])' },
+  },
+  kind: 'execute',
+  async run(p, ctx) {
+    const content = s(p.content)
+    if (!content) return { summary: 'Archival memory needs content.' }
+    const tags = Array.isArray(p.tags) ? p.tags.map(String).slice(0, 8) : []
+    const row = await insertArchival(ctx.workspace.id, content, { source: 'agent', tags })
+    if (!row) return { summary: 'Could not save archival memory.' }
+    return { summary: `Saved to archival memory${tags.length ? ` (tags: ${tags.join(', ')})` : ''}: "${row.content.slice(0, 140)}${row.content.length > 140 ? '…' : ''}"` }
+  },
+}
+
+const TOOL_MEMORY_SEARCH: OrchestratorTool = {
+  name: 'memory_search',
+  description: "Semantic-search ARCHIVAL memory for facts/notes the agent has saved before. Use when the user references something earlier ('what did I tell you about X'), or proactively when you suspect prior context exists (e.g. before drafting outreach, search for past customer notes). Returns top-K matches with similarity scores.",
+  params: {
+    query: { type: 'string', required: true, description: 'Natural-language search query' },
+    k: { type: 'number', description: '1-10, default 5' },
+  },
+  kind: 'execute',
+  async run(p, ctx) {
+    const query = s(p.query)
+    if (!query) return { summary: 'Need a query to search memory.' }
+    const k = Math.min(10, Math.max(1, n(p.k, 5)))
+    const hits = await searchArchival(ctx.workspace.id, query, k)
+    if (hits.length === 0) {
+      const coreRows = await listCore(ctx.workspace.id)
+      const fallback = coreRows.length > 0 ? `\n\nCORE memory has: ${coreRows.map((r) => `[${r.label}]`).join(', ')}` : ''
+      return { summary: `No archival matches for "${query.slice(0, 60)}".${fallback}` }
+    }
+    const lines = hits.map((h, i) => {
+      const sim = typeof h.similarity === 'number' ? ` _(${Math.round(h.similarity * 100)}%)_` : ''
+      const tagStr = h.tags?.length ? ` · ${h.tags.join(', ')}` : ''
+      return `${i + 1}.${sim} ${h.content.slice(0, 240)}${h.content.length > 240 ? '…' : ''}${tagStr}`
+    })
+    return { summary: `Found ${hits.length} matches:\n${lines.join('\n')}` }
+  },
+}
+
+// ── Postiz scheduling ────────────────────────────────────────────────────--
+
+function hasPostiz(_ws: Workspace): boolean {
+  // Connection lives in a separate table; we can't check it synchronously here.
+  // Keep the tool always-visible so the run() can give a helpful "connect first"
+  // message rather than the tool being silently hidden.
+  return true
+}
+
+const TOOL_SCHEDULE_POST: OrchestratorTool = {
+  name: 'schedule_post',
+  description: "Schedule or immediately publish a social post across the user's connected channels via Postiz. Use when the user says 'post this', 'schedule this for 9am', '排期', '定时发', 'publish to LinkedIn'. Provide the final copy in `content`. Defaults to all connected channels if no platforms given; for a future time pass `when` (ISO or natural like 'tomorrow 9am' already resolved to ISO).",
+  params: {
+    content: { type: 'string', required: true, description: 'The exact post text to publish.' },
+    platforms: { type: 'array', description: "Platform keys to target, e.g. ['x','linkedin','reddit']. Omit = all connected channels." },
+    when: { type: 'string', description: 'ISO 8601 timestamp for scheduling. Omit for post-now.' },
+  },
+  kind: 'execute',
+  enabledFor: hasPostiz,
+  async run(p, ctx) {
+    const content = s(p.content)
+    if (!content) return { summary: 'Give me the post text to schedule.' }
+
+    // Have we got ANY way to publish? (any native connection OR a Postiz one)
+    const [natives, postiz] = await Promise.all([
+      listSocialConnections(ctx.workspace.id),
+      getConnection(ctx.workspace.id),
+    ])
+    if (natives.length === 0 && !postiz) {
+      return {
+        summary: 'No social accounts connected yet. Open the Scheduler to connect X / LinkedIn / Reddit (or paste a Postiz API key for the long tail).',
+        routeTo: `/agents/scheduler?ws=${ctx.workspace.id}`,
+        followups: ['Connect X', 'Connect LinkedIn'],
+      }
+    }
+
+    const platforms = Array.isArray(p.platforms) ? p.platforms.map(String).filter(Boolean) : undefined
+    const when = s(p.when) || null
+    const result = await unifiedSchedule({
+      workspaceId: ctx.workspace.id,
+      content,
+      platforms,
+      when,
+      source: 'chat',
+      conversationId: ctx.conversationId,
+      taskId: ctx.turnTaskId,
+    })
+    const link = `/agents/scheduler?ws=${ctx.workspace.id}`
+    if (!result.ok) {
+      return { summary: `${result.summary}\n\n[Open Scheduler →](${link})`, routeTo: result.notConnected ? link : undefined }
+    }
+    return {
+      summary: `${result.summary}\n\n[Open Scheduler →](${link})`,
+      data: { created: result.created.length, errors: result.errors.length },
+      ui: {
+        kind: 'scheduled_post',
+        props: {
+          summary: result.summary,
+          posts: result.created.map((c) => ({ platform: c.platform, content: c.content.slice(0, 280), scheduled_for: c.scheduled_for, status: c.status })),
+          scheduler_url: link,
+        },
+      },
+      followups: ['Show my scheduled queue', 'Schedule another'],
+    }
+  },
+}
+
+const TOOL_LIST_SCHEDULED: OrchestratorTool = {
+  name: 'list_scheduled_posts',
+  description: "Show what's queued or recently posted via Postiz. Use when the user asks 'what's scheduled', '我排了哪些帖子', 'show my queue'.",
+  params: { limit: { type: 'number', description: 'Default 10' } },
+  kind: 'execute',
+  enabledFor: hasPostiz,
+  async run(p, ctx) {
+    const { listScheduledPosts } = await import('@/lib/postiz/store')
+    const limit = Math.min(30, Math.max(1, n(p.limit, 10)))
+    const posts = (await listScheduledPosts(ctx.workspace.id, limit))
+    if (posts.length === 0) {
+      return { summary: 'Nothing scheduled yet. Tell me what to post (and when) and I\'ll queue it.', routeTo: `/agents/scheduler?ws=${ctx.workspace.id}` }
+    }
+    const lines = posts.slice(0, limit).map((p2) => {
+      const glyph = p2.status === 'posted' ? '✓' : p2.status === 'failed' ? '✗' : p2.status === 'scheduled' ? '◷' : '·'
+      const when = p2.scheduled_for ? new Date(p2.scheduled_for).toLocaleString() : 'now'
+      return `${glyph} **${p2.platform}** · ${when} — ${p2.content.slice(0, 80)}${p2.content.length > 80 ? '…' : ''}`
+    })
+    return {
+      summary: `${posts.length} post(s):\n${lines.join('\n')}\n\n[Open Scheduler →](/agents/scheduler?ws=${ctx.workspace.id})`,
+      followups: ['Schedule a new post'],
+    }
+  },
+}
+
+const TOOL_ROUTE_SCHEDULER: OrchestratorTool = {
+  name: 'open_scheduler',
+  description: 'Send the user to the Scheduler page (connect Postiz, compose, queue).',
+  params: {},
+  kind: 'route',
+  async run(_p, ctx) {
+    return { summary: 'Opening the Scheduler…', routeTo: `/agents/scheduler?ws=${ctx.workspace.id}` }
+  },
+}
+
 const TOOL_ROUTE_POST_ROI: OrchestratorTool = {
   name: 'open_post_roi',
   description: 'Send the user to the Post ROI page.',
@@ -685,6 +863,12 @@ export const TOOLS: OrchestratorTool[] = [
   TOOL_ROUTE_LANDING,
   TOOL_ROUTE_POST_ROI,
   TOOL_START_PLAYBOOK,
+  TOOL_MEMORY_CORE_UPDATE,
+  TOOL_MEMORY_ARCHIVAL_INSERT,
+  TOOL_MEMORY_SEARCH,
+  TOOL_SCHEDULE_POST,
+  TOOL_LIST_SCHEDULED,
+  TOOL_ROUTE_SCHEDULER,
   TOOL_ANSWER_FALLBACK,
 ]
 

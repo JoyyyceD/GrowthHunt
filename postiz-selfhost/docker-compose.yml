@@ -1,0 +1,61 @@
+# Self-hosted Postiz for GrowthHunt — open-source code on YOUR infra.
+#
+# Architecture:
+#   - Postiz app (this compose) runs on a cloud host with clean egress
+#     (Railway / Fly / a VPS). Do NOT run the X-connect step from a
+#     network that blocks api.x.com — the container can't reach X there.
+#   - Database = YOUR own Supabase Postgres (set DATABASE_URL in .env to the
+#     Supabase "Direct connection" string; use a DEDICATED Supabase project,
+#     not the GrowthHunt one, so Postiz's Prisma migrations don't collide).
+#   - Redis = local container here (or swap for Upstash via REDIS_URL).
+#
+# Pinned to v2.11.3 = the last release BEFORE Temporal became mandatory, so
+# this stays a simple app + redis + (external) Postgres stack.
+#
+# Usage:
+#   cp .env.example .env   # fill in the values
+#   docker compose up -d
+#   # then open MAIN_URL, register, connect your X account, and copy the
+#   # API key from Settings -> Developers -> Public API into GrowthHunt.
+
+services:
+  postiz:
+    image: ghcr.io/gitroomhq/postiz-app:v2.11.3
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      # URLs — override host/domain in .env via PUBLIC_URL.
+      MAIN_URL: ${PUBLIC_URL}
+      FRONTEND_URL: ${PUBLIC_URL}
+      NEXT_PUBLIC_BACKEND_URL: ${PUBLIC_URL}/api
+      BACKEND_INTERNAL_URL: http://localhost:3000
+      # DB = your Supabase Postgres (from .env)
+      DATABASE_URL: ${DATABASE_URL}
+      # Redis = the local container below
+      REDIS_URL: redis://redis:6379
+      JWT_SECRET: ${JWT_SECRET}
+      # Storage
+      STORAGE_PROVIDER: local
+      UPLOAD_DIRECTORY: /uploads
+      NEXT_PUBLIC_UPLOAD_DIRECTORY: /uploads
+      # X / Twitter OAuth — from YOUR X developer app
+      X_API_KEY: ${X_API_KEY}
+      X_API_SECRET: ${X_API_SECRET}
+    ports:
+      - "4007:4007"
+    volumes:
+      - postiz-uploads:/uploads
+      - postiz-config:/config
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - postiz-redis:/data
+
+volumes:
+  postiz-uploads:
+  postiz-config:
+  postiz-redis:

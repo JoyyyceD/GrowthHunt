@@ -438,9 +438,9 @@ function MarkdownBody({ content }: { content: string }) {
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
-          a: (props) => (
-            <a {...props} target={(props.href || '').startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" />
-          ),
+          // Every link in an agent reply opens in a new tab — clicking a
+          // deep link should never blow away the live chat session.
+          a: (props) => <a {...props} target="_blank" rel="noopener noreferrer" />,
         }}
       >
         {content}
@@ -556,7 +556,7 @@ function Bubble({ message, compact, steps, live }: { message: GtmMessage; compac
             <summary style={{ cursor: 'pointer', fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ink-faint)', textTransform: 'uppercase', letterSpacing: '0.06em', userSelect: 'none', listStyle: 'none' }}>
               {live ? '◉' : '▸'} {traceSteps.length} step{traceSteps.length === 1 ? '' : 's'}
               {message.task_id && (
-                <a href={`/gtm/tasks/${message.task_id}/trace`} onClick={(e) => e.stopPropagation()} style={{ marginLeft: 10, color: 'var(--ink-faint)', textDecoration: 'underline' }}>full trace →</a>
+                <a href={`/gtm/tasks/${message.task_id}/trace`} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} style={{ marginLeft: 10, color: 'var(--ink-faint)', textDecoration: 'underline' }}>full trace →</a>
               )}
             </summary>
             <div style={{ marginTop: 8, display: 'flex', flexDirection: 'column', gap: 8, paddingLeft: 10, borderLeft: '2px solid var(--rule)' }}>
@@ -570,7 +570,7 @@ function Bubble({ message, compact, steps, live }: { message: GtmMessage; compac
                     <span style={{ color: s.action_kind === 'error' ? '#c0392b' : 'var(--ink)' }}>{s.tool_name ?? s.action_kind}</span>
                     {s.observation && <span style={{ color: 'var(--ink-faint)' }}>→ {truncate(s.observation, 140)}</span>}
                     {s.task_id && (
-                      <a href={`/gtm/tasks/${s.task_id}`} style={{ marginLeft: 4, color: 'var(--accent)' }}>view task →</a>
+                      <a href={`/gtm/tasks/${s.task_id}`} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 4, color: 'var(--accent)' }}>view task →</a>
                     )}
                   </div>
                 </div>
@@ -582,7 +582,7 @@ function Bubble({ message, compact, steps, live }: { message: GtmMessage; compac
           <div style={{ marginTop: 6, fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ink-faint)' }}>
             via <em>{message.tool_call.name}</em>
             {message.task_id && (
-              <a href={`/gtm/tasks/${message.task_id}`} style={{ marginLeft: 8, color: 'var(--ink-faint)' }}>view task →</a>
+              <a href={`/gtm/tasks/${message.task_id}`} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8, color: 'var(--ink-faint)' }}>view task →</a>
             )}
           </div>
         )}
