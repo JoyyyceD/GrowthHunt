@@ -21,6 +21,8 @@ export interface UnifiedScheduleArgs {
   source?: string
   conversationId?: string | null
   taskId?: string | null
+  /** Per-platform overrides: { reddit: { subreddit, title, link, flairId }, linkedin: { asOrganizationUrn } } */
+  options?: Record<string, Record<string, unknown>>
 }
 
 export interface UnifiedScheduleResult {
@@ -41,7 +43,7 @@ function isImmediate(when?: string | null): boolean {
 }
 
 /** Try to publish immediately via the right path per platform (X = BYO OAuth 1.0a, others = native OAuth 2.0). */
-async function publishNow(workspaceId: string, platform: SocialPlatform, content: string): Promise<{ ok: true; externalId: string; url?: string } | { ok: false; error: string }> {
+async function publishNow(workspaceId: string, platform: SocialPlatform, content: string, options?: Record<string, unknown>): Promise<{ ok: true; externalId: string; url?: string } | { ok: false; error: string }> {
   if (platform === 'x') {
     const lookup = await getXKeysForWorkspace(workspaceId)
     if (!lookup) return { ok: false, error: 'No X API keys for this workspace — paste them in the Scheduler.' }
@@ -58,7 +60,7 @@ async function publishNow(workspaceId: string, platform: SocialPlatform, content
   const conn = await getFirstConnection(workspaceId, platform)
   if (!conn) return { ok: false, error: `no ${platform} account connected` }
   try {
-    const res = await adapter.publish({ conn, content })
+    const res = await adapter.publish({ conn, content, options: options as Parameters<typeof adapter.publish>[0]['options'] })
     return { ok: true, externalId: res.externalId, url: res.url }
   } catch (e) {
     return { ok: false, error: (e as Error).message }
@@ -110,8 +112,9 @@ export async function unifiedSchedule(args: UnifiedScheduleArgs): Promise<Unifie
       if (!conn) continue
       integrationId = conn.id
     }
+    const platformOptions = args.options?.[platform] || {}
     if (immediate) {
-      const r = await publishNow(args.workspaceId, platform, args.content)
+      const r = await publishNow(args.workspaceId, platform, args.content, platformOptions)
       const status = r.ok ? 'posted' : 'failed'
       const externalId = r.ok ? r.externalId : null
       const error = r.ok ? null : r.error
@@ -132,6 +135,7 @@ export async function unifiedSchedule(args: UnifiedScheduleArgs): Promise<Unifie
           source: args.source ?? 'chat',
           conversation_id: args.conversationId ?? null,
           task_id: args.taskId ?? null,
+          meta: platformOptions,
         })
         .select('*')
         .single()
@@ -153,6 +157,7 @@ export async function unifiedSchedule(args: UnifiedScheduleArgs): Promise<Unifie
           source: args.source ?? 'chat',
           conversation_id: args.conversationId ?? null,
           task_id: args.taskId ?? null,
+          meta: platformOptions,
         })
         .select('*')
         .single()

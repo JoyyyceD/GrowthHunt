@@ -35,7 +35,10 @@ interface DueNativeRow {
   integration_id: string         // social_connections.id
   retry_count: number | null
   scheduled_for: string | null
+  meta: Record<string, unknown> | null
 }
+
+const REDDIT_MIN_GAP_MS = 1100   // Reddit rate-limit: 1 req/s
 
 async function refreshExpiring(): Promise<{ refreshed: number; failed: number }> {
   const list = await findExpiring(10)
@@ -70,7 +73,7 @@ async function publishDueNative(): Promise<{ published: number; failed: number; 
   const nowIso = new Date().toISOString()
   const { data: due } = await admin
     .from('gtm_scheduled_posts')
-    .select('id, workspace_id, platform, content, integration_id, retry_count, scheduled_for')
+    .select('id, workspace_id, platform, content, integration_id, retry_count, scheduled_for, meta')
     .eq('provider', 'native')
     .eq('status', 'scheduled')
     .not('scheduled_for', 'is', null)
@@ -132,7 +135,8 @@ async function publishDueNative(): Promise<{ published: number; failed: number; 
       continue
     }
     try {
-      const res = await adapter.publish({ conn: conn as Parameters<typeof adapter.publish>[0]['conn'], content: row.content })
+      const opts = (row.meta as Parameters<typeof adapter.publish>[0]['options']) ?? undefined
+      const res = await adapter.publish({ conn: conn as Parameters<typeof adapter.publish>[0]['conn'], content: row.content, options: opts })
       await admin.from('gtm_scheduled_posts').update({
         status: 'posted',
         external_post_id: res.externalId,
@@ -155,7 +159,8 @@ async function publishDueNative(): Promise<{ published: number; failed: number; 
       failed++
       details.push({ id: row.id, status: 'failed', error: msg.slice(0, 200) })
     }
-    if (GAP_MS > 0) await new Promise((r) => setTimeout(r, GAP_MS))
+    const gap = row.platform === 'reddit' ? REDDIT_MIN_GAP_MS : GAP_MS
+    if (gap > 0) await new Promise((r) => setTimeout(r, gap))
   }
 
   return { published, failed, details }

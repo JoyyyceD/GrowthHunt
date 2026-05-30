@@ -42,6 +42,19 @@ export interface PublishResult {
   url?: string                         // permalink if derivable
 }
 
+/** Per-publish, platform-specific overrides — adapters interpret what they need. */
+export interface PublishOptions {
+  // Reddit
+  subreddit?: string                   // 'AskMarketing' (no r/ prefix)
+  title?: string                       // explicit title for link/self
+  link?: string                        // URL → kind=link self-post
+  flairId?: string
+  // LinkedIn
+  asOrganizationUrn?: string           // urn:li:organization:<id> → post as Page
+  // Future:
+  mediaUrls?: string[]
+}
+
 /** Per-platform OAuth app credentials, read from env. */
 export interface PlatformAppCreds {
   clientId: string
@@ -67,7 +80,7 @@ export interface SocialAdapter {
   refresh?(args: { creds: PlatformAppCreds; refreshToken: string }): Promise<OAuthTokenResult>
 
   /** Publish a post using a live connection. Throws on failure. */
-  publish(args: { conn: SocialConnection; content: string; mediaUrls?: string[] }): Promise<PublishResult>
+  publish(args: { conn: SocialConnection; content: string; mediaUrls?: string[]; options?: PublishOptions }): Promise<PublishResult>
 
   /** Whether this platform's connect flow uses PKCE (code_verifier). */
   usesPkce?: boolean
