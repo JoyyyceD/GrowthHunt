@@ -96,6 +96,8 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
   const [selectedPlatforms, setSelectedPlatforms] = useState<string[]>([])
   const [when, setWhen] = useState('')
   const [composing, setComposing] = useState(false)
+  // edit-in-place: when set, Compose acts on this scheduled post instead of creating new
+  const [editingId, setEditingId] = useState<string | null>(null)
 
   // Surface connect-callback result from URL.
   useEffect(() => {
@@ -278,6 +280,83 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
     } finally { setComposing(false) }
   }
 
+  function discardEdit() {
+    setEditingId(null)
+    setContent('')
+    setSelectedPlatforms([])
+    setWhen('')
+  }
+
+  function startEdit(post: ScheduledPost) {
+    setEditingId(post.id)
+    setContent(post.content)
+    setSelectedPlatforms([post.platform])
+    // Convert ISO to <input type=datetime-local> value (local TZ, no seconds)
+    if (post.scheduled_for) {
+      const d = new Date(post.scheduled_for)
+      const pad = (n: number) => String(n).padStart(2, '0')
+      setWhen(`${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`)
+    } else {
+      setWhen('')
+    }
+    // Scroll Compose into view (we're inside the page flow)
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  async function saveEdit() {
+    if (!editingId) return
+    if (!content.trim()) { toast.error('Content cannot be empty'); return }
+    if (!when) { toast.error('Pick a date/time'); return }
+    setComposing(true)
+    try {
+      const res = await fetch(`/api/social/posts/${editingId}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          content: content.trim(),
+          scheduled_for: new Date(when).toISOString(),
+        }),
+      })
+      const j = await res.json()
+      if (!res.ok) { toast.error(j.error || 'Save failed'); return }
+      toast.success('Scheduled post updated')
+      discardEdit()
+      await refreshPosts()
+    } finally { setComposing(false) }
+  }
+
+  async function cancelPost(id: string) {
+    if (!confirm('Cancel this scheduled post?')) return
+    const optimistic = posts.find((p) => p.id === id)
+    setPosts((s) => s.map((p) => (p.id === id ? { ...p, status: 'canceled' } : p)))
+    try {
+      const res = await fetch(`/api/social/posts/${id}`, { method: 'DELETE' })
+      if (!res.ok) {
+        const j = await res.json().catch(() => ({}))
+        toast.error(j.error || 'Cancel failed')
+        if (optimistic) setPosts((s) => s.map((p) => (p.id === id ? optimistic : p)))
+        return
+      }
+      toast.success('Canceled')
+      if (editingId === id) discardEdit()
+    } catch (e) {
+      toast.error((e as Error).message)
+      if (optimistic) setPosts((s) => s.map((p) => (p.id === id ? optimistic : p)))
+    }
+  }
+
+  async function retryPost(id: string) {
+    try {
+      const res = await fetch(`/api/social/posts/${id}/retry`, { method: 'POST' })
+      const j = await res.json()
+      if (!res.ok) { toast.error(j.error || 'Retry failed'); return }
+      toast.success('Requeued — next cron run will publish it')
+      await refreshPosts()
+    } catch (e) {
+      toast.error((e as Error).message)
+    }
+  }
+
   const hasAnyConnection = xByo.connected || native.length > 0 || postizConnected
 
   return (
@@ -404,8 +483,15 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
 
       {/* ── Compose ── */}
       {hasAnyConnection && (
-        <div style={CARD}>
-          <div style={LABEL}>Compose</div>
+        <div style={{ ...CARD, borderColor: editingId ? 'var(--accent)' : 'var(--rule)' }}>
+          <div style={{ ...LABEL, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <span>{editingId ? 'Editing scheduled post' : 'Compose'}</span>
+            {editingId && (
+              <button onClick={discardEdit} style={{ ...BTN_GHOST, padding: '3px 10px', fontSize: 11, textTransform: 'none', letterSpacing: 0 }}>
+                Discard
+              </button>
+            )}
+          </div>
           <textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
@@ -418,13 +504,18 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
               {availablePlatforms.map((p) => {
                 const m = meta(p)
                 const on = selectedPlatforms.includes(p)
+                const locked = !!editingId
                 return (
-                  <button key={p} onClick={() => togglePlatform(p)}
+                  <button key={p} onClick={() => !locked && togglePlatform(p)}
+                    disabled={locked && !on}
+                    title={locked ? "Platform can't be changed when editing — discard and recompose to switch." : ''}
                     style={{
                       display: 'flex', alignItems: 'center', gap: 6, padding: '6px 11px', borderRadius: 999,
                       border: `1px solid ${on ? m.color : 'var(--rule)'}`,
                       background: on ? m.color : 'transparent',
-                      color: on ? '#fff' : 'var(--ink-dim)', fontSize: 12, cursor: 'pointer',
+                      color: on ? '#fff' : 'var(--ink-dim)', fontSize: 12,
+                      cursor: locked && !on ? 'not-allowed' : 'pointer',
+                      opacity: locked && !on ? 0.4 : 1,
                     }}>
                     <span style={{ width: 6, height: 6, borderRadius: '50%', background: on ? '#fff' : m.color }} />
                     {m.label}
@@ -445,12 +536,20 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
               onChange={(e) => setWhen(e.target.value)}
               style={{ ...INPUT, width: 'auto' }}
             />
-            <button style={{ ...BTN, opacity: composing ? 0.6 : 1 }} disabled={composing} onClick={() => submit(false)}>
-              {composing ? 'Scheduling…' : 'Schedule'}
-            </button>
-            <button style={{ ...BTN_GHOST, opacity: composing ? 0.6 : 1 }} disabled={composing} onClick={() => submit(true)}>
-              Post now
-            </button>
+            {editingId ? (
+              <button style={{ ...BTN, opacity: composing ? 0.6 : 1 }} disabled={composing} onClick={saveEdit}>
+                {composing ? 'Saving…' : 'Save changes'}
+              </button>
+            ) : (
+              <>
+                <button style={{ ...BTN, opacity: composing ? 0.6 : 1 }} disabled={composing} onClick={() => submit(false)}>
+                  {composing ? 'Scheduling…' : 'Schedule'}
+                </button>
+                <button style={{ ...BTN_GHOST, opacity: composing ? 0.6 : 1 }} disabled={composing} onClick={() => submit(true)}>
+                  Post now
+                </button>
+              </>
+            )}
           </div>
         </div>
       )}
@@ -462,7 +561,15 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
           <p style={{ fontSize: 13, color: 'var(--ink-faint)', margin: 0 }}>Nothing scheduled yet.</p>
         ) : (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            {queued.map((p) => <PostRow key={p.id} post={p} />)}
+            {queued.map((p) => (
+              <PostRow
+                key={p.id}
+                post={p}
+                onEdit={() => startEdit(p)}
+                onCancel={() => cancelPost(p.id)}
+                isEditing={editingId === p.id}
+              />
+            ))}
           </div>
         )}
       </div>
@@ -472,7 +579,13 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
         <div style={CARD}>
           <div style={LABEL}>Recent ({history.length})</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            {history.slice(0, 30).map((p) => <PostRow key={p.id} post={p} />)}
+            {history.slice(0, 30).map((p) => (
+              <PostRow
+                key={p.id}
+                post={p}
+                onRetry={p.status === 'failed' ? () => retryPost(p.id) : undefined}
+              />
+            ))}
           </div>
         </div>
       )}
@@ -529,20 +642,38 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
   )
 }
 
-function PostRow({ post }: { post: ScheduledPost }) {
+function PostRow({ post, onEdit, onCancel, onRetry, isEditing }: {
+  post: ScheduledPost
+  onEdit?: () => void
+  onCancel?: () => void
+  onRetry?: () => void
+  isEditing?: boolean
+}) {
   const m = meta(post.platform)
+  const actionBtn: React.CSSProperties = {
+    padding: '3px 9px', fontSize: 11, borderRadius: 6, border: '1px solid var(--rule)',
+    background: 'transparent', color: 'var(--ink-dim)', cursor: 'pointer',
+  }
   return (
-    <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', padding: '9px 11px', border: '1px solid var(--rule)', borderRadius: 8 }}>
+    <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', padding: '9px 11px', border: `1px solid ${isEditing ? 'var(--accent)' : 'var(--rule)'}`, borderRadius: 8, background: isEditing ? 'var(--bg)' : 'transparent' }}>
       <span style={{ width: 8, height: 8, borderRadius: '50%', background: m.color, marginTop: 6, flexShrink: 0 }} />
       <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{ display: 'flex', gap: 8, alignItems: 'baseline', marginBottom: 3, flexWrap: 'wrap' }}>
           <span style={{ fontWeight: 600, fontSize: 12.5 }}>{m.label}</span>
           <span suppressHydrationWarning style={{ fontSize: 11, color: 'var(--ink-faint)' }}>{fmt(post.scheduled_for)}</span>
           <span style={{ fontSize: 10.5, color: statusColor(post.status), textTransform: 'uppercase', letterSpacing: '0.04em' }}>{post.status}</span>
+          {isEditing && <span style={{ fontSize: 10.5, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>· editing above</span>}
         </div>
         <div style={{ fontSize: 12.5, color: 'var(--ink-dim)', lineHeight: 1.45, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>{post.content}</div>
         {post.error && <div style={{ fontSize: 11.5, color: '#c0392b', marginTop: 4 }}>⚠ {post.error}</div>}
       </div>
+      {(onEdit || onCancel || onRetry) && (
+        <div style={{ display: 'flex', gap: 6, alignSelf: 'center', flexShrink: 0 }}>
+          {onRetry && <button onClick={onRetry} style={actionBtn} title="Requeue for next cron run">↻ Retry</button>}
+          {onEdit && <button onClick={onEdit} style={actionBtn} disabled={isEditing} title="Edit content or time">✎ Edit</button>}
+          {onCancel && <button onClick={onCancel} style={{ ...actionBtn, color: '#c0392b' }} title="Cancel this scheduled post">× Cancel</button>}
+        </div>
+      )}
     </div>
   )
 }
