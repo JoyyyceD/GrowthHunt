@@ -4,16 +4,40 @@
     "name": "Cluely",
     "legalName": "Cluely Inc",
     "tagline": "The canonical founder-source E1 case in our case set — and the first standout where controversy capitalization reversed against the founder's own credibility",
-    "summary": "Cluely is the case where the founder's persona is the controversy engine. Where Artisan rented a billboard and let the public yell at the billboard, Cluely's 21-year-old CEO Roy Lee made himself the billboard — getting suspended by Columbia, posting the Dean's Discipline Hearing documents publicly, filming himself using AI to cheat on a real Amazon interview, then starring in a launch video where he uses Cluely to lie to a blind date who storms out. Ten weeks from public launch (April 20, 2025) to a $15M Series A led by a16z (June 20, 2025) at roughly $120M post-money. By July, Lee was telling TechCrunch that ARR had doubled to $7M in a week. Eight months later, in March 2026, Lee publicly retracted the $7M figure as a fabrication — the real number per his own Stripe screenshots was about $5.2M, a 35% gap — making Cluely the first standout in our case set where E1 controversy capitalization reversed flow and attacked the founder's own credibility. The reusable lesson: founder-source E1 has no scaling ceiling but no portability either. Artisan's billboards survive a CEO change; Cluely cannot survive a Roy Lee credibility failure. The B1 / B3 / C1 / E1 / E2 stack worked for the first ten weeks. The next twenty-four months will decide whether founder-source controversy is a reusable thesis or a single-founder accident.",
+    "summary": "Cluely is the case set's first E1 reversal flowing against the founder's own credibility. Roy Lee built InterviewCoder in January 2025, was suspended from Columbia in March, and rebranded as Cluely in April. a16z led a $15M Series A in June alongside a co-branded podcast that legitimized 'controversy-as-thesis' as an investment category. The $7M ARR Lee posted in July 2025 was retracted in March 2026; Stripe-verified ARR was $5.2M. The retraction is the structural pivot.",
     "founded": "2025-04-20",
-    "founders": ["Chungin (Roy) Lee", "Neel Shanmugam", "Alex Chen"],
+    "founders": [
+      "Chungin (Roy) Lee",
+      "Neel Shanmugam",
+      "Alex Chen"
+    ],
     "seriesNumber": 28
   },
   "phases": [
-    {"start": "2025-01", "end": "2025-04", "name": "Interview Coder + Columbia suspension", "color": "#fef3c7"},
-    {"start": "2025-04", "end": "2025-07", "name": "Cluely launch + a16z Series A in 10 weeks", "color": "#fce7f3"},
-    {"start": "2025-07", "end": "2025-12", "name": "Controversy waves + narrative retreat", "color": "#dbeafe"},
-    {"start": "2026-01", "end": "2026-06", "name": "ARR retraction + credibility reversal", "color": "#fee2e2"}
+    {
+      "start": "2025-01",
+      "end": "2025-04",
+      "name": "Interview Coder + Columbia suspension",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2025-04",
+      "end": "2025-07",
+      "name": "Cluely launch + a16z Series A in 10 weeks",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2025-07",
+      "end": "2025-12",
+      "name": "Controversy waves + narrative retreat",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2026-01",
+      "end": "2026-06",
+      "name": "ARR retraction + credibility reversal",
+      "color": "#fee2e2"
+    }
   ],
   "events": [
     {
@@ -179,12 +203,34 @@
     }
   ],
   "arr": [
-    {"date": "2025-04-21", "value": 3000000, "source": "Roy Lee via TechCrunch (official-claim, treat skeptically given the later retraction)", "confidence": "estimate"},
-    {"date": "2025-06-30", "value": 5200000, "source": "Roy Lee Stripe screenshots disclosed in March 2026 retraction", "confidence": "official"},
-    {"date": "2025-07-03", "value": 7000000, "source": "Roy Lee to TechCrunch (RETRACTED March 2026 as fabricated)", "confidence": "estimate", "round": "official-claim — retracted"}
+    {
+      "date": "2025-04-21",
+      "value": 3000000,
+      "source": "Roy Lee via TechCrunch (official-claim, treat skeptically given the later retraction)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-06-30",
+      "value": 5200000,
+      "source": "Roy Lee Stripe screenshots disclosed in March 2026 retraction",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-07-03",
+      "value": 7000000,
+      "source": "Roy Lee to TechCrunch (RETRACTED March 2026 as fabricated)",
+      "confidence": "estimate",
+      "round": "official-claim — retracted"
+    }
   ],
   "valuation": [
-    {"date": "2025-06-20", "value": 120000000, "round": "Series A (est.)", "source": "Two non-participating investors via TechCrunch; a16z declined to confirm", "confidence": "estimate"}
+    {
+      "date": "2025-06-20",
+      "value": 120000000,
+      "round": "Series A (est.)",
+      "source": "Two non-participating investors via TechCrunch; a16z declined to confirm",
+      "confidence": "estimate"
+    }
   ],
   "platforms": [
     {

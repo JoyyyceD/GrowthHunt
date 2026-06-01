@@ -4,7 +4,7 @@
     "name": "Suno",
     "legalName": "Suno Inc.",
     "tagline": "四个 Kensho ML 工程师，把一场大唱片公司的官司变成 17 个月 4.9 倍估值跃升",
-    "summary": "Suno 由四个前 Kensho ML 工程师在 2022 年于 Cambridge, MA 创立——四个人都是业余音乐人。他们的第一个开源项目 Bark（2023 年 4 月）是首个基于 transformer 的文本到音频模型，一个月内拿到 19K GitHub stars。2023 年 12 月，他们带着 Microsoft Copilot 集成 + 首日 $10/$30 定价正式出 stealth。V3 在 2024 年 3 月病毒式扩散。2024 年 6 月 RIAA 提起版权诉讼——Suno 把这场官司反向运营成「创作者权利 vs 守旧产业」的叙事，把 Timbaland、Karpathy 和整个 AI 顾问阵容拉到自己一边。17 个月后，Warner Music 和解、把 Songkick 卖给 Suno，C 轮以 $2.45B 估值收官（Sacra 推算 ARR $200M）。到 2026 年 2 月，Mikey Shulman 披露 2M 付费订阅 + $300M ARR。",
+    "summary": "Suno 是案例库里最强的「法律扰动反转」案例。四名 Kensho ML 工程师 2022 年创立 Suno，2023 年 12 月嵌入 Microsoft Copilot，次日上线 $10/$30 定价。2024 年 3 月 V3 病毒爆发；5 月 B 轮关 1.25 亿美元；6 月 RIAA 提告。Suno 用 38 天把官司重构为合理使用哲学之争。17 个月后：估值 4.9 倍，Warner 和解，Suno 反向收购 Warner 旗下 Songkick。2026 年 2 月创始人披露 ARR 3 亿美元。",
     "founded": "2022-06-01",
     "founders": [
       "Mikey Shulman",

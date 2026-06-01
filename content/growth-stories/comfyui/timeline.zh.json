@@ -3,8 +3,8 @@
     "slug": "comfyui",
     "name": "ComfyUI",
     "legalName": "Comfy Org Inc.",
-    "tagline": "一位匿名的 Quebec C++ 程序员为 Stable Diffusion 写了节点式 UI，保持身份隐匿 37 个月，拒绝当 CEO，借开源视觉 AI 模型释放浪潮拿到 5 亿美元估值——案例库里第一个被刻意空出来的「创始人即 IP」位置",
-    "summary": "ComfyUI 把 Hugging Face 那种「开源即底层」的玩法又往前推了一步：创始人匿名了 37 个月（2023 年 1 月 → 2026 年 2 月），商业实体晚于代码 17 个月才出现，Comfy Org 成立时创始人拒绝当 CEO，整个项目在完全没有「创始人即 IP」投入的情况下复利成长。底层是一套协议：每一张 ComfyUI 生成的 PNG 文件都在元数据里嵌入了完整工作流 JSON，所以每一次在社交媒体上分享都是一次可运行的产品分发事件。社区做出了 demo 语法——Scott Detweiler 的「我在 Stability 内部用的工作流」SDXL 视频、Civitai 上的 Sytan SDXL 工作流、Olivio Sarikas 的 YouTube 教程——这些都不是创始人做的。上游模型实验室开始主动找 ComfyUI 做 day-1 集成：SDXL（2023 年 7 月）、Stable Video Diffusion（2023 年 11 月，第 3 天支持）、Flux（2024 年 8 月，BFL 在发布博客里明确写了「day-1 integration for ComfyUI」），之后 Hunyuan、Wan、Mochi、LTX-Video 接连跟上。到 2026 年 4 月 Craft 领投的 5 亿美元投后 B 轮，ComfyUI 已经有 400 万 + 用户、15 万 + 日下载、6 万 + 社区节点、5.7 万人的 Discord，以及 Amazon Studios、Apple、Autodesk、Netflix、Nike、Ubisoft、Tencent 的客户 logo 墙——而它从来没有建过那个其他案例库公司视为规模化必修的「创始人即 IP」层。",
+    "tagline": "一位匿名魁北克程序员匿名 37 个月，拒绝 CEO 职位，乘开源视觉 AI 浪潮做到 5 亿美元估值。",
+    "summary": "ComfyUI 是案例库里第一个主动放弃「创始人即 IP」路径的案例。创始人匿名 37 个月，让项目独立累积——开源工作流文件把整个产品作为可运行元数据携带；社区写出 demo 语法；上游模型厂商（SDXL / Flux / Hunyuan）把 day-1 集成路由到 ComfyUI。2026 年 4 月 Craft 领投的 B 轮估值 5 亿美元时，ComfyUI 已有 400 万+用户，以及 Amazon Studios / Apple / Netflix / 腾讯作为企业客户。",
     "founded": "2023-01",
     "founders": [
       "comfyanonymous (Yannik Marek)",
@@ -13,10 +13,30 @@
     "seriesNumber": 26
   },
   "phases": [
-    {"start": "2022-10", "end": "2023-06", "name": "匿名开源底层期", "color": "#fef3c7"},
-    {"start": "2023-06", "end": "2024-06", "name": "Stability AI 间隙期", "color": "#dbeafe"},
-    {"start": "2024-06", "end": "2025-09", "name": "Comfy Org + A 轮", "color": "#fce7f3"},
-    {"start": "2025-09", "end": "2026-05", "name": "Cloud + 企业客户 + B 轮", "color": "#dcfce7"}
+    {
+      "start": "2022-10",
+      "end": "2023-06",
+      "name": "匿名开源底层期",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2023-06",
+      "end": "2024-06",
+      "name": "Stability AI 间隙期",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2024-06",
+      "end": "2025-09",
+      "name": "Comfy Org + A 轮",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2025-09",
+      "end": "2026-05",
+      "name": "Cloud + 企业客户 + B 轮",
+      "color": "#dcfce7"
+    }
   ],
   "events": [
     {
@@ -223,14 +243,48 @@
     }
   ],
   "arr": [
-    {"date": "2024-06-01", "value": 0, "source": "Comfy Org 公开陈述", "confidence": "official"},
-    {"date": "2025-09-15", "value": 0, "source": "Comfy Cloud Beta 发布——尚无收入", "confidence": "official"},
-    {"date": "2026-04-24", "value": 10000000, "source": "superbcrew（单源）", "confidence": "estimate", "round": "Comfy Cloud 年化预订额"}
+    {
+      "date": "2024-06-01",
+      "value": 0,
+      "source": "Comfy Org 公开陈述",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-09-15",
+      "value": 0,
+      "source": "Comfy Cloud Beta 发布——尚无收入",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-04-24",
+      "value": 10000000,
+      "source": "superbcrew（单源）",
+      "confidence": "estimate",
+      "round": "Comfy Cloud 年化预订额"
+    }
   ],
   "valuation": [
-    {"date": "2024-09-15", "value": 100000000, "round": "A 轮（估算投后）", "source": "TechCrunch / 三角推算", "confidence": "estimate"},
-    {"date": "2025-09-29", "value": 250000000, "round": "增长轮（估算投后）", "source": "三角推算", "confidence": "estimate"},
-    {"date": "2026-04-24", "value": 500000000, "round": "B 轮", "source": "TechCrunch", "confidence": "media"}
+    {
+      "date": "2024-09-15",
+      "value": 100000000,
+      "round": "A 轮（估算投后）",
+      "source": "TechCrunch / 三角推算",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-09-29",
+      "value": 250000000,
+      "round": "增长轮（估算投后）",
+      "source": "三角推算",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2026-04-24",
+      "value": 500000000,
+      "round": "B 轮",
+      "source": "TechCrunch",
+      "confidence": "media"
+    }
   ],
   "platforms": [
     {

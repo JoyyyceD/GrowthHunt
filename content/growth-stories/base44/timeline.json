@@ -4,7 +4,7 @@
     "name": "Base44",
     "legalName": "Base44 Ltd.",
     "tagline": "Solo founder, zero external capital, $80M cash exit in 180 days — and the first clean case of voluntary peak-exit before a model wrapper's window closes",
-    "summary": "Base44 is the cleanest solo-founder + zero-capital + 6-month-to-acquisition case in our case set. Israeli founder Maor Shlomo — ex-Explorium CEO (7 years, $125M raised), Unit 8200 alumnus, Forbes 30 Under 30 — started writing code on roughly December 15, 2024 while traveling in Thailand with his partner Yuval Dahan. He shipped publicly mid-January 2025, hit 10,000 users and $1M ARR three weeks later, and posted $1.5M in first-month revenue from $20–$200/mo SaaS tiers. Andrej Karpathy coined 'vibe coding' on February 6, 2025 — the same month Base44 launched — gifting the company a category-naming tailwind no founder can engineer. By end-May 2025, Base44 had ~250K users, $200K MRR, and $189K monthly profit, publicly disclosed on X and LinkedIn alongside a 'rejected every Israeli VC' narrative. Three Wagyu-steak dinners at Wix CEO Avishai Abrahami's home — introduced by Wix president Nir Zohar — turned into a $80M cash acquisition signed on June 13, 2025 (the same day the Israel-Iran war began) and announced June 18. Maor held 100% at exit; the 8 employees split a $25M cash retention pool with no equity rollover. Under Wix, Base44 went from ~$3.5M ARR to $150M ARR by May 2026 — but it took $20M in Super Bowl ads and $90M in Q1 2026 CAC for Wix to push it there. The deal works on both sides: Wix CFO confirmed an additional $38M Q1 2026 earnout payment to Maor and more being set aside through 2029.",
+    "summary": "Base44 is the cleanest solo-founder + zero-capital exit in our case set. Maor Shlomo wrote the first lines in mid-December 2024, hit $1M ARR three weeks after launch, and signed an $80M cash acquisition to Wix at the six-month mark — holding 100% at exit. Under Wix, Base44 then ran to $150M ARR in a year, but only after $110M of Q1-2026 customer-acquisition spend that nearly tanked the parent.",
     "founded": "2024-12-15",
     "founders": [
       "Maor Shlomo"
@@ -12,10 +12,30 @@
     "seriesNumber": 24
   },
   "phases": [
-    {"start": "2024-10", "end": "2025-01", "name": "Solo build (Thailand → first commit)", "color": "#fef3c7"},
-    {"start": "2025-01", "end": "2025-04", "name": "Public launch + viral cluster", "color": "#fce7f3"},
-    {"start": "2025-04", "end": "2025-06", "name": "Profitability + Wagyu negotiation", "color": "#dbeafe"},
-    {"start": "2025-06", "end": "2026-06", "name": "Wix acquisition + post-deal scale-up", "color": "#dcfce7"}
+    {
+      "start": "2024-10",
+      "end": "2025-01",
+      "name": "Solo build (Thailand → first commit)",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2025-01",
+      "end": "2025-04",
+      "name": "Public launch + viral cluster",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2025-04",
+      "end": "2025-06",
+      "name": "Profitability + Wagyu negotiation",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2025-06",
+      "end": "2026-06",
+      "name": "Wix acquisition + post-deal scale-up",
+      "color": "#dcfce7"
+    }
   ],
   "events": [
     {
@@ -219,17 +239,65 @@
     }
   ],
   "arr": [
-    {"date": "2025-02-12", "value": 1000000, "source": "Maor X post + Lenny interview", "confidence": "official"},
-    {"date": "2025-02-28", "value": 18000000, "source": "Inc. (Maor quoted: $1.5M first-month revenue)", "confidence": "media", "round": "First-month revenue × 12"},
-    {"date": "2025-05-31", "value": 2400000, "source": "Calcalist ($200K MRR × 12)", "confidence": "media"},
-    {"date": "2025-06-13", "value": 3500000, "source": "Lenny / SaaStr estimate", "confidence": "estimate"},
-    {"date": "2025-08-15", "value": 144000000, "source": "SaaStr ($12M ARR/mo addition under Wix)", "confidence": "media"},
-    {"date": "2026-03-15", "value": 100000000, "source": "Wix Q1 2026 earnings prep", "confidence": "official"},
-    {"date": "2026-05-15", "value": 150000000, "source": "Wix Q1 2026 earnings", "confidence": "official"}
+    {
+      "date": "2025-02-12",
+      "value": 1000000,
+      "source": "Maor X post + Lenny interview",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-02-28",
+      "value": 18000000,
+      "source": "Inc. (Maor quoted: $1.5M first-month revenue)",
+      "confidence": "media",
+      "round": "First-month revenue × 12"
+    },
+    {
+      "date": "2025-05-31",
+      "value": 2400000,
+      "source": "Calcalist ($200K MRR × 12)",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-06-13",
+      "value": 3500000,
+      "source": "Lenny / SaaStr estimate",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-08-15",
+      "value": 144000000,
+      "source": "SaaStr ($12M ARR/mo addition under Wix)",
+      "confidence": "media"
+    },
+    {
+      "date": "2026-03-15",
+      "value": 100000000,
+      "source": "Wix Q1 2026 earnings prep",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-05-15",
+      "value": 150000000,
+      "source": "Wix Q1 2026 earnings",
+      "confidence": "official"
+    }
   ],
   "valuation": [
-    {"date": "2025-06-18", "value": 80000000, "round": "Wix acquisition (cash up-front)", "source": "Wix press release", "confidence": "official"},
-    {"date": "2026-05-13", "value": 118000000, "round": "Wix acquisition (incl. Q1 2026 earnout)", "source": "Calcalist / Wix CFO", "confidence": "official"}
+    {
+      "date": "2025-06-18",
+      "value": 80000000,
+      "round": "Wix acquisition (cash up-front)",
+      "source": "Wix press release",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-05-13",
+      "value": 118000000,
+      "round": "Wix acquisition (incl. Q1 2026 earnout)",
+      "source": "Calcalist / Wix CFO",
+      "confidence": "official"
+    }
   ],
   "platforms": [
     {

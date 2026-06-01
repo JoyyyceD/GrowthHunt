@@ -4,7 +4,7 @@
     "name": "Base44",
     "legalName": "Base44 Ltd.",
     "tagline": "单创始人、零外部资本、180 天 $80M 现金退出——也是案例库里第一个干净的「在 wrapper 窗口关闭前主动峰值退出」案例",
-    "summary": "Base44 是案例库里最干净的「单创始人 + 零资本 + 6 个月卖给战略买家」案例。以色列创始人 Maor Shlomo——前 Explorium CEO（任职 7 年、累计融资 1.25 亿美元）、Unit 8200 退役、Forbes 30 Under 30——大约在 2024 年 12 月 15 日开始写代码，当时他还在泰国和女友 Yuval Dahan 旅行。2025 年 1 月中旬公开发布，三周后冲到 1 万用户、$1M ARR，首月营收 $1.5M，付费层 $20–$200/月。Andrej Karpathy 在 2025 年 2 月 6 日造出「vibe coding」这个词——和 Base44 同月——给整个品类送了一个无法人为制造的命名顺风。到 2025 年 5 月底，Base44 用户约 25 万、MRR $200K、月利润 $189K，全部在 X 和 LinkedIn 上公开披露，配合「拒掉以色列每一家 VC」的叙事。Wix 总裁 Nir Zohar 把 Maor 介绍到 Wix CEO Avishai Abrahami 家——5 月里在 Abrahami 家吃了三顿 Wagyu 牛排晚餐，谈出了一笔 $80M 现金收购，2025 年 6 月 13 日（以色列对伊朗战争开始当天）签约，6 月 18 日宣布。Maor 退出时持股 100%；8 名员工以 $25M 现金 retention pool 分配（无股权转换）。被 Wix 收购后，Base44 从约 $3.5M ARR 在 11 个月内推到 2026 年 5 月的 $150M ARR——代价是 Wix 砸 $20M Super Bowl 广告 + $90M Q1 2026 CAC。这笔交易双向都成立：Wix CFO 确认 Maor 已经因 Q1 2026 里程碑触发额外 $38M earnout，后续到 2029 还有更多在备付。",
+    "summary": "Base44 是案例库里最干净的「单人创业 + 零外部融资退出」案例。Maor Shlomo 在 2024 年 12 月中旬写下第一行代码，公开发布三周后 ARR 冲到 100 万美元，第六个月以 8000 万美元现金被 Wix 收购——退出时持股 100%。被收购后一年内 ARR 又冲到 1.5 亿美元，但 Wix 在 2026 年 Q1 砸了 1.1 亿美元获客费才把它推上去，几乎拖垮了母公司。",
     "founded": "2024-12-15",
     "founders": [
       "Maor Shlomo"
@@ -12,10 +12,30 @@
     "seriesNumber": 24
   },
   "phases": [
-    {"start": "2024-10", "end": "2025-01", "name": "单干建造期（泰国 → 第一次提交）", "color": "#fef3c7"},
-    {"start": "2025-01", "end": "2025-04", "name": "公开发布 + 引爆窗口", "color": "#fce7f3"},
-    {"start": "2025-04", "end": "2025-06", "name": "盈利 + Wagyu 晚餐谈判", "color": "#dbeafe"},
-    {"start": "2025-06", "end": "2026-06", "name": "Wix 收购 + 收购后放量", "color": "#dcfce7"}
+    {
+      "start": "2024-10",
+      "end": "2025-01",
+      "name": "单干建造期（泰国 → 第一次提交）",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2025-01",
+      "end": "2025-04",
+      "name": "公开发布 + 引爆窗口",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2025-04",
+      "end": "2025-06",
+      "name": "盈利 + Wagyu 晚餐谈判",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2025-06",
+      "end": "2026-06",
+      "name": "Wix 收购 + 收购后放量",
+      "color": "#dcfce7"
+    }
   ],
   "events": [
     {
@@ -219,17 +239,65 @@
     }
   ],
   "arr": [
-    {"date": "2025-02-12", "value": 1000000, "source": "Maor X post + Lenny 访谈", "confidence": "official"},
-    {"date": "2025-02-28", "value": 18000000, "source": "Inc.（Maor 引述：首月营收 $1.5M）", "confidence": "media", "round": "首月营收 × 12"},
-    {"date": "2025-05-31", "value": 2400000, "source": "Calcalist（$200K MRR × 12）", "confidence": "media"},
-    {"date": "2025-06-13", "value": 3500000, "source": "Lenny / SaaStr 估算", "confidence": "estimate"},
-    {"date": "2025-08-15", "value": 144000000, "source": "SaaStr（Wix 整合后每月新增 $12M ARR）", "confidence": "media"},
-    {"date": "2026-03-15", "value": 100000000, "source": "Wix Q1 2026 财报准备", "confidence": "official"},
-    {"date": "2026-05-15", "value": 150000000, "source": "Wix Q1 2026 财报", "confidence": "official"}
+    {
+      "date": "2025-02-12",
+      "value": 1000000,
+      "source": "Maor X post + Lenny 访谈",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-02-28",
+      "value": 18000000,
+      "source": "Inc.（Maor 引述：首月营收 $1.5M）",
+      "confidence": "media",
+      "round": "首月营收 × 12"
+    },
+    {
+      "date": "2025-05-31",
+      "value": 2400000,
+      "source": "Calcalist（$200K MRR × 12）",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-06-13",
+      "value": 3500000,
+      "source": "Lenny / SaaStr 估算",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-08-15",
+      "value": 144000000,
+      "source": "SaaStr（Wix 整合后每月新增 $12M ARR）",
+      "confidence": "media"
+    },
+    {
+      "date": "2026-03-15",
+      "value": 100000000,
+      "source": "Wix Q1 2026 财报准备",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-05-15",
+      "value": 150000000,
+      "source": "Wix Q1 2026 财报",
+      "confidence": "official"
+    }
   ],
   "valuation": [
-    {"date": "2025-06-18", "value": 80000000, "round": "Wix 收购（现金首付）", "source": "Wix 新闻稿", "confidence": "official"},
-    {"date": "2026-05-13", "value": 118000000, "round": "Wix 收购（含 Q1 2026 earnout）", "source": "Calcalist / Wix CFO", "confidence": "official"}
+    {
+      "date": "2025-06-18",
+      "value": 80000000,
+      "round": "Wix 收购（现金首付）",
+      "source": "Wix 新闻稿",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-05-13",
+      "value": 118000000,
+      "round": "Wix 收购（含 Q1 2026 earnout）",
+      "source": "Calcalist / Wix CFO",
+      "confidence": "official"
+    }
   ],
   "platforms": [
     {
