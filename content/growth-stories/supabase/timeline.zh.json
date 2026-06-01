@@ -4,7 +4,7 @@
     "name": "Supabase",
     "legalName": "Supabase Inc",
     "tagline": "借来的基底（30 年的 Postgres）+ Launch Week 作为主动节奏 E1 + pgvector 比 LLM 浪潮早 6 个月",
-    "summary": "Paul Copplestone（前 Nimbus for Work、Entrepreneur First Singapore）和 Ant Wilson（伦敦帝国理工 MSc 软件工程）在 2020 年 1 月开始写 Supabase 代码，把 30 年的 PostgreSQL 包进了现代开发者体验层。2020 年 5 月底的 Launch HN——「Supabase (YC S20) – An open source Firebase alternative」——拿到 1,120+ upvotes，被 HN mod dang 认定为当时 HN 历史上第二高赞的 Launch HN。他们把 YC 结束后失去的「ship 节奏快感」转化成了 Launch Week——一种每季度连续 5 天每天发布一项功能的格式，后来被 94 家其他开发者工具公司复制。2023 年初他们 ship 了 pgvector，比 LLM 应用的大众认知早约 6 个月——这是案例库里最干净的一次技术叙事升级时机。到 2024 年，所有 vibe-coding 平台（Bolt / Lovable / v0 / Cursor / Claude Code）默认把用户接到 Supabase 上——部分原因是 Postgres 基底是「可拔出的」：用户随时可以把整个 stack 关掉，保留原始数据库。五年六轮：Seed（2020 年 10 月）→ A（2021 年 9 月）→ B（2022 年 4 月）→ C（2024 年 9 月）→ D（2025 年 4 月，2 亿美元 / 20 亿）→ E（2025 年 10 月，1 亿 / 50 亿）。ARR 是 Sacra 估算的约 7000 万美元（2025 年 8/9 月，同比 +250%）——Supabase 从未官方披露 ARR。据报道 GIC 领投的约 100 亿估值新轮谈判（2026 年 4 月）截至 2026 年 6 月尚未关闭。可复用的判断：当行业里已经存在一项工业级开源资产时，把它识别为自己的基底，成本远低于从零造一个——但你必须深度雇这个生态里的人（Postgres 核心 contributor、NGINX 共同创始人、Vitess 共同创作者），「借基底」的框架才能读成能力而不是薄薄的包装。",
+    "summary": "Supabase 把 30 年历史的 PostgreSQL 包成一层现代开发者体验，又把 YC 之后的 Launch HN 时刻（1,120 赞，当时 HN 历史上第二高 Launch HN）转化为 Launch Week——一种被 90 多家开发者工具公司抄走的季度节奏。2023 年初团队抢在大模型应用大热前 6 个月发布 pgvector。到 2024 年，几乎所有 vibe-coding 平台都默认接入 Supabase。五年六轮融资到 E 轮 50 亿美元估值；ARR Sacra 估约 7000 万美元。",
     "founded": "2020-01-01",
     "founders": [
       "Paul Copplestone",

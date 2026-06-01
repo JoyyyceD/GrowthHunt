@@ -4,16 +4,40 @@
     "name": "Cluely",
     "legalName": "Cluely Inc",
     "tagline": "案例库中第一个把 E1（争议资本化）的源头从装置移到创始人本人身上的标杆案例——也是第一次争议反向流向创始人本身的样本",
-    "summary": "Cluely 是这样一个案例：创始人本人就是争议引擎。Artisan 租了广告牌让公众朝广告牌咆哮；Cluely 的 21 岁 CEO Roy Lee 直接把自己变成广告牌——被 Columbia 退学、把 Dean's Discipline Hearing 文件主动公开、把自己用 AI 通过 Amazon 真实面试的过程录下来发布、然后在产品发布视频里亲自上阵用 Cluely 对相亲对象撒谎让对方愤怒离场。从 2025 年 4 月 20 日公开发布到 2025 年 6 月 20 日 a16z 领投的 1500 万美元 A 轮，只用了 10 周时间，投后估值约 1.2 亿美元。7 月 Lee 告诉 TechCrunch ARR 一周内翻倍至 700 万美元。八个月后的 2026 年 3 月，Lee 公开承认这个数字是编造的——按他自己晒出的 Stripe 截图，真实数字约 520 万美元，相差 35%——使 Cluely 成为案例库中第一个争议资本化反向攻击创始人自身可信度的样本。可复用的教训：创始人源头型 E1 没有规模化天花板，但也没有可移植性。Artisan 的广告牌即便换 CEO 也能继续投，Cluely 撑不住一次 Roy Lee 的可信度事件。前 10 周里 B1 / B3 / C1 / E1 / E2 这套招式确实有效，但接下来 24 个月将决定：创始人源头型争议是一种可复用的投资 thesis，还是一次依赖单一创始人的不可持续偶然。",
+    "summary": "Cluely 是案例库里第一个「E1 争议反噬创始人信誉」的案例。Roy Lee 在 2025 年 1 月做出 InterviewCoder，3 月被哥伦比亚停学，4 月改名 Cluely。6 月 a16z 领投 1500 万美元 A 轮，同时配套一档共同品牌播客，把「争议即论题」正式立为投资品类。Lee 在 7 月公布的 700 万 ARR 在 2026 年 3 月被 TC 戳穿，Stripe 实际数字是 520 万。撤回是案例的结构性转折。",
     "founded": "2025-04-20",
-    "founders": ["Chungin (Roy) Lee", "Neel Shanmugam", "Alex Chen"],
+    "founders": [
+      "Chungin (Roy) Lee",
+      "Neel Shanmugam",
+      "Alex Chen"
+    ],
     "seriesNumber": 28
   },
   "phases": [
-    {"start": "2025-01", "end": "2025-04", "name": "Interview Coder + Columbia 退学事件", "color": "#fef3c7"},
-    {"start": "2025-04", "end": "2025-07", "name": "Cluely 发布 + 10 周内拿到 a16z A 轮", "color": "#fce7f3"},
-    {"start": "2025-07", "end": "2025-12", "name": "争议波次 + 叙事被动收缩", "color": "#dbeafe"},
-    {"start": "2026-01", "end": "2026-06", "name": "ARR 谎言公开 + 可信度反向", "color": "#fee2e2"}
+    {
+      "start": "2025-01",
+      "end": "2025-04",
+      "name": "Interview Coder + Columbia 退学事件",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2025-04",
+      "end": "2025-07",
+      "name": "Cluely 发布 + 10 周内拿到 a16z A 轮",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2025-07",
+      "end": "2025-12",
+      "name": "争议波次 + 叙事被动收缩",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2026-01",
+      "end": "2026-06",
+      "name": "ARR 谎言公开 + 可信度反向",
+      "color": "#fee2e2"
+    }
   ],
   "events": [
     {
@@ -179,12 +203,34 @@
     }
   ],
   "arr": [
-    {"date": "2025-04-21", "value": 3000000, "source": "Roy Lee 经 TechCrunch（official-claim，鉴于后来的撤回应审慎对待）", "confidence": "estimate"},
-    {"date": "2025-06-30", "value": 5200000, "source": "Roy Lee 在 2026 年 3 月撤回时晒出的 Stripe 截图", "confidence": "official"},
-    {"date": "2025-07-03", "value": 7000000, "source": "Roy Lee 对 TechCrunch（2026 年 3 月被承认为编造）", "confidence": "estimate", "round": "official-claim——已撤回"}
+    {
+      "date": "2025-04-21",
+      "value": 3000000,
+      "source": "Roy Lee 经 TechCrunch（official-claim，鉴于后来的撤回应审慎对待）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-06-30",
+      "value": 5200000,
+      "source": "Roy Lee 在 2026 年 3 月撤回时晒出的 Stripe 截图",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-07-03",
+      "value": 7000000,
+      "source": "Roy Lee 对 TechCrunch（2026 年 3 月被承认为编造）",
+      "confidence": "estimate",
+      "round": "official-claim——已撤回"
+    }
   ],
   "valuation": [
-    {"date": "2025-06-20", "value": 120000000, "round": "A 轮（估算）", "source": "两位未参与本轮的投资人经 TechCrunch；a16z 拒绝置评", "confidence": "estimate"}
+    {
+      "date": "2025-06-20",
+      "value": 120000000,
+      "round": "A 轮（估算）",
+      "source": "两位未参与本轮的投资人经 TechCrunch；a16z 拒绝置评",
+      "confidence": "estimate"
+    }
   ],
   "platforms": [
     {

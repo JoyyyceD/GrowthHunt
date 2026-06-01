@@ -3,8 +3,8 @@
     "slug": "comfyui",
     "name": "ComfyUI",
     "legalName": "Comfy Org Inc.",
-    "tagline": "An anonymous Quebec C++ programmer wrote a node-based UI for Stable Diffusion, held his identity for 37 months, refused to be CEO, and rode the open-source visual-AI release wave into a $500M valuation — the case set's first deliberately vacated founder-as-IP",
-    "summary": "ComfyUI extends the open-source-substrate play one structural step further than Hugging Face: the founder was anonymous for 37 months (Jan 2023 → Feb 2026), the commercial entity post-dated the code by 17 months, the founder declined to be CEO when Comfy Org was formed, and the project compounded without any founder-as-IP investment at all. The substrate was a protocol: every ComfyUI-generated PNG file carries the full workflow JSON embedded in its metadata, so every social-media share is a runnable product-distribution event. The community produced the demo grammar — Scott Detweiler's 'What I use internally at Stability' SDXL workflow video, the Sytan SDXL workflow on Civitai, Olivio Sarikas's YouTube tutorials — none of which the founder made. Upstream model labs began arriving at ComfyUI for day-1 integration: SDXL (Jul 2023), Stable Video Diffusion (Nov 2023, day-3), Flux (Aug 2024, with explicit 'day-1 integration for ComfyUI' in BFL's launch post), then Hunyuan, Wan, Mochi, LTX-Video. By the April 2026 Craft-led Series B at $500M post-money, ComfyUI had 4M+ users, 150K+ daily downloads, 60K+ community nodes, a 56K-member Discord, and a customer logo wall featuring Amazon Studios, Apple, Autodesk, Netflix, Nike, Ubisoft, and Tencent — without ever building the founder-as-IP layer that most case set companies treat as required for scale.",
+    "tagline": "Anonymous for 37 months, declined the CEO seat, rode the open-source visual-AI release wave to a $500M valuation.",
+    "summary": "ComfyUI is the case set's first deliberately vacated founder-as-IP. The founder stayed anonymous for thirty-seven months while the project compounded — open-source workflow files carried the entire product as runnable metadata; the community wrote the demo grammar; upstream model labs (SDXL, Flux, Hunyuan) routed day-1 integrations through ComfyUI. By the April 2026 Craft-led Series B at $500M, ComfyUI had 4M+ users and Amazon Studios, Apple, Netflix, and Tencent on the customer wall.",
     "founded": "2023-01",
     "founders": [
       "comfyanonymous (Yannik Marek)",
@@ -13,10 +13,30 @@
     "seriesNumber": 26
   },
   "phases": [
-    {"start": "2022-10", "end": "2023-06", "name": "Anonymous OSS substrate", "color": "#fef3c7"},
-    {"start": "2023-06", "end": "2024-06", "name": "Stability AI interlude", "color": "#dbeafe"},
-    {"start": "2024-06", "end": "2025-09", "name": "Comfy Org + Series A", "color": "#fce7f3"},
-    {"start": "2025-09", "end": "2026-05", "name": "Cloud + enterprise + Series B", "color": "#dcfce7"}
+    {
+      "start": "2022-10",
+      "end": "2023-06",
+      "name": "Anonymous OSS substrate",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2023-06",
+      "end": "2024-06",
+      "name": "Stability AI interlude",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2024-06",
+      "end": "2025-09",
+      "name": "Comfy Org + Series A",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2025-09",
+      "end": "2026-05",
+      "name": "Cloud + enterprise + Series B",
+      "color": "#dcfce7"
+    }
   ],
   "events": [
     {
@@ -223,14 +243,48 @@
     }
   ],
   "arr": [
-    {"date": "2024-06-01", "value": 0, "source": "Comfy Org public statements", "confidence": "official"},
-    {"date": "2025-09-15", "value": 0, "source": "Comfy Cloud Beta launch — pre-revenue", "confidence": "official"},
-    {"date": "2026-04-24", "value": 10000000, "source": "superbcrew (single source)", "confidence": "estimate", "round": "Comfy Cloud annualized bookings"}
+    {
+      "date": "2024-06-01",
+      "value": 0,
+      "source": "Comfy Org public statements",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-09-15",
+      "value": 0,
+      "source": "Comfy Cloud Beta launch — pre-revenue",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-04-24",
+      "value": 10000000,
+      "source": "superbcrew (single source)",
+      "confidence": "estimate",
+      "round": "Comfy Cloud annualized bookings"
+    }
   ],
   "valuation": [
-    {"date": "2024-09-15", "value": 100000000, "round": "Series A (estimated post-money)", "source": "TechCrunch / triangulated", "confidence": "estimate"},
-    {"date": "2025-09-29", "value": 250000000, "round": "Growth round (estimated post-money)", "source": "triangulated", "confidence": "estimate"},
-    {"date": "2026-04-24", "value": 500000000, "round": "Series B", "source": "TechCrunch", "confidence": "media"}
+    {
+      "date": "2024-09-15",
+      "value": 100000000,
+      "round": "Series A (estimated post-money)",
+      "source": "TechCrunch / triangulated",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-09-29",
+      "value": 250000000,
+      "round": "Growth round (estimated post-money)",
+      "source": "triangulated",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2026-04-24",
+      "value": 500000000,
+      "round": "Series B",
+      "source": "TechCrunch",
+      "confidence": "media"
+    }
   ],
   "platforms": [
     {
