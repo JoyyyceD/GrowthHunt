@@ -1,0 +1,80 @@
+---
+title: "单干建造期开始——Maor 在泰国打开电脑（2024 年 12 月）"
+description: "Maor Shlomo，前 Explorium CEO，大约在 2024 年 12 月 15 日在东南亚旅行期间开始写 Base44 代码。$15K 个人资金，大部分是 LLM token 花费。没有联创、没有外部资本、没有融资计划。是后面 6 个月所有事情的承重结构性选择。"
+date: "2024-12-15"
+type: "product"
+gtmTag: "结构性差异化"
+eventTitle: "第一次代码提交"
+externalUrl: "https://www.lennysnewsletter.com/p/the-base44-bootstrapped-startup-success-story-maor-shlomo"
+---
+
+<Catalyst>
+Maor 的第一次提交不是 Base44 的开始，是他「Explorium CEO」身份的结束。在泰国酒店房间里单干写 Base44 代码——而不是回去那家他用 7 年时间建起来的 VC-backed 公司——这是后面 6 个月所有事情都从中流出的承重结构性选择。
+</Catalyst>
+
+Maor Shlomo 在 Explorium 担任 CEO 七年。他 2017 年 24 岁联创这家 B2B 数据分析公司。Explorium 累计融资约 $125–130M，Insight Partners 领投，团队约 100 人。Maor 入选 Forbes 30 Under 30。按任何传统指标看，他都是个成功的创始人。
+
+2023 年 10 月以色列-哈马斯战争开始，Maor 被征召回 Unit 8200 长期服役，并在服役期间从 Explorium CEO 岗位上退下。那一年的服役做完了一年后会发挥作用的结构性工作：它把他从 VC-track 创始人默认轨迹里强行拽出来。
+
+## 他在服役期间看到了什么
+
+服役期间，Maor 帮一家非营利做一个简单的内部 dashboard。他们找的 IT agency 报价 **6 周交付 + $40K 成本**——这个工具一个能干的工程师下午就能写完。
+
+那个报价就是 Base44 的种子。不是泰国 WordPress 那个时刻——那是后来才发生的。战时那个报价是 Maor 第一次看到「应该可能的事」和「机构实际报价」之间的摩擦已经大到荒谬程度——一个能压缩这道摩擦的 AI 工具可以是一个品类。
+
+他没在 2023 年动手。他完成了服役、和女友 Yuval Dahan 旅行，然后等。
+
+## 泰国起点
+
+2024 年 11 月底，Maor 和 Yuval 在泰国。Yuval 计划回以色列后开一家纹身店，需要一个网站。Maor——一位合格的 CEO 兼工程师——试着用 WordPress 做，但在可接受的时间内做不出他想要的效果。
+
+这次受挫把动作敲定了。Maor 决定自己写一个 AI 驱动的方案——而**不是**回 Explorium。结构性决策不是「我想建一个应用构造器」。是一次拒绝——拒绝默认的创始人轨迹、拒绝 VC-backed 的第二幕、拒绝下一家融资公司。
+
+## 头 24 小时
+
+Maor 大约 2024 年 12 月 15 日在泰国酒店房间里打开电脑。他一个人。他的工具：
+
+| 组件 | 选择 | 为什么 |
+|---|---|---|
+| IDE | Cursor | AI 辅助写代码 |
+| 模型 | Anthropic Claude（via AWS Bedrock）| 对 OpenAI 的 cost-per-performance |
+| 数据库 | MongoDB | Schema 灵活 |
+| 基础设施 | Cloudflare + Render | 单人可维护 |
+| 资本 | $15K 个人 | 主要是 LLM token |
+
+stack 的选择后来变得很重要。在 2024 年底，开发者工具默认还是 OpenAI 优先时，Maor 选了 Anthropic Claude，这个选择并非主流。后来它会发酵成 2025 年 3 月那篇触发 AWS 反向邀请 Base44 去 Tel Aviv demo 的 LinkedIn post，以及「Base44 90% 的代码由 Claude 写」这条 build-in-public 弧线最 viral 的金句。
+
+个人资金数字也很重要。Maor 公开披露的 $10–20K 区间，几乎全是 LLM token 花费——加上一小部分早期失败的 KOL 投放尝试。「我用自己 $15K 起家做 Base44」这个表述——通过 Maor 自己的 post 可验证——是 2025 年 5 月「拒掉每一家 VC」叙事引擎的财务基础。
+
+## 把他绑住的 pre-commit
+
+有一个更早的事件锚定了这一切。在 <Stat value="2024 年 10 月 27 日" label="X pre-commit" />——比写任何代码早大约 7 周——Maor 在 X 上发了：*「Going to build @base44 in public.」*
+
+这条 pre-commit 是结构性关键的。等 Maor 12 月打开电脑时，format 已经公开。所有起步失败、所有转向、所有错误都会被看到。在接受约束之前先把约束广播出去，移除了「悄悄失败」的逃生通道。这是和 Linear 创始人公开承诺前三年不建增长团队同款逻辑——把约束公开化，然后住进去。
+
+10 月 27 日那条 X 也是「创始人即持续 demo」的结构起点。等 Maor 2025 年 1 月开始日更 clip 时，format 已经从 10 月就被 pre-commit 了。6 个月日更使 format 无法被伪造。没有 pre-commit，日更 demo 看起来像营销。有了 pre-commit，日更 demo 是运营纪律。
+
+## 没有被 pre-commit 的部分
+
+2024 年 10 月没被承诺、但对这个案例的解读很重要的三件事：
+
+- **单创始人。** 10 月那条 post 说「going to build」——单数——但没有承诺拒绝联创。Maor 是在 12 月最初几周才决定继续单干的。
+- **Bootstrap。** 没有承诺拒绝 VC 资金。2025 年 4 月公开拒掉以色列 VC 是一个下游决策——是公司已经现金流为正之后才做的。
+- **6 个月退出。** 2024 年 12 月连一个假设都不是。和 Avishai Abrahami 的 Wagyu 晚餐还有 5 个月。主动峰值退出的决策是在 5 月实时做出的，不是预先计划的。
+
+对复制的含义：承重的结构性承诺是「对 format 的 pre-commit」（build-in-public）。其他事后看起来像决定性的选择——单干、bootstrap、6 个月退出——都是涌现的而非预先计划。任何人从 2025 年 6 月往回读 Base44 都有把涌现选择当作结构选择的风险。顺序很重要。
+
+<Conclusion title="可复用的招式">
+
+- **结构性拒绝优先。** Maor 的承重决策是「我不会回 Explorium 也不接 VC 钱」。产品想法是这次拒绝的下游。那些试图通过决定「我要建点什么」就复制 Base44 故事的创始人，会让 VC-track 默认值悄悄爬回来。
+- **在还能失败之前先 pre-commit 到 format。** 10 月 27 日那条 X 把 Maor 绑死在 build-in-public 上时他什么都还没输。7 周 pre-commit 时间足够移除「悄悄失败」的逃生通道。
+- **stack 选择会在后期发酵成叙事事件。** 2024 年 12 月 Claude over OpenAI 的决策变成了 2025 年 5 月 AWS Tel Aviv 反向 BD。出于 cost-per-performance 在私下做的运营决策，当创始人能清楚解释时会发酵成公开的信用信号。
+
+</Conclusion>
+
+## Sources
+
+- [Lenny's Newsletter — The Base44 bootstrapped startup success story](https://www.lennysnewsletter.com/p/the-base44-bootstrapped-startup-success-story-maor-shlomo)
+- [Calcalist Ctech — Maor Shlomo Holy Grail 访谈](https://www.calcalistech.com/ctechnews/article/y0kdgmw7a)
+- [TechCrunch — 6-month-old solo-owned vibe-coder Base44 sells to Wix for $80M cash](https://techcrunch.com/2025/06/18/6-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash/)
+- [Maor Shlomo on X (@MS_BASE44)](https://x.com/ms_base44)

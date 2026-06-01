@@ -1,0 +1,377 @@
+{
+  "company": {
+    "slug": "suno",
+    "name": "Suno",
+    "legalName": "Suno Inc.",
+    "tagline": "四个 Kensho ML 工程师，把一场大唱片公司的官司变成 17 个月 4.9 倍估值跃升",
+    "summary": "Suno 由四个前 Kensho ML 工程师在 2022 年于 Cambridge, MA 创立——四个人都是业余音乐人。他们的第一个开源项目 Bark（2023 年 4 月）是首个基于 transformer 的文本到音频模型，一个月内拿到 19K GitHub stars。2023 年 12 月，他们带着 Microsoft Copilot 集成 + 首日 $10/$30 定价正式出 stealth。V3 在 2024 年 3 月病毒式扩散。2024 年 6 月 RIAA 提起版权诉讼——Suno 把这场官司反向运营成「创作者权利 vs 守旧产业」的叙事，把 Timbaland、Karpathy 和整个 AI 顾问阵容拉到自己一边。17 个月后，Warner Music 和解、把 Songkick 卖给 Suno，C 轮以 $2.45B 估值收官（Sacra 推算 ARR $200M）。到 2026 年 2 月，Mikey Shulman 披露 2M 付费订阅 + $300M ARR。",
+    "founded": "2022-06-01",
+    "founders": [
+      "Mikey Shulman",
+      "Georg Kucsko",
+      "Martin Camacho",
+      "Keenan Freyberg"
+    ],
+    "seriesNumber": 29
+  },
+  "phases": [
+    {
+      "start": "2022-06",
+      "end": "2023-12",
+      "name": "Kensho 学术 substrate + Bark",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2023-12",
+      "end": "2024-06",
+      "name": "Copilot 上线 + V3 病毒",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2024-06",
+      "end": "2025-11",
+      "name": "RIAA 诉讼 + 反向 GTM",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2025-11",
+      "end": "2026-06",
+      "name": "Warner 和解 + 规模化",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2022-06-01",
+      "title": "Suno 由四个前 Kensho 工程师创立",
+      "type": "product",
+      "description": "Mikey Shulman（CEO，Harvard 物理 PhD，Kensho 第一个 ML 工程师）、Georg Kucsko（CTO，Harvard 物理 PhD）、Martin Camacho（前 Kensho 语音识别）、Keenan Freyberg（前 Kensho 战略）在 Cambridge, MA 成立 Suno。四人都是业余音乐人。Kensho 五年金融 NLP transformer 工程是技术 substrate。具体日期未公开披露；由 Founder Collective 回溯确认。"
+    },
+    {
+      "date": "2023-04-20",
+      "title": "Bark 在 GitHub 开源",
+      "type": "product",
+      "gtmTag": "学术 ML substrate",
+      "description": "首个基于 transformer 的开源文本到音频模型，架构上致敬 Karpathy 的 NanoGPT。能生成语音、音乐、非语言音（笑、叹气）。一个月内拿到约 19K GitHub stars。2023 年 5 月转为 MIT 协议。在消费端上线前 9 个月就把 Suno 钉进了 AI engineering 圈子。",
+      "externalUrl": "https://github.com/suno-ai/bark"
+    },
+    {
+      "date": "2023-08-07",
+      "title": "Seed 延展轮",
+      "type": "funding",
+      "description": "Tracxn 记录的第二轮融资，应为 2022 年 Founder Collective pre-seed 之后的 seed 延展。具体细节未公开；后被并入 2024 年 5 月「累计 $125M」的口径里。"
+    },
+    {
+      "date": "2023-12-19",
+      "title": "Microsoft Copilot 集成",
+      "type": "product",
+      "gtmTag": "平台型 B3",
+      "description": "Microsoft 宣布 Suno 作为 Copilot 的音乐创作插件，借 Copilot 一周年的 PR 周期。最初仅限 Edge 浏览器。这次集成把 Suno 嵌进约 1 亿 Microsoft 用户的 UI——对一家成立 8 个月的消费公司来说，几乎是空前的平台级分发。",
+      "externalUrl": "https://techcrunch.com/2023/12/19/microsoft-copilot-gets-a-music-creation-feature-via-suno-integration/",
+      "articleSlug": "2023-12-microsoft-copilot-integration"
+    },
+    {
+      "date": "2023-12-20",
+      "title": "Suno 以 $10 / $30 定价出 stealth",
+      "type": "product",
+      "gtmTag": "首日定价",
+      "description": "消费端 app 在 suno.ai 上线，首日就有三档定价——免费（每天 10 首歌）、$10/月 Pro（500 首）、$30/月 Premier（2,000 首）。Axios 独家覆盖。这套定价一直没变到 2026 年——这是消费 AI 案例库里最干净的首日变现样本。",
+      "externalUrl": "https://www.axios.com/2023/12/20/suno-gen-ai-music-microsoft",
+      "articleSlug": "2023-12-day-zero-pricing"
+    },
+    {
+      "date": "2024-03-14",
+      "title": "Latent Space 播客「Making Transformers Sing」",
+      "type": "media",
+      "description": "Mikey Shulman 上 Swyx + Alessio 的播客。讲了 Bark 的 NanoGPT 血脉、音频即语言的论点、Kensho 转型故事、以及 Karpathy「Return to monkey」的趣闻。比 V3 上线早一周——给 AI engineering 圈层做铺垫。",
+      "externalUrl": "https://www.latent.space/p/suno"
+    },
+    {
+      "date": "2024-03-21",
+      "title": "V3 上线——整曲生成开始病毒扩散",
+      "type": "product",
+      "gtmTag": "技术叙事升级",
+      "description": "Suno 第一个为整曲生成设计的模型。免费档解锁。Karpathy 自己生成「Return to monkey」并发推；Aravind Srinivas 和 Alexandr Wang 也分别 share。Rolling Stone 发布 Mississippi Delta blues demo，4 天 36K 播放。第一波 AI 生成的歌曲跨到 TikTok 和 YouTube——很多没标 AI。",
+      "externalUrl": "https://help.suno.com/en/articles/5782721",
+      "articleSlug": "2024-03-v3-viral"
+    },
+    {
+      "date": "2024-04-10",
+      "title": "Udio 公开上线",
+      "type": "media",
+      "description": "并行竞品——前 Google DeepMind 团队 Uncharted Labs。a16z 领投 $10M seed，跟投有 Will.i.am、Common、Tay Keith。Rolling Stone 评价 Udio 输出「可能比 Suno 更清晰」。Suno vs Udio 二元格局持续约 6 周，直到 RIAA 一起诉两家把格局打碎。"
+    },
+    {
+      "date": "2024-05-21",
+      "title": "B 轮——$125M @ $500M 估值",
+      "type": "funding",
+      "gtmTag": "组合里程碑",
+      "description": "Lightspeed 领投。Nat Friedman、Daniel Gross、Matrix、Founder Collective 跟投。同日公布 11 人顾问阵容：Andrej Karpathy、Aaron Levie、Aravind Srinivas、Alexandr Wang、Amjad Masad、Brendan Iribe、Fred Ehrsam、Guillermo Rauch、3LAU、Flosstradamus、Shane Mac。披露 10M 用户。Sacra 估算 $45M ARR（非创始人披露）。$125M 是 pre-seed + seed + Series B 的累计口径（MBW 备注）。",
+      "externalUrl": "https://suno.com/blog/fundraising-announcement-may-2024",
+      "articleSlug": "2024-05-series-b"
+    },
+    {
+      "date": "2024-05-30",
+      "title": "V3.5 上线",
+      "type": "product",
+      "description": "4 分钟整曲生成（V3 是 2 分钟）。歌曲结构和人声流畅度提升。后续默认 V3.5。"
+    },
+    {
+      "date": "2024-06-24",
+      "title": "RIAA 诉讼提起",
+      "type": "media",
+      "gtmTag": "法律扰动反向 GTM",
+      "description": "RIAA 代表 Sony Music、UMG、Warner Records 起诉——Suno 在波士顿联邦法院、Udio 在 SDNY。每件被侵权作品索赔最高 $150K。Rolling Stone、NYT、Billboard、BBC、TechCrunch、The Verge 全部头版覆盖。这是跨大西洋第一个生成音乐训练数据的法律先例。",
+      "externalUrl": "https://www.riaa.com/record-companies-bring-landmark-cases-for-responsible-ai-againstsuno-and-udio-in-boston-and-new-york-federal-courts-respectively/",
+      "articleSlug": "2024-06-riaa-lawsuit-reversal"
+    },
+    {
+      "date": "2024-07-01",
+      "title": "iOS 移动 app 上线",
+      "type": "product",
+      "description": "首个移动 app（iPhone，仅美国）。免费档每天 50 credits。Suno 披露 12M 用户——比 6 周前 B 轮的 10M 又涨。Pro / Premier 走 Apple in-app billing。"
+    },
+    {
+      "date": "2024-08-01",
+      "title": "公平使用辩护书 + Shulman 博客",
+      "type": "media",
+      "gtmTag": "法律扰动反向 GTM",
+      "description": "Suno 在波士顿联邦法院递交回应，承认训练数据包括版权录音（「it is no secret」），主张公平使用。Shulman 博客同日上线：「学习不是侵权——从来不是，现在也不是。」把案子框成「创作者 vs 守旧产业」而非「合法 vs 非法」。38 天反向 GTM 窗口关闭。"
+    },
+    {
+      "date": "2024-10-22",
+      "title": "Timbaland 加入做战略顾问",
+      "type": "media",
+      "description": "四届 Grammy 得主加入 Suno，带 day-to-day 产品角色。24 小时后「Love Again」$10 万 remix 比赛上线。在诉讼窗口里加入艺人侧的可信度。后期 Timbaland 公开把 Warner 合作描述为「disruptive」——顶住了 backlash 没撤回。",
+      "externalUrl": "https://www.prnewswire.com/news-releases/timbaland-becomes-strategic-advisor-to-leading-ai-music-company-suno-302283573.html"
+    },
+    {
+      "date": "2024-11-13",
+      "title": "Jack Brody 加入做 CPO",
+      "type": "media",
+      "description": "前 Snap 产品负责人加入 Suno。10 年 Snap 任期里把 Snapchat DAU 从千万级别拉到 4 亿。和 V4 周期一起公布。这次招聘说明：诉讼 18 个月后，消费规模化的运营肌肉正式入场。",
+      "externalUrl": "https://suno.com/blog/welcome-jack"
+    },
+    {
+      "date": "2024-11-19",
+      "title": "V4 上线——Personas、Covers、Remaster",
+      "type": "product",
+      "gtmTag": "技术叙事升级",
+      "description": "重大模型升级——人声更干净、歌词更准、ReMi 歌词模型、Personas（稳定人声）、Covers（音频上传）、Remaster（升级旧曲）。披露 25M 用户，6 个月相比 B 轮翻了 2.5 倍。首次从生成 app 重新分类到创作者工作流工具。",
+      "externalUrl": "https://help.suno.com/en/articles/5782721"
+    },
+    {
+      "date": "2025-05-01",
+      "title": "V4.5 上线——8 分钟整曲",
+      "type": "product",
+      "description": "8 分钟整曲生成（V4 是 4 分钟）。Prompt 遵循度更好，风格混搭，新增 prompt-enhancement 助手。深度诉讼窗口里维持月度产品节奏。",
+      "externalUrl": "https://suno.com/blog/introducing-v4-5"
+    },
+    {
+      "date": "2025-06-26",
+      "title": "WavTool 收购",
+      "type": "acquisition",
+      "description": "Suno 收购浏览器版 DAW WavTool——公司第一笔 M&A。Deal 实际早就关了（WavTool 自家 DAW 在 2024 年 11 月就下线）；Suno 把发布时间留到 2025 年 6 月，配合 Suno Studio 前的「专业工具」叙事。带来 VST 插件支持、采样级编辑、AI 音轨分离。",
+      "externalUrl": "https://suno.com/blog/suno-acquires-wavtool"
+    },
+    {
+      "date": "2025-07-18",
+      "title": "V4.5+ 上线",
+      "type": "product",
+      "description": "新增「Add Vocals」、「Add Instrumentals」和「Inspire」（根据用户现有歌单生成新曲）。生产工具的 framing——Suno 从生成 app 进一步硬化为创作者工作流。"
+    },
+    {
+      "date": "2025-07-24",
+      "title": "Hallwood Media 签下首位 AI 艺人（imoliver）",
+      "type": "media",
+      "description": "Hallwood Media（Neil Jacobson，前 Geffen 总裁）签下 imoliver——一个 Suno 重度用户——首个此类唱片合同。「Stone」8 月 8 日上流媒体。Shulman 把它定义为「音乐未来的里程碑」。Hallwood 4 个月后变成 C 轮投资人——战略全栈对齐。",
+      "externalUrl": "https://www.billboard.com/pro/ai-music-creator-imoliver-record-deal-hallwood/"
+    },
+    {
+      "date": "2025-09-23",
+      "title": "V5 + Suno Studio 上线",
+      "type": "product",
+      "gtmTag": "技术叙事升级",
+      "description": "V5（Suno「史上最强」模型）对 Pro 和 Premier 订阅开放。Suno Studio——一个把 V5 + 多轨编辑组合在一起的浏览器 DAW——基于 WavTool 收购。同时上线 Sample-to-Song 和 Hooks（短视频）。在唱片公司提交「stream-ripping」修正诉状的数天之后上线——公开对抗的姿态。",
+      "externalUrl": "https://musically.com/2025/09/25/suno-launches-v5-claiming-its-the-worlds-best-music-model/"
+    },
+    {
+      "date": "2025-11-19",
+      "title": "C 轮——$250M @ $2.45B",
+      "type": "funding",
+      "gtmTag": "组合里程碑",
+      "description": "Menlo Ventures 领投。NVIDIA NVentures、Hallwood Media、Lightspeed、Matrix 跟投。Sacra 推算 ARR $200M（WSJ 信源，非创始人披露）。Pitch deck 显示 100M 累计用户和每天 700 万首歌生成。估值相比 B 轮翻了 4.9 倍——而这恰好发生在 RIAA 案件「理论上是 existential risk」的窗口。",
+      "externalUrl": "https://suno.com/blog/series-c-announcement",
+      "articleSlug": "2025-11-series-c"
+    },
+    {
+      "date": "2025-11-25",
+      "title": "Warner 和解 + Songkick 收购",
+      "type": "acquisition",
+      "gtmTag": "法律扰动反向 GTM",
+      "description": "Warner Music Group 和解版权诉讼，达成「下一代授权 AI 音乐」许可合作（2026 年上线）。作为交易的一部分，Suno 从 Warner 手里收购演唱会发现平台 Songkick。现金部分未披露。WMG CEO Robert Kyncl：「当 AI 遵守我们的原则，它就变成了 pro-artist。」首个大唱片公司的和解协议——给 UMG / Sony 后续谈判定下了模板。",
+      "externalUrl": "https://www.musicbusinessworldwide.com/warner-music-group-settles-with-suno-strikes-first-of-its-kind-deal-with-ai-song-generator/",
+      "articleSlug": "2025-11-warner-settlement"
+    },
+    {
+      "date": "2026-02-27",
+      "title": "披露 2M 付费订阅 + $300M ARR",
+      "type": "media",
+      "description": "Mikey Shulman LinkedIn 帖子：2M 付费订阅（100 天内翻倍）+ $300M ARR（100 天内 1.5 倍）。TechCrunch、Billboard、MBW、Hollywood Reporter 跟进。Sacra 推算 404% YoY 增长。披露订阅留存：30 天 25%、weekly 78%。首个创始人公开 ARR 数字。",
+      "externalUrl": "https://techcrunch.com/2026/02/27/ai-music-generator-suno-hits-2-million-paid-subscribers-and-300m-in-annual-recurring-revenue/",
+      "articleSlug": "2026-02-arr-disclosure"
+    },
+    {
+      "date": "2026-03-26",
+      "title": "V5.5 + Voices + Custom Models",
+      "type": "product",
+      "description": "V5.5 新增 Voices（语音捕捉）、Custom Models 和 My Taste（个性化）。Framing 转变：「最好的音乐从人开始」。明确的创作者增强转向——为了消化 Shulman 此前「做音乐没那么好玩」的公开发言带来的创作者反弹。"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2024-05-21",
+      "value": 45000000,
+      "source": "Sacra 估算",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-01-01",
+      "value": 50000000,
+      "source": "WSJ via TechCrunch",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-09-30",
+      "value": 140000000,
+      "source": "Sacra（pitch deck 信源）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-11-19",
+      "value": 200000000,
+      "source": "WSJ via TechCrunch / Sacra",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-12-31",
+      "value": 227000000,
+      "source": "Sacra 估算",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2026-02-27",
+      "value": 300000000,
+      "source": "Mikey Shulman / LinkedIn",
+      "confidence": "official"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2024-05-21",
+      "value": 500000000,
+      "round": "B 轮",
+      "source": "MBW / Crunchbase",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-11-19",
+      "value": 2450000000,
+      "round": "C 轮",
+      "source": "Suno 博客 / TechCrunch",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X（Twitter）",
+      "score": 5,
+      "bestStage": "全阶段——结构性",
+      "effort": "常态运营",
+      "role": "创始人发声 + 危机反向运营",
+      "description": "Mikey Shulman（@MikeyShulman）日更 X。2024 年 6 月 RIAA 起诉后的 38 天反向 GTM 窗口最先在 X 上落地——Shulman 关于「学习不是侵权」的帖子先在 AI 顾问阵容（Karpathy、Alexandr Wang、Aravind Srinivas）里传播，主流媒体来不及反向 framing。V3 也是同样路径：Karpathy 2024 年 3 月的「Return to monkey」推文是标志性的 KOL 背书。",
+      "catalyst": "Karpathy 的 V3「Return to monkey」生成（2024 年 3 月）——X 上的一段短音频，让 Suno 一次性拿到 AI engineering 圈层的可信度。叠加 Shulman 2024 年 8 月的 fair-use 帖子，X 同时承载了技术和政治叙事。",
+      "catalystUrl": "https://x.com/karpathy",
+      "accountUrl": "https://x.com/MikeyShulman",
+      "accountLabel": "X 上的 @MikeyShulman",
+      "whenItWorks": "当创始人能日更并周期性披露里程碑——Vercel Rauch / Replit Masad 子模式。音频片段在 X 上原生自动播放，每个 Suno demo 都是一个独立的传播单元",
+      "whenItDoesnt": "日更也是 footgun。Shulman 2026 年初「做音乐没那么好玩」的发言触发创作者反弹，逼出了 V5.5「最好的音乐从人开始」的回应"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 4,
+      "bestStage": "Copilot 上线 + V3 病毒",
+      "effort": "周期性、创作者驱动",
+      "role": "长 demo + 创始人叙事",
+      "description": "两层：Suno 生成的歌曲原生上 YouTube，常常没标 AI；以及 Shulman 的长访谈（Latent Space、Training Data、BigGo）持续给 AI 投资人叙事添砖加瓦。Rolling Stone 的 Mississippi Delta blues demo 4 天 36K 播放主要在 YouTube 和 TikTok 完成。创作者关于 Suno 提示工程的教程持续带来自助注册。",
+      "catalyst": "Rolling Stone V3 Mississippi Delta blues demo（2024 年 3 月）——单曲上传 4 天 36K 播放。这种 format 是不需要上下文的完整传播单元。",
+      "catalystUrl": "https://www.youtube.com/results?search_query=suno+v3+blues",
+      "accountUrl": "https://www.youtube.com/@SunoMusic",
+      "accountLabel": "Suno 的 YouTube",
+      "whenItWorks": "当输出是一个完成的作品（歌曲、MV）。YouTube 奖励完整收听单元，不是片段",
+      "whenItDoesnt": "对于定价变更、诉讼回应、商业更新。YouTube 受众不会 engage；这些应该走 X"
+    },
+    {
+      "slug": "microsoft-copilot",
+      "name": "Microsoft Copilot",
+      "score": 4,
+      "bestStage": "Copilot 上线 + V3 病毒",
+      "effort": "一次性 deal，长期分发",
+      "role": "平台级分发",
+      "description": "2023 年 12 月的 Copilot 集成在 Suno 公开发布第一天就把它嵌进约 1 亿 Microsoft 用户的 UI 里。这是案例库里最接近「平台型 B3」的样本——大多数 B3 是单人 KOL 信用转移（Cursor / Karpathy、Oura / NBA Bubble）。Suno 拿到的是一个 Microsoft 产品表面作为发布渠道。",
+      "catalyst": "2023 年 12 月 19 日的 Copilot 集成宣布——Bing 博客和 Copilot 一周年周期一起发出，给第二天 Suno 出 stealth 最大化了曝光面积。",
+      "catalystUrl": "https://techcrunch.com/2023/12/19/microsoft-copilot-gets-a-music-creation-feature-via-suno-integration/",
+      "accountUrl": "https://www.microsoft.com/en-us/microsoft-copilot",
+      "accountLabel": "Microsoft Copilot",
+      "whenItWorks": "当某个超大平台有明显的品类缺口（Microsoft 没有原生音乐生成，Suno 的 Bark 信誉刚好填上）。平台型 B3 用类似股权的代价换地球上最大的几个分发面之一",
+      "whenItDoesnt": "如果集成把你锁进单一系统或地区。Suno 集成最初只限 Edge——直到 suno.ai 上的消费 app 接管之前，早期月度增长被压住了"
+    },
+    {
+      "slug": "podcast",
+      "name": "播客巡回",
+      "score": 4,
+      "bestStage": "引爆前 + 规模期",
+      "effort": "周期性长访谈",
+      "role": "投资人 + 工程师叙事",
+      "description": "Mikey Shulman 在 Latent Space（2024 年 3 月，V3 上线前 1 周）、20VC、Amplify、Training Data、BigGo 的访谈，把技术血脉故事（Bark → NanoGPT）和「学习不是侵权」的哲学故事带给了最关键的几个受众——AI 工程师、VC、顾问。每次上播客都和产品 / 融资窗口对齐。",
+      "catalyst": "Latent Space「Making Transformers Sing」（2024 年 3 月 14 日）——Shulman 跟 Swyx + Alessio 录的这期，比 V3 上线早一周。给 AI engineering 圈做了铺垫；Karpathy 的推文和 B 轮顾问阵容都是这期的复利。",
+      "catalystUrl": "https://www.latent.space/p/suno",
+      "accountUrl": "https://www.latent.space/p/suno",
+      "accountLabel": "Latent Space：Suno 那期",
+      "whenItWorks": "当创始人能 hold 60-90 分钟的技术对话，并且每集对齐一个产品窗口。每集都是一个长形态资产，VC 和顾问可以在自己的圈子里传播",
+      "whenItDoesnt": "孤立的一次主题演讲，没有后续 cadence。这个模式要持续访谈节奏 + 紧贴发布才有用，散场的露面无效"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 4,
+      "bestStage": "Warner 和解 + 规模化",
+      "effort": "季度性创始人发帖",
+      "role": "创始人披露里程碑",
+      "description": "Mikey Shulman 的 LinkedIn 在 2025 年底从零星变成承重。2026 年 2 月 27 日的帖子披露 2M 付费订阅和 $300M ARR——这是 Suno 公开记录里唯一创始人披露的 ARR 数字。这个 format 是 Vercel Rauch / Replit Masad 子模式：通过个人 LinkedIn 做季度里程碑披露，TechCrunch、Billboard、MBW、Hollywood Reporter 在同一新闻窗口放大。",
+      "catalyst": "Shulman 2026 年 2 月 27 日的 LinkedIn 帖——$300M ARR + 2M 付费订阅，作为创始人首个官方 ARR 披露。3 个月前的 C 轮公告只有 WSJ 信源数字；LinkedIn 是 Shulman 上记录的地方。",
+      "catalystUrl": "https://www.linkedin.com/in/mikeyshulman",
+      "accountUrl": "https://www.linkedin.com/in/mikeyshulman",
+      "accountLabel": "Mikey Shulman 的 LinkedIn",
+      "whenItWorks": "当你有值得披露的里程碑、并希望财经 / ARR 类报道把出处指回单一创始人帖。LinkedIn 对财务 / ARR 数字在科技媒体里的放大效果比 X 强",
+      "whenItDoesnt": "对于技术或创作者内容。LinkedIn 受众不会像 X 或 YouTube 那样 engage 音频 demo"
+    },
+    {
+      "slug": "music-trade-press",
+      "name": "音乐行业媒体",
+      "score": 4,
+      "bestStage": "RIAA 诉讼 + 反向 GTM",
+      "effort": "反应式 + 关系驱动",
+      "role": "行业内合法化",
+      "description": "Rolling Stone、Billboard、MBW（Music Business Worldwide）、Hollywood Reporter、Variety 从 V3 病毒一直覆盖到 RIAA 诉讼、Warner 和解、imoliver 唱片合同。他们的覆盖是反向 GTM 能成的前置条件——Suno 必须在音乐行业自己的媒体里被看见，才能让 Timbaland 顾问宣布、Hallwood 签约、Warner 合作被当作可信的行业里程碑而不是科技新闻奇观。",
+      "catalyst": "MBW 关于 Warner 和解的报道（2025 年 11 月 25 日）——首个主要音乐行业媒体把 Suno 定义为 Warner 商业伙伴而非被告。给后续几个月的 UMG / Sony 谈判定下了模板。",
+      "catalystUrl": "https://www.musicbusinessworldwide.com/warner-music-group-settles-with-suno-strikes-first-of-its-kind-deal-with-ai-song-generator/",
+      "accountUrl": "https://www.musicbusinessworldwide.com/companies/suno-ai/",
+      "accountLabel": "Suno 在 MBW 的页面",
+      "whenItWorks": "当公司有音乐行业自己的媒体想覆盖的故事——通常是唱片公司 deal、艺人关系、或行业级的法律时刻。科技媒体替代不了",
+      "whenItDoesnt": "对于纯技术模型发布或开发者特性。MBW 和 Billboard 会把 Suno V5 当新闻覆盖，但深度报道得有艺人或唱片公司角度"
+    }
+  ]
+}

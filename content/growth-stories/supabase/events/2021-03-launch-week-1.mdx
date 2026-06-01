@@ -1,0 +1,92 @@
+---
+title: "Launch Week 1 — The Format That 94 Other Dev-Tool Companies Eventually Copied (Mar 2021)"
+description: "A personal response to losing YC ship-adrenaline became a quarterly cadence ritual. Five days, five major features, four times a year. By 2024, launchweek.dev counted 126 Launch Weeks across 94 different dev-tool companies."
+date: "2021-03-29"
+type: "product"
+gtmTag: "Launch Week cadence"
+eventTitle: "Launch Week 1"
+externalUrl: "https://supabase.com/blog/supabase-how-we-launch"
+---
+
+<Catalyst>
+Most marketing rituals are invented by marketing teams. Launch Week was invented by two founders who had just lost YC's weekly ship-adrenaline and decided to make YC week last forever. The format that took over developer-tools marketing in three years is a personal-response artifact, not a strategic decision.
+</Catalyst>
+
+March 2021. Six months after Y Combinator Demo Day. Paul Copplestone and Ant Wilson notice that something has gone missing from their week. During YC, every Tuesday batch demo forced visible shipping. The pressure was sustained and external; the team built habits around it. After Demo Day the pressure evaporated. The team kept shipping, but the cadence was internal — and it felt slower.
+
+The response was deliberate: **make YC week last forever**. Every quarter, for five consecutive days, ship one major feature per day. The first Launch Week ran approximately the last week of March 2021. By July 2025, the count was fifteen completed Launch Weeks. By 2024, <Stat value="126" label="Launch Weeks across 94 dev-tool companies in 2024 (launchweek.dev)" /> tracked by the open-source launchweek.dev tracker.
+
+## What the format actually is
+
+| Component | What it produces |
+|---|---|
+| **Five days, one major feature per day** | A 5-day attention window that compounds across launches — each day's audience sticks for the next day |
+| **Quarterly cadence, not monthly** | Enough density to be a news cycle. Monthly would be padded launches. |
+| **Cross-platform synchronous blast** | HN + Product Hunt + X + email + Discord same-day per launch. The week becomes inescapable in the dev-tools attention pool. |
+| **Engineer-as-marketer** | The engineer shipping the feature writes the launch copy. Technical depth, no marketing noise. |
+| **"We rarely save features for Launch Week"** | Features that are ready ship via monthly Beta Updates. Launch Week is top-of-funnel concentration, not release week. |
+| **Supabase Universe planning ritual** | Team-wide pre-launch coordination two months before each Launch Week. Documented internally and partly in public. |
+
+The constraint that prevents the format from collapsing is the "we rarely save features" rule. If a Launch Week becomes the only time the company ships, the cadence corrupts the shipping discipline. Supabase prevents this by routing ready features through monthly Beta Updates and using Launch Week as the *marketing* concentration window, not the *engineering* concentration window.
+
+## Why the trust mechanism works
+
+Launch Week is the fourth sub-pattern of E1 (crisis-as-GTM) in our case set. The other three:
+
+| E1 sub-pattern | Trigger | Demo surface |
+|---|---|---|
+| **Reactive (ElevenLabs)** | Specific incident — voice abuse, deepfake | Postmortem within 24–72 hours, paid-only voice cloning, AI detection |
+| **Proactive-safety (Anthropic)** | No incident — pre-emptive thesis | Constitutional AI papers, Responsible Scaling Policy |
+| **Proactive-transparency (PostHog)** | No incident — sustained operational disclosure | Public handbook, salaries, OKRs, runway |
+| **Proactive-cadence (Supabase Launch Week)** | No incident — sustained product-output cadence | 15 Launch Weeks shipped, each visible, each with five features |
+
+The trust mechanism is the same as PostHog's and Anthropic's: sustained operational discipline that a 12-month copy attempt cannot replicate. Fifteen Launch Weeks of shipped, visible, search-engine-archived product output cannot be reverse-engineered by a company that started copying the format last quarter. The surface is different — product output rather than internal company state or safety research. The mechanism is identical.
+
+This makes Launch Week the most copyable variant of the E1 sub-types for product-led companies without research labs or radical transparency cultures. PostHog's transparency requires publishing salaries; Anthropic's requires safety researchers; Launch Week only requires shipping discipline. The relative cost of admission is the lowest of the four sub-types.
+
+## What the cadence produced for Supabase
+
+The structural effect on Supabase between Series A (September 2021) and Series B (August 2022) was visible:
+
+| Metric | Series A (Sep 2021) | Series B (Aug 2022) | Multiple |
+|---|---|---|---|
+| Developers | 40K | 110K | 2.75x |
+| Databases | 50K | 150K | 3x |
+| GitHub stars | 19K | 36K | 1.9x |
+| Discord | 4K | 8K | 2x |
+
+These growth multiples in eleven months are not "natural product growth" — they are *product plus Launch Week compounding*. Three Launch Weeks ran in this window. Each produced a measurable lift in registrations and a smaller lift in retention.
+
+The Series B blog post does not break out Launch Week's specific contribution, but the funding cycle landed because the substrate had compounded faster than headcount. Felicis priced the round at $80M not because the product was better than competitors — it was Postgres-substrate-better, which is structural — but because the *cadence of visible improvement* was faster than competitors. Launch Week is the visible-improvement cadence.
+
+## The 94-company replication wave
+
+By 2024, launchweek.dev — an open-source tracker maintained by Copplestone and Flo Merian — counted 126 Launch Weeks across 94 different dev-tool companies. The format had taken over developer-tools marketing. The 94 companies include direct competitors (Neon, Render, Cloudflare), adjacent dev-tool companies (Linear, Replit, PostHog, Vercel), and AI-tool companies (Lovable, Cursor).
+
+Most of these replications are partial. They copy the cadence (quarterly), the format (5 days, 5 features), and the cross-platform blast — but few copy the engineer-as-marketer model or the "we rarely save features" constraint. The partial replications produce padded launches: marketing-team-written copy, features bundled to make the week look fuller, daily reveals that are not actually shipped on the day they're announced.
+
+This is the canonical risk of the proactive-cadence E1 sub-pattern. The cadence is easy to mimic; the underlying shipping discipline is hard. **Most companies that copy Launch Week without copying the founder discipline produce PR-ed transparency, which is worse than no transparency** — the same conclusion PostHog runs against handbook copies, applied to a different surface.
+
+## What Launch Week cannot do
+
+The format is not a substitute for the underlying product cadence. Supabase ships ~four Launch Weeks worth of features per year *plus* the monthly Beta Updates underneath. A company that ships four Launch Weeks worth of features per year and nothing else will have an empty engineering cycle outside the launch windows.
+
+The format is also not a substitute for substrate. Without the borrowed-Postgres substrate, every Launch Week feature would be brittle additions to an under-developed core. Supabase can ship Edge Functions, Storage, Auth, pgvector productization, and Realtime improvements because each lives on top of a mature substrate. A from-scratch product without substrate cannot sustain the launch cadence — each feature is too load-bearing on the others.
+
+The format is also not a substitute for founder taste. Copplestone runs the editorial direction on what features make Launch Week. Without that editorial filter, the cadence becomes a calendar event, not a product cycle. Launch Week is a founder-IP-adjacent artifact, not a marketing-team-buildable program.
+
+<Conclusion title="What to copy">
+
+- **The cadence is easy; the engineer-as-marketer constraint is the load-bearing one.** Launch Week works because the engineer shipping the feature writes the launch copy. Marketing-team-written launches dilute into PR-ed transparency. If the engineer cannot write the launch post, the feature is probably not Launch-Week-worthy.
+- **Route ready features through monthly updates, not Launch Week.** "We rarely save features for Launch Week" is the rule that prevents the cadence from corrupting the shipping discipline. Use Launch Week as the marketing concentration window, not the release window.
+- **The proactive-cadence E1 sub-pattern is the most copyable of the four.** PostHog requires publishing salaries; Anthropic requires safety researchers; ElevenLabs requires incident postmortems. Launch Week only requires shipping discipline. The cost of admission is lower — but the discipline still has to be founder-DNA, not bolt-on culture.
+
+</Conclusion>
+
+## Sources
+
+- [Supabase blog — How we launch at Supabase](https://supabase.com/blog/supabase-how-we-launch)
+- [Supabase Launch Week landing page](https://supabase.com/launch-week)
+- [launchweek.dev — open-source Launch Week tracker (94 companies, 126 launches in 2024)](https://launchweek.dev)
+- [Evil Martians blog — How to do launch weeks for developer tools, startups, and small teams](https://evilmartians.com/chronicles/launch-weeks-for-developer-tools-and-startups)
+- [Medium @fmerian — How Supabase grew from 0 to 50K+ GitHub stars](https://fmerian.medium.com/how-supabase-grew-from-0-to-50k-github-stars-447243e8b2f0)

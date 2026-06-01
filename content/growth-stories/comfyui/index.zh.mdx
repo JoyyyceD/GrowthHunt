@@ -1,0 +1,162 @@
+---
+title: "ComfyUI — 增长故事"
+description: "一位匿名的 Quebec C++ 程序员在 2023 年 1 月 1 日为 Stable Diffusion 写了节点式 UI，保持身份隐匿 37 个月，期间项目复利成长成一个 11.5 万 stars 的开源底层；Comfy Org 在 2024 年 6 月成立时他拒绝当 CEO；2026 年 4 月 Craft Ventures 领投 3000 万美元投后 5 亿美元。案例库里第一个刻意空出「创始人即 IP」位置仍然进入独角兽轨道的案例。"
+date: "2026-06-01"
+readTime: "12 分钟"
+---
+
+ComfyUI 是这样一家公司：创始人匿名了 37 个月，商业实体晚于代码 17 个月，创始人在公司成立时拒绝当 CEO，整个项目却复利成了一个投后 5 亿美元的开源底层——客户 logo 墙上挂着 Amazon Studios、Apple、Autodesk、Netflix、Nike、Ubisoft、Tencent。
+
+到 2026 年 4 月，这个平台有 400 万 + 用户、15 万 + 日下载、6 万 + 社区构建的节点、5.6 万人的 Discord、11.5 万 GitHub stars。三轮累计融资约 4800 万美元。Comfy Cloud 年化预订额据报在 beta 发布 8 个月内超过 1000 万美元——单源数据，作 estimate 看待。
+
+这个案例可复用的教训不是开源打法（Hugging Face 在更学术的版本上跑得更好），也不是单独的「协议即分发」（Vercel 的 `vercel.json` 是更干净的参考）。是 ComfyUI 在这两者之上叠加的第三件事：**刻意空出「创始人即 IP」位置，让社区 KOL 和上游模型实验室自己填上这个空缺**。
+
+<Catalyst>
+案例库里大多数案例把「创始人即 IP」视为规模化（破 1 亿美元后）的必修。ComfyUI 是第一个在结构上拒绝这个角色的——comfyanonymous 匿名写代码 37 个月，请 Yoland Yan 来当 CEO，好让他不必当 CEO，并让 Scott Detweiler、Sytan、Olivio Sarikas 和 Guillermo Rauch 来做那些创始人自己拒绝做的「对外信任」工作。这个赌注是：开源协议 + 社区 KOL 生态可以替代「创始人信任梯度」。在 5 亿美元估值上，这个赌注还在跑。
+</Catalyst>
+
+## 三个替代同时在跑
+
+ComfyUI 同时跑三个结构性替代。每一个都用一个外部角色，替换掉标准 playbook 里的一块。
+
+| 标准 playbook 位置 | 标准占用者 | ComfyUI 的替代品 |
+|---|---|---|
+| 创始人即 IP（E2 层） | 创始人跑播客 + 每日 X presence | 底层 + 社区 KOL（Scott Detweiler、Sytan、Olivio Sarikas） |
+| 创始人设计的 demo 语法（B1 层） | Manus 的 90 秒录屏、ElevenLabs 的 `[excited]` 标签 | 社区生产的工作流教程 + PNG-嵌-JSON 协议 |
+| 创始人主导的捆绑里程碑（C1 层） | 公司自己 stack 出来的融资+ARR+产品新闻周期 | 外部合作伙伴（NVIDIA、Black Forest Labs）把公司 bundle 进它们的新闻周期 |
+
+这些替代都不是免费选项。底层必须强到让 KOL 不请自来；demo 语法必须可重现到用户会自己生产；伙伴关系必须通过多年作为标准集成目标而建起来。ComfyUI 付出的代价是多年的耐心底层工作。
+
+替代物之所以会复利而不互相稀释，是因为它们都把信任从单一创始人身份推到一个可验证、可复制的协议上。新用户不需要个人信任 comfyanonymous——他们只需要把一张 Civitai PNG 拖进画布，看到工作流完全一致地跑起来。这个验证循环，就是其它案例库公司付钱买「创始人即 IP」来提供的东西。
+
+## 匿名是位置，不是 PR 选择
+
+Yannik Marek——2026 年 2 月的 fxguide 播客确认了 handle 背后的本名——2023 年 1 月 1 日开始写 ComfyUI 时是 Quebec City 一家牙科种植体工厂的 C++ 程序员。他没有 PyTorch 经验、没有 ML 背景、也没有任何 LinkedIn 资料挂在这个项目上。
+
+一直延续到 2026 年 2 月的匿名，不是营销姿态。2024 年他在 Latent Space 上自述自己是个「boring CRUD web developer」，Swyx 和 Alessio 保留了这个说法，没有把它打破成一次「身份揭示」时刻。两年后 fxguide 的揭示则发生在一家 VFX 行业垂直媒体上——不是 TechCrunch，不是 Lex Fridman，不是 Lenny's。连这次受控的解锁也拒绝走标准「创始人即 IP」模板。
+
+结构性的后果是，ComfyUI 没有所有其它案例库 dev tools 公司都有的东西：每日 X presence 的创始人声音。<Stat value="0" label="comfyanonymous 在 2023-2026 年间发的每日 X 帖数" /> ——整个项目历史里都没有。公司在 X 上的表面积是 Yoland Yan 的 @yoland_yan，节奏是公关节奏，不是「创始人即 IP」节奏。
+
+承重事实是：这个空缺是协商出来的，不是意外造成的。2024 年 6 月的 Comfy Org 成立公告明确列了六位联合创始人：mcmonkey4eva（SwarmUI）、Dr.Lt.Data（ComfyUI-Manager——分发 6 万 + 社区节点的包管理器作者）、pythongosssss（Vue/TS 前端重写作者）、robinken（Comfy Registry）、yoland68（ComfyCLI），以及 Yoland Yan 作为 CEO。comfyanonymous 是七人之一，不是台前人物。IP 被故意分布在了整个集体上。
+
+## 让「创始人即 IP」变成可选的协议
+
+ComfyUI 「空缺」之所以在它身上特别 work，关键的技术原因是 PNG-嵌入工作流协议。每一张通过 ComfyUI 生成的图像，PNG 元数据里都带完整的 JSON 工作流图。把任何 ComfyUI 生成的 PNG 拖进 ComfyUI 画布，工作流就会完全一致地重建——一样的节点、一样的连线、一样的模型版本、一样的参数。
+
+这是承重的技术事实。它意味着每一次社交媒体分享都是一次可运行的产品分发事件。创作者把结果图发到 r/StableDiffusion、Civitai 或 Twitter；观看者把图拖进自己的 ComfyUI；工作流跑起来；观看者变成衍生品的生产者。这种结构性的高 viral coefficient，是大部分软件产品没法比的。
+
+协议同时也改变了「信任」对买家意味着什么。第一次试 ComfyUI 的用户不需要信任创始人、不需要信任公司，甚至不需要信任原始工作流作者。他们只需要验证——下载的 PNG 是否真的如同宣传那样跑起来。这是自验证信号，不需要创始人公信力。信任机制是机械的，不是 parasocial 的。
+
+这个结构最接近 Vercel 的 `vercel.json` 配置变成一种协议——竞争对手要么采纳，要么爬坡式对抗。ComfyUI 的 PNG 工作流格式利用了已有的 Stable Diffusion 习惯（PNG 元数据存 prompt），把它标准化成了底层。2026 年的进入者无法重新发明这个协议——社区已经承诺给了 ComfyUI 格式。和 Hugging Face 的 `safetensors` 采纳同样的锁定形态。
+
+## 17 个月潜伏期是在 Stability AI 内部度过的
+
+案例库里大部分「底层期」故事都涉及无薪水跑道烧钱。ComfyUI 的底层期结构上不同：2023 年 6 月到 2024 年 6 月，comfyanonymous 都在 Stability AI 工资单上。Stability 专门雇他来让 ComfyUI 适配 SDXL，而 comfyanonymous/ComfyUI 这个 GitHub 仓库始终在他个人 namespace 下。
+
+这个安排不寻常到值得起个名字。Stability 出钱养底层，但不拥有底层。comfyanonymous 在 ComfyUI 上获得了整整一年的带薪开发时间，没有放弃控制权。当 Emad Mostaque 在 2024 年 3 月辞职、Stability 领导力危机在 Q1-Q2 溢出后，未来组建 Black Forest Labs 的几位创始人开始外溢——而 comfyanonymous 的退出在结构上很简单，因为仓库本来就是他的。
+
+他带进 2024 年 6 月的 Comfy Org 的是：
+
+- 仓库完好且在他 namespace 下
+- Stability 期间累积的 4 万 + GitHub stars
+- 与即将 ship Flux 的 BFL 创始人直接的工作关系（他们 8 月 1 日发布会明确写「ComfyUI day-1 集成」）
+- 与 Scott Detweiler 直接的工作关系（Stability 的 QA Head，制作了 SDXL 工作流 viral 视频的人）
+- 一套更广义 Stable Diffusion 社区已经采纳的协议
+
+案例库里最接近的对应物是 Hugging Face 2018-2022 在 Inference Endpoints 变现之前的底层窗口。ComfyUI 的窗口在结构上更紧（17 个月 vs 4 年），且结构上更冒险（由一个潜在竞争者发工资 vs 自己出资），但结果一样：底层在变现尝试之前就已经固化。
+
+## 反向捆绑里程碑
+
+playbook 里的 C1（捆绑里程碑——融资、ARR、产品、客户公告 stack 在一个新闻周期里）通常是公司主导的招法。Cursor、Manus、ElevenLabs 都跑过公关团队把公开物件对齐到一个窗口的版本。
+
+ComfyUI 2024 年 6 月到 8 月的窗口是反过来的。45 天里发生了三件事，公司只主导了其中一件：
+
+| 日期 | 事件 | 主导方 |
+|---|---|---|
+| 2024 年 6 月 18 日 | Comfy Org 公开宣布 | Comfy Org |
+| 2024 年 7 月 29 日 | NVIDIA RTX Remix 集成 ComfyUI，TensorRT 60% 加速 | NVIDIA |
+| 2024 年 8 月 1 日 | Black Forest Labs Flux 发布，明确写「ComfyUI day-1 集成」 | Black Forest Labs |
+
+NVIDIA 选择集成 ComfyUI，而不是反过来要 ComfyUI 接入 RTX。Black Forest Labs——由前 Stability SDXL 工程师组成，他们和 comfyanonymous 共享办公室 18 个月——主动把 ComfyUI 写进了自己的发布博文里。两个捆绑事件都没有 Comfy Org 公关预算付费。它们发生，是因为底层已经复利到一个程度，外部伙伴主动选择 ComfyUI 作为标准集成表面。
+
+结果是 A 轮在公司成立约 90 天后关闭。Chemistry Ventures 领投 1900 万美元，Cursor Capital 和 Guillermo Rauch 参投。Rauch 参投本身就是替代 IP 信号——当公司拒绝把创始人放在融资公告页面上时，同行创始人参投（Vercel 那位每日 X presence 的创始人）就变成了代理信任物件。blog.comfy.org 上没有 A 轮博客公告——这在案例库公司里很反常，但与「反创始人即 IP」模式一致：VC 接受了没有标准创始人主导公告周期的轮次。
+
+## 上游驱动的 D1 叙事升级
+
+playbook 里的 D1 是技术叙事升级——往上爬栈、打开新产品框架、拉高公司在对话里的层级。案例库里标准的跑法（Vercel 的边缘平台重定位、Anthropic 的 API → Claude.ai → Code 弧线、Replit 的 Agent 转型）都是自己 ship 产品事件。
+
+ComfyUI 的 D1 升级不是公司 ship 的，是模型释放驱动的：
+
+| 上游模型释放 | 日期 | ComfyUI 角色 |
+|---|---|---|
+| SDXL 1.0 | 2023 年 7 月 | 原生 base+refiner 流水线（创始人仍在 Stability） |
+| Stable Video Diffusion | 2023 年 11 月 | 第 3 天原生支持（8GB VRAM、25 帧） |
+| Stable Diffusion 3 | 2024 年中 | Day-1 |
+| Flux.1 | 2024 年 8 月 | Day-1，BFL 发布博文明确提及 |
+| Hunyuan Video / Mochi / LTX-Video | 2024 年末 / 2025 年 | 全部 day-1 |
+| Wan 2.2 | 2025 年 | Day-1 |
+| FLUX.2 | 2025 年 11 月 | Day-1，NVIDIA 联合优化 |
+
+每一次上游开源权重模型释放配合 ComfyUI day-1 集成，都是一次叙事升级——「ComfyUI 现在也是视频 / 3D / 音频 / 多模态的 OS」——而公司不必把这个 ship 成「定义品类的产品事件」。叙事在没有产品市场团队推动的情况下复利。
+
+先决条件很脆弱。2023 到 2026 年的开源视觉 AI 模型释放节奏在历史上很罕见——SD1.5、SDXL、SVD、SD3、Flux、Flux.2、Hunyuan、Wan 2.2、Mochi、LTX-Video 都在 36 个月窗口里释放。如果 2026-2027 年节奏放慢（Sora 2、Veo 3、Nano Banana Pro 这类闭源模型跑在前面，开源视觉实验室资金耗尽），ComfyUI 的上游驱动 D1 复利就会断。底层留着；叙事变慢。
+
+## Comfy Cloud 与 17 个月的 hold
+
+案例库里最长的刻意「先别变现」窗口，从 2023 年 1 月（第一行代码）一直到 2025 年 9 月（Comfy Cloud Beta 发布）。代码 2023 年 1 月 → Stability 雇佣 2023 年 6 月 → Comfy Org 2024 年 6 月 → A 轮 2024 年 9 月 → Comfy Cloud Beta 2025 年 9 月。底层之上大约 32 个月没有直接变现，其中 Comfy Org 成立后有 17 个月没 ship 任何收入产品。
+
+Comfy Cloud 的设计直接保护开源社会契约。本地开源版继续免费，且保持功能对等。云端订阅只在活跃 GPU 时间计费——工作流编辑不收费。这种定价姿态在说：我们对算力收费，不对协议收费。协议保持公开。
+
+到 2025 年 12 月，定价成熟为 Comfy Credits 池，可以用于云端工作流或 Partner Nodes（Nano Banana Pro 和其它商业节点集成）。底层之上的 marketplace 机制让单元经济能够打通——6 万 + 社区节点变成了收入表面，其中一部分门在付费信用消耗后才打开，但保持可选。到 2026 年 1 月，公司把 30% GPU 成本下降直接传导给订阅者——一个相信自己体量能跑赢单位毛利压缩的公司才做的进攻招法。
+
+2025 年 9 月的 1700 万美元增长轮是 Comfy Org 第一次用正式博客公告融资。标题框架：「Open source lasts forever / OS of creative AI」。Pace Capital、Chemistry 与 Abstract Ventures 领投；Essence VC 参投。与 Comfy Cloud Beta 同一新闻周期。匿名姿态开始松动——但创始人主导的公告仍然没有发生。
+
+## fxguide 揭示是企业销售物件，不是新闻周期
+
+到 2026 年 2 月，Comfy Org 已经在客户 logo 墙上挂着 Amazon Studios、Apple、Autodesk、Netflix、Nike、Ubisoft 和 Tencent。这些客户跑的企业采购流程没法 reference check 一个 pseudonym。要让 B 轮叙事干净地关闭，创始人必须被命名。
+
+挑哪个媒体来做身份揭示，是承重事实。2026 年 2 月 20 日的 fxguide 播客那一期，标题是「ComfyUI with co-founder Yannik Marek (ComfyAnonymous)」，是第一次把本名挂在 handle 上的出版物。fxguide 是一家 VFX 行业垂直媒体，读者就是 Comfy Org 需要赢得合法性的工作室采购受众——Industrial Light & Magic、Netflix VFX 团队、Amazon Studios。这一期是销售物件，不是新闻周期。
+
+这在结构上和其它案例库的创始人身份揭示模式都不同。大多数创始人要么 (a) 从第一天起就实名，要么 (b) 通过一篇兼任新闻周期的 TechCrunch profile 被命名，要么 (c) 通过泄漏的 SEC Form D 被意外命名。comfyanonymous 选了 (d)：在一家「垂直行业媒体」上做自控揭示，且这家媒体的读者会直接转化为企业采购。本名在企业买家实际在读的出版物上变得公开。
+
+两个月后，2026 年 4 月 24 日，Craft Ventures 领投 3000 万美元投后 5 亿美元 B 轮。Pace Capital、Chemistry、TruArrow、Guillermo Rauch 都跟投。TechCrunch 报道引用了 400 万 + 用户、15 万 + 日下载、6 万 + 社区节点和工作室 logo 墙。Cloud 年化预订额数字（8 个月内 >1000 万美元）只在单源覆盖里出现——superbcrew，不是 TechCrunch——在被旁证之前应当作 estimate。
+
+## 公开记录之外
+
+这份分析有几个值得直接命名的物质性缺口。
+
+- **Stability AI 期间的商业细节。** comfyanonymous 的薪酬、股权、仓库归属法律协议、与 Stability 的离职条款都没有披露。Latent Space 访谈讨论了工作内容但没有讨论结构。最重要的缺口。
+- **A 轮冲突。** Sacra 报 1620 万美元 / Pace 领投；TechCrunch 报 1900 万美元 / Chemistry 领投；Tracxn 报 1367 万美元 / Chemistry 领投，归为 B 轮。Comfy Org 没有这一轮的博客公告。最 likely 的解读是 1900 万美元反映了包括追加的总额，但具体切分没有公开。
+- **Comfy Cloud ARR。** 1000 万美元年化预订额是 superbcrew 单源。TechCrunch B 轮报道没有引用 ARR。5 亿美元估值下，1000 万美元 ARR 意味着 ~50x——对开源底层+Cloud 是可辩护但偏高。如果实际 ARR 更接近 300-500 万美元，B 轮就读作「按底层定价」而不是「按收入定价」。
+- **Yannik Marek 的背景细节。** 「父亲的牙科种植体工厂」细节来自一处 fxguide 播客引用。Yoland Yan「前 Google App Search ML 工程师」细节来自一处 tech-insider.org 引用。两者都合理且无矛盾，但都是单源。
+- **反创始人即 IP 模式能否复利过 50 亿美元。** GitLab 和 HashiCorp 是警示性 benchmark——创始人即 IP 层弱、估值卡在 50-150 亿美元中段区间的开源基础设施公司。ComfyUI 能不能在不建创始人即 IP 层的情况下突破这个天花板，是未来 24 个月才能回答的现场问题。
+
+ComfyUI 关于「创始人模式」的透明度，悖论地，比案例库里其它任何一个都低。反 IP 招法让公司从外部看更不透明。正确读法不是「我们确切知道发生了什么」，而是「底层强到我们不需要知道」。
+
+<Conclusion title="ComfyUI 的特殊性">
+
+playbook 是可复用的，但有四个先决条件让它对大多数团队来说不可得：
+
+- **2023-2026 开源基础模型释放节奏独一份。** SD1.5、SDXL、SVD、SD3、Flux、Flux.2、Hunyuan、Wan 2.2、Mochi、LTX-Video 都在 36 个月窗口里释放。如果 2026-2027 年闭源视觉模型继续跑在前面，上游驱动 D1 的整个复利会停。ComfyUI 没法制造上游释放节奏。
+- **comfyanonymous 的人格不可迁移。** 37 个月公开匿名、拒绝 CEO 职责、最小社交存在、接受 Stability AI 雇佣同时保留仓库——这是一个极其罕见的创始人画像。大多数创始人撑不过第六个月——一旦估值过亿，反 IP 行为就维持不住。
+- **PNG-嵌入工作流协议窗口已经关闭。** 「分享物 = 可运行物」协议在 2023 年初实施，借助已有的 Stable Diffusion PNG 元数据约定。社区在 ComfyUI 格式上标准化了。2026 年进入者无法重新发明——要么接受 ComfyUI 格式（承认对方是底层），要么打一场爬坡的格式战。和 Vercel 的 `vercel.json` 或 Hugging Face 的 `safetensors` 是同样的锁定形态。
+- **Yoland-Yan-当-CEO 位置是窄窗口。** 要够资深，VC 才接受他是「可参考核实」的执行者；但不能资深到压过 comfyanonymous 的公司叙事。前 Google ML 工程师 + Techstars 同时打中。CEO 太知名会盖过创始人；CEO 太弱会过不了 VC 尽调。大多数创始人没法招到这个具体画像。
+
+如果你具备这四个条件，模式成立。如果不具备，模式仍然教你应该往哪个方向建——但入门成本约等于 17 个月底层工作零变现、一位愿意隐身三年的创始人，以及一个能把每一个用户产出物变成分发事件的协议。
+
+</Conclusion>
+
+## 资料来源
+
+- [Latent Space — AI Engineering for Art with comfyanonymous](https://www.latent.space/p/comfyui)
+- [fxguide — ComfyUI with co-founder Yannik Marek (ComfyAnonymous)](https://www.fxguide.com/fxpodcasts/comfyui-with-co-founder-yannik-marek-comfyanonymous/)
+- [TechCrunch — ComfyUI 估值 5 亿美元（2026 年 4 月）](https://techcrunch.com/2026/04/24/comfyui-hits-500m-valuation-as-creators-seek-more-control-over-ai-generated-media/)
+- [Comfy Org 博客 — Comfy raises $17M（2025 年 9 月）](https://blog.comfy.org/p/comfy-raises-17m-funding)
+- [Comfy Org 博客 — The next chapter for ComfyUI（2024 年 6 月）](https://blog.comfyui.ca/comfyui/update/2024/06/18/Next-Chapter.html)
+- [Comfy Org 博客 — ComfyUI V1 release（2024 年 10 月）](https://blog.comfy.org/p/comfyui-v1-release)
+- [Black Forest Labs — Announcing Black Forest Labs（2024 年 8 月）](https://bfl.ai/blog/24-08-01-bfl)
+- [NVIDIA — RTX Remix REST API + ComfyUI app connectors（2024 年 7 月）](https://www.nvidia.com/en-us/geforce/news/gfecnt/20247/rtx-remix-rest-api-comfyui-app-connectors/)
+- [GitHub — comfyanonymous/ComfyUI](https://github.com/comfyanonymous/ComfyUI)
+- [comfy.org/about](https://www.comfy.org/about)
+- [Wikipedia — ComfyUI](https://en.wikipedia.org/wiki/ComfyUI)
+- [VpnMentor — ComfyUI_LLMVISION 恶意节点披露（2024 年 6 月）](https://www.vpnmentor.com/news/comfyui-malicious-custom-node/)

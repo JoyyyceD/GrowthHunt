@@ -1,0 +1,91 @@
+---
+title: "Claude over OpenAI——让 AWS 反向邀请 Base44 的那篇 LinkedIn（2025 年 3 月）"
+description: "2025 年 3 月 15 日，Maor 发了一篇 LinkedIn 公开解释为什么 Base44 用 Anthropic Claude（via AWS Bedrock）而不用 OpenAI。这篇 post 触发 AWS 反向邀请他 5 月去 Tel Aviv 一场活动 demo——零外联、零 pitch deck。案例库里教科书式的单创始人生态 BD 招式。"
+date: "2025-03-15"
+type: "media"
+gtmTag: "搭 KOL 顺风车"
+eventTitle: "Claude over OpenAI LinkedIn + AWS 接住"
+externalUrl: "https://techcrunch.com/2025/06/18/6-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash/"
+---
+
+<Catalyst>
+大多数生态 BD 胜利需要一个 BD 团队。Maor 没有 BD 团队。他有一篇 LinkedIn post，解释一个技术决策背后的 cost-per-performance 推理——结果是 AWS 没收到任何外联邮件就反向邀请 Base44 去 Tel Aviv demo。这篇 post 是案例库里教科书式的单创始人生态 BD 招式。
+</Catalyst>
+
+2025 年 3 月 15 日左右，Maor 在 LinkedIn 发了一篇解释为什么 Base44 用 Anthropic Claude（via AWS Bedrock）而不用 OpenAI 的文章。post 把 cost-per-performance 推理写在运营颗粒度——Base44 跑的具体代码生成 workload 上的 token 成本、延迟、输出质量。
+
+post 不是营销。是 Maor 实际的运营推理，写出来的方式和一个工程师写内部决策文档一样。结果是 AWS——没收到 Base44 任何外联——主动找上来，邀请 Maor 5 月去 Tel Aviv 一场 AWS 活动 demo。
+
+## post 实际说了什么
+
+让这招生效的结构性细节是 post 的内容。Maor 没写「我们爱 Anthropic」或「我们相信 Claude 的安全性」。他写了一个具体的成本/质量 tradeoff 背后的运营决策。语气是工程，不是营销。
+
+按 Maor 之后引述还原，内容大致是：
+
+- **每个有用输出的 token 成本**——在 Base44 需要的价格层级，Claude 每生成一次可交付代码补全的成本比 OpenAI 低。
+- **Base44 batch size 下的延迟**——AWS Bedrock 的服务基础设施在 Base44 spiky 使用模式下、同等规模时，比直接走 OpenAI API 处理得更好。
+- **代码生成输出质量**——在 Base44 的具体 workload（全栈应用生成，不是聊天）上，Claude 输出需要的后处理更少。
+- **「90% AI 写代码」的 codebase 作为佐证**——Maor 自己的产品就跑在他在推荐的 stack 上。
+
+第四点是承重的。Maor 不是基于第三方 benchmark 在推荐 Claude。他是基于自己已经 ship 了一个 $1M ARR 产品（这产品本身 90% 由 Claude 写）在推荐。第一人称证据——「这是我赌上我公司的 stack」——在结构上比任何 benchmark 都强。
+
+## 为什么 AWS 注意到了
+
+AWS Bedrock——亚马逊托管的多模型 API 平台——2025 年初处在竞争位置。Microsoft Azure 有 OpenAI 独家。Google 在自己云里有 Gemini。AWS Bedrock 的价值主张是多供应商中立，Anthropic Claude 是主推模型。
+
+一家小而快速增长的公司公开解释 **它的生产 stack 用 AWS Bedrock 服务 Claude**——这正是 AWS 开发者关系团队想要的生态信用素材。这篇 post 等于是一份公开 testimonial——一个工程师写的，不是营销——并且落在 AWS 生态 feed 里、刚好是 AWS 需要这种信号的时刻。
+
+AWS 团队反向 outreach 到 Maor 不是个难决策。邀请 Base44 去 Tel Aviv demo 的成本是一次差旅报销。上游是一个 hyper-growth 创业公司站台的 AWS Bedrock 公开案例研究。
+
+## Tel Aviv demo
+
+AWS Tel Aviv 活动发生在 2025 年 5 月初。Maor 在台上 demo Base44。demo 给了两件事：
+
+| 给 Base44 的 | 给 AWS 的 |
+|---|---|
+| Anthropic + AWS 生态联合署名 | 真实客户 testimonial |
+| 以色列科技圈信用 | Base44 stack 故事给销售用 |
+| 收购前的企业叙事 | Base44 站台的 Bedrock 案例研究 |
+
+信用环路双向流动。等 Wix 6 月新闻稿发出去时，「Anthropic / AWS 栈」已经是 Base44 公开身份——让 Wix 想讲的企业准备度故事更容易落地。
+
+## 模式：把运营推理公开，让生态自己来
+
+这是案例库里单创始人生态 BD 杠杆最高的版本。模式泛化：
+
+- 做一个值得辩护的技术决策。
+- 把决策背后的运营推理公开。
+- 自然处可以 tag 相关生态，但不要 pitch。
+- 生态伙伴——它的 BD 团队在搜索的就是这类信号——会反向 outreach。
+
+模式生效有三个前提：
+
+- **真实运营实质。** post 必须装实际工程推理，不是定位内容。任何读这篇 post 的人都能看出 Maor 在汇报一个真实决策。
+- **一个生态伙伴正在主动招手的品类。** AWS Bedrock vs Azure-OpenAI vs Google Vertex 在 2025 年初是一场活的竞争前线。生态主动想要 testimonial 级别的内容。
+- **两边都有信用交叉署名。** Maor 有 Explorium 和 Forbes 30 Under 30 substrate。AWS 有专门预算做这类外联的 DevRel 团队。匹配是结构性的。
+
+一位没有 substrate substrate 的创始人、或者在一个生态没在招手的品类里跑同一招，不会产生同样的反向 outreach。模式是通用的，但前提是具体的。
+
+## 这一招没做的部分
+
+AWS 接住没做的两件事：
+
+- **没产生用户。** Tel Aviv demo 是信用事件，不是增长渠道。3–5 月的用户增长继续来自日更 X / LinkedIn clip，不是 AWS。
+- **没改变 wrapper 窗口风险。** Base44 深嵌入 Anthropic/AWS 栈这个事实其实 *增加* 了 wrapper 窗口风险——如果 Anthropic ship 直接竞品，Base44 的 stack 选择需要重新辩护。Maor 5 月的主动峰值退出部分是对这个风险的回应。
+
+接住给了 Base44 在它需要企业叙事跟 Wix 谈话时的生态信用。信用是通过一篇 LinkedIn post——零成本、零 BD 团队——拿到的，这是这招对其他单创始人可复制的部分。
+
+<Conclusion title="可复用的招式">
+
+- **公开实际运营推理，不是定位内容。** post 生效是因为它用工程语言描述了一个真实的技术决策。单创始人发出市场化风格内容不会触发 AWS 反向 outreach。
+- **第一人称证据胜过第三方 benchmark。** Maor 的「我用这个 stack ship 了 $1M ARR 产品」比任何 benchmark 都更强的证据。写技术 post 的创始人应该把自己产品赌在推荐的 stack 上——否则反向 outreach 信号不会落地。
+- **生态伙伴有活跃的竞争招募时会反向 outreach 给正确的信号。** 找出这种动态正在发生的品类（云厂商、模型厂商、基础设施厂商），把内容发到那个空隙里。
+
+</Conclusion>
+
+## Sources
+
+- [TechCrunch — 6-month-old solo-owned vibe-coder Base44 sells to Wix](https://techcrunch.com/2025/06/18/6-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash/)
+- [Lenny's Newsletter — The Base44 bootstrapped startup success story](https://www.lennysnewsletter.com/p/the-base44-bootstrapped-startup-success-story-maor-shlomo)
+- [Maor Shlomo on LinkedIn](https://il.linkedin.com/in/maor-shlomo-1088b4144)
+- [Calcalist Ctech — Maor Shlomo Holy Grail 访谈](https://www.calcalistech.com/ctechnews/article/y0kdgmw7a)

@@ -1,0 +1,89 @@
+---
+title: "Borrowed Substrate — Why Two Founders Wrapped 30-Year-Old Postgres Instead of Building a Database (Jan 2020)"
+description: "Paul Copplestone and Ant Wilson met through Entrepreneur First Singapore in 2019. The founding choice was structural: identify Postgres as the substrate, hire deep into the ecosystem, and never invent a storage engine."
+date: "2020-01-15"
+type: "product"
+gtmTag: "Borrowed substrate"
+eventTitle: "Supabase founded — Postgres as borrowed substrate"
+externalUrl: "https://www.stacksync.com/blog/one-word-changed-everything-the-origin-story-of-supabase"
+---
+
+<Catalyst>
+The founding choice that locked in every future option was not "build a database." It was "identify a 30-year-old open-source database as the substrate, wrap it in modern developer experience, and never re-invent storage." Two months later that bet was eight hosted databases. Five years later it was a $5B valuation.
+</Catalyst>
+
+January 2020, Singapore. Paul Copplestone (CEO, ex-Nimbus for Work, Entrepreneur First Singapore) and Ant Wilson (CTO, Imperial College London MSc Software Engineering) start writing Supabase code. The pre-seed round is approximately $100K from angels. The product is described in one line: an open-source Firebase alternative built on PostgreSQL.
+
+The two had met through Entrepreneur First's Singapore cohort in 2019. Copplestone was in Singapore after running Nimbus for Work, a chat product that had hit Firebase's pricing and scale ceiling. Wilson was in London. The pairing was remote-first from Day 0, which mattered later — but the load-bearing decision was technical, not geographic.
+
+## The Firebase-shaped scar
+
+Nimbus for Work had used Firebase for real-time features and hit a familiar wall. Real-time WebSocket pain at scale. Expensive data egress fees when the user base grew. NoSQL retro-fitting when queries needed JOINs. The decision to migrate off Firebase was costly and disruptive — the kind of decision that imprints a permanent technical opinion on the founder making it.
+
+This is non-transferable structural advantage. A founder who has not personally hit a database scale ceiling cannot manufacture the conviction needed to identify Postgres as their substrate. **The Firebase pain was not researched. It was lived.** Every product decision in the next five years routes back to a specific Firebase pain point Copplestone had paid for in cash and weekends.
+
+## The Postgres bet
+
+The technical decision rested on a single judgment: do not invent a new storage engine. Wrap one that has 30 years of operational hardening.
+
+In 1986, Postgres was a Berkeley research project. By 2020 it had survived:
+
+- Google Spanner pressure (the "infinite SQL" narrative)
+- MongoDB hype (the "JSON-first" wave)
+- DynamoDB lock-in (the AWS-native NoSQL push)
+- The entire NoSQL wave that came and went
+- Every major cloud provider rolling out their own managed Postgres
+
+The question was not whether Postgres worked. It was whether developer experience on top of Postgres could be made *better* than Firebase's developer experience on top of Bigtable.
+
+## The "no magic" engineering principle
+
+A Sequoia investor — who had reviewed YC applications during the Parse era and watched Parse collapse under its own abstractions after Facebook's acquisition — told Copplestone something that became Supabase's engineering principle.
+
+| Principle | Concrete consequence |
+|---|---|
+| **No magic.** Any abstraction the developer cannot pierce is a future prison. | Every Supabase feature is a Postgres extension, Postgres-adjacent service, or thin managed-runtime layer. Nothing hides the underlying database. |
+| **No abstractions you can't see through.** Auth, Storage, Realtime, Edge Functions all expose their internals. | Developers can rip Supabase out and keep the raw Postgres database, every row and index preserved. |
+
+The principle constrained the product surface. Authentication is GoTrue, a sidecar service on top of Postgres tables. Realtime is an Elixir/Phoenix Channels service consuming Postgres logical replication. Storage is S3-backed with metadata in Postgres. Edge Functions are Deno runtimes calling Postgres directly. Vector is pgvector — the Postgres extension — packaged with embedding generation and integrations.
+
+**Every component is pluckable.** This looked like a weakness in 2020. It became the load-bearing GTM property of 2024–2025 when AI coding tools defaulted users to Supabase precisely because lock-in fear was minimized.
+
+## What the borrowed-substrate framing requires
+
+Identifying Postgres as the substrate is cheap. Making the framing land as competence requires deep contributor presence. Supabase hires for this:
+
+- Multiple Postgres core contributors
+- The NGINX co-founder (for the proxy / pooler / connection-management layer)
+- The Vitess co-creator, Sugu Sougoumarane (hired October 2025 to lead Multigres / Vitess-for-Postgres)
+- Founders from across the developer-tools ecosystem
+
+Without the hiring discipline, "open source Firebase alternative" reads as thin wrapping and the trust gradient collapses. The borrowed framing only works when the company can credibly claim to be the deepest commercializer of the substrate, not just the most marketable.
+
+## Why the borrowed substrate compounded
+
+By Series E (October 2025), Accel's investment thesis read like Postgres-substrate validation rather than Supabase-product validation. The Accel post title — "Supabase's Series E: An Era-Defining Database" — frames Supabase as the operational layer for the Postgres revival, not just a developer-tools company.
+
+The borrowed-substrate A1 pattern has three structural advantages over building-from-scratch A1 (Vercel's eight-year Next.js burn, Hugging Face's seven-year Transformers build):
+
+1. **Lower launch cost.** Supabase did not have to convince developers that Postgres was good. That work had been done 30 years earlier.
+2. **Higher pluckability premium in the AI era.** AI coding tools recommend platforms users can leave. Borrowed-substrate platforms can leave; built-from-scratch platforms often cannot.
+3. **Deeper hire-able talent pool.** Postgres ecosystem talent is well-distributed globally. Building a hiring funnel around Postgres expertise is easier than building one around a proprietary substrate.
+
+The matching disadvantage is a possible ceiling on the multiple. Supabase cannot claim "we invented this category" — they did not. They identified the category and packaged it. Whether that produces a $50B outcome or a $20B outcome is one of the open questions at the $10B reported-round stage.
+
+<Conclusion title="What to copy">
+
+- **The borrowed-substrate option only opens when an industry-grade open-source asset already exists in your category.** Postgres, Linux, Kubernetes, Llama-class open weights, certain bioinformatics tools. Most categories do not have one. If yours does, identify it before building one.
+- **Hire deep into the ecosystem before claiming the framing.** Postgres core contributors, NGINX co-founder, Vitess co-creator. Without that hiring discipline, "borrowed substrate" reads as thin wrapping.
+- **The "no magic" engineering principle is the load-bearing constraint.** Pluckability is the GTM property that matters in the AI era — every user can leave with their data. The constraint defines the product surface from Day 0.
+
+</Conclusion>
+
+## Sources
+
+- [Stacksync — One word changed everything (origin story)](https://www.stacksync.com/blog/one-word-changed-everything-the-origin-story-of-supabase)
+- [Y Combinator — Supabase company page (S20)](https://www.ycombinator.com/companies/supabase)
+- [Felicis — Paul Copplestone on Building for Builders](https://www.felicis.com/insight/paul-copplestone-on-building-for-builders)
+- [Supabase blog — How we launch at Supabase](https://supabase.com/blog/supabase-how-we-launch)
+- [Supabase blog — Multigres: Vitess for Postgres (Oct 2025)](https://supabase.com/blog/multigres-vitess-for-postgres)

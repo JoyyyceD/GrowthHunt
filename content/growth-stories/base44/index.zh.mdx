@@ -1,0 +1,149 @@
+---
+title: "Base44 — 增长故事"
+description: "一位以色列创始人 2024 年 12 月 15 日在泰国开始写 Base44 代码，2025 年 1 月中旬公开发布，三周后冲到 $1M ARR，2025 年 6 月 18 日以 $80M 现金卖给 Wix——全程没融过一分钱外部资本。被 Wix 收购后，Base44 在 2026 年 5 月推到 $150M ARR。Base44 是案例库里第一个干净的「在模型 wrapper 商品化窗口关闭前主动峰值退出」案例。"
+date: "2026-06-01"
+readTime: "12 min"
+---
+
+Base44 是这样一个案例：一位以色列开发者 Maor Shlomo 大约在 2024 年 12 月 15 日在泰国打开电脑，四周后公开发布，再三周后冲到 $1M ARR，5 月报出 $189K 单月利润，2025 年 6 月 18 日以 $80M 现金卖给 Wix——加上一套 earn-out 结构，到 2026 年 Q1 已经又额外触发了 $38M。
+
+头条数字本身就是结构性的。从第一次代码提交到收购宣布，大约 **180 天**。从 2024 年 10 月 27 日那条「Going to build @base44 in public」推文，到收购宣布，**235 天**。Maor 没拿过 **任何外部资本**，退出时持股 **100%**，8 名员工共分 $25M 现金 retention pool，没有股权转换。之后在 Wix 旗下，这款产品从大约 $3.5M ARR 一路推到 <Stat value="$150M ARR" label="2026 年 5 月" />——意味着 Wix 这笔押注按运行 ARR 算已经回了大约 1.9 倍现金价。
+
+可复用的教训不是「你也能 6 个月卖 $80M」。它更窄、也更有用：当一位创始人有真正的声誉 substrate、选了 wrapper-model 业务、并且能读出底层模型商品化窗口的关闭节奏，**在峰值卖掉是一个合法的终态**。Base44 是案例库里第一个 C 阶段（引爆窗口里的变现）执行到位 *且* D1 叙事升维主动跳过的干净案例。playbook 里对应的子模式是「主动峰值退出」——是新增条目，不是被迫退出。
+
+<Catalyst>
+一位有 7 年 CEO substrate 的创始人、从第一个用户就上 $20–$200/月 SaaS 价格层、品类命名权由 Andrej Karpathy 在发布同月帮他搞定——再加上一个有纪律的判断：六人团队跑不过 Accel 投的 Lovable 和估值 $3B 的 Replit，所以正确动作是在 wrapper 窗口顶端接受战略买家的报价，而不是等模型厂商不可避免地下场商品化。
+</Catalyst>
+
+## 创始决策本身就是一次拒绝
+
+Maor 2017 年 24 岁联创 Explorium。公司累计融资约 $125M，Insight Partners 领投，团队 7 年长到约 100 人。Maor 全程任 CEO，入选 Forbes 30 Under 30。Base44 这条故事线最承重的结构性决策发生在 Base44 **存在之前**：2023 年 10 月，以色列-哈马斯战争爆发、他被征召回 Unit 8200 长期服役时，他从 Explorium CEO 岗位退下。
+
+那一年服役期做了两件事。第一，强行把他从 VC-track 创始人默认轨迹里拽出来——这是后来能选 solo + bootstrap 的前提。第二，服役期间他帮一家非营利做内部工具，亲眼看到一家 IT agency 对一个简单内部 dashboard 报价 6 周 + $40K。那一刻是 Base44 的种子。
+
+但 Maor 没在 2023 年立刻动手。2024 年底他和女友 Yuval Dahan 去泰国，试着用 WordPress 给她未来的纹身店搭网站、失败，**然后**才决定自己写一个 AI 驱动的方案——而不是回 Explorium。结构性决策不是「我想做 Base44」。是「我不会回旧公司，也不接 VC」。后面所有事情都是这次拒绝的下游。
+
+## 潜伏期：3 个月，不是 3 年
+
+任何 traction 之前的潜伏期对于这个案例集来说短得反常——从第一次代码提交到第一个 1000 用户只有大约 3 个月。案例库里大多数增长故事有几年的 substrate。PostHog 在 Patrick Collison 那条推文之前有 6 年公开 handbook 提交记录。Linear 在节制变成招聘磁铁之前有 4 年持续运营纪律。
+
+Base44 的 substrate 不是产品。是 **Maor 本人**。Explorium 的履历、Unit 8200 校友网络、Forbes 30 Under 30、加上他弟弟联创 Token Security（拿到 Notable Capital $20M），加在一起意味着第一波 LinkedIn 关注者不需要陌生人转发。这是声誉 substrate 形态（Linear 和 Anthropic 也跑这种）——只是从几年持续执行压缩到 3 个月潜伏期，因为他启动时 substrate 已经成熟。
+
+2024 年 10 月 27 日那条 X post——`"Going to build @base44 in public"`——比第一行代码早大约 7 周。这是一次 pre-commit，把 Maor 在还没东西可输之前先绑死在 build-in-public 格式上。一旦 format 公开，所有错误、起步失败、转向都会被看见。在接受约束之前先把约束广播出去，是 Linear 创始人公开承诺前三年不建增长团队时用的同款逻辑。
+
+潜伏期的另一项关键选择是 **stack 选型**。Maor 选了 Cursor + Anthropic Claude（via AWS Bedrock）——当时开发者工具默认还是 OpenAI 优先。这个选择后来变成 2025 年两次独立的叙事事件：3 月那篇解释 cost-per-performance 的 LinkedIn post 触发 AWS 反向邀请他去 Tel Aviv demo；以及「Base44 90% 的代码由 Claude 写」这条整段 build-in-public 弧线最 viral 的金句。
+
+## 引爆：2025 年 2 月的三个星期
+
+公开发布是 2025 年 1 月中旬。2 月 6 日，Andrej Karpathy 发推介绍「vibe coding」一词描述用自然语言写软件。Base44——上线刚三周、正在涨——天然嵌入新的品类叙事。**没有任何创始人能制造一个品类被命名的时间点。** Karpathy 可以早 6 个月命名（那就便宜了 Lovable 和 Replit）或晚 6 个月命名（那时候品类已经固化）。他恰好在 Maor 上线那个月命名，是整段故事里唯一一项无法复制的运气。
+
+之后三周发生的事，是案例库里最压缩的一次引爆：
+
+| 时间窗口 | 数据 | 上游动作 |
+|---|---|---|
+| 第 1–3 周 | 10,000 用户 | 日更 X + LinkedIn demo clip |
+| 第 3 周 | $1M ARR | 从第一天就上 $20–$200/月 SaaS 价格层 |
+| 第 4 周 | 首月营收约 $1.5M | 定价没改 |
+| 第 4–6 周 | 20,000 用户 | continued build-in-public |
+
+最重要的细节是第二行。**Base44 从第一个用户就有付费层。** 这是案例库里跟 Character.AI「2 亿 MAU 不定价、$32M ARR、反向 acqui-hire 退出」最干净的反面案例。在引爆窗口里，定价信号会永久锁定公司定位——一旦免费用户预期形成，你回不去再加价。Maor 吸取了教训，发布日就上 $20–$200/月。结果是首月 $1.5M 营收——一条新闻周期就杀掉了所有「这是个玩具」的质疑。
+
+demo 格式也是结构性选择。这个品类里大多数 viral 产品 demo 展示 **产品**。Maor 的 demo 展示 **他自己在用产品**。每条 clip 30–60 秒：左边一句自然语言 prompt，右边是一个能跑的应用。这个 format 无法被伪造，因为创始人没法假装六个月每天做 demo。这是「创始人即持续 demo」子模式——和 Manus 90 秒录屏最像，但更极端，因为 demo 主体是创始人本人而不是产品输出。
+
+## 4 月到 5 月在复利什么
+
+2025 年 4–5 月有五件事在同时复利：
+
+**Build-in-public 循环自我喂养。** 每一条里程碑推文（1 万用户、$1M ARR、然后 $189K 月利润）带来下一波 FOMO 驱动的注册，这又产生下一条推文。format 自己有生成性：每条 post 制造下一条 post 的素材。
+
+**Karpathy 品类效应持续。** 媒体周期问「谁在领跑 vibe coding」，Base44——可见、英文友好、bootstrap、单人——是显眼答案。这是 KOL credit transfer 的弱形态：Karpathy 没直接背书 Base44，但他命名的品类把 Base44 装进去了。
+
+**B2B 合作在企业叙事被需要之前先落地。** eToro 和 SimilarWeb 5 月初就上了平台——比 Wix 公告早 6 周。这是以色列生态的温度替资金型公司的 BD 团队干了活。等 Wix 写新闻稿时，「eToro 和 SimilarWeb 已经在平台上」已经是真话。
+
+**AWS 和 Anthropic 反向 outreach。** 3 月 15 日那篇解释「为什么选 Claude 不选 OpenAI」的 LinkedIn post 触发 AWS 反向邀请 Maor 5 月去 Tel Aviv demo。这套模式是单创始人生态 BD 的最高杠杆版本：**把你的运营推理公开，让生态伙伴自己来找你，因为你写的东西就是他们想看的东西。** Maor 没付顾问费、没递 pitch，信用信号免费送上门。
+
+**拒 VC 本身变成营销引擎。** 到 4 月 Maor 已经公开披露每家以色列 VC 都来找过他、他全拒了，点名拒掉 Oren Zeev 等 lead。「拒掉每家 VC 并公开发文」把 bootstrap 从被动姿态（我融不到）翻成主动姿态（我不需要）。这是 C3 default-alive 最激进的形态——Linear 用了 6 年跑同一招；Maor 6 个月跑完。
+
+## Wagyu 晚餐与交易
+
+5 月是拐点。团队从 1 人扩到 5–6 人。eToro 和 SimilarWeb 落地。AWS demo 完成。5 月单月利润收在 $189K。然后 Wix 总裁 Nir Zohar——他原本是因为 Maor 咨询 Wix B2C 营销规模时认识的——把 Maor 介绍给 Wix CEO Avishai Abrahami。
+
+Maor 5 月里在 Abrahami 家见了三次。第一次是 Avishai 在自家后院烤的一顿 Wagyu 牛排晚餐。之后几次走了三种场景：继续 bootstrap、融 VC、卖给 Wix。牛排晚餐这种叙事细节会扭曲对交易实际逻辑的理解——听上去像以色列生态的偶然——但底层结构逻辑是干净的。
+
+Avishai 的判断是：Base44 已经建成了一套 feature set，Wix 自己 R&D 要 600 工程师做一年才能 ship。按这个团队这一年的完全成本 $80M+ 算，22–23 倍 ARR 收购倍数按 build-vs-buy 实际是便宜的。Wix 后来在 Q1 2026 财报里明确披露过这套算法。
+
+Maor 的判断是对称的。6 个人没法跑过估值 $1.8B、Accel 投的 Lovable（$100M ARR），也没法跑过估值 $3B、正在引爆 Replit Agent 的 Replit（$140M ARR）。正确动作不是等 wrapper 窗口关闭。Anthropic 和 OpenAI 6–12 个月内必然会下场做直接竞品。把公司卖给一个有 3 亿+ 分发的战略买家、外加一个绑定收入里程碑的 earn-out，是正确 trade——不是因为 $80M 是目标，而是因为它是让 Base44 成为全球品类领头羊所需的杠杆，不需要烧 4 年和大量股权。
+
+协议是周四 6 月 12 日 papered。签字定在周五 6 月 13 日——和以色列对伊朗战争开始同一天。Maor 5 月谈判期间在 NYC 向 Yuval Dahan 求婚。他母亲在 Rambam 医院接受肺癌治疗。6 个月 hypergrowth、一场全球新闻级别的地缘冲突、和一个 31 岁年轻人人生最大的几件个人大事全部压在同一个窗口里。
+
+## 收购后的证明
+
+Base44 最被低估的事实是：收购后的曲线对「战略买家论」的证明，比收购前的曲线对创始人的证明更强。到 **2025 年 8 月中**，SaaStr 报道 Base44 在 Wix 旗下每月新增 $12M ARR——$400K/天、周环比加速。到 2026 年 3 月 <Stat value="$100M ARR" label="收购后第 9 个月" /> Base44 已经是 Wix 的 lead narrative。到 2026 年 5 月，Base44 ARR $150M。
+
+速度很猛。9 个月从 $0 到 $100M ARR 比 Replit Agent 的 hypergrowth 曲线还快。但 Wix 是花钱推的：Q1 2026 财报披露 $90M 单季度 Base44 用户获客 CAC，加上 $20M Super Bowl LX 广告（Wix 和 Base44 各一支 commercial）。Wix 当季净亏 $57M；股价在 2026 年 5 月 13 日跌 27%。Calcalist 的头条是 *「Base44 在飙升。那为什么 Wix 在崩盘？」*
+
+这是这笔交易必须通过的测试——证明它是战略收购、不是 acqui-hire。**Acqui-hire 拿不到单季度 $110M 的营销预算**。Wix 愿意为单季度 Base44 分发花掉大约 1.4 倍收购价，意味着 Wix 把 Base44 当作核心 AI 增长引擎，而不是人才打包。Maor 拿到 Q1 2026 $38M earnout、Wix CFO Lior Shemesh 确认有更多 earnout 资金在为 2029 年前的后续里程碑预提，暗示 Maor 总对价在交易全周期里会落在 $150–200M 区间。
+
+教训是双向的。主动峰值退出对 Maor 是对的：他通过 earn-out 拿到的总价值，比他独立在同样窗口里能做出来的更高。但 Wix 的验证需要在单季度花掉接近收购价两倍的钱，才把产品推到一个能从叙事上撑起这笔交易的数字。战略买家的算式是真的，但很贵。
+
+## 哪些可复用、哪些不可
+
+可复用模式，5 招：
+
+1. **声誉 substrate 浓缩版。** 如果你已经做过一家 VC-backed 公司、并主动退下来过，你就有 Maor 用的 substrate。「从几年持续执行压缩到 3 个月潜伏期」是这种打法快的核心。
+
+2. **创始人即持续 demo。** 每天发一条 demo 短片，主角是创始人本人在用产品。最少 6 个月，按设计无法伪造。案例库里最像的是 Manus 的 90 秒录屏；Base44 更极端，因为持续的 demo 主体是创始人本身。
+
+3. **引爆窗口里 day-1 定价。** 从第一个用户起就上 $20–$200/月 SaaS 价格层。定价信号锁定定位，杀掉「玩具」质疑。案例库里的反面是 Character.AI：引爆窗口里不定价导致 2 亿 MAU 才 $32M ARR、最后反向 acqui-hire 退出。
+
+4. **大声 default-alive + 公开拒 VC。** Hypergrowth 期间公开披露单月利润。把 bootstrap 从被动框架翻转成主动框架。Linear playbook 从 6 年压缩到 6 个月。
+
+5. **D1 之前主动峰值退出。** 如果你的业务是模型 wrapper、底层模型厂商可能 6–12 个月内 ship 直接竞品，把公司卖给一个有分发 + earn-out 的战略买家，是合法终态。这是 Base44 给 playbook 新增的子模式。
+
+Base44 特有的部分——所以不能泛化：
+
+- **Karpathy 在 Maor 发布同月命名了「vibe coding」。** 2026 年的创始人进入这个品类时，Lovable、Bolt、Replit、v0、Cursor、Base44 都已经有 substrate。品类名已经被占了。
+- **Explorium 给了 Maor 7 年创始人声誉 + 一个退场过的资本基础。** 一位第一次创业、用 $10–20K 个人资金 bootstrap 的创始人不会有 VC inbound，意味着「公开拒掉每家 VC」叙事引擎转不起来。
+- **以色列生态把 Maor 直接送到 Avishai 家厨房。** Nir Zohar 的介绍是关系驱动 acqui-hire 的极端形态——在以色列科技网络之外很难快速复制。
+- **Wrapper 窗口时机赶上了。** Base44 在 Anthropic/AWS 生态栈最有价值的 wrapper 期间被卖掉。反面案例是 Jasper——GPT-3 wrapper 等太久、被 ChatGPT 商品化 8 个月内打死。Maor 的退场窗口很窄、他读对了。
+- **建造期没有重大外部事件干扰。** 以色列-哈马斯战争早于 Base44 建造期。伊朗-以色列战争发生在签字日——太晚了，来不及干扰。2023–2025 年很多以色列创始人的建造周期被战争打断；Maor 的窗口是运气。
+- **退出时 100% 创始人持股。** Maor 选择推迟招聘 + 纯现金薪酬，使他能在卖出时持有 100%。一个给早期成员各发 1–5% 股权的创始人，会显著分掉这笔收益。算式成立的唯一前提是这个团队只需要撑 6 个月。
+
+## 公开记录里没有的部分
+
+围绕 Base44 的透明度并不均匀。Maor 在 build-in-public 弧线上 X 和 LinkedIn 发得很密，但有几块对怎么读这个案例很重要的不透明：
+
+- **收购前 ARR 从未直接披露。** Lenny 的 $3.5M run-rate 估算被大量引用，但从来没有创始人在某条带日期的推文里直接说过。最强的 anchor 是 2025 年 5 月 $200K MRR + $189K 月利润，倒推出 $2.4–3.5M 区间。
+- **Earn-out 回收/clawback 结构不公开。** Earn-out 到 2029 年——意味着 Maor 必须在 Wix 待 3.5 年。如果他提前离职，未触发的 earn-out 怎么处理没公开。Q1 2026 那笔 $38M 支付确认 earn-out 是季度里程碑型而非 cliff 型，但完整公式不可见。
+- **Base44 在 Wix 旗下的 unit economics 部分披露。** Wix CFO Lior Shemesh 说过 Base44 standalone 毛利已经为正但「front-loaded」——意味着用户 onboarding 消耗的 inference 比稳态运营多。Retention 数据不公开，所以 $90M Q1CAC 背后的 LTV/CAC 算式仍然是 Wix 内部计算。
+- **「90% AI 写代码」是创始人口径**，不是独立审计。当成创始人陈述处理。
+
+这些缺口不会改变案例的结构性判断。但它们会改变任何基于 Base44 收购后 unit economics 的分析的可信度。正确表述是：Base44 是案例库里最干净的 *战略决策* 案例（创始人选择、交易结构、收购后放量），但属于最弱的 *unit economics* 案例（真实毛利、留存、LTV 不可见）。
+
+<Conclusion title="可复用的招式">
+
+Base44 是给 playbook 新增 2 条 + 收紧 3 条既有条目的案例：
+
+- **主动峰值退出现在是合法终态。** 在 Base44 之前，案例库把 C 阶段的战略收购默认当作被动退出——D1 叙事升维不可用的信号。Maor 这个案例说明：对于一个 wrapper-model 业务、商品化窗口正在关闭的情况下，带 earn-out 结构的峰值卖出是对 fundamentals 的清醒判断，不是失败。
+- **创始人即持续 demo 是最极端的 demo grammar。** 每天发一条 clip，主角是创始人本人。6 个月公开提交记录使它无法伪造。这是 build-in-public 格式的升级——把信任建立的时间线压缩。
+- **引爆窗口里 day-1 定价锁死定位。** 第一个用户就上 $20–$200/月，防止 Character.AI 式失败模式（2 亿 MAU、不定价、$32M ARR、反向 acqui-hire）。定价信号是结构性决策；其他事情都从这里流出。
+- **声誉 substrate 压缩潜伏期。** 如果你已经做过一家 VC-backed 公司，潜伏期可以是 3 个月而不是 3 年。即便品牌在收购里转走，substrate 本身可以带到下一次创业。
+- **公开运营推理是单创始人的反向 BD。** Claude over OpenAI 那篇 LinkedIn post 没有发任何外联邮件就触发了 AWS。模式可泛化：把你 stack 背后的实际运营决策公开，生态伙伴会因为你写的内容就是他们想看的内容而主动来找你。
+
+如果你这些都齐了——加上对的 model-wrapper 窗口——6 个月 $80M 现金这条路是可行的。如果你没齐，这个教训仍然作为纪律有用：把公司结构搭成让主动峰值退出 *可选*，哪怕你最终选不退。
+
+</Conclusion>
+
+## Sources
+
+- [TechCrunch — 6-month-old solo-owned vibe-coder Base44 sells to Wix for $80M cash](https://techcrunch.com/2025/06/18/6-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash/)
+- [Wix press release — Wix acquires Base44 (Jun 2025)](https://www.wix.com/press-room/home/post/wix-further-expands-into-vibe-coding-with-acquisition-of-base44-a-hyper-growth-startup-that-simplif)
+- [Calcalist Ctech — Maor Shlomo Holy Grail 访谈](https://www.calcalistech.com/ctechnews/article/y0kdgmw7a)
+- [Calcalist Ctech — Vibe coding fever：Base44 被 Wix 以 $80M 收购](https://www.calcalistech.com/ctechnews/article/s1iflnlelx)
+- [Calcalist Ctech — Base44 在飙升。那为什么 Wix 在崩盘？](https://www.calcalistech.com/ctechnews/article/j7bfdhkor)
+- [Calcalist Ctech — Base44 里程碑解锁 Maor Shlomo $38M earnout](https://www.calcalistech.com/ctechnews/article/sy8shemymg)
+- [Lenny's Newsletter — The Base44 bootstrapped startup success story (Maor Shlomo)](https://www.lennysnewsletter.com/p/the-base44-bootstrapped-startup-success-story-maor-shlomo)
+- [Inc. — How Base44 found a buyer 4 months after launching](https://www.inc.com/ben-sherry/vibe-coding-base44-wix-avishai-abrahami-maor-shlomo/91267959)
+- [SaaStr — Wix, the unexpected new threat to Replit and Lovable](https://www.saastr.com/wix-the-unexpected-new-threat-to-replit-and-lovable-a-deep-dive-into-how-its-vibe-coding-app-is-now-growing-just-as-fast-or-close-to-it/)
+- [Maor Shlomo on X (@MS_BASE44)](https://x.com/ms_base44)
+- [Avishai Abrahami on X (@Avishai_ab)](https://x.com/Avishai_ab)

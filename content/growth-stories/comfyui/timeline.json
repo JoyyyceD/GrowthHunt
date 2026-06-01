@@ -1,0 +1,326 @@
+{
+  "company": {
+    "slug": "comfyui",
+    "name": "ComfyUI",
+    "legalName": "Comfy Org Inc.",
+    "tagline": "An anonymous Quebec C++ programmer wrote a node-based UI for Stable Diffusion, held his identity for 37 months, refused to be CEO, and rode the open-source visual-AI release wave into a $500M valuation — the case set's first deliberately vacated founder-as-IP",
+    "summary": "ComfyUI extends the open-source-substrate play one structural step further than Hugging Face: the founder was anonymous for 37 months (Jan 2023 → Feb 2026), the commercial entity post-dated the code by 17 months, the founder declined to be CEO when Comfy Org was formed, and the project compounded without any founder-as-IP investment at all. The substrate was a protocol: every ComfyUI-generated PNG file carries the full workflow JSON embedded in its metadata, so every social-media share is a runnable product-distribution event. The community produced the demo grammar — Scott Detweiler's 'What I use internally at Stability' SDXL workflow video, the Sytan SDXL workflow on Civitai, Olivio Sarikas's YouTube tutorials — none of which the founder made. Upstream model labs began arriving at ComfyUI for day-1 integration: SDXL (Jul 2023), Stable Video Diffusion (Nov 2023, day-3), Flux (Aug 2024, with explicit 'day-1 integration for ComfyUI' in BFL's launch post), then Hunyuan, Wan, Mochi, LTX-Video. By the April 2026 Craft-led Series B at $500M post-money, ComfyUI had 4M+ users, 150K+ daily downloads, 60K+ community nodes, a 56K-member Discord, and a customer logo wall featuring Amazon Studios, Apple, Autodesk, Netflix, Nike, Ubisoft, and Tencent — without ever building the founder-as-IP layer that most case set companies treat as required for scale.",
+    "founded": "2023-01",
+    "founders": [
+      "comfyanonymous (Yannik Marek)",
+      "Yoland Yan (CEO, joined June 2024)"
+    ],
+    "seriesNumber": 26
+  },
+  "phases": [
+    {"start": "2022-10", "end": "2023-06", "name": "Anonymous OSS substrate", "color": "#fef3c7"},
+    {"start": "2023-06", "end": "2024-06", "name": "Stability AI interlude", "color": "#dbeafe"},
+    {"start": "2024-06", "end": "2025-09", "name": "Comfy Org + Series A", "color": "#fce7f3"},
+    {"start": "2025-09", "end": "2026-05", "name": "Cloud + enterprise + Series B", "color": "#dcfce7"}
+  ],
+  "events": [
+    {
+      "date": "2022-10-15",
+      "title": "comfyanonymous discovers Stable Diffusion",
+      "type": "media",
+      "description": "Yannik Marek — a C++ programmer working at his father's dental-implant factory in Quebec City, anonymous on the internet under the handle comfyanonymous — starts using Automatic1111 with the newly released Stable Diffusion. The tool's inflexibility for high-resolution and multi-stage pipelines is the friction that triggers what comes next. He has never used PyTorch, never trained a model, never worked in ML.",
+      "externalUrl": "https://www.latent.space/p/comfyui"
+    },
+    {
+      "date": "2023-01-01",
+      "title": "First lines of ComfyUI code",
+      "type": "product",
+      "description": "comfyanonymous starts writing ComfyUI from scratch in Python with a LiteGraph.js-inspired node-based architecture. His own framing on Latent Space later: a 'boring CRUD web developer' deciding to build 'a powerful interface that's not easy to use' as the deliberate inverse of Automatic1111's UX direction.",
+      "externalUrl": "https://www.latent.space/p/comfyui"
+    },
+    {
+      "date": "2023-01-16",
+      "title": "Initial GitHub release as comfyanonymous/ComfyUI",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "The repo goes public under the comfyanonymous namespace. README frames the project as 'for anyone that wants to make complex workflows with Stable Diffusion or that wants to learn more how SD works.' No founder name, no LinkedIn, no website. The 37-month anonymity window starts here.",
+      "externalUrl": "https://github.com/comfyanonymous/ComfyUI",
+      "articleSlug": "2023-01-initial-github-release"
+    },
+    {
+      "date": "2023-02-15",
+      "title": "First Reddit traction on r/StableDiffusion",
+      "type": "media",
+      "description": "comfyanonymous posts about area-conditioning on r/StableDiffusion — a feature that solves a real ceiling Automatic1111 users had hit. First organic wave of power-user attention. No outbound. No KOL outreach. The protocol speaks for itself.",
+      "externalUrl": "https://www.reddit.com/r/StableDiffusion/"
+    },
+    {
+      "date": "2023-03-15",
+      "title": "Olivio Sarikas YouTube tutorial",
+      "type": "media",
+      "gtmTag": "Ride the KOL wave",
+      "description": "YouTuber Olivio Sarikas publishes a ComfyUI tutorial for the broader Stable Diffusion audience. First external-KOL credit transfer. comfyanonymous never contacted Olivio — the discovery was organic. The video pulls in non-engineer creators who would never have found a GitHub-only project.",
+      "externalUrl": "https://www.youtube.com/@OlivioSarikas"
+    },
+    {
+      "date": "2023-06-01",
+      "title": "Stability AI hires comfyanonymous to integrate SDXL",
+      "type": "acquisition",
+      "gtmTag": "OSS flywheel",
+      "description": "Stability AI brings comfyanonymous in-house to make ComfyUI work with the upcoming SDXL model. He remains pseudonymous. Crucially, the comfyanonymous/ComfyUI GitHub repo stays in his personal namespace — Stability funds substrate development without owning the substrate. The unusual deal that lets the founder be paid by Stability while keeping the asset.",
+      "externalUrl": "https://www.latent.space/p/comfyui",
+      "articleSlug": "2023-06-stability-ai-hire"
+    },
+    {
+      "date": "2023-07-26",
+      "title": "SDXL 1.0 release + Scott Detweiler viral workflow video",
+      "type": "product",
+      "gtmTag": "Format-as-credibility-constraint",
+      "description": "Stability AI ships SDXL 1.0 (3.5B base + 6.6B refiner). The base+refiner pipeline maps natively to ComfyUI's node graph; Automatic1111 cannot efficiently express it. Scott Detweiler — Stability's Head of QA — publishes 'What I use internally at Stability for my AI Art,' a SDXL ComfyUI workflow video. The canonical viral artifact. comfyanonymous did not produce it.",
+      "externalUrl": "https://www.yeschat.ai/blog-sdxl-comfyui-stability-workflow-what-i-use-internally-at-stability-for-my-ai-art-43363",
+      "articleSlug": "2023-07-sdxl-viral-moment"
+    },
+    {
+      "date": "2023-09-03",
+      "title": "PNG-as-workflow sharing format solidifies",
+      "type": "product",
+      "description": "Sytan SDXL workflow plus 4DCu.be / Civitai community-shared PNG workflows establish ComfyUI's signature sharing format: every generated PNG file carries the full JSON workflow graph embedded in its metadata. Drop a PNG into the ComfyUI canvas and the workflow reconstructs. Every shared image is a remixable, runnable artifact.",
+      "externalUrl": "https://blog.4dcu.be/ai/2023/09/03/comfyui-sdxl-workflows.html"
+    },
+    {
+      "date": "2023-11-24",
+      "title": "Stable Video Diffusion day-3 support",
+      "type": "product",
+      "description": "Stability releases SVD on November 21. ComfyUI ships native support on November 24 — 8GB VRAM, 25 frames, 1024×576. The day-1-or-near-day-1 integration pattern that becomes ComfyUI's structural play is established. Every future model release is now expected to land in ComfyUI first.",
+      "externalUrl": "https://blog.comfyui.ca/comfyui/update/2023/11/24/Update.html"
+    },
+    {
+      "date": "2024-03-22",
+      "title": "Stability AI CEO Emad Mostaque resigns",
+      "type": "media",
+      "description": "Stability AI's internal leadership crisis accelerates through Q1-Q2 2024. The future Black Forest Labs founders begin spinning out. The exit calculus for comfyanonymous starts here, but the public separation is still three months away.",
+      "externalUrl": "https://www.cnbc.com/2024/03/23/stability-ai-ceo-emad-mostaque-resigns.html"
+    },
+    {
+      "date": "2024-06-03",
+      "title": "Comfy Org legal entity formed",
+      "type": "acquisition",
+      "description": "Per Wikipedia and corporate records, Comfy Org Inc. is incorporated on June 3, 2024 — the formal end of comfyanonymous's involvement with Stability AI. Public announcement waits two weeks.",
+      "externalUrl": "https://en.wikipedia.org/wiki/ComfyUI"
+    },
+    {
+      "date": "2024-06-18",
+      "title": "Comfy Org publicly announced — Yoland Yan as CEO, founder still anonymous",
+      "type": "media",
+      "gtmTag": "Structural differentiation",
+      "description": "comfyanonymous publishes 'The next chapter for ComfyUI' on the new blog and announces Comfy Org. Co-founders named: mcmonkey4eva (SwarmUI), Dr.Lt.Data (ComfyUI-Manager), pythongosssss (frontend), robinken (Comfy Registry), yoland68 (ComfyCLI). Yoland Yan — ex-Google App Search ML engineer — joins as CEO so that comfyanonymous does not have to. The deliberate refusal of the founder-as-IP role.",
+      "externalUrl": "https://blog.comfyui.ca/comfyui/update/2024/06/18/Next-Chapter.html",
+      "articleSlug": "2024-06-comfy-org-formation"
+    },
+    {
+      "date": "2024-06-20",
+      "title": "ComfyUI_LLMVISION malicious node disclosed",
+      "type": "media",
+      "description": "Reddit user u/AppleBotzz exposes that the popular ComfyUI_LLMVISION custom node was exfiltrating browser passwords, credit cards, and browsing history via a disguised Discord webhook. First major security incident two days after Comfy Org's public launch. The org responds with Comfy Node Registry security scanning rather than a founder-led postmortem — the trust posture is substrate-mediated, not founder-mediated.",
+      "externalUrl": "https://www.vpnmentor.com/news/comfyui-malicious-custom-node/"
+    },
+    {
+      "date": "2024-07-29",
+      "title": "NVIDIA RTX Remix integrates ComfyUI",
+      "type": "product",
+      "description": "NVIDIA opens the RTX Remix REST API and ships custom ComfyUI nodes for AI-driven game-texture remastering. TensorRT acceleration cuts ComfyUI image-generation time by 60%. ~20K existing RTX Remix modders enter the ComfyUI funnel. NVIDIA chose to integrate with ComfyUI rather than ask ComfyUI to integrate with RTX — the substrate-asymmetry signal.",
+      "externalUrl": "https://www.nvidia.com/en-us/geforce/news/gfecnt/20247/rtx-remix-rest-api-comfyui-app-connectors/"
+    },
+    {
+      "date": "2024-08-01",
+      "title": "Black Forest Labs Flux launches with explicit ComfyUI day-1 integration",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "BFL — staffed by ex-Stability SDXL engineers who shared an office with comfyanonymous for 18 months — launches Flux.1 (12B MMDiT). The launch post says: 'moreover we're happy to have day-1 integration for ComfyUI.' ComfyUI's automatic FP8 + VRAM offload makes the 23GB model usable on 8GB GPUs. Automatic1111 has no Flux support until late September — a ~6-week ComfyUI monopoly on the highest-quality open weights.",
+      "externalUrl": "https://bfl.ai/blog/24-08-01-bfl",
+      "articleSlug": "2024-08-flux-day-one-integration"
+    },
+    {
+      "date": "2024-08-15",
+      "title": "Frontend modernization (TypeScript + Vue + Vite)",
+      "type": "product",
+      "description": "Legacy vanilla-JS frontend is officially replaced by Comfy-Org/ComfyUI_frontend (TS / Vue / Vite). Backwards-compatible shim for the existing extension ecosystem. Authored by pythongosssss. Foundation for V1 Desktop and Comfy Cloud later in the year.",
+      "externalUrl": "https://github.com/comfyanonymous/ComfyUI/issues/4169"
+    },
+    {
+      "date": "2024-08-20",
+      "title": "Joins Linux Foundation Open Model Initiative",
+      "type": "media",
+      "description": "Comfy Org joins the Open Model Initiative housed at the Linux Foundation, alongside Black Forest Labs and other open-source AI orgs. Cements the neutral-infrastructure positioning that lets every upstream model lab treat ComfyUI as a safe integration target.",
+      "externalUrl": "https://en.wikipedia.org/wiki/ComfyUI"
+    },
+    {
+      "date": "2024-09-15",
+      "title": "Series A ~$19M led by Chemistry — Guillermo Rauch participates",
+      "type": "funding",
+      "gtmTag": "KOL credibility transfer",
+      "description": "Within ~90 days of Comfy Org formation, the team closes a ~$19M Series A led by Chemistry Ventures, with Cursor Capital and Vercel founder Guillermo Rauch participating. No company blog post announces the round — unusual for a case set company. Rauch's participation is the proxy founder-IP signal: when the founders refuse public IP, a peer-founder coinvestor substitutes. Sacra reports a conflicting $16.2M / Pace-led figure; TechCrunch's $19M / Chemistry-led is the canonical reading.",
+      "externalUrl": "https://techcrunch.com/2026/04/24/comfyui-hits-500m-valuation-as-creators-seek-more-control-over-ai-generated-media/",
+      "articleSlug": "2024-09-series-a-chemistry"
+    },
+    {
+      "date": "2024-10-21",
+      "title": "ComfyUI V1 + Desktop app release",
+      "type": "product",
+      "gtmTag": "Audience boundary push",
+      "description": "First installable-app version: code-signed cross-platform Desktop (Windows, macOS, Linux, 200MB bundle), built-in ComfyUI Manager, model library and workflow browser. Marks the transition from power-user CLI tool to product. Comfy Node Registry holds 600+ nodes / 2000+ versions at launch.",
+      "externalUrl": "https://blog.comfy.org/p/comfyui-v1-release"
+    },
+    {
+      "date": "2024-11-15",
+      "title": "New Vue/TS UI becomes default",
+      "type": "product",
+      "description": "After five months of beta, the Vue/TS frontend (PR #3112 by pythongosssss) becomes the default. Legacy UI deprecated. The frontend stack is now appropriate for product polish rather than power-user-only customization.",
+      "externalUrl": "https://blog.comfy.org/p/making-new-ui-the-default-option-on-2024-11-15"
+    },
+    {
+      "date": "2025-09-15",
+      "title": "Comfy Cloud Beta launches",
+      "type": "product",
+      "gtmTag": "Monetize during peak",
+      "description": "Hosted ComfyUI launches in beta. Subscription pricing tied to active GPU time only — no charge during workflow editing. Local OSS stays free with feature parity. Cloud is the announced revenue mechanism. The 17-month substrate-only window before any monetization attempt is the longest deliberate hold in the case set.",
+      "externalUrl": "https://comfyui-wiki.com/en/news/2025-09-15-comfy-cloud"
+    },
+    {
+      "date": "2025-09-29",
+      "title": "$17M growth round + 'OS of creative AI' framing",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "$17M raised from Pace Capital, Chemistry, Abstract Ventures, with Essence VC participating. Same news cycle as Comfy Cloud beta. Positioning: 'Open source lasts forever / OS of creative AI.' The first round Comfy Org announces with a proper blog post — anonymity is starting to relax.",
+      "externalUrl": "https://blog.comfy.org/p/comfy-raises-17m-funding"
+    },
+    {
+      "date": "2025-12-08",
+      "title": "Unified Comfy Credits + Partner Nodes monetization",
+      "type": "product",
+      "description": "Pricing overhaul: all subscriptions move to a single Comfy Credits pool spendable on cloud workflows and on Partner Nodes (Nano Banana Pro and others). Existing subs grandfathered into a Founder's Edition with 30% credit boost. Hardware upgrade to Blackwell RTX 6000 Pro (96GB VRAM). The marketplace mechanic on top of the substrate.",
+      "externalUrl": "https://blog.comfy.org/p/comfy-cloud-new-features-and-pricing"
+    },
+    {
+      "date": "2026-01-23",
+      "title": "Comfy Cloud 30% price cut",
+      "type": "product",
+      "description": "GPU credit rate drops from 0.39 to 0.266 credits/sec following a 30% drop in GPU cost. Pro plan effective GPU time goes from 15h to 22h. Aggressive cost-savings pass-through ahead of the Series B narrative — protecting the creator base from cloud-economics pressure.",
+      "externalUrl": "https://quasa.io/media/comfyui-cloud-boosts-generation-limits-a-30-price-drop-ushers-in-more-ai-content-for-subscribers"
+    },
+    {
+      "date": "2026-02-20",
+      "title": "Yannik Marek named in fxguide podcast — the 37-month anonymity ends",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "comfyanonymous appears on the fxguide podcast under his real name Yannik Marek. He discusses the C++ background, Quebec City origins, the dental-implant-factory day job, and ComfyUI's role in VFX pipelines. The anon → named transition is gradual, founder-controlled, and pointed at a VFX-industry trade publication — not a tier-1 tech outlet. Even the reveal refuses the standard founder-IP template.",
+      "externalUrl": "https://www.fxguide.com/fxpodcasts/comfyui-with-co-founder-yannik-marek-comfyanonymous/",
+      "articleSlug": "2026-02-fxguide-name-reveal"
+    },
+    {
+      "date": "2026-04-24",
+      "title": "Series B $30M @ $500M led by Craft Ventures",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Craft Ventures leads a $30M growth round at $500M post-money. Pace Capital, Chemistry, TruArrow, and Guillermo Rauch roll over. TechCrunch tier-1 coverage discloses 4M+ users, 150K+ daily downloads, 60K+ community nodes, and a logo wall featuring Amazon Studios, Apple, Autodesk, Netflix, Nike, Ubisoft, and Tencent. Comfy Cloud annualized bookings reportedly exceeded $10M within eight months of launch — single-source, treat as estimate.",
+      "externalUrl": "https://techcrunch.com/2026/04/24/comfyui-hits-500m-valuation-as-creators-seek-more-control-over-ai-generated-media/",
+      "articleSlug": "2026-04-series-b-craft"
+    }
+  ],
+  "arr": [
+    {"date": "2024-06-01", "value": 0, "source": "Comfy Org public statements", "confidence": "official"},
+    {"date": "2025-09-15", "value": 0, "source": "Comfy Cloud Beta launch — pre-revenue", "confidence": "official"},
+    {"date": "2026-04-24", "value": 10000000, "source": "superbcrew (single source)", "confidence": "estimate", "round": "Comfy Cloud annualized bookings"}
+  ],
+  "valuation": [
+    {"date": "2024-09-15", "value": 100000000, "round": "Series A (estimated post-money)", "source": "TechCrunch / triangulated", "confidence": "estimate"},
+    {"date": "2025-09-29", "value": 250000000, "round": "Growth round (estimated post-money)", "source": "triangulated", "confidence": "estimate"},
+    {"date": "2026-04-24", "value": 500000000, "round": "Series B", "source": "TechCrunch", "confidence": "media"}
+  ],
+  "platforms": [
+    {
+      "slug": "github",
+      "name": "GitHub",
+      "score": 5,
+      "bestStage": "All stages — substrate",
+      "effort": "Substrate-level",
+      "role": "The substrate itself",
+      "description": "comfyanonymous/ComfyUI is the canonical repo (now mirrored under Comfy-Org/ComfyUI). 115K stars / 13.5K forks at Q2 2026. Python 99.6%. 140 weekly releases. The repo lived in a personal namespace through the entire Stability AI period — a structural choice that let Stability fund substrate development without owning the substrate. Every Civitai workflow PNG links back to this repo as the runtime.",
+      "catalyst": "January 16, 2023 — the initial public push under the comfyanonymous handle. Zero stars at minute zero. By mid-2024 it was 40K stars without the org running any GitHub-promotion campaign. The protocol did the work.",
+      "catalystUrl": "https://github.com/comfyanonymous/ComfyUI",
+      "accountUrl": "https://github.com/comfyanonymous/ComfyUI",
+      "accountLabel": "comfyanonymous/ComfyUI",
+      "whenItWorks": "When the substrate has a sharable protocol artifact (here: PNG-with-embedded-workflow). Every user output is a distribution event without the company having to amplify it.",
+      "whenItDoesnt": "When the protocol is replaceable by a competing format. ComfyUI's PNG-workflow format won because Stable Diffusion's PNG output habit was already in place — a precondition a 2026 entrant cannot reinvent."
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit (r/StableDiffusion)",
+      "score": 5,
+      "bestStage": "All stages — primary community surface",
+      "effort": "Continuous, community-led",
+      "role": "The discovery + dogfooding + KOL surface",
+      "description": "r/StableDiffusion (over 700K members by 2026) is where ComfyUI's organic growth happened. comfyanonymous's first February 2023 area-conditioning post landed here. Every new workflow trick gets posted here first. Every model release (SDXL, SVD, Flux, Hunyuan, Wan) gets benchmarked on r/StableDiffusion in ComfyUI workflow form. The subreddit is the public memory of the substrate.",
+      "catalyst": "February 2023 — comfyanonymous's area-conditioning thread is the first surface that put ComfyUI in front of power users hitting Automatic1111's ceiling. Subsequent SDXL-base-plus-refiner and Flux-day-1 threads compounded the same channel.",
+      "catalystUrl": "https://www.reddit.com/r/StableDiffusion/",
+      "accountUrl": "https://www.reddit.com/r/StableDiffusion/",
+      "accountLabel": "r/StableDiffusion",
+      "whenItWorks": "When the category has one canonical subreddit with high-signal power users who will test new workflows themselves. The signal compounds when both the founder and the upstream model labs participate in the same threads.",
+      "whenItDoesnt": "When the category is too fragmented across subreddits for any single one to function as the canonical surface. ComfyUI got lucky — Stable Diffusion has one obvious home."
+    },
+    {
+      "slug": "discord",
+      "name": "Discord (Comfy Org server)",
+      "score": 4,
+      "bestStage": "Post-Comfy-Org formation",
+      "effort": "Always-on, community-led + team support",
+      "role": "Real-time creator and developer support",
+      "description": "The official Comfy Org Discord shows ~56,821 members at Q2 2026 (live invite-page count). Absorbs real-time questions about workflows, custom nodes, GPU memory, and model integrations. Faster feedback loop than GitHub issues, more substantive than X. The de facto support channel that the org cannot afford to ignore — and the place where security incidents like the LLMVISION malicious node get triaged in public.",
+      "catalyst": "June 2024 — Comfy Org's formation moved Discord from a community-run server into the official support channel. The June 20 LLMVISION incident two days later was the first public stress test of the org's Discord ops.",
+      "accountUrl": "https://discord.com/invite/comfyorg",
+      "accountLabel": "Comfy Org Discord",
+      "whenItWorks": "When your users ship workflows that fail in non-trivial ways (VRAM, model-version mismatches, custom-node conflicts) and your team is willing to be in the channel daily.",
+      "whenItDoesnt": "When team Discord presence is performative. Without real ops engagement, Discord becomes a graveyard of unanswered questions and a negative-signal artifact."
+    },
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 2,
+      "bestStage": "Series A onward — CEO voice only",
+      "effort": "Episodic, CEO-led",
+      "role": "Funding and corporate-comms surface — not founder-IP",
+      "description": "Yoland Yan (@yoland_yan) is the org's voice on X — funding announcements, customer-logo highlights, hiring posts. The cadence is closer to a corp-comms account than to a founder-as-IP daily-presence channel (Rauch / Masad / Hawkins). comfyanonymous has effectively no X presence. The Series B announcement was Yoland Yan's, not comfyanonymous's. This is the case set's deliberately-vacated E2 channel.",
+      "catalyst": "June 18, 2024 — Yoland Yan's X post announcing Comfy Org was the company's first formal Twitter moment. The thread served as the CEO-introduction document. No founder-introduction document followed.",
+      "catalystUrl": "https://twitter.com/yoland_yan",
+      "accountUrl": "https://twitter.com/yoland_yan",
+      "accountLabel": "@yoland_yan on X",
+      "whenItWorks": "When the company has chosen substrate-first and does not need a founder-IP layer on X. The CEO voice can carry corp-comms without claiming founder-thought-leadership space.",
+      "whenItDoesnt": "When the category requires daily founder-presence trust (frontier-AI alignment, enterprise security). ComfyUI's substrate-mediated trust may not transfer to those categories."
+    },
+    {
+      "slug": "latent-space",
+      "name": "Latent Space podcast",
+      "score": 4,
+      "bestStage": "2024 substrate-validation moment",
+      "effort": "Once",
+      "role": "Founder-only long-form interview — the single load-bearing audio artifact pre-2026",
+      "description": "comfyanonymous's 2024 Latent Space episode is the only long-form interview that existed for almost two years. Swyx and Alessio walk through the build history, the SDXL base+refiner pipeline that gave ComfyUI its viral moment, and the founder's own framing — 'powerful, not easy to use' — as the deliberate inverse of Automatic1111's direction. The founder appears as 'Comfy' throughout; no name attribution. The episode functions as a substrate-validation artifact in the audio register without violating anonymity.",
+      "catalyst": "The 2024 release of the Latent Space episode — the moment ComfyUI's narrative entered the AI-engineering podcast canon without the founder having to break anonymity.",
+      "catalystUrl": "https://www.latent.space/p/comfyui",
+      "accountUrl": "https://www.latent.space/p/comfyui",
+      "accountLabel": "Latent Space — ComfyUI episode",
+      "whenItWorks": "When a single trusted technical-podcast host will interview a pseudonymous founder on substantive technical merit. Latent Space's audience treats engineering depth as the credibility marker, not founder identity.",
+      "whenItDoesnt": "Tier-1 mainstream press (TechCrunch, Bloomberg, The Information) will not run a long-form pseudonymous founder profile. The substrate-validation podcast is a substitute, not a press cycle."
+    },
+    {
+      "slug": "fxguide",
+      "name": "fxguide (VFX trade press)",
+      "score": 3,
+      "bestStage": "2026 controlled name reveal",
+      "effort": "Once",
+      "role": "Founder-controlled identity reveal in a non-tech-press channel",
+      "description": "The February 2026 fxguide podcast is the first interview that names Yannik Marek as comfyanonymous. The choice of outlet is the load-bearing fact. fxguide is a VFX-industry trade publication read by Netflix, Amazon Studios, Industrial Light & Magic — exactly the enterprise audience Comfy Org needed to legitimize for the customer logos that the Series B announcement would showcase two months later. The name reveal is a sales asset, not a press cycle. comfyanonymous bypassed TechCrunch and Bloomberg for the audience that would actually convert.",
+      "catalyst": "February 20, 2026 — the fxguide episode titled 'ComfyUI with co-founder Yannik Marek (ComfyAnonymous).' The first time the real name appears alongside the handle in a publication.",
+      "catalystUrl": "https://www.fxguide.com/fxpodcasts/comfyui-with-co-founder-yannik-marek-comfyanonymous/",
+      "accountUrl": "https://www.fxguide.com/fxpodcasts/comfyui-with-co-founder-yannik-marek-comfyanonymous/",
+      "accountLabel": "fxguide — ComfyUI episode",
+      "whenItWorks": "When the founder needs to relax anonymity for a specific commercial purpose (here: enterprise VFX procurement) and can pick an outlet whose readers are the exact buyers.",
+      "whenItDoesnt": "When the founder mistakes a name reveal for a personality launch. fxguide worked because Marek did not follow it up with a daily-X-presence campaign — the reveal stayed surgical."
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+---
+title: "The Initial GitHub Release as comfyanonymous/ComfyUI — Day Zero of a 37-Month Anonymity Window"
+description: "On January 16, 2023, a Quebec C++ programmer with no PyTorch experience pushed the first commits of ComfyUI to GitHub under the handle comfyanonymous. The repo lived in his personal namespace, the README named no human, and the 37-month anonymity window that defines this case began on that day. The structural choice was not 'launch then stay quiet' — it was 'launch from inside the position you intend to occupy.'"
+date: "2023-01-16"
+type: "product"
+gtmTag: "Structural differentiation"
+eventTitle: "Initial GitHub release"
+externalUrl: "https://github.com/comfyanonymous/ComfyUI"
+---
+
+<Catalyst>
+Most open-source projects launch with a founder identity attached — a personal GitHub avatar, a LinkedIn link, a Twitter handle inviting comment. ComfyUI launched with none of those. The decision to push the first commits under a pseudonym, with the repo in a personal-not-organizational namespace, and with no founder-introduction content anywhere, was the first move of the anti-founder-as-IP play. Every later structural choice — Stability AI employment without name disclosure, refusal of CEO duty, peer-founder coinvestment as proxy IP — was made possible by getting this one right at minute zero.
+</Catalyst>
+
+January 16, 2023. comfyanonymous pushes the initial commits of ComfyUI to a new public GitHub repo under his personal namespace. The README is short. The framing is direct: "for anyone that wants to make complex workflows with Stable Diffusion or that wants to learn more how SD works."
+
+The repo has zero stars at minute zero. The handle is new. The license starts as a permissive MIT-style choice and is later moved to GPL-3.0. There is no founder bio, no website, no LinkedIn link, no Twitter handle. The author is, intentionally, not searchable.
+
+What this day creates is not a piece of software — there are working PyTorch repos shipping every week — but a position. The position is "anonymous OSS substrate author." comfyanonymous has occupied that position from then through February 2026 — <Stat value="37 months" label="from initial push to public name reveal" /> — without releasing it.
+
+## What anonymity meant operationally
+
+The Latent Space podcast in 2024 made clear that the anonymity was personality, not posture. comfyanonymous described himself as "a boring CRUD web developer doing basic automation, Python programming." The framing rejected any heroic-founder narrative.
+
+But the operational consequences of the choice were structural. Three things became impossible the moment the first commit landed under the comfyanonymous handle:
+
+1. A founder-led Hacker News launch with the company's tagline above the fold
+2. A TechCrunch profile in the first six months that established a founder personality
+3. A daily X presence that would compound into a developer-trust gradient
+
+All three are standard moves for case-set dev-tools companies. PostHog's James Hawkins ran daily X presence from launch. Vercel's Guillermo Rauch did the same. Replit's Amjad Masad ran what Latent Space later called the "continuous-presence" pattern. Each of those founders built personal-trust gradients that materially helped recruit, fundraise, and sell.
+
+comfyanonymous made all three impossible by design. What replaced them was not nothing — it was the substrate itself, and a community of KOLs (Scott Detweiler, Olivio Sarikas, Sytan) who would later produce the trust artifacts the founder declined to produce himself.
+
+## The personal namespace as a load-bearing detail
+
+The repo's URL is `github.com/comfyanonymous/ComfyUI` — personal namespace, not organizational. This detail looks cosmetic but is the structural fact that made every later move possible.
+
+| Repo location | Consequence |
+|---|---|
+| Personal namespace (`comfyanonymous/ComfyUI`) | The repo belongs to the human. Employment relationships do not transfer ownership. |
+| Organizational namespace (`some-org/ComfyUI`) | The repo belongs to the org. Employment, M&A, or org dissolution can transfer ownership. |
+
+The personal-namespace choice in January 2023 is what made the June 2023 Stability AI hire workable. comfyanonymous could accept Stability employment specifically to integrate ComfyUI with SDXL without giving Stability any claim on the repo. Stability funded substrate development without owning the substrate. When Emad Mostaque resigned and the Stability leadership crisis unfolded in 2024, comfyanonymous's exit was structurally simple — the repo was already in his namespace.
+
+A 2026 founder reading this case and asking "should I launch under a personal handle" is asking the right question. The answer is "yes if you might later take employment from a partner who could otherwise claim the IP." That precondition is non-obvious in advance, but the personal-namespace choice keeps the option open.
+
+## What the README did not promise
+
+ComfyUI's README from launch did not claim to be the next-generation Stable Diffusion UI. It did not position against Automatic1111. It did not frame ComfyUI as easier than the alternatives — comfyanonymous later said the explicit goal was "a powerful interface that's not easy to use," which is the opposite of the standard product-launch promise.
+
+The README named one audience: "anyone that wants to make complex workflows with Stable Diffusion or that wants to learn more how SD works." This is two audiences fused into one — power users running multi-stage pipelines, and learners trying to understand how diffusion actually composes. Both audiences are technical. Both will tolerate friction in exchange for power and legibility. Neither requires a founder-marketing layer.
+
+The undersell is itself a structural choice. ComfyUI did not need to grow through performance marketing or HN launch optimization — it grew through power-user discovery on r/StableDiffusion, where the undersell read as honesty rather than positioning. By the time Olivio Sarikas's YouTube tutorial pulled in non-engineer creators in March 2023, the substrate had already earned the right to be discovered.
+
+## The two-week build
+
+comfyanonymous's later claim — that he "built the first version in just a couple of weeks" — appears in both the Latent Space 2024 interview and the fxguide 2026 episode. comfy.org's about page repeats it: "In January 2023, no tool on the market could chain two AI models together into a repeatable workflow. One developer in Quebec City built his own in two weeks and open-sourced it."
+
+The two-week timeline is plausible. comfyanonymous had been writing automation code at his father's dental-implant factory for years; basic Python and PyTorch were not new skills, even if PyTorch-for-diffusion-models specifically was. The LiteGraph.js inspiration for the node architecture meant the UI layer could be assembled from existing patterns rather than designed from scratch.
+
+What the two-week build also signals is that this is not a research project or a paper-companion codebase. It is a working tool, shipped quickly, intended to be used. The artifact is the entire pitch — the substrate has to speak for itself because no founder speech act will be made on its behalf.
+
+## What this day did not produce
+
+The initial release did not go viral in any conventional sense. Within the first month it accumulated organic attention on r/StableDiffusion — the first noticeable thread was comfyanonymous's February 2023 area-conditioning post, which solved a real Automatic1111 ceiling — but the broader Stable Diffusion community did not discover ComfyUI through this commit alone.
+
+The first KOL signal was Olivio Sarikas's March 2023 YouTube tutorial, which pulled in non-engineer creators. The viral moment came with the July 2023 SDXL 1.0 release and Scott Detweiler's "What I use internally at Stability" workflow video. Both of those events were external — produced by people comfyanonymous did not contact and did not coordinate with.
+
+The January 16 commit, in retrospect, was the position being occupied. The compounding required external actors to take the substrate seriously enough to produce derivative artifacts. The pseudonym made it impossible for the founder to do that work himself. The community did it instead.
+
+<Conclusion title="What to copy">
+
+- **Launch under a personal namespace if you might later take employment from a partner who could claim the IP.** comfyanonymous's personal-namespace choice in January 2023 made the Stability AI period structurally workable in June 2023 and the exit structurally simple in June 2024. The decision in advance is cheap; the option it preserves is expensive to buy later.
+- **Undersell the launch when the substrate is genuinely powerful.** ComfyUI's README did not promise a next-generation Stable Diffusion UI — it promised "complex workflows" to people who already knew they needed them. The undersell read as honesty on r/StableDiffusion, where positioning-style copy reads as marketing. A 2026 founder shipping a genuinely powerful substrate should consider whether the launch announcement adds or subtracts trust.
+- **Accept that founder-led KOL-validation paths are foreclosed.** Anonymous launches cannot run the Cursor-style podcast-circuit or PostHog-style daily-X-presence playbook. The structural substitute has to be community KOLs producing the trust artifacts. ComfyUI's Scott Detweiler / Sytan / Olivio Sarikas trio was not contacted by comfyanonymous — they discovered the substrate independently. A 2026 founder launching anonymously must accept that the validation cycle takes 6-18 months and cannot be accelerated through founder action.
+
+</Conclusion>
+
+## Sources
+
+- [GitHub — comfyanonymous/ComfyUI](https://github.com/comfyanonymous/ComfyUI)
+- [Latent Space — AI Engineering for Art with comfyanonymous](https://www.latent.space/p/comfyui)
+- [fxguide — ComfyUI with co-founder Yannik Marek (ComfyAnonymous)](https://www.fxguide.com/fxpodcasts/comfyui-with-co-founder-yannik-marek-comfyanonymous/)
+- [comfy.org/about](https://www.comfy.org/about)
+- [Wikipedia — ComfyUI](https://en.wikipedia.org/wiki/ComfyUI)

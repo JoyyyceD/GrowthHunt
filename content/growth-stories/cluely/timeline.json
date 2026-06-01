@@ -1,0 +1,281 @@
+{
+  "company": {
+    "slug": "cluely",
+    "name": "Cluely",
+    "legalName": "Cluely Inc",
+    "tagline": "The canonical founder-source E1 case in our case set — and the first standout where controversy capitalization reversed against the founder's own credibility",
+    "summary": "Cluely is the case where the founder's persona is the controversy engine. Where Artisan rented a billboard and let the public yell at the billboard, Cluely's 21-year-old CEO Roy Lee made himself the billboard — getting suspended by Columbia, posting the Dean's Discipline Hearing documents publicly, filming himself using AI to cheat on a real Amazon interview, then starring in a launch video where he uses Cluely to lie to a blind date who storms out. Ten weeks from public launch (April 20, 2025) to a $15M Series A led by a16z (June 20, 2025) at roughly $120M post-money. By July, Lee was telling TechCrunch that ARR had doubled to $7M in a week. Eight months later, in March 2026, Lee publicly retracted the $7M figure as a fabrication — the real number per his own Stripe screenshots was about $5.2M, a 35% gap — making Cluely the first standout in our case set where E1 controversy capitalization reversed flow and attacked the founder's own credibility. The reusable lesson: founder-source E1 has no scaling ceiling but no portability either. Artisan's billboards survive a CEO change; Cluely cannot survive a Roy Lee credibility failure. The B1 / B3 / C1 / E1 / E2 stack worked for the first ten weeks. The next twenty-four months will decide whether founder-source controversy is a reusable thesis or a single-founder accident.",
+    "founded": "2025-04-20",
+    "founders": ["Chungin (Roy) Lee", "Neel Shanmugam", "Alex Chen"],
+    "seriesNumber": 28
+  },
+  "phases": [
+    {"start": "2025-01", "end": "2025-04", "name": "Interview Coder + Columbia suspension", "color": "#fef3c7"},
+    {"start": "2025-04", "end": "2025-07", "name": "Cluely launch + a16z Series A in 10 weeks", "color": "#fce7f3"},
+    {"start": "2025-07", "end": "2025-12", "name": "Controversy waves + narrative retreat", "color": "#dbeafe"},
+    {"start": "2026-01", "end": "2026-06", "name": "ARR retraction + credibility reversal", "color": "#fee2e2"}
+  ],
+  "events": [
+    {
+      "date": "2025-01-15",
+      "title": "Interview Coder built in ~10 days at Columbia",
+      "type": "product",
+      "description": "Roy Lee and Neel Shanmugam, both Columbia undergraduates, build Interview Coder — a Chrome extension that generates AI coding answers during technical interviews. Day-0 plan per Lee's later interviews: use it themselves to get Big Tech offers, film everything, ride the shock factor.",
+      "externalUrl": "https://en.wikipedia.org/wiki/Cluely",
+      "articleSlug": "2025-01-interview-coder-origin"
+    },
+    {
+      "date": "2025-02-12",
+      "title": "Columbia Dean's Discipline Hearing",
+      "type": "media",
+      "description": "Lee attends Dean's Discipline Hearing at Columbia College over the Interview Coder extension. Documents from this hearing are later posted publicly by Lee — which itself becomes a separate disciplinary violation.",
+      "externalUrl": "https://gizmodo.com/he-built-a-tool-to-get-around-big-techs-recruiting-process-columbia-kicked-him-out-of-school-2000581712"
+    },
+    {
+      "date": "2025-02-20",
+      "title": "Amazon interview cheating video posted",
+      "type": "media",
+      "gtmTag": "Founder-source controversy",
+      "description": "Lee films his entire Amazon software engineer recruitment process while using Interview Coder, gets an offer, posts the video to LinkedIn and YouTube. Amazon rescinds the offer. Per Lee's account, an Amazon executive emails Columbia (\"expel this kid or we won't hire from your school anymore\") — Amazon has not publicly confirmed.",
+      "externalUrl": "https://en.wikipedia.org/wiki/Roy_Lee_(entrepreneur)"
+    },
+    {
+      "date": "2025-03-26",
+      "title": "\"Kicked out of Columbia\" viral post",
+      "type": "media",
+      "gtmTag": "Founder-source controversy",
+      "description": "Lee posts: \"I just got kicked out of Columbia for taking a stand against Leetcode interviews.\" Mirrored to X. Accumulates millions of views and becomes the founding marketing artifact of Cluely — turning the disciplinary action into the brand.",
+      "externalUrl": "https://www.gothamist.com/arts-entertainment/columbia-suspended-him-after-he-built-a-cheating-app-now-hes-raised-53m-for-it"
+    },
+    {
+      "date": "2025-03-31",
+      "title": "Columbia suspension effective",
+      "type": "media",
+      "description": "Suspension formally takes effect. One-year suspension, eligible to return May 20, 2026. Both Lee and Shanmugam drop out rather than wait. They move to San Francisco and begin rebuilding Interview Coder as Cluely."
+    },
+    {
+      "date": "2025-04-20",
+      "title": "Cluely public launch + blind-date video",
+      "type": "product",
+      "gtmTag": "Founder-source controversy",
+      "description": "Cluely launches as the rebrand of Interview Coder. Launch video stars Roy Lee using Cluely on a blind date to lie about his age, job, and interests; the woman storms out. Reportedly $100K+ to produce. Posted with the line \"Cluely is out. cheat on everything.\" Reaches 13M+ views on X.",
+      "externalUrl": "https://x.com/im_roy_lee",
+      "articleSlug": "2025-04-cluely-launch-blind-date-video"
+    },
+    {
+      "date": "2025-04-21",
+      "title": "Seed announced — $5.3M",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "$5.3M seed co-led by Abstract Ventures + Susa Ventures. Disclosed alongside the launch: 70,000 signups in the first week and a $3M ARR claim. TechCrunch headline: \"Columbia student suspended over interview cheating tool raises $5.3M to 'cheat on everything.'\"",
+      "externalUrl": "https://techcrunch.com/2025/04/21/columbia-student-suspended-over-interview-cheating-tool-raises-5-3m-to-cheat-on-everything/"
+    },
+    {
+      "date": "2025-04-30",
+      "title": "Cheating references quietly removed from site",
+      "type": "media",
+      "description": "Within ~10 days of launch Cluely de-emphasizes the most explicit cheating-on-exams and cheating-on-interviews framing on its website under media + advertiser + investor scrutiny. The \"manifesto\" comparing Cluely to calculator + spellcheck is retained.",
+      "externalUrl": "https://techcrunch.com/2025/06/20/cluely-a-startup-that-helps-cheat-on-everything-raises-15m-from-a16z/"
+    },
+    {
+      "date": "2025-06-15",
+      "title": "Proctoring vendors publish detection blogs",
+      "type": "media",
+      "description": "Proctorio publishes \"How Proctorio Blocks Cluely\" — explicitly disproving the \"undetectable\" marketing claim. Honorlock + Talview publish similar pieces shortly after. The core product claim is publicly refuted within ~2 months of launch.",
+      "externalUrl": "https://proctorio.com/about/blog/how-proctorio-blocks-cluely"
+    },
+    {
+      "date": "2025-06-20",
+      "title": "Series A — $15M led by a16z (~$120M est. post)",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "$15M Series A led by Andreessen Horowitz, partners Bryan Kim and Eric Zhou. Two non-participating investors tell TechCrunch they believe post-money is roughly $120M; a16z declines to confirm. Lee announces with a \"Social Network\"-style dramatic reenactment video on X. Roughly ten weeks from public launch to Series A close.",
+      "externalUrl": "https://a16z.com/announcement/investing-in-cluely/",
+      "articleSlug": "2025-06-a16z-series-a"
+    },
+    {
+      "date": "2025-06-27",
+      "title": "Cluely's PR pitches TechCrunch interview",
+      "type": "media",
+      "description": "Cluely's PR rep emails TechCrunch reporter Marina Temkin offering Roy Lee for an interview. Temkin agrees; interview happens by phone. Lee tells Temkin Cluely's ARR has doubled to $7M in a week. (In March 2026 Lee will falsely characterize this as a \"random cold call\" — TechCrunch publishes the email trail.)",
+      "externalUrl": "https://techcrunch.com/2026/03/05/cluely-ceo-roy-lee-admits-to-publicly-lying-about-revenue-numbers-last-year/"
+    },
+    {
+      "date": "2025-07-03",
+      "title": "\"ARR doubled to $7M in a week\" — later retracted",
+      "type": "media",
+      "gtmTag": "Credibility reversal",
+      "description": "TechCrunch publishes: \"Cluely's ARR doubled in a week to $7M, founder Roy Lee says. But rivals are coming.\" Lee claims a public company doubled its annual contract to $2.5M the same week. The $7M figure is admitted as fabricated in March 2026 — the real number per Stripe was roughly $5.2M.",
+      "externalUrl": "https://techcrunch.com/2025/07/03/cluelys-arr-doubled-in-a-week-to-7m-founder-roy-lee-says-but-rivals-are-coming/",
+      "articleSlug": "2025-07-7m-arr-claim"
+    },
+    {
+      "date": "2025-07-03",
+      "title": "Pickle Glass open-source clone ships",
+      "type": "product",
+      "description": "Daniel Park of Pickle AI (YC-backed) ships Glass — a free, open-source Cluely clone built in \"4 days\" — on GitHub at pickle-com/glass. Hits 1,300+ stars and 200+ forks within one day. Within 48 hours: revealed that Glass code was lifted from cheating_daddy (GPLv3) and relicensed incorrectly to Apache 2.0; Pickle's Firebase credentials were also exposed in the repo.",
+      "externalUrl": "https://github.com/pickle-com/glass"
+    },
+    {
+      "date": "2025-07-18",
+      "title": "SF Standard \"frat-bro\" investigative profile",
+      "type": "media",
+      "description": "SF Standard publishes \"Inside the frat-bro startup that wants you to 'cheat on everything.'\" Reports: 6 employees living at Cluely's SoMa office, ~dozen more across the street, 100K users (US-concentrated), \"some profitable weeks.\" The photos are later submitted as evidence in a planning-commission complaint that triggers the zoning enforcement action.",
+      "externalUrl": "https://sfstandard.com/2025/07/18/cluely-startups-roy-lee-columbia-cheating-viral-tiktok/"
+    },
+    {
+      "date": "2025-09-01",
+      "title": "Tagline pivot to \"This feels like cheating\"",
+      "type": "product",
+      "description": "Cluely homepage shifts main copy from \"Cheat on Everything\" to \"Everything You Need. Before You Ask. … This feels like cheating.\" The transition is gradual; the brand is moving toward AI meeting assistant positioning while retaining the cheating-adjacent voice as a hook.",
+      "externalUrl": "https://cluely.com/"
+    },
+    {
+      "date": "2025-10-29",
+      "title": "Disrupt 2025 main-stage interview",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "Roy Lee onstage at TechCrunch Disrupt 2025. Pushes back on the \"ragebait\" label: \"I think I'm just honest and authentic and I think people just see that as ragebaiting, because they get enraged, but it's probably just my personality.\" Declines to share revenue numbers: \"you should never share revenue numbers.\" Hints at having \"launched too early.\" Admits Cluely is \"not the fastest growing company of all time.\"",
+      "externalUrl": "https://techcrunch.com/2025/10/29/cluelys-roy-lee-on-the-ragebait-strategy-for-startup-marketing/"
+    },
+    {
+      "date": "2025-11-05",
+      "title": "\"Viral hype is not enough\" follow-up",
+      "type": "media",
+      "description": "TechCrunch follow-up: \"Cluely's Roy Lee hints that viral hype is not enough.\" Lee acknowledges that marketing alone won't build a sustainable business. First public sign of strategy reset.",
+      "externalUrl": "https://techcrunch.com/2025/11/05/cluelys-roy-lee-hints-that-viral-hype-is-not-enough/"
+    },
+    {
+      "date": "2025-11-20",
+      "title": "SoMa zoning violation + NYC move announced",
+      "type": "media",
+      "gtmTag": "Founder-source controversy",
+      "description": "SF Standard reports Cluely will offload all three floors of its SoMa Bryant Street HQ and relocate to NYC. Lee confirms the building is zoned office, not live-work — staff had been living there. The July SF Standard piece's photos were submitted as evidence in the planning-commission complaint.",
+      "externalUrl": "https://sfstandard.com/2025/11/20/san-francisco-s-controversial-startup-moving-new-york/",
+      "articleSlug": "2025-11-soma-zoning-nyc-move"
+    },
+    {
+      "date": "2025-12-01",
+      "title": "Repositioning as AI meeting assistant complete",
+      "type": "product",
+      "description": "By late November / early December 2025 Cluely is positioned as an AI meeting assistant competing with Otter.ai, Granola, ChatGPT meeting features. The cheat-on-everything era is operationally over even if traces remain in the brand voice.",
+      "externalUrl": "https://en.wikipedia.org/wiki/Cluely"
+    },
+    {
+      "date": "2026-03-05",
+      "title": "Roy Lee retracts $7M ARR claim",
+      "type": "media",
+      "gtmTag": "Credibility reversal",
+      "description": "Roy Lee posts on X formally retracting the July 2025 $7M ARR figure, calling it \"the only blatantly dishonest thing i've said publicly online.\" Includes Stripe screenshots: consumer ARR $2.7M (run rate $3.8M) + enterprise ARR $2.5M (run rate $2.5M) ≈ $5.2M total. TechCrunch publishes the retraction story plus the email trail showing the original interview was PR-arranged, not a \"random cold call\" as Lee framed it.",
+      "externalUrl": "https://techcrunch.com/2026/03/05/cluely-ceo-roy-lee-admits-to-publicly-lying-about-revenue-numbers-last-year/",
+      "articleSlug": "2026-03-arr-retraction"
+    },
+    {
+      "date": "2026-03-10",
+      "title": "Sunglasses-rant video response",
+      "type": "media",
+      "description": "Days after the retraction, Lee posts a ~2-minute video: sunglasses, mic, defends himself. Frames the inflation as \"fractionally wrong\" right after launch. Calls himself the \"top under-25 name in tech.\" Frames the Stripe-screenshot share as a transparency gesture to founders. Generates a new viral cycle that is more skeptical than prior ones.",
+      "externalUrl": "https://piunikaweb.com/2026/03/10/cluely-ceo-roy-lee-fires-back-techcrunch-revenue-lie-rant/"
+    }
+  ],
+  "arr": [
+    {"date": "2025-04-21", "value": 3000000, "source": "Roy Lee via TechCrunch (official-claim, treat skeptically given the later retraction)", "confidence": "estimate"},
+    {"date": "2025-06-30", "value": 5200000, "source": "Roy Lee Stripe screenshots disclosed in March 2026 retraction", "confidence": "official"},
+    {"date": "2025-07-03", "value": 7000000, "source": "Roy Lee to TechCrunch (RETRACTED March 2026 as fabricated)", "confidence": "estimate", "round": "official-claim — retracted"}
+  ],
+  "valuation": [
+    {"date": "2025-06-20", "value": 120000000, "round": "Series A (est.)", "source": "Two non-participating investors via TechCrunch; a16z declined to confirm", "confidence": "estimate"}
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 5,
+      "bestStage": "Pre-inflection through Series A — the load-bearing channel",
+      "effort": "Daily founder content, plus episodic high-production video drops",
+      "role": "Founder-source E1 carrier",
+      "description": "X is where Cluely's E1 reactive founder-source variant actually lives. Roy Lee (@im_roy_lee) runs a daily-presence cadence indistinguishable from the company itself. The blind-date launch video (13M+ views), the Series A \"Social Network\" reenactment, the March 2026 retraction post with the Stripe screenshots, and the sunglasses-rant follow-up all shipped here first. Per a16z's investment post the growth team includes multiple individuals with 100K+ personal audiences each — the channel is staffed like a media company, not a marketing function.",
+      "catalyst": "April 20, 2025 — \"Cluely is out. cheat on everything\" + the blind-date video. The post crossed 13M+ views in months and remains the single most-cited artifact of Cluely's existence.",
+      "catalystUrl": "https://x.com/im_roy_lee",
+      "accountUrl": "https://x.com/im_roy_lee",
+      "accountLabel": "@im_roy_lee on X",
+      "whenItWorks": "When the founder is willing to make every personal decision public content and the brand voice and the founder voice are the same voice — for years, not weeks",
+      "whenItDoesnt": "When a founder credibility event reverses the controversy flow against the founder himself — the March 2026 ARR retraction is the canonical case of this reversal"
+    },
+    {
+      "slug": "youtube-tiktok",
+      "name": "YouTube + TikTok (long- and short-form video)",
+      "score": 4,
+      "bestStage": "Origin through launch — the proof-of-concept surface",
+      "effort": "Single high-production launch video + ongoing founder clips",
+      "role": "B1 inverted — format-as-credibility used to expand ethical fakery space rather than constrain it",
+      "description": "The Amazon-interview cheating video (February 2025) and the April 2025 blind-date launch clip are Cluely's two load-bearing video assets. Both demonstrate the product mid-deception in a way that no investor pitch deck could. The Amazon video forced the Columbia hearing into the public record. The blind-date video collapsed founder + actor + CEO into a single body on camera, hitting 13M+ views and reportedly costing $100K+ to produce. Short-form TikTok cutdowns re-aired the same artifacts to a separate audience.",
+      "catalyst": "February 2025 — the Amazon interview video. It established the format (founder demonstrates product mid-deception) that the April launch then dramatized for a wider audience.",
+      "catalystUrl": "https://x.com/im_roy_lee",
+      "accountUrl": "https://www.youtube.com/@roy_lee_3",
+      "accountLabel": "Roy Lee on YouTube",
+      "whenItWorks": "When the product has a real user segment that wants the non-ethical use (test-takers, interview candidates, salespeople reading off scripts) and the cultural moment supports the polarization",
+      "whenItDoesnt": "When regulators or platforms react before the next viral cycle ships — Proctorio, Honorlock, and Talview disproved the \"undetectable\" claim within 2 months and forced a narrative retreat"
+    },
+    {
+      "slug": "a16z-podcast",
+      "name": "a16z investor podcast + portfolio post",
+      "score": 4,
+      "bestStage": "Series A window — the investor co-branding cycle",
+      "effort": "One investor essay + one co-branded podcast episode + a long tail of partner social posts",
+      "role": "B3 reinvented — investor as co-author of the controversy thesis",
+      "description": "The a16z investment post (\"Investing in Cluely,\" June 20, 2025) and the co-branded podcast (\"Building Cluely: The Viral AI Startup that Raised $15M in 10 Weeks\") jointly mark the first time a top-tier US fund publicly framed controversy capitalization as an investable category rather than an idiosyncratic stunt. Partner Bryan Kim's posture across both pieces is closer to co-presenter than to investor — the podcast is structured to make the GTM thesis legible to other VCs who might back the next Cluely-shaped founder. This is what a B3 cycle looks like when the borrowed credibility comes from an institutional check writer rather than a single KOL.",
+      "catalyst": "June 20, 2025 — the joint announcement. a16z's investment post and the podcast drop the same week, with the partner explicitly framing Lee's polarizing style as deliberate strategy rather than publicity-seeking.",
+      "catalystUrl": "https://a16z.com/announcement/investing-in-cluely/",
+      "accountUrl": "https://a16z.com/announcement/investing-in-cluely/",
+      "accountLabel": "a16z — Investing in Cluely",
+      "whenItWorks": "When the investor's portfolio already includes distribution-first AI consumer companies (Captions, ElevenLabs, BeReal, Function Health) so the thesis reads as continuous rather than improvised",
+      "whenItDoesnt": "When the underlying financial disclosures fail to hold — once the ARR retraction landed in March 2026, the co-branded podcast's framing of Lee as \"deliberate strategy\" took collateral damage"
+    },
+    {
+      "slug": "techcrunch",
+      "name": "TechCrunch + tier-one tech press",
+      "score": 4,
+      "bestStage": "Each funding and credibility event",
+      "effort": "PR-arranged interviews and rapid-turn funding coverage",
+      "role": "Capital-tier earned media (and, eventually, the venue where credibility reversed)",
+      "description": "TechCrunch's Marina Temkin owns the Cluely beat — the April 2025 seed announcement, the June 2025 Series A coverage, the July 2025 \"$7M ARR doubled in a week\" piece, the October 2025 Disrupt interview, the November 2025 \"viral hype is not enough\" follow-up, and the March 2026 retraction story. The single most consequential coverage moment is the March 2026 retraction piece: Temkin republished the June 2025 email trail showing Cluely's PR rep proactively pitched the original interview, contradicting Lee's framing of it as a \"random cold call.\" The same outlet that amplified the C1 cycles is the outlet that priced the credibility loss.",
+      "catalyst": "March 5, 2026 — \"Cluely CEO Roy Lee admits to publicly lying about revenue numbers last year.\" The piece reset every prior Cluely disclosure into an open question.",
+      "catalystUrl": "https://techcrunch.com/2026/03/05/cluely-ceo-roy-lee-admits-to-publicly-lying-about-revenue-numbers-last-year/",
+      "accountUrl": "https://techcrunch.com/tag/cluely/",
+      "accountLabel": "TechCrunch — Cluely coverage",
+      "whenItWorks": "When the founder is willing to do on-the-record interviews on every cycle and the financial figures hold up to later cross-checking",
+      "whenItDoesnt": "When a disclosure later turns out to be fabricated — TechCrunch's first reaction is not to soften the original story, it is to republish the receipts that prove the lie"
+    },
+    {
+      "slug": "sf-standard",
+      "name": "SF Standard investigative coverage",
+      "score": 3,
+      "bestStage": "Mid-cycle — when the live-work house becomes its own news event",
+      "effort": "Embedded reporting + photographic documentation",
+      "role": "Adversarial profile press that becomes evidence",
+      "description": "SF Standard published two pieces that materially changed Cluely's trajectory. July 18, 2025: \"Inside the frat-bro startup that wants you to 'cheat on everything.'\" Reports six employees living at the SoMa office and ~12 across the street, 100K US-concentrated users, \"some profitable weeks.\" November 20, 2025: confirmation that Cluely was offloading all three SoMa floors and relocating to NYC after a planning-commission complaint that explicitly used the July piece's photos as evidence of zoning violation. The press cycle the company welcomed in July became the planning enforcement file in November.",
+      "catalyst": "July 18, 2025 — the live-work house profile. The story was favorable enough that Lee promoted it, but the photographs of staff living in an office-zoned building became the evidentiary substrate for the November enforcement action.",
+      "catalystUrl": "https://sfstandard.com/2025/07/18/cluely-startups-roy-lee-columbia-cheating-viral-tiktok/",
+      "accountUrl": "https://sfstandard.com/2025/11/20/san-francisco-s-controversial-startup-moving-new-york/",
+      "accountLabel": "SF Standard — Cluely coverage",
+      "whenItWorks": "When the founder welcomes adversarial reporting because the adversarial framing converts into brand and the regulatory environment ignores the same details",
+      "whenItDoesnt": "When the photographs that make the brand piece work become evidence in a planning complaint — the November move forced a coast-change that the company had not planned for in July"
+    },
+    {
+      "slug": "columbia-spectator",
+      "name": "Columbia Spectator + campus origin press",
+      "score": 3,
+      "bestStage": "Origin — before Cluely existed",
+      "effort": "One Dean's Discipline Hearing record + the LinkedIn post that referenced it",
+      "role": "Institutional antagonist as narrative substrate",
+      "description": "The Columbia disciplinary record — Dean's Discipline Hearing February 12, 2025, suspension effective end of March 2025, eligible to return May 20, 2026 — was the institutional antagonist Cluely's whole narrative needed. Lee made the disciplinary documents public himself, on his own X and LinkedIn accounts, in a sequence that turned the academic-integrity case into a brand asset. The Columbia Spectator and Gizmodo reporting on the original hearing then became the third-party verification layer; Lee did not need Columbia to confirm anything because he had already published the documents. This is the narrative source that the rest of the GTM stack sits on.",
+      "catalyst": "March 26, 2025 — \"I just got kicked out of Columbia for taking a stand against Leetcode interviews\" hits LinkedIn and then X. Without an Ivy League institution and a Big Tech employer to oppose, the rest of the Cluely story has no antagonist.",
+      "catalystUrl": "https://www.gothamist.com/arts-entertainment/columbia-suspended-him-after-he-built-a-cheating-app-now-hes-raised-53m-for-it",
+      "accountUrl": "https://www.columbiaspectator.com/",
+      "accountLabel": "Columbia Spectator",
+      "whenItWorks": "When the founder picks an antagonist with cultural standing — a top-tier university + a tier-one Big Tech employer — and is willing to make the disciplinary record itself the marketing asset",
+      "whenItDoesnt": "When the antagonist refuses to play along — Columbia and Amazon both went quiet, but the alleged Amazon executive letter (\"expel this kid or we won't hire from your school anymore\") is still unconfirmed by Amazon and remains a single-source claim"
+    }
+  ]
+}

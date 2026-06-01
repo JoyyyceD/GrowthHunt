@@ -1,0 +1,86 @@
+---
+title: "pgvector 和 AI Toolkit 上线——比大众 LLM 认知早 6 个月（2023 年 2 月）"
+description: "Supabase 把已存在多年的 Postgres 扩展打包为 Supabase Vector，带 embedding 生成、Python client 和 OpenAI / LangChain / Hugging Face 集成。案例库里最干净的一次 D1 时机决定。"
+date: "2023-02-10"
+type: "product"
+gtmTag: "技术叙事升级"
+eventTitle: "pgvector + AI Toolkit 上线"
+externalUrl: "https://supabase.com/modules/vector"
+---
+
+<Catalyst>
+pgvector 扩展从 2021 年起就是 Postgres 生态的一部分。没有其他主要托管 Postgres 服务把它产品化。Supabase 2023 年初 ship 了 Supabase Vector——比大众 LLM 应用认知浪潮早约 6 个月。便宜的洞察是打包，不是技术。
+</Catalyst>
+
+2023 年 2 月初。距 2022 年 11 月 30 日 ChatGPT 上线约 2.5 个月。LLM 应用 stack 仍在被个人开发者以散乱形式组装——Pinecone 装向量、Postgres 装关系数据、单独的 auth、单独的 storage、手工接的集成。
+
+Supabase ship 了 **Supabase Vector**——pgvector 作为 Postgres 扩展，打包成 AI Toolkit，包括 Edge Functions 里的 embedding 生成、Python client 库、和 OpenAI、Hugging Face、LangChain 集成。押注是基于 Postgres 的 RAG（检索增强生成）对大多数生产 workload 会击败专用向量数据库，因为 vector embedding 和关系数据放在一个基底上比拼 5 个 vendor 更省事。
+
+## 时机实际是什么
+
+pgvector 扩展本身是开源的，从约 2021 年起就是 Postgres 生态的一部分。它不是 Supabase 发明的。任何托管 Postgres 提供商都可以 ship 它作为一流产品。没有人做。
+
+- **Neon** 没有把 pgvector 打包成托管产品。
+- **Render** 没有。
+- **AWS RDS for Postgres** 没有（RDS 在 2023 年晚些时候，在 Supabase 把这个动作变得可读后才加了 pgvector 支持）。
+- **PlanetScale** 聚焦 MySQL。
+- **Crunchy Bridge** 有通用 Postgres 工具但没有打包向量特定的开发者体验。
+
+Supabase 是第一个把 pgvector + embedding 生成 + 集成生态 + Python client 打包成完整 AI 应用 backend 的。便宜的洞察是在大众浪潮要求之前把既有扩展打包成一流产品。
+
+## 为什么 6 个月有用
+
+LLM 应用 stack 大众认知浪潮在 2023 年中到晚段随 LangChain 爆发、「ChatGPT for X」startup 浪潮、和 2023 年 6 月 Vercel AI SDK 发布到达。到 2023 年 Q3，「你需要一个向量数据库」已经成为开发者 twitter、播客、会议演讲的共识。
+
+Supabase 比这个浪潮早约 6 个月 ship pgvector。这个 6 个月先发产生了三个结构性优势：
+
+| 优势 | 具体后果 |
+|---|---|
+| **先发 SEO 和搜索结果密度** | 开发者 2023 年 Q3 Google「Postgres vector database」时，Supabase 文档、博客、Quivr 案例是头部结果 |
+| **首批 ship 的案例研究** | Quivr（2023 年 5 月）成了「生产级 pgvector」的标准引用。等到 Pinecone 营销想竞争时，Supabase 在真实生产部署里已经有 90 天先发。 |
+| **AI 编码工具里的默认定位** | 2024 年 Bolt、Lovable、v0、Cursor、Claude Code 加 AI 应用生成时，他们默认把 Supabase 作为数据库推荐，因为 Supabase 有第一个完整的 AI 应用 SDK |
+
+6 个月先发不是预测赚到的。Copplestone 在播客里明确说过：ship pgvector 的决定不是先知的 AI 押注——是把 pgvector 当成另一个值得产品化的 Postgres 扩展，像 PostGIS 或 TimescaleDB。Postgres 基底框架让决定感觉小。宏观背景让决定感觉大。
+
+## Quivr 病毒案例
+
+2023 年 5 月，Stan Girard 在一个下午 ship 了 Quivr——chat-with-documents「第二大脑」。他在 Pinecone、Chroma、Weaviate、Faiss 之间选了 Supabase Vector。随后的爆款推文（和几个月内突破 30K stars 的 GitHub 仓库）成了第一个被广泛传播的生产级 pgvector 案例。
+
+Girard 选 Supabase 而不是专用向量数据库的明示理由：
+
+> 「vector embedding 和关系数据放在一个基底上比拼 5 个 vendor 更省事。」
+
+这变成了 Postgres-RAG 的标准框架。同样的论据扩展进 C 轮披露（2024 年 9 月）：约 10% 的活跃 Supabase 数据库是 AI workload、最新 YC batch 的 40% 在用 Supabase、GitHub Next / Meta / Netflix / Microsoft 开发者在使用。
+
+## 10% AI workload 披露
+
+2024 年 9 月 C 轮，Copplestone 向 TechCrunch 披露：约 10% 的活跃 Supabase 数据库是 AI workload。这个数字是 D1（技术叙事升级）从「基于 Postgres 的开发者平台」重构为「带 pgvector 的 AI backend」背后的硬证据。
+
+披露之所以重要，是因为大多数 D1 叙事重构没有定量证据支撑。公司主张 AI 原生定位而不披露使用率。Supabase 的 10% 数字——绝对值上不大，解释意义上很大——给了投资人和记者一个可以锚定重构的数字。C 轮 up-round 定价约 7.65 亿美元 post-money（PitchBook 估算）部分由那个 10% 数字承销。
+
+到 D 轮（2025 年 4 月），注册增速每约 3 个月翻一倍，得益于 vibe-coding 采用。到 E 轮（2025 年 10 月），Accel 的投资论文标题是「Supabase's Series E: An Era-Defining Database」——D1 重构的最终形态。
+
+## 为什么 2026 年的创始人没法复制
+
+AI 向量窗口已关闭。pgvector 现在已经烤进 AWS RDS、Google AlloyDB、Azure Database for PostgreSQL 和每个主要托管 Postgres 提供商。向量特定数据库（Pinecone、Weaviate、Chroma）建立了自己的用例。Supabase 在 2023 年初做的决定不再便宜。
+
+可复制的教训不是「ship pgvector」。是：**识别你基底生态里一项已存在多年但还没被产品化的扩展，在宏观浪潮让打包变得显然之前把它打包成一流产品**。类目不必是 AI。窗口不必是 6 个月。机制是：生态内部资产、产品化缺口、6 到 18 个月先发在大众认知之前。
+
+在 Supabase 的案例里，基底的生态是 Postgres。在 2026 年创始人的案例里，基底可以是 Llama 级开源权重、Bitcoin / Lightning 生态、ROS 机器人生态、或任何开源生物信息学工具。模式一样——表面不同。
+
+<Conclusion title="可复制的">
+
+- **在宏观浪潮强迫每个对手做之前把既有生态资产产品化。**pgvector 从 2021 年起就存在；Supabase 2023 年初把它 ship 成产品。便宜的洞察是打包，不是发明。
+- **D1 重构需要定量证据，不只是产品发布。**C 轮 10% AI workload 披露用记者和投资人可以引用的数字锚定了 AI backend 重构。没有披露，重构会读起来像营销。
+- **6 个月先发因为先发 SEO 和 AI 编码工具里的默认定位而复利。**优势不是技术上的——是 2024 年加入的 AI 编码工具默认 Supabase，因为 Supabase 有第一个完整的 AI 应用 SDK。
+
+</Conclusion>
+
+## Sources
+
+- [Supabase Vector — 模块页](https://supabase.com/modules/vector)
+- [Supabase 文档 — AI & Vectors](https://supabase.com/docs/guides/ai)
+- [Supabase 客户故事 — Quivr / Stan Girard](https://supabase.com/customers/quivr)
+- [TechCrunch — Supabase C 轮 8000 万美元（2024 年 9 月）](https://techcrunch.com/2024/09/25/supabase-a-postgres-centric-developer-platform-raises-80m-series-c/)
+- [Accel — Supabase 的 E 轮：时代级数据库](https://www.accel.com/noteworthies/supabases-series-e-an-era-defining-database)
+- [Sacra — Supabase 7000 万 ARR，同比增长 250%](https://sacra.com/research/supabase-at-70m-arr-growing-250-yoy/)

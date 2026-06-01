@@ -1,0 +1,325 @@
+{
+  "company": {
+    "slug": "base44",
+    "name": "Base44",
+    "legalName": "Base44 Ltd.",
+    "tagline": "Solo founder, zero external capital, $80M cash exit in 180 days — and the first clean case of voluntary peak-exit before a model wrapper's window closes",
+    "summary": "Base44 is the cleanest solo-founder + zero-capital + 6-month-to-acquisition case in our case set. Israeli founder Maor Shlomo — ex-Explorium CEO (7 years, $125M raised), Unit 8200 alumnus, Forbes 30 Under 30 — started writing code on roughly December 15, 2024 while traveling in Thailand with his partner Yuval Dahan. He shipped publicly mid-January 2025, hit 10,000 users and $1M ARR three weeks later, and posted $1.5M in first-month revenue from $20–$200/mo SaaS tiers. Andrej Karpathy coined 'vibe coding' on February 6, 2025 — the same month Base44 launched — gifting the company a category-naming tailwind no founder can engineer. By end-May 2025, Base44 had ~250K users, $200K MRR, and $189K monthly profit, publicly disclosed on X and LinkedIn alongside a 'rejected every Israeli VC' narrative. Three Wagyu-steak dinners at Wix CEO Avishai Abrahami's home — introduced by Wix president Nir Zohar — turned into a $80M cash acquisition signed on June 13, 2025 (the same day the Israel-Iran war began) and announced June 18. Maor held 100% at exit; the 8 employees split a $25M cash retention pool with no equity rollover. Under Wix, Base44 went from ~$3.5M ARR to $150M ARR by May 2026 — but it took $20M in Super Bowl ads and $90M in Q1 2026 CAC for Wix to push it there. The deal works on both sides: Wix CFO confirmed an additional $38M Q1 2026 earnout payment to Maor and more being set aside through 2029.",
+    "founded": "2024-12-15",
+    "founders": [
+      "Maor Shlomo"
+    ],
+    "seriesNumber": 24
+  },
+  "phases": [
+    {"start": "2024-10", "end": "2025-01", "name": "Solo build (Thailand → first commit)", "color": "#fef3c7"},
+    {"start": "2025-01", "end": "2025-04", "name": "Public launch + viral cluster", "color": "#fce7f3"},
+    {"start": "2025-04", "end": "2025-06", "name": "Profitability + Wagyu negotiation", "color": "#dbeafe"},
+    {"start": "2025-06", "end": "2026-06", "name": "Wix acquisition + post-deal scale-up", "color": "#dcfce7"}
+  ],
+  "events": [
+    {
+      "date": "2017-01-01",
+      "title": "Maor co-founds Explorium (founder substrate)",
+      "type": "product",
+      "description": "At age 24, Maor Shlomo co-founds Explorium (B2B data analytics) with Or Tamir and Omer Har. The company later raises ~$125–130M led by Insight Partners and scales to ~100 employees. Maor serves as CEO for seven years and is named to Forbes 30 Under 30. This 7-year track is the load-bearing founder-reputation substrate that Base44 will collapse into a 3-month latent period.",
+      "externalUrl": "https://techcrunch.com/2025/06/18/6-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash/"
+    },
+    {
+      "date": "2023-10-07",
+      "title": "Israel-Hamas war + Unit 8200 reserve duty",
+      "type": "media",
+      "description": "Israel-Hamas war begins. Maor is called up to extended Unit 8200 reserve duty and steps back from Explorium's CEO seat. During wartime intelligence work, he helps a nonprofit and watches an IT agency quote 6 weeks and $40K for a simple internal dashboard. The Base44 seed lands.",
+      "externalUrl": "https://www.calcalistech.com/ctechnews/article/y0kdgmw7a"
+    },
+    {
+      "date": "2024-10-27",
+      "title": "'Going to build @base44 in public' (X)",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "Maor (@MS_BASE44) posts on X that he's going to build Base44 in public — before writing any code. The pre-commit binds him to the build-in-public format and is the opening move of the founder-as-perpetual-demo grammar.",
+      "externalUrl": "https://x.com/ms_base44"
+    },
+    {
+      "date": "2024-11-15",
+      "title": "Thailand trip + WordPress frustration",
+      "type": "product",
+      "description": "Traveling in Thailand with partner Yuval Dahan, Maor tries to build a simple website for her future tattoo business using WordPress, fails, and decides to write an AI-powered solution himself instead of returning to Explorium. This is the actual product origin.",
+      "externalUrl": "https://www.calcalistech.com/ctechnews/article/y0kdgmw7a"
+    },
+    {
+      "date": "2024-12-15",
+      "title": "First code commit — solo, $15K of personal capital",
+      "type": "product",
+      "description": "Maor opens his laptop and starts writing Base44 code, solo, still traveling in Southeast Asia. Stack: Cursor IDE + Anthropic Claude (via AWS Bedrock) + MongoDB + Cloudflare + Render. Bootstrapped with ~$10–20K of personal capital, almost all of it LLM token costs.",
+      "externalUrl": "https://www.lennysnewsletter.com/p/the-base44-bootstrapped-startup-success-story-maor-shlomo",
+      "articleSlug": "2024-12-solo-build-begins"
+    },
+    {
+      "date": "2025-01-15",
+      "title": "Public launch (Base44 v1)",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "First public version of Base44 ships. The framing is uncompromising: type a prompt, get a full-stack app (frontend + backend + database + auth + deployment) with zero third-party integrations needed. Single-product wedge against the multi-tool standard. Documented on LinkedIn and X with short demo clips.",
+      "externalUrl": "https://startupmap.iamsterdam.com/news/note/how-base44-went-from-side-project-to-80m-acquisition-in-6-months-1",
+      "articleSlug": "2025-01-public-launch"
+    },
+    {
+      "date": "2025-02-06",
+      "title": "Karpathy coins 'vibe coding'",
+      "type": "media",
+      "gtmTag": "Ride the KOL wave",
+      "description": "Andrej Karpathy tweets the term 'vibe coding' to describe natural-language software creation. Base44 — three weeks live, already growing — slots directly into the new category narrative. The category-naming tailwind in Maor's first launch month is the single piece of luck that no founder can engineer.",
+      "externalUrl": "https://www.inc.com/ben-sherry/vibe-coding-base44-wix-avishai-abrahami-maor-shlomo/91267959"
+    },
+    {
+      "date": "2025-02-10",
+      "title": "10,000 users in three weeks",
+      "type": "product",
+      "description": "Base44 crosses 10,000 users within three weeks of public launch. Acquisition is pure word-of-mouth + the daily X / LinkedIn demo clips. Zero paid marketing.",
+      "externalUrl": "https://techcrunch.com/2025/06/18/6-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash/"
+    },
+    {
+      "date": "2025-02-12",
+      "title": "$1M ARR three weeks post-launch",
+      "type": "media",
+      "gtmTag": "Bundled milestone",
+      "description": "Maor posts publicly that Base44 has hit $1M ARR roughly three weeks after launch. Pricing tiers $20–$200/month confirmed. First-month revenue ~$1.5M. The pricing signal in the viral window kills the 'this is a toy' framing in a single news cycle.",
+      "externalUrl": "https://www.lennysnewsletter.com/p/the-base44-bootstrapped-startup-success-story-maor-shlomo",
+      "articleSlug": "2025-02-1m-arr-three-weeks"
+    },
+    {
+      "date": "2025-02-20",
+      "title": "90% of Base44's code written by Claude",
+      "type": "product",
+      "description": "Maor publicly states he's no longer writing front-end code by hand — 90%+ of new Base44 code is written by Claude 4 inside Cursor. 'I built software that builds software' becomes the meme of the build-in-public arc and the most-quoted single sentence of the run.",
+      "externalUrl": "https://www.calcalistech.com/ctechnews/article/y0kdgmw7a"
+    },
+    {
+      "date": "2025-03-01",
+      "title": "20K users + early profitability",
+      "type": "product",
+      "description": "User count reaches ~20,000. Despite high LLM token costs, Base44 reaches operational profitability — rare for an AI-tools startup at this scale, and the foundation under the May 'rejected every VC' narrative.",
+      "externalUrl": "https://startupmap.iamsterdam.com/news/note/how-base44-went-from-side-project-to-80m-acquisition-in-6-months-1"
+    },
+    {
+      "date": "2025-03-15",
+      "title": "Claude-over-OpenAI LinkedIn post → AWS Tel Aviv invite",
+      "type": "media",
+      "gtmTag": "Ride the KOL wave",
+      "description": "Maor posts on LinkedIn explaining the cost-per-performance reasoning for choosing Anthropic Claude (via AWS Bedrock) over OpenAI. The post catches AWS's eye — Amazon reverse-invites Base44 to demo at a Tel Aviv AWS event in May. Solo-founder reverse-BD: publish your operational reasoning, let the ecosystem partner come to you.",
+      "externalUrl": "https://techcrunch.com/2025/06/18/6-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash/",
+      "articleSlug": "2025-03-claude-over-openai-aws"
+    },
+    {
+      "date": "2025-04-01",
+      "title": "VC inbound peak — and publicly rejected",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "Maor discloses publicly that essentially every VC firm in the Israeli ecosystem has reached out once Base44 started making money. He explicitly rejects Oren Zeev and shuts down inbound meetings to keep building. The 'rejected every Israeli VC and posted about it' narrative turns bootstrap from a defensive frame into an offensive one.",
+      "externalUrl": "https://www.calcalistech.com/ctechnews/article/y0kdgmw7a"
+    },
+    {
+      "date": "2025-04-15",
+      "title": "First hires (1 → 5–6 employees)",
+      "type": "product",
+      "description": "Maor makes his first hires only after MRR clears ~$200K. Headcount climbs from 1 to 5–6 across April–May. The deliberately late hiring is structurally why his ~100% equity at exit translates into ~$55M up-front cash.",
+      "externalUrl": "https://startupmap.iamsterdam.com/news/note/how-base44-went-from-side-project-to-80m-acquisition-in-6-months-1"
+    },
+    {
+      "date": "2025-05-01",
+      "title": "AWS Tel Aviv demo",
+      "type": "media",
+      "description": "Maor demos Base44 at an AWS event in Tel Aviv following the Claude/AWS LinkedIn post. Ecosystem-credibility signal beyond pure consumer growth — and the first time Base44 carries an Anthropic/AWS-stack co-signature in public.",
+      "externalUrl": "https://techcrunch.com/2025/06/18/6-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash/"
+    },
+    {
+      "date": "2025-05-05",
+      "title": "eToro + SimilarWeb B2B partnerships",
+      "type": "product",
+      "gtmTag": "Audience boundary push",
+      "description": "Base44 lands B2B partnerships with Israeli tech leaders eToro and SimilarWeb — proves the product is not a consumer toy and provides the enterprise-track narrative Wix will use six weeks later in the acquisition press release.",
+      "externalUrl": "https://www.wix.com/press-room/home/post/wix-further-expands-into-vibe-coding-with-acquisition-of-base44-a-hyper-growth-startup-that-simplif"
+    },
+    {
+      "date": "2025-05-10",
+      "title": "Three Wagyu dinners at Avishai Abrahami's home",
+      "type": "media",
+      "description": "Maor meets Wix CEO Avishai Abrahami three times at Abrahami's home over the course of May. Introduction made by Wix president Nir Zohar after Maor asked about Wix's B2C marketing scale. First meeting: Wagyu steaks in the backyard while Avishai grills. Subsequent meetings: walk-through of bootstrap-vs-fundraise-vs-sell scenarios.",
+      "externalUrl": "https://www.inc.com/ben-sherry/vibe-coding-base44-wix-avishai-abrahami-maor-shlomo/91267959",
+      "articleSlug": "2025-05-wagyu-dinners-abrahami"
+    },
+    {
+      "date": "2025-05-31",
+      "title": "~250K users + $200K MRR + $189K May profit",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "End-May 2025: ~250K users on the platform, $189K monthly profit (Maor publicly discloses despite high LLM costs), MRR ~$200K, run-rate ARR ~$2.4–3.5M. The profit number lands on X and LinkedIn the same week as the VC rejection narrative — compressed Linear-style default-alive into a single quarter.",
+      "externalUrl": "https://www.saastr.com/wix-the-unexpected-new-threat-to-replit-and-lovable-a-deep-dive-into-how-its-vibe-coding-app-is-now-growing-just-as-fast-or-close-to-it/"
+    },
+    {
+      "date": "2025-06-13",
+      "title": "Deal papered (Iran war signing day)",
+      "type": "acquisition",
+      "description": "Lawyers finalize the Wix acquisition agreement Thursday night June 12; signing scheduled Friday June 13 — the same day the Israel-Iran war begins. The signature lands amid missile alerts. By signing day Base44 has ~350K users and $200K/mo revenue per Maor's Calcalist interview.",
+      "externalUrl": "https://www.calcalistech.com/ctechnews/article/s1iflnlelx"
+    },
+    {
+      "date": "2025-06-18",
+      "title": "Wix announces $80M Base44 acquisition",
+      "type": "acquisition",
+      "gtmTag": "Voluntary peak exit",
+      "description": "Wix publicly announces the acquisition: $80M cash up-front + earn-out payments through 2029 tied to revenue milestones + $25M expense for salaries and equity compensation in 2025. Maor held 100% at exit; the 8 employees split the $25M retention pool with no equity rollover. The deal is the first clean case in our case set of a voluntary peak-exit — C-stage executed correctly, D1 narrative upgrade deliberately skipped, sold to a strategic before the wrapper window closes.",
+      "externalUrl": "https://www.wix.com/press-room/home/post/wix-further-expands-into-vibe-coding-with-acquisition-of-base44-a-hyper-growth-startup-that-simplif",
+      "articleSlug": "2025-06-wix-acquisition-80m"
+    },
+    {
+      "date": "2025-08-15",
+      "title": "Adding $12M ARR per month under Wix",
+      "type": "media",
+      "description": "SaaStr reports Base44 is adding $12M ARR per month post-Wix integration — roughly $400K/day, $1M every 2.5 days, with 'accelerating week-over-week' growth. Implied run-rate ~$144M by mid-August 2025. The post-acquisition curve already vindicates the strategic-buy thesis over the acqui-hire framing.",
+      "externalUrl": "https://www.saastr.com/wix-the-unexpected-new-threat-to-replit-and-lovable-a-deep-dive-into-how-its-vibe-coding-app-is-now-growing-just-as-fast-or-close-to-it/"
+    },
+    {
+      "date": "2025-09-22",
+      "title": "Abrahami: Base44 traffic up 950%",
+      "type": "media",
+      "description": "Wix CEO Avishai Abrahami tweets that Base44 traffic is up 950%+ per SimilarWeb data — public validation of the post-acquisition distribution thesis and the first time Wix's own brand vouches for Base44 in a number large enough to drive Q4 2025 narrative.",
+      "externalUrl": "https://x.com/Avishai_ab/status/1969447965094744274"
+    },
+    {
+      "date": "2026-02-09",
+      "title": "Super Bowl 2026 ad blitz ($20M)",
+      "type": "media",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Wix spends $20M on Super Bowl LX advertising with separate commercials for Wix and Base44 — the first mass-market push behind the Base44 brand. The decision telegraphs that Wix is treating Base44 as the lead AI growth engine, not a side acquisition.",
+      "externalUrl": "https://www.calcalistech.com/ctechnews/article/j7bfdhkor"
+    },
+    {
+      "date": "2026-03-15",
+      "title": "Base44 hits $100M ARR (9 months post-deal)",
+      "type": "product",
+      "description": "Base44 crosses $100M ARR — nine months after the Wix acquisition closed. Wix's Q1 2026 narrative pivots fully around Base44 as the core AI growth engine. The 9-month $0 → $100M ARR ladder is faster than Replit Agent's hypergrowth arc.",
+      "externalUrl": "https://www.calcalistech.com/ctechnews/article/j7bfdhkor"
+    },
+    {
+      "date": "2026-05-13",
+      "title": "Q1 2026 earnings: $150M Base44 ARR + 27% Wix stock drop",
+      "type": "media",
+      "description": "Wix reports Q1 2026: Base44 hits $150M ARR (May 2026), but parent Wix posts a $57M net loss with $90M Q1 CAC spent acquiring Base44 users. Wix stock drops 27% on the day. Calcalist headline: 'Base44 is booming. So why is Wix collapsing?' The post-acquisition story becomes bigger than the acquisition itself.",
+      "externalUrl": "https://www.calcalistech.com/ctechnews/article/j7bfdhkor",
+      "articleSlug": "2026-05-q1-wix-base44-paradox"
+    },
+    {
+      "date": "2026-05-13",
+      "title": "Maor's $38M Q1 2026 earnout triggered",
+      "type": "funding",
+      "description": "Q1 2026 Base44 milestone unlocks a $38M earnout payment to Maor Shlomo. Wix CFO Lior Shemesh confirms additional payments are being set aside for future milestones through 2029. Total Maor proceeds likely move into the $150–200M range across the deal lifetime.",
+      "externalUrl": "https://www.calcalistech.com/ctechnews/article/sy8shemymg"
+    }
+  ],
+  "arr": [
+    {"date": "2025-02-12", "value": 1000000, "source": "Maor X post + Lenny interview", "confidence": "official"},
+    {"date": "2025-02-28", "value": 18000000, "source": "Inc. (Maor quoted: $1.5M first-month revenue)", "confidence": "media", "round": "First-month revenue × 12"},
+    {"date": "2025-05-31", "value": 2400000, "source": "Calcalist ($200K MRR × 12)", "confidence": "media"},
+    {"date": "2025-06-13", "value": 3500000, "source": "Lenny / SaaStr estimate", "confidence": "estimate"},
+    {"date": "2025-08-15", "value": 144000000, "source": "SaaStr ($12M ARR/mo addition under Wix)", "confidence": "media"},
+    {"date": "2026-03-15", "value": 100000000, "source": "Wix Q1 2026 earnings prep", "confidence": "official"},
+    {"date": "2026-05-15", "value": 150000000, "source": "Wix Q1 2026 earnings", "confidence": "official"}
+  ],
+  "valuation": [
+    {"date": "2025-06-18", "value": 80000000, "round": "Wix acquisition (cash up-front)", "source": "Wix press release", "confidence": "official"},
+    {"date": "2026-05-13", "value": 118000000, "round": "Wix acquisition (incl. Q1 2026 earnout)", "source": "Calcalist / Wix CFO", "confidence": "official"}
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 5,
+      "bestStage": "Latent → hypergrowth (all of 2024–2025)",
+      "effort": "Daily, founder-led",
+      "role": "Founder-as-perpetual-demo + bootstrap milestone broadcaster",
+      "description": "Maor (@MS_BASE44) runs daily X presence from October 27, 2024 ('Going to build @base44 in public') through the June 18, 2025 acquisition. The register is unusual: every clip shows the founder himself using Base44 to build something. Not a product demo — a 'founder doing his job with Base44' demo. Milestone tweets (10K users, $1M ARR, $189K monthly profit, rejected every VC) compound into the next news cycle. Six months of daily demos make the format unfakeable.",
+      "catalyst": "October 27, 2024: 'Going to build @base44 in public' — posted before writing any code. The pre-commit binds Maor to the format and is the load-bearing structural choice for the whole arc.",
+      "catalystUrl": "https://x.com/ms_base44",
+      "accountUrl": "https://x.com/ms_base44",
+      "accountLabel": "@MS_BASE44 on X",
+      "whenItWorks": "When the founder has something demonstrable to show every day and the product can be exercised in real time. Build-in-public requires actual builds — pure narrative posting subtracts trust.",
+      "whenItDoesnt": "Without the daily demo substrate, X founder posting collapses into thought-leadership content. Without a strong reputation substrate underneath, the milestone tweets get read as bragging rather than signal."
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 5,
+      "bestStage": "Hypergrowth + ecosystem reverse-BD",
+      "effort": "Multiple posts per week",
+      "role": "Higher-engagement channel + operational-reasoning surface",
+      "description": "By Maor's own description (cross-referenced across Calcalist, Lenny, and Inc.), LinkedIn was Base44's higher-engagement channel — more than X. The March 2025 'why I chose Claude over OpenAI' cost-per-performance post is the canonical example: a public explanation of operational reasoning that triggered AWS to reverse-invite Base44 to a Tel Aviv demo without any outbound deck. Solo-founder ecosystem reverse-BD at zero cost.",
+      "catalyst": "March 15, 2025 — Claude-over-OpenAI LinkedIn post triggers AWS reverse-outreach. AWS Tel Aviv demo follows in May 2025. Pattern: publish your operational reasoning in public, let the ecosystem partner come to you.",
+      "accountUrl": "https://il.linkedin.com/in/maor-shlomo-1088b4144",
+      "accountLabel": "Maor Shlomo on LinkedIn",
+      "whenItWorks": "When the operational reasoning behind your stack choice is genuinely interesting to ecosystem partners (cloud providers, model labs, infrastructure vendors). LinkedIn is where that audience lives.",
+      "whenItDoesnt": "When the post is marketing-styled. Ecosystem reverse-BD requires the content to read as engineering decision-making, not as positioning."
+    },
+    {
+      "slug": "techcrunch",
+      "name": "TechCrunch / Tier-1 English press",
+      "score": 4,
+      "bestStage": "Acquisition + Q1 2026 earnings cycle",
+      "effort": "Concentrated around news cycles",
+      "role": "Canonical English-language acquisition announcement",
+      "description": "TechCrunch's June 18, 2025 piece by Marina Temkin — '6-month-old solo-owned vibe-coder Base44 sells to Wix for $80M cash' — is the canonical English announcement that travels into Yahoo Finance, Bloomberg/Reuters wire pickups, Inc., and the SaaS analyst circuit (SaaStr). The 6-month framing in the headline locks the narrative; every subsequent secondary source carries the same anchor.",
+      "catalyst": "June 18, 2025: TechCrunch publishes the acquisition story within hours of the Wix press release. The single headline frames every subsequent piece of coverage.",
+      "catalystUrl": "https://techcrunch.com/2025/06/18/6-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash/",
+      "accountUrl": "https://techcrunch.com/2025/06/18/6-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash/",
+      "accountLabel": "TechCrunch announcement",
+      "whenItWorks": "When the headline framing is one short, memorable phrase (6-month-old, solo-owned, $80M cash). Each modifier compounds the virality of the next piece of coverage.",
+      "whenItDoesnt": "When the press release leads with the deal mechanics rather than the human-scale story. Wix's framing left the headline-shape to TechCrunch — which is why the headline worked."
+    },
+    {
+      "slug": "calcalist",
+      "name": "Calcalist / Ctech",
+      "score": 5,
+      "bestStage": "Pre-acquisition deep interview + post-deal Q1 narrative",
+      "effort": "Recurring access — Israeli press relationship",
+      "role": "Deepest primary access + Wix earnings deep-dive",
+      "description": "Calcalist (Ctech) carries the deepest primary Base44 access of any outlet: the 'Holy Grail' Maor interview (with the WordPress origin, the Yuval proposal, the mother's cancer treatment, the Iran-war signing day), the Q1 2026 'Base44 is booming. So why is Wix collapsing?' deep-dive, and the $38M earnout disclosure. Israeli press has access US press cannot reach, and Wix's CFO speaks more freely to Calcalist than to TechCrunch.",
+      "catalyst": "June 18–19, 2025 — Calcalist publishes the full Maor interview alongside the acquisition. The 350K users + $200K/mo + the three Wagyu dinners + the Iran-war timing all enter the canonical record through this single interview.",
+      "catalystUrl": "https://www.calcalistech.com/ctechnews/article/y0kdgmw7a",
+      "accountUrl": "https://www.calcalistech.com/ctechnews",
+      "accountLabel": "Calcalist Ctech",
+      "whenItWorks": "When the founder is willing to give a single deep interview with personal-life detail. Calcalist's Israeli access works because Maor speaks Hebrew, lives in Israel, and trusts the outlet.",
+      "whenItDoesnt": "When the founder wants to stay US-press-only. The Calcalist channel only works for Israeli companies with Israeli founders willing to do Hebrew-language coverage."
+    },
+    {
+      "slug": "lennys-podcast",
+      "name": "Lenny's Newsletter / Podcast",
+      "score": 4,
+      "bestStage": "Post-acquisition founder profile",
+      "effort": "One canonical interview",
+      "role": "Bootstrapped-founder canonical English profile",
+      "description": "Lenny Rachitsky's interview / podcast profile crystallized the Base44 story for the English PM / founder audience. The interview is where 'hit $1M ARR three weeks post-launch,' the 90% AI-coded codebase claim, the 'removed a helpful feature that tripled activation rates' anecdote, and Maor's severe-ADHD self-disclosure all enter the canonical record. The pre-acquisition $3.5M ARR estimate that everyone subsequently cites originated here.",
+      "catalyst": "Post-acquisition (mid-2025): Lenny publishes 'The Base44 bootstrapped startup success story.' The interview becomes the canonical longform Base44 piece in English for PM and founder audiences.",
+      "catalystUrl": "https://www.lennysnewsletter.com/p/the-base44-bootstrapped-startup-success-story-maor-shlomo",
+      "accountUrl": "https://www.lennysnewsletter.com/p/the-base44-bootstrapped-startup-success-story-maor-shlomo",
+      "accountLabel": "Lenny's Base44 profile",
+      "whenItWorks": "When the founder narrative has bootstrapped-discipline material — concrete ARR, profit, headcount, rejected VCs. Lenny's audience is PMs and founders who want operational granularity.",
+      "whenItDoesnt": "When the story leans on positioning rather than numbers. Lenny's interview format presses on specifics; a founder without them gets exposed."
+    },
+    {
+      "slug": "wix-earnings",
+      "name": "Wix earnings calls + Avishai's X",
+      "score": 4,
+      "bestStage": "Post-acquisition (Aug 2025 → mid-2026)",
+      "effort": "Quarterly + opportunistic founder amplification",
+      "role": "Post-acquisition ARR disclosure surface + acquirer's brand amplification",
+      "description": "Once Base44 became a Wix-owned product, the canonical ARR disclosure surface moved to Wix earnings calls. Q1 2026 earnings disclosed $150M Base44 ARR, $90M Q1 CAC, the $38M Maor earnout, and the $20M Super Bowl spend split. Avishai Abrahami's X account (@Avishai_ab) doubled the amplification — the September 2025 '950% traffic via SimilarWeb' tweet validated the post-deal distribution thesis publicly. Without Wix's disclosure cadence, the $0 → $150M ladder would be visible only in private.",
+      "catalyst": "August 15, 2025: SaaStr deep-dive ('the unexpected new threat to Replit and Lovable') triangulates from Wix Q2 2025 prep that Base44 is adding $12M ARR/month. The post-acquisition disclosure cadence starts here.",
+      "catalystUrl": "https://www.saastr.com/wix-the-unexpected-new-threat-to-replit-and-lovable-a-deep-dive-into-how-its-vibe-coding-app-is-now-growing-just-as-fast-or-close-to-it/",
+      "accountUrl": "https://x.com/Avishai_ab",
+      "accountLabel": "@Avishai_ab on X",
+      "whenItWorks": "When the acquirer has its own public-company disclosure obligations and the acquired product is a meaningful share of the parent's revenue narrative. Wix had to disclose Base44 numbers; the by-product is that the post-acquisition arc is on the public record.",
+      "whenItDoesnt": "When the acquirer absorbs the product into a generic 'AI' line item without product-level disclosure. Most strategic acquisitions disappear into the parent's bundle and stop telling a story."
+    }
+  ]
+}

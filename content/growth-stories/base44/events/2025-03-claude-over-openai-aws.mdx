@@ -1,0 +1,91 @@
+---
+title: "Claude over OpenAI — The LinkedIn Post That Made AWS Reverse-Invite Base44 (March 2025)"
+description: "On March 15, 2025, Maor posted a public LinkedIn explanation of why Base44 was using Anthropic Claude via AWS Bedrock instead of OpenAI. The post triggered AWS to reverse-invite him to demo at a Tel Aviv event in May — zero outbound, zero pitch deck. The canonical solo-founder ecosystem-BD move."
+date: "2025-03-15"
+type: "media"
+gtmTag: "Ride the KOL wave"
+eventTitle: "Claude over OpenAI LinkedIn post + AWS pickup"
+externalUrl: "https://techcrunch.com/2025/06/18/6-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash/"
+---
+
+<Catalyst>
+Most ecosystem-BD wins require a BD team. Maor had no BD team. He had a LinkedIn post explaining the cost-per-performance reasoning behind a single technical decision — and the result was AWS reverse-inviting Base44 to a Tel Aviv demo without a single outbound email. The post is the canonical solo-founder ecosystem-BD move in the cases.
+</Catalyst>
+
+On roughly March 15, 2025, Maor posted on LinkedIn an explanation of why Base44 was using Anthropic Claude (via AWS Bedrock) instead of OpenAI. The post laid out the cost-per-performance reasoning in operational granularity — token cost, latency, output quality on the specific code-generation workloads Base44 ran.
+
+The post was not marketing. It was Maor's actual operational reasoning, written up in public the same way an engineer would write up a technical decision in an internal doc. The result was that AWS — without prompting from Base44 — reached out and invited Maor to demo at an AWS event in Tel Aviv in May.
+
+## What the post actually said
+
+The structural detail of the post is what makes it work. Maor did not write "we love Anthropic" or "we believe in Claude's safety." He wrote the operational decision-making behind a specific cost-per-quality tradeoff. The tone was engineering, not marketing.
+
+The contents, by reconstruction from Maor's later citations:
+
+- **Token cost per useful output** — Claude's cost per delivered code completion was lower than OpenAI's at the price tier Base44 needed.
+- **Latency at Base44's batch sizes** — AWS Bedrock's serving infrastructure handled Base44's spiky usage pattern better than direct OpenAI API at the same scale.
+- **Output quality on code generation** — At Base44's specific workload (full-stack app generation, not chat), Claude's outputs required less post-processing.
+- **The 90% AI-coded codebase claim** as supporting evidence — Maor's own product runs on the stack he was recommending.
+
+The fourth point is the load-bearing one. Maor was not recommending Claude based on third-party benchmarks. He was recommending it based on having shipped a $1M ARR product that itself was 90% written by Claude. The first-person evidence — "this is the stack I bet my company on" — is structurally stronger than any benchmark.
+
+## Why AWS noticed
+
+AWS Bedrock — Amazon's hosted multi-model API platform — was in a competitive position in early 2025. Microsoft Azure had OpenAI exclusive. Google had Gemini in its own cloud. AWS Bedrock's value proposition was multi-vendor neutrality, with Anthropic Claude as the lead model.
+
+A small, fast-growing company explaining publicly that **its production stack uses AWS Bedrock to serve Claude** is the exact ecosystem-credibility material AWS's developer relations team wants. The post was effectively a public testimonial — written by an engineer, not a marketer — that landed in the AWS ecosystem feed at the moment AWS needed exactly that kind of signal.
+
+The AWS team's reverse-outreach to Maor was not a difficult decision. The cost of inviting Base44 to a Tel Aviv demo was a single travel reimbursement. The upside was a public AWS Bedrock case study with a hyper-growth startup as the testimonial.
+
+## The Tel Aviv demo
+
+The AWS Tel Aviv event happened in early May 2025. Maor demoed Base44 on stage. The demo provided two things:
+
+| What it gave Base44 | What it gave AWS |
+|---|---|
+| Anthropic + AWS ecosystem co-signature | Live customer testimonial |
+| Israeli tech-community credibility | Base44 stack story for sales |
+| Pre-acquisition enterprise narrative | A Base44-stamped Bedrock case study |
+
+The credibility loop runs both ways. By the time Wix's June press release went out, "Anthropic / AWS-stack" was already public for Base44 — making the enterprise-readiness story Wix wanted to tell easier to land.
+
+## The pattern: publish operational reasoning, let the ecosystem come
+
+This is the highest-leverage version of solo-founder ecosystem BD in the cases. The pattern, generalized:
+
+- Make a technical decision worth defending.
+- Publish the operational reasoning behind it in public.
+- Tag the relevant ecosystem when natural, but do not pitch.
+- The ecosystem partner — whose BD team is searching for exactly this kind of signal — will reverse-outreach.
+
+The pattern only works because of three preconditions:
+
+- **Real operational substance.** The post had to contain actual engineering reasoning, not positioning content. Anyone reading the post could see Maor was reporting a real decision.
+- **A category where ecosystem partners are actively recruiting.** AWS Bedrock vs. Azure-OpenAI vs. Google Vertex was a live competitive front in early 2025. The ecosystem actively wanted testimonial-grade content.
+- **Cross-signature credibility on both ends.** Maor had Explorium and Forbes 30 Under 30 substrate. AWS had a developer-relations team with a budget for exactly this kind of outreach. The match was structural.
+
+A founder running the same play without the substrate substrate, or in a category where the ecosystem is not recruiting, will not produce the same reverse-outreach. The pattern is general but the preconditions are specific.
+
+## What it did not do
+
+Two things the AWS pickup did *not* do:
+
+- **It did not generate users.** The Tel Aviv demo was a credibility event, not a growth channel. The user growth in March–May continued to come from daily X / LinkedIn clips, not from AWS.
+- **It did not change the wrapper-window risk.** The fact that Base44 was deeply embedded in the Anthropic/AWS stack actually *increased* the wrapper-window risk — if Anthropic shipped a direct competitor, Base44's stack choice would have to be re-justified. Maor's voluntary peak-exit in May is partly a response to this risk.
+
+The pickup gave Base44 ecosystem credibility at the moment it needed enterprise narrative for the Wix conversation. The fact that the credibility was acquired through a single LinkedIn post — at zero cost, with no BD team — is what makes the move repeatable for other solo founders.
+
+<Conclusion title="What to copy">
+
+- **Publish actual operational reasoning, not positioning content.** The post worked because it described a real technical decision in engineering language. Marketing-styled content from a solo founder would not have triggered AWS reverse-outreach.
+- **First-person evidence beats third-party benchmarks.** Maor's "I shipped a $1M ARR product on this stack" was stronger evidence than any benchmark could be. Founders writing technical posts should bet their own product on the recommendation — otherwise the reverse-outreach signal will not land.
+- **Ecosystem partners with active competitive recruiting will reverse-outreach for the right signal.** Identify the categories where this dynamic is live (cloud providers, model labs, infrastructure vendors) and publish into that gap.
+
+</Conclusion>
+
+## Sources
+
+- [TechCrunch — 6-month-old solo-owned vibe-coder Base44 sells to Wix](https://techcrunch.com/2025/06/18/6-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash/)
+- [Lenny's Newsletter — The Base44 bootstrapped startup success story](https://www.lennysnewsletter.com/p/the-base44-bootstrapped-startup-success-story-maor-shlomo)
+- [Maor Shlomo on LinkedIn](https://il.linkedin.com/in/maor-shlomo-1088b4144)
+- [Calcalist Ctech — Maor Shlomo Holy Grail interview](https://www.calcalistech.com/ctechnews/article/y0kdgmw7a)
