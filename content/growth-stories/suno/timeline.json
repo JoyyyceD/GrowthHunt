@@ -1,0 +1,377 @@
+{
+  "company": {
+    "slug": "suno",
+    "name": "Suno",
+    "legalName": "Suno Inc.",
+    "tagline": "Four Kensho ML engineers turned a major-label lawsuit into a 4.9x valuation jump in 17 months",
+    "summary": "Suno was founded in 2022 by four ex-Kensho ML engineers — all amateur musicians — in Cambridge, MA. Bark, their first transformer-based text-to-audio model, hit 19K GitHub stars in a month on April 2023. By December 2023 they shipped a consumer app embedded in Microsoft Copilot with $10/$30 day-one pricing. V3 went viral in March 2024. The RIAA sued for copyright infringement in June 2024 — and Suno turned the lawsuit into a creator-rights narrative that pulled in Timbaland, Karpathy, and the AI-builder bench. Seventeen months later, Warner Music settled, sold Songkick to Suno, and the Series C closed at a $2.45B valuation on Sacra-triangulated $200M ARR. By February 2026, Mikey Shulman disclosed 2M paid subscribers and $300M ARR.",
+    "founded": "2022-06-01",
+    "founders": [
+      "Mikey Shulman",
+      "Georg Kucsko",
+      "Martin Camacho",
+      "Keenan Freyberg"
+    ],
+    "seriesNumber": 29
+  },
+  "phases": [
+    {
+      "start": "2022-06",
+      "end": "2023-12",
+      "name": "Kensho substrate + Bark",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2023-12",
+      "end": "2024-06",
+      "name": "Copilot launch + V3 viral",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2024-06",
+      "end": "2025-11",
+      "name": "RIAA lawsuit + reversal GTM",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2025-11",
+      "end": "2026-06",
+      "name": "Warner settlement + scale",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2022-06-01",
+      "title": "Suno founded by four ex-Kensho engineers",
+      "type": "product",
+      "description": "Mikey Shulman (CEO, Harvard physics PhD, Kensho's first ML engineer), Georg Kucsko (CTO, Harvard physics PhD), Martin Camacho (ex-Kensho speech recognition) and Keenan Freyberg (ex-Kensho strategy) form Suno in Cambridge, MA. All four are amateur musicians. Five years of transformer work on noisy financial NLP at Kensho is the technical substrate. Date approximate; disclosed retrospectively by Founder Collective."
+    },
+    {
+      "date": "2023-04-20",
+      "title": "Bark open-sourced on GitHub",
+      "type": "product",
+      "gtmTag": "Academic-ML substrate",
+      "description": "First transformer-based text-to-audio model in open source, architecturally credited to Karpathy's NanoGPT. Generates speech, music, and non-verbal audio (laughs, sighs). Hits ~19K GitHub stars in roughly one month. Relicensed MIT in May 2023. Establishes Suno's technical reputation in the AI engineering community nine months before consumer launch.",
+      "externalUrl": "https://github.com/suno-ai/bark"
+    },
+    {
+      "date": "2023-08-07",
+      "title": "Seed extension",
+      "type": "funding",
+      "description": "Tracxn-recorded second funding round, likely a seed extension after the 2022 Founder Collective pre-seed. Round details not publicly itemized; later bundled into the May 2024 \"cumulative $125M\" framing."
+    },
+    {
+      "date": "2023-12-19",
+      "title": "Microsoft Copilot integration",
+      "type": "product",
+      "gtmTag": "Platform B3",
+      "description": "Microsoft announces Suno as a Copilot plug-in for music creation, tied to Copilot's first-anniversary cycle. Initially Edge-only. The integration embeds Suno into roughly 100M Microsoft user interfaces — a platform-tier distribution shortcut almost never available to an eight-month-old consumer company.",
+      "externalUrl": "https://techcrunch.com/2023/12/19/microsoft-copilot-gets-a-music-creation-feature-via-suno-integration/",
+      "articleSlug": "2023-12-microsoft-copilot-integration"
+    },
+    {
+      "date": "2023-12-20",
+      "title": "Suno comes out of stealth at $10 / $30",
+      "type": "product",
+      "gtmTag": "Day-zero pricing",
+      "description": "Consumer app launches at suno.ai with three live tiers from day one — free (10 songs/day), $10/mo Pro (500 songs), $30/mo Premier (2,000 songs). Axios exclusive coverage. The pricing structure holds unchanged through 2026 — the cleanest day-zero monetization in the consumer-AI cohort.",
+      "externalUrl": "https://www.axios.com/2023/12/20/suno-gen-ai-music-microsoft",
+      "articleSlug": "2023-12-day-zero-pricing"
+    },
+    {
+      "date": "2024-03-14",
+      "title": "Latent Space podcast: Making Transformers Sing",
+      "type": "media",
+      "description": "Mikey Shulman on Swyx and Alessio's podcast. Covers Bark's NanoGPT lineage, audio-as-language thesis, the Kensho transition, and Karpathy's \"Return to monkey\" anecdote. Lands one week before V3 hits consumer awareness — primes the AI engineering audience for the viral wave.",
+      "externalUrl": "https://www.latent.space/p/suno"
+    },
+    {
+      "date": "2024-03-21",
+      "title": "V3 launch — full-song generation goes viral",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "First Suno model designed for full-song generation. Free tier unlocked. Karpathy posts his \"Return to monkey\" V3 generation; Aravind Srinivas and Alexandr Wang share their own. Rolling Stone publishes its 36K-plays-in-4-days Mississippi Delta blues demo. The first wave of AI-generated tracks crosses to TikTok and YouTube — many undisclosed as AI.",
+      "externalUrl": "https://help.suno.com/en/articles/5782721",
+      "articleSlug": "2024-03-v3-viral"
+    },
+    {
+      "date": "2024-04-10",
+      "title": "Udio launches publicly",
+      "type": "media",
+      "description": "Concurrent competitor — ex-Google DeepMind team under Uncharted Labs. $10M seed led by a16z with Will.i.am, Common, Tay Keith. Rolling Stone says Udio output \"may sound crisper than Suno.\" Sharpens the market frame on Suno vs Udio for six weeks before the RIAA suit collapses the binary."
+    },
+    {
+      "date": "2024-05-21",
+      "title": "Series B — $125M at $500M valuation",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Lightspeed leads. Nat Friedman, Daniel Gross, Matrix, Founder Collective participate. Eleven-name advisor bench announced same day: Andrej Karpathy, Aaron Levie, Aravind Srinivas, Alexandr Wang, Amjad Masad, Brendan Iribe, Fred Ehrsam, Guillermo Rauch, 3LAU, Flosstradamus, Shane Mac. 10M users disclosed. Sacra estimates $45M ARR (not founder-disclosed). The $125M figure is cumulative across pre-seed, seed, and Series B per MBW.",
+      "externalUrl": "https://suno.com/blog/fundraising-announcement-may-2024",
+      "articleSlug": "2024-05-series-b"
+    },
+    {
+      "date": "2024-05-30",
+      "title": "V3.5 launch",
+      "type": "product",
+      "description": "4-minute song generation, up from 2 minutes in V3. Improved structure and vocal flow. Defaults to V3.5 going forward."
+    },
+    {
+      "date": "2024-06-24",
+      "title": "RIAA lawsuit filed",
+      "type": "media",
+      "gtmTag": "Legal-disturbance reversal",
+      "description": "RIAA on behalf of Sony Music, Universal Music Group, and Warner Records files copyright-infringement complaints — Suno in US District Court of Massachusetts, Udio in SDNY. Seeks damages up to $150K per infringed work. Rolling Stone, NYT, Billboard, BBC, TechCrunch, and The Verge cover. The first cross-Atlantic legal precedent for generative-music training data.",
+      "externalUrl": "https://www.riaa.com/record-companies-bring-landmark-cases-for-responsible-ai-againstsuno-and-udio-in-boston-and-new-york-federal-courts-respectively/",
+      "articleSlug": "2024-06-riaa-lawsuit-reversal"
+    },
+    {
+      "date": "2024-07-01",
+      "title": "iOS mobile app launch",
+      "type": "product",
+      "description": "First mobile app (iPhone, US-only). 50 credits/day on free tier. Suno discloses 12M users — up from 10M at Series B six weeks earlier. Apple in-app billing for Pro and Premier."
+    },
+    {
+      "date": "2024-08-01",
+      "title": "Fair-use response brief + Shulman blog",
+      "type": "media",
+      "gtmTag": "Legal-disturbance reversal",
+      "description": "Suno files its Boston federal court response, admits training included copyrighted recordings (\"it is no secret\"), and argues fair use. Shulman blog post lands same day: \"learning is not infringing — it never has been, and it is not now.\" Frames the case as creators versus corporate gatekeepers rather than legal versus illegal. The 38-day reframe window closes."
+    },
+    {
+      "date": "2024-10-22",
+      "title": "Timbaland joins as strategic advisor",
+      "type": "media",
+      "description": "Four-time Grammy producer joins Suno with a day-to-day product role. \"Love Again\" $100K remix contest launches 24 hours later. Adds artist-side credibility into the lawsuit window. Timbaland later publicly endorses the Warner partnership as \"disruptive\" — and weathers the backlash without retracting.",
+      "externalUrl": "https://www.prnewswire.com/news-releases/timbaland-becomes-strategic-advisor-to-leading-ai-music-company-suno-302283573.html"
+    },
+    {
+      "date": "2024-11-13",
+      "title": "Jack Brody hired as CPO",
+      "type": "media",
+      "description": "Ex-Snap Head of Product joins Suno. Scaled Snapchat DAU from tens of millions to 400M over a 10-year tenure. Co-announced with the V4 cycle. The hire signals consumer-scale operating muscle entering the company 18 months into the lawsuit window.",
+      "externalUrl": "https://suno.com/blog/welcome-jack"
+    },
+    {
+      "date": "2024-11-19",
+      "title": "V4 launch — Personas, Covers, Remaster",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Major model upgrade — cleaner vocals, sharper lyrics, the ReMi lyrics model, Personas (consistent vocalist), Covers (audio upload), and Remaster (upgrade old tracks). 25M users disclosed, 2.5x in six months from Series B. First reframe from generative app to creator workflow tool.",
+      "externalUrl": "https://help.suno.com/en/articles/5782721"
+    },
+    {
+      "date": "2025-05-01",
+      "title": "V4.5 launch — 8-minute songs",
+      "type": "product",
+      "description": "Eight-minute song generation, up from four. Improved prompt adherence, style mashups, prompt-enhancement helper. Demonstrates monthly product velocity in the deep lawsuit phase.",
+      "externalUrl": "https://suno.com/blog/introducing-v4-5"
+    },
+    {
+      "date": "2025-06-26",
+      "title": "WavTool acquisition",
+      "type": "acquisition",
+      "description": "Suno acquires browser-based DAW WavTool — first M&A for the company. Deal had closed earlier (WavTool DAW went offline November 2024); Suno timed the announcement to support the pro-tools narrative ahead of Suno Studio. Brings VST plugin support, sample-accurate editing, and AI stem separation.",
+      "externalUrl": "https://suno.com/blog/suno-acquires-wavtool"
+    },
+    {
+      "date": "2025-07-18",
+      "title": "V4.5+ launch",
+      "type": "product",
+      "description": "Adds \"Add Vocals,\" \"Add Instrumentals,\" and \"Inspire\" (generates new tracks matching the user's existing playlists). Production-tool framing — Suno positioning hardens around creator workflow rather than gen-music app."
+    },
+    {
+      "date": "2025-07-24",
+      "title": "Hallwood Media signs first AI artist (imoliver)",
+      "type": "media",
+      "description": "Hallwood Media (Neil Jacobson, ex-Geffen president) signs imoliver — a Suno power user — to a first-of-its-kind record deal. \"Stone\" hits streaming August 8. Shulman frames it as \"a milestone for the future of music.\" Hallwood becomes a Series C participant four months later — full strategic-stack alignment.",
+      "externalUrl": "https://www.billboard.com/pro/ai-music-creator-imoliver-record-deal-hallwood/"
+    },
+    {
+      "date": "2025-09-23",
+      "title": "V5 + Suno Studio launch",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "V5 (Suno's \"most powerful\" model) ships to Pro and Premier subscribers. Suno Studio — a browser DAW combining V5 with multitrack editing — builds on the WavTool acquisition. Sample-to-Song and Hooks (short-form music videos) ship alongside. Launches days after labels' amended \"stream-ripping\" complaint — public defiance framing.",
+      "externalUrl": "https://musically.com/2025/09/25/suno-launches-v5-claiming-its-the-worlds-best-music-model/"
+    },
+    {
+      "date": "2025-11-19",
+      "title": "Series C — $250M at $2.45B",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Menlo Ventures leads. NVIDIA NVentures, Hallwood Media, Lightspeed, and Matrix follow. Sacra-triangulated $200M ARR (sourced via WSJ; not founder-disclosed). 100M cumulative users and 7M tracks/day per the pitch deck. Valuation up 4.9x from Series B — during the window when the RIAA case was supposedly an existential risk.",
+      "externalUrl": "https://suno.com/blog/series-c-announcement",
+      "articleSlug": "2025-11-series-c"
+    },
+    {
+      "date": "2025-11-25",
+      "title": "Warner settlement + Songkick acquisition",
+      "type": "acquisition",
+      "gtmTag": "Legal-disturbance reversal",
+      "description": "Warner Music Group settles its copyright suit and strikes a licensing partnership for \"next-generation licensed AI music\" launching 2026. As part of the deal, Suno acquires concert-discovery platform Songkick from Warner. Cash component undisclosed. WMG CEO Robert Kyncl: \"AI becomes pro-artist when it adheres to our principles.\" First major-label peace deal — sets template for UMG and Sony.",
+      "externalUrl": "https://www.musicbusinessworldwide.com/warner-music-group-settles-with-suno-strikes-first-of-its-kind-deal-with-ai-song-generator/",
+      "articleSlug": "2025-11-warner-settlement"
+    },
+    {
+      "date": "2026-02-27",
+      "title": "2M paid subs + $300M ARR disclosed",
+      "type": "media",
+      "description": "Mikey Shulman's LinkedIn post: 2M paid subscribers (2x in 100 days) and $300M ARR (1.5x in 100 days). TechCrunch, Billboard, MBW, Hollywood Reporter pickup. Sacra frames as 404% YoY growth. Subscriber retention disclosed: 25% at 30 days, 78% weekly for subs. First founder-disclosed ARR number on the record.",
+      "externalUrl": "https://techcrunch.com/2026/02/27/ai-music-generator-suno-hits-2-million-paid-subscribers-and-300m-in-annual-recurring-revenue/",
+      "articleSlug": "2026-02-arr-disclosure"
+    },
+    {
+      "date": "2026-03-26",
+      "title": "V5.5 + Voices + Custom Models",
+      "type": "product",
+      "description": "V5.5 adds Voices (voice capture), Custom Models, and My Taste (personalization). Framing shift: \"the best music starts with a human.\" An explicit creator-augmentation pivot — repositioning to absorb backlash from Shulman's earlier \"making music sucks\" press-cycle controversy."
+    }
+  ],
+  "arr": [
+    {
+      "date": "2024-05-21",
+      "value": 45000000,
+      "source": "Sacra estimate",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-01-01",
+      "value": 50000000,
+      "source": "WSJ via TechCrunch",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-09-30",
+      "value": 140000000,
+      "source": "Sacra (pitch-deck reporting)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-11-19",
+      "value": 200000000,
+      "source": "WSJ via TechCrunch / Sacra",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-12-31",
+      "value": 227000000,
+      "source": "Sacra estimate",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2026-02-27",
+      "value": 300000000,
+      "source": "Mikey Shulman / LinkedIn",
+      "confidence": "official"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2024-05-21",
+      "value": 500000000,
+      "round": "Series B",
+      "source": "MBW / Crunchbase",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-11-19",
+      "value": 2450000000,
+      "round": "Series C",
+      "source": "Suno blog / TechCrunch",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 5,
+      "bestStage": "All stages — load-bearing",
+      "effort": "Always-on",
+      "role": "Founder voice + crisis reframe channel",
+      "description": "Mikey Shulman (@MikeyShulman) runs daily X. The 38-day reframe window after the June 2024 RIAA suit landed first on X — Shulman's posts arguing \"learning is not infringing\" propagated through the AI-builder bench (Karpathy, Alexandr Wang, Aravind Srinivas) before mainstream press could re-frame the story. V3 traveled the same way: Karpathy's \"Return to monkey\" tweet in March 2024 was the canonical KOL endorsement moment.",
+      "catalyst": "Karpathy's V3 \"Return to monkey\" generation (March 2024) — a single short audio clip on X that gave Suno simultaneous credibility with the AI engineering bench. Combined with Shulman's August 2024 fair-use thread, X carried both the technical and the political narrative.",
+      "catalystUrl": "https://x.com/karpathy",
+      "accountUrl": "https://x.com/MikeyShulman",
+      "accountLabel": "@MikeyShulman on X",
+      "whenItWorks": "When the founder can run daily presence with quarterly milestone disclosures — the Vercel Rauch / Replit Masad sub-pattern. Audio clips autoplay native, which keeps every Suno demo a single share unit",
+      "whenItDoesnt": "Daily presence is a footgun. Shulman's early-2026 \"making music sucks\" remark triggered creator backlash that forced the V5.5 \"best music starts with a human\" repositioning"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 4,
+      "bestStage": "Copilot launch + V3 viral",
+      "effort": "Episodic, creator-led",
+      "role": "Long-form demos + founder narrative",
+      "description": "Two layers: Suno-generated tracks travel native as YouTube uploads, often un-tagged as AI; and Shulman's long-form interviews (Latent Space, Training Data, BigGo) compound the AI-investor narrative. The Rolling Stone Mississippi Delta blues demo did its 36K-plays in four days largely on YouTube and TikTok. Creator tutorials on prompt engineering for Suno drive continuous self-serve sign-ups.",
+      "catalyst": "Rolling Stone's V3 Mississippi Delta blues demo (March 2024) — 36K plays in four days as a single track upload. The format was a self-contained share unit that didn't need context.",
+      "catalystUrl": "https://www.youtube.com/results?search_query=suno+v3+blues",
+      "accountUrl": "https://www.youtube.com/@SunoMusic",
+      "accountLabel": "Suno on YouTube",
+      "whenItWorks": "When the output is a finished artifact (song, music video). YouTube rewards complete listening units, not snippets",
+      "whenItDoesnt": "For pricing changes, lawsuit-response statements, or business updates. YouTube audiences won't engage; X is the right channel for those"
+    },
+    {
+      "slug": "microsoft-copilot",
+      "name": "Microsoft Copilot",
+      "score": 4,
+      "bestStage": "Copilot launch + V3 viral",
+      "effort": "One-time deal, ongoing distribution",
+      "role": "Platform-tier distribution",
+      "description": "The December 2023 Copilot integration embedded Suno into roughly 100M Microsoft user interfaces from day zero of public availability. This is the closest analog to a platform-tier B3 in the case set — most B3 in the playbook is single-person KOL credit (Cursor / Karpathy, Oura / NBA Bubble). Suno got a Microsoft-product surface as its launch channel.",
+      "catalyst": "The December 19, 2023 Copilot integration announcement — Bing blog co-published with Copilot's first-anniversary cycle, primed Suno's stealth exit the next day with maximum surface area.",
+      "catalystUrl": "https://techcrunch.com/2023/12/19/microsoft-copilot-gets-a-music-creation-feature-via-suno-integration/",
+      "accountUrl": "https://www.microsoft.com/en-us/microsoft-copilot",
+      "accountLabel": "Microsoft Copilot",
+      "whenItWorks": "When a hyperscaler has a clear category gap (Microsoft had no native music gen, Suno's Bark credibility filled it). Platform B3 trades equity-style upside for one of the largest distribution surfaces on earth",
+      "whenItDoesnt": "If the integration locks you into a single OS or geography. Suno's integration was Edge-only at launch, which capped early-month gains until the consumer app on suno.ai took over"
+    },
+    {
+      "slug": "podcast",
+      "name": "Podcast circuit",
+      "score": 4,
+      "bestStage": "Pre-inflection + Hypergrowth",
+      "effort": "Episodic founder long-form",
+      "role": "Investor + engineering narrative",
+      "description": "Mikey Shulman's appearances on Latent Space (March 2024, one week before V3), 20VC, Amplify, Training Data, and BigGo carried the technical lineage story (Bark → NanoGPT) and the philosophical fair-use story (\"learning is not infringing\") to the audiences that mattered most — AI engineers, VCs, and founder bench advisors. Each appearance was timed to a product or funding window.",
+      "catalyst": "Latent Space \"Making Transformers Sing\" episode (March 14, 2024) — Shulman with Swyx and Alessio one week before V3 hit consumer awareness. Primed the AI engineering audience for the V3 viral wave; Karpathy's tweet and the Series B advisor bench both compounded off this episode.",
+      "catalystUrl": "https://www.latent.space/p/suno",
+      "accountUrl": "https://www.latent.space/p/suno",
+      "accountLabel": "Latent Space: Suno episode",
+      "whenItWorks": "When the founder can credibly carry a 60-90 minute technical conversation AND time the episode to a product window. Each episode is a long-form artifact that VCs and advisors can circulate inside their own networks",
+      "whenItDoesnt": "One-off keynote appearances with no follow-up cadence. The pattern works as a continuous interview rhythm tied to launches, not as scattered appearances"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 4,
+      "bestStage": "Warner settlement + scale",
+      "effort": "Quarterly founder posts",
+      "role": "Founder-disclosed milestones",
+      "description": "Mikey Shulman's LinkedIn shifted in late 2025 from sporadic to load-bearing. The February 27, 2026 post disclosed 2M paid subs and $300M ARR — the only founder-disclosed ARR number on the record. The format is the Vercel Rauch / Replit Masad sub-pattern: quarterly milestone disclosures via personal LinkedIn that get amplified by TechCrunch, Billboard, MBW, Hollywood Reporter in the same news window.",
+      "catalyst": "Shulman's February 27, 2026 LinkedIn post — $300M ARR + 2M paid subs as the founder's first official ARR disclosure. The Series C announcement three months earlier had only WSJ-sourced numbers; LinkedIn was where Shulman went on the record.",
+      "catalystUrl": "https://www.linkedin.com/in/mikeyshulman",
+      "accountUrl": "https://www.linkedin.com/in/mikeyshulman",
+      "accountLabel": "Mikey Shulman on LinkedIn",
+      "whenItWorks": "When you have a milestone worth disclosing and want the trade press to source it back to a single founder post. LinkedIn's amplification reach in tech press is higher than X for finance / ARR numbers specifically",
+      "whenItDoesnt": "For technical or creator content. LinkedIn audiences won't engage with audio-tag demos the way X or YouTube will"
+    },
+    {
+      "slug": "music-trade-press",
+      "name": "Music trade press",
+      "score": 4,
+      "bestStage": "RIAA lawsuit + reversal GTM",
+      "effort": "Reactive + relationship-driven",
+      "role": "Industry-establishment legitimization",
+      "description": "Rolling Stone, Billboard, MBW (Music Business Worldwide), Hollywood Reporter, and Variety covered Suno from the V3 viral moment through the RIAA lawsuit, the Warner settlement, and the imoliver record deal. Their coverage was a precondition for the reversal-GTM playbook — Suno needed to be visible inside the music industry's own press corps to land the Timbaland advisor announcement, the Hallwood signing, and the Warner partnership as credible industry milestones rather than tech-press curiosities.",
+      "catalyst": "MBW's Warner-settlement coverage (November 25, 2025) — the first major music-industry trade press piece that framed Suno as a Warner business partner rather than a Warner defendant. Set the template for UMG and Sony talks the following months.",
+      "catalystUrl": "https://www.musicbusinessworldwide.com/warner-music-group-settles-with-suno-strikes-first-of-its-kind-deal-with-ai-song-generator/",
+      "accountUrl": "https://www.musicbusinessworldwide.com/companies/suno-ai/",
+      "accountLabel": "Suno on MBW",
+      "whenItWorks": "When the company has a story that the music industry's own trade press wants to cover — typically a label deal, an artist relationship, or an industry-shifting legal moment. Tech press cannot substitute",
+      "whenItDoesnt": "For pure technical model releases or developer features. MBW and Billboard will cover Suno V5 as news, but the depth comes when there's an artist or label angle"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+---
+title: "借来的基底——为什么两位创始人选择包装 30 年的 Postgres 而不是自己造数据库（2020 年 1 月）"
+description: "Paul Copplestone 和 Ant Wilson 2019 年通过 Entrepreneur First Singapore 认识。创始选择是结构性的：把 Postgres 识别为基底，深入生态招聘，永远不发明存储引擎。"
+date: "2020-01-15"
+type: "product"
+gtmTag: "借来的基底"
+eventTitle: "Supabase 创立——Postgres 作为借来的基底"
+externalUrl: "https://www.stacksync.com/blog/one-word-changed-everything-the-origin-story-of-supabase"
+---
+
+<Catalyst>
+锁死所有未来选项的创始选择不是「造一个数据库」。是「识别一个 30 年的开源数据库作为基底，用现代开发者体验包装它，永远不重新发明存储」。两个月后这个押注是 8 个托管数据库。五年后是 50 亿美元估值。
+</Catalyst>
+
+2020 年 1 月，新加坡。Paul Copplestone（CEO，前 Nimbus for Work、Entrepreneur First Singapore）和 Ant Wilson（CTO，伦敦帝国理工 MSc 软件工程）开始写 Supabase 代码。pre-seed 轮约 10 万美元来自天使。产品用一句话描述：基于 PostgreSQL 的开源 Firebase 替代品。
+
+两人 2019 年通过 Entrepreneur First 新加坡梯队认识。Copplestone 当时在新加坡，刚结束 Nimbus for Work——一个撞上了 Firebase 价格和规模天花板的聊天产品。Wilson 在伦敦。从 Day 0 起组合就是远程优先，这一点后来很重要——但承重的决定是技术的，不是地理的。
+
+## Firebase 形状的疤
+
+Nimbus for Work 用 Firebase 做实时功能，撞上了熟悉的墙。规模下的实时 WebSocket 痛。用户基数长起来后贵的数据 egress 费。需要 JOIN 查询时被迫的 NoSQL 重构。从 Firebase 迁出去的决定昂贵且破坏性——这种决定会在做它的创始人身上留下永久的技术观点。
+
+这是不可转移的结构性优势。一个没有亲手撞上数据库规模天花板的创始人没法制造出「识别 Postgres 作为基底」所需的信念。**Firebase 的痛不是研究的。是亲身经历的。**接下来五年的每个产品决定都能追溯回 Copplestone 用现金和周末付过费的一个具体 Firebase 痛点。
+
+## Postgres 押注
+
+技术决定建立在一个判断上：不要发明新的存储引擎。包一个已经经过 30 年运营硬化的。
+
+1986 年，Postgres 还是 Berkeley 研究项目。到 2020 年它已经经过：
+
+- Google Spanner 压力（「无限 SQL」叙事）
+- MongoDB 热潮（「JSON 优先」浪潮）
+- DynamoDB 锁定（AWS 原生 NoSQL 推动）
+- 整波来了又走的 NoSQL 浪潮
+- 每个主要云厂商推出自己的托管 Postgres
+
+问题不是 Postgres 是否工作。是 Postgres 之上的开发者体验能不能做得比 Firebase 在 Bigtable 之上的开发者体验*更好*。
+
+## 「没有魔法」工程原则
+
+一位 Sequoia 投资人——在 Parse 时代审查过 YC 申请，亲眼看着 Parse 在被 Facebook 收购后在自己的抽象层下崩塌——告诉 Copplestone 一句话，后来成了 Supabase 的工程原则。
+
+| 原则 | 具体后果 |
+|---|---|
+| **没有魔法。** 任何开发者无法穿透的抽象都是未来的监狱。 | 每个 Supabase 功能都是 Postgres 扩展、Postgres 伴生服务、或薄托管运行时层。没有任何东西隐藏底层数据库。 |
+| **没有你看不穿的抽象。** Auth、Storage、Realtime、Edge Functions 都暴露自己的内部。 | 开发者可以把 Supabase 拆掉，保留原始 Postgres 数据库，每一行、每一索引都保留。 |
+
+原则约束了产品表面。Auth 是 GoTrue，Postgres 表之上的伴生服务。Realtime 是消费 Postgres 逻辑复制的 Elixir/Phoenix Channels 服务。Storage 基于 S3，元数据在 Postgres。Edge Functions 是直接调用 Postgres 的 Deno 运行时。Vector 是 pgvector——Postgres 扩展——和 embedding 生成、集成捆在一起。
+
+**每个组件都可拔出。**这在 2020 年看起来像弱点。在 2024–2025 它变成了承重的 GTM 属性，AI 编码工具默认把用户接到 Supabase 上，正是因为锁定恐惧被最小化。
+
+## 借基底框架要求什么
+
+把 Postgres 识别为基底是便宜的。让这个框架读成能力需要深度 contributor 在场。Supabase 为此招聘：
+
+- 多个 Postgres 核心 contributor
+- NGINX 共同创始人（用于代理 / pooler / 连接管理层）
+- Vitess 共同创作者 Sugu Sougoumarane（2025 年 10 月入职主导 Multigres / Vitess-for-Postgres）
+- 开发者工具生态各处的创始人
+
+没有招聘纪律，「开源 Firebase 替代品」读起来像薄包装，信任梯度崩塌。借来的框架只有当公司能可信地宣称自己是基底最深的商业化方时才工作，不只是最会营销的方。
+
+## 为什么借基底复利了
+
+到 E 轮（2025 年 10 月），Accel 的投资论文读起来更像 Postgres 基底验证而不是 Supabase 产品验证。Accel 帖子标题——「Supabase's Series E: An Era-Defining Database」——把 Supabase 框架为 Postgres 复兴的运营层，而不只是开发者工具公司。
+
+借基底 A1 模式相对于从零造 A1（Vercel 8 年 Next.js、Hugging Face 7 年 Transformers）有三个结构性优势：
+
+1. **更低启动成本。** Supabase 不需要说服开发者 Postgres 是好东西。这个工作 30 年前就做完了。
+2. **在 AI 时代更高的可拔出溢价。** AI 编码工具推荐用户可以离开的平台。借基底平台可以离开；从零造的平台往往不行。
+3. **更深的可雇佣人才池。** Postgres 生态人才在全球分布良好。围绕 Postgres 专长建招聘漏斗比围绕专有基底建更容易。
+
+匹配的劣势是可能的倍数天花板。Supabase 没法宣称「我们发明了这个类目」——他们没有。他们识别了类目并包装了它。这是不是会产生 500 亿出口而不是 200 亿出口，是 100 亿据报道轮阶段的悬而未决的问题之一。
+
+<Conclusion title="可复制的">
+
+- **借基底选项只在你的类目里已存在工业级开源资产时打开。** Postgres、Linux、Kubernetes、Llama 级开源权重、某些生物信息学工具。大多数类目没有。如果你的有，识别它，不要造一个。
+- **在主张框架之前深入生态招聘。** Postgres 核心 contributor、NGINX 共同创始人、Vitess 共同创作者。没有那种招聘纪律，「借基底」读起来像薄包装。
+- **「没有魔法」工程原则是承重约束。** 可拔出性是 AI 时代重要的 GTM 属性——每个用户都可以带数据离开。约束从 Day 0 起定义产品表面。
+
+</Conclusion>
+
+## Sources
+
+- [Stacksync — 一个词改变了一切（起源故事）](https://www.stacksync.com/blog/one-word-changed-everything-the-origin-story-of-supabase)
+- [Y Combinator — Supabase 公司页（S20）](https://www.ycombinator.com/companies/supabase)
+- [Felicis — Paul Copplestone on Building for Builders](https://www.felicis.com/insight/paul-copplestone-on-building-for-builders)
+- [Supabase blog — How we launch at Supabase](https://supabase.com/blog/supabase-how-we-launch)
+- [Supabase blog — Multigres: Vitess for Postgres（2025 年 10 月）](https://supabase.com/blog/multigres-vitess-for-postgres)

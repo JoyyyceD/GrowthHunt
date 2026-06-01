@@ -1,0 +1,89 @@
+---
+title: "Launch HN: Supabase (YC S20)——1,120+ upvotes 与一句话 demo grammar（2020 年 5 月）"
+description: "一位用户自发把 YC S20 launch 发到了 Hacker News。Mod dang 升级它为官方 Launch HN。标题——「an open source Firebase alternative」——本身就是整个 demo grammar。"
+date: "2020-05-28"
+type: "media"
+gtmTag: "格式即可信度"
+eventTitle: "Launch HN: Supabase (YC S20)"
+externalUrl: "https://www.basedash.com/blog/how-supabase-became-this-generation-s-database"
+---
+
+<Catalyst>
+大多数 Launch HN 帖子拿到上千次浏览和礼貌的评论线程。Supabase 这条拿到 1,120+ upvotes，打爆了 DigitalOcean 账户额度，几小时内被迫紧急迁移到 AWS。原因不是产品。是标题：任何被 Firebase 烫过的人都能从一句话里重建产品的全部承诺。
+</Catalyst>
+
+2020 年 5 月底。一位用户——不是 Supabase 团队——把帖子发到了 Hacker News：「Supabase (YC S20) – An open source Firebase alternative」。帖子冲上首页。HN mod `dang` 看到它跨过自然牵引的门槛，把它升级为官方 Launch HN。
+
+最终 upvote 数：<Stat value="1,120+" label="2020 年 5 月底 Launch HN upvotes" />，当时 HN 历史上第二高赞的 Launch HN。同日 Product Hunt：当日第 3 名，818 票。流量峰值打爆了 DigitalOcean 的账户额度。团队几小时内迁移到 AWS。
+
+## 为什么标题就是 demo
+
+一句话标题把整个产品承诺压缩成一个短语：「an open source Firebase alternative」。每个词都承重。
+
+| 词 | 中午在 HN 读到的开发者收到的信号 |
+|---|---|
+| **open source** | 协议宽松的基底、可自托管、默认无 vendor 锁定 |
+| **Firebase** | 后端即服务类目、实时+auth+storage+database 一个 SDK |
+| **alternative** | 反向定位——通过「不是 Firebase」定义自己，利用既有买家的怨恨 |
+
+任何被 Firebase 价格或 NoSQL 重构锁过的开发者都能从这一句重建 Supabase 的全部产品承诺*在打开链接之前*。demo 不需要跑容器或看视频。标题就是 demo。
+
+这是语义级 B1（格式即可信度），不是视觉级。案例库里大多数 B1 案例用视觉格式约束——Manus 90 秒录屏、ElevenLabs 的 `[excited]` 内联音频标签、Cursor 头对头的 Copilot 对比 demo。Supabase 的变体把 demo 压成一句话。最近的类比是 ElevenLabs 的音频标签 B1——也是一句话语义——但 Supabase 的版本不需要用户先与产品交互。反向定位框架触发用户从既有怨恨里重建。
+
+## 为什么买家被预加载了
+
+标题工作是因为目标买家被在位者的痛预教育过了。Firebase 从 2011 起、Google 2014 年收购起就在那里。到 2020 年，可测量比例的中期 SaaS 工程团队亲身撞上了三个痛点之一：
+
+1. **NoSQL 重构痛。**数据开始很简单；六个月后需要 JOIN 和聚合。NoSQL 强迫手工反规范化或离开平台迁移。
+2. **数据 egress 定价。**Firebase 的读定价模型惩罚增长。成功的应用线性变贵。
+3. **规模下的实时 WebSocket 复杂度。**实时是头条功能；跑过几千并发用户引入重连风暴和 presence 跟踪复杂度。
+
+Supabase 不需要教育买家这个问题。买家已经在生气。标题把潜在的怨恨触发成点击。
+
+这是 Linear「vs Jira」B2(b) 打法和 Plausible「vs Google Analytics」反向定位背后的结构性条件。反向定位口号只在买家被具体在位者痛预加载时才工作。2026 年考虑这个打法的创始人应该回答：**我的买家用现金和周末为什么具体的痛付过费？**如果答案是「没有具体痛，只是一般不满」，反向定位就立不住。
+
+## launch 没有产生什么
+
+Launch HN 没有产生立即牵引。到 2020 年 4 月（5 月底 launch 前），Supabase 托管 8 个数据库。六个月后，2020 年 12 月 Beta 退出时，这个数字是约 3,100。launch 产生了可见度；基底花了几个月才开始复利。
+
+Launch HN 也没有产生 A 轮。A 轮在 2021 年 9 月 9 日落地——launch 后 16 个月。资本事件由复利的开源采用驱动（到那时 5 万数据库、4 万开发者、4 千 Discord），不是 launch 噪音。
+
+Launch HN 确实产生了三个结构性资产：
+
+- **一个可被发现的物件。**HN 帖子本身成了之后五年买家研究里「Supabase 在 launch 时是什么」的标准引用。
+- **被反向定位的许可。**一句话框架公开落地。后续融资轮、博客帖、播客出现都可以重用这个框架而不会显得人造。
+- **流量验证事件。**打爆 DigitalOcean 额度和几小时内迁移到 AWS 是 Copplestone 之后五年创始人播客可以讲的故事。流量可被作为叙事重播。
+
+## 几小时内 DigitalOcean → AWS 迁移
+
+Launch HN 流量大到打爆 DigitalOcean 账户级额度。Supabase 不得不在帖子病毒传播的几小时内迁移到 AWS。这是 Copplestone 在播客线路上讲的故事的运营版本。
+
+有意思的是迁移没需要什么：24 小时宕机、公开道歉、或事后剖析。团队在流量峰值之间执行了迁移。这是小型新加坡-伦敦团队在基底工程良好时可以产生的运营纪律——Postgres 核心从不需要移动，只有周围服务移动。借基底属性在 Day 1 就回本了。
+
+## 这次 Launch HN 教什么
+
+这个打法难复制，因为结构性前提不一般：
+
+| 前提 | 为什么难 |
+|---|---|
+| 映射到具体在位者痛的一句话反向定位 | 大多数产品没有一个有广泛感受痛的主导在位者。Mixpanel、Firebase、Jira 是例外案例。 |
+| 开源协议 + 单容器可自托管 | 协议选择和打包要花几个月工程。大多数 4 周 MVP 不可自托管。 |
+| 创始人愿意实质参与 HN 评论线程 | HN 几小时内惩罚推广性发帖。没有 HN 原生沟通风格的创始人会把渠道反转成负信号。 |
+| 在流量峰值下扩展的基底 | 打爆 DigitalOcean 额度和几小时内迁移到 AWS 需要提前几个月做的架构决定。 |
+
+如果你有这四条，Launch HN 打法工作。如果你没有，这个打法教你该往哪建。
+
+<Conclusion title="可复制的">
+
+- **在 launch 前把产品承诺压成一句话。**「an open source Firebase alternative」。每个词都承重。如果买家不用链接就重建不了标题，launch 就不会复利。
+- **可能的话让用户自发发 launch。**Supabase 的 Launch HN 是用户发的，不是团队发的。Mod 在它过门槛后认定为官方 Launch HN。自发起源读起来比团队发的更可信。
+- **在 launch 前为流量峰值工程化。**Supabase 几小时内迁移到 AWS，因为借基底属性意味着只有周围服务必须移动。先建基底；让 launch 测试它。
+
+</Conclusion>
+
+## Sources
+
+- [Basedash — Supabase 如何成为这代数据库](https://www.basedash.com/blog/how-supabase-became-this-generation-s-database)
+- [Stacksync — 一个词改变了一切（起源故事）](https://www.stacksync.com/blog/one-word-changed-everything-the-origin-story-of-supabase)
+- [Supabase blog — How we launch at Supabase](https://supabase.com/blog/supabase-how-we-launch)
+- [Y Combinator — Supabase 公司页](https://www.ycombinator.com/companies/supabase)

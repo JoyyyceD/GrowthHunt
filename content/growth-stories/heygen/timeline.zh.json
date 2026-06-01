@@ -1,0 +1,420 @@
+{
+  "company": {
+    "slug": "heygen",
+    "name": "HeyGen",
+    "legalName": "Surreal Inc",
+    "tagline": "案例库中最干净的「主动型」跨太平洋治理结构重建——再叠加 4 个月内两次独立、用户可复刻的病毒事件",
+    "summary": "HeyGen 是这样一个案例：两位前 Snap / 前字节的联创，2020 年疫情期间困在深圳，以 Surreal Inc 名义开公司；2022–2023 年间他们用 18 个月主动改写了这家公司的「国籍」——把 HQ 搬到洛杉矶、解散深圳实体、请 IDG、百度风投、HongShan、真格把股权全部卖给美国对家、把客户数据迁到俄亥俄、让产品在中国境内不可访问——这些动作全部在没有任何外部压力的前提下完成。18 个月后，Benchmark 牵头了 6000 万美元 A 轮，投后估值 5 亿美元。第一笔 100 万美元 ARR 之后再过 29 个月，他们在累计仅融了约 7400 万美元的前提下、持续盈利的状态下跨过了 1 亿美元 ARR。两次相隔四个月、彼此独立、且用户可复刻的病毒事件——2023 年 9 月的视频翻译 Finger demo（X 上约 680 万播放、约 18 万视频排队）和 2024 年 1 月的 Milei 达沃斯演讲翻译（X 上约 7,500 万播放）——把「运气」这个解释排除掉了。再叠加病毒事件当天定价机制已经在售卖，这套打法在案例库里属于跨太平洋 AI 创意类 GTM 中纪律性最强的版本。",
+    "founded": "2020-12-01",
+    "founders": [
+      "Joshua Xu",
+      "Wayne Liang"
+    ],
+    "seriesNumber": 25
+  },
+  "phases": [
+    {
+      "start": "2020-12",
+      "end": "2022-09",
+      "name": "Surreal 时期（深圳）",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2022-09",
+      "end": "2023-09",
+      "name": "跨太平洋转向 + 178 天冲刺",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2023-09",
+      "end": "2024-06",
+      "name": "病毒拐点 + 股东席位清空",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2024-06",
+      "end": "2025-10",
+      "name": "放量、叙事升级、1 亿美元 ARR",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-12-01",
+      "title": "Surreal 在深圳创立",
+      "type": "product",
+      "description": "Joshua Xu（前 Snap，6 年里最后两年在 AI 增强相机 + 广告排序团队）和 Wayne Liang（前 Smule、短期字节）在深圳注册 Surreal Inc。两人本科同济、硕士 CMU，2014 年同期到美西工作，疫情期间被困在国内。中文名「诗云」借自刘慈欣同名短篇——故事讨论机器能否替代人类艺术创作。",
+      "externalUrl": "https://research.contrary.com/company/heygen",
+      "articleSlug": "2020-12-surreal-founding"
+    },
+    {
+      "date": "2021-03-02",
+      "title": "种子轮——红杉中国 + 真格",
+      "type": "funding",
+      "description": "TechCrunch 报道 Surreal 成立 3 个月时的状态：深圳 12 人团队、已经接了约 1,000 万张照片/视频订单、对外口径是「视频版的 Google Translate」。种子轮估计 $2–3M，来自红杉中国和真格。",
+      "externalUrl": "https://techcrunch.com/2021/03/01/surreal-profile/"
+    },
+    {
+      "date": "2021-08-30",
+      "title": "Pre-A——IDG 资本领投",
+      "type": "funding",
+      "description": "IDG 资本领投 Pre-A，红杉中国和真格跟投。资金用于搭建 Surreal Engine 多模态内容生成基建——日后 HeyGen 的底层 stack。具体金额未披露，按 Sacra 累计 $74M 倒推估算约 $7M。",
+      "externalUrl": "https://research.contrary.com/company/heygen"
+    },
+    {
+      "date": "2022-07-01",
+      "title": "Surreal Engine 上线",
+      "type": "product",
+      "description": "多模态内容生成基建出货。这是 HeyGen 推理 stack（人像生成、语音克隆、口型同步）的第一次公开版本。免费层带显眼水印。",
+      "externalUrl": "https://research.contrary.com/company/heygen"
+    },
+    {
+      "date": "2022-09-01",
+      "title": "Movio 应用上线",
+      "type": "product",
+      "description": "消费版 AI 视频产品作为 Movio 上线，建在 Surreal Engine 基建之上。从这一天起，178 天到 100 万美元 ARR 的计时开始。",
+      "externalUrl": "https://en.wikipedia.org/wiki/HeyGen"
+    },
+    {
+      "date": "2022-12-01",
+      "title": "HQ 迁往洛杉矶",
+      "type": "acquisition",
+      "gtmTag": "主动型地理迁徙",
+      "description": "联创把公司 HQ 从深圳搬到洛杉矶，消费产品同步更名 Movio。公开理由：拿到先进美国半导体做 AI 训练、对接美国企业买家、用 Stripe 收美元。深圳团队此刻还在部分保留——没有任何公开的监管压力逼这次搬家。这是一次为期 18 个月、主动型的股东结构 + 数据驻留地重建的第一步，最终在 2024 年中完成闭环。",
+      "externalUrl": "https://www.scmp.com/tech/tech-trends/article/3267861/ai-start-heygen-raises-us60-million-after-pivoting-away-mainland-china-investors",
+      "articleSlug": "2022-12-la-relocation"
+    },
+    {
+      "date": "2023-03-01",
+      "title": "100 万美元 ARR——上线 178 天",
+      "type": "product",
+      "description": "Movio/HeyGen 突破 100 万美元 ARR——距 2022 年 9 月上线 178 天。在 2023 年 AI 队列里属于最快的 0→1M 之一。从这一刻起九个月连续约 50% 的月环比增长窗口启动。",
+      "externalUrl": "https://research.contrary.com/company/heygen"
+    },
+    {
+      "date": "2023-04-01",
+      "title": "更名 HeyGen",
+      "type": "product",
+      "description": "Movio 更名 HeyGen。没有单日发布会；更名和产品方向从「代言人视频」拓展到「翻译 + 自定义 avatar」的更广平台同步发生。",
+      "externalUrl": "https://en.wikipedia.org/wiki/HeyGen"
+    },
+    {
+      "date": "2023-06-01",
+      "title": "实现盈利（2023 年 Q2）",
+      "type": "product",
+      "gtmTag": "默认存活即进攻",
+      "description": "公司在 2023 年 Q2 达到运营盈利，彼时 ARR 约 $2–3M、团队约 15–20 人。早期 AI 创业公司里很少见；后续每一次融资周期都把这件事拿出来作为资本效率的证明，也是 C2 高峰期定价打法成立的兜底前提。",
+      "externalUrl": "https://www.heygen.com/blog/announcing-our-series-a"
+    },
+    {
+      "date": "2023-09-01",
+      "title": "视频翻译在 X 上爆——Finger demo",
+      "type": "media",
+      "gtmTag": "格式即可信度的病毒事件",
+      "description": "一位创作者把自己的英文视频用 HeyGen 翻成德语和法语，口型重对齐、嗓音用 ElevenLabs 克隆，X 上约 680 万播放；服务端瞬时被推到约 18 万视频排队。Joshua Xu 在 LinkedIn 上发的那句话：「打破语言壁垒能让全世界都看到内容，而不只是说英语的那 10%。」病毒事件当天，$48/$59 的 Pro 月付已经在售——付费用户获得排队优先权。",
+      "externalUrl": "https://omr.com/en/daily/heygen-youtube-ai-uebersetzung",
+      "articleSlug": "2023-09-finger-viral-demo"
+    },
+    {
+      "date": "2023-10-01",
+      "title": "ARR 1800 万美元披露",
+      "type": "media",
+      "description": "HeyGen 确认 10 月 ARR 已达 1800 万美元——七个月内从 3 月的 100 万美元增长 18 倍。这一披露在 11 月的 Conviction 轮 PR 周期里释放。",
+      "externalUrl": "https://voicebot.ai/2023/12/01/generative-ai-video-startup-heygen-raises-5-6m/"
+    },
+    {
+      "date": "2023-11-30",
+      "title": "Conviction 560 万 + HongShan 退出董事会 + Avatar 2.0",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "Conviction（Sarah Guo）领投 $5.6M，投后 $75M。Sarah Guo 上董事会；HongShan（红杉中国）让出董事席位——这是中国股东退出公开层面的第一个里程碑。同一周期里同时发布 Instant Avatar / Avatar 2.0（手机录像 5 分钟生成自定义 avatar），以及 $18M ARR 首次官方披露。25 人。",
+      "externalUrl": "https://www.heygen.com/blog/introducing-avatar-2-0-instant-avatar",
+      "articleSlug": "2023-11-conviction-bundled"
+    },
+    {
+      "date": "2024-01-18",
+      "title": "Milei 达沃斯翻译爆（约 7,500 万播放）",
+      "type": "media",
+      "gtmTag": "格式即可信度的病毒事件",
+      "description": "Aaron Slodov（@aslodov，Atomic Industries CEO）在 X 上发了 HeyGen 翻译成英语的阿根廷总统 Milei 西语 WEF 演讲。口型、口音、情绪保真度全过关。X 上约 7,500 万播放、约 24 万赞。这是 HeyGen 历史上单一最大的自然传播事件。HeyGen 把它收录为官方 WEF 客户案例页。",
+      "externalUrl": "https://www.thenationalnews.com/business/technology/2024/01/26/ai-javier-milei-speech-davos-wef/",
+      "articleSlug": "2024-01-milei-davos"
+    },
+    {
+      "date": "2024-03-25",
+      "title": "The Information 漏出 A 轮 $440M pre-money",
+      "type": "media",
+      "description": "The Information 报道 HeyGen 在融 $60M、pre-money $440M——四个月内估值从 11 月的 $75M post-money 跳了 6 倍。报道同时披露 $20M+ ARR（7 月还是 $3M）。HeyGen 5.0 发布捆绑进同一周期。",
+      "externalUrl": "https://www.maginative.com/article/heygen-raising-60m-at-440m-valuation-launches-heygen-5-0/"
+    },
+    {
+      "date": "2024-06-20",
+      "title": "A 轮——$60M @ $500M，Benchmark 领投",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "Bloomberg 独家报关闭的 A 轮：Benchmark 领投 $60M（Victor Lazarte 进董事会），投后 $500M。Thrive Capital、BOND、Conviction、SV Angel 及天使 Dylan Field（Figma）、Elad Gil、Aviv Nevo、Neil Mehta（Greenoaks）跟投。同一新闻周期披露：$35M+ ARR、4 万+ 付费企业客户、2023 年 Q2 起持续盈利、自上线起的周更产品节奏，再加三位高管空降——Dave King（前 Asana CMO）任 CBO，Rong Yan（前 HubSpot VPE）任 CTO，Lavanya Poreddy（前 Meta/Match）任 Trust & Safety 负责人。",
+      "externalUrl": "https://www.heygen.com/blog/announcing-our-series-a",
+      "articleSlug": "2024-06-series-a-benchmark"
+    },
+    {
+      "date": "2024-06-24",
+      "title": "SCMP 公开 D4 中国股东全部退出",
+      "type": "media",
+      "gtmTag": "主动型地理迁徙",
+      "description": "南华早报报道：「AI 创业公司 HeyGen 在远离中国大陆投资人后融资 6000 万美元。」确认 IDG 资本、百度风投、HongShan、真格全部把股权卖给了美国对家；深圳实体 2023 年底解散；数据托管在俄亥俄；产品在中国境内不可访问。Xu 留底一句话：「中国投资人在公司里基本没有股份了。」这条新闻把 18 个月的主动型地理迁徙弧线收尾。",
+      "externalUrl": "https://www.scmp.com/tech/tech-trends/article/3267861/ai-start-heygen-raises-us60-million-after-pivoting-away-mainland-china-investors",
+      "articleSlug": "2024-06-china-divestiture-scmp"
+    },
+    {
+      "date": "2024-10-01",
+      "title": "Joshua Xu 被深度伪造事件",
+      "type": "media",
+      "description": "犯罪分子用 AI 生成的 Joshua Xu 的 avatar 和声音，伪造一段「ChatGPT 教程」视频用来传播加密货币恶意软件。HeyGen 确认这段视频不是在 HeyGen 平台生成的，向 YouTube 报告并完成下架。Trust & Safety 立场公开被「以创始人为对象」测试了一次。",
+      "externalUrl": "https://wavespeed.ai/blog/posts/heygen-vs-synthesia-comparison-2026/"
+    },
+    {
+      "date": "2024-12-31",
+      "title": "2024 年底 ARR 5750 万美元",
+      "type": "media",
+      "description": "HeyGen 2024 年底 ARR 按 Sacra 三角估算约 $57.5M——距 A 轮披露的半年里增长约 64%，距 2023 年底增长约 16 倍。团队 150–200 人区间。",
+      "externalUrl": "https://sacra.com/c/heygen/"
+    },
+    {
+      "date": "2025-01-15",
+      "title": "Avatar IV 基础版本落地",
+      "type": "product",
+      "description": "2025 年初 Avatar IV 基础落地：扩散启发的音频到表情引擎，从单张图片生成接近真人的视频。是 4 月公开发布之前的能力铺垫。",
+      "externalUrl": "https://research.contrary.com/company/heygen"
+    },
+    {
+      "date": "2025-04-28",
+      "title": "Avatar IV 公开发布",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "Avatar IV 在 2025 年 4 月 28 日当周公开发布。一张图就能生成完整动态视频，带手势、微表情，以及由声音节奏驱动的面部时序。创作者 el.cine 在 5 月 7 日发的 X 帖——「HeyGen 刚出了 Avatar IV……真和 AI 的界限消失了」——成为最具代表性的二次传播物料。",
+      "externalUrl": "https://www.heygen.com/blog/introducing-voice-director-and-avatar-iv"
+    },
+    {
+      "date": "2025-05-01",
+      "title": "HubSpot 合作 + API plans",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "2025 年 4 月公布 HubSpot 合作；5 月推出 API plans（Pro $99/月、Scale $330/月、Enterprise 定制）——和 Web 应用的按席位计费分开，第一次正式的平台层定价。叙事从「AI 视频工具」升级到「AI 视频基础设施」。",
+      "externalUrl": "https://sacra.com/c/heygen/"
+    },
+    {
+      "date": "2025-06-05",
+      "title": "Avatar IV 大更新",
+      "type": "product",
+      "description": "2025 年 6 月 5 日 Avatar IV 更新：从脚本/提示词动态生成手势、微表情，片长延至 60 秒。强化自 2022 年 9 月起一直保持的周更节奏。",
+      "externalUrl": "https://community.heygen.com/public/videos/avatar-iv-update-june-5-2025-2025-06-09"
+    },
+    {
+      "date": "2025-09-16",
+      "title": "Alisa 收购 + Video Agent 公测（单日）",
+      "type": "acquisition",
+      "gtmTag": "捆绑里程碑",
+      "description": "HeyGen 第一次公开并购：收购 Genova Labs 旗下 Alisa。Bin Liu（Alisa CEO、前 Pinterest 内容与创作者负责人）出任 VP Product Engineering。Alisa 团队大部分来自 Pinterest 的内容基建。同一天：Video Agent 公测上线——一条 prompt 出脚本 + avatar + 嗓音 + 视觉 + 节奏 + 字幕 + 自动版式（1:1 / 9:16 / 16:9）。单日动作：并购 + 新产品 + 「创意操作系统」叙事升级。",
+      "externalUrl": "https://www.heygen.com/blog/bin-liu-joins-heygen",
+      "articleSlug": "2025-09-alisa-video-agent"
+    },
+    {
+      "date": "2025-09-30",
+      "title": "ARR 9500 万美元（Sacra）",
+      "type": "media",
+      "description": "Sacra 把 HeyGen 2025 年 9 月 ARR 三角估算到 $95M——约同比 5 倍。团队约 200 人，仍在扩张。",
+      "externalUrl": "https://sacra.com/c/heygen/"
+    },
+    {
+      "date": "2025-10-15",
+      "title": "Sora 2 + LiveAvatar + Veo 3.1（10 月 release）",
+      "type": "product",
+      "gtmTag": "技术叙事升维",
+      "description": "2025 年 10 月 release：HeyGen 集成 OpenAI 的 Sora 2 做电影 B-roll、推出 LiveAvatar（基于 WebRTC API 的实时对话 avatar，可对接任何 LLM）、追加 Veo 3.1。一次 release 集成三家基础模型——HeyGen 在叙事上明确把自己定位为「基础视频/音频模型之上的创意连接层」。",
+      "externalUrl": "https://www.heygen.com/blog/heygen-october-2025-release"
+    },
+    {
+      "date": "2025-10-30",
+      "title": "1 亿美元 ARR——距首笔 100 万 29 个月",
+      "type": "media",
+      "gtmTag": "默认存活即进攻",
+      "description": "Joshua Xu 宣布 HeyGen 跨过 1 亿美元 ARR——距 2023 年 4 月的 $1M 整整 29 个月。公司口径是企业 SaaS 历史上 1→100 速度最快的几个之一。同比 1,024%；按公司说法，付费企业客户约 10 万家（对比 2024 年 6 月 A 轮时的约 4 万家）。所有轮次累计融资约 $74M。",
+      "externalUrl": "https://www.arr.club/signal/heygen-arr-hits-100m"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2023-03-01",
+      "value": 1000000,
+      "source": "Contrary Research",
+      "confidence": "official"
+    },
+    {
+      "date": "2023-05-01",
+      "value": 2000000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2023-07-01",
+      "value": 3000000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2023-10-01",
+      "value": 18000000,
+      "source": "Voicebot.ai / Maginative",
+      "confidence": "official"
+    },
+    {
+      "date": "2024-03-25",
+      "value": 20000000,
+      "source": "Maginative（The Information 漏稿）",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-06-20",
+      "value": 35000000,
+      "source": "HeyGen A 轮博客",
+      "confidence": "official"
+    },
+    {
+      "date": "2024-12-31",
+      "value": 57500000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-09-30",
+      "value": 95000000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-10-30",
+      "value": 100000000,
+      "source": "Joshua Xu / ARR Club",
+      "confidence": "official"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2021-03-02",
+      "value": 10000000,
+      "round": "种子轮（Surreal）",
+      "source": "TechCrunch / 估算",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2023-11-30",
+      "value": 75000000,
+      "round": "Conviction 轮",
+      "source": "Maginative",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-03-25",
+      "value": 440000000,
+      "round": "A 轮 pre-money（漏稿）",
+      "source": "Maginative / The Information",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-06-20",
+      "value": 500000000,
+      "round": "A 轮 post-money",
+      "source": "Bloomberg / HeyGen",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X（推特）",
+      "score": 5,
+      "bestStage": "拐点 + 放量",
+      "effort": "每日，创始人 + 创作者放大",
+      "role": "病毒 demo 表面——HeyGen 两次最大的传播都在这里",
+      "description": "HeyGen 两次最大的自然传播事件都发生在 X 上。2023 年 9 月「Finger」视频翻译 demo 拿到约 680 万播放，触发了约 18 万视频排队。四个月后，Aaron Slodov 翻译的 Milei WEF 演讲英文版拿到约 7,500 万播放和约 24 万赞。Joshua Xu（@joshua_xu_）每日左右的发帖节奏，是 Avatar IV、Video Agent 与 Sora 2 集成展示的标志性首发渠道。两次相隔四个月、彼此独立、用户可复刻的病毒事件，把「运气」解释排除掉了。",
+      "catalyst": "2023 年 9 月——一位创作者用 HeyGen 把英文视频翻成德语和法语的 demo 在 X 上拿到约 680 万播放。这个 format 本身（上传一段视频，输出同一段视频在 30+ 种语言下的口型同步 + 嗓音克隆版本）就是可信度的约束器：口型抖一下、嗓音飘一下，第二天 X 评论区就会把它拆穿。",
+      "catalystUrl": "https://omr.com/en/daily/heygen-youtube-ai-uebersetzung",
+      "accountUrl": "https://x.com/joshua_xu_",
+      "accountLabel": "X 上的 @joshua_xu_",
+      "whenItWorks": "当产品的输出物本身就是有机传播载体时——视频、嗓音、图像。翻译后的视频既是 demo 也是广告。",
+      "whenItDoesnt": "当产品输出是文本、代码、后端数据时。没有「分享即 demo」的耦合，X 上的「病毒」会退化成创始人式思想领袖发帖。"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 4,
+      "bestStage": "拐点 + 放量",
+      "effort": "创作者主导，二级转发表面",
+      "role": "长视频翻译内容 + demo 的放大",
+      "description": "翻译后的长视频和 Avatar IV demo 在 YouTube 上的复利远超 X 上一次性高峰窗口。el.cine 2025 年 5 月对 Avatar IV 的反应视频——「真和 AI 的界限消失了」——成为 Avatar IV 公开发布后的标志性二级病毒物料。HeyGen WEF 客户案例页面也外链到 YouTube 上的 Milei 翻译视频。「翻译后的视频」这个品类天然适合 YouTube 的长尾发现。",
+      "catalyst": "2023 年 9 月起——创作者把 X 上爆的 demo 翻译版本转到 YouTube，复利持续超出原始新闻周期。format 比把它捧起来的平台活得更久。",
+      "accountUrl": "https://www.youtube.com/@heygen_official",
+      "accountLabel": "YouTube 上的 HeyGen",
+      "whenItWorks": "当 demo format 本身适合分享、且产品输出是视频时。YouTube 长尾把翻译内容曝光持续推送好几年。",
+      "whenItDoesnt": "当 demo 需要按账号上下文（登录、配置）才能看懂时。「围墙内」的 demo 离开原始平台就活不下去。"
+    },
+    {
+      "slug": "tiktok",
+      "name": "TikTok",
+      "score": 3,
+      "bestStage": "放量",
+      "effort": "创作者主导，团队投入低",
+      "role": "短视频创作者对翻译/avatar 内容的放大",
+      "description": "短视频创作者持续转发 HeyGen 翻译片段和 AI avatar demo 拉互动。相邻语境：2023 年 2 月 Joe Rogan / Alpha Grind 的 TikTok 深度伪造视频下架前拿到约 500 万播放——和 HeyGen 不直接关联（一级报道里没有点名归因到 HeyGen），但塑造了之后几年这个品类的 Trust & Safety 讨论。HeyGen 本身不跑重的官方 TikTok 节奏；这个渠道由创作者拉动。",
+      "catalyst": "没有单一事件。自 2023 年以来低频持续的创作者动作，在 2025 年春 Avatar IV 公开发布前后到达小高峰——「一张图生成视频」开始成为可识别的 TikTok format。",
+      "accountUrl": "https://www.tiktok.com/@heygen_official",
+      "accountLabel": "TikTok 上的 HeyGen",
+      "whenItWorks": "短视频创作者有理由二创和转发时——翻译语言 demo 和 Avatar IV 的单图生成视频满足这个条件。",
+      "whenItDoesnt": "format 需要超过 15–60 秒才能传递信息时。长叙事揭示不重剪根本活不下去。"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 4,
+      "bestStage": "拐点 + 放量",
+      "effort": "创始人 + 高管节奏",
+      "role": "企业受众信号 + 2023 年 9 月那句创始人金句",
+      "description": "Joshua Xu 在 2023 年 9 月病毒事件当天发的 LinkedIn 那句话——「打破语言壁垒能让全世界都看到内容，而不只是说英语的那 10%」——成了案例库里被引用次数最多的创始人金句之一。LinkedIn 也是 A 轮空降班底（Dave King 前 Asana CMO、Rong Yan 前 HubSpot VPE、Lavanya Poreddy 前 Meta/Match）各自发入职动态的地方，把捆绑里程碑的影响力延展到原始新闻周期之外。",
+      "catalyst": "2023 年 9 月——Xu 在病毒事件当日的 LinkedIn 那句话，把视频翻译从一个创作者工具重新框架成「全球内容可及性」议题。这个 frame 一路撑到 Milei 时刻和 A 轮闭环。",
+      "accountUrl": "https://www.linkedin.com/in/joshuaxu1/",
+      "accountLabel": "LinkedIn 上的 Joshua Xu",
+      "whenItWorks": "企业买家需要核对产品背后的人时。LinkedIn 是 Asana CMO / HubSpot VPE / Meta-Match 班底可被审计的地方。",
+      "whenItDoesnt": "公司没有企业线、受众完全是消费者时。LinkedIn 上的高管履历对一家纯 B2C 公司是浪费的信号成本。"
+    },
+    {
+      "slug": "podcasts",
+      "name": "长视频/播客",
+      "score": 4,
+      "bestStage": "拐点 + 放量",
+      "effort": "脉冲式——绑大融资和大发布",
+      "role": "创始人 IP 化——用投资人配套的长视频访谈完成",
+      "description": "Joshua Xu 自 2023 年病毒拐点起就在跑一份有意识的长播客 list：No Priors（Sarah Guo + Elad Gil）、Unsupervised Learning（Jacob Effron）、The Cognitive Revolution（与 Benchmark 的 Victor Lazarte 同台）、Engage Video Marketing（Ben Amos）。和 Lazarte 同台的 The Cognitive Revolution 一期就排在 A 轮附近——把创始人声音和领投人盖章捆在同一个长内容里释放。",
+      "catalyst": "2023 年 11 月——Sarah Guo 在 No Priors 那一期和 Xu 的对话，正好压在 Conviction 轮和 HongShan 让出董事席位的窗口。播客圈层后续承接了 A 轮捆绑里程碑往「创始人听众」段的传递。",
+      "catalystUrl": "https://www.nopriors.com/",
+      "accountUrl": "https://www.heygen.com/author/joshua-xu",
+      "accountLabel": "HeyGen 上的 Joshua Xu",
+      "whenItWorks": "创始人能撑住 60–90 分钟长内容、且公司有大事件可以把出场绑上去时。",
+      "whenItDoesnt": "联创里更安静的那一脚被强推上同一份 list 时。Wayne Liang 的低频是有意为之的——把他塞进同样的圈层只会稀释这个渠道。"
+    },
+    {
+      "slug": "heygen-blog",
+      "name": "heygen.com/blog",
+      "score": 4,
+      "bestStage": "全阶段",
+      "effort": "周更节奏",
+      "role": "自家发布表面 + 捆绑里程碑的发布载体",
+      "description": "HeyGen 博客自 2022 年 9 月 Movio 上线以来就是每一次重大产品时刻的自家发布表面：Avatar 2.0（2023 年 11 月，配 Conviction）、HeyGen 5.0（2024 年 3 月，配漏稿）、A 轮公告（2024 年 6 月）、Avatar IV（2025 年 4 月）、Bin Liu / Video Agent（2025 年 9 月）、10 月 release（Sora 2 + LiveAvatar + Veo 3.1）。A 轮那一篇把八件事——融资 + 估值 + ARR + 客户数 + 盈利 + 三位高管空降——折进一个新闻周期，是案例库里除 Anthropic Claude Code 之外最干净的捆绑里程碑执行。",
+      "catalyst": "2024 年 6 月 20 日——A 轮宣发博客和 Bloomberg 独家同小时落地。HeyGen 直接掌控叙事捆绑，而不是寄希望于媒体把整套披露清单原样接住。",
+      "catalystUrl": "https://www.heygen.com/blog/announcing-our-series-a",
+      "accountUrl": "https://www.heygen.com/blog",
+      "accountLabel": "heygen.com/blog",
+      "whenItWorks": "你有可以撑起周更的产品时刻，且有大事件值得用自家渠道掌控叙事时。",
+      "whenItDoesnt": "产品节奏太慢撑不起更新频率时。季度才更新一次的博客释放的是衰减信号；周更释放的是势能信号。"
+    }
+  ]
+}

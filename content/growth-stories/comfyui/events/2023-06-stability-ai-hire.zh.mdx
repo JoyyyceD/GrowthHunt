@@ -1,0 +1,91 @@
+---
+title: "Stability AI 雇佣 comfyanonymous——一整年带薪底层工作，仓库继续留在个人 namespace"
+description: "2023 年 6 月，Stability AI 专门雇 comfyanonymous 来让 ComfyUI 适配即将发布的 SDXL 模型。他继续以匿名身份领工资。comfyanonymous/ComfyUI 仓库继续留在他个人 namespace 下。Stability 出钱养底层但不拥有底层——这个结构性安排让 2024 年 6 月的退出和 Comfy Org 成立成为可能。"
+date: "2023-06-01"
+type: "acquisition"
+gtmTag: "OSS flywheel"
+eventTitle: "Stability AI 雇佣 comfyanonymous"
+externalUrl: "https://www.latent.space/p/comfyui"
+---
+
+<Catalyst>
+案例库里大部分变现前的创始人，要么个人 bootstrap，要么拿 VC seed。comfyanonymous 哪个都没拿。他接受了 Stability AI 的雇佣，就为了继续做 ComfyUI——并且整段时间里把 GitHub 仓库留在他个人 namespace 下。这个安排罕见到值得起个名字：Stability 出钱养底层，但不拥有底层。2023 年 1 月使用个人 namespace 的结构性选择，是让 2023 年 6 月这桩交易成为可能的先决条件。
+</Catalyst>
+
+2023 年 6 月。Stability AI 雇 comfyanonymous。一年后他在 Latent Space 播客上的框架是：Stability 把他招进来「because they wanted SDXL working well with the UI」。具体来说，即将发布的 SDXL 1.0 架构（3.5B base + 6.6B refiner）需要一个能干净表达两阶段流水线的界面。Automatic1111 做不到。ComfyUI 的节点图可以。
+
+条款没有公开披露。薪酬、股权、归属期、仓库的法律结构都属于私事。公开可见的是结构性结果：comfyanonymous/ComfyUI GitHub 仓库在整个 Stability 工作的 12 个月里一直留在他个人 namespace 下。Stability 没把仓库迁到 stabilityai 组织下，没要求 contributions 划归 Stability，也没正式把这个底层当作「work-for-hire」产物索取。
+
+这是承重事实。Stability 付钱让 comfyanonymous 把 ComfyUI 做得满足 Stability 的需求——并获得一年聚焦的底层工作——但没拥有底层本身。
+
+## Stability AI 期间买到了什么
+
+2023 年 6 月到 2024 年 6 月这 12 个月产出了三个 comfyanonymous 离职后继续复利的耐久成果。
+
+| 成果 | 来源 | 离职后的复利效应 |
+|---|---|---|
+| SDXL 1.0 原生集成 | 2023 年 7 月 26 日同日发布 | 为未来每个模型确立「day-1 集成」预期 |
+| Scott Detweiler 工作流视频 | Stability 的 QA Head 在内部和 comfyanonymous 一起用 | 不需要 comfyanonymous 制作的标准 viral demo 语法 |
+| 与 BFL 创始人的关系 | 18 个月与未来 Flux 团队共享办公室 | 2024 年 8 月 Flux day-1 集成的直接通道 |
+
+Scott Detweiler 的工作流视频是杠杆最高的一块。Detweiler 是 Stability 的 QA Head——他的工作是内部使用 Stability 的工具。他把 ComfyUI 选作他的内部 QA 工具，然后把「What I use internally at Stability for my AI Art」当作 YouTube 视频发布，演示 SDXL ComfyUI 工作流。这支视频成了把 ComfyUI 从 power user 采纳推向更广 Stable Diffusion 创作者采纳的标志 viral artifact。
+
+comfyanonymous 没有撰稿这段视频。他没有协调发布。从公开记录看，他在写集成代码时，Detweiler 在做视频。合作是结构性的——两人在同一家公司，用同一个工具——但不是被指挥的。viral demo 语法从公司内部使用中涌现，不是从营销计划中涌现。
+
+## BFL 关系是二阶资产
+
+Black Forest Labs 一直到 2024 年末才存在。但它的创始人——前 Stability SDXL 核心工程师——是 2023-2024 年间 comfyanonymous 的办公室同事。后来催生 Flux「day-1 integration for ComfyUI」发布博文的那种关系，是这个窗口里基于互相的技术尊重而建立的，不是基于 BD 外发。
+
+这就是案例库里其他创始人通常要靠会议出席、播客出场和暖介绍链才能拼出来的关系资本。comfyanonymous 通过 18 个月在同一间办公室里 ship 工作集成代码就累积下来了。Latent Space 播客提到了这个动态但没多说：等未来的 BFL 创始人在思考独立发布会长什么样时，ComfyUI 是 day-1 分发的明显选择，因为它已经是他们的内部工具。
+
+2024 年 9 月的 A 轮——Comfy Org 成立约 90 天后关闭——如果没有 BFL 关系在前，会难得多。Chemistry Ventures 和 Guillermo Rauch 买入的，是一家底层已被 NVIDIA（2024 年 7 月 29 日的 RTX Remix 集成）和 BFL（2024 年 8 月 1 日的 Flux day-1 集成）双重背书的公司。两个背书都来自 Stability 期间建立的关系。
+
+## 为什么个人 namespace 承重
+
+如果 comfyanonymous/ComfyUI 仓库在 Stability 期间任何一刻被迁到 `stabilityai/ComfyUI` namespace 下，2024 年 6 月的退出在结构上会完全不同。Stability 就会对仓库有一种 colorable 的索取权。退出会是一场谈判，而不是一次离场。
+
+2023 年 1 月的个人 namespace 决定让 Stability 期默认是可逆的。comfyanonymous 可以离开 Stability 把底层一并带走，没有法律摩擦，因为底层从来没移动过。仓库还在它一直在的地方。转移成本是零。
+
+这种安排罕见到大部分案例库创始人不会这么布局。接受合作方雇佣的标准模式是把 IP 折进雇主的 namespace——因为雇主通常会这么要求。Stability 没要求（或者由于仓库从 2023 年 1 月起就公开可见，他们没法要求），这就是个人 namespace 在零分钟就创造出来的非对称优势。
+
+2026 年的创始人接受潜在商业合作方的雇佣时，应该理解：标准结构关上了「带着 IP 离开」的选项。非标准结构保留这个选项。非标准结构事后难谈，但事前在默认情况下容易设——这就是为什么第一天命名空间的选择如此重要。
+
+## Stability 得到了什么
+
+Stability 也不是空手而归。他们获得了 12 个月的聚焦工程注意力，把 ComfyUI 做得能干净适配他们的旗舰 SDXL 发布。Scott Detweiler 的 QA 工作流在内部用 ComfyUI。SDXL 发布从第一天就有可用的 power user 界面。给 SDXL 质量上限的 base+refiner 流水线，在生产环境里可用。
+
+Stability 没得到的是锁定。他们不拥有底层。他们不拥有协议。他们不拥有社区。当 2024 Q1-Q2 领导力危机爆发、Emad Mostaque 在 3 月辞职时，Stability 对那个时刻已经比 Stability 自家大部分 IP 更值钱的资产，没有结构性索取权。
+
+这是合作方一侧的警示教训。Stability 是上游模型实验室——理论上应该从 SDXL 生态里捕获最多价值的实体。结果，底层一层（ComfyUI）累积了 Stability 没法捕获的价值，因为这一层从一开始就不在 Stability 控制下。
+
+2024 年 6 月 Comfy Org 成立时，价值流向已经反转了。Stability 比 ComfyUI 更需要 ComfyUI。2024 年 6 月 18 日的「next chapter for ComfyUI」博文把这个反转公开了。
+
+## 公开记录之外
+
+Stability 期间几个重大事实仍未披露：
+
+- comfyanonymous 在 Stability 的薪酬、股权 grant、归属期
+- comfyanonymous 离职时是否行权或放弃 Stability 股权
+- comfyanonymous/ComfyUI 仓库的具体法律结构——work-for-hire 例外、side-project 协议，还是别的安排
+- Stability 是否在任何时刻尝试过把仓库迁到 stabilityai namespace
+- 2024 年 6 月的退出是冲突驱动还是自愿
+- Stability 是否在任何时刻尝试过收购或 hold up 这个项目
+
+Latent Space 访谈讨论了工作内容但没讨论结构。fxguide 访谈聚焦于 Marek 的个人背景和 ComfyUI 在 VFX 流水线的角色，而不是 Stability 的商业关系。这两次都是创始人侧的「有产出」的沉默。这个案例研究在文档化层面最重大的缺口就在这里。
+
+<Conclusion title="可复制的部分">
+
+- **如果你以后可能从合作方接受雇佣，第一天就把底层放在个人 namespace 下。** 2023 年 1 月的个人 namespace 决定是让 2023 年 6 月 Stability 雇佣以「不转移 IP」条款成为可行的关键。结构性选择事前便宜，事后扭转昂贵。
+- **从上游合作方接受雇佣，专门为了继续做底层。** comfyanonymous 在 Stability 的 12 个月让全职 ComfyUI 工作得以维持，不需要 VC 稀释，也不需要创始人过早为底层变现。「合作方即雇主」的安排很罕见，但可得，并且保留了 OSS 底层期可选性的方式 VC seed 给不了。
+- **接受「雇佣期建立的关系才是耐久资产」。** comfyanonymous 与未来 BFL 创始人的办公室同事关系是后来催生 Flux「day-1 integration for ComfyUI」发布博文的东西。事后没法通过外发 BD 拼出这些关系。2026 年考虑类似安排的创始人应该把关系资本结果和工程时间结果放在一起估值。
+
+</Conclusion>
+
+## 资料来源
+
+- [Latent Space — AI Engineering for Art with comfyanonymous](https://www.latent.space/p/comfyui)
+- [fxguide — ComfyUI with co-founder Yannik Marek (ComfyAnonymous)](https://www.fxguide.com/fxpodcasts/comfyui-with-co-founder-yannik-marek-comfyanonymous/)
+- [Comfy Org 博客 — The next chapter for ComfyUI（2024 年 6 月）](https://blog.comfyui.ca/comfyui/update/2024/06/18/Next-Chapter.html)
+- [CNBC — Stability AI CEO Emad Mostaque 辞职（2024 年 3 月）](https://www.cnbc.com/2024/03/23/stability-ai-ceo-emad-mostaque-resigns.html)
+- [Black Forest Labs — Announcing Black Forest Labs（2024 年 8 月）](https://bfl.ai/blog/24-08-01-bfl)
+- [Wikipedia — ComfyUI](https://en.wikipedia.org/wiki/ComfyUI)

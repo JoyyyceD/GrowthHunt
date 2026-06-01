@@ -1,0 +1,91 @@
+---
+title: "Stability AI Hires comfyanonymous — A Year of Paid Substrate Work With the Repo Still in Personal Namespace"
+description: "In June 2023, Stability AI hired comfyanonymous specifically to make ComfyUI work well with the upcoming SDXL model. He stayed pseudonymous on the payroll. The comfyanonymous/ComfyUI repo stayed in his personal namespace. Stability funded substrate development without owning the substrate — a structural arrangement that made the June 2024 exit and Comfy Org formation possible."
+date: "2023-06-01"
+type: "acquisition"
+gtmTag: "OSS flywheel"
+eventTitle: "Stability AI hires comfyanonymous"
+externalUrl: "https://www.latent.space/p/comfyui"
+---
+
+<Catalyst>
+Most case-set founders pre-monetization either bootstrap personally or take VC seed capital. comfyanonymous took neither. He took employment at Stability AI specifically to keep working on ComfyUI — and kept the GitHub repo in his personal namespace throughout. The arrangement is rare enough to deserve a name: Stability funded substrate development without owning the substrate. The structural decision in January 2023 to use a personal namespace was the precondition that made this June 2023 deal workable.
+</Catalyst>
+
+June 2023. Stability AI hires comfyanonymous. The framing on the Latent Space podcast a year later: Stability brought him in "because they wanted SDXL working well with the UI." Specifically, the upcoming SDXL 1.0 architecture (3.5B base + 6.6B refiner) needed an interface that could express the two-stage pipeline cleanly. Automatic1111 couldn't. ComfyUI's node graph could.
+
+The terms were not publicly disclosed. Compensation, equity, vesting, and the legal structure around the repo all stayed private. What is publicly visible is the structural outcome: the comfyanonymous/ComfyUI GitHub repo stayed in his personal namespace throughout the 12-month Stability period. Stability did not move the repo into a stabilityai org, did not require contributions be assigned to Stability, and did not formally claim the substrate as work-for-hire output.
+
+This is the load-bearing fact. Stability paid comfyanonymous to make ComfyUI work for Stability's needs — and got a year of focused substrate work — without owning the substrate itself.
+
+## What the Stability AI period bought
+
+The 12 months from June 2023 through June 2024 produced three durable outcomes that compounded after comfyanonymous left Stability.
+
+| Outcome | Source | Compounding effect after exit |
+|---|---|---|
+| SDXL 1.0 native integration | Day-of release on July 26, 2023 | Sets the "day-1 integration" expectation for every future model |
+| Scott Detweiler workflow video | Stability QA Head working with comfyanonymous internally | The canonical viral demo grammar without comfyanonymous producing it |
+| BFL founder relationships | 18 months of shared offices with the future Flux team | Direct line for Flux day-1 integration in August 2024 |
+
+The Scott Detweiler workflow video is the highest-leverage piece. Detweiler was Stability's Head of QA — his job was to use Stability's tools internally. He chose ComfyUI as his internal QA tool, then published "What I use internally at Stability for my AI Art" as a YouTube video demonstrating the SDXL ComfyUI workflow. The video became the canonical viral artifact that pulled ComfyUI from power-user adoption into broader Stable Diffusion creator adoption.
+
+comfyanonymous did not script the video. He did not coordinate the release. He was, by the public record, working on the integration code while Detweiler was working on the video. The collaboration was structural — both were at the same company, both were using the same tool — but not directed. The viral demo grammar emerged from the company's internal use, not from a marketing plan.
+
+## The BFL relationships are the second-order asset
+
+Black Forest Labs would not exist until late 2024. But its founders — the core ex-Stability SDXL engineers — were comfyanonymous's office-mates throughout the 2023-2024 period. The relationships that would later produce Flux's "day-1 integration for ComfyUI" launch-blog mention were built during this window, on the basis of mutual technical respect rather than business development outreach.
+
+This is the kind of relationship-capital that case-set founders normally have to engineer through conference attendance, podcast appearances, and warm-intro chains. comfyanonymous accumulated it by being in the same office for 18 months while shipping working integration code. The Latent Space podcast notes the dynamic without belaboring it: by the time the future BFL founders were thinking about what their independent launch would look like, ComfyUI was the obvious choice for day-1 distribution because it was already their internal tool.
+
+The Series A in September 2024 — closed roughly 90 days after Comfy Org's formation — would have been much harder to source without the BFL relationships in place. Chemistry Ventures and Guillermo Rauch bought into a company whose substrate was already endorsed by NVIDIA (RTX Remix integration, July 29, 2024) and BFL (Flux day-1 integration, August 1, 2024). Both endorsements came from relationships built during the Stability period.
+
+## Why the personal namespace was load-bearing
+
+If the comfyanonymous/ComfyUI repo had been moved into a `stabilityai/ComfyUI` namespace at any point during the Stability period, the June 2024 exit would have looked structurally different. Stability would have had a colorable claim on the repo. The exit would have been a negotiation rather than a departure.
+
+The personal-namespace decision in January 2023 made the Stability period reversible by default. comfyanonymous could leave Stability and take the substrate with him without legal friction, because the substrate had never moved. The repo was where it had always been. The transition cost was zero.
+
+This is unusual enough that most case-set founders would not have arranged it this way. The standard pattern when accepting employment from a partner is to fold the IP into the employer's namespace — because the employer typically requires it. Stability's decision not to require it (or its inability to require it given the public visibility of the repo since January 2023) is the asymmetric advantage the personal namespace created at minute zero.
+
+A 2026 founder accepting employment from a potential commercial partner should understand that the standard structure forecloses the option to leave with the IP. The non-standard structure preserves it. The non-standard structure is hard to negotiate after the fact and easy to default into in advance — which is why the namespace choice on day one matters so much.
+
+## What Stability got
+
+Stability did not come out of the arrangement empty-handed. For 12 months they had focused engineering attention on making ComfyUI work cleanly with their flagship SDXL release. Scott Detweiler's QA workflow used ComfyUI internally. The SDXL launch had a working power-user interface from day one. The base+refiner pipeline that gave SDXL its quality ceiling was usable in production.
+
+What Stability did not get was lock-in. They did not own the substrate. They did not own the protocol. They did not own the community. When the leadership crisis hit in Q1-Q2 2024 and Emad Mostaque resigned in March, Stability had no structural claim on the asset that was, by then, more valuable than most of Stability's own IP.
+
+This is a cautionary lesson on the partner side of the arrangement. Stability was the upstream model lab — the entity that, on paper, should have captured the most value from the SDXL ecosystem. Instead, the substrate layer (ComfyUI) accumulated value Stability could not capture, because the substrate layer had never been under Stability's control to begin with.
+
+By the time Comfy Org formed in June 2024, the value flow had inverted. Stability needed ComfyUI more than ComfyUI needed Stability. The June 18, 2024 "next chapter for ComfyUI" blog post made the inversion public.
+
+## What's not in the public record
+
+Several material facts about the Stability period remain undisclosed:
+
+- comfyanonymous's compensation, equity grant, and vesting schedule at Stability
+- Whether comfyanonymous exercised or forfeited any Stability equity at exit
+- The exact legal structure around the comfyanonymous/ComfyUI repo — work-for-hire carve-out, side-project agreement, or some other arrangement
+- Whether Stability attempted at any point to move the repo into a stabilityai namespace
+- Whether the June 2024 exit was conflict-driven or voluntary
+- Whether Stability attempted to acquire or hold up the project at any point
+
+The Latent Space interview discusses the work but does not discuss the structure. The fxguide interview focuses on Marek's personal background and ComfyUI's VFX-pipeline role rather than the Stability commercial relationship. Both are productive silences on the founder's part. The most consequential gap in this case study's documentation sits here.
+
+<Conclusion title="What to copy">
+
+- **Use a personal namespace for the substrate from day one if you might later take employment from a partner.** The January 2023 personal-namespace decision is what made the June 2023 Stability hire workable on terms that did not transfer the IP. The structural choice is cheap in advance and expensive to reverse later.
+- **Take employment from upstream partners specifically to keep working on the substrate.** comfyanonymous's 12 months at Stability funded full-time work on ComfyUI without VC dilution and without the founder having to monetize the substrate prematurely. The partner-as-employer arrangement is rare but available, and it preserves OSS-substrate-period optionality in a way VC seed capital does not.
+- **Accept that the relationships built during the employment period are the durable asset.** comfyanonymous's office-mate relationships with the future BFL founders were what later produced Flux's "day-1 integration for ComfyUI" launch-blog mention. Those relationships could not have been engineered through outbound BD after the fact. A 2026 founder thinking about an analogous arrangement should weight the relationship-capital outcome alongside the engineering-time outcome.
+
+</Conclusion>
+
+## Sources
+
+- [Latent Space — AI Engineering for Art with comfyanonymous](https://www.latent.space/p/comfyui)
+- [fxguide — ComfyUI with co-founder Yannik Marek (ComfyAnonymous)](https://www.fxguide.com/fxpodcasts/comfyui-with-co-founder-yannik-marek-comfyanonymous/)
+- [Comfy Org blog — The next chapter for ComfyUI (Jun 2024)](https://blog.comfyui.ca/comfyui/update/2024/06/18/Next-Chapter.html)
+- [CNBC — Stability AI CEO Emad Mostaque resigns (Mar 2024)](https://www.cnbc.com/2024/03/23/stability-ai-ceo-emad-mostaque-resigns.html)
+- [Black Forest Labs — Announcing Black Forest Labs (Aug 2024)](https://bfl.ai/blog/24-08-01-bfl)
+- [Wikipedia — ComfyUI](https://en.wikipedia.org/wiki/ComfyUI)

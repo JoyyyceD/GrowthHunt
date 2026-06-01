@@ -1,0 +1,92 @@
+---
+title: "Launch Week 1——后来被 94 家其他开发者工具公司复制的格式（2021 年 3 月）"
+description: "对失去 YC ship 快感的个人回应变成了季度节奏仪式。5 天、5 个重要功能、一年 4 次。到 2024 年，launchweek.dev 统计 94 家开发者工具公司的 126 次 Launch Week。"
+date: "2021-03-29"
+type: "product"
+gtmTag: "Launch Week 节奏"
+eventTitle: "Launch Week 1"
+externalUrl: "https://supabase.com/blog/supabase-how-we-launch"
+---
+
+<Catalyst>
+大多数营销仪式是营销团队发明的。Launch Week 是两位创始人发明的，他们刚失去了 YC 每周 ship 快感，决定让 YC 那一周永远持续下去。三年内接管开发者工具营销的格式是个人回应的产物，不是策略决定。
+</Catalyst>
+
+2021 年 3 月。Y Combinator Demo Day 之后六个月。Paul Copplestone 和 Ant Wilson 注意到他们的一周里少了什么。YC 期间，每周二的 batch demo 强迫可见 ship。压力是持续的、外部的；团队围绕它建立了习惯。Demo Day 之后压力蒸发了。团队继续 ship，但节奏是内部的——感觉更慢。
+
+回应是有意的：**让 YC 那一周永远持续下去**。每季度，连续 5 天，每天 ship 一个重要功能。第一次 Launch Week 跑在 2021 年 3 月最后一周左右。到 2025 年 7 月，完成了 15 次 Launch Week。到 2024 年，开源的 launchweek.dev 追踪器跟踪了 <Stat value="126 次" label="2024 年 94 家开发者工具公司的 Launch Week（launchweek.dev）" />。
+
+## 格式实际是什么
+
+| 组件 | 它产生什么 |
+|---|---|
+| **5 天、每天 1 个重要功能** | 跨 launch 复利的 5 天注意力窗口——每一天的受众留到第二天 |
+| **季度节奏，不是月度** | 足够密度成为新闻周期。月度会是灌水 launch。 |
+| **跨平台同步爆破** | HN + Product Hunt + X + 邮件 + Discord 每个 launch 同日。这一周在开发者工具注意力池里无处可逃。 |
+| **工程师即营销人员** | ship 这个功能的工程师写 launch 文案。技术深度，没有营销噪音。 |
+| **「我们很少把功能压到 Launch Week」** | 准备好的功能通过每月 Beta Update 出去。Launch Week 是漏斗顶集中，不是发布周。 |
+| **Supabase Universe 规划仪式** | 每次 Launch Week 之前 2 个月的全团队预 launch 协调。内部和部分公开有文档。 |
+
+防止格式崩塌的约束是「我们很少压」规则。如果 Launch Week 变成公司唯一 ship 的时间，节奏会腐蚀 ship 纪律。Supabase 通过把准备好的功能走每月 Beta Update、把 Launch Week 当作*营销*集中窗口而不是*工程*集中窗口来防止这一点。
+
+## 为什么信任机制工作
+
+Launch Week 是案例库里 E1（危机即 GTM）的第四个子模式。其他三个：
+
+| E1 子模式 | 触发 | demo 表面 |
+|---|---|---|
+| **反应式（ElevenLabs）** | 具体事件——语音滥用、深伪 | 24–72 小时内事后剖析、仅付费语音克隆、AI 检测 |
+| **主动安全（Anthropic）** | 无事件——预防性论文 | Constitutional AI 论文、负责任扩展政策 |
+| **主动透明（PostHog）** | 无事件——持续运营披露 | 公开 handbook、薪酬、OKR、跑道 |
+| **主动节奏（Supabase Launch Week）** | 无事件——持续产品产出节奏 | ship 了 15 次 Launch Week、每次都可见、每次 5 个功能 |
+
+信任机制和 PostHog、Anthropic 一样：12 个月复制无法复制的持续运营纪律。15 次 Launch Week 的 ship 完、可见、被搜索引擎归档的产品产出，是上季度才开始复制格式的公司无法反向工程的。表面不同——产品产出而不是内部公司状态或安全研究。机制相同。
+
+这让 Launch Week 成为 E1 子模式里对没有研究实验室或激进透明文化的产品驱动公司最可复制的版本。PostHog 透明度要求公开薪酬；Anthropic 要求安全研究员；Launch Week 只要求 ship 纪律。四个子模式里相对入场成本最低。
+
+## 节奏给 Supabase 产生了什么
+
+A 轮（2021 年 9 月）到 B 轮（2022 年 8 月）之间对 Supabase 的结构性影响是可见的：
+
+| 指标 | A 轮（2021 年 9 月） | B 轮（2022 年 8 月） | 倍数 |
+|---|---|---|---|
+| 开发者 | 4 万 | 11 万 | 2.75 倍 |
+| 数据库 | 5 万 | 15 万 | 3 倍 |
+| GitHub stars | 1.9 万 | 3.6 万 | 1.9 倍 |
+| Discord | 4 千 | 8 千 | 2 倍 |
+
+11 个月内这些增长倍数不是「自然产品增长」——是*产品+Launch Week 复合增长*。这个窗口里跑了 3 次 Launch Week。每次都产生了可测量的注册提升和较小的留存提升。
+
+B 轮博客没有单独拆出 Launch Week 的具体贡献，但融资周期落地是因为基底比员工数复利得更快。Felicis 把这轮定价为 8000 万不是因为产品比对手更好——是 Postgres 基底层面更好，这是结构性的——而是因为*可见改进的节奏*比对手更快。Launch Week 就是可见改进节奏。
+
+## 94 家公司复制浪潮
+
+到 2024 年，launchweek.dev——Copplestone 和 Flo Merian 维护的开源追踪器——统计了 94 家不同开发者工具公司的 126 次 Launch Week。格式接管了开发者工具营销。94 家公司包括直接竞品（Neon、Render、Cloudflare）、邻近开发者工具公司（Linear、Replit、PostHog、Vercel）和 AI 工具公司（Lovable、Cursor）。
+
+这些复制大多数是部分的。他们复制节奏（季度）、格式（5 天 5 功能）、跨平台爆破——但很少复制工程师即营销人员模式或「我们很少压」约束。部分复制产生灌水 launch：营销团队写的文案、为了让一周看起来更满的功能捆绑、不是当天 ship 的每日揭晓。
+
+这是主动节奏 E1 子模式的标志性风险。节奏容易模仿；底下的 ship 纪律难。**大多数复制 Launch Week 而不复制创始人纪律的公司产生 PR 化透明度——这比无透明度更坏**——和 PostHog 反对 handbook 复制的同一个结论，应用在不同表面上。
+
+## Launch Week 做不到什么
+
+格式不是底下产品节奏的替代品。Supabase 一年 ship 约 4 次 Launch Week 的功能*加上*下面的每月 Beta Update。一家一年 ship 4 次 Launch Week 的功能而不做别的公司，在 launch 窗口外会有空的工程周期。
+
+格式也不是基底的替代品。没有借来的 Postgres 基底，每次 Launch Week 功能都会是未充分开发核心上的脆弱添加。Supabase 能 ship Edge Functions、Storage、Auth、pgvector 产品化、Realtime 改进，因为每个都在成熟基底之上。没有基底的从零产品撑不住 launch 节奏——每个功能太承重在其他功能上。
+
+格式也不是创始人品位的替代品。Copplestone 跑哪些功能进 Launch Week 的编辑方向。没有那个编辑过滤，节奏变成日历事件而不是产品周期。Launch Week 是创始人 IP 邻近的物件，不是营销团队可建的程序。
+
+<Conclusion title="可复制的">
+
+- **节奏容易；工程师即营销人员约束才是承重那条。**Launch Week 工作是因为 ship 这个功能的工程师写 launch 文案。营销团队写的 launch 稀释成 PR 化透明度。如果工程师写不了 launch 帖，这个功能可能不值得进 Launch Week。
+- **准备好的功能走每月更新，不走 Launch Week。**「我们很少压」是防止节奏腐蚀 ship 纪律的规则。把 Launch Week 当作营销集中窗口，不是发布窗口。
+- **主动节奏 E1 子模式是四个里最可复制的。**PostHog 要求公开薪酬；Anthropic 要求安全研究员；ElevenLabs 要求事件事后剖析。Launch Week 只要求 ship 纪律。入场成本更低——但纪律仍然必须是创始人 DNA，不是外挂文化。
+
+</Conclusion>
+
+## Sources
+
+- [Supabase blog — How we launch at Supabase](https://supabase.com/blog/supabase-how-we-launch)
+- [Supabase Launch Week 落地页](https://supabase.com/launch-week)
+- [launchweek.dev — 开源 Launch Week 追踪器（2024 年 94 家公司、126 次 launch）](https://launchweek.dev)
+- [Evil Martians blog — How to do launch weeks for developer tools, startups, and small teams](https://evilmartians.com/chronicles/launch-weeks-for-developer-tools-and-startups)
+- [Medium @fmerian — How Supabase grew from 0 to 50K+ GitHub stars](https://fmerian.medium.com/how-supabase-grew-from-0-to-50k-github-stars-447243e8b2f0)

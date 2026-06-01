@@ -1,0 +1,326 @@
+{
+  "company": {
+    "slug": "comfyui",
+    "name": "ComfyUI",
+    "legalName": "Comfy Org Inc.",
+    "tagline": "一位匿名的 Quebec C++ 程序员为 Stable Diffusion 写了节点式 UI，保持身份隐匿 37 个月，拒绝当 CEO，借开源视觉 AI 模型释放浪潮拿到 5 亿美元估值——案例库里第一个被刻意空出来的「创始人即 IP」位置",
+    "summary": "ComfyUI 把 Hugging Face 那种「开源即底层」的玩法又往前推了一步：创始人匿名了 37 个月（2023 年 1 月 → 2026 年 2 月），商业实体晚于代码 17 个月才出现，Comfy Org 成立时创始人拒绝当 CEO，整个项目在完全没有「创始人即 IP」投入的情况下复利成长。底层是一套协议：每一张 ComfyUI 生成的 PNG 文件都在元数据里嵌入了完整工作流 JSON，所以每一次在社交媒体上分享都是一次可运行的产品分发事件。社区做出了 demo 语法——Scott Detweiler 的「我在 Stability 内部用的工作流」SDXL 视频、Civitai 上的 Sytan SDXL 工作流、Olivio Sarikas 的 YouTube 教程——这些都不是创始人做的。上游模型实验室开始主动找 ComfyUI 做 day-1 集成：SDXL（2023 年 7 月）、Stable Video Diffusion（2023 年 11 月，第 3 天支持）、Flux（2024 年 8 月，BFL 在发布博客里明确写了「day-1 integration for ComfyUI」），之后 Hunyuan、Wan、Mochi、LTX-Video 接连跟上。到 2026 年 4 月 Craft 领投的 5 亿美元投后 B 轮，ComfyUI 已经有 400 万 + 用户、15 万 + 日下载、6 万 + 社区节点、5.7 万人的 Discord，以及 Amazon Studios、Apple、Autodesk、Netflix、Nike、Ubisoft、Tencent 的客户 logo 墙——而它从来没有建过那个其他案例库公司视为规模化必修的「创始人即 IP」层。",
+    "founded": "2023-01",
+    "founders": [
+      "comfyanonymous (Yannik Marek)",
+      "Yoland Yan (CEO，2024 年 6 月加入)"
+    ],
+    "seriesNumber": 26
+  },
+  "phases": [
+    {"start": "2022-10", "end": "2023-06", "name": "匿名开源底层期", "color": "#fef3c7"},
+    {"start": "2023-06", "end": "2024-06", "name": "Stability AI 间隙期", "color": "#dbeafe"},
+    {"start": "2024-06", "end": "2025-09", "name": "Comfy Org + A 轮", "color": "#fce7f3"},
+    {"start": "2025-09", "end": "2026-05", "name": "Cloud + 企业客户 + B 轮", "color": "#dcfce7"}
+  ],
+  "events": [
+    {
+      "date": "2022-10-15",
+      "title": "comfyanonymous 发现 Stable Diffusion",
+      "type": "media",
+      "description": "Yannik Marek——Quebec City 一家牙科种植体工厂的 C++ 程序员，在网上用 comfyanonymous 这个匿名 ID——开始用刚发布的 Stable Diffusion，搭配 Automatic1111。这个工具在高分辨率和多阶段流水线上的僵化是后面所有事的导火索。他从未用过 PyTorch、从未训练过模型、从未在 ML 行业工作过。",
+      "externalUrl": "https://www.latent.space/p/comfyui"
+    },
+    {
+      "date": "2023-01-01",
+      "title": "ComfyUI 第一行代码",
+      "type": "product",
+      "description": "comfyanonymous 从零开始用 Python 写 ComfyUI，借鉴 LiteGraph.js 的节点式架构。他后来在 Latent Space 上自述：一个「boring CRUD web developer」决定要做「一个有力的、不易用的界面」，作为 Automatic1111 易用方向的刻意反面。",
+      "externalUrl": "https://www.latent.space/p/comfyui"
+    },
+    {
+      "date": "2023-01-16",
+      "title": "以 comfyanonymous/ComfyUI 公开发布",
+      "type": "product",
+      "gtmTag": "Structural differentiation",
+      "description": "仓库以 comfyanonymous 这个 namespace 公开。README 把项目定义为「给任何想用 Stable Diffusion 做复杂工作流的人，或想多了解 SD 如何工作的人」。没有创始人名字，没有 LinkedIn，没有网站。37 个月的匿名窗口从这里开始。",
+      "externalUrl": "https://github.com/comfyanonymous/ComfyUI",
+      "articleSlug": "2023-01-initial-github-release"
+    },
+    {
+      "date": "2023-02-15",
+      "title": "r/StableDiffusion 首批关注",
+      "type": "media",
+      "description": "comfyanonymous 在 r/StableDiffusion 上发了一条关于 area-conditioning 的帖子——这个功能解决了 Automatic1111 用户撞到的真实天花板。第一波 organic 的 power user 关注。没有外发推广。没有联系 KOL。协议自己开口。",
+      "externalUrl": "https://www.reddit.com/r/StableDiffusion/"
+    },
+    {
+      "date": "2023-03-15",
+      "title": "Olivio Sarikas YouTube 教程",
+      "type": "media",
+      "gtmTag": "Ride the KOL wave",
+      "description": "YouTuber Olivio Sarikas 给广义 Stable Diffusion 受众发布了一支 ComfyUI 教程。第一次外部 KOL 信用转移。comfyanonymous 从未联系过 Olivio——这是 organic 发现。视频把非工程师创作者拉了进来，这些人本来永远不会发现一个只活在 GitHub 上的项目。",
+      "externalUrl": "https://www.youtube.com/@OlivioSarikas"
+    },
+    {
+      "date": "2023-06-01",
+      "title": "Stability AI 雇佣 comfyanonymous 来集成 SDXL",
+      "type": "acquisition",
+      "gtmTag": "OSS flywheel",
+      "description": "Stability AI 把 comfyanonymous 招进内部，让 ComfyUI 适配即将发布的 SDXL 模型。他继续保持匿名。关键的一点是：comfyanonymous/ComfyUI GitHub 仓库始终留在他个人 namespace 下——Stability 出钱养底层但不拥有底层。这是一个非常少见的「创始人由 Stability 付薪同时保留资产」的安排。",
+      "externalUrl": "https://www.latent.space/p/comfyui",
+      "articleSlug": "2023-06-stability-ai-hire"
+    },
+    {
+      "date": "2023-07-26",
+      "title": "SDXL 1.0 发布 + Scott Detweiler viral 工作流视频",
+      "type": "product",
+      "gtmTag": "Format-as-credibility-constraint",
+      "description": "Stability AI 发布 SDXL 1.0（3.5B base + 6.6B refiner）。base+refiner 流水线天然映射到 ComfyUI 的节点图；Automatic1111 没法高效表达。Stability 的 QA Head Scott Detweiler 发布了「What I use internally at Stability for my AI Art」——一支 SDXL ComfyUI 工作流视频。标志性 viral artifact。comfyanonymous 没有参与制作。",
+      "externalUrl": "https://www.yeschat.ai/blog-sdxl-comfyui-stability-workflow-what-i-use-internally-at-stability-for-my-ai-art-43363",
+      "articleSlug": "2023-07-sdxl-viral-moment"
+    },
+    {
+      "date": "2023-09-03",
+      "title": "PNG-即-工作流分享格式固化",
+      "type": "product",
+      "description": "Sytan SDXL workflow + 4DCu.be / Civitai 上社区共享的 PNG 工作流，确立了 ComfyUI 的标志性分享格式：每张生成的 PNG 文件在元数据里嵌入完整 JSON 工作流图。把 PNG 拖进 ComfyUI 画布，工作流就会重建。每一次图像分享，都是一个可重玩、可运行的物件。",
+      "externalUrl": "https://blog.4dcu.be/ai/2023/09/03/comfyui-sdxl-workflows.html"
+    },
+    {
+      "date": "2023-11-24",
+      "title": "Stable Video Diffusion 第 3 天支持",
+      "type": "product",
+      "description": "Stability 11 月 21 日发布 SVD。ComfyUI 11 月 24 日 ship 原生支持——8GB VRAM、25 帧、1024×576。「day-1 或接近 day-1 集成」模式从这里开始固化，成了 ComfyUI 的结构性招法。从此每一个新模型发布，都默认要先在 ComfyUI 里跑通。",
+      "externalUrl": "https://blog.comfyui.ca/comfyui/update/2023/11/24/Update.html"
+    },
+    {
+      "date": "2024-03-22",
+      "title": "Stability AI CEO Emad Mostaque 辞职",
+      "type": "media",
+      "description": "Stability AI 内部领导力危机在 2024 Q1-Q2 加速。未来组建 Black Forest Labs 的几位创始人开始外溢。comfyanonymous 的退出计算从这里启动，但公开分手还要等三个月。",
+      "externalUrl": "https://www.cnbc.com/2024/03/23/stability-ai-ceo-emad-mostaque-resigns.html"
+    },
+    {
+      "date": "2024-06-03",
+      "title": "Comfy Org 法律实体成立",
+      "type": "acquisition",
+      "description": "据 Wikipedia 和公司注册记录，Comfy Org Inc. 于 2024 年 6 月 3 日完成注册——也是 comfyanonymous 正式结束与 Stability AI 关系的日子。公开宣布要等两周。",
+      "externalUrl": "https://en.wikipedia.org/wiki/ComfyUI"
+    },
+    {
+      "date": "2024-06-18",
+      "title": "Comfy Org 公开宣布——Yoland Yan 当 CEO，创始人继续匿名",
+      "type": "media",
+      "gtmTag": "Structural differentiation",
+      "description": "comfyanonymous 在新博客上发表「The next chapter for ComfyUI」并宣布 Comfy Org。联合创始人名单：mcmonkey4eva（SwarmUI）、Dr.Lt.Data（ComfyUI-Manager）、pythongosssss（前端）、robinken（Comfy Registry）、yoland68（ComfyCLI）。前 Google App Search ML 工程师 Yoland Yan 加入当 CEO，目的就是让 comfyanonymous 不必当 CEO。这是对「创始人即 IP」角色的刻意拒绝。",
+      "externalUrl": "https://blog.comfyui.ca/comfyui/update/2024/06/18/Next-Chapter.html",
+      "articleSlug": "2024-06-comfy-org-formation"
+    },
+    {
+      "date": "2024-06-20",
+      "title": "ComfyUI_LLMVISION 恶意节点被揭露",
+      "type": "media",
+      "description": "Reddit 用户 u/AppleBotzz 揭露：流行的 ComfyUI_LLMVISION 自定义节点通过一个伪装的 Discord webhook，偷浏览器密码、信用卡、浏览历史。Comfy Org 公开发布两天后的首起重大安全事件。Comfy Org 的回应是上线 Comfy Node Registry 安全扫描，而不是创始人主导的 postmortem——信任姿态是由底层中介的，不是由创始人中介的。",
+      "externalUrl": "https://www.vpnmentor.com/news/comfyui-malicious-custom-node/"
+    },
+    {
+      "date": "2024-07-29",
+      "title": "NVIDIA RTX Remix 集成 ComfyUI",
+      "type": "product",
+      "description": "NVIDIA 开放 RTX Remix REST API 并 ship 自定义 ComfyUI 节点，用于 AI 驱动的游戏纹理重制。TensorRT 加速把 ComfyUI 图像生成时间砍掉 60%。约 2 万 RTX Remix mod 制作者进入 ComfyUI 漏斗。NVIDIA 选择集成 ComfyUI 而不是反过来要 ComfyUI 接入 RTX——底层不对称信号。",
+      "externalUrl": "https://www.nvidia.com/en-us/geforce/news/gfecnt/20247/rtx-remix-rest-api-comfyui-app-connectors/"
+    },
+    {
+      "date": "2024-08-01",
+      "title": "Black Forest Labs Flux 发布，明确写「ComfyUI day-1 集成」",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "BFL——由曾和 comfyanonymous 共享一间办公室 18 个月的前 Stability SDXL 工程师组成——发布 Flux.1（12B MMDiT）。发布博文里说：「moreover we're happy to have day-1 integration for ComfyUI」。ComfyUI 的自动 FP8 + VRAM offload 让这个 23GB 模型在 8GB GPU 上能跑。Automatic1111 一直到 9 月底才支持 Flux——ComfyUI 在最高品质开源权重上有了 6 周独占窗口。",
+      "externalUrl": "https://bfl.ai/blog/24-08-01-bfl",
+      "articleSlug": "2024-08-flux-day-one-integration"
+    },
+    {
+      "date": "2024-08-15",
+      "title": "前端现代化（TypeScript + Vue + Vite）",
+      "type": "product",
+      "description": "传统 vanilla-JS 前端正式被 Comfy-Org/ComfyUI_frontend（TS / Vue / Vite）替换。对现有插件生态保留向后兼容垫片。作者是 pythongosssss。这是后面 V1 Desktop 和 Comfy Cloud 的基础。",
+      "externalUrl": "https://github.com/comfyanonymous/ComfyUI/issues/4169"
+    },
+    {
+      "date": "2024-08-20",
+      "title": "加入 Linux Foundation Open Model Initiative",
+      "type": "media",
+      "description": "Comfy Org 加入 Linux 基金会下的 Open Model Initiative，与 Black Forest Labs 等其它开源 AI 组织并列。固化了「中立基础设施」的定位，让每一家上游模型实验室都能把 ComfyUI 当作安全的集成目标。",
+      "externalUrl": "https://en.wikipedia.org/wiki/ComfyUI"
+    },
+    {
+      "date": "2024-09-15",
+      "title": "A 轮 ~$19M，Chemistry 领投——Guillermo Rauch 参投",
+      "type": "funding",
+      "gtmTag": "KOL credibility transfer",
+      "description": "Comfy Org 成立约 90 天内完成 ~$19M A 轮，Chemistry Ventures 领投，Cursor Capital 与 Vercel 创始人 Guillermo Rauch 参投。没有任何公司博客公告——这在案例库里很反常。Rauch 的参投就是代理「创始人即 IP」信号：当创始人拒绝公开 IP，同行创始人参投替代。Sacra 报道了一个冲突数字——$16.2M / Pace 领投；TechCrunch 的 $19M / Chemistry 领投是标准口径。",
+      "externalUrl": "https://techcrunch.com/2026/04/24/comfyui-hits-500m-valuation-as-creators-seek-more-control-over-ai-generated-media/",
+      "articleSlug": "2024-09-series-a-chemistry"
+    },
+    {
+      "date": "2024-10-21",
+      "title": "ComfyUI V1 + Desktop 应用发布",
+      "type": "product",
+      "gtmTag": "Audience boundary push",
+      "description": "第一个「可安装应用」版本：签名跨平台 Desktop（Windows / macOS / Linux，200MB 安装包）、内置 ComfyUI Manager、模型库与工作流浏览器。标志着从 power user CLI 工具到产品的转型。Comfy Node Registry 上线时已有 600+ 节点 / 2000+ 版本。",
+      "externalUrl": "https://blog.comfy.org/p/comfyui-v1-release"
+    },
+    {
+      "date": "2024-11-15",
+      "title": "新 Vue/TS UI 成为默认",
+      "type": "product",
+      "description": "经过 5 个月 beta，Vue/TS 前端（PR #3112，作者 pythongosssss）成为默认。传统 UI 被废弃。前端栈现在适合产品打磨，而不只是 power user 的定制。",
+      "externalUrl": "https://blog.comfy.org/p/making-new-ui-the-default-option-on-2024-11-15"
+    },
+    {
+      "date": "2025-09-15",
+      "title": "Comfy Cloud Beta 发布",
+      "type": "product",
+      "gtmTag": "Monetize during peak",
+      "description": "托管版 ComfyUI 进入 beta。订阅定价只按活跃 GPU 时间——工作流编辑期间不计费。本地开源版继续免费，且保持功能对等。Cloud 是公开宣布的收入机制。从 substrate 形成到第一次变现尝试隔了 17 个月——案例库里最长的刻意 hold 窗口。",
+      "externalUrl": "https://comfyui-wiki.com/en/news/2025-09-15-comfy-cloud"
+    },
+    {
+      "date": "2025-09-29",
+      "title": "$17M 增长轮 +「creative AI 操作系统」叙事",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "从 Pace Capital、Chemistry、Abstract Ventures 拿到 $17M，Essence VC 参投。与 Comfy Cloud beta 同一新闻周期。定位：「Open source lasts forever / OS of creative AI」。这是 Comfy Org 第一个用正式博客公告的轮次——匿名姿态开始松动。",
+      "externalUrl": "https://blog.comfy.org/p/comfy-raises-17m-funding"
+    },
+    {
+      "date": "2025-12-08",
+      "title": "统一 Comfy Credits + Partner Nodes 变现",
+      "type": "product",
+      "description": "定价大改：所有订阅迁移到统一的 Comfy Credits 池，可以用于云端工作流和 Partner Nodes（如 Nano Banana Pro 等）。老用户被收纳进 Founder's Edition 并获 30% 信用额度提升。硬件升级到 Blackwell RTX 6000 Pro（96GB VRAM）。底层之上的 marketplace 机制。",
+      "externalUrl": "https://blog.comfy.org/p/comfy-cloud-new-features-and-pricing"
+    },
+    {
+      "date": "2026-01-23",
+      "title": "Comfy Cloud 价格下调 30%",
+      "type": "product",
+      "description": "GPU 信用速率从 0.39 降到 0.266 credits/sec，跟随 GPU 成本 30% 下降。Pro 计划有效 GPU 时间从 15 小时增加到 22 小时。在 B 轮叙事之前激进地把成本节省传导给用户——保护创作者基础免受云端经济压力。",
+      "externalUrl": "https://quasa.io/media/comfyui-cloud-boosts-generation-limits-a-30-price-drop-ushers-in-more-ai-content-for-subscribers"
+    },
+    {
+      "date": "2026-02-20",
+      "title": "Yannik Marek 在 fxguide 播客中公开本名——37 个月匿名结束",
+      "type": "media",
+      "gtmTag": "Founder-as-IP",
+      "description": "comfyanonymous 在 fxguide 播客上以本名 Yannik Marek 出场。讨论 C++ 背景、Quebec City 起源、牙科种植体工厂的白天工作，以及 ComfyUI 在 VFX 流水线里的角色。匿名 → 实名的转变是渐进的、创始人自控的，并指向 VFX 行业的垂直媒体——不是 tier-1 科技媒体。连这次身份解锁也拒绝走标准「创始人即 IP」模板。",
+      "externalUrl": "https://www.fxguide.com/fxpodcasts/comfyui-with-co-founder-yannik-marek-comfyanonymous/",
+      "articleSlug": "2026-02-fxguide-name-reveal"
+    },
+    {
+      "date": "2026-04-24",
+      "title": "B 轮 $30M @ $500M，Craft Ventures 领投",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Craft Ventures 领投 $30M 增长轮，投后 $500M。Pace Capital、Chemistry、TruArrow、Guillermo Rauch 都跟投。TechCrunch tier-1 报道披露：400 万 + 用户、15 万 + 日下载、6 万 + 社区节点，以及 Amazon Studios、Apple、Autodesk、Netflix、Nike、Ubisoft、Tencent 的客户 logo 墙。Comfy Cloud 年化预订额据报在发布 8 个月内超过 $10M——单源数据，作 estimate 看待。",
+      "externalUrl": "https://techcrunch.com/2026/04/24/comfyui-hits-500m-valuation-as-creators-seek-more-control-over-ai-generated-media/",
+      "articleSlug": "2026-04-series-b-craft"
+    }
+  ],
+  "arr": [
+    {"date": "2024-06-01", "value": 0, "source": "Comfy Org 公开陈述", "confidence": "official"},
+    {"date": "2025-09-15", "value": 0, "source": "Comfy Cloud Beta 发布——尚无收入", "confidence": "official"},
+    {"date": "2026-04-24", "value": 10000000, "source": "superbcrew（单源）", "confidence": "estimate", "round": "Comfy Cloud 年化预订额"}
+  ],
+  "valuation": [
+    {"date": "2024-09-15", "value": 100000000, "round": "A 轮（估算投后）", "source": "TechCrunch / 三角推算", "confidence": "estimate"},
+    {"date": "2025-09-29", "value": 250000000, "round": "增长轮（估算投后）", "source": "三角推算", "confidence": "estimate"},
+    {"date": "2026-04-24", "value": 500000000, "round": "B 轮", "source": "TechCrunch", "confidence": "media"}
+  ],
+  "platforms": [
+    {
+      "slug": "github",
+      "name": "GitHub",
+      "score": 5,
+      "bestStage": "全阶段——底层",
+      "effort": "底层级",
+      "role": "底层本身",
+      "description": "comfyanonymous/ComfyUI 是标准仓库（现在也镜像到 Comfy-Org/ComfyUI 组织下）。2026 年 Q2：11.5 万 stars / 1.35 万 forks。Python 99.6%。每周一发版。在整个 Stability AI 期间，仓库一直留在个人 namespace 下——这个结构性选择让 Stability 出钱养底层但不拥有底层。Civitai 上每一个工作流 PNG 都把这个仓库当作运行时引用。",
+      "catalyst": "2023 年 1 月 16 日——以 comfyanonymous 账号首次公开 push。零点零 star。到 2024 年中已 4 万 stars，期间公司没跑任何 GitHub 推广。是协议自己在工作。",
+      "catalystUrl": "https://github.com/comfyanonymous/ComfyUI",
+      "accountUrl": "https://github.com/comfyanonymous/ComfyUI",
+      "accountLabel": "comfyanonymous/ComfyUI",
+      "whenItWorks": "当底层有一个可分享的协议物件时（这里是「PNG 嵌入工作流」）。每一个用户产出物都是分发事件，不需要公司去放大。",
+      "whenItDoesnt": "当协议可以被一个竞争格式替代时。ComfyUI 的 PNG 工作流格式之所以赢，是因为 Stable Diffusion 的 PNG 输出习惯已经先在场了——2026 年进入者无法重新发明这个先决条件。"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit (r/StableDiffusion)",
+      "score": 5,
+      "bestStage": "全阶段——主要社区表面",
+      "effort": "持续，社区主导",
+      "role": "发现 + dogfooding + KOL 表面",
+      "description": "r/StableDiffusion（2026 年已逾 70 万成员）是 ComfyUI organic 增长发生的地方。comfyanonymous 2023 年 2 月那条 area-conditioning 帖发在这里。每一个新工作流技巧先发这里。每一次模型释放（SDXL、SVD、Flux、Hunyuan、Wan）都先在 r/StableDiffusion 上以 ComfyUI 工作流形式被对比测评。这个子版是底层的公共记忆。",
+      "catalyst": "2023 年 2 月——comfyanonymous 的 area-conditioning 帖是第一个把 ComfyUI 推到 Automatic1111 天花板用户面前的表面。后续 SDXL base+refiner 和 Flux day-1 的帖子继续在同一通道上复利。",
+      "catalystUrl": "https://www.reddit.com/r/StableDiffusion/",
+      "accountUrl": "https://www.reddit.com/r/StableDiffusion/",
+      "accountLabel": "r/StableDiffusion",
+      "whenItWorks": "当品类里有唯一一个标准子版，里面的 power user 会自己测试新工作流。当创始人和上游模型实验室都在同一批帖子里参与时信号最强。",
+      "whenItDoesnt": "当品类太碎，没有任何一个子版能起到标准表面的作用。ComfyUI 运气好——Stable Diffusion 有一个明显的家。"
+    },
+    {
+      "slug": "discord",
+      "name": "Discord (Comfy Org 服务器)",
+      "score": 4,
+      "bestStage": "Comfy Org 成立后",
+      "effort": "Always-on，社区主导 + 团队支持",
+      "role": "实时创作者和开发者支持",
+      "description": "官方 Comfy Org Discord 在 2026 Q2 显示约 5.6821 万成员（来自邀请链接实时计数）。承接关于工作流、自定义节点、GPU 显存和模型集成的实时问题。比 GitHub issue 反馈循环更快，比 X 更深度。是该组织无法忽视的事实支持渠道——也是像 LLMVISION 恶意节点这类安全事件被公开 triage 的地方。",
+      "catalyst": "2024 年 6 月——Comfy Org 成立把 Discord 从社区运营服务器变成官方支持渠道。两天后的 LLMVISION 事件是该组织 Discord 运营的第一次公开压力测试。",
+      "accountUrl": "https://discord.com/invite/comfyorg",
+      "accountLabel": "Comfy Org Discord",
+      "whenItWorks": "当用户 ship 的工作流会以非平凡方式失败（VRAM、模型版本不匹配、自定义节点冲突），而你的团队愿意每天在频道里。",
+      "whenItDoesnt": "当团队 Discord 在场是表演性的。没有真正的运营投入，Discord 就成了未回答问题的坟场，反向变成负信号物件。"
+    },
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 2,
+      "bestStage": "A 轮之后——只是 CEO 声音",
+      "effort": "Episodic，CEO 主导",
+      "role": "融资和公司公关表面——不是「创始人即 IP」",
+      "description": "Yoland Yan（@yoland_yan）是该组织在 X 上的声音——融资公告、客户 logo 亮点、招聘帖。节奏更接近公关账号，而不是「创始人即 IP」的日常出现通道（Rauch / Masad / Hawkins）。comfyanonymous 在 X 上事实上没有存在。B 轮宣告也是 Yoland Yan 发的，不是 comfyanonymous。这是案例库里被刻意空出来的 E2 通道。",
+      "catalyst": "2024 年 6 月 18 日——Yoland Yan 那条宣布 Comfy Org 的 X 帖是公司第一次正式的 Twitter 时刻。这条 thread 起的是「CEO 自我介绍」作用。从来没有出现「创始人自我介绍」对应物。",
+      "catalystUrl": "https://twitter.com/yoland_yan",
+      "accountUrl": "https://twitter.com/yoland_yan",
+      "accountLabel": "X 上的 @yoland_yan",
+      "whenItWorks": "当公司选择「底层优先」路线，不需要在 X 上有「创始人即 IP」层。CEO 声音可以承担公关，而不主张创始人「思想领袖」位置。",
+      "whenItDoesnt": "当品类要求创始人每日在场的信任（前沿 AI 对齐、企业安全）。ComfyUI 的「底层中介信任」可能无法迁移到这些品类。"
+    },
+    {
+      "slug": "latent-space",
+      "name": "Latent Space 播客",
+      "score": 4,
+      "bestStage": "2024 底层验证时刻",
+      "effort": "一次",
+      "role": "仅创始人长访谈——2026 年之前唯一承重的音频物件",
+      "description": "comfyanonymous 2024 年的 Latent Space 那期，是几乎两年里唯一存在的长访谈。Swyx 和 Alessio 走过开发史、给 ComfyUI 带来 viral 时刻的 SDXL base+refiner 流水线，以及创始人自己的框架——「powerful, not easy to use」——作为 Automatic1111 易用方向的刻意反面。创始人全程以「Comfy」出现；没有本名披露。这一期承担了「音频 register 的底层验证物件」的角色，而没有撕破匿名姿态。",
+      "catalyst": "2024 年 Latent Space 那期发布的时刻——ComfyUI 的叙事进入 AI 工程播客典籍，而不需要创始人解锁匿名。",
+      "catalystUrl": "https://www.latent.space/p/comfyui",
+      "accountUrl": "https://www.latent.space/p/comfyui",
+      "accountLabel": "Latent Space — ComfyUI 那期",
+      "whenItWorks": "当一个受信任的技术播客主持人愿意基于扎实的技术深度采访一个匿名创始人。Latent Space 的受众把工程深度当作公信力标记，而不是创始人身份。",
+      "whenItDoesnt": "Tier-1 主流媒体（TechCrunch、Bloomberg、The Information）不会发匿名创始人的长访谈。底层验证播客是替代品，不是新闻周期。"
+    },
+    {
+      "slug": "fxguide",
+      "name": "fxguide (VFX 行业媒体)",
+      "score": 3,
+      "bestStage": "2026 年创始人自控的身份揭示",
+      "effort": "一次",
+      "role": "在非科技媒体频道下，创始人自控的身份揭示",
+      "description": "2026 年 2 月的 fxguide 播客是第一个把 Yannik Marek 这个名字和 comfyanonymous 关联起来的访谈。出版物的选择是承重事实。fxguide 是 VFX 行业垂直媒体，读者是 Netflix、Amazon Studios、Industrial Light & Magic——恰好是 Comfy Org 需要赢得合法性、好让两个月后的 B 轮公告 logo 墙落地的企业受众。这次身份揭示是销售物件，不是新闻周期。comfyanonymous 跳过 TechCrunch 和 Bloomberg，直接面向实际买家。",
+      "catalyst": "2026 年 2 月 20 日——fxguide 那一期，标题就是「ComfyUI with co-founder Yannik Marek (ComfyAnonymous)」。本名和 handle 第一次在一处出版物里并列。",
+      "catalystUrl": "https://www.fxguide.com/fxpodcasts/comfyui-with-co-founder-yannik-marek-comfyanonymous/",
+      "accountUrl": "https://www.fxguide.com/fxpodcasts/comfyui-with-co-founder-yannik-marek-comfyanonymous/",
+      "accountLabel": "fxguide — ComfyUI 那期",
+      "whenItWorks": "当创始人需要为某个具体的商业目的解锁匿名（这里是企业 VFX 采购），而且可以挑一个读者就是目标买家的媒体。",
+      "whenItDoesnt": "当创始人把身份揭示误当作人格发布。fxguide 成功是因为 Marek 没有用一场每日 X presence 战役去跟进——揭示保持了外科手术式的精确。"
+    }
+  ]
+}

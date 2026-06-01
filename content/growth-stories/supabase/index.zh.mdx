@@ -1,0 +1,167 @@
+---
+title: "Supabase——增长故事"
+description: "两位创始人 2019 年在 Entrepreneur First Singapore 认识，2020 年 1 月开始写 Supabase 代码，把 30 年的 PostgreSQL 包进现代开发者体验层。2020 年 5 月底的 Launch HN 拿到 1,120+ upvotes，成为当时 HN 历史上第二高赞的 Launch HN。他们把 YC 之后失去的 ship 节奏快感转化为 Launch Week——一个季度节奏，后来被 94 家其他开发者工具公司复制。2023 年初他们 ship 了 pgvector，比开发者群体对 LLM 应用 stack 的大众认知早约 6 个月。到 2024 年，所有 vibe-coding 平台都默认把用户接到 Supabase 上。五年六轮，2025 年 10 月 E 轮 50 亿美元，2026 年 4 月 GIC 领投的 100 亿美元谈判（未关闭）被报道。"
+date: "2026-06-01"
+readTime: "12 min"
+---
+
+Supabase 是这样一个案例：两位创始人把 PostgreSQL——一个 30 年的开源数据库——识别为自己的基底，包进现代开发者体验，然后骑着「借来的基底」五年内跑完六轮融资。
+
+Paul Copplestone（CEO，前 Nimbus for Work）和 Ant Wilson（CTO，伦敦帝国理工）2019 年通过 Entrepreneur First Singapore 认识。2020 年 1 月他们开始写代码。2020 年 5 月底的一篇 Launch HN——「Supabase (YC S20) – An open source Firebase alternative」——拿到 1,120+ upvotes，被 HN mod dang 认定为当时 HN 历史上第二高赞的 Launch HN。流量峰值打爆 DigitalOcean 额度，几小时内被迫紧急迁移到 AWS。
+
+后续六轮：种子轮 2020 年 10 月（600 万美元，Coatue 领投），A 轮 2021 年 9 月（3000 万），B 轮 2022 年 4 月（8000 万），C 轮 2024 年 9 月（8000 万 / 7.65 亿 PitchBook 估算），D 轮 2025 年 4 月（2 亿 / 20 亿），E 轮 2025 年 10 月（1 亿 / 50 亿）。累计融资约 5 亿美元。The Information 2026 年 4 月报道：Supabase 正深度谈判筹集约 5 亿美元，估值约 100 亿，由新加坡主权基金 GIC 领投——但这一轮截至 2026 年 6 月尚未关闭。
+
+ARR 由 Sacra 估算为 2025 年 8/9 月约 7000 万美元，从 2024 年底约 3000 万同比增长 250%。**Supabase 从未官方披露 ARR**；本文所有营收数字都是分析师三角推算，不是公司披露的数字。
+
+<Catalyst label="一句话论点">
+当行业里已经存在一项工业级开源资产（PostgreSQL，约 30 年），把它识别为自己的基底，成本远低于从零造一个——但前提是你必须深度雇这个生态里的人（Postgres 核心 contributor、NGINX 共同创始人、Vitess 共同创作者），「借基底」的框架才能读成能力而不是薄包装。
+</Catalyst>
+
+## 三个叠在一起的模式
+
+第一个模式是 A1（基底即延迟）的一个新子类型：**借来的基底**。案例库里大多数 A1 案例都是创始人花 5–8 年造自己的基底再回本。Vercel 花 8 年造 Next.js。Hugging Face 花 7 年造 Transformers。PostHog 在开始写代码 4 周后就开源了产品分析 MVP，然后靠 handbook 物件复利 6 年。Supabase 都没做这些——他们识别了 Postgres（已经 30 年，在行星规模下被信任过），把它当成自己的基底，在上面建开发者体验层。
+
+第二个模式是 E1（危机即 GTM）的一个新子类型：**主动节奏**。PostHog 跑主动透明 E1——6 年公开 handbook、薪酬、OKR、跑道。ElevenLabs 跑反应式 E1——语音滥用事件后 24–72 小时内 ship 事后剖析。Anthropic 跑主动安全 E1——Constitutional AI 论文在任何具体公开事件之前 ship。Supabase 引入第四个子类型：Launch Week 作为可见产品证据的季度节奏，截至 2025 年 7 月持续了 15 个周期。信任机制和其他三个一样——12 个月「显得更透明」项目无法复制的持续运营纪律——但表面是*产品产出*，而不是内部公司状态或安全研究。
+
+第三个模式是案例库里最干净的一次 D1（技术叙事升级）时机决定。Supabase 2023 年初 ship pgvector——比开发者群体对 LLM 应用 stack 的大众认知早约 6 个月。到 C 轮（2024 年 9 月），Copplestone 能披露 <Stat value="约 10%" label="活跃数据库是 AI workload（2024 年 9 月）" />。Accel 2025 年 11 月 E 轮论文标题——「Supabase's Series E: An Era-Defining Database」——抓住了最终成型的叙事。
+
+## Postgres 押注——什么让它可能
+
+Copplestone 上一家公司 Nimbus for Work 把 Firebase 用到了规模天花板。Firebase 的痛点（实时 WebSocket 痛、贵的数据 egress、需要 JOIN 查询时被迫的 NoSQL 重构）不是研究出来的——是亲身经历的。这是不可转移的结构性优势；一个没有亲手撞上数据库规模天花板的创始人没法制造出"识别 Postgres 作为基底"所需的信念。
+
+技术押注建立在一个判断上：**不要发明新的存储引擎；包一个已经经过 30 年运营硬化的**。1986 年 Postgres 还是 Berkeley 研究项目。到 2020 年它已经经过 Google Spanner 压力、MongoDB 热潮、DynamoDB 锁定、整波 NoSQL 浪潮的来去。每个主要云厂商都已经跑托管 Postgres。问题不是 Postgres 是否工作——是 Postgres 之上的开发者体验能不能做得比 Firebase 在 Bigtable 之上的开发者体验*更好*。
+
+一位 Sequoia 投资人——曾在 YC 申请审查里亲眼看过 Facebook 收购的 Parse 在自己的抽象层下崩塌——告诉 Copplestone 一句话，后来成了 Supabase 的工程原则：**没有魔法，没有你看不穿的抽象**。任何开发者无法穿透的抽象都会变成未来的监狱。这条原则约束了产品表面。每个 Supabase 功能都是 Postgres 扩展、Postgres 伴生服务（Auth 经 GoTrue、Realtime 经 Elixir/Phoenix Channels 跑在 Postgres 逻辑复制之上）、或托管运行时层（Edge Functions 在 Deno）。开发者可以把 Supabase 拆掉，保留原始 Postgres 数据库——每一行、每一索引、每一 schema。
+
+这种「可拔出性」在 Supabase 被融资那天看起来像弱点。在 2024–2025，它变成了反向锁定。AI 编码工具（Bolt、Lovable、v0、Cursor、Claude Code）默认把用户接到 Supabase 上，正是因为锁定恐惧被最小化。**「我们用 Supabase 因为它最容易离开」**——这是一个只有借基底公司才能跑的销售论据。
+
+## Launch HN 和缓慢的起步
+
+Supabase 的第一个版本 2020 年 5 月底通过一位用户的帖子「Supabase (YC S20) – An open source Firebase alternative」上了 Hacker News。HN mod `dang` 看到帖子冲首页之后，把它升级为官方 Launch HN。最终 upvote 数：<Stat value="1,120+" label="2020 年 5 月底 Launch HN upvotes" />，当时 HN 历史上第二高赞的 Launch HN。同日 Product Hunt：当日第 3 名，818 票。流量峰值打爆 DigitalOcean 账户额度，几小时内被迫紧急迁移到 AWS。
+
+标题——「an open source Firebase alternative」——本身就是 demo grammar。任何被 Firebase 价格或 NoSQL 重构烫到过的开发者都能从一句话里推出 Supabase 产品的全部承诺。这是语义级 B1（格式即可信度），不是视觉级。案例库里大多数 B1 案例都是视觉格式约束——Manus 90 秒录屏、ElevenLabs 的 `[excited]` 音频标签、Cursor 的与 Copilot 头对头对比 demo。Supabase 的变体把 demo 压缩成一句话，用户还没试产品就能看到。最近的类比是 ElevenLabs 的音频标签 B1——也是一句话语义——但 Supabase 的版本不需要用户先与产品交互。
+
+但标题没有产生立即牵引。到 2020 年 4 月，Supabase 只托管 **8 个数据库**。到 2020 年 12 月 Beta 退出，这个数字长到约 3,100。HN 峰值产生了可见度；基底花了几个月才开始复利。
+
+种子轮 2020 年 10 月 9 日 close，12 月 15 日宣布：600 万美元由 Coatue 领投，Y Combinator、Mozilla 和约 20 名天使跟投。领投人本身就是信号。Caryn Marooney（Coatue partner，前 Facebook VP 全球传播）是营销/传播 VC，不是典型开发者工具 VC。Coatue 的押注不是「这个产品有多少 GitHub stars」——是「这个团队会成为下一代开发者基础设施品牌」。这个框架埋下了之后五年叙事飞轮的种子。
+
+## Launch Week——格式发明
+
+2021 年 3 月，Demo Day 六个月后，两位创始人跑了第一次 Launch Week。这个格式是个人回应，不是营销团队发明。Y Combinator 给了 Copplestone 和 Wilson 一个每周节奏——每个周二必须向 batch ship 出可见的东西。Demo Day 之后，节奏没了。后 YC 戒断产生了一个有意的运营决定：**让 YC 那一周永远持续下去**。每季度，连续 5 天，每天 ship 一个重要功能。
+
+格式细节很重要：
+
+- **跨平台同步爆破。** 每天的发布同步打到 Hacker News、Product Hunt、X、邮件、Discord。这一周对任何在开发者工具注意力池里的人都无处可逃。
+- **工程师即营销人员。** ship 这个功能的工程师写发布文案。内容自带技术深度，没有营销噪音。
+- **「我们很少把功能压到 Launch Week 才发布」。** 准备好的功能通过每月 Beta Update 出去。Launch Week 是漏斗顶集中周，不是发布周。这防止了节奏腐蚀 ship 纪律。
+- **季度，不是月度。** 三个月的工作压进五天产生足够密度成为新闻周期。月度会产生灌水发布。
+
+到 2024 年，launchweek.dev 统计 <Stat value="126 次" label="2024 年 94 家开发者工具公司的 Launch Week（launchweek.dev）" />。三年内格式接管了开发者工具营销。
+
+对 Supabase 自己的结构性影响是复利的。从 A 轮（2021 年 9 月）到 B 轮（2022 年 8 月），开发者从 4 万长到 11 万，数据库从 5 万长到 15 万，GitHub stars 从 1.9 万长到 3.6 万。斜率不是「自然产品增长」——是*产品+Launch Week 复合增长*。
+
+这是 playbook 里 E1（危机即 GTM）的第四个子模式。信任机制和 PostHog handbook、Anthropic Constitutional AI 论文一样——12 个月复制无法复制的持续运营纪律。表面不同：产品产出而不是内部公司状态。E1 子类型里对没有研究实验室的产品驱动公司最可复制的版本。
+
+## pgvector 窗口
+
+2023 年初，Supabase ship 了 pgvector 和 AI Toolkit。pgvector 作为 Postgres 扩展从 2021 年起就存在。没有其他主要托管 Postgres 服务把它产品化。Supabase 是第一个 ship 一个完整 AI 应用 backend 的——pgvector 用于 embedding、Edge Functions 里的 embedding 生成、Python client、和 OpenAI / Hugging Face / LangChain 集成捆成 Supabase Vector。
+
+时机承重。ChatGPT 2022 年 11 月 30 日上线。整个 Q1 2023，LLM 应用 stack 还在以散乱形式被组装——Pinecone 装向量，Postgres 装关系数据，单独的 auth、单独的 storage。「你需要一个向量数据库」的大众开发者认知在 2023 年中到晚段随 LangChain 爆发到来。**Supabase ship pgvector 比大众认知浪潮早约 6 个月。**
+
+2023 年 5 月，Stan Girard 在一个下午 ship 了 Quivr——chat-with-documents「第二大脑」。他在 Pinecone、Chroma、Weaviate、Faiss 之间选了 Supabase Vector，因为 vector embedding 和关系数据放在一个基底上比拼 5 个 vendor 更省事。随后的爆款推文成了第一个被广泛传播的生产级 pgvector 案例。
+
+到 2024 年 9 月 C 轮，Copplestone 能披露约 10% 的活跃数据库是 AI workload、最新 YC batch 的 40% 在用 Supabase、GitHub Next / Meta / Netflix / Microsoft 开发者在使用。这是案例库里最干净的一次单决策时机 D1（技术叙事升级）。2026 年的创始人无法复制——AI 向量窗口已关闭，pgvector 现在已经烤进每个托管 Postgres 服务里。
+
+## Vibe-coding 分发层
+
+整个 2024 年，Bolt.new 和 Lovable 都把 Supabase 选为默认 backend。v0（Vercel）的 AI 生成应用流程里加入 Supabase 作为默认数据库 prompt。Cursor 和 Claude Code 集成跟进。这些平台生成的每个 AI 应用都默认带一个 Supabase 数据库。
+
+四个属性解释了默认地位的结果：
+
+1. **基于 Postgres。** LLM 训练数据由 SQL 主导。AI 模型生成 SQL 比生成 NoSQL 命令更可靠。Supabase 的基底匹配 AI 生成表面。
+2. **Row Level Security (RLS)。** 一句 AI prompt 能生成生产级权限模型。Firebase 和其他竞品需要手写安全规则，AI 模型生成这些规则的可靠度较低。
+3. **一个 SDK 里六个产品。** Auth、Storage、Realtime、Edge Functions、Database、Vector 都在一个 client 库里。AI agent 不需要拼接五个 vendor。
+4. **可拔出性。** Postgres 导出安全阀把锁定恐惧最小化。AI 编码工具可以推 Supabase 而不把用户永久锁定。
+
+用户注册增速开始每 3 个月翻一倍。Supabase 为整个 AI 应用分发层付出的获客成本是零。
+
+D 轮 2025 年 4 月 22 日落地：2 亿美元由 Accel 领投，post-money 20 亿。叙事钩子是 **Wānaka 门口故事**——Accel 的 Gonzalo Mocorrea 不打招呼出现在 Copplestone 新西兰家门口；Arun Mathew 跨 24 小时飞行跟来。Supabase 当时没在融资。天使包括 Kevin Weil（OpenAI CPO）、Guillermo Rauch（Vercel CEO）、Taylor Otwell（Laravel）。指标：200 万开发者、350 万数据库。这个故事被设计成可以作为独立叙事被报道；Fortune 的「独家」框架承载了这一轮。
+
+E 轮六个月后落地，2025 年 10 月 3 日：1 亿 / 50 亿 pre-money，Accel + Peak XV 共同领投。捆绑到达最大密度。**一个新闻周期里 8 个可独立引用的故事**：1 亿新主轮资本、50 亿估值（6 个月 2.5 倍）、Accel/Peak XV 共同领投、Figma 是唯一新进机构、所有既有投资人都回（YC、Coatue、Felicis、Craft、Square Peg）、Sugu Sougoumarane（Vitess 共同创作者）入职主导 Multigres（Vitess-for-Postgres）企业级扩展、100 万美元社区共投轮计划、每轮 25% 员工 secondary 继续。每个点都被结构性设计成可单独引用。
+
+## D1 叙事升级阶梯
+
+Supabase 的 D1 轨迹比 Vercel 还密。五年里五次可读的叙事重构，每次都有具体产品事件支撑：
+
+| 年份 | 叙事重构 | 锚定它的产品事件 |
+|---|---|---|
+| 2020 | 开源 Firebase 替代品（BaaS） | Launch HN + Auth ship |
+| 2022 | 基于 Postgres 的开发者平台 | 六产品 GA（Database / Auth / Storage / Edge Functions / Realtime / Vector 基础） |
+| 2023 | 带 pgvector 的 AI backend | pgvector + AI Toolkit ship + Quivr 病毒案例 |
+| 2024 | Vibe-coding 默认 stack | Bolt + Lovable + v0 + Cursor + Claude Code 集成 |
+| 2025 | 时代级数据库 / 企业级扩展 | Multigres 公告 + Sugu Sougoumarane 入职 + Accel「时代级数据库」论文 |
+
+重构不是 PowerPoint 主张。每个都被一个记者可验证的产品事件 ground。这是运营级 D1 区别于营销级 D1 的地方——每次叙事跳跃后面都有可 ship 的证据。Wrapper 公司（产品主要是模型 API 加薄胶水的公司）跑不了这一招；他们没有产品表面锚定下一次重构。
+
+Accel 2025 年 10 月 E 轮论文标题——「Supabase's Series E: An Era-Defining Database」——抓住了第五次也是最终一次重构。Coatue 的 Caryn Marooney 把这个押注框架为「成为所有人的 backend，从初创到要求严苛的企业 workload」。当年用「开发者基础设施品牌」定价 2020 种子轮的同一位投资人，用「时代级数据库」定价 2025 E 轮。叙事弧线和公司实际成熟度同步。
+
+## 创始人即 IP，工程师调性
+
+Paul Copplestone 跑 episodic E2（创始人即 IP）——更接近 Cursor 而不是 Vercel。四年里约 10 次长访谈：Accel「Spotlight On」（与 Arun Mathew 和 Gonzalo Mocorrea，D 轮之后）、TechCrunch Equity、Felicis 创始人访谈、Changelog #599、Scaling DevTools、Evil Martians Dev Propulsion Labs、PodRocket。在 `@kiwicopple` 上活跃但非日常 X 在场。Ant Wilson（`@antwilson`）是更安静的技术腿。
+
+纪律是让每次出现承重在一个不同的策略决定上。每个播客打中一个具体决定：
+
+- 为什么 Supabase 拒绝大型企业合同以保护产品愿景（TechCrunch Equity）
+- 为什么数据库迁移在规模上不 work，因此 Supabase 瞄准绿地 workload（Dev Propulsion Labs）
+- 从 Day 0 起的全球远程优先招聘纪律（Accel Spotlight On）
+- Supabase 名字来自 Nicki Minaj 歌曲（Accel Spotlight On）
+- 为什么工程原则是「没有魔法，没有你看不穿的抽象」（Felicis）
+
+在 10 个播客里重复同样段子会产生墙纸。每次出现承载不同决定让创始人即 IP 表面持续产出。
+
+## 公开记录里没有的
+
+Supabase 比案例库里大多数增长阶段开发者工具公司公开得更多，但几个承重数字是不透明的：
+
+- **ARR 未官方披露。** 本文引用的所有营收数字（Sacra 估算 2024 年底约 3000 万、2025 年 8/9 月约 7000 万）都是分析师三角推算。taptwicedigital 给出的 2024 年 1680 万、2025 年 2700 万这组更低估算与 Sacra 显著冲突——很可能是仅算 paid Cloud 对比含企业全口径。实际 ARR 最有可能落在 5000–8000 万美元区间，但公司自己没确认。
+- **毛利率未披露。** 50 亿估值 / 约 7000 万 ARR = 约 71 倍倍数。这个倍数需要 60%+ 毛利率才可辩护。Postgres 计算、跨区域复制、pgvector embedding 生成、Edge Functions 运行时成本在「占营收百分比」层面都不可见。
+- **NDR 和 churn 未披露。** 对一家增长越来越依赖 AI 编码工具生成一次性应用的公司，NDR 是最具诊断性的数字——而它不在公开记录里。
+- **C 轮估值由公司主动不披露。** PitchBook 后估算约 7.65 亿 post-money。Copplestone 明确告诉 TechCrunch 不披露。
+- **Vibe-coding 留存未知。** Bolt / Lovable / v0 生成的应用 6 个月后还有多少在活跃？如果 vibe 编码应用的长尾留存差，Supabase 的 ARR 增长可能在队列效应过去后急速放缓。
+- **Bolt Cloud / Lovable Cloud 脱媒风险。** Sacra 2025 年 8 月标记：Bolt Cloud 和 Lovable Cloud 让 vibe-coding 平台直接把 backend 商业化。如果下一代 vibe-coding 工具默认自家 backend，Supabase 的免费分发层蒸发。Multigres 和企业级 pivot 部分对冲这个风险。
+- **据报道的 100 亿估值轮未关闭。** The Information 2026 年 4 月关于 GIC 领投约 5 亿 / 约 100 亿估值谈判的爆料只是媒体置信度。截至 2026 年 6 月，深度讨论而非已关闭。在公告前保持怀疑。
+
+Supabase 的透明度表面是真的——Launch Week 节奏、每轮博客带披露指标、策略决策密度的创始人播客。但不是绝对的。已披露的产品节奏和已披露的单位经济之间存在很宽的差距，从 50 亿到 100 亿的多头逻辑依赖于尚未上记录的数字。
+
+<Conclusion title="什么是 Supabase 特有的">
+
+六个前提条件让 playbook 对大多数团队不可得：
+
+- **Copplestone 上一家公司把 Firebase 用到了规模天花板。** Firebase 痛点是亲身经历的，不是研究的。一个没有亲手撞上数据库规模天花板的创始人没法制造出"识别 Postgres 作为基底"所需的信念。
+- **2020 年 Postgres 复兴窗口正开着。** 云原生让 Postgres 历史上痛苦的运维问题可商业化。早 5 年 Postgres 还太难自己跑；晚 5 年 Neon、PlanetScale、Crunchy Bridge、Aiven 已经把空间挤满。Supabase 卡在 3–4 年窗口里。
+- **YC S20 是 COVID 强制下的第一个全远程 batch。** Copplestone 在新加坡，Wilson 在伦敦。如果 S20 是 in-person，创始组合可能根本不会形成。一次性宏观顺风，2026 年的创始人没法工程化。
+- **2023 年初 ship pgvector 是不可重复的时机。** Postgres 扩展已经存在；便宜的洞察是把它包成 Supabase Vector，比大众开发者认知早约 6 个月。2026 年的创始人无法复制——AI 向量窗口已关闭。
+- **Build-in-public 纪律是创始人 DNA，不是外挂文化。** Copplestone 在新西兰农场长大的背景加上工程品位都集中在创始人身上。Launch Week 是创始人对失去 YC ship 快感的个人回应。大多数复制 Launch Week 但不复制创始人纪律的公司产生 PR 化透明度——这比无透明度更坏的信号。
+- **借基底打法需要深度的 contributor 在场才能落地。** Supabase 雇了 Postgres 核心 contributor、NGINX 共同创始人、Vitess 共同创作者。没有那种招聘纪律，「开源 Firebase 替代品」读起来像薄包装，信任梯度崩塌。
+
+如果你有这六条，借基底 A1 + Launch Week E1 + pgvector 风格 D1 这套叠加可以工作。如果没有，playbook 仍然教你该往哪建——但入场票不一般。
+
+</Conclusion>
+
+## Sources
+
+- [Supabase blog — Series A 公告（2021 年 9 月）](https://supabase.com/blog/supabase-series-a)
+- [Supabase blog — Series B 公告（2022 年 8 月）](https://supabase.com/blog/supabase-series-b)
+- [Supabase blog — Series E 公告（2025 年 10 月）](https://supabase.com/blog/supabase-series-e)
+- [Supabase blog — How we launch（Launch Week 格式）](https://supabase.com/blog/supabase-how-we-launch)
+- [Supabase blog — 100,000 GitHub stars（2026 年 4 月）](https://supabase.com/blog/100000-github-stars)
+- [TechCrunch — Supabase 600 万美元开源 Firebase 替代品（2020 年 12 月）](https://techcrunch.com/2020/12/15/supabase-raises-6m-for-its-open-source-firebase-alternative/)
+- [TechCrunch — Supabase C 轮 8000 万美元（2024 年 9 月）](https://techcrunch.com/2024/09/25/supabase-a-postgres-centric-developer-platform-raises-80m-series-c/)
+- [Fortune — Supabase D 轮 2 亿 / 20 亿（2025 年 4 月）](https://fortune.com/2025/04/22/exclusive-supabase-raises-200-million-series-d-at-2-billion-valuation/)
+- [Fortune — Supabase E 轮 1 亿 / 50 亿（2025 年 10 月）](https://fortune.com/2025/10/03/exclusive-supabase-raises-100-million-at-5-billion-valuation-as-vibe-coding-soars/)
+- [The Information — Supabase 谈判估值翻倍到 100 亿（2026 年 4 月）](https://www.theinformation.com/articles/database-startup-supabase-talks-double-valuation-10-billion)
+- [Sacra — Supabase 7000 万 ARR，同比增长 250%](https://sacra.com/research/supabase-at-70m-arr-growing-250-yoy/)
+- [Accel — Supabase 的 E 轮：时代级数据库](https://www.accel.com/noteworthies/supabases-series-e-an-era-defining-database)
+- [Stacksync — 一个词改变了一切（起源故事）](https://www.stacksync.com/blog/one-word-changed-everything-the-origin-story-of-supabase)
+- [launchweek.dev — Launch Week 追踪器（2024 年 94 家公司、126 次发布）](https://launchweek.dev)
+- [Supabase 客户故事 — Quivr / Stan Girard](https://supabase.com/customers/quivr)

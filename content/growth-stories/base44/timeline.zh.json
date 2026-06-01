@@ -1,0 +1,325 @@
+{
+  "company": {
+    "slug": "base44",
+    "name": "Base44",
+    "legalName": "Base44 Ltd.",
+    "tagline": "单创始人、零外部资本、180 天 $80M 现金退出——也是案例库里第一个干净的「在 wrapper 窗口关闭前主动峰值退出」案例",
+    "summary": "Base44 是案例库里最干净的「单创始人 + 零资本 + 6 个月卖给战略买家」案例。以色列创始人 Maor Shlomo——前 Explorium CEO（任职 7 年、累计融资 1.25 亿美元）、Unit 8200 退役、Forbes 30 Under 30——大约在 2024 年 12 月 15 日开始写代码，当时他还在泰国和女友 Yuval Dahan 旅行。2025 年 1 月中旬公开发布，三周后冲到 1 万用户、$1M ARR，首月营收 $1.5M，付费层 $20–$200/月。Andrej Karpathy 在 2025 年 2 月 6 日造出「vibe coding」这个词——和 Base44 同月——给整个品类送了一个无法人为制造的命名顺风。到 2025 年 5 月底，Base44 用户约 25 万、MRR $200K、月利润 $189K，全部在 X 和 LinkedIn 上公开披露，配合「拒掉以色列每一家 VC」的叙事。Wix 总裁 Nir Zohar 把 Maor 介绍到 Wix CEO Avishai Abrahami 家——5 月里在 Abrahami 家吃了三顿 Wagyu 牛排晚餐，谈出了一笔 $80M 现金收购，2025 年 6 月 13 日（以色列对伊朗战争开始当天）签约，6 月 18 日宣布。Maor 退出时持股 100%；8 名员工以 $25M 现金 retention pool 分配（无股权转换）。被 Wix 收购后，Base44 从约 $3.5M ARR 在 11 个月内推到 2026 年 5 月的 $150M ARR——代价是 Wix 砸 $20M Super Bowl 广告 + $90M Q1 2026 CAC。这笔交易双向都成立：Wix CFO 确认 Maor 已经因 Q1 2026 里程碑触发额外 $38M earnout，后续到 2029 还有更多在备付。",
+    "founded": "2024-12-15",
+    "founders": [
+      "Maor Shlomo"
+    ],
+    "seriesNumber": 24
+  },
+  "phases": [
+    {"start": "2024-10", "end": "2025-01", "name": "单干建造期（泰国 → 第一次提交）", "color": "#fef3c7"},
+    {"start": "2025-01", "end": "2025-04", "name": "公开发布 + 引爆窗口", "color": "#fce7f3"},
+    {"start": "2025-04", "end": "2025-06", "name": "盈利 + Wagyu 晚餐谈判", "color": "#dbeafe"},
+    {"start": "2025-06", "end": "2026-06", "name": "Wix 收购 + 收购后放量", "color": "#dcfce7"}
+  ],
+  "events": [
+    {
+      "date": "2017-01-01",
+      "title": "Maor 联创 Explorium（创始人 substrate 起点）",
+      "type": "product",
+      "description": "24 岁的 Maor Shlomo 与 Or Tamir、Omer Har 联创 Explorium（B2B 数据分析）。公司后来累计融资约 1.25–1.3 亿美元，Insight Partners 领投，团队扩到约 100 人。Maor 担任 CEO 七年，入选 Forbes 30 Under 30。这 7 年是 Base44 之后能压缩潜伏期到 3 个月的底层创始人声誉资本。",
+      "externalUrl": "https://techcrunch.com/2025/06/18/6-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash/"
+    },
+    {
+      "date": "2023-10-07",
+      "title": "以色列-哈马斯战争 + Unit 8200 服役",
+      "type": "media",
+      "description": "以色列-哈马斯战争开始。Maor 被征召回 Unit 8200 长期服役，并从 Explorium CEO 岗位退下。服役期间他帮一家非营利做技术工具，亲眼看到一家 IT agency 对一个简单内部 dashboard 报价 6 周 + $40K。这是 Base44 的种子。",
+      "externalUrl": "https://www.calcalistech.com/ctechnews/article/y0kdgmw7a"
+    },
+    {
+      "date": "2024-10-27",
+      "title": "「Going to build @base44 in public」（X）",
+      "type": "media",
+      "gtmTag": "创始人即 IP",
+      "description": "Maor（@MS_BASE44）在 X 上公开承诺要把 Base44 完全公开建造——在写第一行代码之前。这条 pre-commit 把他绑死在 build-in-public 格式上，是「创始人即持续 demo」叙事的开场动作。",
+      "externalUrl": "https://x.com/ms_base44"
+    },
+    {
+      "date": "2024-11-15",
+      "title": "泰国旅行 + WordPress 受挫",
+      "type": "product",
+      "description": "和女友 Yuval Dahan 在泰国旅行期间，Maor 试图用 WordPress 给她未来的纹身店搭一个简单网站，几天下来没搞定，决定自己写一个 AI 驱动的方案——而不是回 Explorium。这是真正的产品起点。",
+      "externalUrl": "https://www.calcalistech.com/ctechnews/article/y0kdgmw7a"
+    },
+    {
+      "date": "2024-12-15",
+      "title": "第一次代码提交——单干，自掏 $15K",
+      "type": "product",
+      "description": "Maor 打开电脑开始写 Base44 的代码，单干，还在东南亚旅行。技术栈：Cursor IDE + Anthropic Claude（via AWS Bedrock）+ MongoDB + Cloudflare + Render。自掏 $10–20K 个人资金，绝大部分是 LLM token 花费。",
+      "externalUrl": "https://www.lennysnewsletter.com/p/the-base44-bootstrapped-startup-success-story-maor-shlomo",
+      "articleSlug": "2024-12-solo-build-begins"
+    },
+    {
+      "date": "2025-01-15",
+      "title": "公开发布 Base44 v1",
+      "type": "product",
+      "gtmTag": "结构性差异化",
+      "description": "Base44 v1 公开上线。定位毫不妥协：用一句自然语言 prompt，直接拿到一个全栈应用（前端 + 后端 + 数据库 + 鉴权 + 部署），不需要任何第三方集成。一句话切入、对位多工具栈的标准做法。LinkedIn 和 X 同步配短 demo clip。",
+      "externalUrl": "https://startupmap.iamsterdam.com/news/note/how-base44-went-from-side-project-to-80m-acquisition-in-6-months-1",
+      "articleSlug": "2025-01-public-launch"
+    },
+    {
+      "date": "2025-02-06",
+      "title": "Karpathy 造出「vibe coding」",
+      "type": "media",
+      "gtmTag": "搭 KOL 顺风车",
+      "description": "Andrej Karpathy 发推介绍「vibe coding」这个词，描述用自然语言写软件。Base44——上线刚三周、正在涨——天然嵌入新的品类叙事。第一个月就吃到的品类命名顺风是唯一一项创始人无法人为制造的运气。",
+      "externalUrl": "https://www.inc.com/ben-sherry/vibe-coding-base44-wix-avishai-abrahami-maor-shlomo/91267959"
+    },
+    {
+      "date": "2025-02-10",
+      "title": "三周内破 1 万用户",
+      "type": "product",
+      "description": "Base44 在公开发布三周内突破 1 万用户。获客全部来自口口相传 + 日更的 X / LinkedIn demo 短片。零付费营销。",
+      "externalUrl": "https://techcrunch.com/2025/06/18/6-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash/"
+    },
+    {
+      "date": "2025-02-12",
+      "title": "发布三周后冲到 $1M ARR",
+      "type": "media",
+      "gtmTag": "捆绑里程碑",
+      "description": "Maor 公开发文：Base44 发布三周后已经做到 $1M ARR。$20–$200/月的付费层确认在案。首月营收约 $1.5M。引爆窗口里的定价信号一条新闻周期就杀掉了「这是个玩具」的所有质疑。",
+      "externalUrl": "https://www.lennysnewsletter.com/p/the-base44-bootstrapped-startup-success-story-maor-shlomo",
+      "articleSlug": "2025-02-1m-arr-three-weeks"
+    },
+    {
+      "date": "2025-02-20",
+      "title": "Base44 自己 90% 的代码由 Claude 写",
+      "type": "product",
+      "description": "Maor 公开宣布他已经不再手写前端代码——Base44 90% 以上的新代码由 Claude 4 在 Cursor 里写。「我做了一个会写软件的软件」成了 build-in-public 阶段最 viral 的金句，整个 6 个月里被引用最多的单句话。",
+      "externalUrl": "https://www.calcalistech.com/ctechnews/article/y0kdgmw7a"
+    },
+    {
+      "date": "2025-03-01",
+      "title": "2 万用户 + 早期盈利",
+      "type": "product",
+      "description": "用户数到约 2 万。在 LLM token 成本居高不下的前提下，Base44 进入运营盈利——这在该阶段的 AI 工具创业里非常罕见，也是 5 月「拒 VC」叙事得以成立的财务基础。",
+      "externalUrl": "https://startupmap.iamsterdam.com/news/note/how-base44-went-from-side-project-to-80m-acquisition-in-6-months-1"
+    },
+    {
+      "date": "2025-03-15",
+      "title": "「为什么用 Claude 不用 OpenAI」LinkedIn → AWS Tel Aviv 邀请",
+      "type": "media",
+      "gtmTag": "搭 KOL 顺风车",
+      "description": "Maor 在 LinkedIn 发了一篇解释为什么用 Anthropic Claude（via AWS Bedrock）而不用 OpenAI 的 cost-per-performance 分析。这篇文章让 AWS 注意到——亚马逊反向邀请 Base44 5 月去 Tel Aviv 做 demo。单创始人反向 BD：把你的运营判断公开，让生态伙伴自己来找你。",
+      "externalUrl": "https://techcrunch.com/2025/06/18/6-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash/",
+      "articleSlug": "2025-03-claude-over-openai-aws"
+    },
+    {
+      "date": "2025-04-01",
+      "title": "VC inbound 高峰——全部公开拒掉",
+      "type": "media",
+      "gtmTag": "创始人即 IP",
+      "description": "Maor 公开披露：以色列基本上没有一家 VC 没找过他。他点名拒了 Oren Zeev 等 inbound 邀约，关掉了大部分见面。「拒掉以色列每一家 VC 并公开发文」把 bootstrap 从被动姿态翻转成主动姿态。",
+      "externalUrl": "https://www.calcalistech.com/ctechnews/article/y0kdgmw7a"
+    },
+    {
+      "date": "2025-04-15",
+      "title": "首批雇佣（1 → 5–6 人）",
+      "type": "product",
+      "description": "Maor 直到 MRR 突破约 $200K 才开始招第一批员工。4–5 月之间团队从 1 人扩到 5–6 人。这种刻意推迟的招聘策略——配合现金薪酬而非股权——是他退出时几乎 100% 个人持股、净拿到约 $55M 现金的结构性原因。",
+      "externalUrl": "https://startupmap.iamsterdam.com/news/note/how-base44-went-from-side-project-to-80m-acquisition-in-6-months-1"
+    },
+    {
+      "date": "2025-05-01",
+      "title": "AWS Tel Aviv demo",
+      "type": "media",
+      "description": "Maor 在 Tel Aviv 一场 AWS 活动上 demo Base44，承接 3 月那篇 Claude/AWS LinkedIn post 的反向邀约。生态背书第一次落到公开舞台，Base44 第一次带上 Anthropic/AWS 技术栈的联合署名。",
+      "externalUrl": "https://techcrunch.com/2025/06/18/6-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash/"
+    },
+    {
+      "date": "2025-05-05",
+      "title": "eToro + SimilarWeb 落地 B2B 合作",
+      "type": "product",
+      "gtmTag": "受众边界外推",
+      "description": "Base44 与以色列科技领头羊 eToro 和 SimilarWeb 签下 B2B 合作——证明这不是消费玩具，并为 6 周后 Wix 收购新闻稿提前备好企业叙事。",
+      "externalUrl": "https://www.wix.com/press-room/home/post/wix-further-expands-into-vibe-coding-with-acquisition-of-base44-a-hyper-growth-startup-that-simplif"
+    },
+    {
+      "date": "2025-05-10",
+      "title": "Avishai Abrahami 家里的三顿 Wagyu 晚餐",
+      "type": "media",
+      "description": "5 月里 Maor 三次在 Wix CEO Avishai Abrahami 家见面。中间人是 Wix 总裁 Nir Zohar——Maor 是在咨询 Wix 怎么把 B2C 营销做到那个规模时被介绍过去的。第一次：Avishai 在后院亲自烤 Wagyu 牛排。之后几次：逐项 walk through「继续 bootstrap / 融资 / 卖」三种场景。",
+      "externalUrl": "https://www.inc.com/ben-sherry/vibe-coding-base44-wix-avishai-abrahami-maor-shlomo/91267959",
+      "articleSlug": "2025-05-wagyu-dinners-abrahami"
+    },
+    {
+      "date": "2025-05-31",
+      "title": "约 25 万用户 + $200K MRR + 5 月利润 $189K",
+      "type": "media",
+      "gtmTag": "创始人即 IP",
+      "description": "2025 年 5 月底：约 25 万用户，5 月单月利润 $189K（Maor 公开披露，尽管 LLM 成本很重），MRR 约 $200K，运行 ARR 约 $2.4–3.5M。利润数字和拒 VC 叙事同一周登上 X 和 LinkedIn——把 Linear 式 default-alive 浓缩成一个季度。",
+      "externalUrl": "https://www.saastr.com/wix-the-unexpected-new-threat-to-replit-and-lovable-a-deep-dive-into-how-its-vibe-coding-app-is-now-growing-just-as-fast-or-close-to-it/"
+    },
+    {
+      "date": "2025-06-13",
+      "title": "协议签字（伊朗战争当天）",
+      "type": "acquisition",
+      "description": "6 月 12 日周四晚律师完成 Wix 收购协议；6 月 13 日周五签字——和以色列对伊朗战争开始同一天。签字过程中夹着导弹警报。签字日 Base44 有约 35 万用户、$200K/月营收（按 Maor 在 Calcalist 的访谈口径）。",
+      "externalUrl": "https://www.calcalistech.com/ctechnews/article/s1iflnlelx"
+    },
+    {
+      "date": "2025-06-18",
+      "title": "Wix 宣布 $80M 收购 Base44",
+      "type": "acquisition",
+      "gtmTag": "主动峰值退出",
+      "description": "Wix 公开宣布收购：$80M 现金首付 + 到 2029 年的 earn-out（绑定收入里程碑）+ 2025 年内 $25M 用作员工薪酬与股权激励支出。Maor 退出时持股 100%；8 名员工分掉 $25M retention pool，没有股权转换。这笔交易是案例库里第一个干净的「主动峰值退出」案例——C 阶段执行到位、D1 叙事升维主动跳过、在 wrapper 窗口关闭前卖给战略买家。",
+      "externalUrl": "https://www.wix.com/press-room/home/post/wix-further-expands-into-vibe-coding-with-acquisition-of-base44-a-hyper-growth-startup-that-simplif",
+      "articleSlug": "2025-06-wix-acquisition-80m"
+    },
+    {
+      "date": "2025-08-15",
+      "title": "Wix 旗下每月新增 $12M ARR",
+      "type": "media",
+      "description": "SaaStr 报道：Base44 在 Wix 整合后每月新增 $12M ARR——大约 $400K/天，每 2.5 天加 $100 万，「周环比还在加速」。隐含 8 月中旬运行 ARR 约 $144M。post-acquisition 曲线已经从根本上证明这是一笔战略买入，不是 acqui-hire 退路。",
+      "externalUrl": "https://www.saastr.com/wix-the-unexpected-new-threat-to-replit-and-lovable-a-deep-dive-into-how-its-vibe-coding-app-is-now-growing-just-as-fast-or-close-to-it/"
+    },
+    {
+      "date": "2025-09-22",
+      "title": "Abrahami：Base44 流量涨 950%",
+      "type": "media",
+      "description": "Wix CEO Avishai Abrahami 发推：Base44 流量按 SimilarWeb 涨 950% 以上——post-acquisition 分发逻辑的第一次公开背书，也是 Q4 2025 整个叙事链的起点。",
+      "externalUrl": "https://x.com/Avishai_ab/status/1969447965094744274"
+    },
+    {
+      "date": "2026-02-09",
+      "title": "2026 Super Bowl 广告（$20M）",
+      "type": "media",
+      "gtmTag": "技术叙事升维",
+      "description": "Wix 在 Super Bowl LX 上投入 $20M 广告费——Wix 和 Base44 各一支独立 commercial。这是 Base44 品牌第一次大众市场曝光，也明确告诉市场：Wix 把 Base44 当作主 AI 增长引擎，而不是边角收购。",
+      "externalUrl": "https://www.calcalistech.com/ctechnews/article/j7bfdhkor"
+    },
+    {
+      "date": "2026-03-15",
+      "title": "Base44 突破 $100M ARR（收购后 9 个月）",
+      "type": "product",
+      "description": "Base44 跨过 $100M ARR——距离 Wix 收购关闭整整 9 个月。Wix 的 Q1 2026 叙事全面围绕 Base44 作为核心 AI 增长引擎展开。9 个月从 $0 到 $100M ARR 的速度比 Replit Agent 的 hypergrowth 曲线还快。",
+      "externalUrl": "https://www.calcalistech.com/ctechnews/article/j7bfdhkor"
+    },
+    {
+      "date": "2026-05-13",
+      "title": "Q1 2026 财报：Base44 $150M ARR + Wix 股价跌 27%",
+      "type": "media",
+      "description": "Wix 公布 Q1 2026：Base44 ARR 达到 $150M（2026 年 5 月），但母公司 Wix 净亏 $57M，其中 $90M 是 Q1 拿来获客 Base44 用户的 CAC。Wix 股价当天跌 27%。Calcalist 头条：「Base44 在飙升。那为什么 Wix 在崩盘？」收购后的故事已经比收购本身更大。",
+      "externalUrl": "https://www.calcalistech.com/ctechnews/article/j7bfdhkor",
+      "articleSlug": "2026-05-q1-wix-base44-paradox"
+    },
+    {
+      "date": "2026-05-13",
+      "title": "Maor 拿到 Q1 2026 $38M earnout",
+      "type": "funding",
+      "description": "Q1 2026 的 Base44 里程碑触发 $38M earnout 支付给 Maor Shlomo。Wix CFO Lior Shemesh 确认：还有更多 earnout 资金正在为 2029 年前的后续里程碑预提。Maor 总对价在交易全周期里可能落在 $150–200M 区间。",
+      "externalUrl": "https://www.calcalistech.com/ctechnews/article/sy8shemymg"
+    }
+  ],
+  "arr": [
+    {"date": "2025-02-12", "value": 1000000, "source": "Maor X post + Lenny 访谈", "confidence": "official"},
+    {"date": "2025-02-28", "value": 18000000, "source": "Inc.（Maor 引述：首月营收 $1.5M）", "confidence": "media", "round": "首月营收 × 12"},
+    {"date": "2025-05-31", "value": 2400000, "source": "Calcalist（$200K MRR × 12）", "confidence": "media"},
+    {"date": "2025-06-13", "value": 3500000, "source": "Lenny / SaaStr 估算", "confidence": "estimate"},
+    {"date": "2025-08-15", "value": 144000000, "source": "SaaStr（Wix 整合后每月新增 $12M ARR）", "confidence": "media"},
+    {"date": "2026-03-15", "value": 100000000, "source": "Wix Q1 2026 财报准备", "confidence": "official"},
+    {"date": "2026-05-15", "value": 150000000, "source": "Wix Q1 2026 财报", "confidence": "official"}
+  ],
+  "valuation": [
+    {"date": "2025-06-18", "value": 80000000, "round": "Wix 收购（现金首付）", "source": "Wix 新闻稿", "confidence": "official"},
+    {"date": "2026-05-13", "value": 118000000, "round": "Wix 收购（含 Q1 2026 earnout）", "source": "Calcalist / Wix CFO", "confidence": "official"}
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X（Twitter）",
+      "score": 5,
+      "bestStage": "潜伏期 → hypergrowth（2024–2025 全程）",
+      "effort": "日更，创始人亲自",
+      "role": "「创始人即持续 demo」+ bootstrap 里程碑广播器",
+      "description": "Maor（@MS_BASE44）从 2024 年 10 月 27 日「Going to build @base44 in public」一直到 2025 年 6 月 18 日收购宣布，每天在 X 上发内容。register 非比寻常：每条 clip 都是创始人本人在用 Base44 做东西。不是产品 demo——是「创始人用 Base44 干活」demo。里程碑推文（1 万用户、$1M ARR、$189K 月利润、拒 VC）一条接一条堆出下一个新闻周期。6 个月日更使这个 format 无法被伪造。",
+      "catalyst": "2024 年 10 月 27 日：「Going to build @base44 in public」——在写第一行代码之前发出。这条 pre-commit 把 Maor 绑死在 format 上，是整段叙事的承重结构性选择。",
+      "catalystUrl": "https://x.com/ms_base44",
+      "accountUrl": "https://x.com/ms_base44",
+      "accountLabel": "@MS_BASE44 on X",
+      "whenItWorks": "当创始人每天有真东西可以 demo、产品可以被实时操作。Build-in-public 需要真的有 build——纯叙事性发推是减信用的。",
+      "whenItDoesnt": "没有日更 demo 物料，X 创始人发推会塌成 thought-leadership 内容。没有强声誉 substrate 底层，里程碑推文会被读成炫耀而不是信号。"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 5,
+      "bestStage": "Hypergrowth + 生态反向 BD",
+      "effort": "每周多帖",
+      "role": "更高参与度渠道 + 运营推理公开面",
+      "description": "按 Maor 自己描述（Calcalist、Lenny、Inc. 三方交叉验证），LinkedIn 才是 Base44 真正参与度更高的渠道——超过 X。2025 年 3 月那篇「为什么用 Claude 不用 OpenAI」cost-per-performance 文章是教科书案例：把运营推理公开，AWS 自己反向邀请 Base44 去 Tel Aviv demo，全程没递任何 deck。单创始人零成本生态反向 BD。",
+      "catalyst": "2025 年 3 月 15 日——Claude over OpenAI 那篇 LinkedIn post 触发 AWS 反向邀请。5 月 AWS Tel Aviv demo 接续。模式：把运营推理公开，让生态伙伴自己找你。",
+      "accountUrl": "https://il.linkedin.com/in/maor-shlomo-1088b4144",
+      "accountLabel": "Maor Shlomo on LinkedIn",
+      "whenItWorks": "当你选 stack 背后的运营推理对生态伙伴（云厂商、模型厂商、基础设施厂商）真的有营养。LinkedIn 是这群人聚集的地方。",
+      "whenItDoesnt": "当帖子写成市场稿。生态反向 BD 要求内容看上去像工程决策记录，不是定位文案。"
+    },
+    {
+      "slug": "techcrunch",
+      "name": "TechCrunch / 一线英文媒体",
+      "score": 4,
+      "bestStage": "收购宣布 + Q1 2026 财报周期",
+      "effort": "集中在新闻周期前后",
+      "role": "英文世界标准版的收购公告",
+      "description": "TechCrunch 2025 年 6 月 18 日 Marina Temkin 写的「6-month-old solo-owned vibe-coder Base44 sells to Wix for $80M cash」是英文世界的标准版收购公告，进入 Yahoo Finance、Bloomberg/Reuters wire、Inc. 和 SaaS 分析师圈（SaaStr）。「6 个月大」这个标题词锁定了所有后续二次传播的叙事锚点。",
+      "catalyst": "2025 年 6 月 18 日：TechCrunch 在 Wix 新闻稿出来几小时内发稿。单一标题口径决定了之后所有报道的形状。",
+      "catalystUrl": "https://techcrunch.com/2025/06/18/6-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash/",
+      "accountUrl": "https://techcrunch.com/2025/06/18/6-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash/",
+      "accountLabel": "TechCrunch 公告",
+      "whenItWorks": "当标题口径能压缩成几个高记忆度的形容词（6 个月大、单创始人、$80M 现金），每个修饰词都为下一篇报道继续叠加病毒度。",
+      "whenItDoesnt": "当新闻稿优先讲交易机制而不是人本身的故事。Wix 把标题塑形的权力留给 TechCrunch——所以标题才好用。"
+    },
+    {
+      "slug": "calcalist",
+      "name": "Calcalist / Ctech",
+      "score": 5,
+      "bestStage": "收购前深度访谈 + 收购后 Q1 叙事",
+      "effort": "持续——以色列媒体关系",
+      "role": "最深的一手访谈通道 + Wix 财报深度报道",
+      "description": "Calcalist（Ctech）承载了所有英文媒体都拿不到的 Base44 一手素材：「Holy Grail」Maor 访谈（WordPress 起点、NYC 求婚、母亲癌症治疗、伊朗战争签字日）、Q1 2026「Base44 在飙升，那为什么 Wix 在崩盘？」深度报道、$38M earnout 披露。以色列媒体能拿到美国媒体拿不到的访谈，Wix CFO 跟 Calcalist 也比跟 TechCrunch 说得更松。",
+      "catalyst": "2025 年 6 月 18–19 日——Calcalist 发出 Maor 完整访谈和收购同步落地。35 万用户、$200K/月、三顿 Wagyu 晚餐、伊朗战争时间线全部通过这一次访谈进入标准记录。",
+      "catalystUrl": "https://www.calcalistech.com/ctechnews/article/y0kdgmw7a",
+      "accountUrl": "https://www.calcalistech.com/ctechnews",
+      "accountLabel": "Calcalist Ctech",
+      "whenItWorks": "当创始人愿意接受一次深度访谈、肯讲个人生活细节。Calcalist 的以色列访谈通道生效是因为 Maor 讲希伯来语、住以色列、信任这家媒体。",
+      "whenItDoesnt": "当创始人只愿意接受美国媒体。Calcalist 通道只对愿意做希伯来语报道的以色列创始人有效。"
+    },
+    {
+      "slug": "lennys-podcast",
+      "name": "Lenny's Newsletter / Podcast",
+      "score": 4,
+      "bestStage": "收购后创始人 profile",
+      "effort": "一次标准长访谈",
+      "role": "Bootstrapped 创始人英文世界标准 profile",
+      "description": "Lenny Rachitsky 的访谈/播客 profile 把 Base44 的故事在英文世界的 PM/创始人受众里定型。「发布三周后 $1M ARR」、「90% AI 写代码」、「砍掉一个让激活率三倍的『有用』功能」、Maor 自曝重度 ADHD——所有这些都是通过 Lenny 进入标准记录的。之后所有人都引用的「收购前 $3.5M ARR」估算也源自这里。",
+      "catalyst": "收购后（2025 年中）：Lenny 发出「The Base44 bootstrapped startup success story」。这次访谈成为 PM/创始人英文受众标准的 Base44 长内容。",
+      "catalystUrl": "https://www.lennysnewsletter.com/p/the-base44-bootstrapped-startup-success-story-maor-shlomo",
+      "accountUrl": "https://www.lennysnewsletter.com/p/the-base44-bootstrapped-startup-success-story-maor-shlomo",
+      "accountLabel": "Lenny 的 Base44 profile",
+      "whenItWorks": "当创始人手里有 bootstrapped 纪律性的素材——具体 ARR、利润、人员、拒 VC。Lenny 的受众是要运营颗粒度的 PM 和创始人。",
+      "whenItDoesnt": "当故事依赖定位而不是数字。Lenny 的访谈格式按具体数据下钻——没数据的创始人会被暴露。"
+    },
+    {
+      "slug": "wix-earnings",
+      "name": "Wix 财报会 + Avishai 的 X",
+      "score": 4,
+      "bestStage": "收购后（2025 年 8 月 → 2026 年中）",
+      "effort": "每季度 + 创始人不定时放大",
+      "role": "收购后 ARR 披露面 + 收购方的品牌放大",
+      "description": "Base44 成为 Wix 旗下产品后，标准 ARR 披露面转移到 Wix 财报会。Q1 2026 财报披露 Base44 $150M ARR、$90M Q1 CAC、Maor $38M earnout、$20M Super Bowl 投放拆分。Avishai Abrahami 的 X（@Avishai_ab）放大同样的信号——2025 年 9 月「SimilarWeb 看流量涨 950%」那条推文是 post-acquisition 分发逻辑的第一次公开背书。没有 Wix 的披露节奏，$0 → $150M 的爬升只能私下看到。",
+      "catalyst": "2025 年 8 月 15 日：SaaStr 深度报道（「Replit 和 Lovable 没想到的新威胁」）从 Wix Q2 2025 财报准备里推出 Base44 每月新增 $12M ARR。收购后披露节奏从这里启动。",
+      "catalystUrl": "https://www.saastr.com/wix-the-unexpected-new-threat-to-replit-and-lovable-a-deep-dive-into-how-its-vibe-coding-app-is-now-growing-just-as-fast-or-close-to-it/",
+      "accountUrl": "https://x.com/Avishai_ab",
+      "accountLabel": "@Avishai_ab on X",
+      "whenItWorks": "当收购方自己有上市公司披露义务、且被收购产品在母公司收入叙事里占有意义的份额。Wix 必须披露 Base44 的数字；副产品是收购后曲线被记录在案。",
+      "whenItDoesnt": "当收购方把产品吸收进笼统的「AI」收入线，不做产品级披露。多数战略收购就消失在母公司的捆绑里，不再讲故事。"
+    }
+  ]
+}

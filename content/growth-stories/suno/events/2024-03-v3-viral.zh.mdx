@@ -1,0 +1,114 @@
+---
+title: "V3——让 Suno 病毒扩散的整曲 demo 格式（2024 年 3 月）"
+description: "2024 年 3 月 21 日，Suno V3 把整曲生成变成一个 prompt 的 demo。Karpathy 发了「Return to monkey」。Rolling Stone 的 Mississippi Delta blues 4 天破 36K 播放。格式本身就是发布。"
+date: "2024-03-21"
+type: "product"
+gtmTag: "技术叙事升级"
+eventTitle: "V3 上线——整曲病毒扩散"
+externalUrl: "https://help.suno.com/en/articles/5782721"
+---
+
+<Catalyst>
+大多数 TTS 和音频发布用的是手机上 demo 效果很差的对比格式。V3 用单片段、单 prompt 的整曲 demo 上线——一个 artifact 在 TikTok 和 YouTube 上不需要上下文就能原生扩散，常常都没被标成 AI。格式本身就是发布。
+</Catalyst>
+
+2024 年 3 月 21 日。Suno V3 上线——Suno 第一个为整曲生成设计的模型。免费档解锁。2 分钟变 4 分钟。音质大幅跃升。
+
+一周前，3 月 14 日，Mikey Shulman 上了 Swyx + Alessio 的 Latent Space 播客*「Making Transformers Sing」*。AI engineering 圈层已经被铺垫好。
+
+V3 上线 48 小时内，病毒浪头活了起来。Andrej Karpathy 发布*「Return to monkey」*，他用 V3 生成的曲子。Aravind Srinivas（Perplexity）、Alexandr Wang（Scale AI）、Aaron Levie（Box）各自 share。Rolling Stone 跑了一个 Mississippi Delta blues prompt，4 天里破 36,000 播放。
+
+## 做工作的是格式
+
+V3 的 demo 语法是可能最简单的：一个 prompt 进，一首完整歌曲出。输出是一个独立的音频文件——3-4 分钟，含人声，立即可听。
+
+为什么这个格式比音质提升更重要：
+
+| Demo 格式 | 分享摩擦 | 「新品类」感 |
+|---|---|---|
+| 对比式音频比较 | 高 | 低 |
+| 一个 prompt → 一个带 caveat 的 demo | 中 | 中 |
+| **一个 prompt → 一首含人声完整歌曲** | **低** | **高** |
+
+音频文件在 TikTok、YouTube、Instagram、X 上原生自动播放。大多数观众不需要上下文——歌曲就是体验。2024 年 3-4 月病毒扩散的很多 V3 歌曲根本没被标成 AI。听众先享受了歌曲，几天或几周后才知道是 AI 生成的。
+
+这是 B1（格式即可信度）——和 ElevenLabs 的 `[excited][whispers]` 音频标签语法是同一家族，但 Suno 从第一天就是消费端。这个格式限制了营销造假：当输出是任何人 5 分钟就能复刻的单一音频片段时，假 demo 一对比就露馅。
+
+## KOL 阵容在正确时刻落地
+
+B 轮顾问公告在 2024 年 5 月 21 日——V3 之后 2 个月。阵容：
+
+- Andrej Karpathy（前 OpenAI、前 Tesla AI director）
+- Aaron Levie（Box CEO）
+- Aravind Srinivas（Perplexity CEO）
+- Alexandr Wang（Scale AI CEO）
+- Amjad Masad（Replit CEO）
+- Brendan Iribe（Oculus 共同创始人）
+- Fred Ehrsam（Coinbase 共同创始人，Paradigm）
+- Guillermo Rauch（Vercel CEO）
+- 3LAU（音乐人）
+- Flosstradamus（DJ）
+- Shane Mac（音乐人/创始人）
+
+前 5 个在 3-4 月已经在 V3 病毒浪里了。5 月的顾问签约正式化了一个本来就公开的背书模式。
+
+这就是 B3（KOL 信用转移）作为蓄意招法的样子。Suno 没付钱给 influencers。KOL 自己生成 V3 曲子是因为格式邀请他们试用——发出曲子是因为格式邀请他们分享。
+
+> 大多数 KOL 驱动的发布要么需要付费、要么需要关系工作才能拿到帖子。V3 的格式本身就是 payload。Karpathy、Wang、Srinivas 之所以发帖，是因为使用产品的副产品就是产出可分享的 artifact。
+## Rolling Stone demo 作为标志 artifact
+
+Rolling Stone 的实验是 V3 病毒机制最干净的展示。媒体跑了一个 prompt：
+
+*「一个伤心的 AI 在唱关于自己不是真男孩的歌，Mississippi Delta blues 风格」*
+
+出来的曲子 4 天在 Rolling Stone 的社交账号上破 36,000 播放。标题：*「去年夏天专家告诉我们完整 AI 歌曲还要好几年。一个 2 岁的 Cambridge 公司做出来了——含人声。」*
+
+Rolling Stone 不是付费合作。媒体跑这个实验是因为 V3 的格式让测试变得容易、让结果对读者可演示。一个 prompt、一个输出、一个读者能点开评估的音频文件。新闻报道是被 demo 语法使能的。
+
+## V3 给品类带来了什么变化
+
+整个 2024 年 Q2，AI 音乐作为品类被重新定义。
+
+| 时间 | 默认心智模型 |
+|---|---|
+| 2024 Q1 | 「AI 音乐存在但歌听起来怪」 |
+| 2024 Q2 | 「Suno 做的是听起来像真音乐的完整歌曲」 |
+| 2024 Q3 | 「Suno 和 Udio 是 AI 音乐公司」 |
+| 2024 Q4 | 「AI 音乐是个法律问题（RIAA 诉讼）」 |
+
+V3 90 天内把公开默认从「怪」推到了「真」。这个推移是 Udio（2024 年 4 月 10 日上线，a16z $10M seed）要争夺的——Rolling Stone 立刻把 Udio 框成 Suno 竞争对手，而不是分开的品类。Suno-vs-Udio 这个二元 frame 撑了 6 周，直到 RIAA 把两家公司一起起诉，把二元 frame 砸成了「AI 音乐厂商」。
+
+## 后续的节奏
+
+V3 是密集 D1（技术叙事升级）节奏的第一个：
+
+| 版本 | 日期 | 距上版月数 |
+|---|---|---|
+| V3 | 2024-03-21 | — |
+| V3.5 | 2024-05-30 | 2.3 |
+| V4 | 2024-11-19 | 5.7 |
+| V4.5 | 2025-05-01 | 5.4 |
+| V4.5+ | 2025-07-18 | 2.6 |
+| V5 + Suno Studio | 2025-09-23 | 2.2 |
+| V5.5 | 2026-03-26 | 6.1 |
+
+24 个月 7 个大版本。Anthropic 类似的节奏（API → Claude.ai → Code → Agents）是约 5 年内 4 次升级。Suno 在更窄的产品域里跑了 1.7 倍速度。
+
+这个节奏服务两个功能。第一，它让技术叙事密度高到「Suno 是 wrapper」的论点站不住——每 2-6 个月都带来新的具体能力。第二，它给每一轮融资提供新故事来打包（B 轮和 V3.5 重叠，C 轮和 V5 + Suno Studio + Songkick 重叠）。
+
+<Conclusion title="可以照搬什么">
+
+- **让你的 demo 语法是一个独立的 artifact。** 3-4 分钟一首歌。15 秒带情感标签的语音片段。能跑的代码片段。Artifact 必须 90 秒内可评估、不需要上下文可分享。大多数 B2B 和消费 AI 发布过不了这个测试。
+- **在发布前一周给 AI engineering 受众铺垫。** Shulman 的 Latent Space 那一期比 V3 早 7 天落地。等到 V3 公开时，播种病毒浪头的受众已经听过技术故事。
+- **让 KOL 生产他们自己的内容，而不是请他们发你的内容。** Karpathy 发*Return to monkey* 是因为产品邀请尝试。格式作为副产品产出帖子。Suno 没付钱也没请求。
+- **跑密集的版本节奏来击败 wrapper 论点。** 24 个月 7 个大版本给公司每 2-6 个月一个具体 artifact。当 ship 的能力以这个速度累积时，「你只是个 wrapper」就站不住了。
+
+</Conclusion>
+
+## 信源
+
+- [Suno V3 公告（2024 年 3 月 21 日）](https://help.suno.com/en/articles/5782721)
+- [Latent Space 播客：Making Transformers Sing — Mikey Shulman（2024 年 3 月 14 日）](https://www.latent.space/p/suno)
+- [Rolling Stone：AI 生成 blues 歌曲实验（2024 年 3 月）](https://www.rollingstone.com/culture/culture-features/suno-ai-music-generator-mississippi-delta-blues-1235001234/)
+- [Karpathy 的 X：「Return to monkey」V3 生成](https://x.com/karpathy)
+- [Suno 博客：融资公告（2024 年 5 月 21 日）](https://suno.com/blog/fundraising-announcement-may-2024)

@@ -1,0 +1,362 @@
+{
+  "company": {
+    "slug": "supabase",
+    "name": "Supabase",
+    "legalName": "Supabase Inc",
+    "tagline": "Borrowed substrate (30-year-old Postgres) + Launch Week as proactive-cadence E1 + pgvector six months ahead of the LLM wave",
+    "summary": "Paul Copplestone (ex-Nimbus for Work, Entrepreneur First Singapore) and Ant Wilson (Imperial College London) started writing Supabase code in January 2020 and wrapped 30-year-old PostgreSQL in a modern developer-experience layer. A late-May 2020 Launch HN — 'Supabase (YC S20) – An open source Firebase alternative' — hit 1,120+ upvotes and was declared the second most-upvoted Launch HN in HN history at the time. They turned the post-YC ship-adrenaline withdrawal into Launch Week, a quarterly cadence that 94 other dev-tool companies eventually copied. In early 2023 they shipped pgvector six months ahead of mass LLM-app awareness — the cleanest single tech-narrative-upgrade timing decision in our case set. By 2024 every vibe-coding platform (Bolt, Lovable, v0, Cursor, Claude Code) was defaulting users to Supabase, in part because the Postgres substrate was pluckable — users could rip the stack out and keep their raw database. Six rounds in five years: Seed (Oct 2020) → A (Sep 2021) → B (Apr 2022) → C (Sep 2024) → D (Apr 2025, $200M @ $2B) → E (Oct 2025, $100M @ $5B). ARR is Sacra-estimated at ~$70M (Aug/Sep 2025, +250% YoY) — Supabase has not officially disclosed it. Reported ~$10B talks with GIC leading (April 2026) are not closed as of June 2026. The reusable lesson: when an industry-grade open-source asset already exists in your category, identifying it as your substrate is cheaper than building one — but only if you hire deep enough into that ecosystem (Postgres core contributors, NGINX co-founder, Vitess co-creator) for the borrowed framing to read as competence rather than thin wrapping.",
+    "founded": "2020-01-01",
+    "founders": [
+      "Paul Copplestone",
+      "Ant Wilson"
+    ],
+    "seriesNumber": 27
+  },
+  "phases": [
+    {
+      "start": "2020-01",
+      "end": "2021-03",
+      "name": "YC S20 + Launch HN + early OSS",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2021-03",
+      "end": "2023-01",
+      "name": "Launch Week + build-in-public scale",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2023-01",
+      "end": "2024-09",
+      "name": "pgvector + AI-features inflection",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2024-09",
+      "end": "2026-06",
+      "name": "Vibe-coding hyperscale (Series C → E → reported D+)",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-01-15",
+      "title": "Supabase founded in Singapore",
+      "type": "product",
+      "description": "Paul Copplestone (CEO, ex-Nimbus for Work, Entrepreneur First Singapore) and Ant Wilson (CTO, Imperial College London MSc Software Engineering) start writing Supabase code as a Postgres-based open-source Firebase alternative. Pre-seed ~$100K from angels. The founding choice that makes everything possible: do not build a database — wrap the 30-year-old open-source one in modern developer experience.",
+      "externalUrl": "https://www.stacksync.com/blog/one-word-changed-everything-the-origin-story-of-supabase",
+      "articleSlug": "2020-01-founding-borrowed-substrate"
+    },
+    {
+      "date": "2020-04-15",
+      "title": "8 databases hosted",
+      "type": "product",
+      "description": "By April 2020 Supabase only hosts 8 databases — the slow early traction that almost killed the idea. Founders kept shipping; the substrate bet had not yet compounded."
+    },
+    {
+      "date": "2020-05-28",
+      "title": "Launch HN: Supabase (YC S20) — 1,120+ upvotes",
+      "type": "media",
+      "gtmTag": "Format-as-credibility",
+      "description": "Late-May 2020 HN post 'Supabase (YC S20) – An open source Firebase alternative' crosses 1,120+ upvotes. HN moderator dang upgrades it to the official Launch HN. Second most-upvoted Launch HN in Hacker News history at the time. Same-day Product Hunt: #3 of the day, 818 upvotes. Traffic spike crashes DigitalOcean limits — team migrates to AWS within hours. The reverse-positioning headline is the demo grammar — anyone burned by Firebase can reconstruct the full product promise from one line.",
+      "externalUrl": "https://www.basedash.com/blog/how-supabase-became-this-generation-s-database",
+      "articleSlug": "2020-05-launch-hn-yc-s20"
+    },
+    {
+      "date": "2020-08-05",
+      "title": "Auth ships",
+      "type": "product",
+      "description": "Supabase Auth ships, three months after Launch HN. Michael Seibel (YC) told Copplestone: stop thinking, ship it. Authentication becomes the most-adopted Supabase product among new customers and the first GoTrue-licensed sub-product.",
+      "externalUrl": "https://hackernewsrobot.wordpress.com/2020/08/06/show-hn-auth-is-now-available-in-supabase-yc-s20/"
+    },
+    {
+      "date": "2020-10-09",
+      "title": "Seed $6M — Coatue-led",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "$6M seed led by Coatue (Caryn Marooney, ex-Facebook VP Global Communications), with Y Combinator, Mozilla, and ~20 angels. Closed October 9, 2020; announced December 15. The non-obvious bet: Marooney is a marketing/comms VC, not a typical dev-tool VC. Coatue is pricing the founding team as a future developer-infrastructure brand, not as a GitHub-stars trajectory.",
+      "externalUrl": "https://techcrunch.com/2020/12/15/supabase-raises-6m-for-its-open-source-firebase-alternative/"
+    },
+    {
+      "date": "2020-12-15",
+      "title": "Seed announcement + Beta exit",
+      "type": "media",
+      "description": "Public seed announcement coincides with Beta exit. Supabase ends 2020 with ~3,100 databases hosted, up from 8 in April. TechCrunch's Frederic Lardinois carries the round.",
+      "externalUrl": "https://techcrunch.com/2020/12/15/supabase-raises-6m-for-its-open-source-firebase-alternative/"
+    },
+    {
+      "date": "2021-03-29",
+      "title": "Launch Week 1 — the format invented",
+      "type": "product",
+      "gtmTag": "Launch Week cadence",
+      "description": "First Launch Week (March 2021). Founders had missed the YC demo-day ship-adrenaline post-batch, so invented the format: ship one major feature every day for a week, quarterly. By 2024, launchweek.dev counts 126 Launch Weeks across 94 different dev-tool companies copying the format. The fourth sub-type of E1 (crisis-as-GTM): proactive-cadence — sustained product-output transparency rather than internal-state transparency (PostHog) or reactive postmortems (ElevenLabs).",
+      "externalUrl": "https://supabase.com/blog/supabase-how-we-launch",
+      "articleSlug": "2021-03-launch-week-1"
+    },
+    {
+      "date": "2021-09-09",
+      "title": "Series A $30M — Coatue doubles down",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "$30M Series A led by Coatue (doubled down from seed). Caryn Marooney joins the board. Angels: Tom Preston-Werner (GitHub), Solomon Hykes (Docker), Guillermo Rauch (Vercel), Kurt Mackey (Fly), Alex Solomon (PagerDuty). Metrics: 50K databases, 40K developers, 4K Discord, top-15 fastest-growing OSS startup on GitHub for 5 consecutive quarters. Total raised: $36M.",
+      "externalUrl": "https://supabase.com/blog/supabase-series-a"
+    },
+    {
+      "date": "2022-04-19",
+      "title": "Series B $80M — Felicis-led",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "$80M Series B led by Felicis Ventures (Aydin Senkut). Participants: Coatue, Lightspeed (new), Square Peg (new). Closed April 19, announced August 12. Metrics at announcement: 150K databases, 110K developers, 8K Discord, 36K GitHub stars, 37K Twitter. Total raised: $116M.",
+      "externalUrl": "https://supabase.com/blog/supabase-series-b"
+    },
+    {
+      "date": "2022-06-01",
+      "title": "Six-product platform live",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "By mid-2022 Supabase has all six core products live: Database (Postgres), Auth (GoTrue), Storage (S3-backed), Edge Functions (Deno runtime), Realtime (Elixir / Phoenix Channels), Vector (pgvector groundwork). Each is usable standalone. Narrative shifts from 'open source Firebase alternative' to 'Postgres-based developer platform.'",
+      "externalUrl": "https://supabase.com/docs"
+    },
+    {
+      "date": "2023-02-10",
+      "title": "pgvector + AI Toolkit ship",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Supabase becomes one of the earliest managed-Postgres providers to ship pgvector for storing embeddings. AI toolkit includes Python client, embedding generation in Edge Functions, and integrations with OpenAI / Hugging Face / LangChain. Pre-positions Supabase as the default backend for the LLM-app wave — roughly six months before mass developer awareness of the LLM-app stack arrives.",
+      "externalUrl": "https://supabase.com/modules/vector",
+      "articleSlug": "2023-02-pgvector-ai-toolkit"
+    },
+    {
+      "date": "2023-05-15",
+      "title": "Quivr viral pgvector case study",
+      "type": "media",
+      "description": "Stan Girard ships Quivr (chat-with-documents 'second brain') in a single afternoon, pushes to GitHub, viral tweet. Picks Supabase Vector over Pinecone / Chroma / Weaviate / Faiss because vector embeddings + relational data on one substrate beats integrating five vendors. First widely-shared production pgvector case.",
+      "externalUrl": "https://supabase.com/customers/quivr"
+    },
+    {
+      "date": "2024-08-01",
+      "title": "Vibe-coding inflection — Bolt + Lovable adopt Supabase as default",
+      "type": "product",
+      "gtmTag": "Audience boundary push",
+      "description": "Bolt.new and Lovable both adopt Supabase as their default backend. v0 (Vercel) adds Supabase as the default database prompt for AI-generated apps. Cursor and Claude Code integrations follow. User sign-up rate begins doubling every ~3 months on vibe-coding adoption. Supabase pays zero CAC for the entire AI-app distribution layer.",
+      "externalUrl": "https://supabase.com/solutions/vibe-coders"
+    },
+    {
+      "date": "2024-09-25",
+      "title": "Series C $80M @ ~$765M — Peak XV + Craft co-lead",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "$80M Series C led by Peak XV + Craft Ventures, with Avra Capital (Anu Hariharan, ex-YC Growth, new) + Coatue + Felicis + YC. Up round, valuation undisclosed (PitchBook later estimates ~$765M post-money). Metrics disclosed: ~900K signups in 4 years; 40% of latest YC batch on Supabase; ~10% of active databases are AI workloads; enterprise customers include GitHub Next, Meta, Netflix, Microsoft. Total raised: $196M.",
+      "externalUrl": "https://techcrunch.com/2024/09/25/supabase-a-postgres-centric-developer-platform-raises-80m-series-c/"
+    },
+    {
+      "date": "2024-12-31",
+      "title": "~$30M ARR end-2024 (Sacra estimate)",
+      "type": "media",
+      "description": "Sacra estimates Supabase reaches ~$30M ARR by end-2024 — quietly compounding through vibe-coding adoption. ARR not officially disclosed by Supabase. taptwicedigital's alternative lower estimate of $16.8M for 2024 suggests measurement difference (paid Cloud only vs total including enterprise).",
+      "externalUrl": "https://sacra.com/research/supabase-at-70m-arr-growing-250-yoy/"
+    },
+    {
+      "date": "2025-04-22",
+      "title": "Series D $200M @ $2B — Accel-led + Wānaka doorstep story",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "$200M Series D led by Accel at $2B post-money. Origin story: Accel's Gonzalo Mocorrea showed up at Copplestone's New Zealand doorstep in Wānaka unannounced; Arun Mathew followed across 24 hours of travel. Supabase was not actively raising. Angels: Kevin Weil (OpenAI CPO), Guillermo Rauch (Vercel CEO), Taylor Otwell (Laravel). Metrics: 2M developers, 3.5M databases, sign-up rate doubled every 3 months on vibe coding. Total raised: $398M.",
+      "externalUrl": "https://fortune.com/2025/04/22/exclusive-supabase-raises-200-million-series-d-at-2-billion-valuation/",
+      "articleSlug": "2025-04-series-d-wanaka"
+    },
+    {
+      "date": "2025-07-14",
+      "title": "Launch Week 15",
+      "type": "product",
+      "description": "15th Launch Week (July 14–18, 2025), 4+ years after the format was invented. Includes hackathon + global meetups. Cadence confirms the format scales without dilution; quarterly rhythm holds at >$2B-valuation scale."
+    },
+    {
+      "date": "2025-08-15",
+      "title": "Bolt Cloud + Lovable Cloud — first structural competitive threat",
+      "type": "media",
+      "description": "Bolt Cloud launches August 2025, followed by Lovable Cloud, both letting vibe-coding platforms monetize backends directly rather than handing users off to Supabase. Sacra flags this as the first structural disintermediation risk for Supabase — the vibe-coding distribution layer may not stay free forever.",
+      "externalUrl": "https://sacra.com/research/supabase-at-70m-arr-growing-250-yoy/"
+    },
+    {
+      "date": "2025-09-01",
+      "title": "~$70M ARR + 4M developers (Sacra estimate)",
+      "type": "media",
+      "description": "Sacra estimates Supabase ARR at ~$70M Aug/Sep 2025 — 250% YoY from $30M end-2024. User growth +700% YoY. 4M+ developers, 100K+ customers, 3.5M+ databases. Still not officially disclosed by Supabase.",
+      "externalUrl": "https://sacra.com/research/supabase-at-70m-arr-growing-250-yoy/"
+    },
+    {
+      "date": "2025-10-03",
+      "title": "Series E $100M @ $5B + Multigres announcement — eight stories one cycle",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "$100M Series E at $5B pre-money, co-led by Accel + Peak XV. Figma is only new institutional investor — all other existing investors return (YC, Coatue, Felicis, Craft, Square Peg). Bundled with: $1M planned community co-investment round, hire of Sugu Sougoumarane (Vitess co-creator) to lead Multigres / Vitess-for-Postgres enterprise scale, the every-round 25% employee secondary continues. Total raised: ~$500M. Eight independently quotable stories in one news cycle.",
+      "externalUrl": "https://supabase.com/blog/supabase-series-e",
+      "articleSlug": "2025-10-series-e-multigres"
+    },
+    {
+      "date": "2025-11-15",
+      "title": "Era-defining database thesis published",
+      "type": "media",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Accel publishes 'Supabase's Series E: An Era-Defining Database' thesis post; Coatue's Caryn Marooney frames the bet as 'becoming the backend for everyone, from startups to demanding enterprise workloads.' Cements vibe-coding-substrate-plus-enterprise narrative.",
+      "externalUrl": "https://www.accel.com/noteworthies/supabases-series-e-an-era-defining-database"
+    },
+    {
+      "date": "2026-04-02",
+      "title": "100K GitHub stars",
+      "type": "product",
+      "description": "Main supabase/supabase repo crosses 100,000 GitHub stars — top-100 most-starred repo on GitHub. Doubled in ~2 years (from ~50K in 2023). Concrete substrate-tier validation.",
+      "externalUrl": "https://supabase.com/blog/100000-github-stars"
+    },
+    {
+      "date": "2026-04-03",
+      "title": "$10B talks reported (not closed)",
+      "type": "media",
+      "description": "The Information scoops: Supabase in advanced talks to raise ~$500M at ~$10B valuation, led by GIC (Singapore sovereign wealth fund — Copplestone's original Entrepreneur First Singapore base). Would 2x valuation in 6 months. Round NOT yet closed as of June 2026; coverage is media-scoop confidence only.",
+      "externalUrl": "https://www.theinformation.com/articles/database-startup-supabase-talks-double-valuation-10-billion"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2024-12-31",
+      "value": 30000000,
+      "source": "Sacra (estimate — not officially disclosed)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-09-01",
+      "value": 70000000,
+      "source": "Sacra (estimate — not officially disclosed; +250% YoY)",
+      "confidence": "estimate"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2020-10-09",
+      "value": 50000000,
+      "round": "Seed",
+      "source": "Estimate (undisclosed)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2024-09-25",
+      "value": 765000000,
+      "round": "Series C",
+      "source": "PitchBook (estimate; company declined to disclose)",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-04-22",
+      "value": 2000000000,
+      "round": "Series D",
+      "source": "Fortune",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-10-03",
+      "value": 5000000000,
+      "round": "Series E",
+      "source": "Fortune / Supabase",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-04-03",
+      "value": 10000000000,
+      "round": "Reported (not closed)",
+      "source": "The Information (scoop)",
+      "confidence": "media"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "github",
+      "name": "GitHub",
+      "score": 5,
+      "bestStage": "All stages — substrate",
+      "effort": "Substrate-level",
+      "role": "The Apache 2.0 core itself plus pgvector lineage",
+      "description": "supabase/supabase main repository under Apache 2.0 (Storage / GoTrue / Realtime separately MIT). Crossed 100K stars April 2, 2026, top-100 most-starred repo on GitHub. Where AI coding tools hit when generating Supabase scaffolds. The borrowed-substrate framing is verifiable here — Postgres core extensions, pgvector, and the realtime Elixir layer all live in public.",
+      "catalyst": "Late-May 2020 Launch HN linked supabase/supabase as the canonical artifact. Eighteen-month compounding to 19K stars at Series A (Sep 2021); 36K at Series B (Aug 2022); ~50K by end 2023; 100K April 2, 2026.",
+      "catalystUrl": "https://github.com/supabase/supabase",
+      "accountUrl": "https://github.com/supabase",
+      "accountLabel": "supabase on GitHub",
+      "whenItWorks": "When the open-source license is permissive (Apache 2.0 or MIT) and self-hosting is genuinely achievable. Pluckability is the value, not lock-in.",
+      "whenItDoesnt": "AGPL or BSL killing the substrate effect (Elastic, MongoDB, HashiCorp). Supabase chose Apache 2.0 deliberately for the same reason Vercel chose MIT for Next.js."
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 5,
+      "bestStage": "Launch + major product expansions",
+      "effort": "Punctuated — milestones hit HN organically",
+      "role": "Substrate-validation surface",
+      "description": "The late-May 2020 Launch HN ('Supabase (YC S20) – An open source Firebase alternative') hit 1,120+ upvotes and was declared by HN moderator dang the second most-upvoted Launch HN at the time. Every subsequent major release (pgvector, multi-product GA, Series D, Series E, 100K stars milestone) surfaced on HN's front page. Comment threads stress-test claims and become the discoverable artifact for the next two years of buyer research.",
+      "catalyst": "Late-May 2020 Launch HN post — declared a Launch HN by dang after a user posted it organically. 1,120+ upvotes; second most-upvoted Launch HN in HN history at the time. Traffic spike crashed DigitalOcean limits; team migrated to AWS within hours.",
+      "accountUrl": "https://hn.algolia.com/?q=supabase",
+      "accountLabel": "Search HN for Supabase",
+      "whenItWorks": "When the launch has genuine technical novelty (here: SQL + realtime + open source + self-hostable in one container) and the headline collapses the reverse-positioning frame into one line.",
+      "whenItDoesnt": "When the post is PR-styled. HN punishes promotional content quickly and the comment thread becomes a credibility risk."
+    },
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 4,
+      "bestStage": "All stages",
+      "effort": "Always-on, founder-led",
+      "role": "Build-in-public voice + Launch Week broadcast",
+      "description": "Paul Copplestone (@kiwicopple) and Ant Wilson (@antwilson) run the daily build-in-public surface. Paul is the louder strategic voice; Ant the quieter technical leg. Every Launch Week ships its daily reveals first on X. The @supabase company account amplifies. Total followers in the hundreds of thousands by 2025; tier-1 dev-twitter status.",
+      "catalyst": "No single tweet. Continuous founder presence since 2020, with Launch Week serving as the regular amplification event. The Apr 22, 2025 Wānaka-doorstep Series D narrative landed first on X before Fortune.",
+      "catalystUrl": "https://x.com/kiwicopple",
+      "accountUrl": "https://x.com/kiwicopple",
+      "accountLabel": "@kiwicopple on X",
+      "whenItWorks": "When the founder can sustain technical depth and post the same product cadence the team is shipping — substrate underneath, not theater.",
+      "whenItDoesnt": "Daily founder posting devolves into thought leadership without operating substance. The Launch Week cadence prevents this — there is always real product to point at."
+    },
+    {
+      "slug": "launch-week",
+      "name": "Launch Week (proactive cadence)",
+      "score": 5,
+      "bestStage": "All stages — load-bearing",
+      "effort": "Quarterly, full-company effort",
+      "role": "The product-output transparency demo grammar",
+      "description": "Invented March 2021 as the founders' response to losing YC ship-adrenaline. Quarterly cadence: ship one major feature every day for a week, every quarter. Cross-platform synchronous blast — HN, Product Hunt, X, email, Discord. Engineer-as-marketer model: the engineer shipping the feature writes the launch copy. Fifteen completed Launch Weeks by July 2025. By 2024, launchweek.dev counts 126 Launch Weeks across 94 different dev-tool companies copying the format. The fourth E1 sub-pattern — proactive-cadence — alongside reactive (ElevenLabs), proactive-safety (Anthropic), and proactive-transparency (PostHog handbook).",
+      "catalyst": "March 2021 — Launch Week 1. The format that took over dev-tools marketing. Most copyable variant of the E1 sub-types for product-led companies without research labs.",
+      "catalystUrl": "https://supabase.com/blog/supabase-how-we-launch",
+      "accountUrl": "https://supabase.com/launch-week",
+      "accountLabel": "supabase.com/launch-week",
+      "whenItWorks": "When the team can ship five legitimate features a week, four times a year, without padding. The format is unforgiving — bad Launch Weeks are visible as bad Launch Weeks.",
+      "whenItDoesnt": "Marketing-team-driven Launch Weeks without engineer authorship produce padded news cycles. The cadence becomes a calendar event, not a product cycle, and the trust signal inverts."
+    },
+    {
+      "slug": "y-combinator",
+      "name": "Y Combinator (S20 + ongoing customer pipeline)",
+      "score": 5,
+      "bestStage": "Founding + perpetual customer-acquisition substrate",
+      "effort": "Network-level — leveraged across batches",
+      "role": "Founding accelerator + perpetual YC-batch customer pipeline",
+      "description": "Supabase is YC S20 — the first all-remote batch forced by COVID. YC participated in every primary round through Series E. By Series C (Sep 2024), 40% of the latest YC batch was on Supabase — every batch produces 200+ new dev-tool buyers, and Supabase's open-source default makes adoption frictionless. The YC blog and Michael Seibel's early 'stop thinking, ship it' counsel show up in founder retellings.",
+      "catalyst": "Summer 2020 YC batch (S20) — the all-remote batch that let Singapore-based Copplestone and London-based Wilson form a remote-first team from Day 0. Pre-COVID, that pairing might not have happened.",
+      "catalystUrl": "https://www.ycombinator.com/companies/supabase",
+      "accountUrl": "https://www.ycombinator.com/companies/supabase",
+      "accountLabel": "Supabase on YC",
+      "whenItWorks": "When the YC network is also your customer base — Supabase's developer-tool category puts a steady-state percentage of every batch into the funnel. 40% of W24 / S24 batches on Supabase is the legible version of this.",
+      "whenItDoesnt": "If your buyer is enterprise-only or non-technical, the YC customer-pipeline value is much weaker."
+    },
+    {
+      "slug": "podcasts",
+      "name": "Podcasts (episodic founder-as-IP)",
+      "score": 4,
+      "bestStage": "Series A through Series E",
+      "effort": "Episodic — ~10 long-form appearances over 4 years",
+      "role": "Founder-as-IP, engineering register, strategy-decision density",
+      "description": "Paul Copplestone runs ~10 long-form podcast appearances across the funding ladder: Accel 'Spotlight On' (with Arun Mathew + Gonzalo Mocorrea), TechCrunch Equity, Felicis founder interview, Changelog #599, Scaling DevTools, Evil Martians Dev Propulsion Labs, PodRocket. Each hits a specific strategic decision — turning down enterprise contracts to protect product vision, why database migration doesn't work, global remote hiring from Day 0, the Nicki Minaj naming origin. Episodic density rather than Vercel-style daily X presence.",
+      "catalyst": "Accel 'Spotlight On' episode (post-Series D, 2025) — three-way conversation that turns the Wānaka doorstep story into the canonical Supabase founder narrative.",
+      "catalystUrl": "https://accel.com/podcast-episodes/supabases-paul-copplestone-on-the-difference-between-playing-startup-and-strategy",
+      "accountUrl": "https://www.youtube.com/results?search_query=paul+copplestone+supabase",
+      "accountLabel": "Paul Copplestone podcast appearances",
+      "whenItWorks": "When the founder has substantive, non-overlapping strategy material for each appearance. Each episode must be load-bearing on a different decision — otherwise the founder becomes podcast wallpaper.",
+      "whenItDoesnt": "Repeating the same three anecdotes across 10 podcasts. The episodic E2 only works when the operator has enough lived decisions to keep each appearance fresh."
+    }
+  ]
+}

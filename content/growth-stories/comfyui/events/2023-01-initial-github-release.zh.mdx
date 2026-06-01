@@ -1,0 +1,86 @@
+---
+title: "以 comfyanonymous/ComfyUI 公开发布——37 个月匿名窗口的第 0 天"
+description: "2023 年 1 月 16 日，一位没有 PyTorch 经验的 Quebec C++ 程序员，以 comfyanonymous 这个 handle 把 ComfyUI 的第一批 commit 推上 GitHub。仓库挂在他个人 namespace 下，README 没有命名任何人，定义这个案例的 37 个月匿名窗口从那一天开始。结构性选择不是「发布之后保持安静」——是「从你打算占据的位置上发布」。"
+date: "2023-01-16"
+type: "product"
+gtmTag: "Structural differentiation"
+eventTitle: "GitHub 首次发布"
+externalUrl: "https://github.com/comfyanonymous/ComfyUI"
+---
+
+<Catalyst>
+大多数开源项目发布时都附带一个创始人身份——个人 GitHub 头像、LinkedIn 链接、Twitter handle 邀请评论。ComfyUI 发布时这些都没有。把第一批 commit 推到一个匿名 handle 下、仓库放在个人而不是组织 namespace、且没有任何创始人自我介绍内容——这是「反创始人即 IP」招法的第一步。后来所有的结构性选择——不披露身份就接受 Stability AI 雇佣、拒绝 CEO 职责、用同行创始人参投做代理 IP——都是因为零分钟把这一步做对才成为可能。
+</Catalyst>
+
+2023 年 1 月 16 日。comfyanonymous 把 ComfyUI 的第一批 commit 推到一个新公开 GitHub 仓库下，挂在他个人 namespace 里。README 短。框架很直接：「给任何想用 Stable Diffusion 做复杂工作流的人，或想多了解 SD 如何工作的人」。
+
+仓库在零分钟有零 stars。Handle 是新的。License 一开始是宽松的 MIT 风格，后来改到 GPL-3.0。没有创始人简介、没有网站、没有 LinkedIn 链接、没有 Twitter handle。作者，按设计，不可搜索。
+
+这一天创造的不是一段软件——每周都有可运行的 PyTorch 仓库被 ship——而是一个位置。这个位置是「匿名开源底层作者」。comfyanonymous 从那时起到 2026 年 2 月——<Stat value="37 个月" label="从首次 push 到公开本名" />——一直占据这个位置，没有放手。
+
+## 匿名在运营上意味着什么
+
+2024 年 Latent Space 播客里很清楚：匿名是性格，不是姿态。comfyanonymous 自述为「a boring CRUD web developer doing basic automation, Python programming」。这个框架拒绝了任何英雄式创始人叙事。
+
+但这个选择的运营后果是结构性的。第一批 commit 落下的那一刻，三件事就变得不可能：
+
+1. 一次创始人主导的 Hacker News 发布，公司标语压在首屏
+2. 头六个月一篇 TechCrunch profile，确立创始人人格
+3. 每日 X presence，复利成开发者信任梯度
+
+这三件都是案例库 dev tools 公司的标准动作。PostHog 的 James Hawkins 从发布起就跑每日 X presence。Vercel 的 Guillermo Rauch 也是。Replit 的 Amjad Masad 跑的是 Latent Space 后来称之为「continuous-presence」的模式。这些创始人都建起了个人信任梯度，对招人、融资、销售都有实质帮助。
+
+comfyanonymous 通过设计让这三件都不可能。替代它们的不是没有——是底层本身，加上一群 KOL（Scott Detweiler、Olivio Sarikas、Sytan），这些 KOL 后来生产了创始人自己拒绝生产的信任物件。
+
+## 个人 namespace 是承重细节
+
+仓库 URL 是 `github.com/comfyanonymous/ComfyUI`——个人 namespace，不是组织。这个细节看上去是装饰，实际上是让后面每一步都成为可能的结构性事实。
+
+| 仓库位置 | 后果 |
+|---|---|
+| 个人 namespace（`comfyanonymous/ComfyUI`） | 仓库属于人。雇佣关系不转移所有权。 |
+| 组织 namespace（`some-org/ComfyUI`） | 仓库属于组织。雇佣、并购或组织解散可以转移所有权。 |
+
+2023 年 1 月这个个人 namespace 选择，让 2023 年 6 月接受 Stability AI 雇佣变得可行。comfyanonymous 可以专门为集成 SDXL 接受 Stability 工资，又不给 Stability 任何对仓库的索取权。Stability 出钱养底层，但不拥有底层。Emad Mostaque 辞职、2024 年 Stability 领导力危机爆发时，comfyanonymous 的退出在结构上很简单——仓库本来就在他 namespace 里。
+
+2026 年的创始人读到这个案例、问「我是不是该用一个个人 handle 发布」时，问对了问题。答案是「如果你以后可能接受一个本来可以索取 IP 的合作方的雇佣，那就要」。这个先决条件事前并不明显，但个人 namespace 的选择把这个选项保留了下来。
+
+## README 没承诺的东西
+
+ComfyUI 发布时的 README 没说自己是「下一代 Stable Diffusion UI」。没把自己定位成 Automatic1111 的对手。没把 ComfyUI 框架成比替代品更易用——comfyanonymous 后来明确说过他的目标是「a powerful interface that's not easy to use」，正好是标准产品发布承诺的反面。
+
+README 命名了一个受众：「任何想用 Stable Diffusion 做复杂工作流的人，或想多了解 SD 如何工作的人」。这是两个受众压成一个——跑多阶段流水线的 power user，和想理解扩散模型如何组合的学习者。两类都是技术受众。两类都愿意为换取力量和可读性而忍受摩擦。两类都不需要创始人营销层。
+
+「少卖」本身就是结构性选择。ComfyUI 不需要靠效果广告或 HN 发布优化来增长——它通过 r/StableDiffusion 上的 power user 发现而增长，那里「少卖」读作诚实，而不是定位。等 2023 年 3 月 Olivio Sarikas 的 YouTube 教程把非工程师创作者拉进来时，底层已经赢得了被发现的资格。
+
+## 两周构建
+
+comfyanonymous 后来的说法——他「only built the first version in just a couple of weeks」——同时出现在 2024 年 Latent Space 访谈和 2026 年 fxguide 那一期。comfy.org 的关于页也重复：「In January 2023, no tool on the market could chain two AI models together into a repeatable workflow. One developer in Quebec City built his own in two weeks and open-sourced it.」
+
+两周的时间线是可信的。comfyanonymous 在他父亲的牙科种植体工厂写自动化代码已经多年了；基本的 Python 和 PyTorch 不是新技能，即使「针对扩散模型的 PyTorch」这个具体场景是新的。节点架构借鉴 LiteGraph.js 意味着 UI 层可以从既有模式拼起来，不必从零设计。
+
+两周构建还在传达：这不是一个研究项目或论文配套代码库。这是一个能跑的工具，被快速 ship，意图被使用。这个物件本身就是全部 pitch——底层必须自己说话，因为不会有创始人言论代它说。
+
+## 这一天没产出的东西
+
+首次发布在任何常规意义上都没火。第一个月里它在 r/StableDiffusion 上得到 organic 关注——第一个被注意到的帖是 comfyanonymous 2023 年 2 月那条 area-conditioning 帖，它解决了一个 Automatic1111 真实的天花板——但更广义的 Stable Diffusion 社区不是单靠这次 commit 发现 ComfyUI 的。
+
+第一个 KOL 信号是 Olivio Sarikas 2023 年 3 月的 YouTube 教程，把非工程师创作者拉了进来。viral 时刻是 2023 年 7 月 SDXL 1.0 发布以及 Scott Detweiler 那支「我在 Stability 内部用的」工作流视频。两件事都是外部的——comfyanonymous 没联系过，也没协调过那些人。
+
+事后看，1 月 16 日的 commit 是「占据位置」。复利需要外部行动者把底层认真当回事，自己产出衍生物件。匿名让创始人不可能自己去做这个工作。社区代为完成。
+
+<Conclusion title="可复制的部分">
+
+- **如果你以后可能接受可能索取 IP 的合作方雇佣，就用个人 namespace 发布。** comfyanonymous 2023 年 1 月的个人 namespace 选择让 2023 年 6 月的 Stability AI 期变得在结构上可行、让 2024 年 6 月的退出在结构上简单。事前决定便宜；事后保留的选项贵。
+- **当底层真的有力量时，就「少卖」发布。** ComfyUI 的 README 没承诺下一代 Stable Diffusion UI——它给已经知道自己需要「复杂工作流」的人承诺了「复杂工作流」。在 r/StableDiffusion 上，「少卖」读作诚实，定位式文案读作营销。2026 年 ship 一个真有力量底层的创始人，应该考虑发布公告到底是加信任还是减信任。
+- **接受「创始人主导的 KOL 验证路径已经被关上」。** 匿名发布无法跑 Cursor 式播客圈或 PostHog 式每日 X presence。结构性替代必须是社区 KOL 生产信任物件。ComfyUI 的 Scott Detweiler / Sytan / Olivio Sarikas 三人组都不是 comfyanonymous 联系到的——他们自己独立发现了底层。2026 年匿名发布的创始人必须接受：验证周期要 6-18 个月，且无法通过创始人动作加速。
+
+</Conclusion>
+
+## 资料来源
+
+- [GitHub — comfyanonymous/ComfyUI](https://github.com/comfyanonymous/ComfyUI)
+- [Latent Space — AI Engineering for Art with comfyanonymous](https://www.latent.space/p/comfyui)
+- [fxguide — ComfyUI with co-founder Yannik Marek (ComfyAnonymous)](https://www.fxguide.com/fxpodcasts/comfyui-with-co-founder-yannik-marek-comfyanonymous/)
+- [comfy.org/about](https://www.comfy.org/about)
+- [Wikipedia — ComfyUI](https://en.wikipedia.org/wiki/ComfyUI)

@@ -1,0 +1,420 @@
+{
+  "company": {
+    "slug": "heygen",
+    "name": "HeyGen",
+    "legalName": "Surreal Inc",
+    "tagline": "The cleanest proactive cross-Pacific governance rebuild in the case set — paired with two independent user-replicable viral moments four months apart",
+    "summary": "HeyGen is the case where two ex-Snap / ex-ByteDance co-founders, working from Shenzhen under the name Surreal Inc during the 2020 lockdown, spent eighteen months between 2022 and 2023 deliberately rewriting the company's nationality — relocating to Los Angeles, dissolving the Shenzhen entity, asking IDG Capital, Baidu Ventures, HongShan, and ZhenFund to sell their stakes to US counterparts, moving customer data to Ohio, and making the product unavailable inside China — before any of those choices were forced on them. Eighteen months later Benchmark led their $60M Series A at a $500M post-money valuation. Twenty-nine months after their first $1M of ARR, they crossed $100M ARR while running profitably on ~$74M of cumulative funding. Two independent user-replicable viral moments four months apart — the September 2023 video-translation Finger demo (~6.8M X views, ~180K queued translations) and the January 2024 Milei Davos translation (~75M X views) — rule out the lucky-moment explanation. Stack that with paying tiers in market on the day of the first viral spike and the playbook is the most disciplined version of cross-Pacific AI-creative GTM in the case set so far.",
+    "founded": "2020-12-01",
+    "founders": [
+      "Joshua Xu",
+      "Wayne Liang"
+    ],
+    "seriesNumber": 25
+  },
+  "phases": [
+    {
+      "start": "2020-12",
+      "end": "2022-09",
+      "name": "Surreal era (Shenzhen)",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2022-09",
+      "end": "2023-09",
+      "name": "Cross-Pacific pivot + 178-day sprint",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2023-09",
+      "end": "2024-06",
+      "name": "Viral inflection + cap-table rebuild",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2024-06",
+      "end": "2025-10",
+      "name": "Scale, narrative upgrades, $100M ARR",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-12-01",
+      "title": "Surreal founded in Shenzhen",
+      "type": "product",
+      "description": "Joshua Xu (ex-Snap, six years on AI-augmented camera and ads ranking) and Wayne Liang (ex-Smule, brief ByteDance stint) incorporate Surreal Inc in Shenzhen. Both are Tongji to Carnegie Mellon alums who moved to the US West Coast in 2014 and ended up back in China when COVID hit. The Chinese name 诗云 (Shiyun) borrows from a Liu Cixin short story about whether machines can replace human artistic creation.",
+      "externalUrl": "https://research.contrary.com/company/heygen",
+      "articleSlug": "2020-12-surreal-founding"
+    },
+    {
+      "date": "2021-03-02",
+      "title": "Seed round — Sequoia China + ZhenFund",
+      "type": "funding",
+      "description": "TechCrunch profiles Surreal at three months old: 12-person Shenzhen office, ~10M photo and video orders already booked, pitched as 'Google Translate for videos.' Seed estimated at $2–3M from Sequoia China + ZhenFund.",
+      "externalUrl": "https://techcrunch.com/2021/03/01/surreal-profile/"
+    },
+    {
+      "date": "2021-08-30",
+      "title": "Pre-A — IDG Capital leads",
+      "type": "funding",
+      "description": "IDG Capital leads the Pre-A round with Sequoia China and ZhenFund participating. Proceeds go to building the Surreal Engine multimodal content generation infrastructure that later powers HeyGen. Exact amount undisclosed; estimated at ~$7M working backward from the ~$74M cumulative.",
+      "externalUrl": "https://research.contrary.com/company/heygen"
+    },
+    {
+      "date": "2022-07-01",
+      "title": "Surreal Engine launches",
+      "type": "product",
+      "description": "Multimodal content generation infrastructure ships. First public version of the inference stack — face generation, voice cloning, lip-sync — that later becomes HeyGen's substrate. Freemium with prominent watermark on the free tier.",
+      "externalUrl": "https://research.contrary.com/company/heygen"
+    },
+    {
+      "date": "2022-09-01",
+      "title": "Movio app launches",
+      "type": "product",
+      "description": "Consumer AI video product launches as Movio, building on the Surreal Engine substrate. This is the day the 178-day clock to $1M ARR starts running.",
+      "externalUrl": "https://en.wikipedia.org/wiki/HeyGen"
+    },
+    {
+      "date": "2022-12-01",
+      "title": "HQ relocates to Los Angeles",
+      "type": "acquisition",
+      "gtmTag": "Proactive geographic pivot",
+      "description": "Founders move the company HQ from Shenzhen to Los Angeles, rebrand the consumer product as Movio. Stated reasons: access to advanced US semiconductors for AI training, US enterprise buyers, Stripe-compatible monetization. The Shenzhen team is partially retained at this point — no public regulatory pressure forced the move. This is the first concrete step of an eighteen-month, proactive cap-table-and-data-residency rebuild that closes in mid-2024.",
+      "externalUrl": "https://www.scmp.com/tech/tech-trends/article/3267861/ai-start-heygen-raises-us60-million-after-pivoting-away-mainland-china-investors",
+      "articleSlug": "2022-12-la-relocation"
+    },
+    {
+      "date": "2023-03-01",
+      "title": "$1M ARR — 178 days from launch",
+      "type": "product",
+      "description": "Movio/HeyGen crosses $1M ARR — 178 days after the September 2022 launch. Among the fastest 0-to-$1M traces in the 2023 AI cohort. Marks the start of a ~50% MoM growth window that runs nine consecutive months.",
+      "externalUrl": "https://research.contrary.com/company/heygen"
+    },
+    {
+      "date": "2023-04-01",
+      "title": "Rebrand to HeyGen",
+      "type": "product",
+      "description": "Movio rebrands to HeyGen. No single-day announcement; the rebrand is positioned alongside the product's pivot from spokesperson-only video to a broader translation + custom-avatar platform.",
+      "externalUrl": "https://en.wikipedia.org/wiki/HeyGen"
+    },
+    {
+      "date": "2023-06-01",
+      "title": "Profitability achieved (Q2 2023)",
+      "type": "product",
+      "gtmTag": "Default-alive as offense",
+      "description": "Company reaches operating profitability in Q2 2023 at ~$2–3M ARR with roughly 15–20 employees. Unusual for an early-stage AI startup; later cited in every funding cycle as the evidence of capital efficiency that backstops the C2 monetize-during-peak play.",
+      "externalUrl": "https://www.heygen.com/blog/announcing-our-series-a"
+    },
+    {
+      "date": "2023-09-01",
+      "title": "Video translation goes viral on X — Finger demo",
+      "type": "media",
+      "gtmTag": "Format-as-credibility virality",
+      "description": "A creator's translated video (English to German and French, voice cloned via ElevenLabs, lip-sync preserved) racks ~6.8M X views; ~180,000 videos queue behind it for translation. Joshua Xu on LinkedIn: 'Breaking down language barriers makes content accessible to the entire globe, not just the 10% who speak English.' $48 and $59 Pro tiers are already in market — paying users get queue priority on the day of the spike.",
+      "externalUrl": "https://omr.com/en/daily/heygen-youtube-ai-uebersetzung",
+      "articleSlug": "2023-09-finger-viral-demo"
+    },
+    {
+      "date": "2023-10-01",
+      "title": "$18M ARR disclosed",
+      "type": "media",
+      "description": "HeyGen confirms ARR has reached $18M as of October — eighteen times the March $1M figure in seven months. Disclosed inside the Conviction-round PR cycle in November.",
+      "externalUrl": "https://voicebot.ai/2023/12/01/generative-ai-video-startup-heygen-raises-5-6m/"
+    },
+    {
+      "date": "2023-11-30",
+      "title": "Conviction $5.6M + HongShan board exit + Avatar 2.0",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Conviction (Sarah Guo) leads $5.6M at $75M post-money. Sarah Guo joins the board; HongShan (Sequoia China) relinquishes its seat — the first concrete public milestone of the China divestiture. Bundled with the Instant Avatar / Avatar 2.0 launch (5-minute custom-avatar creation from smartphone footage) and the $18M ARR disclosure. 25 employees at this point.",
+      "externalUrl": "https://www.heygen.com/blog/introducing-avatar-2-0-instant-avatar",
+      "articleSlug": "2023-11-conviction-bundled"
+    },
+    {
+      "date": "2024-01-18",
+      "title": "Milei Davos translation goes viral (~75M views)",
+      "type": "media",
+      "gtmTag": "Format-as-credibility virality",
+      "description": "Aaron Slodov (@aslodov, Atomic Industries CEO) posts a HeyGen-translated version of Argentine President Javier Milei's Spanish-language WEF speech in English. Lip-sync, accent preservation, and emotional fidelity all hold up. ~75M X views, ~240K likes. The single largest organic distribution event in HeyGen's history. Repurposed by HeyGen into the official WEF customer-story page.",
+      "externalUrl": "https://www.thenationalnews.com/business/technology/2024/01/26/ai-javier-milei-speech-davos-wef/",
+      "articleSlug": "2024-01-milei-davos"
+    },
+    {
+      "date": "2024-03-25",
+      "title": "The Information leaks $440M pre-money Series A",
+      "type": "media",
+      "description": "The Information reports HeyGen is raising $60M at $440M pre-money — a sixfold valuation jump from November's $75M post-money round, in four months. Coverage discloses $20M+ ARR (up from $3M in July 2023). HeyGen 5.0 launch bundled into the same cycle.",
+      "externalUrl": "https://www.maginative.com/article/heygen-raising-60m-at-440m-valuation-launches-heygen-5-0/"
+    },
+    {
+      "date": "2024-06-20",
+      "title": "Series A — $60M @ $500M, Benchmark-led",
+      "type": "funding",
+      "gtmTag": "Bundled milestone",
+      "description": "Bloomberg breaks the closed Series A: $60M led by Benchmark (Victor Lazarte to board), $500M post-money. Thrive Capital, BOND, Conviction, SV Angel + angels Dylan Field (Figma), Elad Gil, Aviv Nevo, and Neil Mehta (Greenoaks) participate. Disclosed in one news cycle: $35M+ ARR, 40,000+ paying business customers, profitable since Q2 2023, weekly release cadence since September 2022, plus three senior hires — Dave King (ex-Asana CMO) as CBO, Rong Yan (ex-HubSpot VPE) as CTO, Lavanya Poreddy (ex-Meta/Match) as Head of Trust & Safety.",
+      "externalUrl": "https://www.heygen.com/blog/announcing-our-series-a",
+      "articleSlug": "2024-06-series-a-benchmark"
+    },
+    {
+      "date": "2024-06-24",
+      "title": "SCMP confirms full China divestiture",
+      "type": "media",
+      "gtmTag": "Proactive geographic pivot",
+      "description": "South China Morning Post: 'AI start-up HeyGen raises US$60 million after pivoting away from mainland China investors.' Confirms IDG Capital, Baidu Ventures, HongShan, and ZhenFund all sold their stakes to US counterparts; Shenzhen entity dissolved end of 2023; data hosted in Ohio; software not available in China. Xu quote: 'China-based investors have very little stake in the company today.' Closes the eighteen-month proactive D4 arc.",
+      "externalUrl": "https://www.scmp.com/tech/tech-trends/article/3267861/ai-start-heygen-raises-us60-million-after-pivoting-away-mainland-china-investors",
+      "articleSlug": "2024-06-china-divestiture-scmp"
+    },
+    {
+      "date": "2024-10-01",
+      "title": "Joshua Xu deepfake incident",
+      "type": "media",
+      "description": "Criminals create a fraudulent 'ChatGPT tutorial' video using an AI-generated replica of Joshua Xu's avatar and voice to distribute cryptocurrency malware. HeyGen confirms the fraudulent video was not created on its platform, reports it to YouTube, and secures removal. Trust-and-safety posture publicly tested with the founder as subject.",
+      "externalUrl": "https://wavespeed.ai/blog/posts/heygen-vs-synthesia-comparison-2026/"
+    },
+    {
+      "date": "2024-12-31",
+      "title": "$57.5M ARR end-2024",
+      "type": "media",
+      "description": "HeyGen exits 2024 at ~$57.5M ARR per Sacra's triangulation — roughly 64% growth in the six months since the Series A close, 16x growth from end-2023. Headcount in the 150–200 range.",
+      "externalUrl": "https://sacra.com/c/heygen/"
+    },
+    {
+      "date": "2025-01-15",
+      "title": "Avatar IV foundation lands",
+      "type": "product",
+      "description": "Avatar IV foundation lands in early 2025: a diffusion-inspired audio-to-expression engine that produces photorealistic videos from a single image upload. Predecessor capability bundle for the April 2025 public launch.",
+      "externalUrl": "https://research.contrary.com/company/heygen"
+    },
+    {
+      "date": "2025-04-28",
+      "title": "Avatar IV public launch",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "Avatar IV launches publicly the week of April 28, 2025. One image to a fully animated talking video with hand gestures, micro-expressions, and vocal-rhythm-driven facial timing. Creator el.cine's May 7 X post — 'HeyGen just dropped Avatar IV... the lines between real and AI is gone' — becomes the canonical viral artifact.",
+      "externalUrl": "https://www.heygen.com/blog/introducing-voice-director-and-avatar-iv"
+    },
+    {
+      "date": "2025-05-01",
+      "title": "HubSpot partnership + API plans",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "HubSpot partnership announced April 2025; API plans launched May 2025 (Pro $99/mo, Scale $330/mo, Enterprise custom) — the first formal platform-layer pricing distinct from seat-based Web app tiers. The narrative shifts from 'AI video tool' to 'AI video infrastructure.'",
+      "externalUrl": "https://sacra.com/c/heygen/"
+    },
+    {
+      "date": "2025-06-05",
+      "title": "Avatar IV major update",
+      "type": "product",
+      "description": "Avatar IV updated June 5, 2025: dynamic gestures from script and prompts, micro-expressions, 60-second clip length. Reinforces the weekly-release cadence the company has maintained since September 2022.",
+      "externalUrl": "https://community.heygen.com/public/videos/avatar-iv-update-june-5-2025-2025-06-09"
+    },
+    {
+      "date": "2025-09-16",
+      "title": "Alisa acquisition + Video Agent beta (single-day)",
+      "type": "acquisition",
+      "gtmTag": "Bundled milestone",
+      "description": "First publicly disclosed M&A: HeyGen acquires Alisa by Genova Labs. Bin Liu (Alisa CEO, ex-Pinterest Head of Content & Creators) joins as VP Product Engineering. Most of the Alisa team came from Pinterest's content infrastructure. Same-day: Video Agent public beta launches — one prompt produces script, avatar, voice, visuals, pacing, captions, auto-formatting (1:1 / 9:16 / 16:9). Single-day stack: M&A + new product + the 'creative operating system' narrative upgrade.",
+      "externalUrl": "https://www.heygen.com/blog/bin-liu-joins-heygen",
+      "articleSlug": "2025-09-alisa-video-agent"
+    },
+    {
+      "date": "2025-09-30",
+      "title": "$95M ARR (Sacra)",
+      "type": "media",
+      "description": "Sacra triangulates HeyGen ARR at $95M as of September 2025 — roughly 5x year-over-year. Headcount ~200, expanding.",
+      "externalUrl": "https://sacra.com/c/heygen/"
+    },
+    {
+      "date": "2025-10-15",
+      "title": "Sora 2 + LiveAvatar + Veo 3.1 (October release)",
+      "type": "product",
+      "gtmTag": "Tech narrative upgrade",
+      "description": "October 2025 release: HeyGen integrates OpenAI's Sora 2 for cinematic B-roll, launches LiveAvatar (real-time conversational avatars via WebRTC API, connectable to any LLM), and adds Veo 3.1. Three model integrations in one release — HeyGen positioned explicitly as the connective creative layer above foundation video and audio models.",
+      "externalUrl": "https://www.heygen.com/blog/heygen-october-2025-release"
+    },
+    {
+      "date": "2025-10-30",
+      "title": "$100M ARR — 29 months from $1M",
+      "type": "media",
+      "gtmTag": "Default-alive as offense",
+      "description": "Joshua Xu announces HeyGen has crossed $100M ARR — 29 months from $1M (April 2023) to $100M (October 2025). Framed as one of the fastest 1-to-100 traces in enterprise SaaS history. 1,024% YoY growth reference; ~100,000 paying business customers per company framing (vs ~40K at the June 2024 Series A). Cumulative raised across all rounds: ~$74M.",
+      "externalUrl": "https://www.arr.club/signal/heygen-arr-hits-100m"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2023-03-01",
+      "value": 1000000,
+      "source": "Contrary Research",
+      "confidence": "official"
+    },
+    {
+      "date": "2023-05-01",
+      "value": 2000000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2023-07-01",
+      "value": 3000000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2023-10-01",
+      "value": 18000000,
+      "source": "Voicebot.ai / Maginative",
+      "confidence": "official"
+    },
+    {
+      "date": "2024-03-25",
+      "value": 20000000,
+      "source": "Maginative (The Information leak)",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-06-20",
+      "value": 35000000,
+      "source": "HeyGen Series A blog",
+      "confidence": "official"
+    },
+    {
+      "date": "2024-12-31",
+      "value": 57500000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-09-30",
+      "value": 95000000,
+      "source": "Sacra",
+      "confidence": "media"
+    },
+    {
+      "date": "2025-10-30",
+      "value": 100000000,
+      "source": "Joshua Xu / ARR Club",
+      "confidence": "official"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2021-03-02",
+      "value": 10000000,
+      "round": "Seed (Surreal)",
+      "source": "TechCrunch / estimate",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2023-11-30",
+      "value": 75000000,
+      "round": "Conviction",
+      "source": "Maginative",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-03-25",
+      "value": 440000000,
+      "round": "Series A pre-money (leak)",
+      "source": "Maginative / The Information",
+      "confidence": "media"
+    },
+    {
+      "date": "2024-06-20",
+      "value": 500000000,
+      "round": "Series A post-money",
+      "source": "Bloomberg / HeyGen",
+      "confidence": "official"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X (Twitter)",
+      "score": 5,
+      "bestStage": "Inflection + scale",
+      "effort": "Daily, founder-led + creator-amplified",
+      "role": "The viral demo surface — both viral inflection moments lived here",
+      "description": "HeyGen's two largest organic distribution events both happened on X. The September 2023 'Finger' video-translation demo cleared roughly 6.8M views and triggered ~180,000 queued translations. Four months later, Aaron Slodov's English-translated version of Milei's WEF speech hit ~75M views and ~240K likes. Joshua Xu (@joshua_xu_) runs daily-ish posting that has become the canonical launch channel for Avatar IV, Video Agent, and Sora 2 integration showcases. Two independent user-replicable viral moments four months apart rule out luck.",
+      "catalyst": "September 2023 — a creator's English-to-German/French translated demo racks ~6.8M views on X. The format itself (upload video, get same video lip-synced in 30+ languages with voice clone) is the credibility constraint: if the lip-sync or voice flattened, X replies would have shredded it inside a day.",
+      "catalystUrl": "https://omr.com/en/daily/heygen-youtube-ai-uebersetzung",
+      "accountUrl": "https://x.com/joshua_xu_",
+      "accountLabel": "@joshua_xu_ on X",
+      "whenItWorks": "When the product's output is itself an organic distribution artifact — video, voice, image. The translated video is both the demo and the ad.",
+      "whenItDoesnt": "When the product output is text, code, or backend data. Without the share-as-demo coupling, X virality reduces to founder-thought-leadership posting."
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "score": 4,
+      "bestStage": "Inflection + scale",
+      "effort": "Creator-led, secondary repost surface",
+      "role": "Long-form translated content and demo amplification",
+      "description": "Translated long-form creator videos and Avatar IV demos compound on YouTube far past the X spike window. el.cine's May 2025 Avatar IV reaction ('the lines between real and AI is gone') became the canonical second-stage viral artifact after the public launch. The HeyGen WEF customer-story page links out to the Milei translation rehosted on YouTube. The category of 'translated video' is built for YouTube's long-tail discovery.",
+      "catalyst": "September 2023 and onward — creator-translated versions of viral X demos get reposted to YouTube where they compound past the news cycle. The format outlives the platform that launched it.",
+      "accountUrl": "https://www.youtube.com/@heygen_official",
+      "accountLabel": "HeyGen on YouTube",
+      "whenItWorks": "When the demo format is share-shaped and the product output is video. YouTube's long-tail surfaces translated content for years after the initial post.",
+      "whenItDoesnt": "When the demo requires per-account context (sign in, configuration) to make sense. Walled demos do not survive being decoupled from the originating platform."
+    },
+    {
+      "slug": "tiktok",
+      "name": "TikTok",
+      "score": 3,
+      "bestStage": "Scale",
+      "effort": "Creator-led, low team involvement",
+      "role": "Short-form creator amplification of translated avatar content",
+      "description": "Short-form creators repost HeyGen-translated clips and AI-avatar demos for the engagement boost. Adjacent context: the Joe Rogan / Alpha Grind deepfake of February 2023 cleared ~5M views on TikTok before takedown — adjacent to HeyGen rather than directly attributed, but it shaped the trust-and-safety conversation around the category for years afterward. HeyGen does not run a heavy first-party TikTok motion; the channel is creator-driven.",
+      "catalyst": "No single catalyst event. Continuous low-frequency creator activity since 2023, peaking around the Avatar IV launch in spring 2025 when single-image-to-video clips became a recognizable TikTok format.",
+      "accountUrl": "https://www.tiktok.com/@heygen_official",
+      "accountLabel": "HeyGen on TikTok",
+      "whenItWorks": "When short-form creators have a reason to remix and repost — translated language demos and Avatar IV one-image videos qualify.",
+      "whenItDoesnt": "When the format requires more than 15–60 seconds to land. Long-form storyline reveals do not survive on TikTok without aggressive recutting."
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "score": 4,
+      "bestStage": "Inflection + scale",
+      "effort": "Founder + executive cadence",
+      "role": "Enterprise-audience signal + the September 2023 founder line",
+      "description": "Joshua Xu's LinkedIn line on the day of the September 2023 viral spike — 'Breaking down language barriers makes content accessible to the entire globe, not just the 10% who speak English' — became one of the most-quoted founder lines in the case set. LinkedIn is also where the Series A bench (Dave King ex-Asana CMO, Rong Yan ex-HubSpot VPE, Lavanya Poreddy ex-Meta/Match) shipped their join announcements, amplifying the bundled milestone past the original news cycle.",
+      "catalyst": "September 2023 — Xu's LinkedIn line on the viral demo day reframed video translation from a creator tool into a global-content-accessibility argument. The frame held through the Milei moment and the Series A close.",
+      "accountUrl": "https://www.linkedin.com/in/joshuaxu1/",
+      "accountLabel": "Joshua Xu on LinkedIn",
+      "whenItWorks": "When enterprise buyers need to verify the people behind the product. LinkedIn is where the Asana CMO / HubSpot VPE / Meta-Match bench is auditable.",
+      "whenItDoesnt": "When the company has no enterprise motion and the audience is purely consumer. The signal cost of executive bios on LinkedIn is wasted on a B2C-only company."
+    },
+    {
+      "slug": "podcasts",
+      "name": "Long-form podcasts",
+      "score": 4,
+      "bestStage": "Inflection + scale",
+      "effort": "Punctuated — major rounds and product launches",
+      "role": "Founder-as-IP through investor-aligned long-form interviews",
+      "description": "Joshua Xu has run a deliberate long-form podcast circuit since the 2023 viral inflection: No Priors (Sarah Guo + Elad Gil), Unsupervised Learning with Jacob Effron, The Cognitive Revolution (with Victor Lazarte of Benchmark), Engage Video Marketing with Ben Amos. The Cognitive Revolution episode with Lazarte was timed near the Series A — investor-aligned long-form distribution that bundles the founder voice with the lead-investor stamp.",
+      "catalyst": "November 2023 — Sarah Guo's No Priors episode with Xu coincided with the Conviction round and HongShan board exit. The podcast circuit then carried the Series A bundled milestone into the founder-listener segment.",
+      "catalystUrl": "https://www.nopriors.com/",
+      "accountUrl": "https://www.heygen.com/author/joshua-xu",
+      "accountLabel": "Joshua Xu on HeyGen",
+      "whenItWorks": "When the founder voice can hold up across 60–90 minute interviews and the company has milestone events worth pegging the appearances to.",
+      "whenItDoesnt": "When the founder is the quieter technical leg. Wayne Liang's lower-frequency presence is intentional — pushing him into the same circuit would dilute the channel."
+    },
+    {
+      "slug": "heygen-blog",
+      "name": "heygen.com/blog",
+      "score": 4,
+      "bestStage": "All stages",
+      "effort": "Weekly cadence",
+      "role": "First-party launch surface + bundled-milestone publication",
+      "description": "HeyGen's blog has been the first-party launch surface for every major product moment since the September 2022 Movio launch: Avatar 2.0 (November 2023, bundled with Conviction), HeyGen 5.0 (March 2024, bundled with the leak), Series A announcement (June 2024), Avatar IV (April 2025), Bin Liu / Video Agent (September 2025), October 2025 release (Sora 2 + LiveAvatar + Veo 3.1). The Series A post in particular folded eight stories — funding + valuation + ARR + customers + profitability + three senior hires — into one news cycle, the cleanest C1 (bundled milestone) execution outside Anthropic Claude Code.",
+      "catalyst": "June 20, 2024 — the Series A announcement blog post lands the same hour as Bloomberg's exclusive. HeyGen controls the narrative bundle directly rather than hoping the press picks up the disclosure list intact.",
+      "catalystUrl": "https://www.heygen.com/blog/announcing-our-series-a",
+      "accountUrl": "https://www.heygen.com/blog",
+      "accountLabel": "heygen.com/blog",
+      "whenItWorks": "When you have weekly product moments that compound into a release cadence, and milestone events that benefit from owned-channel narrative control.",
+      "whenItDoesnt": "When the product moves too slowly to fill the cadence. A blog updated quarterly signals decay; a blog updated weekly signals momentum."
+    }
+  ]
+}

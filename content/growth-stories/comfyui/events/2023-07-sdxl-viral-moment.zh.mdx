@@ -1,0 +1,114 @@
+---
+title: "SDXL 1.0 发布 + Scott Detweiler「我在 Stability 内部用的工作流」视频（2023 年 7 月）"
+description: "2023 年 7 月 26 日，Stability AI 发布 SDXL 1.0——一个 120 亿参数的 base+refiner 流水线，Automatic1111 无法高效表达。几天内，Stability 的 QA Head Scott Detweiler 在 YouTube 上发布「What I use internally at Stability for my AI Art」视频，展示他的 SDXL ComfyUI 工作流。视频成了标准 viral artifact。comfyanonymous 没有制作。案例库里最清晰的「社区生产 demo 语法替代创始人设计 demo 语法」例子。"
+date: "2023-07-26"
+type: "product"
+gtmTag: "Format-as-credibility-constraint"
+eventTitle: "SDXL 发布 + Scott Detweiler viral 视频"
+externalUrl: "https://www.yeschat.ai/blog-sdxl-comfyui-stability-workflow-what-i-use-internally-at-stability-for-my-ai-art-43363"
+---
+
+<Catalyst>
+案例库里大多数公司花数月设计的 viral demo 语法——Manus 的 90 秒录屏、ElevenLabs 的 `[excited]` 音频标签、Cursor 的 tab-to-complete 片段——在 ComfyUI 这里是被一位 Stability 外部员工生产的，他白天的工作就是把 ComfyUI 当 QA 工具用。comfyanonymous 没撰稿视频、没协调发布、发布后也没推广。「格式即公信力」约束完全由另一个人的内容满足。结构性教训：当底层是某个定义品类的模型释放的标准集成目标时，社区会自己生产 demo 语法，不需要创始人去做。
+</Catalyst>
+
+2023 年 7 月 26 日。Stability AI 发布 SDXL 1.0——一个 120 亿参数图像生成模型，分成 35 亿 base 和 66 亿 refiner。架构很特别。大多数图像模型是单 pass 的。SDXL 是两阶段流水线：base 生成初始构图，refiner 提升细节。两个阶段跑不同模型权重、不同采样参数，两者之间的交接是一个特定的张量操作。
+
+Automatic1111——当时主流的 Stable Diffusion UI——没法高效表达这套流水线。这个 UI 是围绕单阶段生成构建的。多阶段工作流需要 hack、自定义脚本，结果不一致。
+
+ComfyUI 可以原生表达这套流水线。节点图把 base 和 refiner 当作两个不同的生成节点连起来。交接是节点之间的连线。流水线在视觉上就是架构本身。
+
+SDXL 1.0 发布几天内，Scott Detweiler——Stability AI 的 QA Head——发布了一支题为「What I use internally at Stability for my AI Art」的 YouTube 视频，演示他的 SDXL ComfyUI 工作流。视频做了案例库里每个产品市场团队都在尝试制造的事：它展示了一位可信的实践者用底层解决真实问题，且观看者可以立即复制。
+
+comfyanonymous 没有制作视频。所有公开记录显示，他在写 ComfyUI 的 SDXL 集成代码，同时 Detweiler 在做视频。合作是结构性的——两人都是 Stability 员工，都内部使用 ComfyUI——但不是被指挥的。
+
+## 视频实际展示了什么
+
+Detweiler 工作流视频在产品演示内容里很特别，因为它的结构性主张不是「看看这个工具」，而是「这就是我每天在 Stability 实际用来做我的工作的东西」。公信力来自框架。
+
+视频走过一套具体的 ComfyUI 工作流：
+
+1. SDXL base 模型生成节点 + prompt
+2. base 的 latent 输出馈入 SDXL refiner 模型节点
+3. refiner 节点使用不同的采样参数
+4. 最终解码输出
+
+工作流以节点图的形式暴露，观看者可以看见、理解，并立即复刻。没有「secret prompt」或私有技巧——工作流就是物件。观看者可以暂停视频，在自己 ComfyUI 里重建节点图，并产出可比结果。
+
+这是承重的结构性属性。大多数演示内容是表演性的——观看者看了但没法轻易复刻。Detweiler 的视频是生成性的——观看者看了就能立即重现工作流。「节点图暴露」格式让视频成为可安装物件，而不是可观看物件。
+
+## 为什么这件事 Comfy 自己做不了
+
+Stability 的 QA Head 为底层生产工作流视频，与 comfyanonymous 为底层生产工作流视频，结构上截然不同。差别：
+
+| 变量 | Detweiler 视频 | 假设的 comfyanonymous 视频 |
+|---|---|---|
+| 来源权威 | 「我以此为生在 Stability 工作」 | 「我建了这个工具」 |
+| 隐含主张 | 「这在生产环境里 work」 | 「这在原则上是可能的」 |
+| 复刻摩擦 | 低——观看者可复制生产配置 | 中——观看者复制作者偏好配置 |
+| 信任信号 | 外部验证 | 自我验证 |
+
+创始人演示自己的工具，结构上始终带着「演示可能是 cherry-picked」的问题。Stability 员工演示自己的生产工作流，则带着创始人无法购买或制造的外部验证。
+
+更深的结构性事实：Detweiler 选 ComfyUI 当他的内部 QA 工具，是因为底层本来就是这件工作的最好选项，不是因为 comfyanonymous 请他这么做。这个选择在视频构思之前就做了。视频记录了一个已经存在的运营事实。2026 年试图制造这种内容的创始人没法把顺序反过来——底层必须先是运营选择，演示内容是它的下游。
+
+## Sytan 工作流是二阶 artifact
+
+Detweiler 视频开了门。Civitai 上的 Sytan SDXL workflow——一个社区共享的 PNG 文件，其它创作者可以拖进自己的 ComfyUI 画布——延展了同样的模式。
+
+Sytan 不是 Stability 员工。Sytan 工作流是为特定美学结果优化的 power user 工作流，作为 PNG 文件在 Civitai 既有的「模型分享约定」下分享。PNG 在元数据里携带完整 JSON 工作流图。拖到 ComfyUI 里，工作流重建。
+
+Sytan 工作流 + Detweiler 视频一起确立了「格式即公信力」约束：
+
+- ComfyUI 工作流是可分享、可运行、可复制的 artifact
+- artifact 格式（PNG-嵌入-JSON）对创始人、QA 员工、power user、普通创作者都是相同的
+- 生产这个格式不需要特殊地位
+- 格式通过普通社交媒体上的图像分享传播
+
+到 2023 年 9 月，4DCu.be 在自己博客上发布了详细的 ComfyUI 工作流教程。OpenArt 在托管工作流库。Civitai 有专门的工作流分享表面。格式已经成了社区标准分发机制——这些都不需要 comfyanonymous 去设计或维护。
+
+## Automatic1111 缺口是结构性开口
+
+SDXL 1.0 发布（7 月 26 日）到 Automatic1111 完整支持 SDXL（9 月）之间的 6 周窗口，是给 ComfyUI 提供 viral 时刻的结构性开口。
+
+| 工具 | 日期 | SDXL 1.0 支持 |
+|---|---|---|
+| ComfyUI | 2023 年 7 月 26 日 | Day-1 原生，通过节点图 |
+| Automatic1111 | 2023 年 9 月 | 可用但架构上别扭 |
+| 其它 Stable Diffusion UI | 2023 年 9-10 月 | 各种——大多数后来采用了 ComfyUI 风格的节点模式 |
+
+6 周缺口意味着 SDXL 生命头六周里，唯一实用的「跑 base+refiner 流水线」方式是 ComfyUI。这六周里分享的每一个工作流，默认都是 ComfyUI 工作流。这六周里生产的每一条教程，教的都是 ComfyUI。底层的「习惯塑形」窗口恰好大开，正好碰上最有野心的用户（Stability 员工、专业 Stable Diffusion 艺术家、Civitai power user）在学习新模型。
+
+等 Automatic1111 9 月追上时，ComfyUI 已经捕获了 SDXL 工作流生成。学过 ComfyUI 上 SDXL 的用户没理由换。新进入生态的用户发现 ComfyUI 工作流是主流教程内容。底层的网络效应已经复利过了追赶阈值。
+
+这是 day-1 集成的结构性教训：价值不在于早一天——价值在于「成为最有野心的用户形成工作流习惯的 6 周窗口里的唯一实用选项」。后续每一个模型释放（SVD、Flux、Hunyuan、Wan）都会复刻同样的模式。
+
+## 创始人没做的事
+
+comfyanonymous 在这个时段没做的标准创始人营销动作清单本身就是结构性 payload：
+
+- 没有发起创始人主导的 HN 公告，宣布 ComfyUI 的 SDXL 集成
+- 没有创始人 X thread，走 ComfyUI 适配 SDXL 的架构决策
+- 没有围绕 Detweiler 视频协调的 PR 周期
+- 没有在 Reddit 讨论 SDXL 工作流的帖子里做 reply guy
+- 没有「how to use SDXL in ComfyUI」教程内容放在 comfyanonymous handle 下
+
+每一条都是案例库创始人通常用来放大 viral 时刻的动作。comfyanonymous 一条都没做。底层累积了功劳，而创始人没必要参与功劳累积。
+
+这是「反创始人即 IP」在运营上的含义。创始人没缺席——他在 Stability 写集成代码。创始人没沉默——他在 GitHub 上回应技术 issue。创始人只是没占据「公开领功」位置。那个位置被留空。社区（Detweiler、Sytan、Olivio Sarikas、4DCu.be）替他占据。
+
+<Conclusion title="可复制的部分">
+
+- **当底层是某个上游释放的标准集成目标时，社区会自己生产 demo 语法。** comfyanonymous 没制作 Detweiler 视频、Sytan 工作流或 4DCu.be 教程。它们由外部行动者生产，因为底层本来就是合适的工具。2026 年的创始人建立一个「集成目标」底层时，应该从一开始就规划「社区生产 demo 语法」——并克制「用创始人主导 demo 去抢功」的冲动。
+- **「格式即公信力」约束在「artifact 可机械复刻」时被满足。** PNG-嵌入-JSON 工作流让任何观看者把分享的图拖进自己画布并复现工作流。信任信号是机械的，不是 parasocial 的。2026 年设计可分享 artifact 格式的创始人应该优化「观看者可立即复现」——而不是「观看者可立即赞叹」。
+- **Day-1 集成的价值在 6 周习惯塑形窗口，不在 24 小时新闻周期。** ComfyUI 从 SDXL 上的价值捕获，来自它在「最有野心的用户学习新模型」那六周里是唯一实用选项。Day-1 集成的新闻周期价值小；习惯塑形窗口价值大。2026 年追求与上游释放 day-1 集成的创始人，应该按「习惯塑形窗口」而不是「发布公告」来配资源。
+
+</Conclusion>
+
+## 资料来源
+
+- [yeschat.ai — Scott Detweiler「What I use internally at Stability」工作流解析](https://www.yeschat.ai/blog-sdxl-comfyui-stability-workflow-what-i-use-internally-at-stability-for-my-ai-art-43363)
+- [Latent Space — AI Engineering for Art with comfyanonymous](https://www.latent.space/p/comfyui)
+- [4DCu.be — ComfyUI SDXL workflows 博文（2023 年 9 月）](https://blog.4dcu.be/ai/2023/09/03/comfyui-sdxl-workflows.html)
+- [Stability AI — SDXL 1.0 发布公告（2023 年 7 月）](https://stability.ai/news/stable-diffusion-sdxl-1-announcement)
+- [Wikipedia — ComfyUI](https://en.wikipedia.org/wiki/ComfyUI)

@@ -1,0 +1,281 @@
+{
+  "company": {
+    "slug": "cluely",
+    "name": "Cluely",
+    "legalName": "Cluely Inc",
+    "tagline": "案例库中第一个把 E1（争议资本化）的源头从装置移到创始人本人身上的标杆案例——也是第一次争议反向流向创始人本身的样本",
+    "summary": "Cluely 是这样一个案例：创始人本人就是争议引擎。Artisan 租了广告牌让公众朝广告牌咆哮；Cluely 的 21 岁 CEO Roy Lee 直接把自己变成广告牌——被 Columbia 退学、把 Dean's Discipline Hearing 文件主动公开、把自己用 AI 通过 Amazon 真实面试的过程录下来发布、然后在产品发布视频里亲自上阵用 Cluely 对相亲对象撒谎让对方愤怒离场。从 2025 年 4 月 20 日公开发布到 2025 年 6 月 20 日 a16z 领投的 1500 万美元 A 轮，只用了 10 周时间，投后估值约 1.2 亿美元。7 月 Lee 告诉 TechCrunch ARR 一周内翻倍至 700 万美元。八个月后的 2026 年 3 月，Lee 公开承认这个数字是编造的——按他自己晒出的 Stripe 截图，真实数字约 520 万美元，相差 35%——使 Cluely 成为案例库中第一个争议资本化反向攻击创始人自身可信度的样本。可复用的教训：创始人源头型 E1 没有规模化天花板，但也没有可移植性。Artisan 的广告牌即便换 CEO 也能继续投，Cluely 撑不住一次 Roy Lee 的可信度事件。前 10 周里 B1 / B3 / C1 / E1 / E2 这套招式确实有效，但接下来 24 个月将决定：创始人源头型争议是一种可复用的投资 thesis，还是一次依赖单一创始人的不可持续偶然。",
+    "founded": "2025-04-20",
+    "founders": ["Chungin (Roy) Lee", "Neel Shanmugam", "Alex Chen"],
+    "seriesNumber": 28
+  },
+  "phases": [
+    {"start": "2025-01", "end": "2025-04", "name": "Interview Coder + Columbia 退学事件", "color": "#fef3c7"},
+    {"start": "2025-04", "end": "2025-07", "name": "Cluely 发布 + 10 周内拿到 a16z A 轮", "color": "#fce7f3"},
+    {"start": "2025-07", "end": "2025-12", "name": "争议波次 + 叙事被动收缩", "color": "#dbeafe"},
+    {"start": "2026-01", "end": "2026-06", "name": "ARR 谎言公开 + 可信度反向", "color": "#fee2e2"}
+  ],
+  "events": [
+    {
+      "date": "2025-01-15",
+      "title": "Interview Coder 在 Columbia 用约 10 天写出",
+      "type": "product",
+      "description": "Roy Lee 和 Neel Shanmugam（都是 Columbia 在读本科生）写出 Interview Coder——一个在技术面试期间用 AI 实时生成答题建议的 Chrome 扩展。Lee 后来在多次访谈里复述的 Day 0 计划：用它本人去拿 Big Tech 的 offer，把整个过程录下来，利用震撼效应。",
+      "externalUrl": "https://en.wikipedia.org/wiki/Cluely",
+      "articleSlug": "2025-01-interview-coder-origin"
+    },
+    {
+      "date": "2025-02-12",
+      "title": "Columbia 学院学术诚信听证会",
+      "type": "media",
+      "description": "Lee 参加 Columbia College 的 Dean's Discipline Hearing，针对 Interview Coder 扩展。Lee 后来把听证会文件公开发到社交媒体——这一行为本身构成了第二次独立的违纪。",
+      "externalUrl": "https://gizmodo.com/he-built-a-tool-to-get-around-big-techs-recruiting-process-columbia-kicked-him-out-of-school-2000581712"
+    },
+    {
+      "date": "2025-02-20",
+      "title": "Amazon 面试作弊视频公开",
+      "type": "media",
+      "gtmTag": "创始人源头争议",
+      "description": "Lee 录下自己用 Interview Coder 跑完 Amazon 软件工程师完整招聘流程，拿到 offer，然后把视频上传到 LinkedIn 和 YouTube。Amazon 撤回 offer。按 Lee 的说法，Amazon 一位 executive 写邮件给 Columbia「expel this kid or we won't hire from your school anymore」——Amazon 未公开确认此信。",
+      "externalUrl": "https://en.wikipedia.org/wiki/Roy_Lee_(entrepreneur)"
+    },
+    {
+      "date": "2025-03-26",
+      "title": "「被 Columbia 踢出来」病毒帖",
+      "type": "media",
+      "gtmTag": "创始人源头争议",
+      "description": "Lee 发帖：「I just got kicked out of Columbia for taking a stand against Leetcode interviews.」（我刚被 Columbia 踢出来，因为我对 Leetcode 面试 take a stand。）X 上同步。累计百万级浏览，成为 Cluely 的开局营销资产——把违纪事件直接转化成品牌。",
+      "externalUrl": "https://www.gothamist.com/arts-entertainment/columbia-suspended-him-after-he-built-a-cheating-app-now-hes-raised-53m-for-it"
+    },
+    {
+      "date": "2025-03-31",
+      "title": "Columbia 停学正式生效",
+      "type": "media",
+      "description": "停学正式生效。停学期一年，可在 2026 年 5 月 20 日复学。Lee 和 Shanmugam 选择直接退学，搬到旧金山，把 Interview Coder 重做为 Cluely。"
+    },
+    {
+      "date": "2025-04-20",
+      "title": "Cluely 公开发布 + 相亲撒谎视频",
+      "type": "product",
+      "gtmTag": "创始人源头争议",
+      "description": "Cluely 作为 Interview Coder 的重新品牌公开发布。发布视频里 Roy Lee 在餐厅相亲，用 Cluely 实时生成关于自己年龄、职业、艺术品味的虚假信息读给对方听，女方识破后愤怒离开。视频据报道制作成本 10 万美元以上，配文「Cluely is out. cheat on everything.」在 X 上达到 1300 万次以上浏览。",
+      "externalUrl": "https://x.com/im_roy_lee",
+      "articleSlug": "2025-04-cluely-launch-blind-date-video"
+    },
+    {
+      "date": "2025-04-21",
+      "title": "种子轮公布——530 万美元",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "Abstract Ventures + Susa Ventures 共同领投的 530 万美元种子轮。与发布同步披露的还包括：发布首周 7 万注册、300 万美元 ARR 自述。TechCrunch 标题：「Columbia student suspended over interview cheating tool raises $5.3M to 'cheat on everything.'」",
+      "externalUrl": "https://techcrunch.com/2025/04/21/columbia-student-suspended-over-interview-cheating-tool-raises-5-3m-to-cheat-on-everything/"
+    },
+    {
+      "date": "2025-04-30",
+      "title": "网站上的「作弊」字眼悄悄淡化",
+      "type": "media",
+      "description": "发布约 10 天内，Cluely 在媒体、广告主、投资人的审视下，悄悄在网站上淡化最直接的「考试作弊」「面试作弊」表述。把 Cluely 类比为「计算器 + 拼写检查器」的产品宣言被保留。",
+      "externalUrl": "https://techcrunch.com/2025/06/20/cluely-a-startup-that-helps-cheat-on-everything-raises-15m-from-a16z/"
+    },
+    {
+      "date": "2025-06-15",
+      "title": "反作弊厂商发布检测博客",
+      "type": "media",
+      "description": "Proctorio 发布「How Proctorio Blocks Cluely」——明确反驳 Cluely「undetectable」的营销承诺。Honorlock 和 Talview 紧随其后。核心产品 claim 在发布后两个月内被公开证伪。",
+      "externalUrl": "https://proctorio.com/about/blog/how-proctorio-blocks-cluely"
+    },
+    {
+      "date": "2025-06-20",
+      "title": "A 轮——a16z 领投 1500 万美元（投后约 1.2 亿美元估值）",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "Andreessen Horowitz 领投 1500 万美元 A 轮，合伙人 Bryan Kim 和 Eric Zhou。两位未参与本轮的投资人告诉 TechCrunch，他们认为投后约 1.2 亿美元；a16z 拒绝置评。Lee 在 X 上用「Social Network」式戏剧化重演视频公布融资。距离公开发布约 10 周。",
+      "externalUrl": "https://a16z.com/announcement/investing-in-cluely/",
+      "articleSlug": "2025-06-a16z-series-a"
+    },
+    {
+      "date": "2025-06-27",
+      "title": "Cluely PR 主动安排 TechCrunch 采访",
+      "type": "media",
+      "description": "Cluely 的 PR 代表给 TechCrunch 记者 Marina Temkin 发邮件，提出安排 Roy Lee 接受采访。Temkin 同意；采访通过电话进行。Lee 告诉 Temkin Cluely 的 ARR 一周内翻倍到 700 万美元。（2026 年 3 月 Lee 把这次采访错误地描述成「random cold call」——TechCrunch 公布了邮件记录。）",
+      "externalUrl": "https://techcrunch.com/2026/03/05/cluely-ceo-roy-lee-admits-to-publicly-lying-about-revenue-numbers-last-year/"
+    },
+    {
+      "date": "2025-07-03",
+      "title": "「ARR 一周翻倍到 700 万美元」——后被撤回",
+      "type": "media",
+      "gtmTag": "可信度反向",
+      "description": "TechCrunch 刊出：「Cluely 的 ARR 一周内翻倍到 700 万美元，创始人 Roy Lee 说。但对手们来了。」Lee 称某家上市公司同一周把和 Cluely 的合同从 125 万美元提到 250 万美元。这个 700 万美元数字在 2026 年 3 月被 Lee 自己承认是编造的——真实数字按 Stripe 截图约 520 万美元。",
+      "externalUrl": "https://techcrunch.com/2025/07/03/cluelys-arr-doubled-in-a-week-to-7m-founder-roy-lee-says-but-rivals-are-coming/",
+      "articleSlug": "2025-07-7m-arr-claim"
+    },
+    {
+      "date": "2025-07-03",
+      "title": "Pickle Glass 开源克隆发布",
+      "type": "product",
+      "description": "Pickle AI（YC 投资）的 Daniel Park 发布 Glass——免费开源的 Cluely 克隆，号称「4 天写完」——GitHub 仓库 pickle-com/glass。一天内 1300+ star、200+ fork。48 小时内被揭：Glass 代码抄自 cheating_daddy（GPLv3）但被错误地以 Apache 2.0 重新发布；Pickle 的 Firebase 凭据也被暴露在仓库里。",
+      "externalUrl": "https://github.com/pickle-com/glass"
+    },
+    {
+      "date": "2025-07-18",
+      "title": "SF Standard 「frat-bro」调查特稿",
+      "type": "media",
+      "description": "SF Standard 发表「Inside the frat-bro startup that wants you to 'cheat on everything.'」报道：6 名员工住在 Cluely 的 SoMa 办公楼里、~12 人住在街对面、10 万用户（以美国为主）、「some profitable weeks」（有些盈利周）。文中的照片后来被作为分区违规举报的证据使用。",
+      "externalUrl": "https://sfstandard.com/2025/07/18/cluely-startups-roy-lee-columbia-cheating-viral-tiktok/"
+    },
+    {
+      "date": "2025-09-01",
+      "title": "Tagline 切换到「This feels like cheating」",
+      "type": "product",
+      "description": "Cluely 主页主标语从「Cheat on Everything」变成「Everything You Need. Before You Ask. … This feels like cheating.」过渡是渐进的；品牌在向 AI 会议助理定位移动，但保留与「作弊」相关的语调作为钩子。",
+      "externalUrl": "https://cluely.com/"
+    },
+    {
+      "date": "2025-10-29",
+      "title": "Disrupt 2025 主舞台访谈",
+      "type": "media",
+      "gtmTag": "创始人即 IP",
+      "description": "Roy Lee 在 TechCrunch Disrupt 2025 主舞台。回击「ragebait」标签：「I think I'm just honest and authentic and I think people just see that as ragebaiting, because they get enraged, but it's probably just my personality.」拒绝披露收入数字：「you should never share revenue numbers.」暗示「launched too early」，承认 Cluely「not the fastest growing company of all time」。",
+      "externalUrl": "https://techcrunch.com/2025/10/29/cluelys-roy-lee-on-the-ragebait-strategy-for-startup-marketing/"
+    },
+    {
+      "date": "2025-11-05",
+      "title": "「Viral hype is not enough」后续报道",
+      "type": "media",
+      "description": "TechCrunch 后续报道：「Cluely's Roy Lee hints that viral hype is not enough.」Lee 承认仅靠营销无法建立可持续的业务。这是策略回调的首个公开信号。",
+      "externalUrl": "https://techcrunch.com/2025/11/05/cluelys-roy-lee-hints-that-viral-hype-is-not-enough/"
+    },
+    {
+      "date": "2025-11-20",
+      "title": "SoMa 分区违规 + 宣布迁往纽约",
+      "type": "media",
+      "gtmTag": "创始人源头争议",
+      "description": "SF Standard 报道 Cluely 将剥离 SoMa Bryant Street 三层楼全部 HQ，迁往纽约。Lee 确认该建筑为办公用途、不能居住——员工此前一直住在里面。7 月 SF Standard 那篇文章里的照片被作为分区委员会投诉的证据使用。",
+      "externalUrl": "https://sfstandard.com/2025/11/20/san-francisco-s-controversial-startup-moving-new-york/",
+      "articleSlug": "2025-11-soma-zoning-nyc-move"
+    },
+    {
+      "date": "2025-12-01",
+      "title": "AI 会议助理定位完全切换完成",
+      "type": "product",
+      "description": "到 2025 年 11 月底 / 12 月初，Cluely 已定位为 AI 会议助理，与 Otter.ai、Granola、ChatGPT 会议功能等正面竞争。「cheat on everything」时代在运营层面已经结束，即便品牌嗓音里仍有残留。",
+      "externalUrl": "https://en.wikipedia.org/wiki/Cluely"
+    },
+    {
+      "date": "2026-03-05",
+      "title": "Roy Lee 撤回 700 万美元 ARR 自述",
+      "type": "media",
+      "gtmTag": "可信度反向",
+      "description": "Roy Lee 在 X 上正式撤回 2025 年 7 月的 700 万美元 ARR 数字，称这是「the only blatantly dishonest thing i've said publicly online」。附 Stripe 截图：消费侧 ARR 270 万美元（run rate 380 万）+ 企业侧 ARR 250 万美元（run rate 250 万）≈ 520 万美元。TechCrunch 同日刊出撤回报道，并公布邮件记录证明那次原始采访是 PR 主动安排的，并非 Lee 在自辩里所说的「random cold call」。",
+      "externalUrl": "https://techcrunch.com/2026/03/05/cluely-ceo-roy-lee-admits-to-publicly-lying-about-revenue-numbers-last-year/",
+      "articleSlug": "2026-03-arr-retraction"
+    },
+    {
+      "date": "2026-03-10",
+      "title": "戴墨镜自辩视频",
+      "type": "media",
+      "description": "撤回后几天，Lee 发了一段约 2 分钟的视频：戴墨镜、对麦自辩。把虚报描述成「发布后没多久 fractionally wrong」。自称「top under-25 name in tech」。把晒 Stripe 截图的行为定义为对其他创始人的透明度示范。引发一轮新的、比之前更怀疑的传播周期。",
+      "externalUrl": "https://piunikaweb.com/2026/03/10/cluely-ceo-roy-lee-fires-back-techcrunch-revenue-lie-rant/"
+    }
+  ],
+  "arr": [
+    {"date": "2025-04-21", "value": 3000000, "source": "Roy Lee 经 TechCrunch（official-claim，鉴于后来的撤回应审慎对待）", "confidence": "estimate"},
+    {"date": "2025-06-30", "value": 5200000, "source": "Roy Lee 在 2026 年 3 月撤回时晒出的 Stripe 截图", "confidence": "official"},
+    {"date": "2025-07-03", "value": 7000000, "source": "Roy Lee 对 TechCrunch（2026 年 3 月被承认为编造）", "confidence": "estimate", "round": "official-claim——已撤回"}
+  ],
+  "valuation": [
+    {"date": "2025-06-20", "value": 120000000, "round": "A 轮（估算）", "source": "两位未参与本轮的投资人经 TechCrunch；a16z 拒绝置评", "confidence": "estimate"}
+  ],
+  "platforms": [
+    {
+      "slug": "x",
+      "name": "X（Twitter）",
+      "score": 5,
+      "bestStage": "引爆期到 A 轮——承重渠道",
+      "effort": "创始人日更内容 + 间歇性高制作视频投放",
+      "role": "创始人源头型 E1 的载体",
+      "description": "X 是 Cluely E1 reactive founder-source 子模式真正的落地位置。Roy Lee（@im_roy_lee）跑一种与公司本身无法区分的日更节奏。相亲撒谎发布视频（1300 万+ 浏览）、A 轮的「Social Network」式重演视频、2026 年 3 月的撤回帖子和 Stripe 截图、戴墨镜的自辩视频——全部首发在这里。按 a16z 的投资文档，Cluely 增长团队中多人各自拥有 10 万+ 个人粉丝——这个渠道是按媒体公司而非营销部门的方式配置的。",
+      "catalyst": "2025 年 4 月 20 日——「Cluely is out. cheat on everything」+ 相亲视频。这条帖子几个月内突破 1300 万浏览，至今仍是 Cluely 被引用最多的单一艺品。",
+      "catalystUrl": "https://x.com/im_roy_lee",
+      "accountUrl": "https://x.com/im_roy_lee",
+      "accountLabel": "@im_roy_lee on X",
+      "whenItWorks": "当创始人愿意把所有个人决定都变成公开内容，并且品牌嗓音和创始人嗓音是同一把嗓音——以年为单位、而不是周",
+      "whenItDoesnt": "当一次创始人可信度事件让争议流量反向打回创始人本人——2026 年 3 月的 ARR 撤回就是这种反向流动的标准样本"
+    },
+    {
+      "slug": "youtube-tiktok",
+      "name": "YouTube + TikTok（长短视频）",
+      "score": 4,
+      "bestStage": "起源到发布——产品概念验证面",
+      "effort": "单条高制作发布视频 + 持续的创始人短片",
+      "role": "B1 反向用法——format-as-credibility 用于扩大而非约束伦理造假空间",
+      "description": "Amazon 面试作弊视频（2025 年 2 月）和 4 月的相亲发布视频是 Cluely 两个承重视频资产。两条视频都展示了产品在「欺骗中段」的画面，这是任何投资人 pitch deck 都无法替代的。Amazon 视频把 Columbia 听证会逼入公开记录。相亲视频把创始人 + 演员 + CEO 压缩到同一具肉身上镜，达到 1300 万+ 浏览，制作成本据报道超过 10 万美元。短视频 TikTok 切片把同样的艺品再投放给另一拨受众。",
+      "catalyst": "2025 年 2 月——Amazon 面试视频。它建立了「创始人在欺骗现场展示产品」的格式，4 月发布视频以更大规模放大同一格式。",
+      "catalystUrl": "https://x.com/im_roy_lee",
+      "accountUrl": "https://www.youtube.com/@roy_lee_3",
+      "accountLabel": "Roy Lee 的 YouTube",
+      "whenItWorks": "当产品有真实的用户群体愿意付费使用其非道德用法（考生、面试候选人、用脚本读销售话术的销售员），并且文化时刻支持这种极化",
+      "whenItDoesnt": "当监管或平台抢在下一轮病毒周期之前反应——Proctorio、Honorlock、Talview 在两个月内反驳了「undetectable」承诺，迫使叙事被动收缩"
+    },
+    {
+      "slug": "a16z-podcast",
+      "name": "a16z 投资人播客 + 投资文档",
+      "score": 4,
+      "bestStage": "A 轮窗口——投资人联合品牌周期",
+      "effort": "一篇投资人文章 + 一期联合品牌播客 + 合伙人长尾社媒发帖",
+      "role": "B3 的重构——投资人作为争议 thesis 的联合作者",
+      "description": "a16z 的投资文档（「Investing in Cluely」，2025 年 6 月 20 日）和联合品牌播客（「Building Cluely: The Viral AI Startup that Raised $15M in 10 Weeks」）联合标记了一线美国基金第一次公开把争议资本化定义为可投资品类——而非孤立 stunt。合伙人 Bryan Kim 的姿态在两份内容里更接近联合主持人而非投资人——播客的结构是为了让 GTM thesis 对其他可能投下一家 Cluely 形态创始人的 VC 也能读懂。这是 B3 周期由机构开支票而非单一 KOL 提供借入公信力时的形态。",
+      "catalyst": "2025 年 6 月 20 日——联合发布。a16z 的投资文档和播客同周发布，合伙人明确把 Lee 的极化风格定义为「deliberate strategy rather than publicity-seeking」（刻意策略而非纯炒作）。",
+      "catalystUrl": "https://a16z.com/announcement/investing-in-cluely/",
+      "accountUrl": "https://a16z.com/announcement/investing-in-cluely/",
+      "accountLabel": "a16z——Investing in Cluely",
+      "whenItWorks": "当投资人投资组合中已经包括 distribution-first AI 消费公司（Captions、ElevenLabs、BeReal、Function Health），让 thesis 看起来是连续的、而不是临时编出来的",
+      "whenItDoesnt": "当底层财务披露失守——2026 年 3 月 ARR 撤回事件发生后，联合品牌播客里把 Lee 定义为「刻意策略」的措辞也跟着受了连带损伤"
+    },
+    {
+      "slug": "techcrunch",
+      "name": "TechCrunch + 一线科技媒体",
+      "score": 4,
+      "bestStage": "每一次融资和每一次可信度事件",
+      "effort": "PR 主动安排的采访 + 融资公告快速跟进",
+      "role": "资本级赢得式媒体（也是可信度反向最终发生的场地）",
+      "description": "TechCrunch 的 Marina Temkin 实质上是 Cluely 这一档口的专属记者——2025 年 4 月种子轮、2025 年 6 月 A 轮、2025 年 7 月「$7M ARR 一周翻倍」、2025 年 10 月 Disrupt 访谈、2025 年 11 月「viral hype 不够」后续、2026 年 3 月撤回报道全部由她经手。最具决定性的报道是 2026 年 3 月那篇撤回：Temkin 重新发布了 2025 年 6 月那次采访的邮件记录，反驳 Lee 把它说成「random cold call」的措辞。同一家媒体一边放大了 C1 周期，一边定价了可信度损失。",
+      "catalyst": "2026 年 3 月 5 日——「Cluely CEO Roy Lee admits to publicly lying about revenue numbers last year.」这篇文章把 Cluely 此前所有披露都变成开放问题。",
+      "catalystUrl": "https://techcrunch.com/2026/03/05/cluely-ceo-roy-lee-admits-to-publicly-lying-about-revenue-numbers-last-year/",
+      "accountUrl": "https://techcrunch.com/tag/cluely/",
+      "accountLabel": "TechCrunch——Cluely 报道",
+      "whenItWorks": "当创始人愿意在每一轮周期都做公开采访，而且财务数字能经得起后续交叉核对",
+      "whenItDoesnt": "当某次披露后来被证明是编造——TechCrunch 的第一反应不是软化原文，是重新发布证明谎言成立的回执"
+    },
+    {
+      "slug": "sf-standard",
+      "name": "SF Standard 调查报道",
+      "score": 3,
+      "bestStage": "中期——当 live-work 房子本身成为新闻事件",
+      "effort": "贴身报道 + 照片记录",
+      "role": "对抗性的特稿报道，最后变成证据材料",
+      "description": "SF Standard 发了两篇文章，实质性地改变了 Cluely 的轨迹。2025 年 7 月 18 日：「Inside the frat-bro startup that wants you to 'cheat on everything.'」报道 SoMa 办公楼里有 6 名员工居住、街对面还有约 12 人、10 万美国本土用户、「some profitable weeks」。2025 年 11 月 20 日：确认 Cluely 将剥离 SoMa 三层全部、迁往纽约，原因是分区委员会的投诉——投诉中明确使用了 7 月那篇文章的照片作为分区违规证据。7 月公司迎接的特稿，11 月变成了分区执法档案。",
+      "catalyst": "2025 年 7 月 18 日——live-work 房子特稿。文章基调对 Cluely 是友好的，Lee 转发推荐；但照片里员工住在办公楼里的画面变成了 11 月执法的证据基础。",
+      "catalystUrl": "https://sfstandard.com/2025/07/18/cluely-startups-roy-lee-columbia-cheating-viral-tiktok/",
+      "accountUrl": "https://sfstandard.com/2025/11/20/san-francisco-s-controversial-startup-moving-new-york/",
+      "accountLabel": "SF Standard——Cluely 报道",
+      "whenItWorks": "当创始人欢迎对抗性报道、因为对抗性框架会转化为品牌，而监管环境对同样细节保持沉默",
+      "whenItDoesnt": "当让品牌报道有效的同一张照片变成分区投诉的证据——11 月的迁址是公司在 7 月时未规划的跨海岸搬家"
+    },
+    {
+      "slug": "columbia-spectator",
+      "name": "Columbia Spectator + 校园起源报道",
+      "score": 3,
+      "bestStage": "起源——Cluely 还不存在的时候",
+      "effort": "一份 Dean's Discipline Hearing 记录 + 引用它的 LinkedIn 帖子",
+      "role": "把机构反派作为叙事基底",
+      "description": "Columbia 学术诚信记录——2025 年 2 月 12 日 Dean's Discipline Hearing、3 月底停学正式生效、2026 年 5 月 20 日可复学——是 Cluely 整个 narrative 必需的机构反派。Lee 自己把听证文件公开发到 X 和 LinkedIn 上，让学术诚信案件被直接转化成品牌资产。Columbia Spectator 和 Gizmodo 对原始听证的报道成了第三方验证层；Lee 不需要 Columbia 确认任何东西，因为他已经自己公开了文件。这是整套 GTM 招式所依托的叙事源头。",
+      "catalyst": "2025 年 3 月 26 日——「I just got kicked out of Columbia for taking a stand against Leetcode interviews」在 LinkedIn 和 X 上爆开。如果没有一所一线高校 + 一家一线大厂作为反派，Cluely 后续整个故事就没有对手。",
+      "catalystUrl": "https://www.gothamist.com/arts-entertainment/columbia-suspended-him-after-he-built-a-cheating-app-now-hes-raised-53m-for-it",
+      "accountUrl": "https://www.columbiaspectator.com/",
+      "accountLabel": "Columbia Spectator",
+      "whenItWorks": "当创始人挑选了一个有文化分量的反派——一线大学 + 一线大厂——并且愿意把学术诚信记录本身变成营销资产",
+      "whenItDoesnt": "当反派不配合演——Columbia 和 Amazon 都保持沉默，所谓 Amazon executive 那封信「expel this kid」至今未经 Amazon 确认，仍属单一来源说法"
+    }
+  ]
+}

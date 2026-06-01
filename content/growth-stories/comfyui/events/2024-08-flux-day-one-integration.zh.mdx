@@ -1,0 +1,92 @@
+---
+title: "Black Forest Labs Flux 发布，明确写「ComfyUI day-1 集成」（2024 年 8 月 1 日）"
+description: "Black Forest Labs——由前 Stability SDXL 工程师组成，他们和 comfyanonymous 共享办公室 18 个月——在 2024 年 8 月 1 日发布 Flux.1，公告里有一句具体的话：「moreover we're happy to have day-1 integration for ComfyUI」。Automatic1111 接下来六周都不支持 Flux。案例库里最清晰的「上游模型实验室在自己发布博客里选底层作为标准集成目标」的例子，没有任何商业协议。"
+date: "2024-08-01"
+type: "product"
+gtmTag: "Tech narrative upgrade"
+eventTitle: "Flux + ComfyUI day-1 集成"
+externalUrl: "https://bfl.ai/blog/24-08-01-bfl"
+---
+
+<Catalyst>
+案例库里大多数公司通过多年 BD、集成工程和联合营销预算去买上游伙伴背书。ComfyUI 拿到了它历史上最重的背书——Black Forest Labs 在自家发布博客上写「day-1 integration for ComfyUI」——一分钱没花。产生这个背书的关系是 2023-2024 年在 Stability AI 共享办公室里基于技术尊重建立的，不是基于商业对齐。结构性教训：底层价值通过「底层商业激活之前建起来的关系」复利。
+</Catalyst>
+
+2024 年 8 月 1 日。Black Forest Labs 发布公司启动博文，宣布 Flux.1——120 亿参数的 MMDiT 图像生成模型。博文介绍了 BFL 团队（大部分是前 Stability AI 的 SDXL 工程师）、模型家族（Flux.1 Pro / Dev / Schnell）和技术路线。
+
+博文里有一句承重 payload：「moreover we're happy to have day-1 integration for ComfyUI」。六周前，Comfy Org 公开宣布成立。六周后，Automatic1111 还没有可用的 Flux 支持。BFL 发布到更广义 Stable Diffusion UI 生态追上之间这个窗口，是 ComfyUI 转换成约 6 周 Flux 工作流垄断的结构性机会。
+
+BFL 发布博文里没有的东西也承重。没有提到其它工具集成。没有「Automatic1111 支持很快上线」。没有引用替代 UI。BFL 发布博客隐含地把 ComfyUI 定位为标准集成目标，并没有命名替代品。
+
+## BFL 为什么选择写那一句
+
+结构性事实是 BFL 完全没必要在发布博客里提 ComfyUI。基础模型实验室的标准做法是 ship 参考推理代码、把 UI 集成交给社区、对竞争工具保持中立。BFL 选择了反过来——在发布博客里命名一个具体的 UI 并把自己的叙事绑在它身上。
+
+原因是先验关系。BFL 创始人 2023 年 6 月到 2024 年中在 Stability AI 办公室和 comfyanonymous 度过了 18 个月。他们看着 comfyanonymous 为 Stability 内部使用把 SDXL 集成进 ComfyUI。他们看着 Scott Detweiler 把 ComfyUI 当作 Stability 旗舰发布的 QA 工具。他们看着 Stable Diffusion 创作者社区标准化在 ComfyUI 的 PNG 工作流格式上分享内容。
+
+等 BFL 开始想「我们独立发布自家模型时该怎么做」时，「哪个 UI 是标准集成目标」这个问题在 BFL 团队的日常体验里已经自动答了。发布博客里那一句不是营销决定——是对运营现实的描述。
+
+这就是 VC 支持的公司通常试图通过 Developer Relations 项目、会议赞助和联合营销协议去工程化制造的关系资本。comfyanonymous 通过 18 个月在同一办公室里 ship 工作集成代码，免费累积了这些关系。Stability AI 雇佣——表面上看是底层榨取风险——结果是 ComfyUI 历史上最有价值的关系建设窗口。
+
+## ComfyUI 的 day-1 Flux 集成实际涉及什么
+
+8 月 1 日 day-1 把 Flux 集成进 ComfyUI 的技术工作不简单。Flux.1 是 120 亿参数模型，权重总计约 23GB。BFL 基础分发面向高 VRAM GPU（24GB+）——大多数消费级 GPU（8-16GB）没法完整精度加载模型。
+
+ComfyUI 的自动 FP8 + VRAM offload 让 23GB 模型在 8GB GPU 上能跑。架构有两个关键元素：
+
+| 技术 | 功能 | 用户可见好处 |
+|---|---|---|
+| 自动 FP8 量化 | 把模型权重精度从 FP16 砍到 FP8 | ~50% VRAM 降低，质量损失很小 |
+| VRAM offload | 按需把模型部分在 CPU RAM 和 GPU VRAM 之间移动 | 允许超过可用 VRAM 的模型运行，代价是速度 |
+
+这两个技术加在一起，让 Flux.1 进入了任何至少 8GB VRAM 的消费级 GPU 的射程——也是 Stable Diffusion 创作者社区里主流配置。没有这些技术，Flux 只会是少数受众能用的模型。有了它们，它是新的默认高品质开源权重模型。
+
+这工作不是 8 月 1 日 24 小时内完成的。是在 BFL 发布前的几天和几周里完成的，BFL 团队和 comfyanonymous 直接协调，因为他们互相认识。「day-1 集成」在运营层面是「数周发布前协调」——公开面的 day-1 时刻是先验关系的下游 artifact。
+
+## 6 周垄断窗口
+
+从 8 月 1 日（BFL 发布）到大约 9 月底（Automatic1111Flux 支持），ComfyUI 是跑 Flux 的唯一实用选项。这六周里分享的每一个 Flux 工作流默认都是 ComfyUI 工作流。每一条产出的教程都是 ComfyUI 教程。Civitai 上每一张 Flux 输出 PNG 都在元数据里嵌入 ComfyUI 工作流。
+
+复利机制和 2023 年 7 月 SDXL 窗口一样——六周习惯塑形期间，最有野心的用户只通过 ComfyUI 学习新模型。等 Automatic1111 追上时，Flux 工作流已经被标准化在 ComfyUI 格式上。换到别的 UI 需要重新学工作流语法。默认选项已经被设置。
+
+这是第二次模式重复。2023 年 7 月 SDXL 是第一次跑。2024 年 8 月 Flux 是第二次。Hunyuan、Mochi、LTX-Video、Wan 2.2 和 FLUX.2 会在接下来 18 个月里重复模式。每一次重复都加强底层对「标准视觉 AI 工作流工具」品类的索取权。
+
+结构性洞见：D1（技术叙事升级）不需要公司去 ship 定义品类的产品事件。它可以来自上游伙伴 ship 定义品类的产品事件且把底层作为他们的标准集成目标。ComfyUI 2024-2026 年的 D1 升级是上游驱动的——每一次新开源权重发布都成为底层吸收新品类的机会。
+
+## 这件事需要的、大多数底层无法提供的东西
+
+Flux day-1 集成之所以可能，是因为三个先决条件到位：
+
+1. **与上游实验室预先存在的信任关系。** BFL 团队个人认识 comfyanonymous。他们看了他工作 18 个月。把 ComfyUI 写进发布博客的决定是低成本的事实陈述，不是高成本的营销决定。
+2. **底层灵活到能在几天内适配新架构。** ComfyUI 的节点图可以吸收 MMDiT 的结构而不破坏 API。给新架构的新节点延展既有模式。大多数应用层工具做不到这一点——它们需要 ship 大版本更新。
+3. **VRAM 管理原语已经搭好。** 自动 FP8 + VRAM offload 不是为 Flux 加的——是 ComfyUI 既有能力，恰好对 Flux 承重。一个还没这些原语的底层，要在发布压力下 ship 它们，承担对应 bug 风险。
+
+信任关系是最稀缺的先决条件。其它两个是任何有纪律的团队都能做的工程投入。第一个——和未来 BFL 创始人 18 个月办公室同事距离——是关于 ComfyUI 具体历史的事实，2026 年的创始人无法复制。
+
+但关系建设的教训以更慢的时间尺度可复制：底层作者在「上游模型实验室未来独立 spinout 前 12-24 个月」处于正确房间里，就能捕获 VC 支持的对手买不到的 day-1 集成叙事。正确的房间是当前正在孵化下一波独立 spinout 的基础模型实验室。2023-2024 年的 ComfyUI 是 Stability AI。2026 年的创始人可能是 OpenAI、Anthropic 或某个倾向开源的实验室（Mistral、Cohere、AI2）。原则成立；具体房间轮换。
+
+## 发布博客没承诺的东西
+
+BFL 的 8 月 1 日博文没承诺与 ComfyUI 持续联合营销。没把 BFL 绑在未来模型的「ComfyUI 优先」发布上。没建立商业关系。
+
+它做的是确立先例。通过在发布博客里点名 ComfyUI 作为标准集成目标，BFL 隐含地暗示其他释放开源权重的基础模型实验室应该做同样的事——或者看上去在选择不这么做。Comfy Org 三周后的 8 月 20 日加入了 Linux Foundation Open Model Initiative，把这个规范正式化。
+
+未来 18 个月的复利效应：每一次主要开源权重释放（Hunyuan Video、Mochi、LTX-Video、Wan 2.2、FLUX.2）都带 ComfyUI day-1 集成 ship。其中几次直接在发布博客里点名 ComfyUI。BFL 2024 年 8 月 1 日确立的规范成了默认预期。
+
+这就是「中立基础设施」定位换来的东西。Comfy Org 的 8 月 20 日 Linux Foundation 成员资格 + 它对任何单一基础模型实验室的一贯拒绝定位，让底层成了所有实验室都能同时安全集成的目标。一个曾经与 Stability AI 独家结盟的底层会切断 Flux 集成；一个曾经与 BFL 独家结盟的底层会切断 Hunyuan 集成。中立是让每家实验室在不反对其他实验室的前提下选择 ComfyUI 的结构性特征。
+
+<Conclusion title="可复制的部分">
+
+- **在上游模型实验室独立 spinout 前 12-24 个月与他们建立关系。** comfyanonymous 2023-2024 年和未来 BFL 团队的办公室同事距离是产生 2024 年 8 月发布博客点名的关系资本。BFL 存在之后没法通过外发 BD 工程化制造这些关系。2026 年追求 day-1 集成叙事的创始人应该在「正确团队成为独立公司之前」处于正确房间里——这意味着在相关基础模型实验室里预判 spinout 模式。
+- **通过拒绝与任何单一上游实验室结盟来赢得中立。** Comfy Org 的 Linux Foundation Open Model Initiative 成员资格把「中立基础设施」定位正式化，让底层成了所有实验室都能同时安全集成的目标。与一家基础模型实验室结盟的底层会切断与该实验室竞争对手的集成。中立是结构性特征，不是性格选择。
+- **把 VRAM 管理和架构灵活性原语作为底层投入 ship，不是功能工作。** Flux 发布时 ComfyUI 的自动 FP8 + VRAM offload 已经在位。一个需要在发布压力下 ship 这些原语的底层带着 bug 风险和公信力风险。给 2026 年建 OSS 底层创始人的教训：在 day-1 集成时刻能兑现的基础设施投入，是在任何具体集成上日历前 6-12 个月做的那些。
+
+</Conclusion>
+
+## 资料来源
+
+- [Black Forest Labs — Announcing Black Forest Labs（2024 年 8 月）](https://bfl.ai/blog/24-08-01-bfl)
+- [Wikipedia — ComfyUI](https://en.wikipedia.org/wiki/ComfyUI)
+- [Comfy Org 博客 — The next chapter for ComfyUI（2024 年 6 月）](https://blog.comfyui.ca/comfyui/update/2024/06/18/Next-Chapter.html)
+- [Latent Space — AI Engineering for Art with comfyanonymous](https://www.latent.space/p/comfyui)
+- [TechCrunch — ComfyUI 估值 5 亿美元（2026 年 4 月）](https://techcrunch.com/2026/04/24/comfyui-hits-500m-valuation-as-creators-seek-more-control-over-ai-generated-media/)

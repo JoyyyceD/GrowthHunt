@@ -1,0 +1,362 @@
+{
+  "company": {
+    "slug": "supabase",
+    "name": "Supabase",
+    "legalName": "Supabase Inc",
+    "tagline": "借来的基底（30 年的 Postgres）+ Launch Week 作为主动节奏 E1 + pgvector 比 LLM 浪潮早 6 个月",
+    "summary": "Paul Copplestone（前 Nimbus for Work、Entrepreneur First Singapore）和 Ant Wilson（伦敦帝国理工 MSc 软件工程）在 2020 年 1 月开始写 Supabase 代码，把 30 年的 PostgreSQL 包进了现代开发者体验层。2020 年 5 月底的 Launch HN——「Supabase (YC S20) – An open source Firebase alternative」——拿到 1,120+ upvotes，被 HN mod dang 认定为当时 HN 历史上第二高赞的 Launch HN。他们把 YC 结束后失去的「ship 节奏快感」转化成了 Launch Week——一种每季度连续 5 天每天发布一项功能的格式，后来被 94 家其他开发者工具公司复制。2023 年初他们 ship 了 pgvector，比 LLM 应用的大众认知早约 6 个月——这是案例库里最干净的一次技术叙事升级时机。到 2024 年，所有 vibe-coding 平台（Bolt / Lovable / v0 / Cursor / Claude Code）默认把用户接到 Supabase 上——部分原因是 Postgres 基底是「可拔出的」：用户随时可以把整个 stack 关掉，保留原始数据库。五年六轮：Seed（2020 年 10 月）→ A（2021 年 9 月）→ B（2022 年 4 月）→ C（2024 年 9 月）→ D（2025 年 4 月，2 亿美元 / 20 亿）→ E（2025 年 10 月，1 亿 / 50 亿）。ARR 是 Sacra 估算的约 7000 万美元（2025 年 8/9 月，同比 +250%）——Supabase 从未官方披露 ARR。据报道 GIC 领投的约 100 亿估值新轮谈判（2026 年 4 月）截至 2026 年 6 月尚未关闭。可复用的判断：当行业里已经存在一项工业级开源资产时，把它识别为自己的基底，成本远低于从零造一个——但你必须深度雇这个生态里的人（Postgres 核心 contributor、NGINX 共同创始人、Vitess 共同创作者），「借基底」的框架才能读成能力而不是薄薄的包装。",
+    "founded": "2020-01-01",
+    "founders": [
+      "Paul Copplestone",
+      "Ant Wilson"
+    ],
+    "seriesNumber": 27
+  },
+  "phases": [
+    {
+      "start": "2020-01",
+      "end": "2021-03",
+      "name": "YC S20 + Launch HN + 早期开源",
+      "color": "#fef3c7"
+    },
+    {
+      "start": "2021-03",
+      "end": "2023-01",
+      "name": "Launch Week + build-in-public 扩张",
+      "color": "#dbeafe"
+    },
+    {
+      "start": "2023-01",
+      "end": "2024-09",
+      "name": "pgvector + AI 功能拐点",
+      "color": "#fce7f3"
+    },
+    {
+      "start": "2024-09",
+      "end": "2026-06",
+      "name": "Vibe-coding 超规模（C → E → 报道中 D+）",
+      "color": "#dcfce7"
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-01-15",
+      "title": "Supabase 在新加坡创立",
+      "type": "product",
+      "description": "Paul Copplestone（CEO，前 Nimbus for Work、Entrepreneur First Singapore）和 Ant Wilson（CTO，帝国理工 MSc 软件工程）开始写 Supabase 代码——基于 Postgres 的开源 Firebase 替代品。pre-seed 约 10 万美元来自天使。决定一切走向的创始选择：不要自己造数据库——把已经存在 30 年的开源数据库包进现代开发者体验。",
+      "externalUrl": "https://www.stacksync.com/blog/one-word-changed-everything-the-origin-story-of-supabase",
+      "articleSlug": "2020-01-founding-borrowed-substrate"
+    },
+    {
+      "date": "2020-04-15",
+      "title": "只托管 8 个数据库",
+      "type": "product",
+      "description": "2020 年 4 月，Supabase 平台上只有 8 个数据库——差点让创意死掉的早期低迷。创始人继续 ship；基底押注的复利还没开始。"
+    },
+    {
+      "date": "2020-05-28",
+      "title": "Launch HN: Supabase (YC S20) ——1,120+ upvotes",
+      "type": "media",
+      "gtmTag": "格式即可信度",
+      "description": "2020 年 5 月底的 HN 帖子「Supabase (YC S20) – An open source Firebase alternative」拿到 1,120+ upvotes。HN mod dang 把它升级为官方 Launch HN。当时 HN 历史上第二高赞的 Launch HN。同日 Product Hunt 当日第 3 名，818 票。流量打爆 DigitalOcean 额度——团队几小时内迁移到 AWS。反向定位的标题本身就是 demo grammar——任何被 Firebase 烫到过的开发者都能从一句话里推出产品的全部承诺。",
+      "externalUrl": "https://www.basedash.com/blog/how-supabase-became-this-generation-s-database",
+      "articleSlug": "2020-05-launch-hn-yc-s20"
+    },
+    {
+      "date": "2020-08-05",
+      "title": "Auth 上线",
+      "type": "product",
+      "description": "Supabase Auth ship，距 Launch HN 三个月。Michael Seibel（YC）告诉 Copplestone：别再想了，发出去。Auth 成为新用户里被采用最多的 Supabase 产品，也是第一个 GoTrue 协议下的子产品。",
+      "externalUrl": "https://hackernewsrobot.wordpress.com/2020/08/06/show-hn-auth-is-now-available-in-supabase-yc-s20/"
+    },
+    {
+      "date": "2020-10-09",
+      "title": "种子轮 600 万美元——Coatue 领投",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "600 万美元种子轮由 Coatue 领投（Caryn Marooney，前 Facebook VP 全球传播），Y Combinator、Mozilla、约 20 名天使跟投。2020 年 10 月 9 日 close，12 月 15 日宣布。非典型下注：Marooney 是营销/传播线 VC，不是典型开发者工具 VC。Coatue 押的不是 GitHub stars 曲线，而是「这个团队会不会成为下一代开发者基础设施品牌」。",
+      "externalUrl": "https://techcrunch.com/2020/12/15/supabase-raises-6m-for-its-open-source-firebase-alternative/"
+    },
+    {
+      "date": "2020-12-15",
+      "title": "种子轮公告 + Beta 退出",
+      "type": "media",
+      "description": "种子轮公开公告与 Beta 退出同步。Supabase 以 ~3,100 个托管数据库结束 2020 年，从 4 月的 8 个长起来。TechCrunch 的 Frederic Lardinois 写了这一轮。",
+      "externalUrl": "https://techcrunch.com/2020/12/15/supabase-raises-6m-for-its-open-source-firebase-alternative/"
+    },
+    {
+      "date": "2021-03-29",
+      "title": "Launch Week 1——格式被发明",
+      "type": "product",
+      "gtmTag": "Launch Week 节奏",
+      "description": "首次 Launch Week（2021 年 3 月）。两位创始人在 YC 之后失去了 demo-day 那种 ship 快感，于是发明了这个格式：每季度连续 5 天，每天 ship 一个重要功能。到 2024 年，launchweek.dev 统计 94 家开发者工具公司复制了这个格式，共 126 次 Launch Week。E1（危机即 GTM）的第四个子模式：主动节奏——持续的产品产出透明度，区别于内部状态透明（PostHog）和反应式事后剖析（ElevenLabs）。",
+      "externalUrl": "https://supabase.com/blog/supabase-how-we-launch",
+      "articleSlug": "2021-03-launch-week-1"
+    },
+    {
+      "date": "2021-09-09",
+      "title": "A 轮 3000 万美元——Coatue 加倍",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "3000 万美元 A 轮由 Coatue 领投（从种子轮加倍）。Caryn Marooney 进入董事会。天使：Tom Preston-Werner（GitHub）、Solomon Hykes（Docker）、Guillermo Rauch（Vercel）、Kurt Mackey（Fly）、Alex Solomon（PagerDuty）。指标：5 万数据库、4 万开发者、4 千 Discord、连续 5 个季度 GitHub 增长最快的 OSS startup 前 15。累计融资：3600 万美元。",
+      "externalUrl": "https://supabase.com/blog/supabase-series-a"
+    },
+    {
+      "date": "2022-04-19",
+      "title": "B 轮 8000 万美元——Felicis 领投",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "8000 万美元 B 轮由 Felicis Ventures（Aydin Senkut）领投。跟投：Coatue、Lightspeed（新进）、Square Peg（新进）。4 月 19 日 close，8 月 12 日宣布。公告时指标：15 万数据库、11 万开发者、8 千 Discord、36K GitHub stars、37K Twitter。累计融资：1.16 亿。",
+      "externalUrl": "https://supabase.com/blog/supabase-series-b"
+    },
+    {
+      "date": "2022-06-01",
+      "title": "六产品平台上线",
+      "type": "product",
+      "gtmTag": "技术叙事升级",
+      "description": "到 2022 年中，Supabase 六个核心产品全部上线：Database（Postgres）、Auth（GoTrue）、Storage（基于 S3）、Edge Functions（Deno 运行时）、Realtime（Elixir / Phoenix Channels）、Vector（pgvector 基础）。每个都可独立使用。叙事从「开源 Firebase 替代品」升级为「基于 Postgres 的开发者平台」。",
+      "externalUrl": "https://supabase.com/docs"
+    },
+    {
+      "date": "2023-02-10",
+      "title": "pgvector + AI Toolkit 上线",
+      "type": "product",
+      "gtmTag": "技术叙事升级",
+      "description": "Supabase 成为最早 ship pgvector 的托管 Postgres 服务之一，用于存储 embedding。AI toolkit 包括 Python client、Edge Functions 里的 embedding 生成、OpenAI / Hugging Face / LangChain 集成。提前把 Supabase 定位成 LLM 应用的默认 backend——比开发者群体对 LLM 应用 stack 的大众认知早约 6 个月。",
+      "externalUrl": "https://supabase.com/modules/vector",
+      "articleSlug": "2023-02-pgvector-ai-toolkit"
+    },
+    {
+      "date": "2023-05-15",
+      "title": "Quivr 病毒级 pgvector 案例",
+      "type": "media",
+      "description": "Stan Girard 在一个下午 ship 了 Quivr（chat-with-documents「第二大脑」），推到 GitHub，发了一条爆款推文。在 Pinecone / Chroma / Weaviate / Faiss 之间选了 Supabase Vector——因为 vector embedding 和关系数据放在同一个基底上比拼 5 家服务更省事。第一个被广泛传播的生产级 pgvector 案例。",
+      "externalUrl": "https://supabase.com/customers/quivr"
+    },
+    {
+      "date": "2024-08-01",
+      "title": "Vibe-coding 拐点——Bolt + Lovable 默认 Supabase",
+      "type": "product",
+      "gtmTag": "受众边界外推",
+      "description": "Bolt.new 和 Lovable 都把 Supabase 选为默认 backend。v0（Vercel）的 AI 生成流程里直接 prompt 用户连 Supabase。Cursor、Claude Code 集成跟进。用户注册增速开始每约 3 个月翻一倍。Supabase 为整个 AI 应用分发层付出的 CAC 是零。",
+      "externalUrl": "https://supabase.com/solutions/vibe-coders"
+    },
+    {
+      "date": "2024-09-25",
+      "title": "C 轮 8000 万美元 / 约 7.65 亿估值——Peak XV + Craft 共同领投",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "8000 万美元 C 轮由 Peak XV + Craft Ventures 共同领投，Avra Capital（Anu Hariharan，前 YC Growth，新进）+ Coatue + Felicis + YC 跟投。Up round，估值未官方披露（PitchBook 后估算约 7.65 亿美元 post-money）。披露指标：4 年里约 90 万注册；最新 YC batch 里 40% 在用 Supabase；约 10% 的活跃数据库是 AI workload；企业用户包括 GitHub Next、Meta、Netflix、Microsoft。累计融资：1.96 亿。",
+      "externalUrl": "https://techcrunch.com/2024/09/25/supabase-a-postgres-centric-developer-platform-raises-80m-series-c/"
+    },
+    {
+      "date": "2024-12-31",
+      "title": "2024 年底约 3000 万美元 ARR（Sacra 估算）",
+      "type": "media",
+      "description": "Sacra 估算 Supabase 到 2024 年底约 3000 万美元 ARR——通过 vibe-coding 采用安静地复利。ARR 未被 Supabase 官方披露。taptwicedigital 给出的 2024 年 1680 万美元这个更低估算可能反映了口径差异（仅 paid Cloud 对比全口径含企业）。",
+      "externalUrl": "https://sacra.com/research/supabase-at-70m-arr-growing-250-yoy/"
+    },
+    {
+      "date": "2025-04-22",
+      "title": "D 轮 2 亿 / 20 亿——Accel 领投 + Wānaka 门口故事",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "2 亿美元 D 轮由 Accel 领投，post-money 20 亿。起源故事：Accel 的 Gonzalo Mocorrea 不打招呼出现在 Copplestone 新西兰 Wānaka 的家门口；Arun Mathew 跨两段飞行 24 小时跟来。Supabase 当时没在融资。天使：Kevin Weil（OpenAI CPO）、Guillermo Rauch（Vercel CEO）、Taylor Otwell（Laravel）。指标：200 万开发者、350 万数据库、注册增速每 3 个月翻一倍。累计融资：3.98 亿。",
+      "externalUrl": "https://fortune.com/2025/04/22/exclusive-supabase-raises-200-million-series-d-at-2-billion-valuation/",
+      "articleSlug": "2025-04-series-d-wanaka"
+    },
+    {
+      "date": "2025-07-14",
+      "title": "Launch Week 15",
+      "type": "product",
+      "description": "第 15 次 Launch Week（2025 年 7 月 14–18 日），距格式被发明 4 年多。包含 hackathon + 全球 meetup。节奏证明格式可以在 >20 亿估值规模下不稀释；季度节奏成立。"
+    },
+    {
+      "date": "2025-08-15",
+      "title": "Bolt Cloud + Lovable Cloud——第一个结构性竞争威胁",
+      "type": "media",
+      "description": "2025 年 8 月 Bolt Cloud 上线，随后 Lovable Cloud 上线，都让 vibe-coding 平台直接把 backend 商业化，而不是把用户转给 Supabase。Sacra 把这标为 Supabase 的第一个结构性脱媒风险——vibe-coding 分发层不会永远免费。",
+      "externalUrl": "https://sacra.com/research/supabase-at-70m-arr-growing-250-yoy/"
+    },
+    {
+      "date": "2025-09-01",
+      "title": "约 7000 万美元 ARR + 400 万开发者（Sacra 估算）",
+      "type": "media",
+      "description": "Sacra 估算 Supabase ARR 在 2025 年 8/9 月达到约 7000 万美元——从 2024 年底 3000 万同比 +250%。用户增长 +700% YoY。400 万+ 开发者、10 万+ 客户、350 万+ 数据库。仍未被 Supabase 官方披露。",
+      "externalUrl": "https://sacra.com/research/supabase-at-70m-arr-growing-250-yoy/"
+    },
+    {
+      "date": "2025-10-03",
+      "title": "E 轮 1 亿 / 50 亿 + Multigres 公告——一个周期里 8 个故事",
+      "type": "funding",
+      "gtmTag": "捆绑里程碑",
+      "description": "1 亿美元 E 轮，pre-money 50 亿，Accel + Peak XV 共同领投。Figma 是唯一新进的机构——所有其他既有投资人都回（YC、Coatue、Felicis、Craft、Square Peg）。捆绑：100 万美元社区共投轮计划、Vitess 共同创作者 Sugu Sougoumarane 入职主导 Multigres（Vitess-for-Postgres）企业级扩展、每轮 25% 员工 secondary 继续。累计融资约 5 亿美元。一个新闻周期里 8 个可独立引用的故事。",
+      "externalUrl": "https://supabase.com/blog/supabase-series-e",
+      "articleSlug": "2025-10-series-e-multigres"
+    },
+    {
+      "date": "2025-11-15",
+      "title": "「时代级数据库」论文发表",
+      "type": "media",
+      "gtmTag": "技术叙事升级",
+      "description": "Accel 发布「Supabase's Series E: An Era-Defining Database」论文；Coatue 的 Caryn Marooney 把这个押注框架为「成为所有人的 backend，从初创到要求严苛的企业 workload」。把「vibe-coding 基底+企业级」叙事钉住。",
+      "externalUrl": "https://www.accel.com/noteworthies/supabases-series-e-an-era-defining-database"
+    },
+    {
+      "date": "2026-04-02",
+      "title": "10 万 GitHub stars",
+      "type": "product",
+      "description": "supabase/supabase 主仓库突破 10 万 GitHub stars——GitHub 上 top-100 最高赞仓库。约 2 年翻倍（从 2023 年的约 5 万）。具体的基底层级验证。",
+      "externalUrl": "https://supabase.com/blog/100000-github-stars"
+    },
+    {
+      "date": "2026-04-03",
+      "title": "100 亿估值谈判被报道（未关闭）",
+      "type": "media",
+      "description": "The Information 独家：Supabase 正在深度谈判筹集约 5 亿美元，估值约 100 亿，由 GIC（新加坡主权基金——Copplestone 当年 Entrepreneur First Singapore 的起点）领投。6 个月估值翻倍。截至 2026 年 6 月，这一轮尚未关闭；只是媒体爆料层级。",
+      "externalUrl": "https://www.theinformation.com/articles/database-startup-supabase-talks-double-valuation-10-billion"
+    }
+  ],
+  "arr": [
+    {
+      "date": "2024-12-31",
+      "value": 30000000,
+      "source": "Sacra（估算——非官方披露）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-09-01",
+      "value": 70000000,
+      "source": "Sacra（估算——非官方披露；+250% YoY）",
+      "confidence": "estimate"
+    }
+  ],
+  "valuation": [
+    {
+      "date": "2020-10-09",
+      "value": 50000000,
+      "round": "种子轮",
+      "source": "估算（未披露）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2024-09-25",
+      "value": 765000000,
+      "round": "C 轮",
+      "source": "PitchBook（估算；公司未披露）",
+      "confidence": "estimate"
+    },
+    {
+      "date": "2025-04-22",
+      "value": 2000000000,
+      "round": "D 轮",
+      "source": "Fortune",
+      "confidence": "official"
+    },
+    {
+      "date": "2025-10-03",
+      "value": 5000000000,
+      "round": "E 轮",
+      "source": "Fortune / Supabase",
+      "confidence": "official"
+    },
+    {
+      "date": "2026-04-03",
+      "value": 10000000000,
+      "round": "据报道（未关闭）",
+      "source": "The Information（爆料）",
+      "confidence": "media"
+    }
+  ],
+  "platforms": [
+    {
+      "slug": "github",
+      "name": "GitHub",
+      "score": 5,
+      "bestStage": "全程——基底",
+      "effort": "基底级",
+      "role": "Apache 2.0 核心本体 + pgvector 血统",
+      "description": "supabase/supabase 主仓库在 Apache 2.0 协议下（Storage / GoTrue / Realtime 单独 MIT）。2026 年 4 月 2 日突破 10 万 stars，GitHub top-100 仓库。AI 编码工具生成 Supabase 代码时打到的地方。借基底框架在这里可被验证——Postgres 核心扩展、pgvector、Elixir realtime 层全部公开可查。",
+      "catalyst": "2020 年 5 月底 Launch HN 把 supabase/supabase 作为可信物件链入。18 个月复利到 A 轮（2021 年 9 月）19K stars；B 轮（2022 年 8 月）36K；2023 年底约 50K；2026 年 4 月 2 日 10 万。",
+      "catalystUrl": "https://github.com/supabase/supabase",
+      "accountUrl": "https://github.com/supabase",
+      "accountLabel": "supabase on GitHub",
+      "whenItWorks": "当开源协议宽松（Apache 2.0 或 MIT）、自托管真的可行。可拔出性是价值，而不是锁定。",
+      "whenItDoesnt": "AGPL 或 BSL 杀死基底效应（Elastic、MongoDB、HashiCorp）。Supabase 选 Apache 2.0 是有意的——和 Vercel 选 MIT 给 Next.js 同一个理由。"
+    },
+    {
+      "slug": "hacker-news",
+      "name": "Hacker News",
+      "score": 5,
+      "bestStage": "发布 + 重大产品扩张",
+      "effort": "脉冲式——里程碑自然撞上 HN",
+      "role": "基底验证面",
+      "description": "2020 年 5 月底的 Launch HN（「Supabase (YC S20) – An open source Firebase alternative」）拿到 1,120+ upvotes，HN mod dang 认定为当时第二高赞 Launch HN。后续每次重大发布（pgvector、多产品 GA、D 轮、E 轮、10 万 stars 里程碑）都自然撞上 HN 首页。评论区压力测试说法，成为之后 2 年买家研究里可被发现的物件。",
+      "catalyst": "2020 年 5 月底 Launch HN 帖子——dang 在用户自发帖之后认定为 Launch HN。1,120+ upvotes；当时 HN 历史上第二高赞 Launch HN。流量打爆 DigitalOcean 额度；团队几小时内迁移到 AWS。",
+      "accountUrl": "https://hn.algolia.com/?q=supabase",
+      "accountLabel": "在 HN 搜索 Supabase",
+      "whenItWorks": "当发布有真技术新意（这里是 SQL + realtime + 开源 + 单容器自托管）且标题把反向定位框架压成一句话。",
+      "whenItDoesnt": "当帖子是 PR 文风。HN 很快惩罚推广内容，评论线程会变成信誉风险。"
+    },
+    {
+      "slug": "x",
+      "name": "X（Twitter）",
+      "score": 4,
+      "bestStage": "全程",
+      "effort": "持续，创始人主导",
+      "role": "Build-in-public 声音 + Launch Week 广播",
+      "description": "Paul Copplestone（@kiwicopple）和 Ant Wilson（@antwilson）跑日常 build-in-public 表面。Paul 是更高声的战略声音；Ant 是更安静的技术腿。每次 Launch Week 的每日揭晓都先在 X 上 ship。@supabase 公司账号放大。到 2025 年总粉丝数十万；tier-1 dev-twitter 地位。",
+      "catalyst": "没有单条推文。从 2020 年起持续的创始人在场，Launch Week 作为常规放大事件。2025 年 4 月 22 日 D 轮的 Wānaka 门口叙事先在 X 落地，再到 Fortune。",
+      "catalystUrl": "https://x.com/kiwicopple",
+      "accountUrl": "https://x.com/kiwicopple",
+      "accountLabel": "@kiwicopple on X",
+      "whenItWorks": "当创始人能持续技术深度、发的内容和团队 ship 的节奏一致——下面是基底，不是表演。",
+      "whenItDoesnt": "没有运营实质的日常创始人发帖会退化成 thought leadership。Launch Week 节奏防止了这一点——总有真产品可指。"
+    },
+    {
+      "slug": "launch-week",
+      "name": "Launch Week（主动节奏）",
+      "score": 5,
+      "bestStage": "全程——承重",
+      "effort": "每季度，全公司投入",
+      "role": "产品产出透明度的 demo grammar",
+      "description": "2021 年 3 月发明，作为创始人对失去 YC ship 快感的回应。季度节奏：每季度连续 5 天、每天 ship 一个重要功能。跨平台同步爆破——HN、Product Hunt、X、邮件、Discord。工程师即营销人员模式：ship 这个功能的工程师写发布文案。截至 2025 年 7 月完成 15 次 Launch Week。到 2024 年，launchweek.dev 统计 94 家公司复制了这个格式，共 126 次。E1 第四个子模式——主动节奏——与反应式（ElevenLabs）、主动安全（Anthropic）、主动透明（PostHog handbook）并列。",
+      "catalyst": "2021 年 3 月——Launch Week 1。接管了开发者工具营销的格式。E1 子模式里对没有研究实验室的产品驱动公司最可复制的版本。",
+      "catalystUrl": "https://supabase.com/blog/supabase-how-we-launch",
+      "accountUrl": "https://supabase.com/launch-week",
+      "accountLabel": "supabase.com/launch-week",
+      "whenItWorks": "当团队能一周 ship 五个有意义的功能、一年四次，不灌水。这个格式不留情——糟糕的 Launch Week 一眼就被看穿。",
+      "whenItDoesnt": "营销团队驱动、工程师不参与写作的 Launch Week 会制造灌水新闻周期。节奏变成日历事件而不是产品周期，信任信号反转。"
+    },
+    {
+      "slug": "y-combinator",
+      "name": "Y Combinator（S20 + 持续客户管道）",
+      "score": 5,
+      "bestStage": "创立 + 永久客户获取基底",
+      "effort": "网络级——跨 batch 杠杆",
+      "role": "创始加速器 + 永久 YC-batch 客户管道",
+      "description": "Supabase 是 YC S20——COVID 强制下的第一个全远程 batch。YC 参与每一轮主轮到 E 轮。到 C 轮（2024 年 9 月），最新 YC batch 的 40% 在用 Supabase——每个 batch 产生 200+ 新的开发者工具买家，Supabase 的开源默认让采用无摩擦。YC blog 和 Michael Seibel 早期「别再想了，发出去」的建议在创始人复述里反复出现。",
+      "catalyst": "2020 年夏 YC batch（S20）——全远程 batch 让新加坡的 Copplestone 和伦敦的 Wilson 从 Day 0 就能组建远程优先团队。如果 COVID 前是 in-person，这个组合可能根本不会形成。",
+      "catalystUrl": "https://www.ycombinator.com/companies/supabase",
+      "accountUrl": "https://www.ycombinator.com/companies/supabase",
+      "accountLabel": "Supabase on YC",
+      "whenItWorks": "当 YC 网络也是你的客户群——Supabase 的开发者工具类目让每个 batch 的稳态比例进入漏斗。W24 / S24 batch 40% 在用 Supabase 是这个的可读版本。",
+      "whenItDoesnt": "如果你的买家只是企业级或非技术，YC 客户管道价值会弱很多。"
+    },
+    {
+      "slug": "podcasts",
+      "name": "播客（episodic 创始人即 IP）",
+      "score": 4,
+      "bestStage": "A 轮到 E 轮",
+      "effort": "Episodic——4 年里约 10 次长访谈",
+      "role": "创始人即 IP，工程师调性，策略决策密度",
+      "description": "Paul Copplestone 在融资阶梯上做了约 10 次长访谈：Accel「Spotlight On」（与 Arun Mathew + Gonzalo Mocorrea）、TechCrunch Equity、Felicis 创始人访谈、Changelog #599、Scaling DevTools、Evil Martians Dev Propulsion Labs、PodRocket。每次都讲一个具体的策略决定——拒绝企业合同以保护产品愿景、为什么数据库迁移不 work、从 Day 0 起的全球远程招聘、命名来自 Nicki Minaj。Episodic 密度，区别于 Vercel 风格的日常 X 在场。",
+      "catalyst": "Accel「Spotlight On」一集（D 轮之后，2025 年）——三方对话把 Wānaka 门口故事变成 Supabase 创始人叙事的标准版本。",
+      "catalystUrl": "https://accel.com/podcast-episodes/supabases-paul-copplestone-on-the-difference-between-playing-startup-and-strategy",
+      "accountUrl": "https://www.youtube.com/results?search_query=paul+copplestone+supabase",
+      "accountLabel": "Paul Copplestone 播客出现",
+      "whenItWorks": "当创始人对每次出现都有实质、不重复的策略素材。每一集都必须承重在一个不同的决定上——否则创始人变成播客墙纸。",
+      "whenItDoesnt": "在 10 个播客里重复同样 3 个段子。Episodic E2 只有当操作者有足够多的亲历决策才工作。"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+---
+title: "Day-Zero Pricing — $10/$30 Live from Minute One of Stealth Exit (Dec 2023)"
+description: "Suno shipped three pricing tiers on December 20, 2023 — the same day it came out of stealth. No 'free first, monetize later' period. The structure held unchanged through 2026 and produced ~1M paid subscribers at Series C."
+date: "2023-12-20"
+type: "product"
+gtmTag: "Day-zero pricing"
+eventTitle: "Day-zero $10/$30 pricing"
+externalUrl: "https://www.axios.com/2023/12/20/suno-gen-ai-music-microsoft"
+---
+
+<Catalyst>
+In 2023-2024, consumer AI defaulted to ChatGPT-style free-with-Plus-upsell. Suno bet the opposite — three pricing tiers live from minute one of public availability, $10/mo Pro and $30/mo Premier alongside the free tier. The same pricing held 23 months later when paid subscribers hit 1M. The cleanest C2 (monetize during peak) demonstration in the consumer-AI cohort.
+</Catalyst>
+
+December 20, 2023. Suno comes out of stealth on Axios. Three pricing tiers live at the moment of public availability:
+
+| Tier | Cost | Songs/month | Generation cap/day |
+|---|---|---|---|
+| Free | $0 | ~300 | 10 |
+| Pro | $10/mo | 500 | — |
+| Premier | $30/mo | 2,000 | — |
+
+That structure was the company's bet that audio generation value justifies $10/mo at sub-1M users. No A/B test, no pricing experiment, no "we'll figure out monetization in 2025." The numbers shipped with the product.
+
+## The Character.AI counterexample
+
+The case for day-zero pricing was already being made in 2023, by negative example. Character.AI had 200M MAU and roughly $32M ARR — the cautionary tale of consumer AI without day-zero monetization. ChatGPT had hit 100M users in two months and stayed free for the bulk of its first year.
+
+The default consumer-AI playbook of 2023 was: hit free-scale, raise on user count, monetize later. Suno went the opposite way.
+
+| Company | Launch year | Initial pricing | ARR at 100M users |
+|---|---|---|---|
+| ChatGPT | 2022 | Free | ~$200M (estimated, late 2023) |
+| Character.AI | 2022 | Free | ~$32M (mid-2024) |
+| Midjourney | 2022 | $10/mo Discord-only | $200M+ (2023) |
+| **Suno** | **2023** | **$10 / $30 from day zero** | **~$200M (estimated, Nov 2025)** |
+
+The Midjourney comparison is the closer analog. Midjourney shipped paid-only access via Discord and never ran a "free-first" period at scale. Both Midjourney and Suno hit nine-figure ARR at much smaller user counts than ChatGPT or Character.AI.
+
+## What the economics required
+
+Day-zero $10/$30 pricing is not a no-brainer. It only works if three things are true.
+
+**1. The output is small enough to make the GPU economics viable at small scale.** Suno's output is 3-4 minute audio clips, not multi-thousand-token text streams. The per-generation compute cost is bounded. Suno's leaked Series C pitch deck showed $32M cumulative compute since January 2024 versus $2K on data — high GPU cost is the structure, but bounded by output size.
+
+**2. The product value-per-use is high enough to justify $10/mo at sub-1M-user scale.** A casual user generating a few songs a week can rationalize $10/mo if any of those songs satisfy. A professional or semi-pro user (an artist, a content creator, a video producer) easily rationalizes $30/mo for the 2,000-song Premier tier. The free tier (10 songs/day) acts as discovery, not retention.
+
+**3. The pricing has to hold for 18+ months without breaking the conversion funnel.** Suno's $10/$30 numbers did not move from December 2023 through at least March 2026. That stability is a signal — neither tier was leaving money on the table to a level that justified mid-flight price changes.
+
+## How the pricing held up at scale
+
+Through 2024-2026, Suno added users without changing prices. The conversion rate held:
+
+| Milestone | Date | Total users | Paid subs | Implied conversion |
+|---|---|---|---|---|
+| Series B | May 2024 | 10M | — | — |
+| iOS launch | Jul 2024 | 12M | — | — |
+| V4 launch | Nov 2024 | 25M | — | — |
+| Series C | Nov 2025 | ~100M | ~1M | ~1.0% |
+| Shulman LinkedIn | Feb 2026 | 100M+ | 2M | ~2.0% |
+
+The roughly 1-2% paid conversion at 100M users is in line with consumer AI norms. The cleanest read on the C2 play: between Series C and February 2026 disclosure, paid subscribers doubled in 100 days while total cumulative users barely moved. The price was not the bottleneck on retention or growth.
+
+## Subscriber retention was disclosed in February 2026
+
+When Mikey Shulman disclosed $300M ARR on LinkedIn on February 27, 2026, retention numbers came with it:
+
+- **30-day subscriber retention: ~25%**
+- **Weekly retention for subscribers: 78%**
+
+The 25% 30-day number is high churn for SaaS norms but reasonable for consumer-AI subscriptions. The 78% weekly retention for active subscribers indicates that the users who stay are deeply engaged. Suno did not disclose free-to-paid conversion percentage, which is the figure that would reveal the true unit economics.
+
+> A consumer subscription business with 30-day retention at 25% requires constant top-of-funnel. The fact that Suno hit 2M paid subs at this retention rate signals that the acquisition machine (free tier + viral product + Microsoft Copilot + V-version cadence) was producing new candidates fast enough to keep the paid base growing.
+
+## Why most consumer AI didn't copy this
+
+Three preconditions for day-zero pricing that are easy to underestimate:
+
+- **Output economics that work at small scale.** A 3-4 minute audio clip is a bounded compute cost. A multi-thousand-token text response or a 60-second video clip is not. Most consumer-AI categories have larger or more variable output, so the math is harder.
+- **Value-per-use that's legible to users at first touch.** A Suno V3 song is a clear, complete artifact that a user can evaluate in 90 seconds. "Was this worth $10?" is answerable after one generation. Most AI products require ongoing experience to demonstrate value — and that's the case for free-first.
+- **The willingness to ship pricing without testing it.** Suno did not A/B-test $10 vs $5. It picked $10/$30 based on internal conviction and held. Most consumer AI products are run by teams that want to validate pricing through experiments before committing. Suno's team had Kensho's industrial-ML discipline — ship the decision, iterate the product.
+
+<Conclusion title="What to copy">
+
+- **Ship pricing on day one if the output economics support it.** Consumer AI defaults to free-first because everyone copies ChatGPT. The Suno (and Midjourney) counterexample shows that day-zero pricing works when output is small, value is legible, and the team can hold the number.
+- **Hold the pricing for 18+ months even when growth is fast.** Suno did not raise prices through 4.9x valuation growth or 10x user growth. The stability is itself a signal to investors that the funnel works as is.
+- **Disclose retention numbers when ARR scales.** Shulman's February 2026 LinkedIn disclosed 25% 30-day retention and 78% weekly. Numbers in public set expectations that the press and investors can hold the company to. The disclosure is part of the C2 maturity story.
+- **Use the free tier for discovery, not retention.** Suno's 10-songs-per-day free tier exists to let users hit value once. The hard daily cap signals "this is the discovery experience, not the using-it experience." Free tiers without that posture train users that paid features aren't necessary.
+
+</Conclusion>
+
+## Sources
+
+- [Axios: Gen AI music app Suno comes out of stealth (Dec 20, 2023)](https://www.axios.com/2023/12/20/suno-gen-ai-music-microsoft)
+- [Sacra: Suno deep dive with ARR and unit economics analysis](https://sacra.com/c/suno/)
+- [TechCrunch: Legally embattled AI music startup Suno raises at $2.45B valuation on $200M revenue (Nov 19, 2025)](https://techcrunch.com/2025/11/19/legally-embattled-ai-music-startup-suno-raises-at-2-45b-valuation-on-200m-revenue/)
+- [TechCrunch: AI music generator Suno hits 2 million paid subscribers and $300M in ARR (Feb 27, 2026)](https://techcrunch.com/2026/02/27/ai-music-generator-suno-hits-2-million-paid-subscribers-and-300m-in-annual-recurring-revenue/)
