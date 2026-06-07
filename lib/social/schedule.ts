@@ -8,10 +8,11 @@ import { createAdminClient } from '@/lib/supabase/admin'
 import { getAdapter } from './registry'
 import { getFirstConnection } from './store'
 import { getXKeysForWorkspace } from './x-byo'
-import { postTweet } from '@/lib/viralx/x-publish'
+import { postTweet, uploadMediaToX } from '@/lib/viralx/x-publish'
 import { schedulePost as postizSchedule } from '@/lib/postiz/schedule'
 import type { ScheduledPost } from '@/lib/postiz/types'
 import type { SocialPlatform } from './types'
+import type { MediaItem } from './media'
 
 export interface UnifiedScheduleArgs {
   workspaceId: string
@@ -23,6 +24,8 @@ export interface UnifiedScheduleArgs {
   taskId?: string | null
   /** Per-platform overrides: { reddit: { subreddit, title, link, flairId }, linkedin: { asOrganizationUrn } } */
   options?: Record<string, Record<string, unknown>>
+  /** Image/video attachments — uploaded to each platform at publish time. */
+  media?: MediaItem[]
 }
 
 export interface UnifiedScheduleResult {
@@ -43,12 +46,17 @@ function isImmediate(when?: string | null): boolean {
 }
 
 /** Try to publish immediately via the right path per platform (X = BYO OAuth 1.0a, others = native OAuth 2.0). */
-async function publishNow(workspaceId: string, platform: SocialPlatform, content: string, options?: Record<string, unknown>): Promise<{ ok: true; externalId: string; url?: string } | { ok: false; error: string }> {
+async function publishNow(workspaceId: string, platform: SocialPlatform, content: string, options?: Record<string, unknown>, media?: MediaItem[]): Promise<{ ok: true; externalId: string; url?: string } | { ok: false; error: string }> {
   if (platform === 'x') {
     const lookup = await getXKeysForWorkspace(workspaceId)
     if (!lookup) return { ok: false, error: 'No X API keys for this workspace — paste them in the Scheduler.' }
     try {
-      const r = await postTweet(content, lookup.keys)
+      let mediaIds: string[] = []
+      if (media && media.length) {
+        // Upload sequentially — X rate-limits concurrent media uploads.
+        for (const m of media.slice(0, 4)) mediaIds.push(await uploadMediaToX(m, lookup.keys))
+      }
+      const r = await postTweet(content, lookup.keys, mediaIds.length ? mediaIds : undefined)
       const handle = lookup.screenName?.replace(/^@/, '') || ''
       return { ok: true, externalId: r.id, url: handle ? `https://x.com/${handle}/status/${r.id}` : undefined }
     } catch (e) {
@@ -60,7 +68,7 @@ async function publishNow(workspaceId: string, platform: SocialPlatform, content
   const conn = await getFirstConnection(workspaceId, platform)
   if (!conn) return { ok: false, error: `no ${platform} account connected` }
   try {
-    const res = await adapter.publish({ conn, content, options: options as Parameters<typeof adapter.publish>[0]['options'] })
+    const res = await adapter.publish({ conn, content, media, options: options as Parameters<typeof adapter.publish>[0]['options'] })
     return { ok: true, externalId: res.externalId, url: res.url }
   } catch (e) {
     return { ok: false, error: (e as Error).message }
@@ -114,7 +122,7 @@ export async function unifiedSchedule(args: UnifiedScheduleArgs): Promise<Unifie
     }
     const platformOptions = args.options?.[platform] || {}
     if (immediate) {
-      const r = await publishNow(args.workspaceId, platform, args.content, platformOptions)
+      const r = await publishNow(args.workspaceId, platform, args.content, platformOptions, args.media)
       const status = r.ok ? 'posted' : 'failed'
       const externalId = r.ok ? r.externalId : null
       const error = r.ok ? null : r.error
@@ -126,6 +134,7 @@ export async function unifiedSchedule(args: UnifiedScheduleArgs): Promise<Unifie
           integration_id: integrationId,
           platform,
           content: args.content,
+          media: args.media ?? [],
           type: 'now',
           scheduled_for: null,
           status,
@@ -151,6 +160,7 @@ export async function unifiedSchedule(args: UnifiedScheduleArgs): Promise<Unifie
           integration_id: integrationId,
           platform,
           content: args.content,
+          media: args.media ?? [],
           type: 'schedule',
           scheduled_for: date,
           status: 'scheduled',

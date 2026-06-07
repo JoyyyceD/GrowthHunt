@@ -12,12 +12,52 @@
  * approved for them, so `refreshable` is false by default (re-connect on expiry).
  */
 import type { SocialAdapter, OAuthTokenResult, PublishResult } from '../types'
+import type { MediaItem } from '../media'
+import { fetchMediaBytes } from '../media'
 
 const AUTHORIZE = 'https://www.linkedin.com/oauth/v2/authorization'
 const TOKEN = 'https://www.linkedin.com/oauth/v2/accessToken'
 const USERINFO = 'https://api.linkedin.com/v2/userinfo'
 const UGC_POSTS = 'https://api.linkedin.com/v2/ugcPosts'
+const REGISTER_UPLOAD = 'https://api.linkedin.com/v2/assets?action=registerUpload'
 const SCOPES = ['openid', 'profile', 'w_member_social']
+
+/** Register + upload one media item, returning its digitalmediaAsset URN. */
+async function uploadLinkedInAsset(token: string, ownerUrn: string, item: MediaItem): Promise<string> {
+  const recipe = item.kind === 'video'
+    ? 'urn:li:digitalmediaRecipe:feedshare-video'
+    : 'urn:li:digitalmediaRecipe:feedshare-image'
+  const regRes = await fetch(REGISTER_UPLOAD, {
+    method: 'POST',
+    headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json', 'X-Restli-Protocol-Version': '2.0.0' },
+    body: JSON.stringify({
+      registerUploadRequest: {
+        recipes: [recipe],
+        owner: ownerUrn,
+        serviceRelationships: [{ relationshipType: 'OWNER', identifier: 'urn:li:userGeneratedContent' }],
+      },
+    }),
+  })
+  if (!regRes.ok) throw new Error(`LinkedIn registerUpload ${regRes.status}: ${(await regRes.text().catch(() => '')).slice(0, 200)}`)
+  const reg = await regRes.json() as {
+    value?: { asset?: string; uploadMechanism?: Record<string, { uploadUrl?: string }> }
+  }
+  const asset = reg.value?.asset
+  const mech = reg.value?.uploadMechanism?.['com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest']
+  const uploadUrl = mech?.uploadUrl
+  if (!asset || !uploadUrl) throw new Error('LinkedIn registerUpload returned no upload URL')
+
+  const { bytes, mime } = await fetchMediaBytes(item.url)
+  const putRes = await fetch(uploadUrl, {
+    method: 'POST',                                   // LinkedIn's media upload URL accepts POST with raw bytes
+    headers: { authorization: `Bearer ${token}`, 'content-type': item.mime || mime },
+    body: new Uint8Array(bytes),
+  })
+  if (!putRes.ok && putRes.status !== 201) {
+    throw new Error(`LinkedIn media upload ${putRes.status}: ${(await putRes.text().catch(() => '')).slice(0, 200)}`)
+  }
+  return asset
+}
 
 export const linkedinAdapter: SocialAdapter = {
   platform: 'linkedin',
@@ -62,16 +102,30 @@ export const linkedinAdapter: SocialAdapter = {
     return out
   },
 
-  async publish({ conn, content }): Promise<PublishResult> {
+  async publish({ conn, content, media }): Promise<PublishResult> {
     const authorUrn = (conn.meta?.authorUrn as string | undefined) || (conn.account_id ? `urn:li:person:${conn.account_id}` : null)
     if (!authorUrn) throw new Error('LinkedIn: missing author URN (reconnect the account)')
+
+    // Upload any attached media first, then reference the assets in the share.
+    let shareMediaCategory: 'NONE' | 'IMAGE' | 'VIDEO' = 'NONE'
+    let mediaBlocks: Array<{ status: string; media: string }> = []
+    if (media && media.length) {
+      const hasVideo = media.some((m) => m.kind === 'video')
+      // LinkedIn shares are single-category: a video can't mix with images.
+      const items = hasVideo ? media.filter((m) => m.kind === 'video').slice(0, 1) : media.filter((m) => m.kind !== 'video').slice(0, 9)
+      shareMediaCategory = hasVideo ? 'VIDEO' : 'IMAGE'
+      const assets = await Promise.all(items.map((it) => uploadLinkedInAsset(conn.access_token, authorUrn, it)))
+      mediaBlocks = assets.map((a) => ({ status: 'READY', media: a }))
+    }
+
     const payload = {
       author: authorUrn,
       lifecycleState: 'PUBLISHED',
       specificContent: {
         'com.linkedin.ugc.ShareContent': {
           shareCommentary: { text: content },
-          shareMediaCategory: 'NONE',
+          shareMediaCategory,
+          ...(mediaBlocks.length ? { media: mediaBlocks } : {}),
         },
       },
       visibility: { 'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC' },

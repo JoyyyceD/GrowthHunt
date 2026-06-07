@@ -9,7 +9,7 @@ import { SchedulerRunner } from './SchedulerRunner'
 
 export const metadata: Metadata = {
   title: 'Scheduler — GrowthHunt',
-  description: 'Schedule and publish posts across every connected channel via Postiz, orchestrated from one place.',
+  description: 'Schedule and publish posts across X, LinkedIn, and Reddit — composed in one place or by the GTM agent.',
 }
 
 export default async function SchedulerPage({ searchParams }: { searchParams: Promise<{ ws?: string }> }) {
@@ -53,8 +53,8 @@ export default async function SchedulerPage({ searchParams }: { searchParams: Pr
             Schedule <em>everywhere</em>, from one chat.
           </h1>
           <p style={{ fontSize: 16, color: 'var(--ink-dim)', lineHeight: 1.6, margin: '0 0 28px', maxWidth: 640 }}>
-            Connect your <strong>Postiz</strong> instance once and GrowthHunt can queue posts to X, LinkedIn,
-            Reddit and 20+ channels — composed here or by the GTM agent (&ldquo;schedule this for 9am&rdquo;).
+            Connect <strong>X</strong>, <strong>LinkedIn</strong> and <strong>Reddit</strong> once and GrowthHunt
+            queues your posts natively — composed here or by the GTM agent (&ldquo;schedule this for 9am&rdquo;).
             Your queue and send history stay in sync below.
           </p>
           <SchedulerRunner

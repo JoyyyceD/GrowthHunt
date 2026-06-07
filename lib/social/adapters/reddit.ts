@@ -76,14 +76,17 @@ export const redditAdapter: SocialAdapter = {
     return tokenRequest(body, creds)
   },
 
-  async publish({ conn, content, options }): Promise<PublishResult> {
+  async publish({ conn, content, options, media }): Promise<PublishResult> {
     // Resolve target via options first, then fall back to content prefix parsing:
     //   options.subreddit / options.title / options.link / options.flairId
     //   OR  "r/sub | Title\n\nbody" content shape (legacy)
     let sr = (options?.subreddit || '').replace(/^r\//, '')
     let title = options?.title || ''
     let body = content
-    const link = options?.link || ''
+    // Reddit native media upload needs an S3 lease + websocket confirm (flaky).
+    // We post media as a link to the public URL, which renders as an image/video
+    // post in most clients. An explicit options.link still wins.
+    const link = options?.link || (media && media.length ? media[0].url : '')
     const flairId = options?.flairId || ''
 
     if (!sr || !title) {

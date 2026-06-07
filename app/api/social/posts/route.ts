@@ -8,12 +8,13 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createServerClient } from '@/lib/supabase/server'
 import { getWorkspace } from '@/lib/workspace/store'
 import { unifiedSchedule } from '@/lib/social/schedule'
+import { coerceMediaArray } from '@/lib/social/media'
 
 export const dynamic = 'force-dynamic'
 export const maxDuration = 60
 
 export async function POST(req: NextRequest) {
-  let body: { workspace_id?: string; content?: string; platforms?: string[]; when?: string | null; options?: Record<string, Record<string, unknown>> }
+  let body: { workspace_id?: string; content?: string; platforms?: string[]; when?: string | null; options?: Record<string, Record<string, unknown>>; media?: unknown }
   try { body = await req.json() } catch { return NextResponse.json({ error: 'bad json' }, { status: 400 }) }
 
   const sb = await createServerClient()
@@ -37,6 +38,7 @@ export async function POST(req: NextRequest) {
     when: body.when ?? null,
     source: 'scheduler_ui',
     options: body.options,
+    media: coerceMediaArray(body.media),
   })
   return NextResponse.json(result, { status: result.ok ? 200 : 400 })
 }

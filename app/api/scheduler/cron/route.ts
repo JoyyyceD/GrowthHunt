@@ -17,8 +17,9 @@ import { getAdapter, isSocialPlatform } from '@/lib/social/registry'
 import { getPlatformCreds } from '@/lib/social/types'
 import { findExpiring, updateTokens, markReconnectNeeded } from '@/lib/social/store'
 import { getXKeysForWorkspace } from '@/lib/social/x-byo'
-import { postTweet } from '@/lib/viralx/x-publish'
+import { postTweet, uploadMediaToX } from '@/lib/viralx/x-publish'
 import { markDueAsPosted } from '@/lib/postiz/store'
+import { coerceMediaArray } from '@/lib/social/media'
 
 export const dynamic = 'force-dynamic'
 export const maxDuration = 60
@@ -36,6 +37,7 @@ interface DueNativeRow {
   retry_count: number | null
   scheduled_for: string | null
   meta: Record<string, unknown> | null
+  media: unknown
 }
 
 const REDDIT_MIN_GAP_MS = 1100   // Reddit rate-limit: 1 req/s
@@ -73,7 +75,7 @@ async function publishDueNative(): Promise<{ published: number; failed: number; 
   const nowIso = new Date().toISOString()
   const { data: due } = await admin
     .from('gtm_scheduled_posts')
-    .select('id, workspace_id, platform, content, integration_id, retry_count, scheduled_for, meta')
+    .select('id, workspace_id, platform, content, integration_id, retry_count, scheduled_for, meta, media')
     .eq('provider', 'native')
     .eq('status', 'scheduled')
     .not('scheduled_for', 'is', null)
@@ -105,7 +107,10 @@ async function publishDueNative(): Promise<{ published: number; failed: number; 
         continue
       }
       try {
-        const r = await postTweet(row.content, lookup.keys)
+        const xMedia = coerceMediaArray(row.media)
+        const mediaIds: string[] = []
+        for (const m of xMedia.slice(0, 4)) mediaIds.push(await uploadMediaToX(m, lookup.keys))
+        const r = await postTweet(row.content, lookup.keys, mediaIds.length ? mediaIds : undefined)
         await admin.from('gtm_scheduled_posts').update({
           status: 'posted', external_post_id: r.id, posted_at: new Date().toISOString(), error: null,
         }).eq('id', row.id)
@@ -136,7 +141,8 @@ async function publishDueNative(): Promise<{ published: number; failed: number; 
     }
     try {
       const opts = (row.meta as Parameters<typeof adapter.publish>[0]['options']) ?? undefined
-      const res = await adapter.publish({ conn: conn as Parameters<typeof adapter.publish>[0]['conn'], content: row.content, options: opts })
+      const media = coerceMediaArray(row.media)
+      const res = await adapter.publish({ conn: conn as Parameters<typeof adapter.publish>[0]['conn'], content: row.content, media, options: opts })
       await admin.from('gtm_scheduled_posts').update({
         status: 'posted',
         external_post_id: res.externalId,

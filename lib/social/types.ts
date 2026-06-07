@@ -10,6 +10,8 @@
  * a platform = adding one adapter + registering it.
  */
 
+import type { MediaItem } from './media'
+
 export type SocialPlatform = 'x' | 'linkedin' | 'reddit'
 
 /** A stored, usable connection (token row hydrated from social_connections). */
@@ -51,8 +53,6 @@ export interface PublishOptions {
   flairId?: string
   // LinkedIn
   asOrganizationUrn?: string           // urn:li:organization:<id> → post as Page
-  // Future:
-  mediaUrls?: string[]
 }
 
 /** Per-platform OAuth app credentials, read from env. */
@@ -80,7 +80,7 @@ export interface SocialAdapter {
   refresh?(args: { creds: PlatformAppCreds; refreshToken: string }): Promise<OAuthTokenResult>
 
   /** Publish a post using a live connection. Throws on failure. */
-  publish(args: { conn: SocialConnection; content: string; mediaUrls?: string[]; options?: PublishOptions }): Promise<PublishResult>
+  publish(args: { conn: SocialConnection; content: string; media?: MediaItem[]; options?: PublishOptions }): Promise<PublishResult>
 
   /** Whether this platform's connect flow uses PKCE (code_verifier). */
   usesPkce?: boolean

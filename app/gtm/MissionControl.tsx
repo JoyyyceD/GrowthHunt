@@ -51,7 +51,7 @@ function deriveActions(ws: Workspace, tasks: GtmTask[]): Array<{ text: string; h
   const lastRadar = tasks.find((t) => t.kind === 'radar' && t.status === 'succeeded')
   if (!lastRadar) out.push({ text: 'Scan Reddit + HN for ICP-match posts', href: `/agents/radar?ws=${ws.id}` })
 
-  out.push({ text: 'Connect Postiz & schedule a post', href: `/agents/scheduler?ws=${ws.id}` })
+  out.push({ text: 'Connect an account & schedule a post', href: `/agents/scheduler?ws=${ws.id}` })
 
   return out.slice(0, 5)
 }

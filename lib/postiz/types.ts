@@ -34,7 +34,7 @@ export interface ScheduledPost {
   integration_id: string
   platform: string
   content: string
-  media: Array<{ id: string; path: string }>
+  media: Array<{ id: string; path: string; url?: string; kind?: string; mime?: string; bytes?: number }>
   type: ScheduledPostType
   scheduled_for: string | null
   status: ScheduledPostStatus

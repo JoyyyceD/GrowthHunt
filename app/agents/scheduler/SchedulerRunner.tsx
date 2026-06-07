@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { toast } from 'sonner'
 import type { PostizIntegration, ScheduledPost } from '@/lib/postiz/types'
+import type { MediaItem } from '@/lib/social/media'
 
 interface WsLite { id: string; name: string }
 
@@ -50,6 +51,13 @@ function meta(platform: string) {
 }
 
 const NATIVE_PLATFORMS = ['x', 'linkedin', 'reddit'] as const
+
+// Per-platform content limits (chars) — warn before the platform API rejects the post.
+const PLATFORM_LIMITS: Record<string, number> = {
+  x: 280, linkedin: 3000, reddit: 40000, mastodon: 500, bluesky: 300,
+  threads: 500, instagram: 2200, tiktok: 2200, facebook: 63206,
+  youtube: 5000, telegram: 4096, discord: 2000,
+}
 
 const CARD: React.CSSProperties = { border: '1px solid var(--rule)', borderRadius: 12, padding: 18, background: 'var(--bg-elev)' }
 const LABEL: React.CSSProperties = { fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ink-faint)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 10 }
@@ -99,6 +107,15 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
   // edit-in-place: when set, Compose acts on this scheduled post instead of creating new
   const [editingId, setEditingId] = useState<string | null>(null)
 
+  // reddit targeting — only used when 'reddit' is among the selected platforms
+  const [subreddit, setSubreddit] = useState('')
+  const [redditTitle, setRedditTitle] = useState('')
+  const [mySubreddits, setMySubreddits] = useState<Array<{ name: string; title: string; subscribers: number }>>([])
+
+  // media attachments (images / video)
+  const [media, setMedia] = useState<MediaItem[]>([])
+  const [uploading, setUploading] = useState(false)
+
   // Surface connect-callback result from URL.
   useEffect(() => {
     const status = search.get('connect')
@@ -142,6 +159,23 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
   function togglePlatform(p: string) {
     setSelectedPlatforms((s) => (s.includes(p) ? s.filter((x) => x !== p) : [...s, p]))
   }
+
+  // Platforms whose limit the current draft exceeds (warn + block submit).
+  const overLimit = useMemo(
+    () => selectedPlatforms.filter((p) => PLATFORM_LIMITS[p] && content.length > PLATFORM_LIMITS[p]),
+    [selectedPlatforms, content]
+  )
+
+  // Load the user's subreddits the first time Reddit is selected (for the target picker).
+  const redditSelected = selectedPlatforms.includes('reddit')
+  useEffect(() => {
+    if (!redditSelected || mySubreddits.length > 0) return
+    fetch(`/api/social/reddit/subreddits?ws=${workspace.id}`)
+      .then((r) => r.json())
+      .then((j) => { if (Array.isArray(j?.subreddits)) setMySubreddits(j.subreddits) })
+      .catch(() => { /* picker is optional — manual entry still works */ })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [redditSelected])
 
   // ── native connect actions ────────────────────────────────────────────────
   function connectNative(platform: string) {
@@ -254,10 +288,46 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
     if (res.ok) setPosts(j.posts || [])
   }
 
+  async function uploadFiles(files: FileList | null) {
+    if (!files || files.length === 0) return
+    if (media.length + files.length > 4) { toast.error('Up to 4 attachments per post'); return }
+    setUploading(true)
+    try {
+      for (const file of Array.from(files)) {
+        const fd = new FormData()
+        fd.append('file', file)
+        fd.append('ws', workspace.id)
+        const res = await fetch('/api/social/media', { method: 'POST', body: fd })
+        const j = await res.json()
+        if (!res.ok || !j.ok) { toast.error(j.error || `Upload failed: ${file.name}`); continue }
+        setMedia((m) => [...m, j.media as MediaItem])
+      }
+    } finally { setUploading(false) }
+  }
+
+  function removeMedia(item: MediaItem) {
+    setMedia((m) => m.filter((x) => x.path !== item.path))
+    // Best-effort cleanup of the stored object (ignore failures).
+    fetch(`/api/social/media?path=${encodeURIComponent(item.path)}&ws=${workspace.id}`, { method: 'DELETE' }).catch(() => {})
+  }
+
   async function submit(immediate: boolean) {
-    if (!content.trim()) { toast.error('Write something to post'); return }
+    if (!content.trim() && media.length === 0) { toast.error('Write something or attach media to post'); return }
     if (selectedPlatforms.length === 0) { toast.error('Pick at least one platform'); return }
     if (!immediate && !when) { toast.error('Pick a date/time, or use Post now'); return }
+    if (uploading) { toast.error('Wait for the upload to finish'); return }
+    if (overLimit.length > 0) {
+      toast.error(`Too long for ${overLimit.map((p) => meta(p).label).join(', ')} — trim the text first.`)
+      return
+    }
+    // Per-platform options. Reddit needs a target subreddit, else it falls back to your profile.
+    const options: Record<string, Record<string, unknown>> = {}
+    if (selectedPlatforms.includes('reddit')) {
+      const sr = subreddit.trim().replace(/^r\//, '')
+      if (!sr) { toast.error('Pick a subreddit for the Reddit post.'); return }
+      options.reddit = { subreddit: sr }
+      if (redditTitle.trim()) options.reddit.title = redditTitle.trim()
+    }
     setComposing(true)
     try {
       const res = await fetch('/api/social/posts', {
@@ -268,6 +338,8 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
           content: content.trim(),
           platforms: selectedPlatforms,
           when: immediate ? null : new Date(when).toISOString(),
+          options: Object.keys(options).length ? options : undefined,
+          media: media.length ? media : undefined,
         }),
       })
       const j = await res.json()
@@ -276,6 +348,9 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
       setContent('')
       setSelectedPlatforms([])
       setWhen('')
+      setSubreddit('')
+      setRedditTitle('')
+      setMedia([])
       await refreshPosts()
     } finally { setComposing(false) }
   }
@@ -307,6 +382,10 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
     if (!editingId) return
     if (!content.trim()) { toast.error('Content cannot be empty'); return }
     if (!when) { toast.error('Pick a date/time'); return }
+    if (overLimit.length > 0) {
+      toast.error(`Too long for ${overLimit.map((p) => meta(p).label).join(', ')} — trim the text first.`)
+      return
+    }
     setComposing(true)
     try {
       const res = await fetch(`/api/social/posts/${editingId}`, {
@@ -499,6 +578,36 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
             rows={4}
             style={{ ...INPUT, resize: 'vertical', lineHeight: 1.5 }}
           />
+          {!editingId && (
+            <div style={{ marginTop: 10 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+                <label style={{ ...BTN_GHOST, display: 'inline-flex', alignItems: 'center', gap: 6, cursor: uploading || media.length >= 4 ? 'default' : 'pointer', opacity: uploading || media.length >= 4 ? 0.6 : 1 }}>
+                  {uploading ? 'Uploading…' : '📎 Add image / video'}
+                  <input
+                    type="file"
+                    accept="image/jpeg,image/png,image/webp,image/gif,video/mp4,video/quicktime"
+                    multiple
+                    disabled={uploading || media.length >= 4}
+                    onChange={(e) => { void uploadFiles(e.target.files); e.currentTarget.value = '' }}
+                    style={{ display: 'none' }}
+                  />
+                </label>
+                <span style={{ fontSize: 11, color: 'var(--ink-faint)' }}>{media.length}/4 · jpg/png/webp/gif, mp4/mov</span>
+              </div>
+              {media.length > 0 && (
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 8 }}>
+                  {media.map((m) => (
+                    <div key={m.path} style={{ position: 'relative', width: 76, height: 76, borderRadius: 8, overflow: 'hidden', border: '1px solid var(--rule)', background: 'var(--bg)' }}>
+                      {m.kind === 'video'
+                        ? <video src={m.url} style={{ width: '100%', height: '100%', objectFit: 'cover' }} muted />
+                        : <img src={m.url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />}
+                      <button onClick={() => removeMedia(m)} title="Remove" style={{ position: 'absolute', top: 2, right: 2, width: 18, height: 18, borderRadius: '50%', border: 'none', background: 'rgba(0,0,0,0.6)', color: '#fff', fontSize: 11, lineHeight: '18px', cursor: 'pointer', padding: 0 }}>×</button>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
           {availablePlatforms.length > 0 && (
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 10 }}>
               {availablePlatforms.map((p) => {
@@ -524,10 +633,44 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
               })}
             </div>
           )}
+          {!editingId && redditSelected && (
+            <div style={{ marginTop: 10, padding: '10px 12px', border: '1px solid var(--rule)', borderRadius: 8, background: 'var(--bg)' }}>
+              <div style={{ fontSize: 11.5, color: 'var(--ink-faint)', marginBottom: 6 }}>
+                Reddit target — your post goes to this subreddit (not your profile)
+              </div>
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                <input
+                  list="reddit-subs"
+                  value={subreddit}
+                  onChange={(e) => setSubreddit(e.target.value)}
+                  placeholder="subreddit (e.g. SaaS)"
+                  style={{ ...INPUT, width: 'auto', flex: '1 1 180px' }}
+                />
+                <input
+                  value={redditTitle}
+                  onChange={(e) => setRedditTitle(e.target.value)}
+                  placeholder="post title (optional — defaults to first line)"
+                  style={{ ...INPUT, width: 'auto', flex: '2 1 240px' }}
+                />
+              </div>
+              {mySubreddits.length > 0 && (
+                <datalist id="reddit-subs">
+                  {mySubreddits.map((s) => (
+                    <option key={s.name} value={s.name}>{`r/${s.name} · ${s.subscribers.toLocaleString()} members`}</option>
+                  ))}
+                </datalist>
+              )}
+            </div>
+          )}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 6, flexWrap: 'wrap', gap: 8 }}>
             <span style={{ fontSize: 11.5, color: 'var(--ink-faint)' }}>
               {content.length} chars · {selectedPlatforms.length} platform{selectedPlatforms.length === 1 ? '' : 's'} selected
             </span>
+            {overLimit.length > 0 && (
+              <span style={{ fontSize: 11.5, color: '#c0392b' }}>
+                ⚠ Over limit for {overLimit.map((p) => `${meta(p).label} (${PLATFORM_LIMITS[p]})`).join(', ')}
+              </span>
+            )}
           </div>
           <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginTop: 12, flexWrap: 'wrap' }}>
             <input
@@ -537,15 +680,15 @@ export function SchedulerRunner({ workspace, allWorkspaces, initialConnected, in
               style={{ ...INPUT, width: 'auto' }}
             />
             {editingId ? (
-              <button style={{ ...BTN, opacity: composing ? 0.6 : 1 }} disabled={composing} onClick={saveEdit}>
+              <button style={{ ...BTN, opacity: composing || overLimit.length > 0 ? 0.6 : 1 }} disabled={composing || overLimit.length > 0} onClick={saveEdit}>
                 {composing ? 'Saving…' : 'Save changes'}
               </button>
             ) : (
               <>
-                <button style={{ ...BTN, opacity: composing ? 0.6 : 1 }} disabled={composing} onClick={() => submit(false)}>
+                <button style={{ ...BTN, opacity: composing || overLimit.length > 0 ? 0.6 : 1 }} disabled={composing || overLimit.length > 0} onClick={() => submit(false)}>
                   {composing ? 'Scheduling…' : 'Schedule'}
                 </button>
-                <button style={{ ...BTN_GHOST, opacity: composing ? 0.6 : 1 }} disabled={composing} onClick={() => submit(true)}>
+                <button style={{ ...BTN_GHOST, opacity: composing || overLimit.length > 0 ? 0.6 : 1 }} disabled={composing || overLimit.length > 0} onClick={() => submit(true)}>
                   Post now
                 </button>
               </>
@@ -665,6 +808,9 @@ function PostRow({ post, onEdit, onCancel, onRetry, isEditing }: {
           {isEditing && <span style={{ fontSize: 10.5, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>· editing above</span>}
         </div>
         <div style={{ fontSize: 12.5, color: 'var(--ink-dim)', lineHeight: 1.45, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>{post.content}</div>
+        {post.media && post.media.length > 0 && (
+          <div style={{ fontSize: 11, color: 'var(--ink-faint)', marginTop: 3 }}>📎 {post.media.length} attachment{post.media.length === 1 ? '' : 's'}</div>
+        )}
         {post.error && <div style={{ fontSize: 11.5, color: '#c0392b', marginTop: 4 }}>⚠ {post.error}</div>}
       </div>
       {(onEdit || onCancel || onRetry) && (
