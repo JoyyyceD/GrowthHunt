@@ -33,10 +33,11 @@ const HERO_STATS = {
 }
 
 // Toggle to surface the 14-day launch plan flow (Start page + StartForm).
-// Hidden until the end-to-end backend (X credentials linking, schedule
-// publishing, session storage) is fully wired and tested. Flip to true when
-// ready — all the underlying routes/components are still in place.
-const SHOW_START_CTA = false
+// End-to-end backend is now wired: X credentials linking (/viralx/credentials
+// + viralx_x_credentials), session storage (viralx_sessions / calendar_days),
+// and scheduled publishing (the /api/viralx/cron/publish worker is registered
+// in vercel.json on a */5 cron). All underlying routes/components are in place.
+const SHOW_START_CTA = true
 
 export default async function ViralXPage() {
   const supabase = await createServerClient()
