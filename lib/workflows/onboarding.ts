@@ -1,22 +1,28 @@
 /**
- * Onboarding playbook — fires when a new workspace is created.
- * Goal: from "blank workspace" → "ICP + voice + landing baseline in 3 min".
+ * Onboarding — gate-less workflow (playbook-class) that fires when a new
+ * workspace is created. Goal: "blank workspace" → "ICP + voice + landing
+ * baseline in 3 min".
  */
-import type { Playbook } from './types'
+import type { Workflow } from './types'
 import {
   tracedIcp, tracedVoice, tracedLanding,
 } from '@/lib/orchestrator/agents'
 import { patchWorkspace } from '@/lib/workspace/store'
 
-export const onboarding: Playbook = {
+export const onboarding: Workflow = {
   id: 'onboarding',
   name: 'Onboarding',
   description: 'Draft your ICP, train a voice profile (if a handle is set), and run a landing-page baseline — all in one pass. Auto-fires when a workspace is created.',
+  category: 'playbook',
+  embodies: 'First-run setup ritual for a brand-new workspace.',
   estimatedMinutes: 3,
+  outcome: 'ICP + voice + landing baseline drafted',
+  triggers: [{ kind: 'event', event: 'workspace_created' }],
   steps: [
     {
       id: 'icp',
-      kind: 'icp',
+      kind: 'agent',
+      agentKind: 'icp',
       label: 'Draft ICP + positioning from your homepage',
       skipIf: (ws) => !!(ws.icp_summary && ws.positioning),
       async run(ctx) {
@@ -37,7 +43,8 @@ export const onboarding: Playbook = {
     },
     {
       id: 'voice',
-      kind: 'voice',
+      kind: 'agent',
+      agentKind: 'voice',
       label: 'Train voice profile (if handle set)',
       skipIf: (ws) => !ws.voice_handle || !!ws.voice,
       async run(ctx) {
@@ -52,7 +59,8 @@ export const onboarding: Playbook = {
     },
     {
       id: 'landing',
-      kind: 'landing',
+      kind: 'agent',
+      agentKind: 'landing',
       label: 'Baseline conversion audit of your URL',
       async run(ctx) {
         const { result } = await tracedLanding(

@@ -33,10 +33,13 @@ interface StepLogEntry {
 export interface StartWorkflowOpts {
   triggeredBy?: TaskTrigger
   inputs?: Record<string, unknown>
+  /** Conversation that kicked off the run, if any (chat-triggered). */
+  conversationId?: string | null
 }
 
 export interface StartWorkflowOk {
   runId: string
+  parentTaskId: string
   status: 'succeeded' | 'failed' | 'awaiting_input' | 'running'
   pauseReason?: string
   pausePayload?: unknown
@@ -73,6 +76,7 @@ async function execLoop(
   stepLog: StepLogEntry[],
   artifacts: WorkflowArtifact[],
   resumeData?: unknown,
+  conversationId?: string | null,
 ): Promise<StartWorkflowOk> {
   let failureMsg: string | null = null
   let pausedAt: { reason: string; payload?: unknown } | null = null
@@ -92,6 +96,7 @@ async function execLoop(
       workflowRunId: runId,
       parentTaskId,
       triggeredBy,
+      conversationId: conversationId ?? null,
       inputs,
       priorOutputs,
       // resumeData is only present on the very first step we encounter after a resume
@@ -130,7 +135,7 @@ async function execLoop(
       step_log: stepLog, artifacts, finished_at: new Date().toISOString(),
       outcome: `Stopped: ${failureMsg}`,
     })
-    return { runId, status: 'failed', artifacts, outcome: `Stopped: ${failureMsg}`, stepLog }
+    return { runId, parentTaskId, status: 'failed', artifacts, outcome: `Stopped: ${failureMsg}`, stepLog }
   }
   if (pausedAt) {
     await patch(runId, {
@@ -138,7 +143,7 @@ async function execLoop(
       step_log: stepLog, artifacts,
       pause_reason: pausedAt.reason, pause_payload: pausedAt.payload ?? null,
     })
-    return { runId, status: 'awaiting_input', artifacts, pauseReason: pausedAt.reason, pausePayload: pausedAt.payload, stepLog }
+    return { runId, parentTaskId, status: 'awaiting_input', artifacts, pauseReason: pausedAt.reason, pausePayload: pausedAt.payload, stepLog }
   }
   const outcome = `${wf.outcome} · ${stepLog.length} step(s)`
   await finishTask(parentTaskId, { status: 'succeeded', output: { stepLog, artifacts }, summary: outcome })
@@ -147,7 +152,7 @@ async function execLoop(
     step_log: stepLog, artifacts, outputs: priorOutputs,
     finished_at: new Date().toISOString(), outcome,
   })
-  return { runId, status: 'succeeded', artifacts, outcome, stepLog }
+  return { runId, parentTaskId, status: 'succeeded', artifacts, outcome, stepLog }
 }
 
 export async function startWorkflow(workflowId: string, workspace: Workspace, opts: StartWorkflowOpts = {}): Promise<StartWorkflowResult> {
@@ -157,6 +162,7 @@ export async function startWorkflow(workflowId: string, workspace: Workspace, op
   const parent = await createTask({
     kind: 'playbook',  // reuses gtm_tasks taxonomy; UI distinguishes via workflow_run linkage
     workspace_id: workspace.id,
+    conversation_id: opts.conversationId,
     triggered_by: opts.triggeredBy ?? 'manual_page',
     input: { workflow_id: wf.id, inputs: opts.inputs ?? {} },
     summary: `Workflow: ${wf.name}`,
@@ -182,7 +188,7 @@ export async function startWorkflow(workflowId: string, workspace: Workspace, op
 
   return await execLoop(
     wf, workspace, runRow.id as string, parent.id, opts.triggeredBy ?? 'manual_page',
-    opts.inputs ?? {}, 0, {}, [], [],
+    opts.inputs ?? {}, 0, {}, [], [], undefined, opts.conversationId,
   )
 }
 

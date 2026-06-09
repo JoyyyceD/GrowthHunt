@@ -10,7 +10,7 @@
  *      workflow_run tracks toward a final business outcome.
  */
 import type { Workspace } from '@/lib/workspace/types'
-import type { TaskTrigger } from '@/lib/orchestrator/types'
+import type { TaskTrigger, TaskKind } from '@/lib/orchestrator/types'
 
 export type WorkflowStepKind =
   | 'agent'      // runs an agent + advances automatically
@@ -41,6 +41,8 @@ export interface WorkflowContext {
   workflowRunId: string
   parentTaskId: string
   triggeredBy: TaskTrigger
+  /** Conversation that kicked off the run, if any (chat-triggered runs). */
+  conversationId?: string | null
   /** User-supplied initial params (e.g. {topic: '...'}). */
   inputs: Record<string, unknown>
   /** Outputs of previously completed steps, keyed by step id. */
@@ -53,6 +55,11 @@ export interface WorkflowStep {
   id: string
   kind: WorkflowStepKind
   label: string
+  /**
+   * For kind='agent', the underlying task kind this step records
+   * (icp, voice, landing, …). Surfaced in the UI step list.
+   */
+  agentKind?: TaskKind
   /** Skip the step entirely if predicate returns true (e.g. already done). */
   skipIf?: (ws: Workspace, prior: Record<string, unknown>) => boolean
   run(ctx: WorkflowContext): Promise<WorkflowStepResult>
@@ -64,6 +71,12 @@ export interface Workflow {
   id: string                            // 'daily_content_sprint', 'ship_a_feature', …
   name: string
   description: string
+  /**
+   * 'process' = stateful business process (gates/triggers/artifacts) shown on
+   * the Workflows page. 'playbook' = synchronous gate-less agent chain shown on
+   * the Playbooks page. Defaults to 'process' when omitted.
+   */
+  category?: 'process' | 'playbook'
   /** Tied to a real founder ritual / process this workflow replaces. */
   embodies: string
   estimatedMinutes: number

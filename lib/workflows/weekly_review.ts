@@ -1,8 +1,9 @@
 /**
- * Weekly review playbook — runs Sunday 14:00 UTC per workspace.
- * Goal: surface "what changed this week + here's where to invest energy".
+ * Weekly review — gate-less workflow (playbook-class). Runs Sunday 14:00 UTC
+ * per workspace. Goal: surface "what changed this week + here's where to
+ * invest energy".
  */
-import type { Playbook } from './types'
+import type { Workflow } from './types'
 import { tracedGeoAudit, tracedCompetitor, tracedRadar } from '@/lib/orchestrator/agents'
 import { sendTransactionalEmail } from '@/lib/brevo'
 import { createAdminClient } from '@/lib/supabase/admin'
@@ -11,15 +12,20 @@ function host(u: string): string {
   try { return new URL(u).hostname.replace(/^www\./, '') } catch { return u }
 }
 
-export const weekly_review: Playbook = {
+export const weekly_review: Workflow = {
   id: 'weekly_review',
   name: 'Weekly review',
   description: 'GEO re-audit + competitor diff + radar scan, then email the workspace owner a digest. Runs Sundays automatically.',
+  category: 'playbook',
+  embodies: 'The Sunday "what changed this week" review ritual.',
   estimatedMinutes: 5,
+  outcome: 'Weekly digest emailed to the workspace owner',
+  triggers: [{ kind: 'cron', cron: '0 14 * * 0', note: 'Sundays 14:00 UTC' }],
   steps: [
     {
       id: 'geo',
-      kind: 'geo_audit',
+      kind: 'agent',
+      agentKind: 'geo_audit',
       label: 'GEO re-audit on workspace URL',
       async run(ctx) {
         const { result } = await tracedGeoAudit(ctx.workspace.url, {
@@ -33,7 +39,8 @@ export const weekly_review: Playbook = {
     },
     {
       id: 'competitor',
-      kind: 'competitor',
+      kind: 'agent',
+      agentKind: 'competitor',
       label: 'Competitor snapshots + diffs',
       skipIf: (ws) => (ws.competitors || []).filter((c) => c.url).length === 0,
       async run(ctx) {
@@ -46,7 +53,8 @@ export const weekly_review: Playbook = {
     },
     {
       id: 'radar',
-      kind: 'radar',
+      kind: 'agent',
+      agentKind: 'radar',
       label: 'Reddit + HN scan',
       skipIf: (ws) => !ws.icp_summary && ws.icp_segments.length === 0,
       async run(ctx) {
@@ -59,7 +67,8 @@ export const weekly_review: Playbook = {
     },
     {
       id: 'digest',
-      kind: 'chat_turn',
+      kind: 'agent',
+      agentKind: 'chat_turn',
       label: 'Email the workspace owner',
       async run(ctx) {
         const ws = ctx.workspace

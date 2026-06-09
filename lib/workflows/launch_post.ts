@@ -1,40 +1,49 @@
 /**
- * Launch post playbook — user says "launch this thing", we:
+ * Launch post — gate-less workflow (playbook-class). User says "launch this
+ * thing", we:
  *   1. Distribution: produce 7 platform variants of the topic
  *   2. Creator outreach: 6 X DM drafts related to the topic
  *   3. A/B Lab: stand up an A/B test on the source_url with 2 hero variants
  *      (uses the X variant + the LinkedIn one-liner, since they fight hardest)
  */
-import type { Playbook } from './types'
+import type { Workflow } from './types'
 import { tracedDistribution, tracedCreator, tracedAbCreate } from '@/lib/orchestrator/agents'
 
-export const launch_post: Playbook = {
+export const launch_post: Workflow = {
   id: 'launch_post',
   name: 'Launch post',
   description: 'Generate multi-channel post variants, draft creator DMs related to the topic, and stand up an A/B test on the landing URL — all in one shot.',
+  category: 'playbook',
+  embodies: 'The "launch this thing across every channel" push.',
   estimatedMinutes: 4,
+  outcome: 'Platform variants + creator DMs + a live A/B test',
+  triggers: [{ kind: 'manual' }],
   steps: [
     {
       id: 'distribution',
-      kind: 'distribution',
+      kind: 'agent',
+      agentKind: 'distribution',
       label: 'Generate platform variants',
       async run(ctx) {
-        const topic = String(ctx.params?.topic || '').trim()
-        if (!topic) return { ok: false, error: 'launch_post requires params.topic' }
-        const sourceUrl = String(ctx.params?.source_url || '').trim() || ctx.workspace.url
+        const topic = String(ctx.inputs?.topic || '').trim()
+        if (!topic) return { ok: false, error: 'launch_post requires inputs.topic' }
+        const sourceUrl = String(ctx.inputs?.source_url || '').trim() || ctx.workspace.url
         const { result } = await tracedDistribution(
           { workspace: ctx.workspace, topic, sourceUrl },
           { workspace_id: ctx.workspace.id, conversation_id: ctx.conversationId, parent_task_id: ctx.parentTaskId, triggered_by: 'playbook' },
         )
-        return { ok: !!result.post, output: result.post, summary: `${Object.keys(result.post?.variants ?? {}).length} variants` }
+        if (!result.post) return { ok: false, error: 'No distribution post generated' }
+        const variants = Object.keys(result.post.variants ?? {}).length
+        return { ok: true, output: result.post, summary: `${variants} variants` }
       },
     },
     {
       id: 'creator',
-      kind: 'creator_outreach',
+      kind: 'agent',
+      agentKind: 'creator_outreach',
       label: 'Draft creator DMs',
       async run(ctx) {
-        const topic = String(ctx.params?.topic || '').trim()
+        const topic = String(ctx.inputs?.topic || '').trim()
         const { result } = await tracedCreator(
           { workspace: ctx.workspace, picks: 6, notes: topic ? `Related to: ${topic}` : undefined },
           { workspace_id: ctx.workspace.id, conversation_id: ctx.conversationId, parent_task_id: ctx.parentTaskId, triggered_by: 'playbook' },
@@ -44,11 +53,12 @@ export const launch_post: Playbook = {
     },
     {
       id: 'ab',
-      kind: 'ab',
+      kind: 'agent',
+      agentKind: 'ab',
       label: 'Stand up A/B test on the source URL',
       async run(ctx) {
-        const topic = String(ctx.params?.topic || '').trim()
-        const sourceUrl = String(ctx.params?.source_url || '').trim() || ctx.workspace.url
+        const topic = String(ctx.inputs?.topic || '').trim()
+        const sourceUrl = String(ctx.inputs?.source_url || '').trim() || ctx.workspace.url
         // Derive two short copies from distribution output
         const dist = ctx.priorOutputs.distribution as { variants?: { x?: { body?: string; threadParts?: string[] }; linkedin?: { body?: string } } } | undefined
         const xHook = dist?.variants?.x?.threadParts?.[0] || dist?.variants?.x?.body || `Check out ${topic || 'our latest'}`
