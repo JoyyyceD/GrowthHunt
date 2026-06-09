@@ -3,18 +3,17 @@
 import { useEffect, useState } from 'react'
 
 // Floating "follow the builder" widget, indie-style.
-// Mirrors the fake-mrr.com bottom-right card: small tagline + blue pill CTA.
+// Small tagline + red pill CTA linking to the builder's 小红书 (RED) profile.
 // Dismiss state and follow-click state are persisted in localStorage so the
 // card doesn't re-appear after a user has either committed or shooed it away.
 
 const DISMISSED_KEY = 'gh.followFelix.dismissed'
 const FOLLOWED_KEY = 'gh.followFelix.followed'
-const FOLLOW_URL =
-  'https://twitter.com/intent/follow?screen_name=Felixisbuilding'
+const FOLLOW_URL = 'https://xhslink.com/m/31NMBbcsihv'
 
-// X classic blue — sits cleanly next to the page's amber/black accent palette
-// without competing for the primary CTA spot.
-const X_BLUE = '#1DA1F2'
+// 小红书 (RED) brand red — sits cleanly next to the page's amber/black accent
+// palette without competing for the primary CTA spot.
+const XHS_RED = '#FF2442'
 
 export default function FollowFelixWidget() {
   // Render-gated by a `mounted` flag so SSR output is empty and we don't get a
@@ -170,7 +169,7 @@ export default function FollowFelixWidget() {
               fontWeight: 600,
               padding: '10px 14px',
               borderRadius: 999,
-              background: X_BLUE,
+              background: XHS_RED,
               color: '#FFFFFF',
               border: 'none',
               cursor: 'pointer',
@@ -178,7 +177,7 @@ export default function FollowFelixWidget() {
               whiteSpace: 'nowrap',
             }}
           >
-            Follow @Felixisbuilding
+            Follow 大吉是Builder
           </button>
         </>
       ) : (
@@ -214,7 +213,7 @@ export default function FollowFelixWidget() {
               fontWeight: 600,
               padding: '8px 16px',
               borderRadius: 999,
-              background: X_BLUE,
+              background: XHS_RED,
               color: '#FFFFFF',
               border: 'none',
               cursor: 'pointer',
@@ -224,7 +223,7 @@ export default function FollowFelixWidget() {
               gap: 6,
             }}
           >
-            Follow @Felixisbuilding
+            Follow 大吉是Builder
           </button>
         </>
       )}
