@@ -13,6 +13,10 @@ export default function ScoutHero() {
   const [brief, setBrief] = useState('')
   const [err, setErr] = useState('')
   const [busy, setBusy] = useState(false)
+  const [needsInvite, setNeedsInvite] = useState(false)
+  const [invite, setInvite] = useState('')
+  const [waitEmail, setWaitEmail] = useState('')
+  const [waitDone, setWaitDone] = useState(false)
 
   async function start(e: FormEvent) {
     e.preventDefault()
@@ -23,7 +27,7 @@ export default function ScoutHero() {
       const res = await fetch('/api/scout/onboard', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url: url.trim(), brief: brief.trim() || undefined }),
+        body: JSON.stringify({ url: url.trim(), brief: brief.trim() || undefined, invite: invite.trim() || undefined }),
       })
       if (res.status === 401) {
         window.location.href = `/login?next=${encodeURIComponent('/scout')}`
@@ -31,7 +35,12 @@ export default function ScoutHero() {
       }
       const data = await res.json()
       if (!res.ok) {
-        setErr(data.error || `HTTP ${res.status}`)
+        if (data.needsInvite) {
+          setNeedsInvite(true)
+          setErr(invite ? 'That code didn’t work — double-check it, or join the waitlist below.' : '')
+        } else {
+          setErr(data.error || `HTTP ${res.status}`)
+        }
         setBusy(false)
         return
       }
@@ -40,6 +49,17 @@ export default function ScoutHero() {
       setErr((e2 as Error).message)
       setBusy(false)
     }
+  }
+
+  async function joinWaitlist(e: FormEvent) {
+    e.preventDefault()
+    if (!waitEmail.trim()) return
+    const res = await fetch('/api/scout/waitlist', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: waitEmail.trim() }),
+    })
+    if (res.ok) setWaitDone(true)
   }
 
   return (
@@ -76,11 +96,46 @@ export default function ScoutHero() {
               border: '1px solid var(--rule)', background: 'var(--bg-elev)', color: 'var(--ink)', outline: 'none',
             }}
           />
+          {needsInvite && (
+            <input
+              value={invite}
+              onChange={e => setInvite(e.target.value)}
+              placeholder="Invite code"
+              autoFocus
+              style={{
+                fontSize: 14, padding: '11px 14px', borderRadius: 10, textAlign: 'center', letterSpacing: '0.08em',
+                border: '1.5px solid var(--accent-border)', background: 'var(--bg-elev)', color: 'var(--ink)', outline: 'none',
+              }}
+            />
+          )}
           <button type="submit" disabled={busy || !url.trim()} style={{ ...btnPrimary, fontSize: 16, padding: '13px 24px', opacity: busy || !url.trim() ? 0.6 : 1 }}>
             {busy ? 'Scout is on it…' : 'Hire Scout — free'}
           </button>
         </form>
         {err && <div style={{ marginTop: 12, fontSize: 13.5, color: 'var(--warn)' }}>{err}</div>}
+        {needsInvite && (
+          <div style={{ marginTop: 22, padding: '18px 20px', border: '1px solid var(--rule)', borderRadius: 12, background: 'var(--bg-elev)' }}>
+            {waitDone ? (
+              <div style={{ fontSize: 14, color: 'var(--ink-dim)' }}>You&apos;re on the list — I&apos;ll sniff you out an invite soon. 🐾</div>
+            ) : (
+              <>
+                <div style={{ fontSize: 14, color: 'var(--ink-dim)', marginBottom: 10 }}>
+                  Scout is in private beta. No code? Leave your email and I&apos;ll fetch you one.
+                </div>
+                <form onSubmit={joinWaitlist} style={{ display: 'flex', gap: 8 }}>
+                  <input
+                    value={waitEmail}
+                    onChange={e => setWaitEmail(e.target.value)}
+                    placeholder="you@company.com"
+                    type="email"
+                    style={{ flex: 1, fontSize: 14, padding: '10px 12px', borderRadius: 10, border: '1px solid var(--rule-strong)', background: 'var(--bg)', color: 'var(--ink)', outline: 'none' }}
+                  />
+                  <button type="submit" style={{ ...btnPrimary, fontSize: 13.5, padding: '10px 18px' }}>Join waitlist</button>
+                </form>
+              </>
+            )}
+          </div>
+        )}
       </div>
     </div>
   )

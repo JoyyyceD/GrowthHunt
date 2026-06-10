@@ -185,9 +185,19 @@ export async function runOnboardingPipeline(input: OnboardingInput): Promise<Onb
 
     await patchWorkspace(input.workspaceId, workspacePatchFromIntel(intel))
 
+    // Case engine (V2-T0a): real Growth Story precedents for strategy/calendar.
+    // Best-effort — an empty match list just omits the precedent sections.
+    let caseNotes: string | undefined
+    try {
+      const { matchCases, buildCaseNotes } = await import('./case-match')
+      caseNotes = buildCaseNotes(await matchCases(intel, input.workspaceId, input.model))
+    } catch (e) {
+      console.error('[scout] case-match failed:', (e as Error).message)
+    }
+
     // Lazy import avoids a cycle (tools → artifacts, onboarding → both).
     const { upsertArtifact } = await import('./artifacts')
-    const specs = onboardingDocs()
+    const specs = onboardingDocs(caseNotes)
     const docsWritten: string[] = []
     let calendarMd = ''
 

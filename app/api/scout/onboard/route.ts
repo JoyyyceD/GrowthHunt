@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return Response.json({ error: 'unauthorized' }, { status: 401 })
 
-  let body: { url?: string; brief?: string; workspaceId?: string }
+  let body: { url?: string; brief?: string; workspaceId?: string; invite?: string }
   try {
     body = await req.json()
   } catch {
@@ -29,6 +29,20 @@ export async function POST(req: NextRequest) {
   }
   const url = body.url?.trim()
   if (!url) return Response.json({ error: 'url required' }, { status: 400 })
+
+  // Beta gate (V2-T0c): when invite codes are configured, new users need one;
+  // anyone who already owns a workspace stays in.
+  const inviteCodes = (process.env.SCOUT_INVITE_CODES || '')
+    .split(',')
+    .map(s => s.trim().toLowerCase())
+    .filter(Boolean)
+  if (inviteCodes.length) {
+    const hasWorkspace = (await listWorkspacesForOwner(user.id)).length > 0
+    const inviteOk = body.invite ? inviteCodes.includes(body.invite.trim().toLowerCase()) : false
+    if (!hasWorkspace && !inviteOk) {
+      return Response.json({ needsInvite: true, error: 'invite code required' }, { status: 403 })
+    }
+  }
 
   let workspaceId = body.workspaceId
   if (workspaceId) {

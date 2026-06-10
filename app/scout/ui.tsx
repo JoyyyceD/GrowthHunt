@@ -517,6 +517,71 @@ export function RightRail({
           </a>
         ))}
       </div>
+
+      {artifacts.length > 0 && <SharePanel workspaceId={workspaceId} />}
+    </div>
+  )
+}
+
+/** Share toggle for the public playbook report (V2-T2). Private by default. */
+function SharePanel({ workspaceId }: { workspaceId: string }) {
+  const [report, setReport] = useState<{ slug: string; enabled: boolean; view_count: number } | null>(null)
+  const [loaded, setLoaded] = useState(false)
+  const [copied, setCopied] = useState(false)
+
+  useEffect(() => {
+    void (async () => {
+      const res = await fetch(`/api/scout/share?ws=${workspaceId}`)
+      if (res.ok) setReport((await res.json()).report)
+      setLoaded(true)
+    })()
+  }, [workspaceId])
+
+  async function toggle(enabled: boolean) {
+    const res = await fetch(`/api/scout/share?ws=${workspaceId}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ enabled }),
+    })
+    if (res.ok) setReport((await res.json()).report)
+  }
+
+  if (!loaded) return null
+  const url = report ? `${typeof window !== 'undefined' ? window.location.origin : ''}/scout/report/${report.slug}` : ''
+
+  return (
+    <div style={{ borderTop: '1px solid var(--rule)', paddingTop: 14 }}>
+      <div className="eyebrow" style={{ marginBottom: 8 }}><span className="dot" />Share playbook</div>
+      {report?.enabled ? (
+        <>
+          <div style={{ fontSize: 12, color: 'var(--ink-dim)', marginBottom: 8 }}>
+            Public · {report.view_count} view{report.view_count === 1 ? '' : 's'}
+          </div>
+          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+            <button
+              style={btnSmall}
+              onClick={async () => {
+                await navigator.clipboard.writeText(url)
+                setCopied(true)
+                setTimeout(() => setCopied(false), 1500)
+              }}
+            >
+              {copied ? 'Copied ✓' : 'Copy link'}
+            </button>
+            <a href={url} target="_blank" rel="noreferrer" style={{ ...btnSmall, textDecoration: 'none' }}>Open</a>
+            <button style={btnSmall} onClick={() => void toggle(false)}>Make private</button>
+          </div>
+        </>
+      ) : (
+        <>
+          <div style={{ fontSize: 12, color: 'var(--ink-dim)', marginBottom: 8 }}>
+            Publish a read-only page of your playbook — great for your team or your audience.
+          </div>
+          <button style={{ ...btnPrimary, fontSize: 12.5, padding: '6px 14px' }} onClick={() => void toggle(true)}>
+            Share publicly
+          </button>
+        </>
+      )}
     </div>
   )
 }
