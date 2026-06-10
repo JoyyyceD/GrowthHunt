@@ -49,6 +49,56 @@ function Hero() {
   )
 }
 
+// ── Scout: AI growth teammate entry ──────────────────────────────────────────
+function ScoutEntry() {
+  return (
+    <section id="scout" style={{ padding: '56px 0', borderTop: '1px solid var(--rule)' }}>
+      <div className="shell">
+        <div
+          style={{
+            border: '1.5px solid var(--accent-border)', borderRadius: 16, background: 'var(--bg-elev)',
+            padding: '36px 40px', display: 'flex', alignItems: 'center', gap: 32, flexWrap: 'wrap',
+          }}
+        >
+          <div
+            aria-hidden
+            style={{
+              width: 72, height: 72, borderRadius: '50%', flexShrink: 0, fontSize: 34,
+              background: 'var(--accent-soft)', border: '1.5px solid var(--accent-border)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+            }}
+          >
+            🐾
+          </div>
+          <div style={{ flex: 1, minWidth: 280 }}>
+            <div className="eyebrow" style={{ marginBottom: 10 }}>
+              <span className="dot" />New · Scout beta
+            </div>
+            <h2 className="serif" style={{ fontSize: 30, margin: '0 0 8px', letterSpacing: '-0.02em' }}>
+              Meet <em>Scout</em> — your AI growth teammate.
+            </h2>
+            <p style={{ fontSize: 15, color: 'var(--ink-dim)', margin: 0, lineHeight: 1.6, maxWidth: 560 }}>
+              Drop your URL and in about three minutes Scout reads your site, scopes your market, and hands you a
+              full brand playbook — seven strategy documents plus your first week of posts, queued and ready to
+              approve. Every stat sourced, or it doesn&apos;t ship.
+            </p>
+          </div>
+          <Link
+            href="/scout"
+            style={{
+              display: 'inline-flex', alignItems: 'center', gap: 8, flexShrink: 0,
+              background: 'var(--accent)', color: 'var(--accent-ink)', border: 'none',
+              padding: '14px 28px', borderRadius: 999, fontSize: 15, fontWeight: 600, textDecoration: 'none',
+            }}
+          >
+            Hire Scout — free →
+          </Link>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 // ── Live cases ────────────────────────────────────────────────────────────────
 function LiveCases() {
   const backlinks = getFeatureById('get-backlinks')
@@ -536,6 +586,7 @@ export default function HomePage() {
     <div>
       <TopNav variant="home" />
       <Hero />
+      <ScoutEntry />
       <LiveCases />
       <RoadmapTeaser />
       <FAQ />
