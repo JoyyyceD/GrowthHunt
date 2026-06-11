@@ -55,15 +55,26 @@ export async function POST(req: NextRequest) {
       await appendMessage({ conversation_id: conversationId, role: 'user', content: message })
       await maybeAutoTitle(conversationId, message.slice(0, 60))
     }
+    let lastQuestion = ''
     const result = await runScoutTurn({
       workspaceId: auth.workspace.id,
       conversationId,
       userMessage: message,
       history,
-      emit: event => send(event),
+      emit: event => {
+        if (event.type === 'ask_user') {
+          lastQuestion = event.options?.length
+            ? `${event.question}\nOptions: ${event.options.join(' / ')}`
+            : event.question
+        }
+        send(event)
+      },
     })
-    if (conversationId && result.reply) {
-      await appendMessage({ conversation_id: conversationId, role: 'assistant', content: result.reply })
+    // Persist the turn's outcome — for ask_user turns that's the question
+    // itself, so the next turn's history explains what "option 1" refers to.
+    const toPersist = result.reply || (result.endedWith === 'ask_user' ? lastQuestion : '')
+    if (conversationId && toPersist) {
+      await appendMessage({ conversation_id: conversationId, role: 'assistant', content: toPersist })
     }
   })
 }

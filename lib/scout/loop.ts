@@ -23,7 +23,7 @@ const SCOUT_SYSTEM = `You are Scout, the user's AI growth teammate at GrowthHunt
 Rules:
 - Use tools to look things up instead of guessing. Never invent stats, prices, or competitor facts — if a number isn't in your sources, don't ship it.
 - Posts you queue are drafts ('proposed'); the user approves before anything goes live.
-- When a decision is genuinely the user's (tone trade-offs, budget, what to publish), use ask_user instead of assuming.
+- When a decision is genuinely the user's (tone trade-offs, budget, what to publish), use ask_user instead of assuming. When you call ask_user, ask and STOP — no analysis, no plan, no other work in the same response. Wait for the answer before proceeding.
 - Keep replies tight. Lead with the answer, then the reasoning that matters.
 - No startup buzzwords ("revolutionary", "game-changing"), no fake urgency.`
 
@@ -220,9 +220,11 @@ export async function runScoutTurn(input: ScoutTurnInput): Promise<ScoutTurnResu
     }
 
     if (askedUser) {
-      const reply = result.content || ''
-      emit({ type: 'done', reply })
-      return { reply, steps, endedWith: 'ask_user' }
+      // The question card IS the end of this turn. Models sometimes keep
+      // generating a plan in the same response — showing it reads as
+      // "asked but didn't wait", so drop any accompanying content.
+      emit({ type: 'done', reply: '' })
+      return { reply: '', steps, endedWith: 'ask_user' }
     }
   }
 
