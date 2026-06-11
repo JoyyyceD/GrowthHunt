@@ -14,7 +14,7 @@ import { assertBudget, chatStream, ScoutBudgetError, type ChatStreamInput, type 
 import { SCOUT_TOOLS, availableTools } from './tools'
 import type { ChatMessage, ScoutEvent, ScoutTool, StepRecord } from './types'
 
-export const MAX_STEPS = 5
+export const MAX_STEPS = 8
 const OBSERVATION_LIMIT = 6_000
 const PERSIST_LIMIT = 2_000
 
@@ -226,7 +226,9 @@ export async function runScoutTurn(input: ScoutTurnInput): Promise<ScoutTurnResu
     }
   }
 
-  const reply = finalText || "I ran out of steps on this one — tell me to continue and I'll pick up where I left off."
+  const lastTool = steps.filter(s => s.actionKind === 'tool_call').at(-1)?.toolName
+  const reply = finalText ||
+    `I got partway through — finished ${steps.length} steps${lastTool ? ` (last: ${lastTool})` : ''} before hitting my per-turn limit. Say "continue" and I'll pick up exactly where I left off.`
   emit({ type: 'done', reply })
   return { reply, steps, endedWith: 'max_steps' }
 }
