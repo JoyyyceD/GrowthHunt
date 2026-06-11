@@ -185,6 +185,11 @@ export async function runOnboardingPipeline(input: OnboardingInput): Promise<Onb
 
     await patchWorkspace(input.workspaceId, workspacePatchFromIntel(intel))
 
+    // Batch A: grab the site logo in parallel with doc generation (best-effort).
+    const logoPromise = import('./brand-assets')
+      .then(m => m.fetchAndStoreLogo(input.workspaceId, input.url))
+      .catch(() => null)
+
     // Case engine (V2-T0a): real Growth Story precedents for strategy/calendar.
     // Best-effort — an empty match list just omits the precedent sections.
     let caseNotes: string | undefined
@@ -266,6 +271,7 @@ export async function runOnboardingPipeline(input: OnboardingInput): Promise<Onb
       }
     }
 
+    await logoPromise
     const ws = await getWorkspace(input.workspaceId)
     await progress(
       {

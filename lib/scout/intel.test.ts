@@ -48,3 +48,19 @@ describe('researchQueries', () => {
     expect(qs[0]).toBe('Acme alternatives')
   })
 })
+
+describe('extractLogoCandidates', () => {
+  test('prefers apple-touch-icon, resolves relative, always has favicon fallback', async () => {
+    const { extractLogoCandidates } = await import('./brand-assets')
+    const html = `<head>
+      <meta property="og:image" content="https://cdn.acme.com/banner.png">
+      <link rel="apple-touch-icon" href="/apple-icon.png">
+      <link rel="icon" href="/favicon.svg">
+    </head>`
+    const c = extractLogoCandidates(html, 'https://acme.com')
+    expect(c[0]).toBe('https://acme.com/apple-icon.png')
+    expect(c).toContain('https://acme.com/favicon.svg')
+    expect(c).toContain('https://cdn.acme.com/banner.png')
+    expect(c.at(-1)).toBe('https://acme.com/favicon.ico')
+  })
+})

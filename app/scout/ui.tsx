@@ -222,6 +222,20 @@ export function Markdown({ text }: { text: string }) {
 export function ArtifactCard({ block, workspaceId }: { block: Extract<Block, { kind: 'artifact' }>; workspaceId: string }) {
   const [expanded, setExpanded] = useState(false)
   const [copied, setCopied] = useState(false)
+  const [fullText, setFullText] = useState('')
+  const [loading, setLoading] = useState(false)
+  const text = block.text || fullText
+
+  async function ensureFullText() {
+    if (text || loading) return
+    setLoading(true)
+    try {
+      const res = await fetch(`/api/scout/artifacts/${block.slug}?ws=${workspaceId}`)
+      if (res.ok) setFullText((await res.json()).artifact?.content_md || '')
+    } finally {
+      setLoading(false)
+    }
+  }
   return (
     <div style={{ ...card, margin: '8px 0', overflow: 'hidden' }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 14px', borderBottom: '1px solid var(--rule)' }}>
@@ -235,7 +249,7 @@ export function ArtifactCard({ block, workspaceId }: { block: Extract<Block, { k
         </div>
         {block.done && (
           <div style={{ display: 'flex', gap: 6 }}>
-            <button onClick={() => setExpanded(v => !v)} style={btnSmall}>{expanded ? 'Collapse' : 'Expand'}</button>
+            <button onClick={() => { if (!expanded) void ensureFullText(); setExpanded(v => !v) }} style={btnSmall}>{expanded ? 'Collapse' : 'Expand'}</button>
             <button
               style={btnSmall}
               onClick={async () => {
@@ -253,8 +267,8 @@ export function ArtifactCard({ block, workspaceId }: { block: Extract<Block, { k
         )}
       </div>
       <div style={{ padding: '10px 16px', maxHeight: expanded ? undefined : 260, overflow: 'hidden', position: 'relative' }}>
-        <Markdown text={block.text || (block.done ? `*Open in Files to read ${block.title || block.slug}.*` : '')} />
-        {!expanded && (block.text.length > 800) && (
+        <Markdown text={text || (loading ? '*Loading…*' : block.done ? '*Click Expand to read.*' : '')} />
+        {!expanded && (text.length > 800) && (
           <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 60, background: 'linear-gradient(transparent, var(--bg-elev))' }} />
         )}
       </div>
@@ -532,7 +546,7 @@ export function PostEditor({
       return
     }
     if (data.needsConnection) {
-      setActionErr(`Connect ${data.platform} first → Integrations`)
+      setActionErr(`__CONNECT__${data.platform}`)
       return
     }
     onChanged()
@@ -557,7 +571,15 @@ export function PostEditor({
       {post.status === 'failed' && post.error && (
         <div style={{ fontSize: 12, color: 'var(--warn)', marginTop: 6 }}>⚠ {post.error}</div>
       )}
-      {actionErr && <div style={{ fontSize: 12, color: 'var(--warn)', marginTop: 6 }}>{actionErr}</div>}
+      {actionErr && (
+        <div style={{ fontSize: 12, color: 'var(--warn)', marginTop: 6 }}>
+          {actionErr.startsWith('__CONNECT__') ? (
+            <a href={`/scout/${workspaceId}/integrations`} style={{ color: 'var(--accent)', fontWeight: 600 }}>
+              Connect {actionErr.replace('__CONNECT__', '')} first → open Integrations
+            </a>
+          ) : actionErr}
+        </div>
+      )}
       <div style={{ display: 'flex', gap: 6, marginTop: 8, flexWrap: 'wrap' }}>
         {post.status === 'proposed' && (
           <button style={{ ...btnPrimary, fontSize: 12.5, padding: '5px 14px' }} onClick={() => void act('approve', editText !== post.content ? editText : undefined)}>
@@ -644,13 +666,14 @@ function SharePanel({ workspaceId }: { workspaceId: string }) {
 
 // ---------- left rail ----------
 
-export function LeftRail({ workspaceId, workspaceName, active }: { workspaceId: string; workspaceName: string; active: 'chat' | 'files' | 'assets' | 'calendar' | 'activity' }) {
+export function LeftRail({ workspaceId, workspaceName, active }: { workspaceId: string; workspaceName: string; active: 'chat' | 'files' | 'assets' | 'calendar' | 'activity' | 'integrations' | 'calendar' | 'activity' | 'integrations' }) {
   const nav = [
     { label: 'Chat', href: `/scout/${workspaceId}`, key: 'chat' },
     { label: 'Files', href: `/scout/${workspaceId}/files`, key: 'files' },
     { label: 'Assets', href: `/scout/${workspaceId}/assets`, key: 'assets' },
     { label: 'Calendar', href: `/scout/${workspaceId}/calendar`, key: 'calendar' },
     { label: 'Activity', href: `/scout/${workspaceId}/activity`, key: 'activity' },
+    { label: 'Integrations', href: `/scout/${workspaceId}/integrations`, key: 'integrations' },
   ]
   return (
     <div style={{ width: 220, flexShrink: 0, borderRight: '1px solid var(--rule)', padding: '18px 14px', display: 'flex', flexDirection: 'column', gap: 16 }}>

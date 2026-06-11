@@ -60,7 +60,12 @@ export async function GET(req: NextRequest, ctx: { params: Promise<{ platform: s
   const res = NextResponse.redirect(authorize)
   setStateCookie(res, platform, {
     state, codeVerifier: verifier, workspaceId: ws.id, platform,
-    returnTo: `/agents/scheduler?ws=${ws.id}`,
+    // Optional caller-supplied return path (e.g. /scout/[id]/integrations);
+    // same-site only to prevent open redirects.
+    returnTo: (() => {
+      const rt = req.nextUrl.searchParams.get('returnTo')
+      return rt && rt.startsWith('/') && !rt.startsWith('//') ? rt : `/agents/scheduler?ws=${ws.id}`
+    })(),
   })
   return res
 }
