@@ -129,8 +129,9 @@ export async function runScoutTurn(input: ScoutTurnInput): Promise<ScoutTurnResu
   const toolDefs = Object.entries(io.tools)
     .filter(([, t]) => t.available)
     .map(([name, t]) => ({ ...t.def, name }))
+  const today = `Today is ${new Date().toDateString()}.`
   const messages: ChatMessage[] = [
-    { role: 'system', content: context ? `${SCOUT_SYSTEM}\n\n--- Current workspace ---\n${context}` : SCOUT_SYSTEM },
+    { role: 'system', content: `${SCOUT_SYSTEM}\n\n${today}${context ? `\n\n--- Current workspace ---\n${context}` : ''}` },
     ...(input.history || []),
     { role: 'user', content: input.userMessage },
   ]

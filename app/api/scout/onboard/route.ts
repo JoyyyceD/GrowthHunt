@@ -8,13 +8,16 @@
  */
 import { NextRequest, after } from 'next/server'
 import { createServerClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/admin'
 import { createWorkspace, getWorkspace, listWorkspacesForOwner } from '@/lib/workspace/store'
 import { createOnboardingTask, runOnboardingPipeline } from '@/lib/scout/onboarding'
+import { assertBudget, ScoutBudgetError } from '@/lib/scout/client'
 
 export const dynamic = 'force-dynamic'
 export const maxDuration = 300
 
 const WS_LIMIT = Number(process.env.SCOUT_WS_LIMIT || '1')
+const DAILY_ONBOARDING_LIMIT = Number(process.env.SCOUT_DAILY_ONBOARDING_LIMIT || '3')
 
 export async function POST(req: NextRequest) {
   const supabase = await createServerClient()
@@ -58,6 +61,34 @@ export async function POST(req: NextRequest) {
     }
     const ws = await createWorkspace(user.id, { url })
     workspaceId = ws.id
+  }
+
+  // Cost gates (bugfix #3): onboarding burns real tokens — honor the daily
+  // budget and cap re-runs per workspace per day.
+  try {
+    await assertBudget(workspaceId)
+  } catch (e) {
+    if (e instanceof ScoutBudgetError) {
+      return Response.json(
+        { error: "Scout hit today's working budget for this workspace — try again tomorrow." },
+        { status: 429 },
+      )
+    }
+    throw e
+  }
+  const since = new Date()
+  since.setUTCHours(0, 0, 0, 0)
+  const { count } = await createAdminClient()
+    .from('scout_tasks')
+    .select('id', { count: 'exact', head: true })
+    .eq('workspace_id', workspaceId)
+    .eq('kind', 'onboarding')
+    .gte('created_at', since.toISOString())
+  if ((count ?? 0) >= DAILY_ONBOARDING_LIMIT) {
+    return Response.json(
+      { error: `Onboarding limit reached (${DAILY_ONBOARDING_LIMIT}/day per workspace). Ask Scout to revise specific documents instead — that's cheaper and faster.` },
+      { status: 429 },
+    )
   }
 
   const taskId = await createOnboardingTask(workspaceId)

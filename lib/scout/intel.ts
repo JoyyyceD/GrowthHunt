@@ -264,7 +264,15 @@ export async function gatherIntel(url: string, opts: GatherOptions = {}): Promis
   const onStage = opts.onStage || (() => {})
 
   onStage('scraping', url)
-  const homepage = await readPage(url)
+  // One retry: transient aborts (dev-server compile storms, flaky upstream)
+  // shouldn't kill a whole onboarding at its very first step.
+  let homepage: PageRead
+  try {
+    homepage = await readPage(url)
+  } catch {
+    await new Promise(r => setTimeout(r, 2000))
+    homepage = await readPage(url)
+  }
   const subUrls = discoverKeyPages(homepage)
   const subpages = (await Promise.allSettled(subUrls.map(u => readPage(u))))
     .filter((r): r is PromiseFulfilledResult<PageRead> => r.status === 'fulfilled')
@@ -375,6 +383,7 @@ export async function gatherIntel(url: string, opts: GatherOptions = {}): Promis
     if (raw) break
     const argsHead = result.toolCalls[0]?.arguments?.slice(0, 160) || ''
     lastDiag = `finish=${result.finishReason}, toolCalls=${result.toolCalls.length}, content=${result.content.length}ch, args=${JSON.stringify(argsHead)}`
+    console.error(`[scout] intel synthesis attempt failed (pageCap=${attempt.pageCap}): ${lastDiag}`)
     onStage('synthesizing', `retrying smaller (${lastDiag})`)
   }
   if (!raw) {

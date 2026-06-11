@@ -235,6 +235,14 @@ export async function runOnboardingPipeline(input: OnboardingInput): Promise<Onb
 
     let postsQueued = 0
     if (calendarMd) {
+      // Re-running onboarding must not stack duplicate drafts: clear previous
+      // onboarding proposals the user hasn't acted on (approved/posted stay).
+      await createAdminClient()
+        .from('gtm_scheduled_posts')
+        .delete()
+        .eq('workspace_id', input.workspaceId)
+        .eq('source', 'scout-onboarding')
+        .eq('status', 'proposed')
       const posts = await extractCalendarPosts(calendarMd, input.workspaceId, input.model)
       const base = new Date()
       base.setDate(base.getDate() + 1)
