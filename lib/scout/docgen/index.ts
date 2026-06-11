@@ -32,7 +32,11 @@ export interface GenerateOptions {
 
 const SHARED_RULES = `Hard rules for every document:
 - Write in English, plain and specific. Real names, real numbers, real channels.
-- NEVER invent statistics, prices, or competitor facts. Only use what appears in the intelligence below. If a number is missing, write around it instead of making one up.
+- Number discipline, three classes:
+  (1) FACT CLAIMS — market sizes, product achievements (stars, users, limits), competitor prices, outcome claims ("3x better", "saves 10 hrs/week"): ONLY if present in the intelligence; otherwise write around the gap. Never contradict the intelligence.
+  (2) PRESCRIPTIONS — posting frequency, pillar percentages, response windows, suggested budgets: allowed, but phrase as recommendations ("aim for", "start with"), never as established facts.
+  (3) PERSONA ILLUSTRATION — names, ages, cities, company sizes inside persona examples: allowed only where the doc explicitly frames the persona as an illustration.
+- NEVER name a competitor that is not in the intelligence competitors list.
 - Banned: "revolutionary", "game-changing", "in today's fast-paced world", "unlock", "empower", "elevate", artificial urgency.
 - Markdown only. No preamble, no "Here is the document" — start directly with the first heading.
 - Sentence case headings. Short paragraphs. No filler.

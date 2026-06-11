@@ -22,5 +22,11 @@ Give them a full name, age, role, and city — plausible and specific, clearly a
 ## Secondary persona: {first name}
 Shorter: one intro paragraph (who, age, situation), one quoted JTBD line in their voice ("I want to..."), and 2-3 bullets on how their needs differ from the primary persona.
 
-Ground every detail in the intelligence segments — channels and pains must come from there, not generic marketing-persona filler.`,
+Method (from customer-research practice):
+- Open the doc with one italic line: "*Personas are illustrative composites built from the brand research — names and details are representative, not real customers.*"
+- JTBD phrased as a job statement: "When [situation], I want [motivation], so I can [outcome]."
+- Pains must be voice-of-customer style — the words a real user would type in a Reddit thread or G2 review, drawn from the intelligence pains/channels, not marketing-speak.
+- Buying signals are observable triggers (a search they run, a thread they post, an event that forces the decision) — not attitudes.
+- Channels must come from the intelligence segments; for each, say how they behave there (lurk, post, ask), not just the platform name.
+Ground every detail in the intelligence segments — no generic persona filler.`,
 }

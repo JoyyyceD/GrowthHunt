@@ -18,7 +18,7 @@ const RUBRIC_TOOL = {
       voice: { type: 'number', description: '1-5: matches the brand toneWords/voiceObservations in the intelligence' },
       actionable: { type: 'number', description: '1-5: usable as-is by a founder today' },
       format: { type: 'number', description: '1-5: follows the expected structure, clean markdown' },
-      invented_numbers: { type: 'array', items: { type: 'string' }, description: 'specific figures in the doc that do NOT appear in the intelligence (empty if none)' },
+      invented_numbers: { type: 'array', items: { type: 'string' }, description: 'FACT-CLAIM figures not in the intelligence: market sizes, product achievements, competitor names/prices absent from the intelligence, outcome claims. Do NOT flag (a) prescriptions like posting frequency, pillar percentages, response windows, or (b) persona illustration details (ages, cities, company sizes) when the doc frames personas as illustrative. Empty if none.' },
       worst_line: { type: 'string', description: 'the single weakest line, quoted' },
     },
     required: ['factual', 'specific', 'voice', 'actionable', 'format', 'invented_numbers', 'worst_line'],
@@ -39,7 +39,7 @@ for (const domain of readdirSync(ROOT)) {
         kind: 'quality-judge', maxTokens: 1500, temperature: 0, stream: false,
         tools: [RUBRIC_TOOL],
         messages: [
-          { role: 'system', content: 'You are a strict marketing-document grader. Score harshly: 5 = a senior strategist would ship it unchanged; 3 = needs edits; 1 = unusable. Any invented number caps factual at 2. Call submit_scores.' },
+          { role: 'system', content: 'You are a strict marketing-document grader. Score harshly: 5 = a senior strategist would ship it unchanged; 3 = needs edits; 1 = unusable. Any invented FACT-CLAIM number caps factual at 2 — but prescriptions (recommended frequencies/percentages) and explicitly-illustrative persona details are NOT inventions. Call submit_scores.' },
           { role: 'user', content: `INTELLIGENCE (source of truth):\n${intel.slice(0, 9000)}\n\nDOCUMENT (${file}):\n${doc.slice(0, 9000)}` },
         ],
       })
