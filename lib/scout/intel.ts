@@ -253,6 +253,18 @@ const INTEL_TOOL = {
   },
 }
 
+/** A parseable blob isn't necessarily the right shape — a string where an
+ * object belongs would make normalization throw ("assign to readonly"). */
+function isValidIntelShape(raw: Record<string, unknown>): boolean {
+  const audience = raw.audience as Record<string, unknown> | undefined
+  return (
+    typeof raw.product === 'object' && raw.product !== null &&
+    typeof audience === 'object' && audience !== null &&
+    Array.isArray(audience.segments) &&
+    Array.isArray(raw.competitors)
+  )
+}
+
 export interface GatherOptions {
   brief?: string
   workspaceId?: string | null
@@ -380,6 +392,32 @@ export async function gatherIntel(url: string, opts: GatherOptions = {}): Promis
     const call = result.toolCalls.find(c => c.name === 'submit_brand_intelligence')
     if (call) raw = parseToolArgs(call.arguments)
     if (!raw) raw = extractJsonObject(result.content)
+    if (raw && !isValidIntelShape(raw)) {
+      lastDiag = 'malformed shape (e.g. product not an object)'
+      raw = null
+    }
+    // Repair pass: big-schema tool args occasionally come back as almost-JSON
+    // (unescaped quote/newline). One cheap fix-it call recovers most of them.
+    if (!raw && call && call.arguments.length > 500) {
+      const repaired = await chatStream({
+        model: opts.model || SCOUT_MODEL,
+        workspaceId: opts.workspaceId ?? null,
+        kind: 'onboarding-intel-repair',
+        maxTokens: attempt.maxTokens,
+        temperature: 0,
+        stream: false,
+        tools: [INTEL_TOOL],
+        messages: [
+          { role: 'system', content: 'The following tool-call arguments are malformed JSON. Re-submit the SAME content as valid arguments via submit_brand_intelligence. Fix syntax only — do not change any facts.' },
+          { role: 'user', content: call.arguments.slice(0, 30_000) },
+        ],
+      }).catch(() => null)
+      const fixed = repaired?.toolCalls.find(c => c.name === 'submit_brand_intelligence')
+      if (fixed) {
+        raw = parseToolArgs(fixed.arguments)
+        if (raw && !isValidIntelShape(raw)) raw = null
+      }
+    }
     if (raw) break
     const argsHead = result.toolCalls[0]?.arguments?.slice(0, 160) || ''
     lastDiag = `finish=${result.finishReason}, toolCalls=${result.toolCalls.length}, content=${result.content.length}ch, args=${JSON.stringify(argsHead)}`
