@@ -33,7 +33,7 @@ V1 回答了"为什么试一下"（30 秒读懂你），V2 回答两个问题：
 - 注入 social-strategy / first-week-calendar 的 `caseNotes` 钩子；文档含 "Playbook precedent / Modeled on" 段 + growth-story 链接
 - AC：10 测试 URL ≥8 个匹配合理（人工判定不牵强）；不匹配优雅省略
 
-**V2-T0b 质量验收（改为 DeepSeek，2026-06-11 用户决定）**
+**V2-T0b 质量验收** ✅ 2026-06-11（DeepSeek）：10 URL × 7 文档两轮跑，总分 4.64→4.79，事实类编造数字清零（三分法规则：事实主张必溯源/处方写建议语气/persona 具象明示虚构 + 竞品白名单）；URL 级 10/10 及格，文档级 85% 达标，余项记质量 backlog 待 Claude 升级冲顶
 - 在 DeepSeek 上跑 10 测试 URL（Claude 推迟到有收入后），按 spec §5 五维评分（重点：杜绝推算数字，如 v1 发现的 "$1,860/year"）
 - 产出：每份文档生成器的 prompt 迭代；最终模型策略定档（全 Claude vs 合成 Claude + 文档 DeepSeek 的混合，按质量差距定）
 - AC：10/10 平均 ≥4 无单项 ≤2

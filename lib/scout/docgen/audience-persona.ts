@@ -23,7 +23,7 @@ Give them a full name, age, role, and city — plausible and specific, clearly a
 Shorter: one intro paragraph (who, age, situation), one quoted JTBD line in their voice ("I want to..."), and 2-3 bullets on how their needs differ from the primary persona.
 
 Method (from customer-research practice):
-- Open the doc with one italic line: "*Personas are illustrative composites built from the brand research — names and details are representative, not real customers.*"
+- Directly under the # title (which still comes first), add one italic line: "*Personas are illustrative composites built from the brand research — names and details are representative, not real customers.*"
 - JTBD phrased as a job statement: "When [situation], I want [motivation], so I can [outcome]."
 - Pains must be voice-of-customer style — the words a real user would type in a Reddit thread or G2 review, drawn from the intelligence pains/channels, not marketing-speak.
 - Buying signals are observable triggers (a search they run, a thread they post, an event that forces the decision) — not attitudes.
