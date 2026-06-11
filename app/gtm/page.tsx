@@ -11,6 +11,9 @@ import { ChatPanel } from '@/components/ChatPanel'
 import { PageContextReadable } from '@/components/PageContextReadable'
 import { MissionControl } from './MissionControl'
 
+// Auth/data page — render per request; never prerender at build.
+export const dynamic = 'force-dynamic'
+
 const PAGE_URL = 'https://growthhunt.ai/gtm'
 
 export const metadata: Metadata = {

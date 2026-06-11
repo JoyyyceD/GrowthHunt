@@ -6,6 +6,9 @@ import { listWorkspacesForOwner, getWorkspace } from '@/lib/workspace/store'
 import { listVideoScripts } from '@/lib/agents/video-coach'
 import { VideoCoachRunner } from './VideoCoachRunner'
 
+// Auth/data page — render per request; never prerender at build.
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: 'Video Coach — GrowthHunt',
   description: 'Not generation — direction. Shot lists, lighting checklist, recommended tools, pre-upload self-check. Cheaper, less replaceable.',

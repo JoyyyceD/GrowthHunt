@@ -7,6 +7,9 @@ import { listWorkflows } from '@/lib/workflows/registry'
 import { listWorkflowRuns } from '@/lib/workflows/runner'
 import { WorkflowList } from './WorkflowList'
 
+// Auth/data page — render per request; never prerender at build.
+export const dynamic = 'force-dynamic'
+
 export default async function WorkflowsPage({ searchParams }: { searchParams: Promise<{ ws?: string }> }) {
   const sp = await searchParams
   const supabase = await createServerClient()

@@ -6,6 +6,9 @@ import { listWorkspacesForOwner, getWorkspace } from '@/lib/workspace/store'
 import { listEmailDrafts } from '@/lib/agents/cold-email'
 import { ColdEmailRunner } from './ColdEmailRunner'
 
+// Auth/data page — render per request; never prerender at build.
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: 'Cold Email Outbound — GrowthHunt',
   description: 'Paste a B2B target list, agent drafts personalized emails in your voice, send via Brevo. Indie volume only — no warming/sequencing.',

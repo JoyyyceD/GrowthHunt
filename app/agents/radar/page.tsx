@@ -6,6 +6,9 @@ import { listWorkspacesForOwner, getWorkspace } from '@/lib/workspace/store'
 import { listLeads } from '@/lib/agents/radar'
 import { RadarRunner } from './RadarRunner'
 
+// Auth/data page — render per request; never prerender at build.
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: 'Community Radar — GrowthHunt',
   description: 'Scan Reddit and HackerNews for posts your ICP is writing right now. Scored, classified, with reply drafts in your voice.',

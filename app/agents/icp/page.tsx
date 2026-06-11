@@ -5,6 +5,9 @@ import { createServerClient } from '@/lib/supabase/server'
 import { listWorkspacesForOwner, getWorkspace } from '@/lib/workspace/store'
 import { IcpRunner } from './IcpRunner'
 
+// Auth/data page — render per request; never prerender at build.
+export const dynamic = 'force-dynamic'
+
 const TITLE = 'ICP / Positioning Agent — GrowthHunt'
 const DESCRIPTION = 'Auto-draft your ICP, positioning statement, and key messages from a URL + brief. Saves back to your workspace.'
 

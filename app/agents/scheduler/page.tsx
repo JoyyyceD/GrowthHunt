@@ -7,6 +7,9 @@ import { getConnection, listCachedIntegrations, listScheduledPosts } from '@/lib
 import { listConnections as listNativeConnections } from '@/lib/social/store'
 import { SchedulerRunner } from './SchedulerRunner'
 
+// Auth/data page — render per request; never prerender at build.
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: 'Scheduler — GrowthHunt',
   description: 'Schedule and publish posts across every connected channel via Postiz, orchestrated from one place.',

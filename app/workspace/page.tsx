@@ -6,6 +6,9 @@ import { createServerClient } from '@/lib/supabase/server'
 import { listWorkspacesForOwner } from '@/lib/workspace/store'
 import { WorkspaceList } from './WorkspaceList'
 
+// Auth/data page — render per request; never prerender at build.
+export const dynamic = 'force-dynamic'
+
 const PAGE_URL = 'https://growthhunt.ai/workspace'
 const TITLE = 'GTM Workspace — your shared agent brain'
 const DESCRIPTION =

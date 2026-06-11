@@ -6,6 +6,9 @@ import { listWorkspacesForOwner, getWorkspace } from '@/lib/workspace/store'
 import { listAbTests } from '@/lib/agents/ab'
 import { AbRunner } from './AbRunner'
 
+// Auth/data page — render per request; never prerender at build.
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: 'A/B Lab — GrowthHunt',
   description: 'Run A/B tests on any copy variant. Tracked short URLs, automatic winner detection at p<0.05.',

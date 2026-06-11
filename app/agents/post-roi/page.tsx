@@ -7,6 +7,9 @@ import { listWorkspacesForOwner, getWorkspace } from '@/lib/workspace/store'
 import { latestDigest } from '@/lib/agents/post-roi'
 import { PostRoiRunner } from './PostRoiRunner'
 
+// Auth/data page — render per request; never prerender at build.
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: 'Post ROI — GrowthHunt',
   description: 'Your own posts, ranked by template. Top-3 vs Bottom-3 patterns + AI-suggested angles. The opposite of "viral templates from other people".',

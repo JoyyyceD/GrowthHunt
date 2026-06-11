@@ -6,6 +6,9 @@ import { listWorkspacesForOwner, getWorkspace } from '@/lib/workspace/store'
 import { listDistributionPosts } from '@/lib/agents/distribution'
 import { DistributionRunner } from './DistributionRunner'
 
+// Auth/data page — render per request; never prerender at build.
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: 'Multi-channel Distribution — GrowthHunt',
   description: 'One post → platform-native rewrites for X, LinkedIn, Reddit, HN, Instagram, TikTok, Discord. Plus a cadence plan.',

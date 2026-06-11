@@ -7,6 +7,9 @@ import { listWorkspacesForOwner, getWorkspace } from '@/lib/workspace/store'
 import { listSnapshots, listDiffs } from '@/lib/agents/competitor'
 import { CompetitorRunner } from './CompetitorRunner'
 
+// Auth/data page — render per request; never prerender at build.
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: 'Competitor Watch — GrowthHunt',
   description: 'Weekly snapshots of competitor pages. AI surfaces meaningful changes — pricing, copy rewrites, new sections.',

@@ -7,6 +7,9 @@ import { listWorkspacesForOwner, getWorkspace } from '@/lib/workspace/store'
 import { listCampaigns } from '@/lib/agents/launch-orchestrator'
 import { LaunchList } from './LaunchList'
 
+// Auth/data page — render per request; never prerender at build.
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: 'Launch Orchestrator — GrowthHunt',
   description: 'Run a coordinated launch across Product Hunt, HackerNews, BetaList, Indie Hackers, Reddit, Smol — per-platform checklist + copy + timing.',

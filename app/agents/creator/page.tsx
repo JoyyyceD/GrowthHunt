@@ -6,6 +6,9 @@ import { listWorkspacesForOwner, getWorkspace } from '@/lib/workspace/store'
 import { listDrafts } from '@/lib/agents/creator'
 import { CreatorRunner } from './CreatorRunner'
 
+// Auth/data page — render per request; never prerender at build.
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: 'Creator Outreach Agent — GrowthHunt',
   description: 'Auto-find ≤10k creators your buyers trust, draft personalized DMs in your voice, queue them for one-click send.',

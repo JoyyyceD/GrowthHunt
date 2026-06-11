@@ -5,6 +5,9 @@ import { createServerClient } from '@/lib/supabase/server'
 import { listWorkspacesForOwner, getWorkspace } from '@/lib/workspace/store'
 import { LandingRunner } from './LandingRunner'
 
+// Auth/data page — render per request; never prerender at build.
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: 'Landing Page Doctor — GrowthHunt',
   description: 'Audit your landing page for conversion. 6 dimensions, scored 0-100, with paste-ready rewrites.',

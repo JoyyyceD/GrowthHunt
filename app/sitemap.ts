@@ -28,7 +28,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // PicoLaunch — every launch gets its own sitemap entry so Google can
   // index each one (and pass dofollow link equity to the featured site).
-  const championMeta = await getAllChampionMeta()
+  // DB hiccups or missing env must not fail the whole build — skip the section.
+  const championMeta = await getAllChampionMeta().catch(() => [])
   const picoLaunchDetails: MetadataRoute.Sitemap = championMeta.map(({ slug, createdAt }) => ({
     url: `${BASE}/picolaunch/${slug}`,
     lastModified: new Date(createdAt),

@@ -5,6 +5,9 @@ import { createServerClient } from '@/lib/supabase/server'
 import { listWorkspacesForOwner, getWorkspace } from '@/lib/workspace/store'
 import { VoiceRunner } from './VoiceRunner'
 
+// Auth/data page — render per request; never prerender at build.
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: 'Founder Voice Trainer — GrowthHunt',
   description: 'Train a voice profile from your recent tweets + writing. Every GrowthHunt agent uses it to sound like you.',

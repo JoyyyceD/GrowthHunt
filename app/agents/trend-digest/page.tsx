@@ -7,6 +7,9 @@ import { listWorkspacesForOwner, getWorkspace } from '@/lib/workspace/store'
 import { listTrendCandidates } from '@/lib/agents/trend-digest'
 import { TrendRunner } from './TrendRunner'
 
+// Auth/data page — render per request; never prerender at build.
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: 'Daily Trend Digest — GrowthHunt',
   description: 'Every morning: 3-8 tweets worth riding today, drafted in your voice using your TOP-performing templates.',
