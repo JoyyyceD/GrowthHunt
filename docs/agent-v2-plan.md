@@ -71,12 +71,12 @@ V1 回答了"为什么试一下"（30 秒读懂你），V2 回答两个问题：
 
 ### 阶段 3：管理面
 
-**V2-T5 日历视图**
+**V2-T5 日历视图** ✅ 2026-06-11（周视图默认+月概览、原生拖拽改期实测落库、PostEditor 共享组件）
 - `/scout/[id]/calendar`：周/月视图渲染 gtm_scheduled_posts，状态色（proposed 橙/scheduled 实心/posted 灰/failed 红）
 - 拖拽改期（仅 proposed/scheduled）；点击打开右栏同款编辑面板
 - AC：改期落库；与队列面板数据一致
 
-**V2-T6 Activity 流**
+**V2-T6 Activity 流** ✅ 2026-06-11（统计卡、天分组、外链由 external_post_id 构造、failed 带 Fix & retry）
 - `/scout/[id]/activity`：已发/失败帖子时间流 + 外链到平台原帖（external_post_id）
 - AC：发布成功的帖子 5 分钟内出现在流里
 

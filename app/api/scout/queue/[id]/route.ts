@@ -43,6 +43,18 @@ export async function PATCH(req: NextRequest, { params }: Params) {
     return Response.json({ ok: true })
   }
 
+  if (body.action === 'retry') {
+    if (post.status !== 'failed') return Response.json({ error: `cannot retry a ${post.status} post` }, { status: 400 })
+    const when = post.scheduled_for && Date.parse(post.scheduled_for) > Date.now()
+      ? post.scheduled_for
+      : new Date(Date.now() + 10 * 60_000).toISOString()
+    await admin
+      .from('gtm_scheduled_posts')
+      .update({ status: 'scheduled', error: null, scheduled_for: when })
+      .eq('id', id)
+    return Response.json({ ok: true, scheduled_for: when })
+  }
+
   if (body.action === 'edit') {
     await admin
       .from('gtm_scheduled_posts')

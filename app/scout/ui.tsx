@@ -47,6 +47,24 @@ export interface QueueItem {
   status: string
   content: string
   scheduled_for: string | null
+  posted_at?: string | null
+  external_post_id?: string | null
+  error?: string | null
+}
+
+/** Public link to the original post, constructible from the platform id alone. */
+export function externalPostUrl(platform: string, externalId: string | null | undefined): string | null {
+  if (!externalId) return null
+  switch (platform) {
+    case 'x':
+      return `https://x.com/i/web/status/${externalId}`
+    case 'linkedin':
+      return `https://www.linkedin.com/feed/update/${externalId}`
+    case 'reddit':
+      return `https://www.reddit.com/comments/${externalId.replace(/^t3_/, '')}`
+    default:
+      return null
+  }
 }
 
 // ---------- SSE consumption ----------
@@ -427,8 +445,6 @@ export function RightRail({
   setCollapsed: (v: boolean) => void
 }) {
   const [openPost, setOpenPost] = useState<QueueItem | null>(null)
-  const [editText, setEditText] = useState('')
-  const [actionErr, setActionErr] = useState('')
 
   if (collapsed) {
     return (
@@ -436,26 +452,6 @@ export function RightRail({
         ◀
       </button>
     )
-  }
-
-  async function act(id: string, action: 'approve' | 'edit' | 'cancel', content?: string) {
-    setActionErr('')
-    const res = await fetch(`/api/scout/queue/${id}?ws=${workspaceId}`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action, content }),
-    })
-    const data = await res.json()
-    if (!res.ok) {
-      setActionErr(data.error || 'failed')
-      return
-    }
-    if (data.needsConnection) {
-      setActionErr(`Connect ${data.platform} first → Integrations`)
-      return
-    }
-    setOpenPost(null)
-    refreshQueue()
   }
 
   const upcoming = queue.filter(q => q.status === 'proposed' || q.status === 'scheduled')
@@ -470,7 +466,7 @@ export function RightRail({
         <div style={{ fontSize: 13, color: 'var(--ink-faint)' }}>Queue is empty — tell Scout “what should I post today”.</div>
       )}
       {upcoming.map(q => (
-        <div key={q.id} style={{ ...card, padding: '9px 12px', cursor: 'pointer' }} onClick={() => { setOpenPost(q); setEditText(q.content) }}>
+        <div key={q.id} style={{ ...card, padding: '9px 12px', cursor: 'pointer' }} onClick={() => setOpenPost(q)}>
           <div className="mono" style={{ fontSize: 11, color: q.status === 'proposed' ? 'var(--warn)' : 'var(--ink-dim)', marginBottom: 4 }}>
             {q.status === 'proposed' ? '◇ proposed' : '◆ scheduled'} · {q.platform}
             {q.scheduled_for ? ` · ${new Date(q.scheduled_for).toLocaleDateString('en-US', { weekday: 'short', hour: 'numeric' })}` : ''}
@@ -479,28 +475,12 @@ export function RightRail({
         </div>
       ))}
       {openPost && (
-        <div style={{ ...card, padding: 14, borderColor: 'var(--accent-border)' }}>
-          <div className="mono" style={{ fontSize: 11.5, marginBottom: 8 }}>{openPost.platform} · {openPost.status}</div>
-          <textarea
-            value={editText}
-            onChange={e => setEditText(e.target.value)}
-            rows={6}
-            style={{ width: '100%', fontSize: 13, padding: 8, borderRadius: 8, border: '1px solid var(--rule-strong)', background: 'var(--bg)', color: 'var(--ink)', resize: 'vertical' }}
-          />
-          {actionErr && <div style={{ fontSize: 12, color: 'var(--warn)', marginTop: 6 }}>{actionErr}</div>}
-          <div style={{ display: 'flex', gap: 6, marginTop: 8, flexWrap: 'wrap' }}>
-            {openPost.status === 'proposed' && (
-              <button style={{ ...btnPrimary, fontSize: 12.5, padding: '5px 14px' }} onClick={() => void act(openPost.id, 'approve', editText !== openPost.content ? editText : undefined)}>
-                Approve
-              </button>
-            )}
-            {editText !== openPost.content && (
-              <button style={btnSmall} onClick={() => void act(openPost.id, 'edit', editText)}>Save edit</button>
-            )}
-            <button style={btnSmall} onClick={() => void act(openPost.id, 'cancel')}>Remove</button>
-            <button style={btnSmall} onClick={() => setOpenPost(null)}>Close</button>
-          </div>
-        </div>
+        <PostEditor
+          post={openPost}
+          workspaceId={workspaceId}
+          onClose={() => setOpenPost(null)}
+          onChanged={() => { setOpenPost(null); refreshQueue() }}
+        />
       )}
 
       <div>
@@ -519,6 +499,82 @@ export function RightRail({
       </div>
 
       {artifacts.length > 0 && <SharePanel workspaceId={workspaceId} />}
+    </div>
+  )
+}
+
+/** Post edit/approve/retry panel — shared by the right rail, calendar and activity views. */
+export function PostEditor({
+  post,
+  workspaceId,
+  onClose,
+  onChanged,
+}: {
+  post: QueueItem
+  workspaceId: string
+  onClose: () => void
+  onChanged: () => void
+}) {
+  const [editText, setEditText] = useState(post.content)
+  const [actionErr, setActionErr] = useState('')
+  const editable = post.status === 'proposed' || post.status === 'scheduled'
+
+  async function act(action: 'approve' | 'edit' | 'cancel' | 'retry', content?: string) {
+    setActionErr('')
+    const res = await fetch(`/api/scout/queue/${post.id}?ws=${workspaceId}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action, content }),
+    })
+    const data = await res.json()
+    if (!res.ok) {
+      setActionErr(data.error || 'failed')
+      return
+    }
+    if (data.needsConnection) {
+      setActionErr(`Connect ${data.platform} first → Integrations`)
+      return
+    }
+    onChanged()
+  }
+
+  return (
+    <div style={{ border: '1px solid var(--accent-border)', borderRadius: 12, background: 'var(--bg-elev)', padding: 14 }}>
+      <div className="mono" style={{ fontSize: 11.5, marginBottom: 8 }}>
+        {post.platform} · {post.status}
+        {post.scheduled_for ? ` · ${new Date(post.scheduled_for).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric' })}` : ''}
+      </div>
+      {editable ? (
+        <textarea
+          value={editText}
+          onChange={e => setEditText(e.target.value)}
+          rows={6}
+          style={{ width: '100%', fontSize: 13, padding: 8, borderRadius: 8, border: '1px solid var(--rule-strong)', background: 'var(--bg)', color: 'var(--ink)', resize: 'vertical' }}
+        />
+      ) : (
+        <div style={{ fontSize: 13, lineHeight: 1.55, whiteSpace: 'pre-wrap', maxHeight: 180, overflowY: 'auto' }}>{post.content}</div>
+      )}
+      {post.status === 'failed' && post.error && (
+        <div style={{ fontSize: 12, color: 'var(--warn)', marginTop: 6 }}>⚠ {post.error}</div>
+      )}
+      {actionErr && <div style={{ fontSize: 12, color: 'var(--warn)', marginTop: 6 }}>{actionErr}</div>}
+      <div style={{ display: 'flex', gap: 6, marginTop: 8, flexWrap: 'wrap' }}>
+        {post.status === 'proposed' && (
+          <button style={{ ...btnPrimary, fontSize: 12.5, padding: '5px 14px' }} onClick={() => void act('approve', editText !== post.content ? editText : undefined)}>
+            Approve
+          </button>
+        )}
+        {post.status === 'failed' && (
+          <button style={{ ...btnPrimary, fontSize: 12.5, padding: '5px 14px' }} onClick={() => void act('retry')}>
+            Retry
+          </button>
+        )}
+        {editable && editText !== post.content && (
+          <button style={btnSmall} onClick={() => void act('edit', editText)}>Save edit</button>
+        )}
+        {post.status !== 'posted' && <button style={btnSmall} onClick={() => void act('cancel')}>Remove</button>}
+        <button style={btnSmall} onClick={onClose}>Close</button>
+      </div>
     </div>
   )
 }
@@ -588,11 +644,13 @@ function SharePanel({ workspaceId }: { workspaceId: string }) {
 
 // ---------- left rail ----------
 
-export function LeftRail({ workspaceId, workspaceName, active }: { workspaceId: string; workspaceName: string; active: 'chat' | 'files' | 'assets' }) {
+export function LeftRail({ workspaceId, workspaceName, active }: { workspaceId: string; workspaceName: string; active: 'chat' | 'files' | 'assets' | 'calendar' | 'activity' }) {
   const nav = [
     { label: 'Chat', href: `/scout/${workspaceId}`, key: 'chat' },
     { label: 'Files', href: `/scout/${workspaceId}/files`, key: 'files' },
     { label: 'Assets', href: `/scout/${workspaceId}/assets`, key: 'assets' },
+    { label: 'Calendar', href: `/scout/${workspaceId}/calendar`, key: 'calendar' },
+    { label: 'Activity', href: `/scout/${workspaceId}/activity`, key: 'activity' },
   ]
   return (
     <div style={{ width: 220, flexShrink: 0, borderRight: '1px solid var(--rule)', padding: '18px 14px', display: 'flex', flexDirection: 'column', gap: 16 }}>
@@ -619,7 +677,6 @@ export function LeftRail({ workspaceId, workspaceName, active }: { workspaceId: 
             {n.label}
           </a>
         ))}
-        <span style={{ padding: '7px 10px', fontSize: 13.5, color: 'var(--ink-faint)' }}>Calendar · soon</span>
       </nav>
       <div style={{ marginTop: 'auto', fontSize: 11.5, color: 'var(--ink-faint)' }} className="mono">
         scout beta
