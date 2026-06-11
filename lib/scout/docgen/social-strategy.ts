@@ -23,10 +23,10 @@ Rank 4 channels with one-line reasons tied to where THIS audience actually is (f
 Markdown table: Channel | Primary audience | Content format | Cadence | Voice tone. Cadences must be sustainable for a small team (no "post 5x daily").
 
 ## Content pillar rotation
-For each chosen channel, one short paragraph: which content types rotate on which days, and what each pillar is FOR (trust, reach, conversion).
+Define 3-5 named pillars with a % split that sums to 100 (e.g. industry insight 30 / behind-the-scenes 25 / educational 25 / personal voice 15 / promotional 5 — adapt the mix to THIS brand; promotional never exceeds 10%). Then for each chosen channel, one short paragraph: which pillars rotate on which days, and what each pillar is FOR (trust, reach, conversion).
 
 ## Engagement rules
-Four rules with specifics: response time window; first-touch philosophy (curiosity before pitch, with an example reply); story-first principle; how to harvest testimonials from comments (ask permission, then feature).
+A daily ~30-minute routine with specifics: respond to every comment (window in hours); comment on 5-10 posts from named target accounts with substance (insight or experience, never "Great post"); first-touch philosophy (curiosity before pitch, with an example reply); how to harvest testimonials from comments (ask permission, then feature). Close with queue hygiene: keep 1-2 weeks scheduled, leave gaps for real-time reactions.
 ${caseNotes ? `
 ## Playbook precedent
 Reference these real growth cases and what applies to ${intel.product.name} specifically:\n${caseNotes}` : ''}`,

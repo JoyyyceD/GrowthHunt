@@ -35,7 +35,8 @@ const SHARED_RULES = `Hard rules for every document:
 - NEVER invent statistics, prices, or competitor facts. Only use what appears in the intelligence below. If a number is missing, write around it instead of making one up.
 - Banned: "revolutionary", "game-changing", "in today's fast-paced world", "unlock", "empower", "elevate", artificial urgency.
 - Markdown only. No preamble, no "Here is the document" — start directly with the first heading.
-- Sentence case headings. Short paragraphs. No filler.`
+- Sentence case headings. Short paragraphs. No filler.
+- Copy style floor: simple words (use, help — never utilize, leverage, facilitate); active voice; zero exclamation points; benefits over features; specificity over vagueness; confident phrasing (cut "almost", "very", "really").`
 
 export async function generateDoc(
   spec: DocSpec,
