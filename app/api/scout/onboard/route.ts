@@ -17,6 +17,17 @@ export const dynamic = 'force-dynamic'
 export const maxDuration = 300
 
 const WS_LIMIT = Number(process.env.SCOUT_WS_LIMIT || '1')
+
+/** "cal.com" → "Cal" — a presentable default until onboarding learns the real name. */
+function nameFromUrl(url: string): string {
+  try {
+    const host = new URL(/^https?:\/\//i.test(url) ? url : `https://${url}`).hostname.replace(/^www\./, '')
+    const root = host.split('.')[0] || host
+    return root.charAt(0).toUpperCase() + root.slice(1)
+  } catch {
+    return 'Workspace'
+  }
+}
 const DAILY_ONBOARDING_LIMIT = Number(process.env.SCOUT_DAILY_ONBOARDING_LIMIT || '3')
 
 export async function POST(req: NextRequest) {
@@ -59,7 +70,7 @@ export async function POST(req: NextRequest) {
         { status: 403 },
       )
     }
-    const ws = await createWorkspace(user.id, { url })
+    const ws = await createWorkspace(user.id, { url, name: nameFromUrl(url) })
     workspaceId = ws.id
   }
 
