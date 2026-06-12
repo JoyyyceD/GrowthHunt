@@ -24,18 +24,18 @@ function dayKey(d: Date): string {
   return `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`
 }
 
-const STATUS_GLYPH: Record<string, { glyph: string; color: string }> = {
-  proposed: { glyph: '◇', color: 'var(--warn)' },
-  scheduled: { glyph: '◆', color: 'var(--accent)' },
-  posted: { glyph: '●', color: 'var(--ink-faint)' },
-  failed: { glyph: '○', color: '#c0392b' },
+const STATUS_GLYPH: Record<string, { glyph: string; color: string; bg: string; label: string }> = {
+  proposed: { glyph: '◇', color: '#b06000', bg: 'rgba(232,78,27,0.12)', label: 'pending approval' },
+  scheduled: { glyph: '◆', color: '#2e6b3a', bg: 'rgba(46,107,58,0.12)', label: 'approved' },
+  posted: { glyph: '●', color: 'var(--ink-faint)', bg: 'var(--bg-card)', label: 'published' },
+  failed: { glyph: '○', color: '#c0392b', bg: 'rgba(192,57,43,0.10)', label: 'failed' },
 }
 
 const PLATFORM_ICON: Record<string, string> = { x: '𝕏', linkedin: 'in', reddit: '◓', facebook: 'f' }
 
 export default function ScoutCalendar({ params }: { params: Promise<{ id: string }> }) {
   const { id: workspaceId } = use(params)
-  const [view, setView] = useState<'list' | 'week' | 'month'>('list')
+  const [view, setView] = useState<'week' | 'month'>('week')
   const [anchor, setAnchor] = useState(() => startOfDay(new Date()))
   const [posts, setPosts] = useState<QueueItem[]>([])
   const [openPost, setOpenPost] = useState<QueueItem | null>(null)
@@ -122,7 +122,7 @@ export default function ScoutCalendar({ params }: { params: Promise<{ id: string
   }, [view, anchor])
 
   const todayKey = dayKey(new Date())
-  const title = view === 'list' ? 'Publish queue' : anchor.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+  const title = 'Calendar'
 
   function shift(direction: 1 | -1) {
     setAnchor(a => view === 'week'
@@ -165,31 +165,26 @@ export default function ScoutCalendar({ params }: { params: Promise<{ id: string
   return (
     <div style={{ display: 'flex', height: '100vh', background: 'var(--bg)' }}>
       <LeftRail workspaceId={workspaceId} workspaceName="" active="calendar" />
-      <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', padding: '20px 24px', overflowY: view === 'list' ? 'auto' : 'hidden' }}>
+      <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', padding: '20px 24px', overflowY: 'auto' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
           <h1 className="serif" style={{ fontSize: 26, margin: 0 }}>{title}</h1>
           <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
-            {(['list', 'week', 'month'] as const).map(v => (
+            {(['week', 'month'] as const).map(v => (
               <button
                 key={v}
                 onClick={() => setView(v)}
                 style={{ ...btn, background: view === v ? 'var(--bg-card)' : 'transparent', fontWeight: view === v ? 600 : 400 }}
               >
-                {v === 'list' ? 'List' : v === 'week' ? 'Week' : 'Month'}
+                {v === 'week' ? 'Week' : 'Month'}
               </button>
             ))}
-            {view !== 'list' && (
-              <>
-                <button style={btn} onClick={() => shift(-1)}>←</button>
-                <button style={btn} onClick={() => setAnchor(startOfDay(new Date()))}>Today</button>
-                <button style={btn} onClick={() => shift(1)}>→</button>
-              </>
-            )}
+            <button style={btn} onClick={() => shift(-1)}>←</button>
+            <button style={btn} onClick={() => setAnchor(startOfDay(new Date()))}>Today</button>
+            <button style={btn} onClick={() => shift(1)}>→</button>
           </div>
         </div>
 
-        {view === 'list' ? (
-          <div style={{ maxWidth: 780 }}>
+        <div style={{ marginBottom: 18 }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
               <div className="eyebrow"><span className="dot" />Pending approval ({pending.length})</div>
               {pending.length > 0 && (
@@ -212,21 +207,14 @@ export default function ScoutCalendar({ params }: { params: Promise<{ id: string
               </div>
             )}
             {pending.length === 0 && (
-              <div style={{ fontSize: 13, color: 'var(--ink-faint)', marginBottom: 18 }}>Nothing waiting on you. 🐾</div>
+              <div style={{ fontSize: 13, color: 'var(--ink-faint)', marginBottom: 8 }}>Nothing waiting on you. 🐾 Approved posts show green on the calendar below.</div>
             )}
             {pending.map(p => <ListRow key={p.id} p={p} />)}
+        </div>
 
-            <div className="eyebrow" style={{ margin: '22px 0 10px' }}><span className="dot" />Scheduled ({scheduled.length})</div>
-            {scheduled.length === 0 && (
-              <div style={{ fontSize: 13, color: 'var(--ink-faint)' }}>Nothing scheduled yet — approve a draft above.</div>
-            )}
-            {scheduled.map(p => <ListRow key={p.id} p={p} />)}
-          </div>
-        ) : (
-          <>
             <div
               style={{
-                flex: 1, display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)',
+                flex: 1, minHeight: 420, display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)',
                 gridAutoRows: view === 'week' ? '1fr' : 'minmax(96px, 1fr)',
                 border: '1px solid var(--rule)', borderRadius: 12, overflow: 'auto', background: 'var(--bg-elev)',
               }}
@@ -264,7 +252,7 @@ export default function ScoutCalendar({ params }: { params: Promise<{ id: string
                           title={p.content}
                           style={{
                             fontSize: 11.5, padding: '3px 6px', borderRadius: 6, marginBottom: 3,
-                            background: 'var(--bg)', border: '1px solid var(--rule)',
+                            background: s.bg, border: '1px solid var(--rule)',
                             cursor: draggable ? 'grab' : 'pointer',
                             overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
                             opacity: dragId === p.id ? 0.4 : 1,
@@ -286,15 +274,13 @@ export default function ScoutCalendar({ params }: { params: Promise<{ id: string
               })}
             </div>
             <div style={{ display: 'flex', gap: 16, marginTop: 10 }} className="mono">
-              {Object.entries(STATUS_GLYPH).map(([status, s]) => (
-                <span key={status} style={{ fontSize: 11, color: 'var(--ink-dim)' }}>
-                  <span style={{ color: s.color }}>{s.glyph}</span> {status}
+              {Object.values(STATUS_GLYPH).map(s => (
+                <span key={s.label} style={{ fontSize: 11, color: 'var(--ink-dim)' }}>
+                  <span style={{ color: s.color }}>{s.glyph}</span> {s.label}
                 </span>
               ))}
               <span style={{ fontSize: 11, color: 'var(--ink-faint)', marginLeft: 'auto' }}>Drag a post to another day to reschedule</span>
             </div>
-          </>
-        )}
       </div>
 
       {openPost && (
