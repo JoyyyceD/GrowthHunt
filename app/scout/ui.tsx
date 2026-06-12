@@ -677,7 +677,7 @@ export function LeftRail({ workspaceId, workspaceName, active }: { workspaceId: 
   ]
   return (
     <div style={{ width: 220, flexShrink: 0, borderRight: '1px solid var(--rule)', padding: '18px 14px', display: 'flex', flexDirection: 'column', gap: 16 }}>
-      <a href="/scout" className="serif" style={{ fontSize: 19, color: 'var(--ink)' }}>{workspaceName || 'Scout'}</a>
+      <a href="/scout?new=1" title="Start another brand" className="serif" style={{ fontSize: 19, color: 'var(--ink)' }}>{workspaceName || 'Scout'}</a>
       <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 10px', borderRadius: 10, background: 'var(--bg-card)' }}>
         <ScoutAvatar size={30} />
         <div>

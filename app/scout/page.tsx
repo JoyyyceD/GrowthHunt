@@ -3,12 +3,37 @@
  * /scout — hero entry. POST returns immediately (fire-and-poll); we client-
  * navigate to the workspace, which renders pipeline progress from scout_tasks.
  */
-import { useState, type FormEvent } from 'react'
+import { useEffect, useState, type FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import { ScoutAvatar, btnPrimary } from './ui'
 
 export default function ScoutHero() {
   const router = useRouter()
+  // Returning users land in their most recent workspace, not the pitch.
+  // ?new=1 is the deliberate "start another brand" escape hatch.
+  const [checking, setChecking] = useState(true)
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get('new')) {
+      setChecking(false)
+      return
+    }
+    void (async () => {
+      try {
+        const res = await fetch('/api/workspace')
+        if (res.ok) {
+          const { workspaces } = await res.json()
+          if (workspaces?.length) {
+            router.replace(`/scout/${workspaces[0].id}`)
+            return
+          }
+        }
+      } catch {
+        // fall through to the hero
+      }
+      setChecking(false)
+    })()
+  }, [router])
+
   const [url, setUrl] = useState('')
   const [brief, setBrief] = useState('')
   const [err, setErr] = useState('')
@@ -60,6 +85,14 @@ export default function ScoutHero() {
       body: JSON.stringify({ email: waitEmail.trim() }),
     })
     if (res.ok) setWaitDone(true)
+  }
+
+  if (checking) {
+    return (
+      <div style={{ minHeight: '100vh', background: 'var(--bg)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <ScoutAvatar size={56} busy />
+      </div>
+    )
   }
 
   return (
