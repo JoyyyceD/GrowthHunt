@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next'
+import { tools, guides } from '@/lib/editorial'
 import { FEATURES } from '@/lib/features'
 import { getAllPosts } from '@/lib/blog'
 import { getAllCompanies, getStory } from '@/lib/growth-story'
@@ -53,6 +54,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       },
     }
     return [
+    ...['ai-tools', 'guides', 'products', 'about', 'contact', 'affiliate-disclosure', 'editorial-policy', 'privacy', 'terms'].map(slug => ({ url: `${BASE}/${slug}` })),
+    ...tools.map(tool => ({ url: `${BASE}/ai-tools/${tool.slug}`, lastModified: new Date(tool.sourceChecked) })),
+    ...guides.map(guide => ({ url: `${BASE}/guides/${guide.slug}`, lastModified: new Date('2026-11-02') })),
       {
         url: enUrl,
         alternates,

@@ -3,13 +3,15 @@ import Script from 'next/script'
 import { Toaster } from 'sonner'
 import FollowFelixWidget from '@/components/FollowFelixWidget'
 import { FloatingChatGate } from '@/components/FloatingChatGate'
+import { ProductOnlyWidgets } from '@/components/ProductOnlyWidgets'
+import { EditorialFooter } from '@/lib/site/Editorial'
 import './globals.css'
 
 const BASE = 'https://growthhunt.ai'
-const TITLE = 'GrowthHunt — How one AI agent runs your full go-to-market'
-const DESCRIPTION = 'GrowthHunt is the all-in-one AI go-to-market agent for indie founders: finds creators, writes pitches, tracks replies across X, Reddit & YouTube. 6 free tools, $0 to start.'
-const DATE_PUBLISHED = '2025-09-01'
-const DATE_MODIFIED = '2026-05-24'
+const TITLE = 'GrowthHunt — Software choices & growth research for founders'
+const DESCRIPTION = 'Software overviews, selection guides, and startup growth research for founders and lean teams.'
+const DATE_MODIFIED = '2026-11-02'
+const PREVIEW = process.env.GH_REVIEW_PREVIEW === '1'
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),
@@ -23,8 +25,8 @@ export const metadata: Metadata = {
     'Reddit marketing', 'YouTube creator', 'cold email automation',
     'indie hacker', 'SaaS growth', 'startup marketing', 'growth tool',
   ],
-  authors: [{ name: 'GrowthHunt Labs' }],
-  creator: 'GrowthHunt Labs',
+  authors: [{ name: 'GrowthHunt' }],
+  creator: 'GrowthHunt',
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -40,9 +42,9 @@ export const metadata: Metadata = {
     creator: '@growthhuntai',
   },
   robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
+    index: !PREVIEW,
+    follow: !PREVIEW,
+    googleBot: { index: !PREVIEW, follow: !PREVIEW, 'max-image-preview': 'large' },
   },
   alternates: {
     canonical: BASE,
@@ -51,35 +53,24 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'WebSite',
   name: 'GrowthHunt',
   url: BASE,
   description: DESCRIPTION,
-  applicationCategory: 'BusinessApplication',
-  operatingSystem: 'Web',
-  datePublished: DATE_PUBLISHED,
   dateModified: DATE_MODIFIED,
-  offers: {
-    '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'USD',
-    availability: 'https://schema.org/OnlineOnly',
-  },
   publisher: {
     '@type': 'Organization',
-    name: 'GrowthHunt Labs',
+    name: 'GrowthHunt',
     url: BASE,
   },
 }
 
 // Separate Organization entity — gives Google a clean signal for brand
-// searches (knowledge panel, sitelinks). SoftwareApplication describes
-// the product; this describes the company behind it.
+// searches (knowledge panel, sitelinks). Keep the site and publisher entities separate.
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'GrowthHunt',
-  legalName: 'GrowthHunt Labs',
   url: BASE,
   logo: `${BASE}/icon.svg`,
   description: DESCRIPTION,
@@ -114,17 +105,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        {PREVIEW && <div className="gh-review">Local review preview · Not published · Policy drafts need owner confirmation</div>}
         {children}
-        <FollowFelixWidget />
-        <FloatingChatGate />
+        <EditorialFooter />
+        {!PREVIEW && <ProductOnlyWidgets><FollowFelixWidget /><FloatingChatGate /></ProductOnlyWidgets>}
         <Toaster position="bottom-left" richColors />
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-MG4MDHT7RZ" strategy="afterInteractive" />
+        {!PREVIEW && <><Script src="https://www.googletagmanager.com/gtag/js?id=G-MG4MDHT7RZ" strategy="afterInteractive" />
         <Script id="ga4" strategy="afterInteractive">{`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-MG4MDHT7RZ');
-        `}</Script>
+        `}</Script></>}
       </body>
     </html>
   )

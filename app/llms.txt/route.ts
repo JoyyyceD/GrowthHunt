@@ -2,6 +2,7 @@
 // engines and assistants (ChatGPT, Perplexity, Claude, etc.). Generated from
 // the live blog + growth-story content so it stays current on every build.
 
+import { tools, guides } from '@/lib/editorial'
 import { getAllPosts } from '@/lib/blog'
 import { getAllCompanies, getStory } from '@/lib/growth-story'
 
@@ -18,11 +19,17 @@ export function GET() {
   const lines: string[] = [
     '# GrowthHunt',
     '',
-    '> An all-in-one go-to-market toolkit for indie AI founders — six free tools plus a deep library of startup growth case studies.',
+    '> Software selection guides and startup growth research for founders and lean teams.',
     '',
-    'GrowthHunt helps early-stage founders get their product in front of users: find the creators their buyers already trust, write and send the pitch, grow on X, and learn which growth patterns actually convert. Every tool listed below is free and live now.',
+    'GrowthHunt publishes documentation-based software overviews, buying checklists, and startup case studies. Affiliate links are disclosed; a vendor overview is not a hands-on test.',
     '',
-    '## Live tools',
+    '## Software guides',
+    ...tools.map(tool => `- [${tool.name}](${BASE}/ai-tools/${tool.slug}): ${tool.task}. Official-source overview.`),
+    ...guides.map(guide => `- [${guide.title}](${BASE}/guides/${guide.slug})`),
+    `- [Affiliate disclosure](${BASE}/affiliate-disclosure)`,
+    `- [Editorial policy](${BASE}/editorial-policy)`,
+    '',
+    '## GrowthHunt products',
     `- [Velocity](${BASE}/velocity): Free weekly leaderboard of the fastest-growing GitHub repos, the fastest-growing AI founders on X, and the most viral AI products.`,
     `- [X Grower](${BASE}/xgrower): Chrome extension that grows an indie founder's X account from 0 to 1,000 followers with AI-drafted replies.`,
     `- [ViralX](${BASE}/viralx): 10,000+ viral tweet templates from 500+ AI founders — pick a pattern, customize it, schedule it, post it.`,

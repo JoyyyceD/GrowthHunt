@@ -703,3 +703,69 @@ footer.bottom .copyright {
 
 /* GTM orchestrator chat — "thinking" dot animation */
 @keyframes gtm-dot { 0%, 80%, 100% { opacity: 0.2 } 40% { opacity: 1 } }
+
+/* Publisher surface: retains GrowthHunt's existing editorial type and palette. */
+.gh-editorial { font-kerning: normal; }
+.gh-editorial h1,.gh-editorial h2,.gh-editorial h3,.gh-footer-brand { font-family:var(--serif);font-weight:400;letter-spacing:-.02em; }
+.gh-editorial h1 { font-size:clamp(42px,5.8vw,78px);line-height:1.02;margin:20px 0 24px;max-width:20ch; }
+.gh-editorial h1 em { color:#b83b13; }
+.gh-editorial h2 { font-size:clamp(30px,3.5vw,44px);line-height:1.12;margin:12px 0 18px; }
+.gh-editorial h3 { font-size:28px;line-height:1.18;margin:14px 0; }
+.gh-editorial p { color:#615c55;line-height:1.65; }
+.gh-editorial .eyebrow { color:#625b52;letter-spacing:.07em;font-family:var(--sans);font-size:12px; }
+.gh-home-hero { padding-top:76px;padding-bottom:68px;display:grid;grid-template-columns:1.4fr 1fr;gap:70px;align-items:center; }
+.gh-lede { font-size:18px;max-width:58ch;color:#615c55; }
+.gh-actions { display:flex;align-items:center;gap:26px;flex-wrap:wrap;margin-top:30px; }
+.gh-button { display:inline-flex;align-items:center;gap:12px;border-radius:99px;padding:14px 24px;background:#b83b13;color:white;font-weight:500;line-height:1.3; }
+.gh-button:hover { background:#94300f; }
+.gh-text-link { color:#a93512;font-weight:500;line-height:1.5;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px; }
+.gh-index { border-top:2px solid var(--ink);padding-top:20px; }
+.gh-index>a { display:flex;align-items:center;gap:15px;padding:22px 0;border-bottom:1px solid var(--rule); }
+.gh-index>a>span { color:#8b5d48;font-size:13px; }
+.gh-index>a>div { flex:1; }
+.gh-index small { display:block;color:#615c55;margin-top:8px;font-size:13px; }
+.gh-section { padding-top:48px;padding-bottom:48px;border-top:1px solid var(--rule); }
+.gh-section-head { display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap; }
+.gh-section-head h2 { margin-bottom:0; }
+.gh-section-note { max-width:65ch;margin:20px 0 32px; }
+.gh-grid { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px; }
+.gh-tool { padding:24px 0;border-top:1px solid var(--rule-strong); }
+.gh-tool p { min-height:52px; }
+.gh-small { font-size:13px;line-height:1.55;color:#615c55; }
+.gh-tool .gh-text-link { display:inline-block;margin-top:18px; }
+.gh-guide-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:44px; }
+.gh-guide { padding:28px 0; }
+.gh-guide p { max-width:60ch; }
+.gh-story-row { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px; }
+.gh-story-row>a { border-top:1px solid var(--rule-strong);padding-top:24px; }
+.gh-product-strip { display:flex;justify-content:space-between;align-items:center;gap:28px;padding-top:36px;padding-bottom:36px;background:var(--bg-card); }
+.gh-product-strip h2 { font-size:32px; }
+.gh-product-strip p { margin-bottom:0;max-width:65ch; }
+.gh-home-disclosure { padding-top:32px;padding-bottom:40px;font-size:13px;line-height:1.6;color:#615c55; }
+.gh-home-disclosure a,.gh-footer-bottom a { text-decoration:underline;text-underline-offset:3px; }
+.gh-intro { padding-top:64px;padding-bottom:42px; }
+.gh-editorial.shell { padding-bottom:80px; }
+.gh-article-layout { display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:76px;align-items:start; }
+.gh-prose { max-width:68ch;font-size:17px; }
+.gh-prose h2 { margin-top:38px;font-size:32px; }
+.gh-prose li { margin:14px 0;color:#615c55;line-height:1.65; }
+.gh-prose ul,.gh-prose ol { padding-left:24px; }
+.gh-evidence { font-size:13px;padding:18px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule); }
+.gh-buy-box { border-top:2px solid var(--ink);padding-top:24px; }
+.gh-buy-box h2 { font-size:32px; }
+.gh-outbound { margin:24px 0; }
+.gh-outbound a:not(.gh-button) { text-decoration:underline;text-underline-offset:3px; }
+.gh-breadcrumb { padding-top:32px;color:#615c55;font-size:14px; }
+.gh-footer { background:var(--bg-card);border-top:1px solid var(--rule);padding:44px 0 24px; }
+.gh-footer-top { display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px; }
+.gh-footer-brand { font-size:36px; }
+.gh-footer p { color:#615c55;font-size:14px;line-height:1.6; }
+.gh-footer nav { display:flex;flex-direction:column;align-items:flex-start;gap:14px;font-size:14px; }
+.gh-footer-bottom { display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:40px;border-top:1px solid var(--rule);padding-top:22px;font-size:12px;color:#615c55; }
+.gh-review { padding:10px 24px;text-align:center;background:#fff0c8;color:#563f10;font-size:13px;border-bottom:1px solid #d7bc70; }
+.gh-review-note { padding:18px;background:#fff0c8;color:#563f10;margin:16px 0;line-height:1.6; }
+.gh-editorial a:focus-visible,.gh-footer a:focus-visible,nav.top a:focus-visible { outline:2px solid #b83b13;outline-offset:5px; }
+@media(max-width:1000px) { .gh-home-hero { gap:34px; }.gh-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }.gh-article-layout { gap:36px; }nav.top ul { gap:16px; } }
+@media(max-width:760px) { .shell { padding-left:22px;padding-right:22px; }.gh-home-hero { grid-template-columns:1fr;padding-top:44px;gap:40px; }.gh-intro { padding-top:42px; }.gh-guide-grid,.gh-story-row,.gh-article-layout { grid-template-columns:1fr;gap:28px; }.gh-product-strip { flex-direction:column;align-items:flex-start; }.gh-footer-top { grid-template-columns:1fr 1fr; }.gh-footer-top>div { grid-column:1/-1; }nav.top .row { height:auto;min-height:64px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px;gap:16px; }nav.top ul { display:flex!important;order:3;width:100%;gap:10px 20px;flex-wrap:wrap; }nav.top ul a { display:inline-flex;min-height:32px;align-items:center; }.gh-article-layout .gh-buy-box { margin-top:12px; } }
+@media(max-width:440px) { .gh-grid { grid-template-columns:1fr;gap:12px; }.gh-tool p { min-height:0; }.gh-footer-top { gap:28px; }.gh-actions { gap:22px; } }
+@media(pointer:coarse) { .gh-footer nav a,.gh-text-link { min-height:44px;display:inline-flex;align-items:center; } }
