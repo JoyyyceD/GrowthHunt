@@ -1,5 +1,30 @@
+import Link from 'next/link'
 import type { Metadata } from 'next'
-import { tools } from '@/lib/editorial'
+import { tools, softwareCategories } from '@/lib/editorial'
 import { EditorialFrame, Intro, ToolCard } from '@/lib/site/Editorial'
-export const metadata: Metadata = { title: 'AI Tools & Software Guides', description: 'A focused collection of software overviews for founders and lean teams.', alternates: { canonical: 'https://growthhunt.ai/ai-tools' } }
-export default function ToolsPage() { return <EditorialFrame><Intro label="AI Tools" title="Choose a tool for the work ahead."><p>A focused collection of AI and productivity software. Start with your task, then check features, fit, and current vendor pricing. These profiles are documentation-based overviews, not hands-on reviews.</p></Intro><div className="gh-grid">{tools.map(tool => <div id={tool.slug} key={tool.slug}><ToolCard tool={tool} /></div>)}</div></EditorialFrame> }
+
+export const metadata: Metadata = {
+  title: 'AI Tools & Practical Software Guides',
+  description: 'Explore software for documents, video, meetings, AI assistance, and design. Buying guides for individuals, creators, and small teams.',
+  alternates: { canonical: 'https://growthhunt.ai/ai-tools' },
+}
+
+export default async function ToolsPage({ searchParams }: { searchParams: Promise<{ category?: string }> }) {
+  const { category } = await searchParams
+  const selected = softwareCategories.find(item => item.id === category)
+  const visibleTools = selected ? tools.filter(tool => selected.toolSlugs.includes(tool.slug)) : tools
+
+  return (
+    <EditorialFrame>
+      <Intro label="Software guides" title={selected ? selected.name : 'Find a tool for what you do.'}>
+        <p>{selected ? selected.description : 'Explore AI tools and practical software for work, creativity, and everyday projects. Start with a task, then compare the fit and check the current details.'}</p>
+      </Intro>
+      <nav className="gh-category-filters" aria-label="Software categories">
+        <Link href="/ai-tools" aria-current={!selected ? 'page' : undefined}>All software</Link>
+        {softwareCategories.map(item => <Link href={`/ai-tools?category=${item.id}`} key={item.id} aria-current={selected?.id === item.id ? 'page' : undefined}>{item.name}</Link>)}
+      </nav>
+      <p className="gh-section-note">These introductions are based on official product sources. They are not hands-on reviews or measured performance comparisons.</p>
+      <div className="gh-grid">{visibleTools.map(tool => <div id={tool.slug} key={tool.slug}><ToolCard tool={tool} /></div>)}</div>
+    </EditorialFrame>
+  )
+}

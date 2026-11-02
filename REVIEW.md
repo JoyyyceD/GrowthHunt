@@ -18,3 +18,17 @@ failed on existing /velocity prerender because production Supabase settings are 
 Production environment files were not copied. Do not treat this as deployment validation.
 
 The original business site and its backend remain untouched.
+
+## Broad software homepage revision
+
+The main audience is now individuals, creators, and small teams. Five software categories
+cover documents, video, meetings, AI assistants, and design. Category links filter the
+software index using server-rendered query parameters.
+
+The original GTM homepage is preserved at /legacy-home with no incoming editorial links,
+no sitemap/llms listing, and explicit noindex/nofollow. It is an unlinked archive, not
+an authenticated private page. Its historical marketing copy is retained as an archive.
+The previous /products hub also has no incoming editorial navigation or sitemap listing.
+
+New sitemap entries are emitted once at the top level; the earlier preview's accidental
+per-company duplication has been fixed.

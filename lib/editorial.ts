@@ -13,21 +13,29 @@ export interface ToolProfile {
   affiliate: { approved: boolean; url: string | null }
 }
 
+export const softwareCategories = [
+  { id: 'office', name: 'Office & documents', description: 'Write, present, organize, and work with PDFs.', examples: 'WPS Office · PDFelement', toolSlugs: ['wps-office', 'pdfelement'] },
+  { id: 'video', name: 'Video & content', description: 'Turn recordings and ideas into finished videos.', examples: 'Filmora', toolSlugs: ['filmora'] },
+  { id: 'meetings', name: 'Meetings & transcription', description: 'Capture conversations and work with the notes.', examples: 'Notta', toolSlugs: ['notta'] },
+  { id: 'ai', name: 'AI assistants', description: 'Find an assistant that fits your everyday tasks.', examples: 'Proton Lumo', toolSlugs: ['proton-lumo'] },
+  { id: 'design', name: 'Design & visualization', description: 'Plan spaces and present your interior ideas.', examples: 'Homestyler', toolSlugs: ['homestyler'] },
+]
+
 // Add an affiliate URL only after this exact program and traffic type are approved.
 // An unapproved URL never renders, even if someone fills the field prematurely.
 export const tools: ToolProfile[] = [
   {
-    slug: 'notta', name: 'Notta', category: 'Research & meetings', task: 'Turn customer conversations into usable notes',
+    slug: 'notta', name: 'Notta', category: 'Meetings & transcription', task: 'Turn conversations and recordings into usable notes',
     summary: 'Notta offers meeting recording, audio and video transcription, and AI-generated meeting notes. This overview uses its official product and pricing information.',
-    fit: 'Founders evaluating a transcription workflow for customer interviews or recurring team meetings.',
+    fit: 'Individuals and teams evaluating transcription for interviews, meetings, and recorded conversations.',
     skip: 'If you only need a few manually written notes, an additional transcription subscription may add more process than value.',
     considerations: ['Try a short, representative recording before buying. Check names, specialist vocabulary, speaker labels, and the languages your customers use.', 'Compare per-conversation limits and monthly allowances with your interview schedule. An attractive headline price does not tell you how many full interviews a plan can handle.', 'Decide how participants will be informed about recording and how recordings and transcripts will be accessed, shared, and deleted.'],
     website: 'https://www.notta.ai/en', pricing: 'https://www.notta.ai/en/pricing', sourceChecked: '2026-11-02', affiliate: { approved: false, url: null },
   },
   {
-    slug: 'filmora', name: 'Wondershare Filmora', category: 'Content & video', task: 'Prepare a product demo or launch video',
+    slug: 'filmora', name: 'Wondershare Filmora', category: 'Content & video', task: 'Edit videos for your content, projects, and presentations',
     summary: 'Filmora is Wondershare’s video editor, with editing and AI-assisted creation features. This overview uses its official product and purchase pages.',
-    fit: 'Small teams comparing an editing tool for product walkthroughs, launch videos, and social content.',
+    fit: 'Creators and small teams comparing an editor for videos, walkthroughs, and social content.',
     skip: 'If a single unedited screen recording is enough to explain the product, start there before paying for an editor.',
     considerations: ['List the output you actually need: aspect ratio, resolution, captions, voice-over, and a clean export. Test one complete clip against that list.', 'Check the license and plan for your operating system, commercial use, renewal terms, included assets, and any separate AI credit allowances.', 'Keep the original recording and an export outside the project file. Include editing time and revision effort when comparing tools.'],
     website: 'https://filmora.wondershare.com/', pricing: 'https://filmora.wondershare.com/shop/buy/buy-video-editor.html', sourceChecked: '2026-11-02', affiliate: { approved: false, url: null },
@@ -35,7 +43,7 @@ export const tools: ToolProfile[] = [
   {
     slug: 'wps-office', name: 'WPS Office', category: 'Documents & productivity', task: 'Create proposals, spreadsheets, and presentations',
     summary: 'WPS Office brings document, spreadsheet, presentation, and PDF tools into an office suite. Its website also lists AI-assisted features; availability should be checked for the plan you select.',
-    fit: 'Founders comparing an office suite for day-to-day business files and client deliverables.',
+    fit: 'Individuals, students, and small teams comparing an office suite for everyday documents and shared files.',
     skip: 'If your current suite already handles your files and collaboration needs, switching solely for an AI label may not be worthwhile.',
     considerations: ['Test copies of real files for formatting, formulas, fonts, and export compatibility before moving a workflow.', 'Separate the features you need from optional AI functionality. Check which are included in the specific platform and plan.', 'Compare editing and collaboration needs with your current workflow. Use non-sensitive sample files while evaluating an unfamiliar service.'],
     website: 'https://www.wps.com/', pricing: 'https://www.wps.com/buy/', sourceChecked: '2026-11-02', affiliate: { approved: false, url: null },
@@ -49,18 +57,18 @@ export const tools: ToolProfile[] = [
     website: 'https://pdf.wondershare.com/', pricing: 'https://pdf.wondershare.com/', sourceChecked: '2026-11-02', affiliate: { approved: false, url: null },
   },
   {
-    slug: 'proton-lumo', name: 'Proton Lumo', category: 'AI assistance', task: 'Evaluate an AI assistant with privacy as a selection criterion',
+    slug: 'proton-lumo', name: 'Proton Lumo', category: 'AI assistants', task: 'Evaluate an AI assistant with privacy as a selection criterion',
     summary: 'Proton describes Lumo as a privacy-focused AI assistant. Its official site explains the service and links to its security model and plans. This overview does not independently verify those security claims.',
-    fit: 'Founders and professionals comparing AI assistants with particular attention to the provider’s data handling.',
+    fit: 'Individuals and professionals comparing AI assistants with particular attention to the provider’s data handling.',
     skip: 'If a task requires a specific integration, capability, or contractual assurance, confirm it explicitly rather than assuming a privacy-focused assistant includes it.',
     considerations: ['Read the provider’s security model and privacy information alongside the feature list. Separate documented claims from independently validated behavior.', 'Try a non-sensitive example of the work you want to perform, and review the output against your own requirements.', 'Confirm plan limits and organizational requirements before choosing it for a team. Do not treat a general product overview as approval to upload confidential material.'],
     website: 'https://proton.me/lumo', pricing: 'https://proton.me/lumo', sourceChecked: '2026-11-02', affiliate: { approved: false, url: null },
   },
   {
-    slug: 'homestyler', name: 'Homestyler', category: 'Design businesses', task: 'Explore 3D interior design and space visualization',
+    slug: 'homestyler', name: 'Homestyler', category: 'Design & visualization', task: 'Explore 3D interior design and space visualization',
     summary: 'Homestyler provides tools for interior design and 3D space visualization. Its official site describes floor planning, rendering, and related design features.',
-    fit: 'Design-led businesses, interior professionals, and creators comparing ways to present a space or interior concept.',
-    skip: 'This is a specialist design workflow, not a general customer-acquisition tool. A founder without a spatial-design task is unlikely to need it.',
+    fit: 'Home planners, interior professionals, and creators comparing ways to develop and present an interior concept.',
+    skip: 'If you only need a simple sketch or mood board, check whether a dedicated 3D design workflow adds value to the project.',
     considerations: ['Define the deliverable first: a floor plan, still visualization, or another design presentation. Check what the selected plan can export.', 'Review rendering allowances, asset access, and commercial-use conditions on the official site before a client project.', 'Test a small representative scene before moving a project. This guide does not report measured rendering quality or performance.'],
     website: 'https://www.homestyler.com/', pricing: 'https://www.homestyler.com/', sourceChecked: '2026-11-02', affiliate: { approved: false, url: null },
   },

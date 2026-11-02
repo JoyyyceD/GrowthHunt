@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import { createBrowserClient } from '@/lib/supabase/browser'
 import { readSoftUserEmail, clearSoftUser } from '@/lib/soft-auth'
 
@@ -44,6 +44,8 @@ export function TopNav({ variant = 'page' }: Props) {
   const [open, setOpen] = useState(false)
   const popRef = useRef<HTMLDivElement>(null)
   const router = useRouter()
+  const path = usePathname()
+  const isEditorial = path === '/' || ['/ai-tools', '/guides', '/about', '/contact', '/privacy', '/terms', '/affiliate-disclosure', '/editorial-policy', '/blog', '/growth-story'].some(prefix => path === prefix || path.startsWith(`${prefix}/`))
 
   useEffect(() => {
     function flushPendingInvite(userEmail: string | null) {
@@ -159,11 +161,10 @@ export function TopNav({ variant = 'page' }: Props) {
           GrowthHunt.ai
         </Link>
         <ul>
-          <li><Link href="/ai-tools">AI Tools</Link></li>
-          <li><Link href="/guides">Selection Guides</Link></li>
-          <li><Link href="/growth-story">Growth Stories</Link></li>
-          <li><Link href="/blog">Blog</Link></li>
-          <li><Link href="/products">GTM Products</Link></li>
+          <li><Link href="/ai-tools">Software</Link></li>
+          <li><a href={variant === 'home' ? '#categories' : '/#categories'}>Categories</a></li>
+          <li><Link href="/guides">Buying Guides</Link></li>
+          <li><Link href="/about">About</Link></li>
         </ul>
         {!loaded ? (
           <span style={{ width: 88 }} />
@@ -254,8 +255,8 @@ export function TopNav({ variant = 'page' }: Props) {
             )}
           </div>
         ) : (
-          <Link href="/login" className="cta" style={{ textDecoration: 'none' }}>
-            Log in / Sign up
+          <Link href={isEditorial ? "/ai-tools" : "/login"} className="cta" style={{ textDecoration: 'none' }}>
+            {isEditorial ? "Explore software" : "Log in / Sign up"}
           </Link>
         )}
       </div>

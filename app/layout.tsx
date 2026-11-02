@@ -8,8 +8,8 @@ import { EditorialFooter } from '@/lib/site/Editorial'
 import './globals.css'
 
 const BASE = 'https://growthhunt.ai'
-const TITLE = 'GrowthHunt — Software choices & growth research for founders'
-const DESCRIPTION = 'Software overviews, selection guides, and startup growth research for founders and lean teams.'
+const TITLE = 'GrowthHunt — Find software for work and creativity'
+const DESCRIPTION = 'Discover AI tools and practical software for documents, video, meetings, design, and everyday work. Buying guides for individuals, creators, and small teams.'
 const DATE_MODIFIED = '2026-11-02'
 const PREVIEW = process.env.GH_REVIEW_PREVIEW === '1'
 
@@ -20,11 +20,7 @@ export const metadata: Metadata = {
     template: '%s — GrowthHunt',
   },
   description: DESCRIPTION,
-  keywords: [
-    'go to market', 'GTM agent', 'creator discovery', 'influencer outreach',
-    'Reddit marketing', 'YouTube creator', 'cold email automation',
-    'indie hacker', 'SaaS growth', 'startup marketing', 'growth tool',
-  ],
+  keywords: ['software guides', 'AI tools', 'productivity software', 'video editing', 'office software', 'transcription', 'AI assistants', 'interior design software'],
   authors: [{ name: 'GrowthHunt' }],
   creator: 'GrowthHunt',
   openGraph: {
