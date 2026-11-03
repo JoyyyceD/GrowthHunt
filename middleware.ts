@@ -50,9 +50,6 @@ export async function middleware(request: NextRequest) {
     }
   )
 
-  // Required for PKCE flow — refreshes expired sessions on every request
-  await supabase.auth.getUser()
-
   const isProtectedPage = PROTECTED_PAGE_ROUTES.some(
     r => pathname === r || pathname.startsWith(`${r}/`)
   )
@@ -82,7 +79,19 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
+  // Only run on routes that actually need auth. Matching public pages here made
+  // every response cookie-dependent, which forced `private, no-store` site-wide
+  // and disabled CDN caching (incl. /xgrower's `revalidate = 1800`).
   matcher: [
-    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
+    '/dashboard/:path*',
+    '/picolaunch/account/:path*',
+    '/picolaunch/submit/:path*',
+    '/viralx/start/:path*',
+    '/viralx/sessions/:path*',
+    '/viralx/credentials/:path*',
+    '/gtm/:path*',
+    '/workspace/:path*',
+    '/agents/:path*',
+    '/api/dashboard/:path*',
   ],
 }

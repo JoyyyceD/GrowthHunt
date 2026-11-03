@@ -12,6 +12,8 @@ export const pageContentModified: Record<string, string> = {
   '/': '2026-11-02',
   '/ai-tools': '2026-11-02',
   '/guides': '2026-11-02',
+  '/privacy': '2026-11-03',
+  '/terms': '2026-11-03',
 }
 
 export function contentDate(value: unknown): string | undefined {

@@ -44,7 +44,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: SITE_URL, ...revision(pageContentModified['/']), changeFrequency: 'weekly', priority: 1 },
     { url: `${SITE_URL}/ai-tools`, ...revision(toolsModified), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${SITE_URL}/guides`, ...revision(guidesModified), changeFrequency: 'weekly', priority: 0.8 },
-    ...['about', 'contact', 'affiliate-disclosure', 'editorial-policy', 'privacy', 'terms'].map(slug => ({ url: `${SITE_URL}/${slug}` })),
+    ...['about', 'contact', 'affiliate-disclosure', 'editorial-policy', 'privacy', 'terms'].map(slug => ({ url: `${SITE_URL}/${slug}`, ...revision(pageContentModified[`/${slug}`]) })),
     ...tools.map(tool => ({ url: `${SITE_URL}/ai-tools/${tool.slug}`, ...revision(tool.contentModified) })),
     ...guides.map(guide => ({ url: `${SITE_URL}/guides/${guide.slug}`, ...revision(guide.contentModified) })),
     { url: `${SITE_URL}/blog`, ...revision(newestContentDate(posts.map(post => post.date))), changeFrequency: 'weekly', priority: 0.8 },
