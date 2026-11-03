@@ -13,9 +13,10 @@ Owner inputs and verification limits:
 /Users/joycedong/dev/Galaxy/projects/growthhunt/research/affiliate-transition-2026-11-02.md
 
 Privacy and Terms are review drafts and must be completed before any production release.
-TypeScript and local smoke checks passed. Full build compiled and type checked, then
-failed on existing /velocity prerender because production Supabase settings are absent.
-Production environment files were not copied. Do not treat this as deployment validation.
+TypeScript, local schema semantics, and the production-mode build passed on 2026-11-03.
+The build used only two existing public connection parameters injected in process memory;
+no environment file or admin credential was copied. Built-server indexability checks are
+recorded in Galaxy research. These are local checks, not deployed-domain validation.
 
 The original business site and its backend remain untouched.
 
@@ -32,3 +33,17 @@ The previous /products hub also has no incoming editorial navigation or sitemap 
 
 New sitemap entries are emitted once at the top level; the earlier preview's accidental
 per-company duplication has been fixed.
+
+## GEO completion — 2026-11-03
+
+Detail pages emit Article + WebPage + BreadcrumbList; collection pages emit CollectionPage
+and ItemList matching visible entries. Schema dates and the visible dates use the same
+explicit editorial fields. Source-check dates are separate from content revision dates;
+unpublished drafts intentionally have no datePublished.
+
+Sitemap no longer uses a build/request clock. Known dates come from editorial records or
+existing content frontmatter; pages without a trustworthy recorded revision omit lastmod.
+New page-specific OG/Twitter metadata and the broad-software share card replace GTM defaults.
+
+Owner identity, monitored contact email, and actual data practices remain to be confirmed
+before Privacy/Terms are treated as final. Nothing has been deployed or applied to merchants.

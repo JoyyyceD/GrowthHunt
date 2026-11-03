@@ -1,13 +1,12 @@
 import Link from 'next/link'
-import type { Metadata } from 'next'
 import { tools, softwareCategories } from '@/lib/editorial'
+import { editorialMetadata, collectionSchema, newestContentDate, pageContentModified } from '@/lib/editorial-seo'
+import { StructuredData } from '@/lib/site/StructuredData'
 import { EditorialFrame, Intro, ToolCard } from '@/lib/site/Editorial'
 
-export const metadata: Metadata = {
-  title: 'AI Tools & Practical Software Guides',
-  description: 'Explore software for documents, video, meetings, AI assistance, and design. Buying guides for individuals, creators, and small teams.',
-  alternates: { canonical: 'https://growthhunt.ai/ai-tools' },
-}
+const title = 'AI Tools & Practical Software Guides'
+const description = 'Explore software for documents, video, meetings, AI assistance, and design. Buying guides for individuals, creators, and small teams.'
+export const metadata = editorialMetadata({ title, description, path: '/ai-tools' })
 
 export default async function ToolsPage({ searchParams }: { searchParams: Promise<{ category?: string }> }) {
   const { category } = await searchParams
@@ -16,6 +15,12 @@ export default async function ToolsPage({ searchParams }: { searchParams: Promis
 
   return (
     <EditorialFrame>
+      <StructuredData data={collectionSchema({
+        path: '/ai-tools', title: selected?.name ?? title,
+        description: selected?.description ?? description,
+        items: visibleTools.map(tool => ({ name: tool.name, path: `/ai-tools/${tool.slug}` })),
+        modified: newestContentDate([pageContentModified['/ai-tools'], ...visibleTools.map(tool => tool.contentModified)]),
+      })} />
       <Intro label="Software guides" title={selected ? selected.name : 'Find a tool for what you do.'}>
         <p>{selected ? selected.description : 'Explore AI tools and practical software for work, creativity, and everyday projects. Start with a task, then compare the fit and check the current details.'}</p>
       </Intro>

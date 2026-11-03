@@ -10,6 +10,7 @@ export interface ToolProfile {
   website: string
   pricing: string
   sourceChecked: string
+  contentModified: string
   affiliate: { approved: boolean; url: string | null }
 }
 
@@ -30,7 +31,7 @@ export const tools: ToolProfile[] = [
     fit: 'Individuals and teams evaluating transcription for interviews, meetings, and recorded conversations.',
     skip: 'If you only need a few manually written notes, an additional transcription subscription may add more process than value.',
     considerations: ['Try a short, representative recording before buying. Check names, specialist vocabulary, speaker labels, and the languages your customers use.', 'Compare per-conversation limits and monthly allowances with your interview schedule. An attractive headline price does not tell you how many full interviews a plan can handle.', 'Decide how participants will be informed about recording and how recordings and transcripts will be accessed, shared, and deleted.'],
-    website: 'https://www.notta.ai/en', pricing: 'https://www.notta.ai/en/pricing', sourceChecked: '2026-11-02', affiliate: { approved: false, url: null },
+    website: 'https://www.notta.ai/en', pricing: 'https://www.notta.ai/en/pricing', sourceChecked: '2026-11-02', contentModified: '2026-11-02', affiliate: { approved: false, url: null },
   },
   {
     slug: 'filmora', name: 'Wondershare Filmora', category: 'Content & video', task: 'Edit videos for your content, projects, and presentations',
@@ -38,7 +39,7 @@ export const tools: ToolProfile[] = [
     fit: 'Creators and small teams comparing an editor for videos, walkthroughs, and social content.',
     skip: 'If a single unedited screen recording is enough to explain the product, start there before paying for an editor.',
     considerations: ['List the output you actually need: aspect ratio, resolution, captions, voice-over, and a clean export. Test one complete clip against that list.', 'Check the license and plan for your operating system, commercial use, renewal terms, included assets, and any separate AI credit allowances.', 'Keep the original recording and an export outside the project file. Include editing time and revision effort when comparing tools.'],
-    website: 'https://filmora.wondershare.com/', pricing: 'https://filmora.wondershare.com/shop/buy/buy-video-editor.html', sourceChecked: '2026-11-02', affiliate: { approved: false, url: null },
+    website: 'https://filmora.wondershare.com/', pricing: 'https://filmora.wondershare.com/shop/buy/buy-video-editor.html', sourceChecked: '2026-11-02', contentModified: '2026-11-02', affiliate: { approved: false, url: null },
   },
   {
     slug: 'wps-office', name: 'WPS Office', category: 'Documents & productivity', task: 'Create proposals, spreadsheets, and presentations',
@@ -46,7 +47,7 @@ export const tools: ToolProfile[] = [
     fit: 'Individuals, students, and small teams comparing an office suite for everyday documents and shared files.',
     skip: 'If your current suite already handles your files and collaboration needs, switching solely for an AI label may not be worthwhile.',
     considerations: ['Test copies of real files for formatting, formulas, fonts, and export compatibility before moving a workflow.', 'Separate the features you need from optional AI functionality. Check which are included in the specific platform and plan.', 'Compare editing and collaboration needs with your current workflow. Use non-sensitive sample files while evaluating an unfamiliar service.'],
-    website: 'https://www.wps.com/', pricing: 'https://www.wps.com/buy/', sourceChecked: '2026-11-02', affiliate: { approved: false, url: null },
+    website: 'https://www.wps.com/', pricing: 'https://www.wps.com/buy/', sourceChecked: '2026-11-02', contentModified: '2026-11-02', affiliate: { approved: false, url: null },
   },
   {
     slug: 'pdfelement', name: 'Wondershare PDFelement', category: 'Documents & productivity', task: 'Edit, convert, and annotate PDF documents',
@@ -54,7 +55,7 @@ export const tools: ToolProfile[] = [
     fit: 'Small teams assessing a dedicated PDF workflow for proposals, documents, and client handoffs.',
     skip: 'If you only read PDFs or add occasional simple annotations, check whether your existing viewer already covers the task.',
     considerations: ['Make a list of required PDF operations and test a copy of a representative file. Check the finished export, not just the editor preview.', 'Verify whether the features you need are included for your operating system and purchase option.', 'Check handling of uploaded files before using confidential documents. Keep an original copy so evaluation edits are reversible.'],
-    website: 'https://pdf.wondershare.com/', pricing: 'https://pdf.wondershare.com/', sourceChecked: '2026-11-02', affiliate: { approved: false, url: null },
+    website: 'https://pdf.wondershare.com/', pricing: 'https://pdf.wondershare.com/', sourceChecked: '2026-11-02', contentModified: '2026-11-02', affiliate: { approved: false, url: null },
   },
   {
     slug: 'proton-lumo', name: 'Proton Lumo', category: 'AI assistants', task: 'Evaluate an AI assistant with privacy as a selection criterion',
@@ -62,7 +63,7 @@ export const tools: ToolProfile[] = [
     fit: 'Individuals and professionals comparing AI assistants with particular attention to the provider’s data handling.',
     skip: 'If a task requires a specific integration, capability, or contractual assurance, confirm it explicitly rather than assuming a privacy-focused assistant includes it.',
     considerations: ['Read the provider’s security model and privacy information alongside the feature list. Separate documented claims from independently validated behavior.', 'Try a non-sensitive example of the work you want to perform, and review the output against your own requirements.', 'Confirm plan limits and organizational requirements before choosing it for a team. Do not treat a general product overview as approval to upload confidential material.'],
-    website: 'https://proton.me/lumo', pricing: 'https://proton.me/lumo', sourceChecked: '2026-11-02', affiliate: { approved: false, url: null },
+    website: 'https://proton.me/lumo', pricing: 'https://proton.me/lumo', sourceChecked: '2026-11-02', contentModified: '2026-11-02', affiliate: { approved: false, url: null },
   },
   {
     slug: 'homestyler', name: 'Homestyler', category: 'Design & visualization', task: 'Explore 3D interior design and space visualization',
@@ -70,7 +71,7 @@ export const tools: ToolProfile[] = [
     fit: 'Home planners, interior professionals, and creators comparing ways to develop and present an interior concept.',
     skip: 'If you only need a simple sketch or mood board, check whether a dedicated 3D design workflow adds value to the project.',
     considerations: ['Define the deliverable first: a floor plan, still visualization, or another design presentation. Check what the selected plan can export.', 'Review rendering allowances, asset access, and commercial-use conditions on the official site before a client project.', 'Test a small representative scene before moving a project. This guide does not report measured rendering quality or performance.'],
-    website: 'https://www.homestyler.com/', pricing: 'https://www.homestyler.com/', sourceChecked: '2026-11-02', affiliate: { approved: false, url: null },
+    website: 'https://www.homestyler.com/', pricing: 'https://www.homestyler.com/', sourceChecked: '2026-11-02', contentModified: '2026-11-02', affiliate: { approved: false, url: null },
   },
 ]
 
@@ -82,7 +83,7 @@ export function outbound(tool: ToolProfile) {
 
 export const guides = [
   {
-    slug: 'choose-customer-interview-transcription', title: 'Choosing transcription software for customer interviews',
+    slug: 'choose-customer-interview-transcription', preparedAt: '2026-11-02', contentModified: '2026-11-02', title: 'Choosing transcription software for customer interviews',
     description: 'A practical buying checklist: recording quality, transcript review, plan limits, and your existing meeting workflow.', toolSlugs: ['notta'],
     sections: [
       { title: 'Start with the decision the interview should inform', text: 'Write down the product or messaging decision first. A transcript is useful when it helps you revisit what someone actually said. It is not a substitute for asking useful questions or distinguishing a customer request from a broader pattern.' },
@@ -94,7 +95,7 @@ export const guides = [
     ],
   },
   {
-    slug: 'choose-product-demo-video-editor', title: 'Choosing a video editor for a product demo',
+    slug: 'choose-product-demo-video-editor', preparedAt: '2026-11-02', contentModified: '2026-11-02', title: 'Choosing a video editor for a product demo',
     description: 'Define the demo, check export and licensing needs, and avoid buying an editor before you know what you need to show.', toolSlugs: ['filmora'],
     sections: [
       { title: 'Decide what the viewer needs to understand', text: 'Pick one audience, one problem, and one action you want the viewer to take. Draft a short sequence that shows the problem and the relevant product interaction. This is a planning checklist, not a claim that a particular video format produces more signups.' },

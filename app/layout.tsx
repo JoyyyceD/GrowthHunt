@@ -5,12 +5,13 @@ import FollowFelixWidget from '@/components/FollowFelixWidget'
 import { FloatingChatGate } from '@/components/FloatingChatGate'
 import { ProductOnlyWidgets } from '@/components/ProductOnlyWidgets'
 import { EditorialFooter } from '@/lib/site/Editorial'
+import { PUBLISHER_ID, WEBSITE_ID, pageContentModified } from '@/lib/editorial-seo'
 import './globals.css'
 
 const BASE = 'https://growthhunt.ai'
 const TITLE = 'GrowthHunt — Find software for work and creativity'
 const DESCRIPTION = 'Discover AI tools and practical software for documents, video, meetings, design, and everyday work. Buying guides for individuals, creators, and small teams.'
-const DATE_MODIFIED = '2026-11-02'
+const DATE_MODIFIED = pageContentModified['/']
 const PREVIEW = process.env.GH_REVIEW_PREVIEW === '1'
 
 export const metadata: Metadata = {
@@ -50,15 +51,12 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
+  '@id': WEBSITE_ID,
   name: 'GrowthHunt',
   url: BASE,
   description: DESCRIPTION,
   dateModified: DATE_MODIFIED,
-  publisher: {
-    '@type': 'Organization',
-    name: 'GrowthHunt',
-    url: BASE,
-  },
+  publisher: { '@id': PUBLISHER_ID },
 }
 
 // Separate Organization entity — gives Google a clean signal for brand
@@ -66,6 +64,7 @@ const jsonLd = {
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': PUBLISHER_ID,
   name: 'GrowthHunt',
   url: BASE,
   logo: `${BASE}/icon.svg`,

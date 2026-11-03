@@ -1,125 +1,59 @@
 import type { MetadataRoute } from 'next'
 import { tools, guides } from '@/lib/editorial'
+import { SITE_URL, contentDate, newestContentDate, pageContentModified } from '@/lib/editorial-seo'
 import { FEATURES } from '@/lib/features'
 import { getAllPosts } from '@/lib/blog'
 import { getAllCompanies, getStory } from '@/lib/growth-story'
 import { getAllChampionMeta } from '@/app/picolaunch/_lib/fetch'
 
-const BASE = 'https://growthhunt.ai'
-
-// Build time — used as a stable lastmod for landing pages that don't have
-// a content date of their own. Frozen per deploy, so Google sees a real
-// "this rev = this date" signal instead of "everything was updated today".
-const BUILD_DATE = new Date()
+// Unknown revision dates are omitted. No build-time or request-time clock is used.
+function revision(value: unknown): { lastModified?: string } {
+  const date = contentDate(value)
+  return date ? { lastModified: date } : {}
+}
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const featurePages: MetadataRoute.Sitemap = FEATURES.map(f => ({
-    url: `${BASE}/${f.id}`,
-    lastModified: BUILD_DATE,
-    changeFrequency: 'monthly',
-    priority: f.tag === 'Live' ? 0.8 : 0.6,
+  const posts = getAllPosts()
+  const featurePages: MetadataRoute.Sitemap = FEATURES.map(feature => ({
+    url: `${SITE_URL}/${feature.id}`, changeFrequency: 'monthly', priority: feature.tag === 'Live' ? 0.8 : 0.6,
+  }))
+  const blogPosts: MetadataRoute.Sitemap = posts.map(post => ({
+    url: `${SITE_URL}/blog/${post.slug}`, ...revision(post.date), changeFrequency: 'monthly', priority: 0.7,
   }))
 
-  const blogPosts: MetadataRoute.Sitemap = getAllPosts().map(post => ({
-    url: `${BASE}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: 'monthly',
-    priority: 0.7,
-  }))
-
-  // PicoLaunch — every launch gets its own sitemap entry so Google can
-  // index each one (and pass dofollow link equity to the featured site).
-  // DB hiccups or missing env must not fail the whole build — skip the section.
+  // Creation timestamps are not revision timestamps. Preserve these URLs without lastmod.
   const championMeta = await getAllChampionMeta().catch(() => [])
-  const picoLaunchDetails: MetadataRoute.Sitemap = championMeta.map(({ slug, createdAt }) => ({
-    url: `${BASE}/picolaunch/${slug}`,
-    lastModified: new Date(createdAt),
-    changeFrequency: 'weekly',
-    priority: 0.7,
+  const picoLaunchDetails: MetadataRoute.Sitemap = championMeta.map(({ slug }) => ({
+    url: `${SITE_URL}/picolaunch/${slug}`, changeFrequency: 'weekly', priority: 0.7,
   }))
 
-  // Each company has parallel EN + ZH pages. Emit both URLs and cross-link
-  // them with hreflang alternates so Google treats them as locale variants
-  // rather than duplicate content. lastmod = the frontmatter date of the
-  // English story (zh is usually a translation of the same content).
-  const growthStoryCompanies: MetadataRoute.Sitemap = getAllCompanies().flatMap(slug => {
-    const story = getStory(slug, 'en')
-    const lastModified = story?.date ? new Date(story.date) : BUILD_DATE
-    const enUrl = `${BASE}/growth-story/${slug}`
-    const zhUrl = `${BASE}/growth-story/${slug}/zh`
-    const alternates = {
-      languages: {
-        'en-US': enUrl,
-        'zh-CN': zhUrl,
-      },
-    }
+  const stories = getAllCompanies().map(slug => ({ slug, en: getStory(slug, 'en'), zh: getStory(slug, 'zh') }))
+  const growthStoryCompanies: MetadataRoute.Sitemap = stories.flatMap(({ slug, en, zh }) => {
+    const enUrl = `${SITE_URL}/growth-story/${slug}`
+    const zhUrl = `${SITE_URL}/growth-story/${slug}/zh`
+    const alternates = { languages: { 'en-US': enUrl, 'zh-CN': zhUrl } }
     return [
-      {
-        url: enUrl,
-        alternates,
-        lastModified,
-        changeFrequency: 'monthly' as const,
-        priority: 0.9,
-      },
-      {
-        url: zhUrl,
-        alternates,
-        lastModified,
-        changeFrequency: 'monthly' as const,
-        priority: 0.9,
-      },
+      { url: enUrl, alternates, ...revision(en?.date), changeFrequency: 'monthly' as const, priority: 0.9 },
+      { url: zhUrl, alternates, ...revision(zh?.date), changeFrequency: 'monthly' as const, priority: 0.9 },
     ]
   })
 
-  return [
-    ...['ai-tools', 'guides', 'about', 'contact', 'affiliate-disclosure', 'editorial-policy', 'privacy', 'terms'].map(slug => ({ url: `${BASE}/${slug}` })),
-    ...tools.map(tool => ({ url: `${BASE}/ai-tools/${tool.slug}`, lastModified: new Date(tool.sourceChecked) })),
-    ...guides.map(guide => ({ url: `${BASE}/guides/${guide.slug}`, lastModified: new Date('2026-11-02') })),
-    {
-      url: BASE,
-      lastModified: BUILD_DATE,
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${BASE}/blog`,
-      lastModified: BUILD_DATE,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${BASE}/coming-soon`,
-      lastModified: BUILD_DATE,
-      changeFrequency: 'monthly',
-      priority: 0.3,
-    },
-    {
-      url: `${BASE}/growth-story`,
-      lastModified: BUILD_DATE,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${BASE}/picolaunch`,
-      lastModified: BUILD_DATE,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${BASE}/velocity`,
-      lastModified: BUILD_DATE,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${BASE}/velocity/badge`,
-      lastModified: BUILD_DATE,
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    ...growthStoryCompanies,
-    ...picoLaunchDetails,
-    ...featurePages,
-    ...blogPosts,
+  const toolsModified = newestContentDate([pageContentModified['/ai-tools'], ...tools.map(tool => tool.contentModified)])
+  const guidesModified = newestContentDate([pageContentModified['/guides'], ...guides.map(guide => guide.contentModified)])
+  const entries: MetadataRoute.Sitemap = [
+    { url: SITE_URL, ...revision(pageContentModified['/']), changeFrequency: 'weekly', priority: 1 },
+    { url: `${SITE_URL}/ai-tools`, ...revision(toolsModified), changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${SITE_URL}/guides`, ...revision(guidesModified), changeFrequency: 'weekly', priority: 0.8 },
+    ...['about', 'contact', 'affiliate-disclosure', 'editorial-policy', 'privacy', 'terms'].map(slug => ({ url: `${SITE_URL}/${slug}` })),
+    ...tools.map(tool => ({ url: `${SITE_URL}/ai-tools/${tool.slug}`, ...revision(tool.contentModified) })),
+    ...guides.map(guide => ({ url: `${SITE_URL}/guides/${guide.slug}`, ...revision(guide.contentModified) })),
+    { url: `${SITE_URL}/blog`, ...revision(newestContentDate(posts.map(post => post.date))), changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${SITE_URL}/coming-soon`, changeFrequency: 'monthly', priority: 0.3 },
+    { url: `${SITE_URL}/growth-story`, ...revision(newestContentDate(stories.flatMap(story => [story.en?.date, story.zh?.date]))), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${SITE_URL}/picolaunch`, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${SITE_URL}/velocity`, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${SITE_URL}/velocity/badge`, changeFrequency: 'monthly', priority: 0.5 },
+    ...growthStoryCompanies, ...picoLaunchDetails, ...featurePages, ...blogPosts,
   ]
+  return Array.from(new Map(entries.map(entry => [entry.url, entry])).values())
 }
